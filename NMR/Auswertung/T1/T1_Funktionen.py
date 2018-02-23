@@ -29,7 +29,7 @@ def Rohdaten(offset, sig_U, sig_tau, j):
             U_rel = (rohdata[i][2] * 10**(-5) - offset) / (rohdata[i][1] * 10**(-5) - offset)
         #bla = np.sqrt((1/(rohdata[i][1] - offset))**2 + ((rohdata[i][2] - offset)/(rohdata[i][1] - offset)**2)**2)
         sig_U_rel = np.sqrt((sig_U/(rohdata[i][1] - offset))**2 + (sig_U * (rohdata[i][2] - offset)/(rohdata[i][1] - offset)**2)**2)
-        #print sig_U, bla, sig_U_rel
+        print sig_U_rel
         data.append([t, U_rel, sig_t, sig_U_rel])
     return np.array(data) 
 

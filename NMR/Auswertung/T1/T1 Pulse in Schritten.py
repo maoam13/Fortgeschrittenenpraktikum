@@ -16,12 +16,12 @@ start_time=timeit.default_timer()
 
 sig_tau = 0.5 / np.sqrt(12)
 offset, sig_U = func.Offset_Rauschen()
-rohdata = func.Rohdaten(offset, sig_U * 10, sig_tau, 19)
+rohdata = func.Rohdaten(offset, sig_U * 10, sig_tau, 18)
 
 #T1 aus zero-crossing-point-Methode
 U_Null = np.zeros(len(rohdata[:,0]))
 zeros = AM.Schnittpunkte(rohdata[:,0], rohdata[:,1], U_Null)
-T1_zero = 1/np.log(2) * (rohdata[zeros[0]][0] + rohdata[zeros[0] +1][0])/2
+T1_zero = 1/np.log(2) * (rohdata[21][0] + rohdata[15][0])/2
 sig_T1_zero = 1/np.log(2) * (rohdata[21][0] - rohdata[15][0])/np.sqrt(12)
 print "T1 aus zero crossing point Methode"
 print T1_zero, sig_T1_zero
@@ -85,5 +85,7 @@ x_exp_vor = np.arange(0, 320)
 x_exp = x_exp_vor * 0.1
 y_exp = exp([sol[0][0]], x_exp)
 plt.plot(x_exp, y_exp, color='g')
+
+print rohdata[:,0]
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
