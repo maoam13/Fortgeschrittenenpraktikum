@@ -10,7 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
-file = open("F0000CH2.CSV")
+file = open("C:\Users\morit\Documents\GitHub\Fortgeschrittenenpraktikum\NMR\Daten\T2CP\ALL0002\F0002CH2.CSV")
 csv_reader = csv.reader(file, delimiter=",")
 x = []
 y = []
@@ -25,13 +25,14 @@ for row in csv_reader:
 file.close()
 
 
-dt = float(0.004)
-t = float(-0.002)
+dt = float(0.0060)
+t = float(-0.00252)
+N = 8
 
 ypeak = []
-xpeak = np.zeros(11)
+xpeak = np.zeros(N)
 
-for i in range(11):
+for i in range(N):
     array = y[x.index(round(t,5)):x.index(round(t+dt,5))]
     ypeak.append(float(max(array)))
     xwert = np.argmax(array)+x.index(round(t,5))
@@ -42,17 +43,19 @@ for i in range(11):
 
 offset = np.mean(y[x.index(0.086):])
 
-test = np.zeros(11)
+yfehler = np.zeros(N)
 ystd = float(np.std(y[x.index(0.086):]))
-for i in range(len(test)):
-    test[i] = ystd
+for i in range(len(yfehler)):
+    yfehler[i] = ystd
         
 ypeak = ypeak - offset
-y = y -offset
+y = y - offset
 
-abra = test**2
+plt.scatter(xpeak,np.log(ypeak))
+xstd = [0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002]
 
-plt.plot(xpeak,np.log(ypeak))
-
-a, sig_a, b, sig_b, chi, cor = p.lineare_regression_xy(xpeak, ypeak,[0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002,0.0002], test)
-print -1/a
+a, sig_a, b, sig_b, chi, cor = p.lineare_regression_xy(xpeak, np.log(ypeak),xstd, yfehler)
+ywerte = a*xpeak+b
+plt.plot(xpeak,ywerte)
+print chi/11
+print -1./a
