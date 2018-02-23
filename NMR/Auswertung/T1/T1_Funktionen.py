@@ -10,7 +10,7 @@ import scipy.odr
 
 def Offset_Rauschen():
     data = np.genfromtxt("Rauschmessung.txt", delimiter = ',')
-    return np.mean(data[:,4]), np.std(data[:,4])
+    return np.mean(data[:,4]), np.std(data[:,4], ddof = 1)
 
 def Rohdaten(offset, sig_U, sig_tau, j):
     rohdata = np.genfromtxt("T1 alle Daten.txt", delimiter = ',')
