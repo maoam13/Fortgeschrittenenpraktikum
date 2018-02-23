@@ -15,8 +15,9 @@ import timeit
 start_time=timeit.default_timer()
 
 sig_tau = 0.5 / np.sqrt(12)
+stat_U = 0.004 / np.sqrt(12)
 offset, sig_U = func.Offset_Rauschen()
-rohdata = func.Rohdaten(offset, sig_U * 10, sig_tau, 18)
+rohdata = func.Rohdaten(offset, np.sqrt(sig_U**2 + stat_U**2), sig_tau, 18)
 
 #T1 aus zero-crossing-point-Methode
 U_Null = np.zeros(len(rohdata[:,0]))
@@ -56,11 +57,12 @@ H_err = np.full(len(Y), 1)
 for i in range(len(Y)):
     H[i] = Y[i] - a * rohdata[i][0] - b
     H_err[i] = np.sqrt(np.array(sig_Y[i])**2 + (a * np.array(rohdata[i][2]))**2)
-ax2.set_xlabel("$\tau$ [ms]")
+ax2.set_xlabel("tau [ms]")
 ax2.set_ylabel("Residuen [$ln(1-U/U_0)$]")
 plt.plot(x_r, y_r, color='r')
 plt.errorbar(rohdata[:,0], H, yerr=H_err, fmt='.', color='b')
-plt.show()
+#plt.show()
+plt.savefig('linFit.png')
 
 #Fitte Exponentialfunktion an Originaldaten
 def exp(B, x):
@@ -86,6 +88,6 @@ x_exp = x_exp_vor * 0.1
 y_exp = exp([sol[0][0]], x_exp)
 plt.plot(x_exp, y_exp, color='g')
 
-print rohdata[:,0]
+#print rohdata[:,0]
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))

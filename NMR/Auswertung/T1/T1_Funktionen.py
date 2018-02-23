@@ -15,21 +15,21 @@ def Offset_Rauschen():
 def Rohdaten(offset, sig_U, sig_tau, j):
     rohdata = np.genfromtxt("T1 alle Daten.txt", delimiter = ',')
     tau = np.genfromtxt("T1 tau Vermutung.txt", delimiter = ',')
+    rohdata[:,2] = rohdata[:,2]* 10**(-5)
+    rohdata[:,1] = rohdata[:,1]* 10**(-5)
     
     data = []
     for i in range(0, len(rohdata) - 4):
         t = (tau[i][2] - tau[i][1]) * 45/2500
         if i < 38:
-            sig_t = sig_tau * np.sqrt(2)
+            sig_t = sig_tau
         else:
-            sig_t = 5 * sig_tau * np.sqrt(2)
+            sig_t = 5 * sig_tau
         if i < j:
-            U_rel = -(rohdata[i][2] * 10**(-5) - offset) / (rohdata[i][1] * 10**(-5) - offset)
+            U_rel = -(rohdata[i][2] - offset) / (rohdata[i][1] - offset)
         else:
-            U_rel = (rohdata[i][2] * 10**(-5) - offset) / (rohdata[i][1] * 10**(-5) - offset)
-        #bla = np.sqrt((1/(rohdata[i][1] - offset))**2 + ((rohdata[i][2] - offset)/(rohdata[i][1] - offset)**2)**2)
+            U_rel = (rohdata[i][2] - offset) / (rohdata[i][1] - offset)
         sig_U_rel = np.sqrt((sig_U/(rohdata[i][1] - offset))**2 + (sig_U * (rohdata[i][2] - offset)/(rohdata[i][1] - offset)**2)**2)
-        print sig_U_rel
         data.append([t, U_rel, sig_t, sig_U_rel])
     return np.array(data) 
 

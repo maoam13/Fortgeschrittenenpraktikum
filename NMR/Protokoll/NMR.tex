@@ -94,99 +94,99 @@ U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \section{Ergebnisse}
 
 \subsection{T1}
-Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert.
+Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht
+\begin{equation*}
+\sigma _{\tau} = \dfrac{0.5 ms}{\sqrt{12}}.
+\end{equation*}
+Ab einem gewissen Punkt musste die Auflösung der Zeitachse des Oszilloskops verringert werden, damit der FID weiterhin sichtbar bleibt. Daher wird der Fehler auf $\tau$ dann um Faktor 5 größer.
 
 \begin{table}
 \centering
 \begin{tabular}{|c|c|c|}
 \hline 
-Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [s] \\ 
+Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [ms] \\ 
 \hline 
-448 & -396 & 0.918 \\ 
+428 $\pm$ 4 & -376 $\pm$ 4 & 0.918 $\pm$ 0.144 \\ 
 \hline 
-452 & -380 & 1.800 \\ 
+432 $\pm$ 4 & -360 $\pm$ 4 & 1.800 $\pm$ 0.144 \\ 
 \hline 
-452 & -356 & 2.700 \\ 
+432 $\pm$ 4 & -336 $\pm$ 4 & 2.700 $\pm$ 0.144 \\ 
 \hline 
-472 & -328 & 3.618 \\ 
+452 $\pm$ 4 & -308 $\pm$ 4 & 3.618 $\pm$ 0.144 \\ 
 \hline 
-472 & -296 & 4.554 \\ 
+452 $\pm$ 4 & -276 $\pm$ 4 & 4.554 $\pm$ 0.144 \\ 
 \hline 
-452 & -268 & 5.436 \\ 
+432 $\pm$ 4 & -248 $\pm$ 4 & 5.436 $\pm$ 0.144 \\ 
 \hline 
-460 & -236 & 6.300 \\ 
+440 $\pm$ 4 & -216 $\pm$ 4 & 6.300 $\pm$ 0.144 \\ 
 \hline 
-448 & -204 & 7.290 \\ 
+428 $\pm$ 4 & -184 $\pm$ 4 & 7.290 $\pm$ 0.144 \\ 
 \hline 
-460 & -176 & 8.154 \\ 
+440 $\pm$ 4 & -156 $\pm$ 4 & 8.154 $\pm$ 0.144 \\ 
 \hline 
-456 & -136 & 9.036 \\ 
+436 $\pm$ 4 & -116 $\pm$ 4 & 9.036 $\pm$ 0.144 \\ 
 \hline 
-456 & -124 & 9.954 \\ 
+436 $\pm$ 4 & -104 $\pm$ 4 & 9.954 $\pm$ 0.144 \\ 
 \hline 
-452 & -92 & 10.854 \\ 
+432 $\pm$ 4 & -72 $\pm$ 4 & 10.854 $\pm$ 0.144 \\ 
 \hline 
-444 & -72 & 11.862 \\ 
+424 $\pm$ 4 & -52 $\pm$ 4 & 11.862 $\pm$ 0.144 \\ 
 \hline 
-456 & -52 & 12.978 \\ 
+436 $\pm$ 4 & -32 $\pm$ 4 & 12.978 $\pm$ 0.144 \\ 
 \hline 
-448 & -40 & 13.428 \\ 
+428 $\pm$ 4 & -20 $\pm$ 4 & 13.428 $\pm$ 0.144 \\ 
 \hline 
-440 & -36 & 14.040 \\ 
+420 $\pm$ 4 & -16 $\pm$ 4 & 14.040 $\pm$ 0.144 \\ 
 \hline 
-444 & -32 & 14.148 \\ 
+424 $\pm$ 4 & -12 $\pm$ 4 & 14.148 $\pm$ 0.144 \\ 
 \hline 
-452 & -28 & 14.490 \\ 
+432 $\pm$ 4 & -8 $\pm$ 4 & 14.490 $\pm$ 0.144 \\ 
 \hline 
-448 & 28 & 14.850 \\ 
+428 $\pm$ 4 & 8 $\pm$ 4 & 14.850 $\pm$ 0.144 \\ 
 \hline 
-448 & 44 & 15.300 \\ 
+428 $\pm$ 4 & 24 $\pm$ 4 & 15.300 $\pm$ 0.144 \\ 
 \hline 
-440 & 40 & 15.516 \\ 
+420 $\pm$ 4 & 20 $\pm$ 4 & 15.516 $\pm$ 0.144 \\ 
 \hline 
-440 & 52 & 15.858 \\ 
+420 $\pm$ 4 & 32 $\pm$ 4 & 15.858 $\pm$ 0.144 \\ 
 \hline 
-448 & 60 & 16.326 \\ 
+428 $\pm$ 4 & 40 $\pm$ 4 & 16.326 $\pm$ 0.144 \\ 
 \hline 
-440 & 56 & 17.118 \\ 
+420 $\pm$ 4 & 36 $\pm$ 4 & 17.118 $\pm$ 0.144 \\ 
 \hline 
-448 & 80 & 18.000 \\ 
+428 $\pm$ 4 & 60 $\pm$ 4 & 18.000 $\pm$ 0.144 \\ 
 \hline 
-444 & 108 & 18.864 \\ 
+424 $\pm$ 4 & 88 $\pm$ 4 & 18.864 $\pm$ 0.144 \\ 
 \hline 
-444 & 128 & 19.818 \\ 
+424 $\pm$ 4 & 108 $\pm$ 4 & 19.818 $\pm$ 0.144 \\ 
 \hline 
-452 & 136 & 20.718 \\ 
+432 $\pm$ 4 & 116 $\pm$ 4 & 20.718 $\pm$ 0.144 \\ 
 \hline 
-444 & 160 & 21.636 \\ 
+424 $\pm$ 4 & 140 $\pm$ 4 & 21.636 $\pm$ 0.144 \\ 
 \hline 
-452 & 176 & 22.500 \\ 
+432 $\pm$ 4 & 156 $\pm$ 4 & 22.500 $\pm$ 0.144 \\ 
 \hline 
-440 & 196 & 23.400 \\ 
+420 $\pm$ 4 & 176 $\pm$ 4 & 23.400 $\pm$ 0.144 \\ 
 \hline 
-432 & 200 & 24.336 \\ 
+412 $\pm$ 4 & 180 $\pm$ 4 & 24.336 $\pm$ 0.144 \\ 
 \hline 
-444 & 212 & 25.218 \\ 
+424 $\pm$ 4 & 192 $\pm$ 4 & 25.218 $\pm$ 0.144 \\ 
 \hline 
-436 & 228 & 26.100 \\ 
+416 $\pm$ 4 & 208 $\pm$ 4 & 26.100 $\pm$ 0.144 \\ 
 \hline 
-444 & 248 & 27.090 \\ 
+424 $\pm$ 4 & 228 $\pm$ 4 & 27.090 $\pm$ 0.144 \\ 
 \hline 
-416 & 252 & 27.990 \\ 
+396 $\pm$ 4 & 232 $\pm$ 4 & 27.990 $\pm$ 0.144 \\ 
 \hline 
-420 & 260 & 28.800 \\ 
+400 $\pm$ 4 & 240 $\pm$ 4 & 28.800 $\pm$ 0.144 \\ 
 \hline 
-424 & 272 & 29.700 \\ 
+404 $\pm$ 4 & 252 $\pm$ 4 & 29.700 $\pm$ 0.722 \\ 
 \hline 
-432 & 296 & 30.600 \\ 
+412 $\pm$ 4 & 276 $\pm$ 4 & 30.600 $\pm$ 0.722 \\ 
 \hline 
-404 & 300 & 30.690 \\ 
+384 $\pm$ 4 & 280 $\pm$ 4 & 30.690 $\pm$ 0.722 \\ 
 \hline 
-416 & 292 & 31.500 \\ 
-\hline 
-412 & 304 & • \\ 
-\hline 
-412 & 364 & • \\ 
+396 $\pm$ 4 & 272 $\pm$ 4 & 31.500 $\pm$ 0.722 \\ 
 \hline 
 \end{tabular} 
 \caption{Messwerte der Höhen des $\pi /2$-Pulses und des FID s beim Durchfahren von $\tau$ zur Bestimmung von T1.}
@@ -197,10 +197,22 @@ Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [s] \\
 \subsubsection{Rauschmessung}
 Wie in Abbildung \ref{fig:MessungT1_Beispiel} gut zu erkennen ist, ist ein deutliches Hintergrundrauschen vorhanden. Aus diesem lässt sich ein Offset bestimmen, der zur Korrektur der Höhen wichtig ist, und ein statistischer Fehler auf die Spannungsmessung. Die Ergebnisse sind:
 \begin{equation*}
-\sigma _U = ????
+\sigma _{Rauschmessung} = 4 mV
 \end{equation*}
 \begin{equation*}
-U_{offset} = ????
+U_{offset} = 20 mV
+\end{equation*}
+Zusätzlich zum Fehler aus der Rauschmessung muss noch der Ablesefehler berücksichtigt werden. Diesen erhält man aus der Digitalisierung:
+\begin{equation*}
+\sigma _{Digitalisierung} = \dfrac{\Delta}{\sqrt{12}} = \dfrac{4 mV}{\sqrt{12}}
+\end{equation*}
+Damit ergibt sich der Fehler auf die Spannungsmessung zu:
+\begin{equation*}
+\sigma _U = \sqrt{\left(\sigma _{Rauschmessung} \right)^2 + \left(\sigma _{Digitalisierung} \right)^2}
+\end{equation*}
+Dieser Fehler kann nun mittels Gl. \ref{eq:T1_Exponentialfunktion} auf die relative Höhe fortgepflanzt werden:
+\begin{equation*}
+\sigma _{U_{rel}} = \sigma _U \cdot \sqrt{\left(\dfrac{1}{U_{Puls} - U_{offset}}\right)^2 + \left(\dfrac{U_{FID} - U_{offset}}{(U_{Puls} - U_{offset})^2}\right)^2}
 \end{equation*}
 
 
@@ -227,10 +239,7 @@ Daher kann durch geeignete Auftragung eine lineare Funktion an die Daten gefitte
 \begin{equation}
 \sigma _y = \sigma _{U_{rel}} \cdot \dfrac{1}{1 - U_{rel}}
 \end{equation}
-Dabei bestimmt sich der Fehler auf $U_{rel}$ zu:
-\begin{equation*}
-\sigma _{U_{rel}} = \sigma _U \cdot \sqrt{\left(\dfrac{1}{U_Puls - offset}\right)^2 + \left(\dfrac{U_{FID} - offset}{(U_{Puls} - offset)^2}\right)^2}
-\end{equation*}
+Der Fehler auf die X-Koordinate entspricht dabei einfach dem Fehler auf die Zeitmessung.
 
 \subsubsection{Exponentialfit}
 
