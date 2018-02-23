@@ -42,6 +42,7 @@ In ein konstantes Magnetfeld eines Permanentmagneten wird eine Spule so installi
 Die Spule dient gleichzeitig als Sender für ein Wechselfeld und als Messinstrument für die Magnetisierung in der Richtung der Spule, da diese in der Spule einen Strom induziert.\\
 Mit einem Frequenzgenerator wird ein elektrisches Wechselfeld erzeugt, das wiederum ein Magnetfeld in der Spule induziert. Da zeitlich kurze Magnetfelder benötigt werden, wird der Frequenzgenerator an einen Pulsgenerator angeschlossen. Der dadurch generierte Wechselfeldpuls wird auf die Spule gegeben. Der Pulsgenerator dient gleichzeitig als Triggersignal für das Oszilloskop.\\
 Das elektrische Signal, das in der Spule durch die Magnetisierung induziert wird, wird in einem sogenannten Mixer mit dem Signal des Frequenzgenerators multipliziert. Dieses Signal wird auf dem Oszilloskop zusammen mit dem direkt aus der Spule entnommenen Signal angezeigt.\\
+Der Verstärker bietet die Möglichkeit, die Verstärkung für einen kurzen Zeitraum auf Null zu stellen, das sogenannte blanking. Damit können die Pulse aus dem Oszilloskopbild rausgehalten werden.
 
 
 
@@ -71,7 +72,112 @@ Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abh�
 
 
 \subsection{Messung von T1}
-Für die Messung von T1 werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/F0003TEK.PNG}
+\caption{Ergebnis einer einzelnen Messung zur Bestimmung von T1. Die blaue Kurve zeigt das zu untersuchende Signal.}
+\label{fig:MessungT1_Beispiel}
+\end{figure}
+
+Für die Messung von T1 werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden. Das Ergebnis einer solchen Messung ist beispielhaft in Abbildung \ref{fig:MessungT1_Beispiel} gezeigt. Der erste Peak ist der Rest des $\pi$-Pulses. Der zweite Peak ist der Free Induction Decay (FID) nach dem $\pi /2$-Puls. \\
+Für die Bestimmung von T1 wird die Wartezeit zwischen den beiden Pulse durchgefahren und die relative Höhe des FID zur Höhe des $\pi$-Pulses bestimmt. Die Erwartung ist ein exponentieller Abfall:
+\begin{equation}
+\label{T1_Exponentialfunktion}
+U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
+\end{equation}
+
+\begin{tabular}{|c|c|c|}
+\hline 
+Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [s] \\ 
+\hline 
+448 & -396 & 0.918 \\ 
+\hline 
+452 & -380 & 1.800 \\ 
+\hline 
+452 & -356 & 2.700 \\ 
+\hline 
+472 & -328 & 3.618 \\ 
+\hline 
+472 & -296 & 4.554 \\ 
+\hline 
+452 & -268 & 5.436 \\ 
+\hline 
+460 & -236 & 6.300 \\ 
+\hline 
+448 & -204 & 7.290 \\ 
+\hline 
+460 & -176 & 8.154 \\ 
+\hline 
+456 & -136 & 9.036 \\ 
+\hline 
+456 & -124 & 9.954 \\ 
+\hline 
+452 & -92 & 10.854 \\ 
+\hline 
+444 & -72 & 11.862 \\ 
+\hline 
+456 & -52 & 12.978 \\ 
+\hline 
+448 & -40 & 13.428 \\ 
+\hline 
+440 & -36 & 14.040 \\ 
+\hline 
+444 & -32 & 14.148 \\ 
+\hline 
+452 & -28 & 14.490 \\ 
+\hline 
+448 & 28 & 14.850 \\ 
+\hline 
+448 & 44 & 15.300 \\ 
+\hline 
+440 & 40 & 15.516 \\ 
+\hline 
+440 & 52 & 15.858 \\ 
+\hline 
+448 & 60 & 16.326 \\ 
+\hline 
+440 & 56 & 17.118 \\ 
+\hline 
+448 & 80 & 18.000 \\ 
+\hline 
+444 & 108 & 18.864 \\ 
+\hline 
+444 & 128 & 19.818 \\ 
+\hline 
+452 & 136 & 20.718 \\ 
+\hline 
+444 & 160 & 21.636 \\ 
+\hline 
+452 & 176 & 22.500 \\ 
+\hline 
+440 & 196 & 23.400 \\ 
+\hline 
+432 & 200 & 24.336 \\ 
+\hline 
+444 & 212 & 25.218 \\ 
+\hline 
+436 & 228 & 26.100 \\ 
+\hline 
+444 & 248 & 27.090 \\ 
+\hline 
+416 & 252 & 27.990 \\ 
+\hline 
+420 & 260 & 28.800 \\ 
+\hline 
+424 & 272 & 29.700 \\ 
+\hline 
+432 & 296 & 30.600 \\ 
+\hline 
+404 & 300 & 30.690 \\ 
+\hline 
+416 & 292 & 31.500 \\ 
+\hline 
+412 & 304 & • \\ 
+\hline 
+412 & 364 & • \\ 
+\hline 
+\end{tabular} 
 
 
 
