@@ -83,10 +83,23 @@ Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abh�
 Für die Messung von T1 werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden. Das Ergebnis einer solchen Messung ist beispielhaft in Abbildung \ref{fig:MessungT1_Beispiel} gezeigt. Der erste Peak ist der Rest des $\pi$-Pulses. Der zweite Peak ist der Free Induction Decay (FID) nach dem $\pi /2$-Puls. \\
 Für die Bestimmung von T1 wird die Wartezeit zwischen den beiden Pulse durchgefahren und die relative Höhe des FID zur Höhe des $\pi$-Pulses bestimmt. Die Erwartung ist ein exponentieller Abfall:
 \begin{equation}
-\label{T1_Exponentialfunktion}
+\label{eq:T1_Exponentialfunktion}
 U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \end{equation}
 
+
+
+
+\subsection{Messung von T2}
+
+
+\section{Ergebnisse}
+
+\subsection{T1}
+Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert.
+
+\begin{table}
+\centering
 \begin{tabular}{|c|c|c|}
 \hline 
 Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [s] \\ 
@@ -178,17 +191,50 @@ Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [s] \\
 412 & 364 & • \\ 
 \hline 
 \end{tabular} 
+\caption{Messwerte der Höhen des $\pi /2$-Pulses und des FID s beim Durchfahren von $\tau$ zur Bestimmung von T1.}
+\label{tab:T1_Daten}
+\end{table}
 
 
+\subsubsection{Rauschmessung}
+Wie in Abbildung \ref{fig:MessungT1_Beispiel} gut zu erkennen ist, ist ein deutliches Hintergrundrauschen vorhanden. Aus diesem lässt sich ein Offset bestimmen, der zur Korrektur der Höhen wichtig ist, und ein statistischer Fehler auf die Spannungsmessung. Die Ergebnisse sind:
+\begin{equation*}
+\sigma _U = ????
+\end{equation*}
+\begin{equation*}
+U_{offset} = ????
+\end{equation*}
 
-\subsection{Messung von T2}
 
-
-\section{Ergebnisse}
-
-\subsection{T1}
 \subsubsection{Zero-crossing-point-Methode}
+Anhand von Gl. \ref{eq:T1_Exponentialfunktion} lässt sich leicht ersehen, dass aus dem Punkt an dem die Daten die Nulllinie durchqueren $T_1$ abgeschätzt werden kann als:
+\begin{equation*}
+T_1 = \dfrac{1}{ln(2)} \cdot T_{U_{rel} = 0}
+\end{equation*}
+Für die Fehlerabschätzung muss ein Fehler auf den Nulldurchgang ermittelt werden. Anhand der Daten ist gut ersichtlich, dass der Nulldurchgang irgendwo zwischen den Werten $T_{U_{rel} < 0} = 13.428ms$ und $T_{U_{rel} > 0} = 15.516ms$ liegt. Damit ergibt sich der Messwert für T1 zu:
+\begin{equation*}
+T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} - T_{U_{rel} < 0}}{2} = 20.879 ms
+\end{equation*}
+\begin{equation*}
+\sigma _{T_1} = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} - T_{U_{rel} < 0}}{\sqrt{12}} = 0.870 ms
+\end{equation*}
+
 \subsubsection{Linearer Fit an halblogarithmischer Auftragung}
+Formt man Gl. \ref{eq:T1_Exponentialfunktion} zu einer linearen Funktion um, ergibt sich:
+\begin{equation}
+ln(1 - U_{rel} (t)) = -\dfrac{t}{T_1} + ln(2)
+\label{eq:T1_linFunktion}
+\end{equation}
+Daher kann durch geeignete Auftragung eine lineare Funktion an die Daten gefittet werden. Mittels Fehlerfortpflanzung ergibt sich für die Fehler auf die Y-Koordinate:
+\begin{equation}
+\sigma _y = \sigma _{U_{rel}} \cdot \dfrac{1}{1 - U_{rel}}
+\end{equation}
+Dabei bestimmt sich der Fehler auf $U_{rel}$ zu:
+\begin{equation*}
+\sigma _{U_{rel}} = \sigma _U \cdot \sqrt{\left(\dfrac{1}{U_Puls - offset}\right)^2 + \left(\dfrac{U_{FID} - offset}{(U_{Puls} - offset)^2}\right)^2}
+\end{equation*}
+
+
 \subsubsection{Exponentialfit}
 
 
