@@ -5,3 +5,11 @@
 NMR/Protokoll/NMRmo.synctex.gz
 NMR/Protokoll/NMRmo.aux
 NMR/Protokoll/NMRmo.toc
+*.toc
+*.gz
+*.aux
+*.pyc
+*.pyc
+NMR/Protokoll/NMR.tex
+NMR/Protokoll/NMR.tex
+*.pyc

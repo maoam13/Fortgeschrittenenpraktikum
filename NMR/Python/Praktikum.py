@@ -322,4 +322,13 @@ def gewichtetes_mittel(y,ey):
 
     return (xm,sx)
 
+def gew_mittelwert(Q2, sig):
+    #gibt den gewichteten Mittelwert, den inneren und den äußeren Fehler zurück
+    n = len(sig)
+    w = 1./(sig)**2
+    xm = sum(w*Q2)/sum(w)
+    dext = np.sqrt( ( 1./(n-1)*np.sum(w*(xm-Q2)**2))/sum(w))
+    dint =  np.sqrt(1./sum(w))
+    return xm,dext,dint
+
 
