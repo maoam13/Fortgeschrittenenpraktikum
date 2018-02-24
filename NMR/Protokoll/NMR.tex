@@ -230,6 +230,14 @@ T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} - T_{U_{rel} < 0}}{2} = 20.8
 \end{equation*}
 
 \subsubsection{Linearer Fit an halblogarithmischer Auftragung}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{Bilder/T1_linFit_halblog.PNG}
+\caption{Lineare Regression an Auftragung von $ln(1-U_{rel})$ gegen die Zeit t.}
+\label{fig:T1_linFit}
+\end{figure}
+
 Formt man Gl. \ref{eq:T1_Exponentialfunktion} zu einer linearen Funktion um, ergibt sich:
 \begin{equation}
 ln(1 - U_{rel} (t)) = -\dfrac{t}{T_1} + ln(2)
@@ -239,9 +247,52 @@ Daher kann durch geeignete Auftragung eine lineare Funktion an die Daten gefitte
 \begin{equation}
 \sigma _y = \sigma _{U_{rel}} \cdot \dfrac{1}{1 - U_{rel}}
 \end{equation}
-Der Fehler auf die X-Koordinate entspricht dabei einfach dem Fehler auf die Zeitmessung.
+Der Fehler auf die X-Koordinate entspricht dabei einfach dem Fehler auf die Zeitmessung.\\
+Abbildung \ref{fig:T1_linFit} zeigt den linearen Fit an der halblogarithmischen Auftragung. Daraus ergibt sich für $T_1$ und den Fehler darauf:
+\begin{equation*}
+T_1 = -\dfrac{1}{a} = 18.276 ms
+\end{equation*}
+\begin{equation*}
+\sigma _{T_1} = T_1 \cdot \dfrac{-\sigma _a}{a} = 0.327 ms
+\end{equation*}
 
 \subsubsection{Exponentialfit}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{Bilder/T1_expFit.PNG}
+\caption{Fit einer Exponentialfunktion an die Daten.}
+\label{fig:T1_expFit}
+\end{figure}
+
+Alternativ zum linearen Fit bei geeigneter Auftragung kann auch an die Rohdaten direkt eine Exponentialfunktion  wie in Gl. \ref{eq:T1_Exponentialfunktion} angepasst werden. Dazu wird das Ergebnis aus dem linearen Fit als Startwert verwendet. Abbildung \ref{fig:T1_expFit} zeigt den Fit. Daraus bestimmt sich $T_1$ und der Fehler darauf zu:
+\begin{equation*}
+T_1 = \dfrac{1}{c} = 19.390 ms
+\end{equation*}
+\begin{equation*}
+\sigma _{T_1} = T_1 \cdot \dfrac{\sigma _c}{c} = 0.202 ms
+\end{equation*}
+
+\subsubsection{Zusammenfassung}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Methode & $T_1$ [mV] & $\sigma _{T_1}$ [ms] & $\chi ^2$ /ndof \\ 
+\hline 
+Zero-crossing-point & 20.879 & 0.870 & - \\ 
+\hline 
+Linearer Fit & 18.276 & 0.327 & 8.916 \\ 
+\hline 
+Exponentialfit & 19.390 & 0.202 & 13.176 \\ 
+\hline 
+\end{tabular} 
+\caption{Ergebnisse für T1 aus den unterschiedlichen Auswertungsmethoden angewandt auf dieselben Daten.}
+\label{tab:T1_Ergebnisse}
+\end{table}
+
+Tabelle \ref{tab:T1_Ergebnisse} zeigt nochmal zusammengefasst die Ergebnisse aus den Auswertungsmethoden. Dabei ist deutlich erkennbar, dass die Ergebnisse zwar nahe beieinander liegen, jedoch nicht innerhalb ihrer Fehler übereinstimmen.
 
 
 
