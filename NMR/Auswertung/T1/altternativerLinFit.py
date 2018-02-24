@@ -36,9 +36,10 @@ print T_1_lin, sig_T_1_lin
 
 plt.figure(1)
 ax1=plt.subplot(211)
-ax1.set_ylabel("logarithmische Signalspannung [$ln((1-U/U_0)/2)$]")
-plt.figtext(0.7,0.7,
-            '\n a= ('+str(np.round(sol[0][0],6))+' +/- '+str(np.round(sol[1][0],6))+') $1/ms$ \n'
+ax1.set_ylabel("[$ln((1-U/U_0)/2)$]")
+plt.figtext(0.525,0.75,
+            'Model: y = a $\cdot$ x'
+            +'\n a= ('+str(np.round(sol[0][0],5))+' +/- '+str(np.round(sol[1][0],5))+') $1/ms$ \n'
             +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 3)))
 x = np.array([0, 35])
 y = sol[0][0] * x
