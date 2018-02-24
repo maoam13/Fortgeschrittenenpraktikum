@@ -181,10 +181,28 @@ Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [s] \\
 
 
 
-\subsection{Messung von T2}
+\subsection{Messung von $T_2$}
 
-Für die Messung von T2 werden die Spins mit einem  $\dfrac{\pi}{2}$ Puls in die x-y-Ebene gedreht. Durch Inhomogenitäten im Magnetfeld präzedieren die Spins allerdings unterschiedlich schnell, weswegen die SPins nach einer Wartezeit $\tau$ durch einen $\pi$ Puls je nach Methode an der z-x-Ebene beziehungsweise an der z-y-Ebene gespiegelt werden müssen. Dies sorgt dafür, das die Spins 
+Für die Messung von $T_2$ werden die Spins mit einem  $\dfrac{\pi}{2}$ Puls in die x-y-Ebene gedreht. Durch Inhomogenitäten im Magnetfeld präzedieren die Spins allerdings unterschiedlich schnell, wodurch der Magnetisierungsvektor verschmiert. Deswegen wird nach einer Wartezeit $\tau$ ein $\pi$ Puls angelegt, der die Spins innerhalb der Ebene spiegelt und somit die Verschmierungsrichtungs umdreht. Dadurch entsteht nach einer Zeit von insgesamt $2 \tau$ ein Spinecho. \\ 
+\\
+Um außerdem möglichen Diffusionsprozessen entgegen zu wirken gibt es nun 2 unterschiedliche Verfahren:
 
+\subparagraph{Carr-Purcell-Pulssequenz}
+Bei diesem Verfahren wird nach dem anfänglichen $\dfrac{\pi}{2}$ und $\pi$ Pulsen alle  $2 \tau$ ein neuer $\pi$ Puls angelegt. Dadurch erhält man mehrere Spinechos bei einer Pulssequenz. Durch die wesentlich schnellere Durchführung werden so Diffusionseffekte minimiert.
+\subparagraph{Meiboom-Gill-Pulssequenz}
+Dieses Verfahren besteht aus exakt derselben Pulssequenz, wie das Carr-Purcell-Verfahren. Der große Unterschied ist aber, dass  die $\pi$ Pulse um $90^{\circ}$ zum anfänglichen $\dfrac{\pi}{2}$ Puls verschoben ist. Wurde der $\pi$ Puls beim C-P-Verfahren also in x-Richtung (im ruhendem System) angelegt, so befindet er sich jetzt in y-Richtung.\\
+(EDIT)Falls nun der $\pi$ Puls in exakt um $180^{\circ}$ dreht, sondern etwas weniger oder mehr, dann addieren sich diese Verschiebungen beim C-P-Verfahren immer weiter auf. Dadurch weicht der Spinvektor immer weiter von der x-y-Ebene ab und man bekommt ein zu kleines Ergebnis für die Relaxationszeit.\\
+Beim M-G-Verfahren finden die Verschiebungen nach jedem Puls in die entgegengesetzt Richtung statt. Somit bleit der Spinvektor in der Nähe der x-yEbene und der Abweichungseffekt wird somit negiert.\\
+\\
+Es wurden zu beiden Methoden Datensätze für verschiedene $\tau$ aufgezeichnet, um bei der Auswertung entscheiden zu können, welche Methode die besseren Ergebnisse liefert.\\
+Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit die Peaks nicht untereinander Interferieren und noch gut erkennbar sind. Im vorliegendem Aufbau ergab ein $\tau$ zwischen 4-7ms ein gutes Bild.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/T2Beispiel.png}
+\caption{Datensatz zur Bestimmung von $T_2$ beispielhaft für die Meiboom-Gill-Sequenz mit $\tau = 6ms$. Es wurde gekennzeichnet, um welche Art von Peak es sich handelt. }
+\label{fig:T2Beispiel}
+\end{figure}
 
 \section{Ergebnisse}
 
@@ -196,12 +214,18 @@ Für die Messung von T2 werden die Spins mit einem  $\dfrac{\pi}{2}$ Puls in die
 
 
 \subsection{T2}
+
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/T2CP.png}
 \includegraphics[scale=0.8]{Bilder/T2MG.png}
-\caption{...}
-\label{fig:MessungT1_Beispiel}
+\caption{Ergebnisse der Pulssequenzen zur Bestimmung von $T_2$ mit $\tau = 4ms$ und verstelltem Pulslängen. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Auffällig sind die sichtbaren $\pi$ Pulse und das Fehlen des 3.Spinechos beim C-P-Verfahren.}
+\label{fig:T2Daten}
 \end{figure}
+
+Die ersten Messungen für $T_2$ sind in Abbildung \ref{fig:T2Daten} für beide Verfahren beispielhaft dargestellt.\\
+Bei dieser Messreihe ist auffällig, dass die $\dfrac{\pi}{2}$ Pulse und deren FID sichtbar sind, was bei idealen Einstellungen und Spinverhalten nicht der Fall sein sollte. Außeredem verschwindet bei der C-P-Methode das 3.Spinecho.\\
+Das Auftreten der $\dfrac{\pi}{2}$ Pulse kann verschiedene Ursachen haben. Einerseits kann die RF-Kreisfrequenz falsch eingestellt sein.\\
+Es kann außerdem sein, dass die Pulslängen falsch eingestellt waren.
 
 \end{document}
