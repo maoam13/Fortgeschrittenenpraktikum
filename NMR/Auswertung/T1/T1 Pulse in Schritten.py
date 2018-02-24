@@ -41,7 +41,7 @@ plt.figure(1)
 ax1=plt.subplot(211)
 ax1.set_ylabel("logarithmische Signalspannung [$ln(1-U/U_0)$]")
 plt.figtext(0.7,0.7,
-            '\n a= ('+str(np.round(a,6))+' +/- '+str(np.round(sig_a,6))+') $1/s$ \n'
+            '\n a= ('+str(np.round(a,6))+' +/- '+str(np.round(sig_a,6))+') $1/ms$ \n'
             +' b= ('+str(np.round(b,6))+' +/- '+str(np.round(sig_b,6))+') \n'
             +'$\chi ^2 / ndof$= ' + str(np.round(chi/(len(rohdata[:,0]) - 2), 3)))
 x = np.array([0, 35])
@@ -61,8 +61,8 @@ ax2.set_xlabel("tau [ms]")
 ax2.set_ylabel("Residuen [$ln(1-U/U_0)$]")
 plt.plot(x_r, y_r, color='r')
 plt.errorbar(rohdata[:,0], H, yerr=H_err, fmt='.', color='b')
-#plt.show()
-plt.savefig('linFit.png')
+plt.show()
+#plt.savefig('linFit.png')
 
 #Fitte Exponentialfunktion an Originaldaten
 def exp(B, x):
@@ -83,10 +83,15 @@ x_n = [0, 30]
 y_n = [0.0, 0.0]
 plt.plot(x_n, y_n, color='r')
 #Plotte gefittete Exponentialfnktion in Daten
+plt.figtext(0.2,0.7,
+            '\n Model: $U_{rel} = 1-2e^{-c \cdot t}$ \n'
+            +' c= ('+str(np.round(sol[0][0],6))+' +/- '+str(np.round(sol[1][0],6))+') \n'
+            +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 3)))
 x_exp_vor = np.arange(0, 320)
 x_exp = x_exp_vor * 0.1
 y_exp = exp([sol[0][0]], x_exp)
 plt.plot(x_exp, y_exp, color='g')
+plt.show()
 
 #print rohdata[:,0]
 
