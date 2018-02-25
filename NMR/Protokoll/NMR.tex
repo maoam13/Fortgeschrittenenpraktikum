@@ -94,9 +94,9 @@ U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \section{Ergebnisse}
 
 \subsection{T1}
-Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht
+Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht 8 Digitalisierungsschritten, wobei eine Gleichverteilung angenommen wird:
 \begin{equation*}
-\sigma _{\tau} = \dfrac{0.5 ms}{\sqrt{12}}.
+\sigma _{\tau} = \dfrac{8 \cdot \Delta}{\sqrt{12}} = \dfrac{8 \cdot \frac{45 ms}{2500}}{\sqrt{12}} \approx 0.042 ms
 \end{equation*}
 Ab einem gewissen Punkt musste die Auflösung der Zeitachse des Oszilloskops verringert werden, damit der FID weiterhin sichtbar bleibt. Daher wird der Fehler auf $\tau$ dann um Faktor 5 größer.
 
@@ -106,87 +106,87 @@ Ab einem gewissen Punkt musste die Auflösung der Zeitachse des Oszilloskops ver
 \hline 
 Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [ms] \\ 
 \hline 
-428 $\pm$ 4 & -376 $\pm$ 4 & 0.918 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & -376 $\pm$ 4 & 0.918 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & -360 $\pm$ 4 & 1.800 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & -360 $\pm$ 4 & 1.800 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & -336 $\pm$ 4 & 2.700 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & -336 $\pm$ 4 & 2.700 $\pm$ 0.042 \\ 
 \hline 
-452 $\pm$ 4 & -308 $\pm$ 4 & 3.618 $\pm$ 0.144 \\ 
+452 $\pm$ 4 & -308 $\pm$ 4 & 3.618 $\pm$ 0.042 \\ 
 \hline 
-452 $\pm$ 4 & -276 $\pm$ 4 & 4.554 $\pm$ 0.144 \\ 
+452 $\pm$ 4 & -276 $\pm$ 4 & 4.554 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & -248 $\pm$ 4 & 5.436 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & -248 $\pm$ 4 & 5.436 $\pm$ 0.042 \\ 
 \hline 
-440 $\pm$ 4 & -216 $\pm$ 4 & 6.300 $\pm$ 0.144 \\ 
+440 $\pm$ 4 & -216 $\pm$ 4 & 6.300 $\pm$ 0.042 \\ 
 \hline 
-428 $\pm$ 4 & -184 $\pm$ 4 & 7.290 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & -184 $\pm$ 4 & 7.290 $\pm$ 0.042 \\ 
 \hline 
-440 $\pm$ 4 & -156 $\pm$ 4 & 8.154 $\pm$ 0.144 \\ 
+440 $\pm$ 4 & -156 $\pm$ 4 & 8.154 $\pm$ 0.042 \\ 
 \hline 
-436 $\pm$ 4 & -116 $\pm$ 4 & 9.036 $\pm$ 0.144 \\ 
+436 $\pm$ 4 & -116 $\pm$ 4 & 9.036 $\pm$ 0.042 \\ 
 \hline 
-436 $\pm$ 4 & -104 $\pm$ 4 & 9.954 $\pm$ 0.144 \\ 
+436 $\pm$ 4 & -104 $\pm$ 4 & 9.954 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & -72 $\pm$ 4 & 10.854 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & -72 $\pm$ 4 & 10.854 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & -52 $\pm$ 4 & 11.862 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & -52 $\pm$ 4 & 11.862 $\pm$ 0.042 \\ 
 \hline 
-436 $\pm$ 4 & -32 $\pm$ 4 & 12.978 $\pm$ 0.144 \\ 
+436 $\pm$ 4 & -32 $\pm$ 4 & 12.978 $\pm$ 0.042 \\ 
 \hline 
-428 $\pm$ 4 & -20 $\pm$ 4 & 13.428 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & -20 $\pm$ 4 & 13.428 $\pm$ 0.042 \\ 
 \hline 
-420 $\pm$ 4 & -16 $\pm$ 4 & 14.040 $\pm$ 0.144 \\ 
+420 $\pm$ 4 & -16 $\pm$ 4 & 14.040 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & -12 $\pm$ 4 & 14.148 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & -12 $\pm$ 4 & 14.148 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & -8 $\pm$ 4 & 14.490 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & -8 $\pm$ 4 & 14.490 $\pm$ 0.042 \\ 
 \hline 
-428 $\pm$ 4 & 8 $\pm$ 4 & 14.850 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & 8 $\pm$ 4 & 14.850 $\pm$ 0.042 \\ 
 \hline 
-428 $\pm$ 4 & 24 $\pm$ 4 & 15.300 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & 24 $\pm$ 4 & 15.300 $\pm$ 0.042 \\ 
 \hline 
-420 $\pm$ 4 & 20 $\pm$ 4 & 15.516 $\pm$ 0.144 \\ 
+420 $\pm$ 4 & 20 $\pm$ 4 & 15.516 $\pm$ 0.042 \\ 
 \hline 
-420 $\pm$ 4 & 32 $\pm$ 4 & 15.858 $\pm$ 0.144 \\ 
+420 $\pm$ 4 & 32 $\pm$ 4 & 15.858 $\pm$ 0.042 \\ 
 \hline 
-428 $\pm$ 4 & 40 $\pm$ 4 & 16.326 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & 40 $\pm$ 4 & 16.326 $\pm$ 0.042 \\ 
 \hline 
-420 $\pm$ 4 & 36 $\pm$ 4 & 17.118 $\pm$ 0.144 \\ 
+420 $\pm$ 4 & 36 $\pm$ 4 & 17.118 $\pm$ 0.042 \\ 
 \hline 
-428 $\pm$ 4 & 60 $\pm$ 4 & 18.000 $\pm$ 0.144 \\ 
+428 $\pm$ 4 & 60 $\pm$ 4 & 18.000 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & 88 $\pm$ 4 & 18.864 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & 88 $\pm$ 4 & 18.864 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & 108 $\pm$ 4 & 19.818 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & 108 $\pm$ 4 & 19.818 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & 116 $\pm$ 4 & 20.718 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & 116 $\pm$ 4 & 20.718 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & 140 $\pm$ 4 & 21.636 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & 140 $\pm$ 4 & 21.636 $\pm$ 0.042 \\ 
 \hline 
-432 $\pm$ 4 & 156 $\pm$ 4 & 22.500 $\pm$ 0.144 \\ 
+432 $\pm$ 4 & 156 $\pm$ 4 & 22.500 $\pm$ 0.042 \\ 
 \hline 
-420 $\pm$ 4 & 176 $\pm$ 4 & 23.400 $\pm$ 0.144 \\ 
+420 $\pm$ 4 & 176 $\pm$ 4 & 23.400 $\pm$ 0.042 \\ 
 \hline 
-412 $\pm$ 4 & 180 $\pm$ 4 & 24.336 $\pm$ 0.144 \\ 
+412 $\pm$ 4 & 180 $\pm$ 4 & 24.336 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & 192 $\pm$ 4 & 25.218 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & 192 $\pm$ 4 & 25.218 $\pm$ 0.042 \\ 
 \hline 
-416 $\pm$ 4 & 208 $\pm$ 4 & 26.100 $\pm$ 0.144 \\ 
+416 $\pm$ 4 & 208 $\pm$ 4 & 26.100 $\pm$ 0.042 \\ 
 \hline 
-424 $\pm$ 4 & 228 $\pm$ 4 & 27.090 $\pm$ 0.144 \\ 
+424 $\pm$ 4 & 228 $\pm$ 4 & 27.090 $\pm$ 0.042 \\ 
 \hline 
-396 $\pm$ 4 & 232 $\pm$ 4 & 27.990 $\pm$ 0.144 \\ 
+396 $\pm$ 4 & 232 $\pm$ 4 & 27.990 $\pm$ 0.042 \\ 
 \hline 
-400 $\pm$ 4 & 240 $\pm$ 4 & 28.800 $\pm$ 0.144 \\ 
+400 $\pm$ 4 & 240 $\pm$ 4 & 28.800 $\pm$ 0.042 \\ 
 \hline 
-404 $\pm$ 4 & 252 $\pm$ 4 & 29.700 $\pm$ 0.722 \\ 
+404 $\pm$ 4 & 252 $\pm$ 4 & 29.700 $\pm$ 0.208 \\ 
 \hline 
-412 $\pm$ 4 & 276 $\pm$ 4 & 30.600 $\pm$ 0.722 \\ 
+412 $\pm$ 4 & 276 $\pm$ 4 & 30.600 $\pm$ 0.208 \\ 
 \hline 
-384 $\pm$ 4 & 280 $\pm$ 4 & 30.690 $\pm$ 0.722 \\ 
+384 $\pm$ 4 & 280 $\pm$ 4 & 30.690 $\pm$ 0.208 \\ 
 \hline 
-396 $\pm$ 4 & 272 $\pm$ 4 & 31.500 $\pm$ 0.722 \\ 
+396 $\pm$ 4 & 272 $\pm$ 4 & 31.500 $\pm$ 0.208 \\ 
 \hline 
 \end{tabular} 
 \caption{Messwerte der Höhen des $\pi /2$-Pulses und des FID s beim Durchfahren von $\tau$ zur Bestimmung von T1.}
@@ -217,13 +217,22 @@ Dieser Fehler kann nun mittels Gl. \ref{eq:T1_Exponentialfunktion} auf die relat
 
 
 \subsubsection{Zero-crossing-point-Methode}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{Bilder/T1_ZeroCrossingPoint.PNG}
+\caption{Veranschaulichung des sogenannten zero-crossing-points.}
+\label{fig:T1_Zero_Crossing}
+\end{figure}
+
 Anhand von Gl. \ref{eq:T1_Exponentialfunktion} lässt sich leicht ersehen, dass aus dem Punkt an dem die Daten die Nulllinie durchqueren $T_1$ abgeschätzt werden kann als:
 \begin{equation*}
 T_1 = \dfrac{1}{ln(2)} \cdot T_{U_{rel} = 0}
 \end{equation*}
-Für die Fehlerabschätzung muss ein Fehler auf den Nulldurchgang ermittelt werden. Anhand der Daten ist gut ersichtlich, dass der Nulldurchgang irgendwo zwischen den Werten $T_{U_{rel} < 0} = 13.428ms$ und $T_{U_{rel} > 0} = 15.516ms$ liegt. Damit ergibt sich der Messwert für T1 zu:
+Abbildung \ref{fig:T1_Zero_Crossing} veranschaulicht den zero-crossing-point. Dabei zeigt sie gleichzeitig auch die große Unsicherheit: Um den zero-crossing-point gibt es viele Punkte, die sehr nah an der Null sind. \\ 
+Anhand der Daten ist gut ersichtlich, dass der Nulldurchgang irgendwo zwischen den Werten $T_{U_{rel} < 0} = 13.428ms$ und $T_{U_{rel} > 0} = 15.516ms$ liegt. Damit ergibt sich der Messwert für T1 zu:
 \begin{equation*}
-T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} - T_{U_{rel} < 0}}{2} = 20.879 ms
+T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} + T_{U_{rel} < 0}}{2} = 20.879 ms
 \end{equation*}
 \begin{equation*}
 \sigma _{T_1} = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} - T_{U_{rel} < 0}}{\sqrt{12}} = 0.870 ms
@@ -233,14 +242,14 @@ T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} - T_{U_{rel} < 0}}{2} = 20.8
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.4]{Bilder/T1_linFit_halblog.PNG}
+\includegraphics[scale=0.7]{Bilder/T1_linFit_halblog.PNG}
 \caption{Lineare Regression an Auftragung von $ln(1-U_{rel})$ gegen die Zeit t.}
 \label{fig:T1_linFit}
 \end{figure}
 
 Formt man Gl. \ref{eq:T1_Exponentialfunktion} zu einer linearen Funktion um, ergibt sich:
 \begin{equation}
-ln(1 - U_{rel} (t)) = -\dfrac{t}{T_1} + ln(2)
+ln\left(\dfrac{1 - U_{rel} (t)}{2}\right) = -\dfrac{t}{T_1}
 \label{eq:T1_linFunktion}
 \end{equation}
 Daher kann durch geeignete Auftragung eine lineare Funktion an die Daten gefittet werden. Mittels Fehlerfortpflanzung ergibt sich für die Fehler auf die Y-Koordinate:
@@ -250,28 +259,33 @@ Daher kann durch geeignete Auftragung eine lineare Funktion an die Daten gefitte
 Der Fehler auf die X-Koordinate entspricht dabei einfach dem Fehler auf die Zeitmessung.\\
 Abbildung \ref{fig:T1_linFit} zeigt den linearen Fit an der halblogarithmischen Auftragung. Daraus ergibt sich für $T_1$ und den Fehler darauf:
 \begin{equation*}
-T_1 = -\dfrac{1}{a} = 18.276 ms
+T_1 = -\dfrac{1}{a} = 19.661 ms
 \end{equation*}
 \begin{equation*}
-\sigma _{T_1} = T_1 \cdot \dfrac{-\sigma _a}{a} = 0.327 ms
+\sigma _{T_1} = T_1 \cdot \dfrac{-\sigma _a}{a} = 0.216 ms
 \end{equation*}
 
 \subsubsection{Exponentialfit}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.4]{Bilder/T1_expFit.PNG}
+\includegraphics[scale=0.7]{Bilder/T1_expFit.PNG}
 \caption{Fit einer Exponentialfunktion an die Daten.}
 \label{fig:T1_expFit}
 \end{figure}
 
 Alternativ zum linearen Fit bei geeigneter Auftragung kann auch an die Rohdaten direkt eine Exponentialfunktion  wie in Gl. \ref{eq:T1_Exponentialfunktion} angepasst werden. Dazu wird das Ergebnis aus dem linearen Fit als Startwert verwendet. Abbildung \ref{fig:T1_expFit} zeigt den Fit. Daraus bestimmt sich $T_1$ und der Fehler darauf zu:
 \begin{equation*}
-T_1 = \dfrac{1}{c} = 19.390 ms
+T_1 = \dfrac{1}{c} = 19.477 ms
 \end{equation*}
 \begin{equation*}
-\sigma _{T_1} = T_1 \cdot \dfrac{\sigma _c}{c} = 0.202 ms
+\sigma _{T_1} = T_1 \cdot \dfrac{\sigma _c}{c} = 0.215 ms
 \end{equation*}
+
+\subsubsection{Systematische Fehler} 
+Da die Drehung der Spins um das effektive Magnetfeld geschieht und die Messung der Magnetisierung in einer bestimmten Ebene stattfindet, ist es für die Messung wichtig, dass das effektive Magnetfeld richtig ausgerichtet ist und dass die Pulslänge richtig eingestellt ist. Das effektive Magnetfeld setzt sich aus dem konstanten Magnetfeld des Permanentmagneten und dem Wechselfeld zusammen. Der im Versuchsaufbau verwendete Permanentmagnet ist temperaturabhängig, sodass Temperaturschwankungen die Larmorfrequenz ändern. Damit ändert sich auch die Länge der $\pi$- und $\pi /2$-Pulse. Das bedeutet, dass Temperaturschwankungen für ein im Vergleich zur idealen Ausrichtung veränderten effektiven Magnetfeld und damit eine veränderte Frequenz und eine veränderte Pulslänge führen. Daher hat die Temperatur einen sehr großen Einfluss auf die Messung des Betrags der Magnetisierung. \\
+Einen ähnlichen Effekt erhält man durch Spins, die vor der Pulssequenz nicht exakt in z-Richtung ausgerichtet sind. Diese Spins werden auch bei der richtigen Frequenz und der richtigen Pulslänge nicht exakt in die x-y-Ebene gedreht, sodass sie einen kleineren Teil zur gemessenen Magnetisierung beitragen. \\
+Hinzu kommen lokale Inhomogenitäten der Magnetfelder, die ebenfalls dafür sorgen, dass einzelne Spins nicht in der x-y-Ebene liegen und damit nur einen kleineren Teil zur gemessenen Magnetisierung beitragen.
 
 \subsubsection{Zusammenfassung}
 
@@ -283,17 +297,17 @@ Methode & $T_1$ [mV] & $\sigma _{T_1}$ [ms] & $\chi ^2$ /ndof \\
 \hline 
 Zero-crossing-point & 20.879 & 0.870 & - \\ 
 \hline 
-Linearer Fit & 18.276 & 0.327 & 8.916 \\ 
+Linearer Fit & 19.661 & 0.216 & 4.489 \\ 
 \hline 
-Exponentialfit & 19.390 & 0.202 & 13.176 \\ 
+Exponentialfit & 19.477 & 0.215 & 20.140 \\ 
 \hline 
 \end{tabular} 
 \caption{Ergebnisse für T1 aus den unterschiedlichen Auswertungsmethoden angewandt auf dieselben Daten.}
 \label{tab:T1_Ergebnisse}
 \end{table}
 
-Tabelle \ref{tab:T1_Ergebnisse} zeigt nochmal zusammengefasst die Ergebnisse aus den Auswertungsmethoden. Dabei ist deutlich erkennbar, dass die Ergebnisse zwar nahe beieinander liegen, jedoch nicht innerhalb ihrer Fehler übereinstimmen.
-
+Tabelle \ref{tab:T1_Ergebnisse} zeigt nochmal zusammengefasst die Ergebnisse aus den Auswertungsmethoden. Dabei ist deutlich erkennbar, dass die Ergebnisse zwar nahe beieinander liegen, jedoch nur die beiden Ergebnisse aus den Anpassungen innerhalb ihrer Fehler übereinstimmen. Da alle Auswertungsmethoden dieselbe Messreihe verwenden, sind die systematischen Fehler identisch.\\
+Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachträglich eingefügt werden muss, liefert die zero-crossing-point Methode nur eine Abschätzung für den Wert von T1. Die beiden Anpassungen sind genauer, da hier der Nulldurchgang nur eine untergeordnete Rolle spielt. Dabei ist deutlich zu sehen, dass die Anpassungen in einem Bereich gut funktionieren und ab einem gewissen Punkt die Daten deutlich abweichen. Dabei ist anhand des $\chi ^2 /ndof$ leicht erkennbar, dass der lineare Fit besser funktioniert hat als Exponentialfit.
 
 
 \subsection{T2}
