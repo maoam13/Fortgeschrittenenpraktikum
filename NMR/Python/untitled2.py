@@ -7,7 +7,8 @@ Created on Sat Feb 24 23:59:10 2018
 
 import Praktikum as p
 import numpy as np
-x = np.array([28.1,27.4,27.3,27.7])
+x = np.array([30.7,28.6,27.3,29.5])
+y = np.array([28.3,27.7,27.5,27.9])
 dx = np.array([1.1,1.0 ,0.8 , 1.3])
-
-print p.gew_mittelwert(x,dx)
+dy = np.array([1.1,1.3 ,1.0 , 1.9])
+print p.gew_mittelwert(x,dy)

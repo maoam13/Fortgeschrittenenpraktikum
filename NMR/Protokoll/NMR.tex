@@ -88,7 +88,28 @@ U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \end{equation}
 
 
-\subsection{Messung von T2}
+\subsection{Messung von $T_2$}
+
+Für die Messung von $T_2$ werden die Spins mit einem  $\dfrac{\pi}{2}$ Puls in die x-y-Ebene gedreht. Durch Inhomogenitäten im Magnetfeld präzedieren die Spins allerdings unterschiedlich schnell, wodurch der Magnetisierungsvektor verschmiert. Deswegen wird nach einer Wartezeit $\tau$ ein $\pi$ Puls angelegt, der die Spins innerhalb der Ebene spiegelt und somit die Verschmierungsrichtungs umdreht. Dadurch entsteht nach einer Zeit von insgesamt $2 \tau$ ein Spinecho. \\ 
+\\
+Um außerdem möglichen Diffusionsprozessen entgegen zu wirken gibt es nun 2 unterschiedliche Verfahren:
+
+\subparagraph{Carr-Purcell-Pulssequenz}
+Bei diesem Verfahren wird nach dem anfänglichen $\dfrac{\pi}{2}$ und $\pi$ Pulsen alle  $2 \tau$ ein neuer $\pi$ Puls angelegt. Dadurch erhält man mehrere Spinechos bei einer Pulssequenz. Durch die wesentlich schnellere Durchführung werden so Diffusionseffekte minimiert.
+\subparagraph{Meiboom-Gill-Pulssequenz}
+Dieses Verfahren besteht aus exakt derselben Pulssequenz, wie das Carr-Purcell-Verfahren. Der große Unterschied ist aber, dass  die $\pi$ Pulse um $90^{\circ}$ zum anfänglichen $\dfrac{\pi}{2}$ Puls verschoben ist. Wurde der $\pi$ Puls beim C-P-Verfahren also in x-Richtung (im ruhendem System) angelegt, so befindet er sich jetzt in y-Richtung.\\
+(EDIT)Falls nun der $\pi$ Puls in exakt um $180^{\circ}$ dreht, sondern etwas weniger oder mehr, dann addieren sich diese Verschiebungen beim C-P-Verfahren immer weiter auf. Dadurch weicht der Spinvektor immer weiter von der x-y-Ebene ab und man bekommt ein zu kleines Ergebnis für die Relaxationszeit.\\
+Beim M-G-Verfahren finden die Verschiebungen nach jedem Puls in die entgegengesetzt Richtung statt. Somit bleit der Spinvektor in der Nähe der x-yEbene und der Abweichungseffekt wird somit negiert.\\
+\\
+Es wurden zu beiden Methoden Datensätze für verschiedene $\tau$ aufgezeichnet, um bei der Auswertung entscheiden zu können, welche Methode die besseren Ergebnisse liefert.\\
+Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit die Peaks nicht untereinander Interferieren und noch gut erkennbar sind. Im vorliegendem Aufbau ergab ein $\tau$ zwischen 4-7ms ein gutes Bild.\\
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/T2Beispiel.png}
+\caption{Datensatz zur Bestimmung von $T_2$ beispielhaft für die Meiboom-Gill-Sequenz mit $\tau = 6ms$. Es wurde gekennzeichnet, um welche Art von Peak es sich handelt. }
+\label{fig:T2Beispiel}
+\end{figure}
 
 
 \section{Ergebnisse}
@@ -311,6 +332,171 @@ Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachtr
 
 
 \subsection{T2}
+\subsubsection{Messdaten}\label{sec:T2messdaten}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/T2CP.png}
+\includegraphics[scale=0.8]{Bilder/T2MG.png}
+\caption{Ergebnisse der Pulssequenzen zur Bestimmung von $T_2$ mit $\tau = 4ms$ und verstelltem Pulslängen. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Auffällig sind die sichtbaren $\pi$ Pulse und das Fehlen des 3.Spinechos beim C-P-Verfahren.}
+\label{fig:T2Daten}
+\end{figure}
+
+Die ersten Messungen für $T_2$ sind in Abbildung \ref{fig:T2Daten} für beide Verfahren beispielhaft dargestellt.\\
+Bei dieser Messreihe ist auffällig, dass die $\pi/2$ Pulse und deren FID sichtbar sind, was bei idealen Einstellungen und Spinverhalten nicht der Fall sein sollte. Außeredem verschwindet bei der C-P-Methode das 3.Spinecho.\\
+Das Auftreten der $\pi/2$ Pulse kann verschiedene Ursachen haben. Einerseits kann die RF-Kreisfrequenz falsch eingestellt sein. Dadurch befindet sich das Magnetfeld bei den Pulsen nicht in der x-y Ebene, wodurch die Spinausrichtung nach einem $\pi$ Puls eine horizontale Komponente hat, welche natürlich gemessen weir.\\
+Es kann außerdem sein, dass die Pulslängen falsch eingestellt waren. Durch eine Kombination mit der falschen Frequenz kann dies dazu führen, dass der $\pi$ Puls die in der Druchführung beschriebe Verschmierung teilweise aufgehebt, wodurch ein messbarer Peak entsteht.\\
+Falsch eingestellte Pulslängen würden auch das Fehlen des 3.Spinechos  bei der C-P-Methode erklären, da sich die Abweichungen von der x-y Ebene hier wie oben beschrieben aufaddieren und der Spinvektor somit nach mehreren $\pi$ Pulsen im Extremfall in z-Richtung zeigt und somit nicht gemessen werden kann.\\
+\\
+Um diese Effekte zu minimieren wurde eine zweite Messreihe aufgenommen, bei der die Frequenz nochmals neu kalibiert wurde und die Pulslängen so angepasst wurden, dass die $\pi$ Pulse möglichst klein ausfallen. Diese Messreihe ist beispielhaft in Abblidung \ref{fig:T2Datenalt} zu sehen.\\
+Es ist dort wie erwartet zu sehen, dass die Peaks bei der C-P-Methode wegen der Abweichung von der x-y Ebene schneller abfallen. Dies ist ein unerwünschter Effekt, der das Ergebnis unter Umständen stark beeinflusst. Außerdem sind die Peaks ab einer gewissen Ordnung sehr klein und sogar teilweise gar nicht mehr sichtbar, was das Ergebnis deutlich ungenauer machen würde.\\
+Deswegen wurde entschieden die Daten des Meiboom-Gill-Verfahrens für die Auswertung zu benuten.
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/T2CPalt.png}
+\includegraphics[scale=0.8]{Bilder/T2MGalt.png}
+\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "Blaue" Kurve von Channel 2, welche die Amplitude des Messsignals beschreibt.}
+\label{fig:T2Datenalt}
+\end{figure}
+
+\subsubsection{Peakbestimmung}
+Mithilfe eines Programmes wurden die vom Oszilloskop gegebenen Datensätze eingelesen.
+Es wurde wie bei der Bestimmung von $T_1$ wieder eine Rauschmessung durchgeführt.
+Diese ergab einen Offset von $U_{Offset} = 20.6mV$ und eine Schwankung von $\sigma = 4mV$.\\
+Die Peakhöhe und Lage wurde durch eine lokale Maximumsbestimmung in der nähe der Peaks durchgeführt.\\
+Dabei wurde der Peak des $\pi/2$ Pulses ausgenommen, da dieser nicht durch ein Spinecho entsteht und der Puls somit das Ergebnis verfälschen könnte.\\
+Bei allen Datensätzen wurde eine Zeitskala von 10ms und eine Höhenskala von 200mV gewählt. Bei diesen Skalen bertägt die Digitalisierung 8mV und 0.04ms.\\
+Da das Maximum oft über mehrere Digitalisierungsschritte verteilt war, wurde angenommen, dass das wahre Maximum gleichverteilt zwischen diesen Schritten liegt. Eine gute Wahl der Maximumsbreite betrug $\Delta t = 0.16ms$.\\
+Damit ergibt sich eine Ableseungenauigkeit auf die Lage von
+
+\begin{equation}
+\sigma_t = \dfrac{Breite}{\sqrt{12}} \approx 0.05ms
+\end{equation}
+
+Der Fehler auf die Peakhöhe ergibt sich durch die Schwankung der Werte innerhalb der Maximumsbreite. In diesem Fehler steckt sowohl der Digitalisierungsfehler, als auch der Fehler durch das Rauschen, weswegen diese Fehler nicht mehr extra einbezogen werden müssen.
+
+\begin{table}
+\begin{tabular}{|c|c|}
+\hline 
+Position[ms] & Höhe[mV]\\ 
+\hline
+$ 8.17 \pm 0.05 $ & $ 437.01 \pm 11.31 $ \\
+\hline
+$ 16.08 \pm 0.05 $ & $ 309.01 \pm 6.53 $ \\
+\hline
+$ 24.06 \pm 0.05 $ & $ 213.01 \pm 6.53 $ \\
+\hline
+$ 32.04 \pm 0.05 $ & $ 167.01 \pm 3.77 $ \\
+\hline
+$ 40.03 \pm 0.05 $ & $ 123.01 \pm 7.54 $ \\
+\hline
+$ 48.03 \pm 0.05 $ & $ 103.01 \pm 3.77 $ \\
+\hline
+$ 56.02 \pm 0.05 $ & $ 71.01 \pm 3.77 $ \\
+\hline
+$ 64.02 \pm 0.05 $ & $ 67.01 \pm 7.54 $ \\
+\hline
+$ 72.02 \pm 0.05 $ & $ 47.01 \pm 3.77 $ \\
+\hline
+$ 80.02 \pm 0.05 $ & $ 39.01 \pm 3.77 $ \\
+\hline
+\end{tabular}
+\caption{Peaks für $\tau = 4ms$ }
+\end{table}
+
+\subsubsection{Exponentialfit}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{Bilder/T2exp.png}
+\caption{Exponentialfit}
+\label{fig:T2exp}
+\end{figure}
+
+An die gefundenen Peaks wird nun eine Exponentialfunktion der Form
+
+\begin{equation}
+y = b \cdot e^{-a\cdot t}
+\end{equation}
+gefittet. Dies ist in Abbildung \ref{fig:T2exp} dargestellt.\\
+Aus den gefundenen Werten berechnet sich $T_2$ durch 
+\begin{equation}
+T_2 = \dfrac{1}{a} = 28.1ms
+\end{equation}
+und der Fehler durch
+\begin{equation}
+\sigma_{T_2} = \dfrac{1}{a^2} \cdot \sigma_a = 1.1ms
+\end{equation}
+
+\subsubsection{Linearer Fit an Halblogarythmischer Auftragung}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{Bilder/T2lin.png}
+\caption{Linearer Fit}
+\label{fig:T2lin}
+\end{figure}
+
+Nun werden die Spannungswerte logarythmisiert und eine lineare Funktion an die Daten gefittet:
+\begin{equation}
+y = a \cdot t + b
+\end{equation}
+Daraus erhält man $T_2$ wieder durch 
+\begin{equation}
+T_2 = \dfrac{-1}{a} = 28.3ms
+\end{equation}
+und der Fehler durch
+\begin{equation}
+\sigma_{T_2} = \dfrac{1}{a^2} \cdot \sigma_a = 1.0ms
+\end{equation}
+
+\subsubsection{Auswertung weiterer Messreihen}
+
+Um mögliche Systematiken abschätzen zu können wurden mit den oben beschriebenen Methoden weitere Datensätze ausgewertet. Alle Ergebnisse sind in Tabelle \ref{T2zusammenfassung} aufgelistet.\\
+Zuerst wurde die Messung mit dem Beiboom-Gill Verfahren für verschiedene $\tau$ wiederholt, um ein genaueres Resultat zu bekommen und mögliche statistische Schwankungen und Fehlmessungen zwischen verschiedenen Messungen zu eliminieren.\\
+Die Ergenisse stimmen sowohl für verschiedene Messreihen als auch für die beiden verschiedenen Auswertungsmethoden innerhalb ihrer Fehler überein. 	Eine gewichtete Mittelung über die vier Messungen liefert:
+
+\begin{equation}
+\boxed{T_2(Exponential) = (27.6\pm 0.5)ms}
+\end{equation}
+\begin{equation}
+\boxed{T_2(Linear) = (27.8\pm 0.5)ms}
+\end{equation}\\
+
+Anhand der Messreihe, bei der Frequenz und Pulslängen verstellt waren, kann außerdem der Einfluss von verstellten Parametern beobachtet werden. Es ist auffällig, dass die Ergebnisse der einzelnen Messungen sehr viel stärker schwanken und im Mittel mit $T_2 = (28.9\pm0.8)ms$ größer sind. Dies war zu erwarten, da sich die Magnetisierung hier durch die in Kapitel \ref{sec:T2messdaten} beschriebenen Effekte unkontrollierter verhält.\\
+\\
+Zuletzt wurde noch das Carr-Purcell-Verfahren ausgewertet. Es ist zu sehen, dass dieses Verfahren eine wesentlich kleineres $\tau$ liefert, da die Pulslängen nicht genau genug eingestellt werden konnten. Bei stark verstellten Parametern kann man die Daten sogar nicht mehr wirklich auswerten, was an dem deutlich größeren $\chi^2/ndof$ der alternativen C-P-Messung (vgl. Tabelle \ref{T2zusammenfassung}) zu sehen ist.
+
+\begin{table}
+\begin{tabular}{|c|c|c||c|c||c|c|}
+\hline
+Verfahren & $\tau [ms]$ & Peaks &  $T_2$ (Exponentialfit) & $\chi^2/ndof$ &$T_2$ (Linerarer Fit) & $\chi^2/ndof$\\
+\hline
+M-G & $4$ & 10 & $ 28.1 \pm 1.1 $ & $ 3.71 $ & $ 28.3 \pm 1.0 $ & $ 3.11 $ \\
+\hline
+M-G & $5$ & 9 & $ 27.4 \pm 1.0 $ & $ 2.73 $ & $ 27.7 \pm 1.0 $ & $ 2.48 $ \\
+\hline
+M-G & $6$ & 7 & $ 27.3 \pm 0.8 $ & $ 1.83 $ & $ 27.5 \pm 0.8 $ & $ 1.43 $ \\
+\hline
+M-G & $7$ & 6 & $ 27.7 \pm 1.3 $ & $ 2.53 $ & $ 27.9 \pm 1.3 $ & $ 1.83 $ \\
+\hline
+\hline
+M-G(alt.) & $4$ & 10 & $ 27.3 \pm 1.0 $ & $ 2.4 $ & $ 27.4 \pm 0.9 $ & $ 1.89 $ \\
+\hline
+M-G(alt.) & $5$ & 9 & $ 30.7 \pm 1.1 $ & $ 2.49 $ & $ 31.0 \pm 1.1 $ & $ 1.8 $ \\
+\hline
+M-G(alt.) & $6$ & 7 & $ 28.6 \pm 1.3 $ & $ 1.71 $ & $ 28.8 \pm 1.2 $ & $ 1.15 $ \\
+\hline
+M-G(alt.) & $7$ & 6 & $ 29.5 \pm 1.9 $ & $ 4.95 $ & $ 29.8 \pm 2.0 $ & $ 3.22 $ \\
+\hline
+\hline
+C-P & $4$ &  & $17.6\pm 0.4$ & $1.61$ & $17.7\pm 0.4$ & $1.02$\\
+\hline
+C-P(alt.) & $4$ &  & $ 8.2 \pm 1.1 $ & $ 21.13 $ & $ 11.2 \pm 2.1 $ & $ 31.42 $ \\
+\hline
+\end{tabular}
+\caption{Übersicht aller ausgewerteten Ergebnisse. Dabei ist für jede Messung das verwendete Verfahren, die Wertezeit $\tau$ und die Anzahl der ausgewerteten Spinechos angegeben. Die Kennzeichnung (alt.) bedeutet, dass die Daten aus der alternativen Messung stammen, bei der Frequenz und Pulslänge falsch eingestellt waren.}
+\label{T2zusammenfassung}
+\end{table}
 
 
 \end{document}

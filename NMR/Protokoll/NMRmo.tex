@@ -214,7 +214,7 @@ Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit d
 
 
 \subsection{T2}
-\subsubsection{Messdaten}
+\subsubsection{Messdaten}\label{sec:T2messdaten}
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/T2CP.png}
@@ -331,9 +331,22 @@ und der Fehler durch
 \sigma_{T_2} = \dfrac{1}{a^2} \cdot \sigma_a = 1.0ms
 \end{equation}
 
-\subsubsection{Weitere Auswertungen und Zusammenfassung}
+\subsubsection{Weitere Auswertungen}
 
-Um mögliche Systematiken abschätzen zu können wurden mit den oben beschriebenen Methoden weitere Datensätze 
+Um mögliche Systematiken abschätzen zu können wurden mit den oben beschriebenen Methoden weitere Datensätze ausgewertet. Alle Ergebnisse sind in Tabelle \ref{T2zusammenfassung} aufgelistet.\\
+Zuerst wurde die Messung mit dem Beiboom-Gill Verfahren für verschiedene $\tau$ wiederholt, um ein genaueres Resultat zu bekommen und mögliche statistische Schwankungen und Fehlmessungen zwischen verschiedenen Messungen zu eliminieren.\\
+Die Ergenisse stimmen sowohl für verschiedene Messreihen als auch für die beiden verschiedenen Auswertungsmethoden innerhalb ihrer Fehler überein. 	Eine gewichtete Mittelung über die vier Messungen liefert:
+
+\begin{equation}
+\boxed{T_2(Exponential) = (27.6\pm 0.5)ms}
+\end{equation}
+\begin{equation}
+\boxed{T_2(Linear) = (27.8\pm 0.5)ms}
+\end{equation}\\
+
+Anhand der Messreihe, bei der Frequenz und Pulslängen verstellt waren, kann außerdem der Einfluss von verstellten Parametern beobachtet werden. Es ist auffällig, dass die Ergebnisse der einzelnen Messungen sehr viel stärker schwanken und im Mittel mit $T_2 = (28.9\pm0.8)ms$ größer sind. Dies war zu erwarten, da sich die Magnetisierung hier durch die in Kapitel \ref{sec:T2messdaten} beschriebenen Effekte unkontrollierter verhält.\\
+\\
+Zuletzt wurde noch das Carr-Purcell-Verfahren ausgewertet. Es ist zu sehen, dass dieses Verfahren eine wesentlich kleineres $\tau$ liefert, da die Pulslängen nicht genau genug eingestellt werden konnten. Bei stark verstellten Parametern kann man die Daten sogar nicht mehr wirklich auswerten, was an dem deutlich größeren $\chi^2/ndof$ der alternativen C-P-Messung (vgl. Tabelle \ref{T2zusammenfassung}) zu sehen ist.
 
 \begin{table}
 \begin{tabular}{|c|c|c||c|c||c|c|}
@@ -363,6 +376,8 @@ C-P & $4$ &  & $17.6\pm 0.4$ & $1.61$ & $17.7\pm 0.4$ & $1.02$\\
 C-P(alt.) & $4$ &  & $ 8.2 \pm 1.1 $ & $ 21.13 $ & $ 11.2 \pm 2.1 $ & $ 31.42 $ \\
 \hline
 \end{tabular}
+\caption{Übersicht aller ausgewerteten Ergebnisse. Dabei ist für jede Messung das verwendete Verfahren, die Wertezeit $\tau$ und die Anzahl der ausgewerteten Spinechos angegeben. Die Kennzeichnung (alt.) bedeutet, dass die Daten aus der alternativen Messung stammen, bei der Frequenz und Pulslänge falsch eingestellt waren.}
+\label{T2zusammenfassung}
 \end{table}
 
 
