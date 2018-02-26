@@ -33,8 +33,8 @@
 
 \section{Ziel des Versuchs}
 Das Ziel des Versuches besteht darin, die Relaxationszeiten von Wasserstoffkernen, also von Protonen, zu bestimmen. Diese geben an, wie schnell sich die Spins nach Auslenkung wieder in Richtung eines konstanten Magnetfeldes ausrichten.\\
-Wenn sich Spins in einem konstanten Magnetfeld (im Folgenden mit $B_0$ bezeichnet) befinden, richten sie sich entlang dessen aus. Durch Anlegen eines Wechselfeldes (im Folgenden mit $B_1$ bezeichnet) senkrecht dazu, wird das effektive Magnetfeld zur Vektoraddition zwischen dem konstanten Magnetfeld und dem Wechselfeld. Die Spins präzedieren dann um das effektive Magnetfeld. Wird das Wechselfeld nur kurz angelegt, drehen die Spins keine ganze Rotation um das effektive Magnetfeld. Dadurch kann die Ausrichtung der Spins manipuliert werden. Im Folgenden sind sogenannte $\pi /2$-Pulse und $\pi$-Pulse relevant. Diese bezeichnen Pulse des Wechselfeldes, die die Spins um einen Winkel von $\pi /2$ bzw. $\pi$ drehen.\\
-Bei der Wahl des Koordinatensystems wird die Z-Achse in Richtung des konstanten Magnetfeldes $B_0$ gelegt. Für die Betrachtung der Spinausrichtung wird in ein sich mit dem Spin um die z-Achse rotierendes Koordinatensystem gewechselt, sodass der Spin ein konstanter Vektor ist. Wenn die Frequenz der Pulse der Frequenz, mit der die Spins rotieren, der sogenannten Larmorfrequenz $\omega _L = \gamma \cdot B_0$ mit dem gyromagnetischen Verhältnis $\gamma$ entspricht, bewirkt ein $\pi /2$-Puls eine Drehung des Spins in die x-y-Ebene. Ein $\pi$-Puls spiegelt den Spin an der x-y-Ebene.
+Wenn sich Spins in einem konstanten Magnetfeld (im Folgenden mit $B_0$ bezeichnet) befinden, richten sie sich entlang dessen aus. Durch Anlegen eines Wechselfeldes (im Folgenden mit $B_1$ bezeichnet) senkrecht zu $B_0$ kann man die Richtung des Effektiven Magnetfeldes kontrollieren. Die Spins präzedieren dann um dieses Feld. Wird das Wechselfeld nur kurz angelegt, drehen die Spins keine ganze Rotation um das effektive Magnetfeld. Dadurch kann die Ausrichtung der Spins manipuliert werden. Im Folgenden sind sogenannte $\pi /2$-Pulse und $\pi$-Pulse relevant. Diese bezeichnen Pulse des Wechselfeldes, die die Spins um einen Winkel von $\pi /2$ bzw. $\pi$ drehen.\\
+Bei der Wahl des Koordinatensystems wird die Z-Achse in Richtung des konstanten Magnetfeldes $B_0$ gelegt. Für die Betrachtung der Spinausrichtung wird in ein sich mit dem Spin um die z-Achse rotierendes Koordinatensystem gewechselt, sodass der Spin ein konstanter Vektor ist. Wenn die Frequenz der Pulse der Frequenz, mit der die Spins rotieren, der sogenannten Larmorfrequenz $\omega _L = \gamma \cdot B_0$ mit dem gyromagnetischen Verhältnis $\gamma$ entspricht, bewirkt ein $\pi /2$-Puls eine Drehung des Spins um $90^\circ$ und ein $\pi$-Puls um $90^\circ$.
 
 
 \section{Aufbau}
@@ -50,9 +50,10 @@ Der Verstärker bietet die Möglichkeit, die Verstärkung für einen kurzen Zeit
 
 \subsection{Vorversuche}
 Vor der eigentlichen Messung müssen die Versuchsparameter richtig gewählt werden. Dazu wird anstelle der Probe eine kleine Spule, die anstelle der Empfängerspule an das Oszilloskop angeschlossen wird, in den Probenraum eingebracht. Dann werden die Frequenz ($\omega _p$) und die Höhe der Leiterschleife variiert, bis der induzierte Strom in der Leiterschleife maximal ist. Bei bekannten Größen der Leiterschleife (Querschnittsfläche $A$ und Anzahl Windungen $N$) kann daraus die Stärke des Wechselfeldes $B_1$ bestimmt werden:
-\begin{equation*}
+\begin{equation}
+\label{B1}
 B_1 = \dfrac{U_0}{2 \omega _p N A}
-\end{equation*}
+\end{equation}
 Wenn die Frequenz $\omega _p \approx \omega _L$ gefunden ist, die Länge des $\pi /2$-Pulses bestimmt werden:
 \begin{equation}
 \label{T_pi/2}
@@ -111,7 +112,22 @@ Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit d
 
 \section{Ergebnisse}
 
-\subsection{Vorversuch}
+\subsection{Vorversuche}
+
+\subsubsection{Leiterschleife}
+
+Für den Vorversuch musste die Leiterschleife vermessen werden. Die verwendete Leiterschleife besteht aus $N=2$ Windungen und hat eine Querschnittsfläche von $A =  \SI{0.35\pm 0.01}{cm} \cdot \SI{0.42\pm 0.01}{cm} = \SI{0.147\pm 0.005}{cm^2}$.\\
+Bei eriner eingestellten Frequenz von $f = \SI{21.571}{Mhz}$ wurde die gemessene Spannugnsamplitude maximal. Die maximale Spannung wurde bei $U =\SI{23.6\pm 0.2}{V}$ abgelesen. Daraus ergibt sich mithilfe von Formel \ref{B1} ein Wechselmagnetfeld von 
+\begin{equation*}
+\boxed{B_1 = \SI{2.96\pm 0.10}{mT}}
+\end{equation*}
+und daraus eine ungefähre $\pi /2$-Pulsdauer von
+\begin{equation*}
+\boxed{T_{\pi /2} = \SI{1.98\pm 0.07}{\mu s}}
+\end{equation*}
+\subsubsection{Optimierung der Einstellungen}
+Bei der Feineinstellung wurde eine optimale Frequenz von  $f = \SI{21.590}{Mhz}$ gefunden. Die Dauer des $\pi / 2 $-Pulses musste ebenfalls auf $\SI{2.56}{\mu s}$, bzw. auf $\SI{5.13}{\mu s}$ für den $\pi$-Puls korrigiert werden, um einen möglichst großen Peak zu sehen. Die Abweichung vom errechneten Wert für die Pulslänge kann daran liegen, dass die Glaswand des Probenbehälters, bzw. die Probe selbst das Magnetfeld abschwächt.\\
+Die Frequenz wurde während des geanzen Versuchablaufs immer wieder leicht angepasst, da sich durch äußere Bedinungen die Lamorfrequenz immer leicht ändert und die Frequenz so angepasst werden muss. Diese Änderungen fanden allerdings auf der 4.Nachkommastelle statt. Sie beeinflussen den Versuch also nicht nennenswert.
 
 \subsection{T1}
 Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht 8 Digitalisierungsschritten, wobei eine Gleichverteilung angenommen wird:
@@ -499,5 +515,8 @@ C-P(alt.) & $4$ &  & $ 8.2 \pm 1.1 $ & $ 21.13 $ & $ 11.2 \pm 2.1 $ & $ 31.42 $ 
 \label{T2zusammenfassung}
 \end{table}
 
+\section{Zusammenfassung}
+
+\section{Anhang}
 
 \end{document}
