@@ -24,7 +24,7 @@ def tabelle(x,y,dx,dy):
         print "\hline"
         print "$", np.round(x[i]*1000,2), "\pm",np.round(dx[i]*1000,2),"$ & $",np.round(y[i]*1000,2), "\pm",np.round(dy[i]*1000,2),"$ \\\\"
 
-file = open("C:\Users\Moritz\Documents\GitHub\Fortgeschrittenenpraktikum\NMR\Daten\T2MGalt\ALL0000\F0000CH2.CSV")
+file = open("C:\Users\morit\Documents\GitHub\Fortgeschrittenenpraktikum\NMR\Daten\T2CPalt\ALL0000\F0000CH2.CSV")
 csv_reader = csv.reader(file, delimiter=",")
 x = []
 y = []
