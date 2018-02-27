@@ -11,7 +11,7 @@ import csv
 import scipy.odr
 
 
-file = open("C:\Users\Moritz\Documents\GitHub\Fortgeschrittenenpraktikum\T07\Daten\GMcharakteristik.csv")
+file = open("..\..\Daten\GMcharakteristik.csv")
 csv_reader = csv.reader(file, delimiter=";")
 x = []
 y = []
@@ -24,3 +24,6 @@ for row in csv_reader:
     wert = float(wert)
     x.append(wert)
 file.close()
+
+plt.figure(1)
+plt.plot(x,y)
