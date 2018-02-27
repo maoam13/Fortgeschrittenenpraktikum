@@ -50,6 +50,10 @@ def func(A, x):
 sol = AM.fitte_bel_function(x, y_kom/sum(y_kom), np.full(len(x), 1.0/sum(y_kom)), np.full(len(y_kom), 4./sum(y_kom)), func, [0.3])
 print sol
 
+#mittelwert (und std) ausrechnen und aus erwartung dann chi^2 ausrechnen
+mu = np.mean(y_kom)
+chi = AM.chiq_y(x[0:7], y_kom[0:7], np.sqrt(y_kom[0:7]), func, [1./mu])
+
 #plotte Fit in histogramm
 x_fit = x
 y_fit = func([sol[0][0]],x_fit)

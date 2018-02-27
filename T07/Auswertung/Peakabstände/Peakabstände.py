@@ -33,7 +33,7 @@ for i in range(16):
         delta_t.append(delta[n])
 
 #Daten für Fit aufbereiten
-bin_breite = 0.0003
+bin_breite = 0.001
 num = int(np.round(0.035/bin_breite))
 y = np.full(num, 0)
 t = []
@@ -46,9 +46,22 @@ for i in range(len(t) - 1):
 
 # Fit
 def func(A, x):
-    return A[0] * np.exp(-A[0] * x)            
+    return A[0] * np.exp(-A[0] * x)
 
-sol = AM.fitte_bel_function(t, y, np.full(num, bin_breite/np.sqrt(12)), np.full(num, 0), func, [1/0.008])
+#mogl = []
+#for i in range(1000):
+#    sol = AM.fitte_bel_function(t, y, np.full(num, bin_breite/np.sqrt(12)), np.full(num, 1), func, [i * 0.01])
+#    if sol[2] != 0:
+#        mogl.append(sol)
+
+#print mogl
+
+sol = AM.fitte_bel_function(t, y, np.full(num, bin_breite/np.sqrt(12)), np.full(num, 1.5), func, [8])
+print sol
+
+#plotte Fit in histogramm
+x_fit = np.array(t)
+y_fit = func([16],x_fit)#[sol[0][0]], x_fit)
 
 #Histogramm von Zeitabständen
 bins_U = np.arange(np.min(delta_t),np.max(delta_t), bin_breite)
@@ -57,6 +70,7 @@ plt.hist(np.array(delta_t),bins=bins_U)
 plt.xlabel('$\Delta$ t [s]')
 plt.ylabel('#')
 plt.title('Zeitabstaende zwischen Peaks')
+#plt.plot(x_fit, y_fit, color = 'r')
 
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
