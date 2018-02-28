@@ -107,12 +107,12 @@ Für die Anpassung wurde auf jeden Wert ein Fehler gemäß der Poissonverteilung
 \end{equation*}
 Für die Anpassung einer Gaußverteilung wurden die Werte normiert, daher pflanzt sich der Fehler fort zu:
 \begin{equation*}
-n_{i, norm} = \dfrac{n_i}{\sum _j n_j} := \dfrac{n_i}{N}
+n_{i, norm} = \dfrac{n_i}{\sum _j n_j} =: \dfrac{n_i}{N}
 \end{equation*}
 \begin{equation*}
 \sigma _{i, norm} = \sqrt{ \sum _j \left( \sigma_j \cdot \left( \delta_{ij} \cdot \left( \frac{1}{N} - \frac{n_i}{N} \right) + (1 - \delta_{ij}) \cdot \frac{n_i}{N^2} \right) \right)^2 }
 \end{equation*}
-AB HIER ÜBERARBEITEN!! \\
+AB HIER POISSON ÜBERARBEITEN!! \\
 Tabelle \ref{tab:Poisson} zeigt die Ergebnisse aus den verschiedenen Methoden zur Bestimmung des Poisson Parameters und des $\chi ^2$. Leicht lässt sich ersehen, dass die Werte für den Poisson Parameter nah beieinander liegen, das $\chi ^2$ aus der Anpassung jedoch deutlich kleiner ist als die aus der Berechnung nach Bestimmung des Parameters. Insgesamt ist das $\chi ^2$ jedoch deutlich zu groß. 
 
 
@@ -139,7 +139,7 @@ $\chi ^2$ Anpassung & 27,286 $\pm$ 0,307 & 4,578 $\pm$ 0,260 & 0,705 & 30\% \\
 \label{tab:Gauss}
 \end{table}
 
-Das Verfahren bei der Gaußverteilung ist identisch zu dem Verfahren bei der Poissonverteilung. Abbildung \ref{fig:gauss} zeigt das Ergebnis. Hier ist in rot die $\chi ^2$ Anpassung und die Erwartung aus Mittelwert und Standardabweichung in grün. In diesem Fall gibt es nur eine Erwartung, weil für die Bestimmung der Gaußverteilung Mittelwert und Standardabweichung notwendig sind.\\
+Das Verfahren bei der Gaußverteilung ist identisch zu dem Verfahren bei der Poissonverteilung. Es wurde auch die gleiche Fehlerabschätzung verwendet. Abbildung \ref{fig:gauss} zeigt das Ergebnis. Hier ist in rot die $\chi ^2$ Anpassung und die Erwartung aus Mittelwert und Standardabweichung in grün. In diesem Fall gibt es nur eine Erwartung, weil für die Bestimmung der Gaußverteilung Mittelwert und Standardabweichung notwendig sind.\\
 Tabelle \ref{tab:Gauss} zeigt die Werte für Mittelwert, Standardabweichung und $\chi ^2$, die sich aus dem Fit und aus der Erwartung durch Bestimmung von Standardabweichung und Mittelwert ergibt. Die Werte für Mittelwert und Standardabweichung stimmen sehr gut überein und die $\chi ^2$ liegen ebenfalls sehr nah beieinander. Die Wahrscheinlichkeit für ein $\chi ^2$ pro Freiheitsgrad von 0,7 liegt ungefähr bei 30\%, daher kann von einer guten Messung gesprochen werden.
 
 
@@ -168,7 +168,7 @@ $\chi ^2$ Anpassung & 0,3362 $\pm$ 0,053 & 1,129 & 22\% \\
 \label{tab:Exponential}
 \end{table}
 
-Für die Auswertung der Exponentialverteilung werden die gemessenen Zeitabstände zunächst in sinnvolle Intervalle zusammengefasst. Die Anzahl der gemessenen $\Delta t$, die in diesem Intervall liegen werden auf die x-Achse aufgetragen. Die Anzahl der Intervalle mit der gleichen Anzahl der gemessenen $\Delta t$ wird auf die y-Achse aufgetragen. Dabei wird wieder normiert. Abbildung \ref{fig:exponential} zeigt das Ergebnis. Hier gibt es wieder zwei Erwartungen aus Bestimmung des Mittelwertes (grün) und Bestimmung der Standardabweichung (gelb). Die $\chi ^2$ Anpassung ist wieder in rot eingezeichnet.\\
+Für die Auswertung der Exponentialverteilung werden die gemessenen Zeitabstände zunächst in sinnvolle Intervalle zusammengefasst. Die Anzahl der gemessenen $\Delta t$, die in diesem Intervall liegen werden auf die x-Achse aufgetragen. Die Anzahl der Intervalle mit der gleichen Anzahl der gemessenen $\Delta t$ wird auf die y-Achse aufgetragen. Dabei wird wieder normiert, daher kann wieder die gleiche Fehlerabschätzung wie bei der Poissonverteilung verwendet werden. Abbildung \ref{fig:exponential} zeigt das Ergebnis. Hier gibt es wieder zwei Erwartungen aus Bestimmung des Mittelwertes (grün) und Bestimmung der Standardabweichung (gelb). Die $\chi ^2$ Anpassung ist wieder in rot eingezeichnet.\\
 Tabelle \ref{tab:Exponential} zeigt die Ergebnisse für den Exponentialparameter und das $\chi ^2$ pro Freiheitsgrad für die verschiedenen Bestimmungsmethoden. Auffällig ist, dass die Exponentialparameter aus den Bestimmungen von Mittelwert und Standardabweichung nah beieinander liegen, der Wert aus der $\chi ^2$ Anpassung jedoch deutlich von diesen abweicht. Das $\chi ^2$ ist bei der Anpassung deutlich besser, als bei den Bestimmungen von Mittelwert und Standardabweichung, sodass davon ausgegangen werden kann, dass der Wert aus der Anpassung näher am echten Wert liegt.
 
 \section{Zusammenfassung}
