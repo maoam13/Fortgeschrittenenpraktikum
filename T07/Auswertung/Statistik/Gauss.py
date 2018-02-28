@@ -44,20 +44,26 @@ print sol
 
 #mittelwert und std ausrechnen und aus erwartung dann chi^2 ausrechnen
 mu = np.mean(data)
-sig = np.std(data)
+sig = np.std(data, ddof = 1)
 chi = AM.chiq_y(x[4:19], y[4:19], np.sqrt(y[4:19]), gauss, [mu, sig])
 
 #Plot
 plt.figure(1)
 plt.hist(data, bins = x, normed = True)
 plt.figtext(0.7,0.6,
-            'Modell: P(x) = $1/sqrt(2 \cdot \pi \cdot \sigma ^2)$ $\cdot$ $e^{(x - \mu)^2/(2 \cdot \sigma ^2)}$'
-            +'\n $\mu$= ('+str(np.round(sol[0][0],6))+' +/- '+str(np.round(sol[1][0],6))+')  \n'
+            '$\chi ^2$ - Anpassung in rot \n'
+            +'Modell: P(x) = $1/sqrt(2 \cdot \pi \cdot \sigma ^2)$ $\cdot$ $e^{(x - \mu)^2/(2 \cdot \sigma ^2)}$'
+            +'\n $\mu$= ('+str(np.round(sol[0][0],6))+' +/- '+str(np.round(sol[1][0],6))+') '
             +'\n $\sigma$= ('+str(np.round(sol[0][1],6))+' +/- '+str(np.round(sol[1][1],6))+')  \n'
-            +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 3)))
-plt.xlabel('Anzahl Pulse in 0.3s')
+            +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 3))+' \n'
+            +'\n Erwartung aus Mittelwert und Fehler in gruen'
+            +'\n $\mu$= '+str(np.round(mu,6))
+            +'\n $\sigma$= '+str(np.round(sig,6))+'  \n'
+            +'$\chi ^2 / ndof$= ' + str(np.round(chi, 3)))
+plt.xlabel('Anzahl Pulse in 3s Intervallen')
 plt.ylabel('Relative Haeufigkeit')
 plt.title('Gaussverteilung der Pulsraten bei Messzeit von 0.3s')
 plt.plot(x, gauss([sol[0][0], sol[0][1]], x), color = 'r')
+plt.plot(x, gauss([mu, sig], x), color = 'g')
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
