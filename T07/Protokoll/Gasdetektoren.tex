@@ -83,14 +83,64 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \label{fig:Poisson}
 \end{figure}
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Art & Poisson Parameter & $\chi ^2$ /ndof \\ 
+\hline 
+Mittelwertbestimmung & 1,0900 & 45,850 \\ 
+\hline 
+Bestimmung der Standardabweichung & 0,9918 & 45,827 \\ 
+\hline 
+$\chi ^2$ Anpassung & 0,9332 $\pm$ 0,3689 & 11,125 \\ 
+\hline 
+\end{tabular} 
+\caption{Poisson Parameter und $\chi ^2$ aus den verschiedenen Bestimmungsmethoden.}
+\label{tab:Poisson}
+\end{table}
+
+Für die Poissonverteilung wird die Anzahl der Pulse im Geiger-Müller-Zählrohr für ein festgelegtes Messintervall wiederholt gemessen. Die auftretenden Anzahlen werden dann in Intervalle mit Breite 1 zusammengefasst und aufgetragen. Das Ergebnis zeigt das Histogramm in Abbildung \ref{fig:Poisson} zusammen mit der $\chi ^2$ Anpassung (in rot) und den Erwartungen die sich aus der Bestimmung des Mittelwertes (grün) und der Standardabweichung (gelb) ergeben.\\
+Für die Anpassung wurde auf jeden Wert ein Fehler gemäß der Poissonverteilung angenommen:
+\begin{equation*}
+\sigma _{n} = \sqrt{n}
+\end{equation*}
+Für die Anpassung einer Gaußverteilung wurden die Werte normiert, daher pflanzt sich der Fehler fort zu:
+\begin{equation*}
+n_{i, norm} = \dfrac{n_i}{\sum _j n_j} := \dfrac{n_i}{N}
+\end{equation*}
+\begin{equation*}
+\sigma _{i, norm} = \sqrt{ \sum _j \left( \sigma_j \cdot \left( \delta_{ij} \cdot \left( \frac{1}{N} - \frac{n_i}{N} \right) + (1 - \delta_{ij}) \cdot \frac{n_i}{N^2} \right) \right)^2 }
+\end{equation*}
+AB HIER ÜBERARBEITEN!! \\
+Tabelle \ref{tab:Poisson} zeigt die Ergebnisse aus den verschiedenen Methoden zur Bestimmung des Poisson Parameters und des $\chi ^2$. Leicht lässt sich ersehen, dass die Werte für den Poisson Parameter nah beieinander liegen, das $\chi ^2$ aus der Anpassung jedoch deutlich kleiner ist als die aus der Berechnung nach Bestimmung des Parameters. Insgesamt ist das $\chi ^2$ jedoch deutlich zu groß. 
+
 
 \subsubsection{Gaußverteilung}
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/gauss.PNG}
 \caption{Darstellung der gemessenen Gaußverteilung mit der Erwartung und der Anpassung.}
-\label{fig:Poisson}
+\label{fig:gauss}
 \end{figure}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Art & Mittelwert & Standardabweichung & $\chi ^2$ /ndof \\ 
+\hline 
+Bestimmung von $\sigma$ und $\mu$ & 27,375 & 4,611 & 0,688 \\ 
+\hline 
+$\chi ^2$ Anpassung & 27,286 $\pm$ 0,307 & 4,578 $\pm$ 0,260 & 0,705 \\ 
+\hline 
+\end{tabular} 
+\caption{Mittelwert, Standardabweichung und $\chi ^2$ aus den verschiedenen Bestimmungsmethoden.}
+\label{tab:Gauss}
+\end{table}
+
+Das Verfahren bei der Gaußverteilung ist identisch zu dem Verfahren bei der Poissonverteilung. Abbildung \ref{fig:gauss} zeigt das Ergebnis. Hier ist in rot die $\chi ^2$ Anpassung und die Erwartung aus Mittelwert und Standardabweichung in grün. Hier gibt es nur eine Erwartung, weil für die Bestimmung der Gaußverteilung Mittelwert und Standardabweichung notwendig sind.\\
+Tabelle \ref{tab:Gauss} zeigt die Werte für Mittelwert, Standardabweichung und $\chi ^2$, die sich aus dem Fit und aus der Erwartung durch Bestimmung von Standardabweichung und Mittelwert ergibt. Die Werte für Mittelwert und Standardabweichung stimmen sehr gut überein und die $\chi ^2$ liegen ebenfalls sehr nah beieinander. Die Wahrscheinlichkeit für ein $\chi ^2$ pro Freiheitsgrad von 0,7 liegt ungefähr bei 30\%.
 
 
 \subsubsection{Exponentialverteilung}
@@ -98,8 +148,10 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \centering
 \includegraphics[scale=0.8]{Bilder/Peakabstaende.PNG}
 \caption{Darstellung der gemessenen Peakabstände mit den Erwartungen und der Anpassung.}
-\label{fig:Poisson}
+\label{fig:exponential}
 \end{figure}
+
+Für die Auswertung der Exponentialverteilung werden die gemessenen Zeitabstände zunächst in sinnvolle Intervalle zusammengefasst. Die Anzahl der gemessenen $\Delta t$, die in diesem Intervall liegen werden auf die x-Achse aufgetragen. Die Anzahl der Intervalle mit der gleichen Anzahl der gemessenen $\Delta t$ wird auf die y-Achse aufgetragen. Dabei wird wieder normiert. Abbildung \ref{fig:exponential} zeigt das Ergebnis.
 
 \section{Zusammenfassung}
 
