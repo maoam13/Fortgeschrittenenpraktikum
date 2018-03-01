@@ -331,6 +331,7 @@ def fitte_bel_function_xy(x, y, ex, ey, func, startwerte):
     return output.beta, output.sd_beta, output.res_var
 
 def fitte_bel_function(x, y, ey, func, startwerte):
+    """gibt wert,fehler,chi/ndof zurueck"""
     model  = scipy.odr.Model(func)
     data   = scipy.odr.RealData(x, y, sy=ey)
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)

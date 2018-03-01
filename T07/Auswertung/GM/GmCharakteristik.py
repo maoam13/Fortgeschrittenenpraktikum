@@ -28,6 +28,11 @@ file.close()
 """Variablen"""
 x = np.array(x)
 y = np.array(y)
+
+#Totzeitkorrektur
+ydot =y/10
+y = y/(1.-ydot*0.0018)
+
 logy = np.log(y)
 plateau = 27
 xplateau = x[plateau:]
@@ -64,7 +69,7 @@ if 1:#plot
     ax.set_xlabel("U [V]")
     ax.set_ylabel("n")
     ax.grid(linestyle='--')
-    ax.axis([250,650,0,1100])
+    ax.axis([250,650,0,1300])
     plt.plot(x,y)
     plt.plot(x,a*x+b)
     plt.vlines(UE,0,1100,linestyle='--',color = 'r')
