@@ -53,7 +53,7 @@ Um eine mögliche Störung durch Untergrundrauschen zu beseitigen, wurde mit ein
 \subsubsection{Totzeit}
 Zur Totzeit des Geiger-Müller-Zählrohres sollen zwei verschiedene Messungen gemacht werden.
 \paragraph{Stever-Diagramm}
-Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erhohlungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s}
+Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erholungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s} sollte die Einhüllender der Erholungszeit sichtbar werden. Anhand dieser wird nun händisch die Tot- und Erholungszeit 
 
 \paragraph{Totzeitkorrektur}
 Als zweites wird die Auflösungszeit mithilfe einer Totzeitstufe bestimmt. Mithilfe dieser kann man eine Totzeitkorrektur der gemessenen Zählraten durchführen. Dabei ist die wirkliche Zählrate N in Abhängigkeit von der gemessenen Rate n und der Auflösungszeit $\tau$ gegeben durch 
@@ -68,6 +68,7 @@ Danach werden die beiden Zählraten bestimmt. Dazu wird für beide Zeiten 1min l
 \label{Auslosungszeit}
 \end{equation}
 
+Die Messung wurde zuerst mit der Probe auf der mittleren Schiene durchgeführt, und dann mit der Probe auf der 2. Schiene von oben wiederholt, um eine möglichst hohe Peakrate zu messen.
 \subsection{Proportionalzähler}
 
 \subsubsection{Charakteristik}
@@ -114,10 +115,102 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \label{fig:Stever2}
 \end{figure}
 
+
+In Abbildung \ref{fig:Stever} und \ref{fig:Stever2} sind die Oszilloskopbilder für zwei unterschiedliche Zeitskalen mit jeweils abgelesenen Tot- und Erholungszeiten dargestellt. Leider konnten die Daten nicht aus dem Oszilloskop extrahiert werden, weswegen die Auswertung vollständig visuell gemacht werden muss.\\
+Die Totzeit wird anhand der linken Grenze der Einhüllenden bestimmt. Da durch die eingestellte Schwelle des Verstärkers zu kleine Pulse nicht registriert werden, ist die echte Totzeit etwas kleiner als die abgelesene Grenze.\\
+Die Erholungszeit wird bestimmt, indem der Punkt abgelesen wird, ab dem die Peakhöhe einen konstanten Wert annimmt.
+Sie kann man nicht so genau bestimmt werden, da durch die große statistische Schwankung der Peaks nicht genau erkennbar ist, an welchem Punkt diese Bedingung erreicht ist.\\
+Die abgelesenen Ergebnisse sind in Tabelle \ref{teb:Stever} aufgelistet. Die Fehler wurden durch die Ableseungenauigkeit abgeschätzt.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Zeitskala & Totzeit & Erholungszeit\\
+\hline 
+250 & $220\pm 20$ & $520\pm 50$ \\
+\hline 
+250 & $220\pm 10$ & $450\pm 30$ \\
+\hline
+\end{tabular}
+\label{teb:Stever}
+\end{table}
+
+Eine gewichtete Mittelung ergibt (mit äußerem Fehler):
+
+\begin{equation}
+\boxed{T_D = \SI{220 \pm 9}{\mu s}}
+\end{equation}
+
+\begin{equation}
+\boxed{T_R = \SI{469 \pm 31}{\mu s}}
+\end{equation}
+
 \subsubsection{Totzeit mithilfe der Totzeitstufe}
 
+Vor der eigentlichen Messung wurde die Kalibration der Totzeitstufe durchgeführt. Die Ergebnisse sind in Tabelle \ref{tab:Totzeitkalibration} aufgelistet. Die Messung wurde mehrfach wiederholt, um sicher zu stellen, dass das Ergebnis exakt ist. Es ergab sich mehrfach derselbe Wert, weswegen das Ergebnis auf $1\mu s$ exakt angenommen werden kann. Relevant für die weitere Auswertung ist nur die $2ms$ Stufe, die auf $1.908ms$ kalibriert wurde.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c||c|}
+\hline
+Einstellung & $1\mu$ s & $2ms$\\
+\hline 
+Pulsrate & $1000003$ & $524$ \\
+\hline 
+Totzeit & $1\mu s$ & $1.908ms$ \\
+\hline
+\end{tabular}
+\label{tab:Totzeitkalibration}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c||c|}
+\hline
+Messzeit[s] & 60 & 60\\
+\hline 
+$n_{1\mu s}$ & $10603 \pm 103$ & $5259\pm 73$ \\
+\hline 
+$n_{2ms}$ & $8248\pm 91$ & $4599\pm 68$ \\
+\hline 
+$\tau [ms]$ & $1.882\pm 0.002 $ & $1.877\pm 0.004$ \\
+\hline
+\end{tabular}
+\label{tab:Totzeitstufe}
+\end{table}
+
+In Tabelle \ref{tab:Totzeitstufe} sind die Ergebnisse der beiden Messungen zur Totzeitstufe aufgelistet. Der Fehler wurde mit $\sqrt{n}$ angenommen.\\
+Daraus wurde mithilfe von Gleichung \ref{Totzeitkorrektur} die Totzeit bestimmt, welche ebenfalls in der Tabelle aufgelistet ist. Der Fehler wurde folgendermaßen errechnet:
+
+\begin{equation}
+\sigma_{\tau} = \sqrt{\left(\dfrac{\sqrt{n_{1\mu s}}}{n_{1\mu s}^{2}}\right)^2 + \left(\dfrac{\sqrt{n_{2ms}}}{n_{2ms}^{2}}\right)^2 }
+\end{equation}
+
+Eine gewichtete Mittelung der $\tau$ ergibt:
+\begin{equation}
+\boxed{\tau = \SI{1.881\pm 0.002}{ms}}
+\end{equation}
+
+
 \subsubsection{Charakteristik}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/GMlinear.PNG}
+\includegraphics[scale=0.5]{Bilder/GMlog.PNG}
+\caption{...}
+\label{fig:GMCharakteristik}
+\end{figure}
+Die Ergebnisse der Charakteristikmessung sind in Abbildung \ref{fig:GMCharakteristik} dargestellt.\\
+Mit zunehmender Spannung steigt die Messrate exponentiell, da immer mehr Ereignisse mit kleineren Energien registriert werden. Daher Müssen die Daten noch logarythmisiert werden, um das Plateau zu erkennen.\\
+Nun wird an das Plateau ein Geradenfit angepasst und visuell abgeschätzt, wenn diese Gerade erreicht wird. Der so 
+
 \subsection{Proportionalzähler}
+
+
+
+\newpage
+
 \subsection{Statistikmessung}
 
 \subsubsection{Poissonverteilung}
