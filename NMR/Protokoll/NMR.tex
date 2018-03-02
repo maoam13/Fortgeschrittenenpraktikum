@@ -22,7 +22,7 @@
 			II. Physikalisches Institut A\\[5.5cm]
 			\Large\textbf{\textsl{Nuclear Magnetic Resonance (NMR)}}\\[5.5cm]
 			\normalsize\textit{vorgelegt\\von}\\[0.4cm]
-			\large{Moritz Berger (355244)\\Gerald Kolter (355005)}\\[2cm]
+			\large{Moritz Berger\\Gerald Kolter}\\[2cm]
 			\large \textbf{Wintersemester 2017/18}
 		\end{large}
 	\end{center}
@@ -34,7 +34,7 @@
 \section{Ziel des Versuchs}
 Das Ziel des Versuches besteht darin, die Relaxationszeiten von Wasserstoffkernen, also von Protonen, zu bestimmen. Diese geben an, wie schnell sich die Spins nach Auslenkung wieder in Richtung eines konstanten Magnetfeldes ausrichten.\\
 Wenn sich Spins in einem konstanten Magnetfeld (im Folgenden mit $B_0$ bezeichnet) befinden, richten sie sich entlang dessen aus. Durch Anlegen eines Wechselfeldes (im Folgenden mit $B_1$ bezeichnet) senkrecht zu $B_0$ kann man die Richtung des Effektiven Magnetfeldes kontrollieren. Die Spins präzedieren dann um dieses Feld. Wird das Wechselfeld nur kurz angelegt, drehen die Spins keine ganze Rotation um das effektive Magnetfeld. Dadurch kann die Ausrichtung der Spins manipuliert werden. Im Folgenden sind sogenannte $\pi /2$-Pulse und $\pi$-Pulse relevant. Diese bezeichnen Pulse des Wechselfeldes, die die Spins um einen Winkel von $\pi /2$ bzw. $\pi$ drehen.\\
-Bei der Wahl des Koordinatensystems wird die Z-Achse in Richtung des konstanten Magnetfeldes $B_0$ gelegt. Für die Betrachtung der Spinausrichtung wird in ein sich mit dem Spin um die z-Achse rotierendes Koordinatensystem gewechselt, sodass der Spin ein konstanter Vektor ist. Wenn die Frequenz der Pulse der Frequenz, mit der die Spins rotieren, der sogenannten Lamorfrequenz $\omega _L = \gamma \cdot B_0$ mit dem gyromagnetischen Verhältnis $\gamma$ entspricht, bewirkt ein $\pi /2$-Puls eine Drehung des Spins um $90^\circ$ und ein $\pi$-Puls um $90^\circ$.
+Bei der Wahl des Koordinatensystems wird die Z-Achse in Richtung des konstanten Magnetfeldes $B_0$ gelegt. Für die Betrachtung der Spinausrichtung wird in ein sich mit dem Spin um die z-Achse rotierendes Koordinatensystem gewechselt, sodass der Spin ein konstanter Vektor ist. Wenn die Frequenz der Pulse der Frequenz, mit der die Spins rotieren, der sogenannten Larmorfrequenz $\omega _L = \gamma \cdot B_0$ mit dem gyromagnetischen Verhältnis $\gamma$ entspricht, bewirkt ein $\pi /2$-Puls eine Drehung des Spins um $90^\circ$ und ein $\pi$-Puls um $90^\circ$.
 
 
 \section{Aufbau}
@@ -54,7 +54,7 @@ Vor der eigentlichen Messung müssen die Versuchsparameter richtig gewählt werd
 \label{B1}
 B_1 = \dfrac{U_0}{2 \omega _p N A}
 \end{equation}
-Wenn die Frequenz $\omega _p \approx \omega _L$ gefunden ist, kann die Länge des $\pi /2$-Pulses bestimmt werden:
+Wenn die Frequenz $\omega _p \approx \omega _L$ gefunden ist, die Länge des $\pi /2$-Pulses bestimmt werden:
 \begin{equation}
 \label{T_pi/2}
 T_{\pi /2} = \dfrac{\pi}{2} \cdot \dfrac{1}{\omega _p} = \dfrac{\pi}{2 \omega _p} = \dfrac{\pi}{2 \gamma B_1} = \dfrac{2 \pi^2 N A f_p}{\gamma U_0}
@@ -66,7 +66,7 @@ Wobei das gyromagnetische Verhältnis gegeben ist zu:
 und $\omega_p = 2 \pi f_p$.
 Der $\pi$-Puls ist entsprechend doppelt so lang wie der $\pi /2$-Puls.\\
 \\
-Mit diesen Voreinstellungen können nun die korrekten Parameter gewählt werden. Dazu wird die Probe in den Probenraum eingebracht. Der Einfachheit halber auf der Höhe, auf der vorher die Spule war. In dem direkten Signal aus dem Probenraum tritt nun gemäß Additionstheorem eine Schwebung auf, wobei nur der Anteil mit der geringeren Frequenz zu angezeigt wird ($\propto \cos ((\omega _L - \omega _p) t)$). Wenn in dem Signal keine Schwingung mehr zu sehen ist, ist $\omega _p = \omega _L$. Um dies zu erreichen, müssen die Höhe der Probe, die Frequenz und mit der Frequenz gemäß Gl. \ref{T_pi/2} auch die Pulsdauer variiert werden.\\
+Mit diesen Voreinstellungen können nun die korrekten Parameter gewählt werden. Dazu wird die Probe in den Probenraum eingebracht. Der Einfachheit halber auf der Höhe, auf der vorher die Spule war. In dem direkten Signal aus dem Probenraum sollte nun gemäß Additionstheorem eine Schwebung zu sehen sein, wobei nur der Anteil mit der geringeren Frequenz zu sehen ist ($\propto \cos ((\omega _L - \omega _p) t)$). Wenn in den Daten keine Schwingung mehr zu sehen ist, ist damit offensichtlich der Punkt $\omega _p = \omega _L$ gefunden. Um diesen Punkt zu finden, müssen die Höhe der Probe, die Frequenz und mit der Frequenz gemäß Gl. \ref{T_pi/2} auch die Pulsdauer variiert werden.\\
 Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abhängig von der Stärke des konstanten Magnetfeldes ist. Da der Permanentmagnet temperaturabhängig ist, muss die Feineinstellung der Parameter zwischen den Messreihen wiederholt werden.
 
 
@@ -79,7 +79,7 @@ Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abh�
 \label{fig:MessungT1_Beispiel}
 \end{figure}
 
-Für die Messung von T1 werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden. Das Ergebnis einer solchen Messung ist beispielhaft in Abbildung \ref{fig:MessungT1_Beispiel} gezeigt (das blau dargestellte Signal wird betrachtet). Der erste Peak ist der Rest des $\pi$-Pulses. Der zweite Peak ist der Free Induction Decay (FID) nach dem $\pi /2$-Puls. \\
+Für die Messung von T1 werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden. Das Ergebnis einer solchen Messung ist beispielhaft in Abbildung \ref{fig:MessungT1_Beispiel} gezeigt. Der erste Peak ist der Rest des $\pi$-Pulses. Der zweite Peak ist der Free Induction Decay (FID) nach dem $\pi /2$-Puls. \\
 Für die Bestimmung von T1 wird die Wartezeit zwischen den beiden Pulse durchgefahren und die relative Höhe des FID zur Höhe des $\pi$-Pulses bestimmt. Die Erwartung ist ein exponentieller Abfall:
 \begin{equation}
 \label{eq:T1_Exponentialfunktion}
@@ -89,15 +89,15 @@ U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 
 \subsection{Messung von $T_2$}
 
-Für die Messung von $T_2$ werden die Spins mit einem  $\dfrac{\pi}{2}$ Puls in die x-y-Ebene gedreht. Durch Inhomogenitäten im Magnetfeld präzedieren die Spins allerdings unterschiedlich schnell, wodurch der Magnetisierungsvektor verschmiert. Deswegen wird nach einer Wartezeit $\tau$ ein $\pi$ Puls angelegt, der die Spins innerhalb der Ebene spiegelt und somit die Verschmierungsrichtung umdreht. Dadurch entsteht nach einer Zeit von insgesamt $2 \tau$ ein Spinecho. \\ 
+Für die Messung von $T_2$ werden die Spins mit einem  $\dfrac{\pi}{2}$ Puls in die x-y-Ebene gedreht. Durch Inhomogenitäten im Magnetfeld präzedieren die Spins allerdings unterschiedlich schnell, wodurch der Magnetisierungsvektor verschmiert. Deswegen wird nach einer Wartezeit $\tau$ ein $\pi$ Puls angelegt, der die Spins innerhalb der Ebene spiegelt und somit die Verschmierungsrichtungs umdreht. Dadurch entsteht nach einer Zeit von insgesamt $2 \tau$ ein Spinecho. \\ 
 \\
 Um außerdem möglichen Diffusionsprozessen entgegen zu wirken gibt es nun 2 unterschiedliche Verfahren:
 
 \subparagraph{Carr-Purcell-Pulssequenz}
-Bei diesem Verfahren wird nach den anfänglichen $\dfrac{\pi}{2}$ und $\pi$ Pulsen alle  $2 \tau$ ein neuer $\pi$ Puls angelegt. Dadurch erhält man mehrere Spinechos bei einer Pulssequenz. Durch die wesentlich schnellere Durchführung werden so Diffusionseffekte minimiert.
+Bei diesem Verfahren wird nach dem anfänglichen $\dfrac{\pi}{2}$ und $\pi$ Pulsen alle  $2 \tau$ ein neuer $\pi$ Puls angelegt. Dadurch erhält man mehrere Spinechos bei einer Pulssequenz. Durch die wesentlich schnellere Durchführung werden so Diffusionseffekte minimiert.
 \subparagraph{Meiboom-Gill-Pulssequenz}
 Dieses Verfahren besteht aus exakt derselben Pulssequenz, wie das Carr-Purcell-Verfahren. Der große Unterschied ist aber, dass  die $\pi$ Pulse um $90^{\circ}$ zum anfänglichen $\dfrac{\pi}{2}$ Puls verschoben ist. Wurde der $\pi$ Puls beim C-P-Verfahren also in x-Richtung (im ruhendem System) angelegt, so befindet er sich jetzt in y-Richtung.\\
-Dies sorgt dafür, dass sich Verchiebungen von der x-y Ebene beim $\pi$ Puls nicht immer weiter aufaddieren.
+Dies sorgt dafür, dass sich Verchiebungen von der x-y Ebene beim $\pi$ Puls nicht immer weiter addieren.
 \\
 Es wurden zu beiden Methoden Datensätze für verschiedene $\tau$ aufgezeichnet, um bei der Auswertung entscheiden zu können, welche Methode die besseren Ergebnisse liefert.\\
 Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit die Peaks nicht untereinander Interferieren und noch gut erkennbar sind. Im vorliegendem Aufbau ergab ein $\tau$ zwischen 4-7ms ein gutes Bild.\\
@@ -116,10 +116,7 @@ Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit d
 
 \subsubsection{Leiterschleife}
 
-Für den Vorversuch musste die Leiterschleife vermessen werden. Die verwendete Leiterschleife besteht aus $N=2$ Windungen und hat eine Querschnittsfläche von 
-\begin{equation*}
-A =  \SI{0.35\pm 0.01}{cm} \cdot \SI{0.42\pm 0.01}{cm} = \SI{0.147\pm 0.005}{cm^2}.
-\end{equation*}
+Für den Vorversuch musste die Leiterschleife vermessen werden. Die verwendete Leiterschleife besteht aus $N=2$ Windungen und hat eine Querschnittsfläche von $A =  \SI{0.35\pm 0.01}{cm} \cdot \SI{0.42\pm 0.01}{cm} = \SI{0.147\pm 0.005}{cm^2}$.\\
 Bei eriner eingestellten Frequenz von $f = \SI{21.571}{Mhz}$ wurde die gemessene Spannugnsamplitude maximal. Die maximale Spannung wurde bei $U =\SI{23.6\pm 0.2}{V}$ abgelesen. Daraus ergibt sich mithilfe von Formel \ref{B1} ein Wechselmagnetfeld von 
 \begin{equation*}
 \boxed{B_1 = \SI{2.96\pm 0.10}{mT}}
@@ -130,10 +127,10 @@ und daraus eine ungefähre $\pi /2$-Pulsdauer von
 \end{equation*}
 \subsubsection{Optimierung der Einstellungen}
 Bei der Feineinstellung wurde eine optimale Frequenz von  $f = \SI{21.590}{Mhz}$ gefunden. Die Dauer des $\pi / 2 $-Pulses musste ebenfalls auf $\SI{2.56}{\mu s}$, bzw. auf $\SI{5.13}{\mu s}$ für den $\pi$-Puls korrigiert werden, um einen möglichst großen Peak zu sehen. Die Abweichung vom errechneten Wert für die Pulslänge kann daran liegen, dass die Glaswand des Probenbehälters, bzw. die Probe selbst das Magnetfeld abschwächt.\\
-Die Änderungen der Lamorfrequenz durch Temperaturschwankungen etc. fanden auf der 4.Nachkommastelle statt. Sie beeinflussen den Versuch also nicht nennenswert.
+Die Frequenz wurde während des geanzen Versuchablaufs immer wieder leicht angepasst, da sich durch äußere Bedinungen die Lamorfrequenz immer leicht ändert und die Frequenz so angepasst werden muss. Diese Änderungen fanden allerdings auf der 4.Nachkommastelle statt. Sie beeinflussen den Versuch also nicht nennenswert.
 
 \subsection{T1}
-Bei den Messungen zu $T_1$ wird immer nur der Betrag des FID-Signals gemessen, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht 8 Digitalisierungsschritten, wobei eine Gleichverteilung angenommen wird:
+Es wird immer nur der Betrag des FID-Signals angezeigt, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht 8 Digitalisierungsschritten, wobei eine Gleichverteilung angenommen wird:
 \begin{equation*}
 \sigma _{\tau} = \dfrac{8 \cdot \Delta}{\sqrt{12}} = \dfrac{8 \cdot \frac{45 ms}{2500}}{\sqrt{12}} \approx 0.042 ms
 \end{equation*}
@@ -241,7 +238,7 @@ Wie in Abbildung \ref{fig:MessungT1_Beispiel} gut zu erkennen ist, ist ein deutl
 \begin{equation*}
 U_{offset} = 20 mV
 \end{equation*}
-Zusätzlich zum Fehler aus der Rauschmessung muss noch der Ablesefehler berücksichtigt werden. Diesen erhält man aus der Digitalisierung unter Annahme einer Gleichverteilung:
+Zusätzlich zum Fehler aus der Rauschmessung muss noch der Ablesefehler berücksichtigt werden. Diesen erhält man aus der Digitalisierung:
 \begin{equation*}
 \sigma _{Digitalisierung} = \dfrac{\Delta}{\sqrt{12}} = \dfrac{4 mV}{\sqrt{12}}
 \end{equation*}
@@ -282,7 +279,7 @@ T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} + T_{U_{rel} < 0}}{2} = 20.8
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{Bilder/T1_linFit_halblog.PNG}
-\caption{Lineare Regression an Auftragung von $ln\left(\dfrac{1-U_{rel}}{2}\right)$ gegen die Zeit t.}
+\caption{Lineare Regression an Auftragung von $ln(1-U_{rel})$ gegen die Zeit t.}
 \label{fig:T1_linFit}
 \end{figure}
 
@@ -322,9 +319,9 @@ T_1 = \dfrac{1}{c} = 19.477 ms
 \end{equation*}
 
 \subsubsection{Systematische Fehler} 
-Da die Drehung der Spins um das effektive Magnetfeld geschieht und die Messung der Magnetisierung in einer bestimmten Ebene stattfindet, ist es für die Messung wichtig, dass das effektive Magnetfeld richtig ausgerichtet ist und dass die Pulslänge richtig eingestellt ist. Die hohe Temperaturabhängigkeit des Aufbaus hat zur Folge, dass Temperaturschwankungen für ein im Vergleich zur idealen Ausrichtung verändertes effektives Magnetfeld und damit eine veränderte Frequenz und eine veränderte Pulslänge führen. Daher hat die Temperatur einen sehr großen Einfluss auf die Messung des Betrags der Magnetisierung. \\
+Da die Drehung der Spins um das effektive Magnetfeld geschieht und die Messung der Magnetisierung in einer bestimmten Ebene stattfindet, ist es für die Messung wichtig, dass das effektive Magnetfeld richtig ausgerichtet ist und dass die Pulslänge richtig eingestellt ist. Das effektive Magnetfeld setzt sich aus dem konstanten Magnetfeld des Permanentmagneten und dem Wechselfeld zusammen. Der im Versuchsaufbau verwendete Permanentmagnet ist temperaturabhängig, sodass Temperaturschwankungen die Larmorfrequenz ändern. Damit ändert sich auch die Länge der $\pi$- und $\pi /2$-Pulse. Das bedeutet, dass Temperaturschwankungen für ein im Vergleich zur idealen Ausrichtung veränderten effektiven Magnetfeld und damit eine veränderte Frequenz und eine veränderte Pulslänge führen. Daher hat die Temperatur einen sehr großen Einfluss auf die Messung des Betrags der Magnetisierung. \\
 Einen ähnlichen Effekt erhält man durch Spins, die vor der Pulssequenz nicht exakt in z-Richtung ausgerichtet sind. Diese Spins werden auch bei der richtigen Frequenz und der richtigen Pulslänge nicht exakt in die x-y-Ebene gedreht, sodass sie einen kleineren Teil zur gemessenen Magnetisierung beitragen. \\
-Hinzu kommen lokale Inhomogenitäten der Magnetfelder, die ebenfalls dafür sorgen, dass einzelne Spins nicht in die x-y-Ebene gedreht werden und damit nur einen kleineren Teil zur gemessenen Magnetisierung beitragen.
+Hinzu kommen lokale Inhomogenitäten der Magnetfelder, die ebenfalls dafür sorgen, dass einzelne Spins nicht in der x-y-Ebene liegen und damit nur einen kleineren Teil zur gemessenen Magnetisierung beitragen.
 
 \subsubsection{Zusammenfassung}
 
@@ -346,7 +343,7 @@ Exponentialfit & 19.477 & 0.215 & 20.140 \\
 \end{table}
 
 Tabelle \ref{tab:T1_Ergebnisse} zeigt nochmal zusammengefasst die Ergebnisse aus den Auswertungsmethoden. Dabei ist deutlich erkennbar, dass die Ergebnisse zwar nahe beieinander liegen, jedoch nur die beiden Ergebnisse aus den Anpassungen innerhalb ihrer Fehler übereinstimmen. Da alle Auswertungsmethoden dieselbe Messreihe verwenden, sind die systematischen Fehler identisch.\\
-Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachträglich eingefügt werden muss, liefert die zero-crossing-point Methode nur eine Abschätzung für den Wert von $T_1$. Die beiden Anpassungen sind genauer, da hier der Nulldurchgang nur eine untergeordnete Rolle spielt. Anhand der Darstellungen ist deutlich erkennbar, dass die Anpassungen in einem Teilbereich gut funktionieren und ab einem gewissen Punkt die Daten deutlich abweichen. Dabei ist anhand des $\chi ^2 /ndof$ leicht erkennbar, dass der lineare Fit besser funktioniert hat als Exponentialfit.
+Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachträglich eingefügt werden muss, liefert die zero-crossing-point Methode nur eine Abschätzung für den Wert von T1. Die beiden Anpassungen sind genauer, da hier der Nulldurchgang nur eine untergeordnete Rolle spielt. Dabei ist deutlich zu sehen, dass die Anpassungen in einem Bereich gut funktionieren und ab einem gewissen Punkt die Daten deutlich abweichen. Dabei ist anhand des $\chi ^2 /ndof$ leicht erkennbar, dass der lineare Fit besser funktioniert hat als Exponentialfit.
 
 
 \subsection{T2}
@@ -360,21 +357,21 @@ Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachtr
 \end{figure}
 
 Die ersten Messungen für $T_2$ sind in Abbildung \ref{fig:T2Daten} für beide Verfahren beispielhaft dargestellt.\\
-Bei dieser Messreihe ist auffällig, dass die $\pi$ Pulse und deren FID sichtbar sind, was bei idealen Einstellungen und Spinverhalten nicht der Fall sein sollte. Außeredem verschwindet bei der C-P-Methode das 3.Spinecho.
+Bei dieser Messreihe ist auffällig, dass die $\pi/2$ Pulse und deren FID sichtbar sind, was bei idealen Einstellungen und Spinverhalten nicht der Fall sein sollte. Außeredem verschwindet bei der C-P-Methode das 3.Spinecho.
 \paragraph{mögliche systematische Fehler:}
 
-Das Auftreten der $\pi$ Pulse kann verschiedene Ursachen haben. Einerseits kann die RF-Kreisfrequenz falsch eingestellt sein. Dadurch befindet sich das Magnetfeld bei den Pulsen nicht in der x-y Ebene, wodurch die Spinausrichtung nach einem $\pi$ Puls eine horizontale Komponente hat, welche natürlich gemessen weir.\\
-Es kann außerdem sein, dass die Pulslängen falsch eingestellt waren. Durch eine Kombination mit der falschen Frequenz kann dies dazu führen, dass der $\pi$ Puls die in der Durchführung beschriebene Verschmierung teilweise aufhebt, wodurch ein messbarer Peak entsteht.\\
+Das Auftreten der $\pi/2$ Pulse kann verschiedene Ursachen haben. Einerseits kann die RF-Kreisfrequenz falsch eingestellt sein. Dadurch befindet sich das Magnetfeld bei den Pulsen nicht in der x-y Ebene, wodurch die Spinausrichtung nach einem $\pi$ Puls eine horizontale Komponente hat, welche natürlich gemessen weir.\\
+Es kann außerdem sein, dass die Pulslängen falsch eingestellt waren. Durch eine Kombination mit der falschen Frequenz kann dies dazu führen, dass der $\pi$ Puls die in der Druchführung beschriebe Verschmierung teilweise aufgehebt, wodurch ein messbarer Peak entsteht.\\
 Falsch eingestellte Pulslängen würden auch das Fehlen des 3.Spinechos  bei der C-P-Methode erklären, da sich die Abweichungen von der x-y Ebene hier wie oben beschrieben aufaddieren und der Spinvektor somit nach mehreren $\pi$ Pulsen im Extremfall in z-Richtung zeigt und somit nicht gemessen werden kann.\\
 \\
-Um diese Effekte zu minimieren wurde eine zweite Messreihe aufgenommen, bei der die Frequenz nochmals neu kalibriert wurde und die Pulslängen so angepasst wurden, dass die $\pi$ Pulse möglichst klein ausfallen. Diese Messreihe ist beispielhaft in Abbildung \ref{fig:T2Datenalt} zu sehen.\\
+Um diese Effekte zu minimieren wurde eine zweite Messreihe aufgenommen, bei der die Frequenz nochmals neu kalibiert wurde und die Pulslängen so angepasst wurden, dass die $\pi$ Pulse möglichst klein ausfallen. Diese Messreihe ist beispielhaft in Abblidung \ref{fig:T2Datenalt} zu sehen.\\
 Es ist dort wie erwartet zu sehen, dass die Peaks bei der C-P-Methode wegen der Abweichung von der x-y Ebene schneller abfallen. Dies ist ein unerwünschter Effekt, der das Ergebnis unter Umständen stark beeinflusst. Außerdem sind die Peaks ab einer gewissen Ordnung sehr klein und sogar teilweise gar nicht mehr sichtbar, was das Ergebnis deutlich ungenauer machen würde.\\
-Deswegen wurde entschieden die Daten des Meiboom-Gill-Verfahrens für die Auswertung zu benutzen.
+Deswegen wurde entschieden die Daten des Meiboom-Gill-Verfahrens für die Auswertung zu benuten.
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/T2CPalt.png}
 \includegraphics[scale=0.8]{Bilder/T2MGalt.png}
-\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "blaue" Kurve von Channel 2, welche die Amplitude des Messsignals beschreibt.}
+\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "Blaue" Kurve von Channel 2, welche die Amplitude des Messsignals beschreibt.}
 \label{fig:T2Datenalt}
 \end{figure}
 
@@ -382,14 +379,14 @@ Deswegen wurde entschieden die Daten des Meiboom-Gill-Verfahrens für die Auswer
 Mithilfe eines Programmes wurden die vom Oszilloskop gegebenen Datensätze eingelesen.
 Es wurde wie bei der Bestimmung von $T_1$ wieder eine Rauschmessung durchgeführt.
 Diese ergab einen Offset von $U_{Offset} = 20.6mV$ und eine Schwankung von $\sigma = 4mV$.\\
-Die Peakhöhe und Lage wurde durch eine lokale Maximumsbestimmung in der Nähe der Peaks durchgeführt.\\
+Die Peakhöhe und Lage wurde durch eine lokale Maximumsbestimmung in der nähe der Peaks durchgeführt.\\
 Dabei wurde der Peak des $\pi/2$ Pulses ausgenommen, da dieser nicht durch ein Spinecho entsteht und der Puls somit das Ergebnis verfälschen könnte.\\
-Bei allen Datensätzen wurde eine Zeitskala von 10ms und eine Höhenskala von 200mV gewählt. Bei diesen Skalen betragen die Digitalisierungsfehler 8mV und 0.04ms.\\
+Bei allen Datensätzen wurde eine Zeitskala von 10ms und eine Höhenskala von 200mV gewählt. Bei diesen Skalen bertägt die Digitalisierung 8mV und 0.04ms.\\
 Da das Maximum oft über mehrere Digitalisierungsschritte verteilt war, wurde angenommen, dass das wahre Maximum gleichverteilt zwischen diesen Schritten liegt. Eine gute Wahl der Maximumsbreite betrug $\Delta t = 0.16ms$.\\
 Damit ergibt sich eine Ableseungenauigkeit auf die Lage von
 
 \begin{equation*}
-\sigma_t = \dfrac{\Delta t}{\sqrt{12}} \approx 0.05ms
+\sigma_t = \dfrac{Breite}{\sqrt{12}} \approx 0.05ms
 \end{equation*}
 
 Der Fehler auf die Peakhöhe ergibt sich durch die Schwankung der Werte innerhalb der Maximumsbreite. In diesem Fehler steckt sowohl der Digitalisierungsfehler, als auch der Fehler durch das Rauschen, weswegen diese Fehler nicht mehr extra einbezogen werden müssen.
@@ -457,7 +454,7 @@ und der Fehler durch
 \label{fig:T2lin}
 \end{figure}
 
-Nun werden die Spannungswerte logarithmisiert und eine lineare Funktion an die Daten gefittet:
+Nun werden die Spannungswerte logarythmisiert und eine lineare Funktion an die Daten gefittet:
 \begin{equation}
 y = a \cdot t + b
 \end{equation}
@@ -465,7 +462,7 @@ Daraus erhält man $T_2$ wieder durch
 \begin{equation*}
 T_2 = \dfrac{-1}{a} = 28.3ms
 \end{equation*}
-und den Fehler durch
+und der Fehler durch
 \begin{equation*}
 \sigma_{T_2} = \dfrac{1}{a^2} \cdot \sigma_a = 1.0ms
 \end{equation*}
@@ -473,14 +470,14 @@ und den Fehler durch
 \subsubsection{Auswertung weiterer Messreihen und Zusammenfassung}
 
 Um mögliche Systematiken abschätzen zu können wurden mit den oben beschriebenen Methoden weitere Datensätze ausgewertet. Alle Ergebnisse sind in Tabelle \ref{T2zusammenfassung} aufgelistet. Die dazugehörigen Anpassungen befinden sich im Anhang.
-Zuerst wurde die Messung mit dem Meiboom-Gill Verfahren für verschiedene $\tau$ wiederholt, um ein genaueres Resultat zu bekommen und mögliche statistische Schwankungen und Fehlmessungen zwischen verschiedenen Messungen zu eliminieren.\\
-Die Ergebnisse stimmen sowohl für verschiedene Messreihen als auch für die beiden verschiedenen Auswertungsmethoden innerhalb ihrer Fehler überein. 	Eine gewichtete Mittelung über die vier Messungen liefert unser Endergebnis:
+Zuerst wurde die Messung mit dem Beiboom-Gill Verfahren für verschiedene $\tau$ wiederholt, um ein genaueres Resultat zu bekommen und mögliche statistische Schwankungen und Fehlmessungen zwischen verschiedenen Messungen zu eliminieren.\\
+Die Ergenisse stimmen sowohl für verschiedene Messreihen als auch für die beiden verschiedenen Auswertungsmethoden innerhalb ihrer Fehler überein. 	Eine gewichtete Mittelung über die vier Messungen liefert unser Endergebnis:
 
 \begin{equation*}
-\boxed{T_{2, Exponential} = (27.6\pm 0.5)ms}
+\boxed{T_2(Exponential) = (27.6\pm 0.5)ms}
 \end{equation*}
 \begin{equation*}
-\boxed{T_{2, Linear} = (27.8\pm 0.5)ms}
+\boxed{T_2(Linear) = (27.8\pm 0.5)ms}
 \end{equation*}\\
 
 Anhand der Messreihe, bei der Frequenz und Pulslängen verstellt waren, kann außerdem der Einfluss von verstellten Parametern beobachtet werden. Es ist auffällig, dass die Ergebnisse der einzelnen Messungen sehr viel stärker schwanken und im Mittel mit $T_2 = (28.9\pm0.8)ms$ größer sind. Dies war zu erwarten, da sich die Magnetisierung hier durch die in Kapitel \ref{sec:T2messdaten} beschriebenen Effekte unkontrollierter verhält.\\
@@ -530,7 +527,7 @@ und daraus eine $\pi /2$-Pulsdauer von
 \boxed{T_{\pi /2} = \SI{1.98\pm 0.07}{\mu s}}
 \end{equation*}
 Es hat sich herausgestellt, dass die Pulsdauer für die eigentliche Probe wesentlich größer ist, da die Probe das Magnetfeld anders beeinflusst als die Spule.\\
-Tabelle \ref{GesamtZusammenfassung} zeigt einen Überblick über die sich ergebenden Werte für die Relaxationszeiten.
+Es ergaben sich für die Relaxationszeiten folgende Werte:
 
 \begin{table}[H]
 \centering
@@ -543,8 +540,6 @@ $T_1$ & $20.88\pm 0.87$ & $19.66\pm 0.22$ & $19.48\pm 0.22$\\
 $T_2$ & - & $27.8\pm 0.5$ & $27.6\pm 0.5$\\
 \hline
 \end{tabular}
-\caption{Zusammenfassung der Ergebnisse für die Relaxationszeiten aus den unterschiedlichen Auswertungsmethoden.}
-\label{GesamtZusammenfassung}
 \end{table}
 Erwartet wurde aber, dass die beiden Werte sehr ähnlich zueinander sind und dass sogar $T_2 \lesssim T_1$ gilt. Bei der Messmethode von $T_2$ spielen Diffusionseffekte jedoch eine wesentlich kleinere Rolle. Diese Effekte fallen bei der Messung von $T_1$ so groß aus, dass sie den Messwert deutlich verändern.
 
