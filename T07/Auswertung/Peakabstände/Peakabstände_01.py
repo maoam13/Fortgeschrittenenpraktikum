@@ -52,23 +52,30 @@ print sol
 
 #mittelwert (und std) ausrechnen und aus erwartung dann chi^2 ausrechnen
 mu = np.mean(y_kom)
-chi = AM.chiq_y(x[0:7], y_kom[0:7], np.sqrt(y_kom[0:7]), func, [1./mu])
-
-#plotte Fit in histogramm
-x_fit = x
-y_fit = func([sol[0][0]],x_fit)
+std = np.std(y_kom, ddof = 1)
+chi_mu = AM.chiq_y(x[0:7], y_kom[0:7], np.sqrt(y_kom[0:7]), func, [1./mu])
+chi_std = AM.chiq_y(x[0:7], y_kom[0:7], np.sqrt(y_kom[0:7]), func, [1./std])
 
 #Plot
 plt.figure(1)
 plt.hist(y, bins = x, normed = True)
-plt.figtext(0.5,0.7,
-            'Modell: rho ($\Delta$t) = A $\cdot$ $e^{- A \cdot \Delta t}$'
+plt.figtext(0.4,0.42,
+            '$\chi ^2$ Anpassung in rot: \n'
+            +'Modell: rho ($\Delta$t) = A $\cdot$ $e^{- A \cdot \Delta t}$'
             +'\n A= ('+str(np.round(sol[0][0],6))+' +/- '+str(np.round(sol[1][0],6))+') $1/s$ \n'
-            +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 3)))
+            +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 3)) + '\n'
+            +'\n Erwartung aus Mittelwert in gruen'
+            +'\n A= '+str(np.round(1./mu,6))+'\n'
+            +'$\chi ^2 / ndof$= ' + str(np.round(chi_mu, 3)) + '\n'
+            +'\n Erwartung aus Standardabweichung in gelb'
+            +'\n A= '+str(np.round(1./std,6))+'\n'
+            +'$\chi ^2 / ndof$= ' + str(np.round(chi_std, 3)) + '\n')
 plt.xlabel('Anzahl der gemessenen $\Delta$ t in einem Intervall')
 plt.ylabel('relative Haeufigkeit der Anzahlen')
 plt.title('Zeitabstaende zwischen Peaks bei Intervallbreite ' + str(bin_breite * 1000) + ' ms.')
-plt.plot(x_fit, y_fit, color = 'r')
+plt.plot(x, func([sol[0][0]],x), color = 'r')
+plt.plot(x, func([1./mu],x), color = 'g')
+plt.plot(x, func([1./std],x), color = 'y')
 
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
