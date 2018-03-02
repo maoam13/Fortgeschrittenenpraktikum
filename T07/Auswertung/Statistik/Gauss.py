@@ -39,18 +39,18 @@ for i in range(len(y)):
     ey.append(np.sqrt(y_fehler))
 
 startwerte = [27, 4]
-sol = AM.fitte_bel_function(x, y/sum(y), np.full(len(x), 0.1), ey, gauss, startwerte)
+sol = AM.fitte_bel_function(x, y/sum(y), np.full(len(x), 0.00001), ey, gauss, startwerte)
 print sol
 
 #mittelwert und std ausrechnen und aus erwartung dann chi^2 ausrechnen
 mu = np.mean(data)
 sig = np.std(data, ddof = 1)
-chi = AM.chiq_y(x[4:19], y[4:19], np.sqrt(y[4:19]), gauss, [mu, sig])
+chi = AM.chiq_y(x[4:19], y[4:19]/sum(y), ey[4:19], gauss, [mu, sig])
 
 #Plot
 plt.figure(1)
 plt.hist(data, bins = x, normed = True)
-plt.figtext(0.7,0.6,
+plt.figtext(0.15,0.55,
             '$\chi ^2$ - Anpassung in rot \n'
             +'Modell: P(x) = $1/sqrt(2 \cdot \pi \cdot \sigma ^2)$ $\cdot$ $e^{(x - \mu)^2/(2 \cdot \sigma ^2)}$'
             +'\n $\mu$= ('+str(np.round(sol[0][0],6))+' +/- '+str(np.round(sol[1][0],6))+') '

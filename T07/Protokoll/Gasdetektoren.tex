@@ -89,11 +89,11 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \hline 
 Art & Poisson Parameter & $\chi ^2$ /ndof & P($\chi ^2$) \\ 
 \hline 
-Mittelwertbestimmung & 1,0900 & 45,850 & 0\% \\ 
+Mittelwertbestimmung & 1,0900 & 2.147 & 15\% \\ 
 \hline 
-Bestimmung der Standardabweichung & 0,9918 & 45,827 & 0\% \\ 
+Bestimmung der Standardabweichung & 0,9918 & 3,021 & 7\% \\ 
 \hline 
-$\chi ^2$ Anpassung & 0,9332 $\pm$ 0,3689 & 11,125 & 0\% \\ 
+$\chi ^2$ Anpassung & 1,000 $\pm$ 0,1482 & 1,529 & 28\% \\ 
 \hline 
 \end{tabular} 
 \caption{Poisson Parameter und $\chi ^2$ aus den verschiedenen Bestimmungsmethoden der Poissonverteilung. In der letzten Spalte ist eine geschätzte Wahrscheinlichkeit für den Wert des $\chi ^2$ angegeben.}
@@ -105,15 +105,15 @@ Für die Anpassung wurde auf jeden Wert ein Fehler gemäß der Poissonverteilung
 \begin{equation*}
 \sigma _{n} = \sqrt{n}
 \end{equation*}
-Für die Anpassung einer Gaußverteilung wurden die Werte normiert, daher pflanzt sich der Fehler fort zu:
+Für die Anpassung einer Poissonverteilung wurden die Werte normiert, daher pflanzt sich der Fehler fort zu:
 \begin{equation*}
 n_{i, norm} = \dfrac{n_i}{\sum _j n_j} =: \dfrac{n_i}{N}
 \end{equation*}
 \begin{equation*}
 \sigma _{i, norm} = \sqrt{ \sum _j \left( \sigma_j \cdot \left( \delta_{ij} \cdot \left( \frac{1}{N} - \frac{n_i}{N} \right) + (1 - \delta_{ij}) \cdot \frac{n_i}{N^2} \right) \right)^2 }
 \end{equation*}
-AB HIER POISSON ÜBERARBEITEN!! \\
-Tabelle \ref{tab:Poisson} zeigt die Ergebnisse aus den verschiedenen Methoden zur Bestimmung des Poisson Parameters und des $\chi ^2$. Leicht lässt sich ersehen, dass die Werte für den Poisson Parameter nah beieinander liegen, das $\chi ^2$ aus der Anpassung jedoch deutlich kleiner ist als die aus der Berechnung nach Bestimmung des Parameters. Insgesamt ist das $\chi ^2$ jedoch deutlich zu groß. 
+Tabelle \ref{tab:Poisson} zeigt die Ergebnisse aus den verschiedenen Methoden zur Bestimmung des Poisson Parameters und des $\chi ^2$. Leicht lässt sich ersehen, dass die Werte für den Poisson Parameter nah beieinander liegen, insbesondere liegen die Werte aus Bestimmung von Mittelwert und Standardabweichung innerhalb des Fehlers auf den Wert aus der $\chi ^2$ Anpassung.\\
+Die $\chi ^2$ pro Freiheitsgrad bei Bestimmung von Mittelwert und Standardabweichung liegen erwartungsgemäß etwas höher als das aus der Anpassung und dennoch beide noch in einem Bereich mit nicht vernachlässigbarer Wahrscheinlichkeit.
 
 
 \subsubsection{Gaußverteilung}
