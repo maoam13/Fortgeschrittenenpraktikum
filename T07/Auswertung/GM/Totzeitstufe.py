@@ -21,12 +21,14 @@ if 0:
     N1 = 1836.
     N2 = 1392.
     
-if 0:
-    N1 = 1788.
-    N2 = 1381.
+if 1:
+    N1 = 5359.
+    N2 = 4599.
 
 T2 = 0.001908 #1.908ms
 
 t = 1./N1 - 1./N2 + T2
 
-print t,N1,N2
+sigt = np.sqrt((np.sqrt(N1)/N1**2)**2 + (np.sqrt(N2)/N2**2)**2)
+
+print t,sigt,N1,N2

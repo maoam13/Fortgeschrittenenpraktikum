@@ -43,13 +43,38 @@ Im zweiten Versuchsteil sollen Messungen durchgeführt werden, die verschiedene 
 \section{Durchführung}
 \subsection{Geiger-Müller-Zählrohr}
 \subsubsection{Charakteristik}
-Die Charakteristik wird mithilfe des $_{38}^{90}Sr$-Präparates gemessen. Dabei wird bei eingebrachtem Präparat die Spannung, ausgehend von der Minimaleinstellung von \SI{250}{V}, in \SI{10}{V} erhöht und jeweils über \SI{10}{s} die Anzahl der gemessenen Ereignisse erfasst.\\
-Um die Einsatzspannung $U_E$ und die Geiger-Schwelle $U_G$ genauer bestimmen zu können, wurde im entsprechenden Bereich, in dem sich diese Werte befinden, in \SI{2}{V} Schritten statt in \SI{10}{V} Schritten gemessen.
+Die Charakteristik wird mithilfe des $_{38}^{90}Sr$-Präparates gemessen. Dabei wird bei eingebrachtem Präparat die Spannung, ausgehend von der Minimaleinstellung von \SI{250}{V}, in \SI{10}{V} Schritten erhöht und jeweils über \SI{10}{s} die Anzahl der gemessenen Ereignisse erfasst.\\
+Um die Einsatzspannung $U_E$ und die Geiger-Schwelle $U_G$ genauer bestimmen zu können, wurde im entsprechenden Bereich, in dem sich diese Werte befinden, in \SI{2}{V} Schritten statt in \SI{10}{V} Schritten gemessen.\\
+\\Eine Schnellauswertung ergab $U_G = \SI{350}{V}$. Um sicher zu gehen, dass das Zählrohr für die folgenden Messungen im richtigen Spannungsbereich arbeitetet, wird die Spannung auf $U = U_G + 100V = \SI{450}{V}$ eingestellt.
+
+\subsubsection{Untergrundrauschen}
+Um eine mögliche Störung durch Untergrundrauschen zu beseitigen, wurde mit einer leeren Kammer insgesamt 5 mal über $\SI{1}{min}$ die Pulsrate gemessen.
+
 \subsubsection{Totzeit}
-Die Totzeit wird über zwei verschiedene Methoden bestimmt.\\
-Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erhohlungszeit ablesen kann.\\
-Als zweites wird sie über eine Totzeitstufe bestimmt.
+Zur Totzeit des Geiger-Müller-Zählrohres sollen zwei verschiedene Messungen gemacht werden.
+\paragraph{Stever-Diagramm}
+Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erhohlungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s}
+
+\paragraph{Totzeitkorrektur}
+Als zweites wird die Auflösungszeit mithilfe einer Totzeitstufe bestimmt. Mithilfe dieser kann man eine Totzeitkorrektur der gemessenen Zählraten durchführen. Dabei ist die wirkliche Zählrate N in Abhängigkeit von der gemessenen Rate n und der Auflösungszeit $\tau$ gegeben durch 
+\begin{equation}
+\label{Totzeitkorrektur}
+N = \dfrac{n}{1-n\tau}
+\end{equation}
+Nun werden für zwei verschiedene künstlich angelegte Totzeiten $\tau_{2ms}$ und $\tau_{1\mu s}$ die Zählrate bestimmt. Dazu werden zuerst die Frequenzen der Totzeitstufe überprüft, um sicher zu stellen, dass diese richtig kalibriert ist. Dafür wurde über 1s die Anzahl der durchgelassenen Pulse gemessen.\\
+Danach werden die beiden Zählraten bestimmt. Dazu wird für beide Zeiten 1min lang die Zählrate gemessen. Da N für beide Totzeiten gleich sein sollte und $\tau_{1\mu s} << \tau$ gilt, kann man durch Gleichsetzten von Gleichung \ref{Totzeitkorrektur} für beide Zeiten die Auflösungszeit bestimmen:
+\begin{equation}
+\tau_{1\mu s} \approx \tau = \dfrac{1}{n_{1\mu s}} - \dfrac{1}{n_{2ms}} + \tau_{2ms}
+\label{Auslosungszeit}
+\end{equation}
+
 \subsection{Proportionalzähler}
+
+\subsubsection{Charakteristik}
+Beim Proportionalzähler wurde ebenfalls die Charakteristik vermessen, und zwar einmal Anhand der $_{95}^{241}AM$-Probe und einmal anhand der $_6^{14}C$-Probe. Dazu wurde in \SI{20}{V} oder (aus Zeitgründen) in \SI{40}{V} Schritten, wieder ausgehend von \SI{250}{V}, jeweils über \SI{10}{s} die Pulsrate aufgenommen. Bei \SI{1200}{V} musste die Hochspannungsquelle auf 2 fache Verstärkung umgestellt werden. Es kann sein, dass die in Wirklichkeit angelegte Spannung für die beiden Verstärkungsmodi nicht gleich ist, was sich auf die Messdaten auswirken kann.\\
+Da beim Proportionalzähler die Pulsstärke abhängig von der Energie der Teilchen ist, wurde zusätzlich noch die Pulshöhe mithilfe des Oszilloskopes für alle Spannungswerte bestimmt.\\
+Außerdem wurde ebenfalls eine Untergrundmessung mit leerem Probenraum für den vollständigen untersuchten Spannungsbereich durchgeführt.
+
 \subsection{Statistikmessung}
 Die Statistikmessungen wurden alle mit dem Geiger-Müller-Zählrohr aufgenommen.
 \subsubsection{Poissonverteilung}
