@@ -174,7 +174,7 @@ $n_{1\mu s}$ & $10603 \pm 103$ & $5259\pm 73$ \\
 \hline 
 $n_{2ms}$ & $8248\pm 91$ & $4599\pm 68$ \\
 \hline 
-$\tau [ms]$ & $1.882\pm 0.002 $ & $1.877\pm 0.004$ \\
+$\tau [\mu s]$ & $324\pm 97 $ & $1.877\pm 0.004$ \\
 \hline
 \end{tabular}
 \label{tab:Totzeitstufe}
@@ -196,14 +196,51 @@ Eine gewichtete Mittelung der $\tau$ ergibt:
 \subsubsection{Charakteristik}
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{Bilder/GMlinear.PNG}
-\includegraphics[scale=0.5]{Bilder/GMlog.PNG}
+\includegraphics[scale=1]{Bilder/GMlinear.PNG}
+\includegraphics[scale=1]{Bilder/GMlog.PNG}
 \caption{...}
 \label{fig:GMCharakteristik}
 \end{figure}
-Die Ergebnisse der Charakteristikmessung sind in Abbildung \ref{fig:GMCharakteristik} dargestellt.\\
-Mit zunehmender Spannung steigt die Messrate exponentiell, da immer mehr Ereignisse mit kleineren Energien registriert werden. Daher Müssen die Daten noch logarythmisiert werden, um das Plateau zu erkennen.\\
-Nun wird an das Plateau ein Geradenfit angepasst und visuell abgeschätzt, wenn diese Gerade erreicht wird. Der so 
+Die Ergebnisse der Charakteristikmessung sind in Abbildung \ref{fig:GMCharakteristik} dargestellt. Diese wurden bereits mithlife von Gleichung \ref{Auslosungszeit} von der Totzeit bereinigt.
+Außerdem wurde mithilfe der Rauschmessung der Offset des Untergrundrauschens abgezogen.\\
+Mit zunehmender Spannung steigt die Messrate exponentiell, da immer mehr Ereignisse mit kleineren Energien registriert werden. Daher Müssen die Daten noch logarythmisiert werden, um das Plateau erkennen zu können.\\
+Der relativ große Fehler auf die Totzeit ist dabei von systematischer Natur, er verschiebt also die Werte in die gleiche Richtung. Da das Plateau in der logarythmischen Sklaierung eben ist, verschiebt er die Werte um nahezu den gleichen Faktor, womit sich die Position der Einsatz- und Geiger-Spannung nicht nennenswert ändert. Der Fehler kann also für die Bestimmung dieser vernachlässigt werden.
+
+\paragraph{Bestimmung der Geiger-Spannung}
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/GMGeradenfit.PNG}
+\caption{...}
+\label{fig:GMGeradenfit}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/GMKurvenfit.PNG}
+\caption{...}
+\label{fig:GMKurvenfit}
+\end{figure}
+
+Anhand der logarythmisierten Daten wird nun die Geiger-Spannung $U_G$ bestimmt. Dazu  wurde als erstes abgeschätzt, dass das Plateau spätestens bei $\SI{360}{V}$ erreicht wird und ein Geradenfit an die Daten überhalb dieser Spannung angepasst. Dieser ist in Abbildung \ref{fig:GMGeradenfit} zu sehen.\\
+Um nun den Anfang des Plateaus bestimmen zu können, wird außerdem noch ein Fit der Form
+\begin{equation*}
+y = \dfrac{a}{x+d} + b\cdot x + c
+\end{equation*}
+an die Daten angefitted. Es wurde hier eine $\dfrac{1}{x}$ Funktion gewählt, da es wegen der wenigen Datenpunkte, die groß von der Plateaugeraden abweichen, sehr schwierig gewesen ist eine Funktion an die Daten anzupassen und diese Funktion die einzige ist, bei der der Fit geglückt ist und die Umgebung der Geigerfrequenz gut beschreibt. Das Ergebnis ist in Abbildung \ref{fig:GMKurvenfit} dargestellt.\\
+$U_G$ wird bestimmt, indem die Spannung gesucht wird, ab der die beiden Anpassungen innerhalb ihrer Unsicherheiten überseinstimmen. Es muss aber beachtet werden, dass die Anpassungen korrelieren, da sie aus demselben Datensatz stammen. Der Einfachheit halber wird angenommen, dass der Fehler des Linearen Fits vollständig mit dem des$\dfrac{1}{x}$-Fit korreliert, der denselben linearen Term enthält. Ist der tatsächliche lineare Fit beispielsweise leicht nach oben verschoben, so ist mit dieser Annahme der echte $\dfrac{1}{x}$-Fit ebenfalls um den gleichen Faktor nach oben verschoben. Somit ergibt sich der Abstandsfehler zwischen den beiden Fits als quadratische Differenz der beiden Unsicherheiten.\\
+Den Fehler auf $U_G$ erhält man aus der Verschiebemethode. Die beiden Fits werden also um ihre Fehler nach oben oder unten verschoben und ein neuer Wert für $U_G$ mit der oben beschriebenen Methode bestimmt.\\
+Mit dieser Methode ergibt sich:
+\begin{equation*}
+\boxed{U_G = (346_{-5}^{+7})\si{V}}
+\end{equation*}
+\paragraph{Bestimmung der Einsatz-Spannung}
+Im Gegensatz zu $U_G$ lässt sich die Einsatz-Spannung $U_E$ direkt aus den Daten ablesen, da diese Spannung sich genau an der Stelle befindet, an der zum ersten mal ein Puls gemessen wird. Dies war der Fall bei
+\begin{equation*}
+\boxed{U_G = \SI{316\pm 1}{V}}
+\end{equation*}
+Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
+
+\subsubsection{Zusammenfassung}
 
 \subsection{Proportionalzähler}
 

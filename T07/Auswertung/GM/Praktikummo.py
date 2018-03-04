@@ -13,6 +13,7 @@ import scipy
 import scipy.fftpack
 import scipy.odr
 import StringIO
+import matplotlib.pyplot as plt
 
 def lese_lab_datei(dateiname):
     '''
@@ -337,7 +338,8 @@ def fitte_bel_function_xy(x, y, ex, ey, func, startwerte):
     data   = scipy.odr.RealData(x, y, sx=ex, sy=ey)
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
-    return output.beta, output.sd_beta, output.res_var
+    corr = output.cov_beta[0,1]/np.sqrt(output.cov_beta[0,0]*output.cov_beta[1,1])
+    return output.beta, output.sd_beta, output.res_var, corr
 
 def fitte_bel_function(x, y, ey, func, startwerte):
     """gibt wert,fehler,chi/ndof zurueck"""
@@ -345,4 +347,19 @@ def fitte_bel_function(x, y, ey, func, startwerte):
     data   = scipy.odr.RealData(x, y, sy=ey)
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
-    return output.beta, output.sd_beta, output.res_var
+    corr = output.cov_beta
+    return output.beta, output.sd_beta, output.res_var,corr,output
+
+def Anpassung(x,y,xerr,yerr,func,par):
+    ax1=plt.subplot(211)
+    ax1.set_ylabel("U[V]")
+    plt.errorbar(x,y,xerr = xerr,yerr = yerr,fmt='.')
+    plt.plot(x,func(par,x),color = 'r')
+    
+    ax2=plt.subplot(212,shsharex=ax1)
+    ax2.set_xlabel("t[s]")
+    ax2.set_ylabel("Residuen")
+    plt.errorbar(x,y-func(par,x),yerr = yerr,fmt='.')
+    x_r = np.array([x[0], x[-1]])
+    y_r = np.array([0, 0])
+    plt.plot(x_r, y_r, color='r')
