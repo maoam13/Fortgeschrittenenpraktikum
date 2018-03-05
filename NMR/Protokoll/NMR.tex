@@ -66,8 +66,8 @@ Wobei das gyromagnetische Verhältnis gegeben ist zu:
 und $\omega_p = 2 \pi f_p$.
 Der $\pi$-Puls ist entsprechend doppelt so lang wie der $\pi /2$-Puls.\\
 \\
-Mit diesen Voreinstellungen können nun die korrekten Parameter gewählt werden. Dazu wird die Probe in den Probenraum eingebracht. Der Einfachheit halber auf der Höhe, auf der vorher die Spule war. In dem direkten Signal aus dem Probenraum tritt nun gemäß Additionstheorem eine Schwebung auf, wobei nur der Anteil mit der geringeren Frequenz zu angezeigt wird ($\propto \cos ((\omega _L - \omega _p) t)$). Wenn in dem Signal keine Schwingung mehr zu sehen ist, gilt $\omega _p = \omega _L$. Um dies zu erreichen, müssen die Höhe der Probe, die Frequenz und mit der Frequenz gemäß Gl. \ref{T_pi/2} auch die Pulsdauer variiert werden.\\
-Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abhängig von der Stärke des konstanten Magnetfeldes ist. Da der Permanentmagnet temperaturabhängig ist, muss die Feineinstellung der Parameter zwischen den Messreihen nachjustiert werden.
+Mit diesen Voreinstellungen können nun die korrekten Parameter gewählt werden. Dazu wird die Probe in den Probenraum eingebracht. Der Einfachheit halber auf der Höhe, auf der vorher die Spule war. In dem direkten Signal aus dem Probenraum tritt nun gemäß Additionstheorem eine Schwebung auf, wobei nur der Anteil mit der geringeren Frequenz zu angezeigt wird ($\propto \cos ((\omega _L - \omega _p) t)$). Wenn in dem Signal keine Schwingung mehr zu sehen ist, ist $\omega _p = \omega _L$. Um dies zu erreichen, müssen die Höhe der Probe, die Frequenz und mit der Frequenz gemäß Gl. \ref{T_pi/2} auch die Pulsdauer variiert werden.\\
+Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abhängig von der Stärke des konstanten Magnetfeldes ist. Da der Permanentmagnet temperaturabhängig ist, muss die Feineinstellung der Parameter zwischen den Messreihen wiederholt werden.
 
 
 \subsection{Messung von $T_1$}
@@ -85,7 +85,7 @@ Für die Bestimmung von $T_1$ wird die Wartezeit zwischen den beiden Pulse durch
 \label{eq:T1_Exponentialfunktion}
 U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \end{equation}
-Es wurden die Einstellungen verwendet, die sich bei der Optimierung der Einstellungen ergeben haben. Dabei wurde $\tau$ in 1ms-Schritten von 1ms bis 40ms erhöht.
+Es wurden die Einstellungen verwendet, die sich bei der Optimierung der Einstellungen ergeben haben.
 
 \subsection{Messung von $T_2$}
 
@@ -96,7 +96,7 @@ Um außerdem möglichen Diffusionsprozessen entgegen zu wirken gibt es nun 2 unt
 \subparagraph{Carr-Purcell-Pulssequenz}
 Bei diesem Verfahren wird nach den anfänglichen $\dfrac{\pi}{2}$ und $\pi$ Pulsen alle  $2 \tau$ ein neuer $\pi$ Puls angelegt. Dadurch erhält man mehrere Spinechos bei einer Pulssequenz. Durch die wesentlich schnellere Durchführung werden so Diffusionseffekte minimiert.
 \subparagraph{Meiboom-Gill-Pulssequenz}
-Dieses Verfahren besteht aus exakt derselben Pulssequenz wie das Carr-Purcell-Verfahren. Der  Unterschied besteht darin, dass  die $\pi$ Pulse um $90^{\circ}$ zum anfänglichen $\dfrac{\pi}{2}$ Puls verschoben ist. Wurde der $\pi$ Puls beim C-P-Verfahren also in x-Richtung (im ruhendem System) angelegt, so befindet er sich jetzt in y-Richtung.\\
+Dieses Verfahren besteht aus exakt derselben Pulssequenz, wie das Carr-Purcell-Verfahren. Der große Unterschied ist aber, dass  die $\pi$ Pulse um $90^{\circ}$ zum anfänglichen $\dfrac{\pi}{2}$ Puls verschoben ist. Wurde der $\pi$ Puls beim C-P-Verfahren also in x-Richtung (im ruhendem System) angelegt, so befindet er sich jetzt in y-Richtung.\\
 Dies sorgt dafür, dass sich Verchiebungen von der x-y Ebene beim $\pi$ Puls nicht immer weiter aufaddieren.
 \\
 Es wurden zu beiden Methoden Datensätze für verschiedene $\tau$ aufgezeichnet, um bei der Auswertung entscheiden zu können, welche Methode die besseren Ergebnisse liefert.\\
@@ -109,7 +109,7 @@ Dabei wird das $\tau$ möglichst klein gewählt, allerdings groß genug, damit d
 \label{fig:T2Beispiel}
 \end{figure}
 
-\newpage
+
 \section{Ergebnisse}
 
 \subsection{Vorversuche}
@@ -349,7 +349,7 @@ Tabelle \ref{tab:T1_Ergebnisse} zeigt nochmal zusammengefasst die Ergebnisse aus
 Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachträglich eingefügt werden muss, liefert die zero-crossing-point Methode nur eine Abschätzung für den Wert von $T_1$. Die beiden Anpassungen sind genauer, da hier der Nulldurchgang nur eine untergeordnete Rolle spielt. Anhand der Darstellungen ist deutlich erkennbar, dass die Anpassungen in einem Teilbereich gut funktionieren und ab einem gewissen Punkt die Daten deutlich abweichen. Dabei ist anhand des $\chi ^2 /ndof$ leicht erkennbar, dass der lineare Fit besser funktioniert hat als Exponentialfit.
 
 
-\subsection{$T_2$}
+\subsection{T2}
 \subsubsection{Messdaten}\label{sec:T2messdaten}
 \begin{figure}
 \centering
@@ -359,22 +359,22 @@ Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachtr
 \label{fig:T2Daten}
 \end{figure}
 
-Die erste aufgenommene Messreihe für $T_2$ ist in Abbildung \ref{fig:T2Daten} für beide Verfahren beispielhaft dargestellt.\\
+Die ersten Messungen für $T_2$ sind in Abbildung \ref{fig:T2Daten} für beide Verfahren beispielhaft dargestellt.\\
 Bei dieser Messreihe ist auffällig, dass die $\pi$ Pulse und deren FID sichtbar sind, was bei idealen Einstellungen und Spinverhalten nicht der Fall sein sollte. Außeredem verschwindet bei der C-P-Methode das 3.Spinecho.
 \paragraph{mögliche systematische Fehler:}
 
-Das Auftreten der $\pi$ Pulse kann verschiedene Ursachen haben. Einerseits kann die RF-Kreisfrequenz falsch eingestellt sein. Dadurch befindet sich das Magnetfeld bei den Pulsen nicht in der x-y Ebene, wodurch die Spinausrichtung nach einem $\pi$ Puls eine horizontale Komponente hat, welche natürlich gemessen wird.\\
-Es kann außerdem sein, dass die Pulslängen falsch eingestellt waren. Durch eine Kombination mit der falschen Frequenz kann dies dazu führen, dass der Puls die Spins wieder parralleler zueinander ausrichtet, wodurch die "Verschmierung" teilweise aufgehoben werden kann und somit ein messbarer Peak entsteht.\\
-Falsch eingestellte Pulslängen würden auch das Fehlen des 3.Spinechos  bei der C-P-Methode erklären, da sich die Abweichungen von der x-y Ebene hier mit jedem $\pi$ Puls aufaddieren und der Spinvektor somit nach mehreren Pulsen im Extremfall in z-Richtung zeigt und somit nicht gemessen werden kann.\\
+Das Auftreten der $\pi$ Pulse kann verschiedene Ursachen haben. Einerseits kann die RF-Kreisfrequenz falsch eingestellt sein. Dadurch befindet sich das Magnetfeld bei den Pulsen nicht in der x-y Ebene, wodurch die Spinausrichtung nach einem $\pi$ Puls eine horizontale Komponente hat, welche natürlich gemessen weir.\\
+Es kann außerdem sein, dass die Pulslängen falsch eingestellt waren. Durch eine Kombination mit der falschen Frequenz kann dies dazu führen, dass der $\pi$ Puls die in der Durchführung beschriebene Verschmierung teilweise aufhebt, wodurch ein messbarer Peak entsteht.\\
+Falsch eingestellte Pulslängen würden auch das Fehlen des 3.Spinechos  bei der C-P-Methode erklären, da sich die Abweichungen von der x-y Ebene hier wie oben beschrieben aufaddieren und der Spinvektor somit nach mehreren $\pi$ Pulsen im Extremfall in z-Richtung zeigt und somit nicht gemessen werden kann.\\
 \\
-Um diese Effekte zu minimieren wurde eine zweite Messreihe aufgenommen, bei der die Frequenz nochmals neu kalibriert wurde und die Pulslängen so angepasst wurden, dass die $\pi$ Pulse möglichst klein ausfallen. Die neu angepasste Frequenz beträgt $f = \SI{21.588\pm 0.001}{Hz}$ und die neuen Pulslängen $T_{\pi /2} = \SI{3.46}{ms}$ und $T_{\pi} = \SI{6.92}{ms}$. Diese Messreihe ist beispielhaft in Abbildung \ref{fig:T2Datenalt} gezeigt.\\
+Um diese Effekte zu minimieren wurde eine zweite Messreihe aufgenommen, bei der die Frequenz nochmals neu kalibriert wurde und die Pulslängen so angepasst wurden, dass die $\pi$ Pulse möglichst klein ausfallen. Diese Messreihe ist beispielhaft in Abbildung \ref{fig:T2Datenalt} zu sehen.\\
 Es ist dort wie erwartet zu sehen, dass die Peaks bei der C-P-Methode wegen der Abweichung von der x-y Ebene schneller abfallen. Dies ist ein unerwünschter Effekt, der das Ergebnis unter Umständen stark beeinflusst. Außerdem sind die Peaks ab einer gewissen Ordnung sehr klein und sogar teilweise gar nicht mehr sichtbar, was das Ergebnis deutlich ungenauer machen würde.\\
 Deswegen wurde entschieden die Daten des Meiboom-Gill-Verfahrens für die Auswertung zu benutzen.
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/T2CPalt.png}
 \includegraphics[scale=0.8]{Bilder/T2MGalt.png}
-\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "blaue" Kurve von Channel 2, welcher die Amplitude des Messsignals beschreibt.}
+\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "blaue" Kurve von Channel 2, welche die Amplitude des Messsignals beschreibt.}
 \label{fig:T2Datenalt}
 \end{figure}
 
@@ -385,15 +385,14 @@ Diese ergab einen Offset von $U_{Offset} = 20.6mV$ und eine Schwankung von $\sig
 Die Peakhöhe und Lage wurde durch eine lokale Maximumsbestimmung in der Nähe der Peaks durchgeführt.\\
 Dabei wurde der Peak des $\pi/2$ Pulses ausgenommen, da dieser nicht durch ein Spinecho entsteht und der Puls somit das Ergebnis verfälschen könnte.\\
 Bei allen Datensätzen wurde eine Zeitskala von 10ms und eine Höhenskala von 200mV gewählt. Bei diesen Skalen betragen die Digitalisierungsfehler 8mV und 0.04ms.\\
-Da das Maximum oft über mehrere Digitalisierungsschritte verteilt war, wurde angenommen, dass das wahre Maximum gleichverteilt zwischen diesen Schritten liegt. Die Maximumsbreite ist bei allen Peaks sehr ähnlich, weswegen allgemein ein Wert von $\Delta t = 0.16ms$ durch ablesen abgeschätzt wurde.\\
+Da das Maximum oft über mehrere Digitalisierungsschritte verteilt war, wurde angenommen, dass das wahre Maximum gleichverteilt zwischen diesen Schritten liegt. Eine gute Wahl der Maximumsbreite betrug $\Delta t = 0.16ms$.\\
 Damit ergibt sich eine Ableseungenauigkeit auf die Lage von
 
 \begin{equation*}
 \sigma_t = \dfrac{\Delta t}{\sqrt{12}} \approx 0.05ms
 \end{equation*}
 
-Der Fehler auf die Peakhöhe ergibt sich durch die Schwankung der Werte innerhalb der Maximumsbreite. In diesem Fehler steckt sowohl der Digitalisierungsfehler, als auch der Fehler durch das Rauschen, weswegen diese Fehler nicht mehr extra einbezogen werden müssen.\\
-In Tabelle \ref{tab:Peaks} sind die so bestimmten Positionen und Höhen für das in Abbildung \ref{fig:T2Datenalt} gezeigte Beispiel des Meiboom-Gill-Verfahrens aufgelistet.
+Der Fehler auf die Peakhöhe ergibt sich durch die Schwankung der Werte innerhalb der Maximumsbreite. In diesem Fehler steckt sowohl der Digitalisierungsfehler, als auch der Fehler durch das Rauschen, weswegen diese Fehler nicht mehr extra einbezogen werden müssen.
 
 \begin{table}
 \centering
@@ -422,10 +421,9 @@ $ 72.02 \pm 0.05 $ & $ 47.01 \pm 3.77 $ \\
 $ 80.02 \pm 0.05 $ & $ 39.01 \pm 3.77 $ \\
 \hline
 \end{tabular}
-\caption{Gefundene Peaks für $\tau = 4ms$. Die Position ist in ms nach dem $\pi /2$ Triggerpuls angegeben.}
-\label{tab:Peaks}
+\caption{Gefundene Peaks für $\tau = 4ms$ }
 \end{table}
-\newpage
+
 \subsubsection{Exponentialfit}
 
 \begin{figure}
@@ -476,7 +474,7 @@ und den Fehler durch
 
 Um mögliche Systematiken abschätzen zu können wurden mit den oben beschriebenen Methoden weitere Datensätze ausgewertet. Alle Ergebnisse sind in Tabelle \ref{T2zusammenfassung} aufgelistet. Die dazugehörigen Anpassungen befinden sich im Anhang.
 Zuerst wurde die Messung mit dem Meiboom-Gill Verfahren für verschiedene $\tau$ wiederholt, um ein genaueres Resultat zu bekommen und mögliche statistische Schwankungen und Fehlmessungen zwischen verschiedenen Messungen zu eliminieren.\\
-Die Ergebnisse stimmen sowohl für verschiedene $\tau$ als auch für die beiden verschiedenen Auswertungsmethoden innerhalb ihrer Fehler überein. 	Eine gewichtete Mittelung über die vier Messungen liefert unser Endergebnis:
+Die Ergebnisse stimmen sowohl für verschiedene Messreihen als auch für die beiden verschiedenen Auswertungsmethoden innerhalb ihrer Fehler überein. 	Eine gewichtete Mittelung über die vier Messungen liefert unser Endergebnis:
 
 \begin{equation*}
 \boxed{T_{2, Exponential} = (27.6\pm 0.5)ms}
@@ -517,7 +515,7 @@ C-P & $4$ &  & $17.6\pm 0.4$ & $1.61$ & $17.7\pm 0.4$ & $1.02$\\
 C-P(alt.) & $4$ &  & $ 8.2 \pm 1.1 $ & $ 21.13 $ & $ 11.2 \pm 2.1 $ & $ 31.42 $ \\
 \hline
 \end{tabular}
-\caption{Übersicht aller ausgewerteten Ergebnisse. Dabei ist für jede Messung das verwendete Verfahren, die Wertezeit $\tau$ und die Anzahl der ausgewerteten Spinechos (Peaks) angegeben. Die Kennzeichnung (alt.) bedeutet, dass die Daten aus der alternativen Messung stammen, bei der Frequenz und Pulslänge falsch eingestellt waren. M-G(alt.)- und C-P-Messreihen dienen nur zur Veranschaulichung von Messfehlern und werden tragen nicht zum Endergebnis bei.}
+\caption{Übersicht aller ausgewerteten Ergebnisse. Dabei ist für jede Messung das verwendete Verfahren, die Wertezeit $\tau$ und die Anzahl der ausgewerteten Spinechos angegeben. Die Kennzeichnung (alt.) bedeutet, dass die Daten aus der alternativen Messung stammen, bei der Frequenz und Pulslänge falsch eingestellt waren.}
 \label{T2zusammenfassung}
 \end{table}
 
@@ -531,8 +529,7 @@ und daraus eine $\pi /2$-Pulsdauer von
 \begin{equation*}
 \boxed{T_{\pi /2} = \SI{1.98\pm 0.07}{\mu s}}
 \end{equation*}
-Es hat sich herausgestellt, dass die Pulsdauer für die eigentliche Probe wesentlich größer ist, da die Probe das Magnetfeld anders beeinflusst als die Spule. Die Messung ist also sehr ungenau und gibt lediglich die Größenordnung der Magnetfeldstärke und der Pulsdauer an.\\
-\\
+Es hat sich herausgestellt, dass die Pulsdauer für die eigentliche Probe wesentlich größer ist, da die Probe das Magnetfeld anders beeinflusst als die Spule.\\
 Tabelle \ref{GesamtZusammenfassung} zeigt einen Überblick über die sich ergebenden Werte für die Relaxationszeiten.
 
 \begin{table}[H]
@@ -549,15 +546,12 @@ $T_2$ & - & $27.8\pm 0.5$ & $27.6\pm 0.5$\\
 \caption{Zusammenfassung der Ergebnisse für die Relaxationszeiten aus den unterschiedlichen Auswertungsmethoden.}
 \label{GesamtZusammenfassung}
 \end{table}
-$T_1$ konnte auf fast $1\%$ genau bestimmt werden, $T_2$ wegen einer kleineren Anzahl an Fitparameter nur auf $2\%$ genau. Dabei ist $T_1$ um c.a 8ms kleiner als $T_2$.\\
-Erwartet wurde aber, dass die beiden Werte sehr ähnlich zueinander sind und dass sogar $T_2 \lesssim T_1$ gilt. Bei der Messmethode von $T_2$ spielen Diffusionseffekte jedoch eine wesentlich kleinere Rolle. Diese Effekte fallen bei der Messung von $T_1$ so groß aus, dass sie den Messwert deutlich beeinflussen.\\
-Die beiden unterschiedlichen Anpassungen ergeben sehr ähnliche Ergebnisse, was aber auch zu erwarten war, da beide Methoden einen Fit auf die selben Daten darstellen. Sie ergeben nicht exakt den selben Wert, da bei einer logarythmischen Anpassung wegen der Fehlerfortpflanzung ($\sigma_{log} = \dfrac{\sigma_x}{x}$) größere Werte einen kleineren Fehler besitzen und somit stärker ins Gewicht fallen. Dies könnte von Vorteil sein, da für die kleineren Peaks mehr Zeit seit dem Anfangspeak vergangen ist und mögliche (unbekannte) zeitabhängige Systematiken somit größer werden.\\
-Es kann also zusammenfassend gesagt werden, dass der Lineare Fit an den logarythmischen Daten das beste Ergebnis geliefert hat. Für $T_2$ hat außerdem die Meiboom-Gill-Methode die besseren Ergebnisse geliefert.
+Erwartet wurde aber, dass die beiden Werte sehr ähnlich zueinander sind und dass sogar $T_2 \lesssim T_1$ gilt. Bei der Messmethode von $T_2$ spielen Diffusionseffekte jedoch eine wesentlich kleinere Rolle. Diese Effekte fallen bei der Messung von $T_1$ so groß aus, dass sie den Messwert deutlich verändern.
 
 \newpage
 
 \section{Anhang}
-\subsection{Weitere Auswerungen von T2}
+\subsection{weitere Auswerungen von T2}
 Die Folgenden Bilder zeigen alle weiteren Daten, die bei der Bestimmung von $T_2$ ausgewertet wurden.\\
 \textbf{oben links}: Linearer Fit\\
 \textbf{oben rechts}: Exponentieller Fit\\

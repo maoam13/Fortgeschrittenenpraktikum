@@ -24,7 +24,7 @@ def tabelle(x,y,dx,dy):
         print "\hline"
         print "$", np.round(x[i]*1000,2), "\pm",np.round(dx[i]*1000,2),"$ & $",np.round(y[i]*1000,2), "\pm",np.round(dy[i]*1000,2),"$ \\\\"
 
-file = open("..\Daten\T2Mgalt\ALL0001\F0001CH2.CSV")
+file = open("C:\Users\morit\Documents\GitHub\Fortgeschrittenenpraktikum\NMR\Daten\T2CPalt\ALL0000\F0000CH2.CSV")
 csv_reader = csv.reader(file, delimiter=",")
 x = []
 y = []
@@ -64,7 +64,6 @@ for i in range(N):
     maxix = p.peak(xd,yd,round(t,5),round(t+dt,5))
     ypeak[i] = np.mean([maxi,maxi,array[xmaxi-1],array[xmaxi+1]])
     yerr[i] = np.std([maxi,array[xmaxi-1],array[xmaxi+1]])
-    #yerr[i] = np.sqrt(yerr[i]**2 + 0.004**2)
     
     xwert = np.argmax(array)+x.index(round(t,5))
     #xpeak[i] = float(x[xwert])
