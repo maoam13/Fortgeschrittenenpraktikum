@@ -79,13 +79,13 @@ Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abh�
 \label{fig:MessungT1_Beispiel}
 \end{figure}
 
-Für die Messung von T1 werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden. Das Ergebnis einer solchen Messung ist beispielhaft in Abbildung \ref{fig:MessungT1_Beispiel} gezeigt (das blau dargestellte Signal wird betrachtet). Der erste Peak ist der Rest des $\pi$-Pulses. Der zweite Peak ist der Free Induction Decay (FID) nach dem $\pi /2$-Puls. \\
-Für die Bestimmung von T1 wird die Wartezeit zwischen den beiden Pulse durchgefahren und die relative Höhe des FID zur Höhe des $\pi$-Pulses bestimmt. Die Erwartung ist ein exponentieller Abfall:
+Für die Messung von $T_1$ werden die Spins mit einem $\pi$-Puls umgedreht. Nach einer Wartezeit $\tau$, werden die restlichen, noch in der umgedrehten Position befindlichen Spins mit einem $\pi /2$-Puls in die x-y-Ebene gedreht, um dort vermessen zu werden. Das Ergebnis einer solchen Messung ist beispielhaft in Abbildung \ref{fig:MessungT1_Beispiel} gezeigt (das blau dargestellte Signal wird betrachtet). Der erste Peak ist der Rest des $\pi$-Pulses. Der zweite Peak ist der Free Induction Decay (FID) nach dem $\pi /2$-Puls. \\
+Für die Bestimmung von $T_1$ wird die Wartezeit zwischen den beiden Pulse durchgefahren und die relative Höhe des FID zur Höhe des $\pi$-Pulses bestimmt. Die Erwartung ist ein exponentieller Abfall:
 \begin{equation}
 \label{eq:T1_Exponentialfunktion}
 U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \end{equation}
-
+Es wurden die Einstellungen verwendet, die sich bei der Optimierung der Einstellungen ergeben haben.
 
 \subsection{Messung von $T_2$}
 
@@ -132,7 +132,7 @@ und daraus eine ungefähre $\pi /2$-Pulsdauer von
 Bei der Feineinstellung wurde eine optimale Frequenz von  $f = \SI{21.590}{Mhz}$ gefunden. Die Dauer des $\pi / 2 $-Pulses musste ebenfalls auf $\SI{2.56}{\mu s}$, bzw. auf $\SI{5.13}{\mu s}$ für den $\pi$-Puls korrigiert werden, um einen möglichst großen Peak zu sehen. Die Abweichung vom errechneten Wert für die Pulslänge kann daran liegen, dass die Glaswand des Probenbehälters, bzw. die Probe selbst das Magnetfeld abschwächt.\\
 Die Änderungen der Lamorfrequenz durch Temperaturschwankungen etc. fanden auf der 4.Nachkommastelle statt. Sie beeinflussen den Versuch also nicht nennenswert.
 
-\subsection{T1}
+\subsection{$T_1$}
 Bei den Messungen zu $T_1$ wird immer nur der Betrag des FID-Signals gemessen, daher muss der Teil der Messwerte, die vor dem Nulldurchgang liegen noch mit dem Faktor (-1) multipliziert werden. In Tabelle \ref{tab:T1_Daten} ist dies bereits geschehen. Genauso ist der Offset bereits korrigiert. Die Fehler auf die Puls- und FID-Höhe werden in dem Abschnitt zur Rauschmessung erklärt. Der Fehler auf die Zeit entspricht dem Ablesefehler des Maximums. Dieser entspricht 8 Digitalisierungsschritten, wobei eine Gleichverteilung angenommen wird:
 \begin{equation*}
 \sigma _{\tau} = \dfrac{8 \cdot \Delta}{\sqrt{12}} = \dfrac{8 \cdot \frac{45 ms}{2500}}{\sqrt{12}} \approx 0.042 ms
@@ -228,7 +228,7 @@ Pulshöhe [mV] & FID-Höhe [mV] & $\tau$ [ms] \\
 396 $\pm$ 4 & 272 $\pm$ 4 & 31.500 $\pm$ 0.208 \\ 
 \hline 
 \end{tabular} 
-\caption{Messwerte der Höhen des $\pi /2$-Pulses und des FID s beim Durchfahren von $\tau$ zur Bestimmung von T1.}
+\caption{Messwerte der Höhen des $\pi /2$-Pulses und des FID s beim Durchfahren von $\tau$ zur Bestimmung von $T_1$.}
 \label{tab:T1_Daten}
 \end{table}
 
@@ -269,7 +269,7 @@ Anhand von Gl. \ref{eq:T1_Exponentialfunktion} lässt sich leicht ersehen, dass 
 T_1 = \dfrac{1}{ln(2)} \cdot T_{U_{rel} = 0}
 \end{equation*}
 Abbildung \ref{fig:T1_Zero_Crossing} veranschaulicht den zero-crossing-point. Dabei zeigt sie gleichzeitig auch die große Unsicherheit: Um den zero-crossing-point gibt es viele Punkte, die sehr nah an der Null sind. \\ 
-Anhand der Daten ist gut ersichtlich, dass der Nulldurchgang irgendwo zwischen den Werten $T_{U_{rel} < 0} = 13.428ms$ und $T_{U_{rel} > 0} = 15.516ms$ liegt. Damit ergibt sich der Messwert für T1 zu:
+Anhand der Daten ist gut ersichtlich, dass der Nulldurchgang irgendwo zwischen den Werten $T_{U_{rel} < 0} = 13.428ms$ und $T_{U_{rel} > 0} = 15.516ms$ liegt. Damit ergibt sich der Messwert für $T_1$ zu:
 \begin{equation*}
 T_1 = \dfrac{1}{ln(2)} \cdot \dfrac{T_{U_{rel} > 0} + T_{U_{rel} < 0}}{2} = 20.879 ms
 \end{equation*}
@@ -341,7 +341,7 @@ Linearer Fit & 19.661 & 0.216 & 4.489 \\
 Exponentialfit & 19.477 & 0.215 & 20.140 \\ 
 \hline 
 \end{tabular} 
-\caption{Ergebnisse für T1 aus den unterschiedlichen Auswertungsmethoden angewandt auf dieselben Daten.}
+\caption{Ergebnisse für $T_1$ aus den unterschiedlichen Auswertungsmethoden angewandt auf dieselben Daten.}
 \label{tab:T1_Ergebnisse}
 \end{table}
 
