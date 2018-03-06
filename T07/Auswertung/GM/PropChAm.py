@@ -43,8 +43,8 @@ a,sa,b,sb,chi,rest = p.lineare_regression(xplateau,np.log(yplateau),slogy[platea
 if 1:
     plt.figure(3)
     ax1=plt.subplot(211)
-    ax1.axis([300,1300,9,10])
-    ax1.set_ylabel("U[V]")
+    ax1.axis([300,1300,9.4,9.8])
+    ax1.set_ylabel("log(n)")
     plt.figtext(0.6,0.65,'Modell: y = a*x+b'+
                 '\n a= '+str(np.round(a,6))+' +/- '+str(np.round(sa,6))+'\n'
                 +' b= '+str(np.round(b,3))+' +/- '+str(np.round(sb,3))+' \n'
@@ -52,7 +52,7 @@ if 1:
     plt.errorbar(x[11:],logy[11:],yerr = slogy[11:],fmt='.')
     plt.plot(x,a*x+b,color = 'r')
     ax2=plt.subplot(212,sharex=ax1)
-    ax2.set_xlabel("t[s]")
+    ax2.set_xlabel("U[V}")
     ax2.set_ylabel("Residuen")
     plt.errorbar(xplateau,logyplateau-(a*xplateau+b),yerr = slogy[plateau:plateauend],fmt='.')
     x_r = np.array(plt.xlim())

@@ -248,8 +248,8 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 \subsection{Proportionalzähler}
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{Bilder/Prop/Ch_lin.PNG}
-\includegraphics[scale=0.8]{Bilder/Prop/Ch_log.PNG}
+\includegraphics[scale=0.8]{Bilder/Prop/Am_lin.PNG}
+\includegraphics[scale=0.8]{Bilder/Prop/Am_log.PNG}
 \caption{AM}
 \label{fig:amlin}
 \end{figure}
@@ -263,8 +263,8 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 
 Die Pulsraten für das Americium-Präparates sind in Abbildung  \ref{fig:amlin} dargestellt und die des Kohlenstoff-Präparates in Abbildung \ref{fig:clin}. Dabei wurden die Daten aus dem gleichen Grund, wie beim Geiger-Müller-Zählrohr, logarythmisiert (vgl. Kapitel \ref{GMchar}).\\
 \paragraph{C-Präparat}
-$_6^14 C$ ist ein $\beta$-Strahler. Aus diesem grund ist wie erwartet nur das Plateau in den Daten zu sehen, in das sowohl $\alpha$ als auch $\beta$ Strahlung mit einfließen.\\
-Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die logarythmisierten Werte angepasst und abgeschätzt, welche gemessenen Spannungswerte  mit dieser Anpassung übereinstimmt. Die Anpassung ist in Abbildung \ref{fig:CPlateau} dargestellt. Offensichtlich beginnt das Plateau bei $\SI{1570\pm 12}{V}$ und geht bis $\SI{1930\pm 12}{V}$.
+$_6^{14} C$ ist ein $\beta$-Strahler. Aus diesem Grund ist wie erwartet nur das Plateau in den Daten zu sehen, in das sowohl $\alpha$ als auch $\beta$ Strahlung mit einfließen.\\
+Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die logarythmisierten Werte angepasst und abgeschätzt, welche gemessenen Spannungswerte  mit dieser Anpassung übereinstimmt. Die Anpassung ist in Abbildung \ref{fig:CPlateau} dargestellt. Offensichtlich beginnt das Plateau bei $\SI{1570\pm 12}{V}$ und geht bis $\SI{1930\pm 12}{V}$. Aus dem Fit ergibt sich außerdem eine Steigung von $a = (5.7\pm0.3)\cdot 10^{-4}$. Dies entspricht einer Zunahme der Steigung der Zählrate von 0.5 über das ganze Plateau.
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Prop/C_plateau.PNG}
@@ -273,6 +273,19 @@ Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die 
 \end{figure}\\
 \\
 Erst ab einer Spannung von $\SI{1130\pm 12}{V}$ werden überhaupt nennenswerte Pulsraten gemessen. Anscheinend wird ab dieser Spannung also $\beta$-Strahlung gemessen, dass $\alpha$-Plateau hört also vermutlich bei dieser Spannung auf.
+
+\paragraph{AM-Präparat}
+Armericium ist sowohl ein $\alpha$-, als auch ein $\beta$-Strahler. Theoretisch sollten also beide Plateaus in der Messung zur Pulsrate sichtbar sein. Im den Daten ist aber nur ein Plateau sichtbar. Dieses wird genau so wie das Plateau des C-Präparates abgeschätzt, was in Abbildung \ref{fig:AMPlateau} zu sehen ist.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/Am_plateau.PNG}
+\caption{...}
+\label{fig:AMPlateau}
+\end{figure}
+
+Das Plateau befindet sich in einem Spannungsbereich von $\SI{760\pm 6}{V}$ bis $\SI{1180\pm 6}{V}$ und hat eine Steigung von $a = (8.6\pm1.4)\cdot 10^{-5}$. Dies entspricht einer Zunahme der Zählratensteigung von 0.1 im Plateaubereich.\\ Das Plateauende ist mit dem Ergebnis der C-Proben Auswertung verträglich, bei dem die Zählung von $\beta$-Strahlung bei c.a 1130V einsetzt. Im Bereich bis 1180V ist die Zunahme der Zählrate durch diese Strahlung so klein, dass man sie nicht aus der Messstreuung herausfiltern kann.\\
+\\
 
 
 
