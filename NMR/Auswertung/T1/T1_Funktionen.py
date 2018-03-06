@@ -20,7 +20,7 @@ def Rohdaten(offset, sig_U, sig_tau, j):
     
     data = []
     for i in range(0, len(rohdata) - 4):
-        t = (tau[i][2] - tau[i][1]) * 45/2500
+        t = (tau[i][2] - tau[i][1]) * 0.02
         if i < 38:
             sig_t = sig_tau
         else:

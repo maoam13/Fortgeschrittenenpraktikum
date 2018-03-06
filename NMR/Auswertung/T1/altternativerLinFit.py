@@ -14,7 +14,7 @@ import timeit
 
 start_time=timeit.default_timer()
 
-sig_tau = 8. * 45/2500 / np.sqrt(12)
+sig_tau = 8. * 0.02 / np.sqrt(12)
 stat_U = 0.004 / np.sqrt(12)
 offset, sig_U = func.Offset_Rauschen()
 rohdata = func.Rohdaten(offset, np.sqrt(sig_U**2 + stat_U**2), sig_tau, 18)
