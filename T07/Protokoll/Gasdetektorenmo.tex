@@ -194,6 +194,7 @@ Eine gewichtete Mittelung der $\tau$ ergibt:
 
 
 \subsubsection{Charakteristik}
+\label{GMchar}
 \begin{figure}
 \centering
 \includegraphics[scale=1]{Bilder/GMlinear.PNG}
@@ -242,11 +243,41 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 
 \subsubsection{Zusammenfassung}
 
+\subsubsection{Pulsraten}
+
 \subsection{Proportionalzähler}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/Ch_lin.PNG}
+\includegraphics[scale=0.8]{Bilder/Prop/Ch_log.PNG}
+\caption{AM}
+\label{fig:amlin}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/C_lin.PNG}
+\includegraphics[scale=0.8]{Bilder/Prop/C_log.PNG}
+\caption{CH}
+\label{fig:clin}
+\end{figure}
+
+Die Pulsraten für das Americium-Präparates sind in Abbildung  \ref{fig:amlin} dargestellt und die des Kohlenstoff-Präparates in Abbildung \ref{fig:clin}. Dabei wurden die Daten aus dem gleichen Grund, wie beim Geiger-Müller-Zählrohr, logarythmisiert (vgl. Kapitel \ref{GMchar}).\\
+\paragraph{C-Präparat}
+$_6^14 C$ ist ein $\beta$-Strahler. Aus diesem grund ist wie erwartet nur das Plateau in den Daten zu sehen, in das sowohl $\alpha$ als auch $\beta$ Strahlung mit einfließen.\\
+Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die logarythmisierten Werte angepasst und abgeschätzt, welche gemessenen Spannungswerte  mit dieser Anpassung übereinstimmt. Die Anpassung ist in Abbildung \ref{fig:CPlateau} dargestellt. Offensichtlich beginnt das Plateau bei $\SI{1570\pm 12}{V}$ und geht bis $\SI{1930\pm 12}{V}$.
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/C_plateau.PNG}
+\caption{...}
+\label{fig:CPlateau}
+\end{figure}\\
+\\
+Erst ab einer Spannung von $\SI{1130\pm 12}{V}$ werden überhaupt nennenswerte Pulsraten gemessen. Anscheinend wird ab dieser Spannung also $\beta$-Strahlung gemessen, dass $\alpha$-Plateau hört also vermutlich bei dieser Spannung auf.
 
 
 
 \newpage
+
 
 \subsection{Statistikmessung}
 

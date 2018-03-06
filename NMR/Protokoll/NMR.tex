@@ -42,7 +42,9 @@ In ein konstantes Magnetfeld eines Permanentmagneten wird eine Spule so installi
 Die Spule dient gleichzeitig als Sender für ein Wechselfeld und als Messinstrument für die Magnetisierung in der Richtung der Spule, da diese in der Spule einen Strom induziert.\\
 Mit einem Frequenzgenerator wird ein elektrisches Wechselfeld erzeugt, das wiederum ein Magnetfeld in der Spule induziert. Da zeitlich kurze Magnetfelder benötigt werden, wird der Frequenzgenerator an einen Pulsgenerator angeschlossen. Der dadurch generierte Wechselfeldpuls wird auf die Spule gegeben. Der Pulsgenerator dient gleichzeitig als Triggersignal für das Oszilloskop.\\
 Das elektrische Signal, das in der Spule durch die Magnetisierung induziert wird, wird in einem sogenannten Mixer mit dem Signal des Frequenzgenerators multipliziert. Dieses Signal wird auf dem Oszilloskop zusammen mit dem direkt aus der Spule entnommenen Signal angezeigt.\\
-Der Verstärker bietet die Möglichkeit, die Verstärkung für einen kurzen Zeitraum auf Null zu stellen, das sogenannte blanking. Damit können die Pulse aus dem Oszilloskopbild rausgehalten werden.
+Alle Messungen finden grundsätzlich an dem zum direkten Signal statt, und nicht an dem überlagertem.\\
+Der Verstärker bietet die Möglichkeit, die Verstärkung für einen kurzen Zeitraum auf Null zu stellen, das sogenannte blanking. Damit können die Pulse aus dem Oszilloskopbild rausgehalten werden.\\
+
 
 
 
@@ -66,8 +68,9 @@ Wobei das gyromagnetische Verhältnis gegeben ist zu:
 und $\omega_p = 2 \pi f_p$.
 Der $\pi$-Puls ist entsprechend doppelt so lang wie der $\pi /2$-Puls.\\
 \\
-Mit diesen Voreinstellungen können nun die korrekten Parameter gewählt werden. Dazu wird die Probe in den Probenraum eingebracht. Der Einfachheit halber auf der Höhe, auf der vorher die Spule war. In dem direkten Signal aus dem Probenraum tritt nun gemäß Additionstheorem eine Schwebung auf, wobei nur der Anteil mit der geringeren Frequenz zu angezeigt wird ($\propto \cos ((\omega _L - \omega _p) t)$). Wenn in dem Signal keine Schwingung mehr zu sehen ist, gilt $\omega _p = \omega _L$. Um dies zu erreichen, müssen die Höhe der Probe, die Frequenz und mit der Frequenz gemäß Gl. \ref{T_pi/2} auch die Pulsdauer variiert werden.\\
-Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abhängig von der Stärke des konstanten Magnetfeldes ist. Da der Permanentmagnet temperaturabhängig ist, muss die Feineinstellung der Parameter zwischen den Messreihen nachjustiert werden.
+Mit diesen Voreinstellungen können nun die korrekten Parameter gewählt werden. Dazu wird die Probe in den Probenraum eingebracht. Der Einfachheit halber auf der Höhe, auf der vorher die Spule war. In dem mit der eingestellten Frequenz überlagertem Signal aus dem Probenraum tritt nun gemäß Additionstheorem eine Schwebung auf. Wenn diese in dem Signal nicht mehr zu sehen ist, gilt $\omega _p = \omega _L$, der Aufbau ist dann richtig eingestellt. Um dies zu erreichen, müssen die Höhe der Probe, die Frequenz und mit der Frequenz gemäß Gl. \ref{T_pi/2} auch die Pulsdauer variiert werden.\\
+Die einzustellenden Parameter sind abhängig von der Frequenz, die wiederum abhängig von der Stärke des konstanten Magnetfeldes ist. Da der Permanentmagnet temperaturabhängig ist, muss die Feineinstellung der Parameter zwischen den Messreihen nachjustiert werden. \\
+Aus diesem Grund sollte während des gesamten Versuches die Raumtemperatur möglichst konstant gehalten werden, weswegen versucht wurde, eine Temperatur von $20^{\circ}C$ beizuhalten.
 
 
 \subsection{Messung von $T_1$}
@@ -85,7 +88,7 @@ Für die Bestimmung von $T_1$ wird die Wartezeit zwischen den beiden Pulse durch
 \label{eq:T1_Exponentialfunktion}
 U_{rel} (t) := \dfrac{U_{FID} (t)}{U_0} = 1 - 2 e^{-\frac{t}{T_1}}
 \end{equation}
-Es wurden die Einstellungen verwendet, die sich bei der Optimierung der Einstellungen ergeben haben. Dabei wurde $\tau$ in 1ms-Schritten von 1ms bis 40ms erhöht.
+Es wurden die Einstellungen verwendet, die sich bei der Optimierung der Einstellungen ergeben haben. Dabei wurde $\tau$ in 1ms-Schritten von 1ms bis 35ms erhöht. Um bei der Auswertung mithilfe der zero-crossing-point Methode (vgl. Kapitel \ref{T1zcp}) bessere Ergebnisse zu erhalten, wurde im Bereich des Nulldurchganges in 0.4ms-Schritten, statt in 1ms, gemessen.
 
 \subsection{Messung von $T_2$}
 
@@ -256,6 +259,7 @@ Dieser Fehler kann nun mittels Gl. \ref{eq:T1_Exponentialfunktion} auf die relat
 
 
 \subsubsection{Zero-crossing-point-Methode}
+\label{T1zcp}
 
 \begin{figure}
 \centering
@@ -351,7 +355,7 @@ Einen ähnlichen Effekt erhält man durch Spins, die vor der Pulssequenz nicht e
 Hinzu kommen lokale Inhomogenitäten der Magnetfelder, die ebenfalls dafür sorgen, dass einzelne Spins nicht in die x-y-Ebene gedreht werden und damit nur einen kleineren Teil zur gemessenen Magnetisierung beitragen.\\
 All diese Fehlerquellen sind bei dem gegebenen Versuchsaufbau jedoch kaum quantisierbar, daher können diese nur qualitativ betrachtet werden. Allgemein lässt sich sagen, dass die systematischen Fehler die statistischen überwiegen.
 
-\subsubsection{Zusammenfassung}
+\subsubsection{Zusammenfassung für $T_1$}
 
 \begin{table}
 \centering
@@ -366,17 +370,17 @@ Linearer Fit & 19.66 & 0.22 & 4.49 \\
 Exponentialfit & 19.48 & 0.22 & 20.14 \\ 
 \hline
 \hline
-Linearteilfit &  22.82 & 0.15 & 0.75 \\
+Linearer Teilfit &  22.82 & 0.15 & 0.75 \\
 \hline
-Exponentialteilfit &  22.82 & 0.15 & 2.82 \\
+Exponentieller Teilfit &  22.82 & 0.15 & 2.82 \\
 \hline
 \end{tabular} 
-\caption{Ergebnisse für $T_1$ aus den unterschiedlichen Auswertungsmethoden angewandt auf dieselben Daten.}
+\caption{Ergebnisse für $T_1$ aus den unterschiedlichen Auswertungsmethoden angewandt auf dieselben Daten. Es sind sowohl die Ergebnisse der Anpassungen auf die vollständigen Daten gelistet, als auch die Anpassungen auf die Daten bis zum zero-crossing-point.}
 \label{tab:T1_Ergebnisse}
 \end{table}
 
 Tabelle \ref{tab:T1_Ergebnisse} zeigt zusammengefasst alle Ergebnisse aus den Auswertungsmethoden. Die Werte liegen nahe beieinander, allerdings stimmen nur die Werte aus den (Teil-)Fits jeweils innerhalb ihrer Fehler überein. Da alle Auswertungsmethoden dieselbe Messreihe verwenden, sind die systematischen Fehler identisch.\\
-Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachträglich eingefügt werden muss, liefert die zero-crossing-point Methode nur eine Abschätzung für den Wert von $T_1$. Die beiden Anpassungen sind genauer, da hier der Nulldurchgang nur eine untergeordnete Rolle spielt. Aufgrund des großen Unterschieds zwischen den Fits und der Teilfits kann davon auszugehen, dass im Teil der Daten nach dem Nulldurchgang eine Systematik drin ist. Daher kann der Wert aus den Teilfits als genauer angenommen werden.
+Da die Messung immer nur den Betrag ergibt und deswegen der Nulldurchgang nachträglich eingefügt werden muss, liefert die zero-crossing-point Methode nur eine Abschätzung für den Wert von $T_1$. Die beiden Anpassungen sind genauer, da hier der Nulldurchgang nur eine untergeordnete Rolle spielt. Aufgrund des großen Unterschieds zwischen den Fits und der Teilfits kann davon auszugehen, dass im Teil der Daten nach dem Nulldurchgang eine unbekannte Systematik das Ergebnis beeinflusst. Daher kann der Wert aus den Teilfits als genauer angenommen werden.
 
 
 \subsection{$T_2$}
@@ -404,7 +408,7 @@ Deswegen wurde entschieden die Daten des Meiboom-Gill-Verfahrens für die Auswer
 \centering
 \includegraphics[scale=0.8]{Bilder/T2CPalt.png}
 \includegraphics[scale=0.8]{Bilder/T2MGalt.png}
-\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "blaue" Kurve von Channel 2, welcher die Amplitude des Messsignals beschreibt.}
+\caption{Ergebnisse für $T_2$ mit angepasster Frequenz und Pulslänge für $\tau = 4ms$. \textbf{Oben}: Carr-Purcell-Verfahren. \textbf{Unten}: Meiboom-Gill-Verfahren. Für die Auswertung relevant ist nur die "blaue" Kurve von Channel 2, welcher eine Spannung beschreibt, die proportional zum Messsignal ist.}
 \label{fig:T2Datenalt}
 \end{figure}
 
@@ -461,7 +465,7 @@ $ 80.02 \pm 0.05 $ & $ 39.01 \pm 3.77 $ \\
 \begin{figure}
 \centering
 \includegraphics[scale=0.9]{Bilder/T2exp.png}
-\caption{Exponentialfit}
+\caption{Exponentialfit an die gefundenen Peaks des M-G-Verfahrens zur Bestimmung von $T_2$.}
 \label{fig:T2exp}
 \end{figure}
 
@@ -504,7 +508,7 @@ und den Fehler durch
 \sigma_{T_2} = \dfrac{1}{a^2} \cdot \sigma_a = 1.0ms
 \end{equation*}
 
-\subsubsection{Auswertung weiterer Messreihen und Zusammenfassung}
+\subsubsection{Auswertung weiterer Messreihen und Fazit}
 
 Um mögliche Systematiken abschätzen zu können wurden mit den oben beschriebenen Methoden weitere Datensätze ausgewertet. Alle Ergebnisse sind in Tabelle \ref{T2zusammenfassung} aufgelistet. Die dazugehörigen Anpassungen befinden sich im Anhang.
 Zuerst wurde die Messung mit dem Meiboom-Gill Verfahren für verschiedene $\tau$ wiederholt, um ein genaueres Resultat zu bekommen und mögliche statistische Schwankungen und Fehlmessungen zwischen verschiedenen Messungen zu eliminieren.\\
