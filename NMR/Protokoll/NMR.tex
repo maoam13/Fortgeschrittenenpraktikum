@@ -440,7 +440,8 @@ An die gefundenen Peaks wird nun eine Exponentialfunktion der Form
 \begin{equation}
 y = b \cdot e^{-a\cdot t}
 \end{equation}
-gefittet. Dies ist in Abbildung \ref{fig:T2exp} dargestellt.\\
+gefittet. Da der anfängliche $\pi /2$ Puls nicht für die Auswertung verwendet wurde, konnten auch keine relativen Pulshöhen benutzt werden, durch die man den Parameter b weglassen könnte.
+Dies ist in Abbildung \ref{fig:T2exp} dargestellt.\\
 Aus den gefundenen Werten berechnet sich $T_2$ durch 
 \begin{equation*}
 T_2 = \dfrac{1}{a} = 28.1ms
@@ -463,7 +464,8 @@ Nun werden die Spannungswerte logarithmisiert und eine lineare Funktion an die D
 \begin{equation}
 y = a \cdot t + b
 \end{equation}
-Daraus erhält man $T_2$ wieder durch 
+Auch hier kann der Parameter b nicht weggelassen werden, da keine relativen Pulshöhen verwendet wurden.
+Man erhält $T_2$ wieder durch 
 \begin{equation*}
 T_2 = \dfrac{-1}{a} = 28.3ms
 \end{equation*}
