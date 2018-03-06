@@ -15,29 +15,34 @@ import STM_Methoden as STMM
 start_time=timeit.default_timer()
 
 data_index = [1, 3, 8, 11]
-data = []
+data_nach = []
 for i in range(len(data_index)):
     bla = STMM.lese_Profillinie_ein(data_index[i] * 1000, vor = 0)
-    data.append(bla)
-'''
-a = STMM.addiere_abstaende(data[0])
-b = STMM.addiere_abstaende(data[1])
-c = STMM.addiere_abstaende(data[2])
-d = STMM.addiere_abstaende(data[3])
-'''
+    data_nach.append(bla)
+data_vor = []
+for i in range(len(data_index)):
+    bla = STMM.lese_Profillinie_ein(data_index[i] * 1000, vor = 1)
+    data_vor.append(bla)
 
-#finde extremalstellen
-usedData = data[0]
-extremal = []
-for i in range(len(usedData[0])):
-    bla = usedData[1][i]
+peak_approx = [26, 48, 86, 131]
+peaks_nach = []
+for i in range(len(data_nach)):
+    peak = STMM.get_peak_by_approx(data_nach[i][:,0], data_nach[i][:,1], peak_approx)
+    peaks_nach.append(peak)
+peaks_vor = []
+for i in range(len(data_vor)):
+    peak = STMM.get_peak_by_approx(data_vor[i][:,0], data_vor[i][:,1], peak_approx)
+    peaks_vor.append(peak)
 
-#Plot
+#Plotte Datensatz e
+e = 1
 plt.figure(1)
-#plt.plot(data[0][:,0], data[0][:,1])
-plt.plot(data[1][:,0], data[1][:,1])
-#plt.plot(data[2][:,0], data[2][:,1])
-#plt.plot(data[3][:,0], data[3][:,1])
+plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'b')
+plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
+for i in range(len(peaks_nach[e])):
+    plt.axvline(peaks_nach[e][i], color = 'b')
+for i in range(len(peaks_vor[e])):
+    plt.axvline(peaks_vor[e][i], color = 'g')
 plt.xlabel('X [nm]')
 plt.ylabel('Z [nm]')
 plt.title('Hoehenprofil')

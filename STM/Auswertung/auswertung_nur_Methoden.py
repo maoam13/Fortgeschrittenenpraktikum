@@ -250,14 +250,23 @@ def nan_aus_daten(x, y):
 def getmax(x, y):
     #Sucht den maximalen Y-Wert aus den Daten raus und gibt ihn mit zugehörigem X-Wert und 
     #Index im Array zurück
+    #Bei mehreren identischen Werten wird arithmetisch gemittelt
     max_y = y[0]
     max_index = 0
     max_x = x[0]
+    mem = []
     for i in range(len(x)):
         if y[i] > max_y:
             max_y = y[i]
             max_x = x[i]
             max_index = i
+            mem = [i]
+        if y[i] == max_y:
+            mem.append(i)
+    if len(mem) > 1:
+        max_x = sum(x[mem]) / len(mem)
+        max_y = sum(y[mem]) / len(mem)
+        max_index = int(sum(mem) / len(mem))
     return max_x, max_y, max_index
 
 def Schnittpunkte(x, y1, y2):
