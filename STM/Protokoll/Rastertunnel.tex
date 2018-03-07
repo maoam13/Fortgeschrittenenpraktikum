@@ -95,14 +95,21 @@ Mit der Bestimmung der Positionen der Extremalstellen aus den Höhenprofilen bie
 \item Mit den Positionen und Höhen der Extremalstellen kann die Flankensteigung bestimmt werden. Bei zu großem I-Gain oder zu kleiner Zeit pro Linie ist die Steigung zu groß und bei zu kleinem I-Gain zu klein.
 \end{enumerate}
 
-Für die Bestimmung der Positionen der Extremalstellen wurde ein Schätzwert aus den Profilen abgelesen und aus einem Bereich um diesen Schätzwert der Maximalwert gesucht. Wenn zwei Punkte den gleichen (maximalen) Wert annehmen, wird zwischen diesen gemittelt.
+Für die Bestimmung der Positionen der Extremalstellen wurde ein Schätzwert aus den Profilen abgelesen und aus einem Bereich um diesen Schätzwert der Maximalwert gesucht. Wenn mehrere Punkte den gleichen (maximalen) Wert haben, wird zwischen diesen gemittelt.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Profil_IGain_3000_Peakbestimmung.png}
-\caption{Höhenprofil bei einem I-Gain von 3000 mit den durch senkrechte Linien markierten Extremalstellen.}
+\caption{Höhenprofil bei einem I-Gain von 3000 mit den durch senkrechte Linien markierten Extremalstellen. Das grüne Profil und entspricht der Vorwärts- und das blaue der Rückwärtsrichtung.}
 \label{fig:Gold_IGain_Extremalstellen}
 \end{figure}
+
+\paragraph{Verschiebung der Extremalstellen}
+Zur Bestimmung der Verschiebung der Extremalstellen wird einfach der Betrag der Abstände aufsummiert:
+\begin{equation*}
+\Sigma = \sum _{i = 0} ^n \, |x_i^{vor} - x_i^{rueck}|
+\end{equation*}
+
 
 \subsection{Untersuchung von HOPG}
 
