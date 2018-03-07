@@ -62,13 +62,13 @@ Als zweites wird die Auflösungszeit mithilfe einer Totzeitstufe bestimmt. Mithi
 N = \dfrac{n}{1-n\tau}
 \end{equation}
 Nun werden für zwei verschiedene künstlich angelegte Totzeiten $\tau_{2ms}$ und $\tau_{1\mu s}$ die Zählrate bestimmt. Dazu werden zuerst die Frequenzen der Totzeitstufe überprüft, um sicher zu stellen, dass diese richtig kalibriert ist. Dafür wurde über 1s die Anzahl der durchgelassenen Pulse gemessen.\\
-Danach werden die beiden Zählraten bestimmt. Dazu wird für beide Zeiten 1min lang die Zählrate gemessen. Da N für beide Totzeiten gleich sein sollte und $\tau_{1\mu s} << \tau$ gilt, kann man durch Gleichsetzten von Gleichung \ref{Totzeitkorrektur} für beide Zeiten die Auflösungszeit bestimmen:
+Danach werden die beiden Zählraten bestimmt. Dazu wird für beide Zeiten 1 Minute lang die Zählrate gemessen. Da N für beide Totzeiten gleich sein sollte und $\tau_{1\mu s} << \tau$ gilt, kann man durch Gleichsetzten von Gleichung \ref{Totzeitkorrektur} für beide Zeiten die Auflösungszeit bestimmen:
 \begin{equation}
 \tau_{1\mu s} \approx \tau = \dfrac{1}{n_{1\mu s}} - \dfrac{1}{n_{2ms}} + \tau_{2ms}
 \label{Auslosungszeit}
 \end{equation}
 
-Die Messung wurde zuerst mit der Probe auf der mittleren Schiene durchgeführt, und dann mit der Probe auf der 2. Schiene von oben wiederholt, um eine möglichst hohe Peakrate zu messen.
+Die Messung wurde zuerst mit der Probe auf der mittleren Schiene durchgeführt, und dann mit der Probe auf der 2. Schiene von oben insgesamt 3 mal wiederholt, damit die Zählrate hoch genug ist und die Messung genauer wird.
 \subsection{Proportionalzähler}
 
 \subsubsection{Charakteristik}
@@ -175,64 +175,69 @@ Auslösezeit & $1\mu s$ & $1.908ms$ \\
 
 \begin{table}
 \centering
-\begin{tabular}{|c|c||c|}
+\begin{tabular}{|c|c|c|c|}
 \hline
-Messzeit[s] & 60 & 60\\
+Messzeit[s] & 60 &60&60\\
 \hline 
-$N_{1\mu s}(gesamt)$ & $10603 \pm 103$ & $5259\pm 73$ \\
+$N_{1\mu s}(gesamt)$ & $10603 \pm 103$ & $10689\pm 103$ & $10546\pm 103$ \\
 \hline 
-$N_{2ms}(gesamt)$ & $8248\pm 91$ & $4599\pm 68$ \\
+$N_{2ms}(gesamt)$ & $8284\pm 91$ & $8257 \pm 91$ & $8307\pm 91$ \\
 \hline 
-$n_{1\mu s}(Sekunde)$ & $176.7 \pm 1.7$ & $89.3\pm 1.2$ \\
+$n_{1\mu s}(Sekunde)$ & $176.7 \pm 1.7$ & $178.2 \pm 1.7$ & $175.8\pm 1.7$ \\
 \hline 
-$n_{2ms}(Sekunde)$ & $138.1\pm 1.5$ & $\pm 68$ \\
+$n_{2ms}(Sekunde)$ & $138.1\pm 1.5$ & $137.6 \pm 1.5$ & $138.5\pm 1.5$ \\
 \hline 
-$\tau [\mu s]$ & $324\pm 97 $ & $1.877\pm 0.004$ \\
+$\tau [\mu s]$ & $324\pm 97 $ & $255 \pm 97$ & $375\pm 97$ \\
 \hline
 \end{tabular}
-\caption{•}
+\caption{Ergebnisse der Messung mithilfe der Totzeitstufe. Angegeben sind jeweils für beide Totzeiten die gemessenen Zählraten über die ganze Messzeit, die auf eine Sekunde normierten Zählraten und die daraus bestimmte Totzeit.}
 \label{tab:Totzeitstufe}
 \end{table}
 
-In Tabelle \ref{tab:Totzeitstufe} sind die Ergebnisse der beiden Messungen zur Totzeitstufe aufgelistet. Der Fehler wurde mit $\sqrt{n}$ angenommen.\\
-Daraus wurde mithilfe von Gleichung \ref{Totzeitkorrektur} die Totzeit bestimmt, welche ebenfalls in der Tabelle aufgelistet ist. Der Fehler wurde folgendermaßen errechnet:
+In Tabelle \ref{tab:Totzeitstufe} sind die Ergebnisse der Messungen zur Totzeitstufe aufgelistet. Der Fehler wurde mit $\sqrt{N}$ angenommen.\\
+Daraus wurde mithilfe von Gleichung \ref{Totzeitkorrektur} die Auflösezeit bestimmt, welche ebenfalls in der Tabelle aufgelistet ist. Der Fehler wurde folgendermaßen errechnet:
 
 \begin{equation}
-\sigma_{\tau} = \sqrt{\left(\dfrac{\sqrt{n_{1\mu s}}}{n_{1\mu s}^{2}}\right)^2 + \left(\dfrac{\sqrt{n_{2ms}}}{n_{2ms}^{2}}\right)^2 }
+\sigma_{\tau} = \sqrt{\left(\dfrac{\sigma_{n_{1\mu s}}}{n_{1\mu s}^{2}}\right)^2 + \left(\dfrac{\sigma_{n_{2ms}}}{n_{2ms}^{2}}\right)^2}
 \end{equation}
 
-Eine gewichtete Mittelung der $\tau$ ergibt:
+Diese Methode ist extrem anfällig auf Änderungen in der Zählrate, da durch die Addition von $T_{2ms}$ das Ergebnis um eine ganze Größenordung (im Betrag) kleiner wird, als wenn man dies weglassen würde. Da der Fehler sich dabei aber nicht ändert, reicht bereits eine Änderung in den Zählraten von $1\%$, um das Ergebnis signifikant zu verschieben.\\
+Durch eine gewichtete Mittelung der Ergebnisse kann der Fehler noch etwas verbessert werden.\\
+Dies führt zu einem Endergebnis von:
 \begin{equation}
-\boxed{\tau = \SI{1.881\pm 0.002}{ms}}
+\boxed{\tau = \SI{318\pm 56}{\mu s}}
 \end{equation}
 
 
 \subsubsection{Charakteristik}
 \label{GMchar}
+
+Die Ergebnisse wurden mithilfe der Rauschmessung vom Offset des Untergrundrauschens bereinigt.
+Außerdem wurde mithlife von Gleichung \ref{Auslosungszeit} die Totzeitkorrektur durchgeführt. In Abbildung \ref{fig:GMTotzeit} ist die Auswirkung dieser Korrekturen zu sehen.
+
 \begin{figure}
 \centering
-\includegraphics[scale=1]{Bilder/GMlinear.PNG}
-\includegraphics[scale=1]{Bilder/GMlog.PNG}
-\caption{...}
-\label{fig:GMCharakteristik}
+\includegraphics[scale=0.9]{Bilder/GMTotzeit.PNG}
+\includegraphics[scale=0.9]{Bilder/GMlogroh.PNG}
+\caption{\textbf{Oberes Bild:} Auswirkungen der Offset- und Totzeitkorrektur. Die blauen Daten stellen die Orginalmessung dar, der orangene Plot die korrigierten Daten. \textbf{Unteres Bild:} Darstellung der lorarythmisierten Daten.}
+\label{fig:GMTotzeit}
 \end{figure}
-Die Ergebnisse der Charakteristikmessung sind in Abbildung \ref{fig:GMCharakteristik} dargestellt. Diese wurden bereits mithlife von Gleichung \ref{Auslosungszeit} von der Totzeit bereinigt.
-Außerdem wurde mithilfe der Rauschmessung der Offset des Untergrundrauschens abgezogen.\\
-Mit zunehmender Spannung steigt die Messrate exponentiell, da immer mehr Ereignisse mit kleineren Energien registriert werden. Daher Müssen die Daten noch logarythmisiert werden, um das Plateau erkennen zu können.\\
+
+Mit zunehmender Spannung steigt die Messrate exponentiell, da immer mehr Ereignisse mit kleineren Energien registriert werden. Daher Müssen die Daten noch logarythmisiert werden, um das Plateau erkennen zu können. Dies ist ebenfalls in Abbildung \ref{fig:GMTotzeit} zu sehen.\\
 Der relativ große Fehler auf die Totzeit ist dabei von systematischer Natur, er verschiebt also die Werte in die gleiche Richtung. Da das Plateau in der logarythmischen Sklaierung eben ist, verschiebt er die Werte um nahezu den gleichen Faktor, womit sich die Position der Einsatz- und Geiger-Spannung nicht nennenswert ändert. Der Fehler kann also für die Bestimmung dieser vernachlässigt werden.
 
 \paragraph{Bestimmung der Geiger-Spannung}
 \begin{figure}
 \centering
-\includegraphics[scale=1]{Bilder/GMGeradenfit.PNG}
-\caption{...}
+\includegraphics[scale=0.9]{Bilder/GMGeradenfit.PNG}
+\caption{Fit der Geraden an das Plateau}
 \label{fig:GMGeradenfit}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[scale=1]{Bilder/GMKurvenfit.PNG}
-\caption{...}
+\includegraphics[scale=0.9]{Bilder/GMKurvenfit.PNG}
+\caption{1/x-Fit an die Daten.}
 \label{fig:GMKurvenfit}
 \end{figure}
 
@@ -257,6 +262,12 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 
 \subsubsection{Zusammenfassung}
 
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/GMlog.PNG}
+\caption{Darstellung der Messdaten mitsamt bestimmter Einsatz- und Geigerspannung. Es wurden außerdem die Anpassungen und der Fehlerbereich der Geigerspannung angegeben.}
+\label{fig:GMCharakteristik}
+\end{figure}
 
 
 \subsection{Proportionalzähler}

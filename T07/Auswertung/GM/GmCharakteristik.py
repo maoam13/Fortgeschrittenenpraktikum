@@ -42,9 +42,10 @@ x = np.array(x)
 y = np.array(y)
 
 #Totzeitkorrektur
+z = y
 y = y-1
 ydot =y/10
-y = y/(1.-ydot*(0.000324))
+y = y/(1.-ydot*(0.000318))
 
 logy = np.log(y)
 plateau = 32
@@ -86,15 +87,16 @@ if 1:#logplot
     ax = plt.subplot(111)
     ax.set_xlabel("U [V]")
     ax.set_ylabel("log(n)")
-    ax.axis([300,650,1,8])
+    ax.axis([300,650,4,8])
     ax.grid(linestyle='--')
-    plt.plot(x,logy)
-    plt.plot(x,a*x+b)
-    plt.plot(x[x1+1:x2],f(var,x[x1+1:x2]))
-    plt.vlines(UE,0,8,linestyle='--',color = 'g')
-    plt.vlines(UG,0,8,linestyle='--',color = 'r')
-    plt.vlines(UGup,0,8,linestyle='--',color = 'y')
+    l1, = plt.plot(x,logy, label = "Daten")
+    l2, = plt.plot(x,a*x+b, label = "Plateaufit")
+    l3, = plt.plot(x[x1+1:x2],f(var,x[x1+1:x2]), label = "1/x-Fit")
+    l4 = plt.vlines(UE,0,8,linestyle='--',color = 'g', label = "Einsatzspannung")
+    l5 = plt.vlines(UG,0,8,linestyle='--',color = 'r', label = "Geigerspannung")
+    l6 = plt.vlines(UGup,0,8,linestyle='--',color = 'y', label = "Fehlerbereich Geigerspannung")
     plt.vlines(UGdown,0,8,linestyle='--',color = 'y')
+    ax.legend()
     
 if 1:
     plt.figure(3)
@@ -138,7 +140,7 @@ if 1:
     plt.plot(x_r, y_r, color='r')
 
 
-if 0:#plot
+if 1:#plot
     a,sa,b,sb,chi,rest = p.lineare_regression(xplateau,yplateau,sy[plateau:])
     plt.figure(2)
     ax = plt.subplot(111)
@@ -146,8 +148,11 @@ if 0:#plot
     ax.set_ylabel("n")
     ax.grid(linestyle='--')
     ax.axis([250,650,0,1300])
-    plt.plot(x,y)
-    plt.plot(x,a*x+b)
-    plt.vlines(UE,0,1300,linestyle='--',color = 'g')
-    plt.vlines(UG,0,1300,linestyle='--',color = 'r')
+    line1, = plt.plot(x,z,label = "Rohdaten")
+    line2, = plt.plot(x,y, label = "Korrektur")
+    ax.legend()
+    
+    #plt.plot(x,a*x+b)
+    ##plt.vlines(UE,0,1300,linestyle='--',color = 'g')
+    #plt.vlines(UG,0,1300,linestyle='--',color = 'r')
     
