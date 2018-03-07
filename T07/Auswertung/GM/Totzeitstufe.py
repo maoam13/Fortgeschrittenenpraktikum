@@ -24,7 +24,7 @@ if 0:
     N1 = 10715.
     N2 = 8237.
     
-if 0:
+if 1:
     N1 = 10512.
     N2 = 8213.
     
@@ -36,6 +36,9 @@ m1 = N1/T
 m2 = N2/T
 sm1 = np.sqrt(N1)/T
 sm2 = np.sqrt(N2)/T
+
+print m1, sm1 
+print m2, sm2
 
 T2 = 0.001908 #1.908ms
 

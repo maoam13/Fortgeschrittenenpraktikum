@@ -53,7 +53,7 @@ Um eine mögliche Störung durch Untergrundrauschen zu beseitigen, wurde mit ein
 \subsubsection{Totzeit}
 Zur Totzeit des Geiger-Müller-Zählrohres sollen zwei verschiedene Messungen gemacht werden.
 \paragraph{Stever-Diagramm}
-Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erholungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s} sollte die Einhüllender der Erholungszeit sichtbar werden. Anhand dieser wird nun händisch die Tot- und Erholungszeit 
+Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erholungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s} sollte die Einhüllender der Erholungszeit sichtbar werden. Hier wurde einmal eine Zeitskala von \SI{100}{\mu s} und eine von \SI{250}{\mu s} ausgewählt. Anhand der Einhüllenden wird nun händisch die Tot- und Erholungszeit abgelesen. Dabei befindet sich die Totzeit beim Nulldurchgang der Einhüllenden und die Erholungszeit beim Erreichen der Ausgangspulsgröße. 
 
 \paragraph{Totzeitkorrektur}
 Als zweites wird die Auflösungszeit mithilfe einer Totzeitstufe bestimmt. Mithilfe dieser kann man eine Totzeitkorrektur der gemessenen Zählraten durchführen. Dabei ist die wirkliche Zählrate N in Abhängigkeit von der gemessenen Rate n und der Auflösungszeit $\tau$ gegeben durch 
@@ -73,8 +73,10 @@ Die Messung wurde zuerst mit der Probe auf der mittleren Schiene durchgeführt, 
 
 \subsubsection{Charakteristik}
 Beim Proportionalzähler wurde ebenfalls die Charakteristik vermessen, und zwar einmal Anhand der $_{95}^{241}AM$-Probe und einmal anhand der $_6^{14}C$-Probe. Dazu wurde in \SI{20}{V} oder (aus Zeitgründen) in \SI{40}{V} Schritten, wieder ausgehend von \SI{250}{V}, jeweils über \SI{10}{s} die Pulsrate aufgenommen. Bei \SI{1200}{V} musste die Hochspannungsquelle auf 2 fache Verstärkung umgestellt werden. Es kann sein, dass die in Wirklichkeit angelegte Spannung für die beiden Verstärkungsmodi nicht gleich ist, was sich auf die Messdaten auswirken kann.\\
-Da beim Proportionalzähler die Pulsstärke abhängig von der Energie der Teilchen ist, wurde zusätzlich noch die Pulshöhe mithilfe des Oszilloskopes für alle Spannungswerte bestimmt.\\
-Außerdem wurde ebenfalls eine Untergrundmessung mit leerem Probenraum für den vollständigen untersuchten Spannungsbereich durchgeführt.
+Außerdem wurde eine Untergrundmessung mit leerem Probenraum für den vollständigen untersuchten Spannungsbereich durchgeführt.
+
+\subsubsection{Pulshöhe}
+Da beim Proportionalzähler die Pulsstärke abhängig von der Energie der Teilchen ist, wurde zusätzlich noch die Pulshöhe mithilfe des Oszilloskopes für alle Spannungswerte bestimmt. Dazu wurde im Oszilloskop ein Nachleuchten von 1s eingestellt. Dadurch wurden mehrere Peaks übereinander abgebildet und es wurde versucht, deren mittlere Höhe abzulesen.
 
 \subsection{Statistikmessung}
 Die Statistikmessungen wurden alle mit dem Geiger-Müller-Zählrohr aufgenommen.
@@ -103,7 +105,7 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \centering
 \includegraphics[scale=0.49]{Bilder/Stever/Stever1_1.PNG}
 \includegraphics[scale=0.49]{Bilder/Stever/Stever1_2.PNG}
-\caption{...}
+\caption{Stever-Diagramm mit einer Zeitauflösung von 250$\mu s$. Im linken Bild wurde mit dem Cursor der ungefähre Nulldurchgang zur Bestimmung der Totzeit angepeilt, im rechten Bild der Punkt, in dem die anfängliche Peakhöhe wieder erreicht wurde, woraus die Erholungszeit ermittelt wurde. Die Werte wurden bei der Auswertung nachkorrigiert}
 \label{fig:Stever}
 \end{figure}
 
@@ -111,12 +113,14 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \centering
 \includegraphics[scale=0.49]{Bilder/Stever/Stever2_1.PNG}
 \includegraphics[scale=0.49]{Bilder/Stever/Stever2_2.PNG}
-\caption{...}
+\caption{Stever-Diagramm mit einer Zeitauflösung von 100$\mu s$. Das linke Bild dient wieder zur Abschätzung der Totzeit, das rechte zur Abschätzung der Erholungszeit.}
 \label{fig:Stever2}
 \end{figure}
 
 
-In Abbildung \ref{fig:Stever} und \ref{fig:Stever2} sind die Oszilloskopbilder für zwei unterschiedliche Zeitskalen mit jeweils abgelesenen Tot- und Erholungszeiten dargestellt. Leider konnten die Daten nicht aus dem Oszilloskop extrahiert werden, weswegen die Auswertung vollständig visuell gemacht werden muss.\\
+In Abbildung \ref{fig:Stever} und \ref{fig:Stever2} sind die Oszilloskopbilder für zwei unterschiedliche Zeitskalen mit jeweils ersten Abschätzungen für die Tot- und Erholungszeiten dargestellt. An der größeren Zeizskala kann man die Totzeit nicht so genau ablesen wie bei der kleineren, allerdings ist die Einhüllende besser zu erkennen, wodurch die Bestimmung der Erholungszeit einfacherer ist. Deswegen wurden beide Messreihen für die Auswertung benutzt.
+Leider konnten die Daten nicht aus dem Oszilloskop extrahiert werden, da das Nachleuchten nicht mit abgespeichert wurde, weswegen die Auswertung vollständig visuell gemacht werden muss.\\
+\\
 Die Totzeit wird anhand der linken Grenze der Einhüllenden bestimmt. Da durch die eingestellte Schwelle des Verstärkers zu kleine Pulse nicht registriert werden, ist die echte Totzeit etwas kleiner als die abgelesene Grenze.\\
 Die Erholungszeit wird bestimmt, indem der Punkt abgelesen wird, ab dem die Peakhöhe einen konstanten Wert annimmt.
 Sie kann man nicht so genau bestimmt werden, da durch die große statistische Schwankung der Peaks nicht genau erkennbar ist, an welchem Punkt diese Bedingung erreicht ist.\\
@@ -146,9 +150,11 @@ Eine gewichtete Mittelung ergibt (mit äußerem Fehler):
 \boxed{T_R = \SI{469 \pm 31}{\mu s}}
 \end{equation}
 
-\subsubsection{Totzeit mithilfe der Totzeitstufe}
+\subsubsection{Auslösezeit mithilfe der Totzeitstufe}
 
-Vor der eigentlichen Messung wurde die Kalibration der Totzeitstufe durchgeführt. Die Ergebnisse sind in Tabelle \ref{tab:Totzeitkalibration} aufgelistet. Die Messung wurde mehrfach wiederholt, um sicher zu stellen, dass das Ergebnis exakt ist. Es ergab sich mehrfach derselbe Wert, weswegen das Ergebnis auf $1\mu s$ exakt angenommen werden kann. Relevant für die weitere Auswertung ist nur die $2ms$ Stufe, die auf $1.908ms$ kalibriert wurde.
+
+\paragraph{Kalibration}
+Vor der eigentlichen Messung mit der Totzeitstufe wurde eine Kalibration durchgeführt. Die Ergebnisse sind in Tabelle \ref{tab:Totzeitkalibration} aufgelistet. Die Messung wurde mehrfach wiederholt, um sicher zu stellen, dass das Ergebnis exakt ist. Es ergab sich mehrfach derselbe Wert, weswegen das Ergebnis auf $1\mu s$ exakt angenommen werden kann. Relevant für die weitere Auswertung ist nur die $2ms$ Stufe, die auf $1.908ms$ kalibriert wurde.
 
 \begin{table}
 \centering
@@ -158,11 +164,14 @@ Einstellung & $1\mu$ s & $2ms$\\
 \hline 
 Pulsrate & $1000003$ & $524$ \\
 \hline 
-Totzeit & $1\mu s$ & $1.908ms$ \\
+Auslösezeit & $1\mu s$ & $1.908ms$ \\
 \hline
 \end{tabular}
+\caption{Ergebnisse der Kalibration der Totzeitstufe. Es ist die gemessene Pulsrate über 1s und die daraus berechnete Auslösezeit angegeben.}
 \label{tab:Totzeitkalibration}
 \end{table}
+
+\paragraph{Bestimmung von der Auslösezeit $\tau$}
 
 \begin{table}
 \centering
@@ -170,13 +179,18 @@ Totzeit & $1\mu s$ & $1.908ms$ \\
 \hline
 Messzeit[s] & 60 & 60\\
 \hline 
-$n_{1\mu s}$ & $10603 \pm 103$ & $5259\pm 73$ \\
+$N_{1\mu s}(gesamt)$ & $10603 \pm 103$ & $5259\pm 73$ \\
 \hline 
-$n_{2ms}$ & $8248\pm 91$ & $4599\pm 68$ \\
+$N_{2ms}(gesamt)$ & $8248\pm 91$ & $4599\pm 68$ \\
+\hline 
+$n_{1\mu s}(Sekunde)$ & $176.7 \pm 1.7$ & $89.3\pm 1.2$ \\
+\hline 
+$n_{2ms}(Sekunde)$ & $138.1\pm 1.5$ & $\pm 68$ \\
 \hline 
 $\tau [\mu s]$ & $324\pm 97 $ & $1.877\pm 0.004$ \\
 \hline
 \end{tabular}
+\caption{•}
 \label{tab:Totzeitstufe}
 \end{table}
 
@@ -247,7 +261,7 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 
 \subsection{Proportionalzähler}
 
-\subsubsection{Pulsraten}
+\subsubsection{Charakteristik}
 
 \begin{figure}
 \centering
@@ -264,7 +278,7 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 \label{fig:clin}
 \end{figure}
 
-Die Pulsraten für das Americium-Präparates sind in Abbildung  \ref{fig:amlin} dargestellt und die des Kohlenstoff-Präparates in Abbildung \ref{fig:clin}. Dabei wurden die Daten aus dem gleichen Grund, wie beim Geiger-Müller-Zählrohr, logarythmisiert (vgl. Kapitel \ref{GMchar}).\\
+Die Pulsraten für das Americium-Präparates sind in Abbildung  \ref{fig:amlin} dargestellt und die des Kohlenstoff-Präparates in Abbildung \ref{fig:clin}. Dabei wurden die Daten aus dem gleichen Grund wie beim Geiger-Müller-Zählrohr logarythmisiert (vgl. Kapitel \ref{GMchar}).\\
 \paragraph{C-Präparat}
 $_6^{14} C$ ist ein $\beta$-Strahler. Aus diesem Grund ist wie erwartet nur das Plateau in den Daten zu sehen, in das sowohl $\alpha$ als auch $\beta$ Strahlung mit einfließen.\\
 Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die logarythmisierten Werte angepasst und abgeschätzt, welche gemessenen Spannungswerte  mit dieser Anpassung übereinstimmt. Die Anpassung ist in Abbildung \ref{fig:CPlateau} dargestellt. Offensichtlich beginnt das Plateau bei $\SI{1570\pm 12}{V}$ und geht bis $\SI{1930\pm 12}{V}$. Aus dem Fit ergibt sich außerdem eine Steigung von $a = (5.7\pm0.3)\cdot 10^{-4}$. Dies entspricht einer Zunahme der Steigung der Zählrate von 0.5 über das ganze Plateau.
@@ -295,8 +309,62 @@ Dieser Effekt ist unerwünscht und kann viele Ursachen haben.\\
 Die Einsatzspannung ist hier wesentlich kleiner als bei der C-Probe und liegt außerhalb der unseres Messbereiches. Dies liegt daran, dass die durch die Americium-Zerfallsreihe entstehende $\alpha$-Strahlung eine Energie besitzt, die 
 um ungefähr ein zehnfaches größer ist als die $\beta$-Strahlung der C-Probe. Dadurch finden schon bei niedrigen Spannungen genug Inonisationsprozesse statt, um einen Messpuls auszulösen.\\
 
+\subsubsection{Pulshöhen}
 
+Die durch die Gasverstärkung erzeugte Anzahl an Elektron-Ion-Paaren aus einem einzelnen Paar ist exponentiell, da jedes erzeugte Paar wieder eine neues Paar erzeugen kann. Aus einem einzelnen Elektron werden also nach einem Verstärkungsschritt (im Mittel) 2, nach 2 Schritte 4, nach 3 Schritten 8 und so weiter.\\
+Da mit der angelegten Spannung auch die Anzahl der durchschnittlichen Verstärkungsschritte, die ein Elektron auslöst, zunimmt, wird somit erwartet, dass die gemessene Pulsstärke exponentiell mit der Spannung ansteigt.\\
+Deswegen wurden die Pulshöhen logarythmisiert, da in dieser Darstellung ein linearer Zusammenhang erwartet wird.\\
+\\
+Die Pulshöhen sind außerdem nicht alle gleich groß. Dies liegt daran, dass die Teilchen nicht alle im gleichen Abstand vom Zähldraht und auch nicht alle die gleiche Länge des Rohres durchfliegen. Dadurch kann die Pulshöhe für Teilchen mit gleicher Energie teilweise stark variieren, was das Ablesen am Oszilloskop sehr ungenau macht.\\
+Der Ablesefehler kann wegen der Ablesemethode nur qualitativ abgeschätzt werden und ist wegen der Schwankung der Höhen relativ groß. Es wurde allgemein angenommen, dass der Fehler $10\%$ des Wertes beträgt.
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/C_Puls_lin.PNG}
+\includegraphics[scale=0.8]{Bilder/Prop/C_Puls_exp.PNG}
+\caption{...}
+\label{fig:CPulse}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/Am_Puls_lin.PNG}
+\includegraphics[scale=0.8]{Bilder/Prop/Am_Puls_exp.PNG}
+\caption{...}
+\label{fig:AMPulse}
+\end{figure}
+
+\paragraph{C-Probe}
+Die Abhängigkeit der Pulshöhen von der angelegten Spannung für die C-Probe ist in Abbildung \ref{fig:CPulse} dargestellt.\\
+Da bei dieser Probe erst bei Spannungen von c.a 1100V eine von der Hintergrundstrahlung abweichende Zählrate gemessen wird, kann auch erst ab einer ähnlichen Spannung die Pulshöhe bestimmt werden.\\
+Bei einer gemessenen Pulshöhe von $\SI{6400}{mV}$ wird eine Maximalspannung erreicht, wodurch das exponentielle Verhalten abbricht und die Pulshöhe nicht mehr weiter ansteigt. Dies kann einerseits die Maximale Spannung sein, die vom Oszilloskop angezeigt werden kann. Andererseits kann es sein, dass bei dieser Pulshöhe eine Sättigung des Proportionalzählers auftritt, wodurch die Anzahl der erzeugten Elektronen nicht mehr weiter ansteigen kann.\\
+\\
+An den linearen Teil der Daten in der logarythmischen Darstellung wird nun eine Gerade angepasst, um den Zusammenhang zwischen Pulshöhe und Spannung genauer untersuchen zu können. Dieser Fit ist in Abbildung \ref{fig:CPulsfit} dargestellt.\\
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/C_Pulsfit.PNG}
+\caption{...}
+\label{fig:CPulsfit}
+\end{figure}
+
+Der Zusammenhang ist in einem Bereich von 1050V bis 1810V linear. Dies entspricht dem gesamten Bereich, der durch die oben beschrieben Effekte eingeschränkt wird. 
+
+\paragraph{Am-Probe}
+Bei der Messung anhand der AM-Probe entstand der gleiche Sättigungseffekt, wie bei der C-Probe. Allerdings findet diese Sättigung deutlich früher, bei c.a 1260V, statt. Dies liegt daran, dass die ausgestrahlten $\alpha$-Teilchen eine deutlich größere Energie besitzen und deswegen auch einen größeren Puls erzeugen.\\
+Die Einsatzspannung liegt wieder außerhalb des Messbereiches.\\
+Auch hier wurde wieder ein linearer Fit einem geeigneten Datenbereich angepasst. Dazu wurde ein Bereich zwischen 900V und 1240V ausgewählt, für den die Daten linear erscheinen. Dies ist in Abbildung \ref{fig:AMPulsfit} dargestellt.\\
+Nach diesem Fit konnte der Lineare Zusammenhang für eine Spannung zwischen $\SI{800\pm 6}{V}$ und $\SI{1300\pm 12}{V}$ bestätigt werden. Bei kleineren Spannungen befindet man sich offensichtlich noch nicht im Proportionalbereich. Bei größeren Spannungen tritt der Sättigungseffekt ein.
+
+\paragraph{Vergleich der Messreihen}
+Die Linearen Anpassungen ergaben für die C-Probe eine Steigung von $a=0.0075\pm 1$ und für die Am-Probe $a=0.0068\pm 2$.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/AM_Pulsfit.PNG}
+\caption{...}
+\label{fig:AMPulsfit}
+\end{figure}
 
 \newpage
 

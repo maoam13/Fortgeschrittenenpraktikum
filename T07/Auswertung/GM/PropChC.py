@@ -15,6 +15,7 @@ file = open("..\..\Daten\PropC.csv")
 csv_reader = csv.reader(file, delimiter=";")
 x = []
 y = []
+offset = []
 for row in csv_reader:
     wert = row[1]
     wert = float(wert)
@@ -23,11 +24,17 @@ for row in csv_reader:
     wert = row[0]
     wert = float(wert)
     x.append(wert)
+    
+    wert = row[3]
+    wert = float(wert)
+    offset.append(wert)
 file.close()
 
 """Variablen"""
 x = np.array(x)
 y = np.array(y)
+offset = np.array(offset)
+y = np.abs(y-offset)
 logy = np.log(y)
 plateau = 33
 plateauend = 43
