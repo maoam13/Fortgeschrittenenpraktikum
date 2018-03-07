@@ -37,5 +37,5 @@ def get_peak_by_approx(x, y, approx, k = 20):
     xpeak = []
     for i in range(len(approx)):
         bla = AM.getmax(x[approx[i] - k : approx[i] + k], (-1)**(i+1) * y[approx[i] - k : approx[i] + k])
-        xpeak.append(bla[0])
+        xpeak.append(bla)
     return xpeak

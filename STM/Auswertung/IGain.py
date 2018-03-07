@@ -34,15 +34,31 @@ for i in range(len(data_vor)):
     peak = STMM.get_peak_by_approx(data_vor[i][:,0], data_vor[i][:,1], peak_approx)
     peaks_vor.append(peak)
 
+#Berechne Flankensteigung als Mittelwert aus Vor- und Rückrichtung 
+steigung_nach = []
+steigung_vor = []
+for i in range(len(peaks_nach[0])):
+    st = (peaks_nach[i][3][1] - peaks_nach[i][2][1])/(peaks_nach[i][3][0] - peaks_nach[i][2][0])
+    steigung_nach.append(st)
+    st = (peaks_vor[i][3][1] - peaks_vor[i][2][1])/(peaks_vor[i][3][0] - peaks_vor[i][2][0])
+    steigung_vor.append(st)
+
+steigung = []
+for i in range(len(steigung_vor)):
+    steigung.append((steigung_vor[i] + steigung_nach[i])/2)
+
 #Plotte Datensatz e
-e = 1
+e = 0
 plt.figure(1)
+x = [(peaks_nach[e][2][0] + peaks_vor[e][2][0])/2, (peaks_nach[e][3][0] + peaks_vor[e][3][0])/2]
+y = [(peaks_nach[e][2][1] + peaks_vor[e][2][1])/2, (peaks_nach[e][3][1] + peaks_vor[e][3][1])/2]
+plt.plot(x, y, color = 'r')
 plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'b')
 plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
-for i in range(len(peaks_nach[e])):
-    plt.axvline(peaks_nach[e][i], color = 'b')
-for i in range(len(peaks_vor[e])):
-    plt.axvline(peaks_vor[e][i], color = 'g')
+for i in range(2, len(peaks_nach[e])):
+    plt.axvline(peaks_nach[e][i][0], color = 'b')
+for i in range(2, len(peaks_vor[e])):
+    plt.axvline(peaks_vor[e][i][0], color = 'g')
 plt.xlabel('X [nm]')
 plt.ylabel('Z [nm]')
 plt.title('Hoehenprofil')
