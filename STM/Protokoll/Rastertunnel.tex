@@ -39,17 +39,6 @@ Das verwendete Rastertunnelmikroskop besteht aus einem Halter für die Platin-Ir
 Die Spitze wird mit den piezoelektrischen Kristallen über die Probe gerastert, wobei jede Linie in x-Richtung vorwärts und rückwärts abgefahren wird.\\
 Eine Regelungselektronik steuert die z-Richtung der Spitze in Abhängigkeit des Tunnelstroms. Dabei gibt der sogenannte I-Gain an, wie schnell die Regelung auf kurze Pulse reagiert.
 
-
-
-%\begin{figure}
-%\centering
-%\includegraphics[scale=0.8]{Bilder/F0003TEK.PNG}
-%\caption{Ergebnis einer einzelnen Messung zur Bestimmung von T1. Die blaue Kurve zeigt das zu untersuchende Signal.}
-%\label{fig:MessungT1_Beispiel}
-%\end{figure}
-
-
-
 \section{Durchführung}
 \subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
 
@@ -79,6 +68,41 @@ In einer zweiten Messreihe wird erneut ein Bereich mit markanter Struktur vermes
 
 \section{Ergebnisse}
 \subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/3000_IGain_vor.jpg}
+\caption{Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 3000 in der Vorwärtsrichtung. Der Balken quer im Bild verbildlicht die Stelle, aus der das Höhenprofil entnommen wurde.}
+\label{fig:Gold_IGain_Beispiel}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/0_1_Zeit_vor.jpg}
+\caption{Bild der z-Komponente bei Vermessung der Goldprobe bei einer Messzeit von 0,1s pro Linie in der Vorwärtsrichtung. Der Balken quer im Bild verbildlicht die Stelle, aus der das Höhenprofil entnommen wurde.}
+\label{fig:Gold_Zeit_Beispiel}
+\end{figure}
+
+Abbildung \ref{fig:Gold_IGain_Beispiel} zeigt beispielhaft das Bild der z-Komponente nach Bearbeitung für eine Messung aus der Messreihe mit verändertem I-Gain. Der Balken quer im Bild zeigt, wo das im Folgenden untersuchte Höhenprofil entnommen wurde. In den Bildern aus den Ergebnissen der Messreihe wurde das Höhenprofil exakt gleich entnommen (Profillinie kopiert), sodass die Vergleichbarkeit der Profile gegeben ist.\\
+Bei der Aufnahme der Messreihe mit veränderter Zeit wurde ein anderer Bereich verwendet. Daher ist die Profillinie aus einem anderen Bildbereich entnommen, wie in Abbildung \ref{fig:Gold_Zeit_Beispiel} dargestellt ist.\\
+Bei der Entnahme des Höhenprofils wird für jeden Wert der Mittelwert mehrerer Punkte bestimmt.\\
+Beide Messreihen wurden mit mehreren Methoden ausgewertet, die im Folgenden diskutiert werden.
+
+\subsubsection{Bestimmung der Extremalpositionen}
+Mit der Bestimmung der Positionen der Extremalstellen aus den Höhenprofilen bieten sich 2 Möglichkeiten zur Auswertung:
+\begin{enumerate}
+\item Die Verschiebung der Extremalstellen der Vorwärtsrichtung gegenüber den gleichen Peaks in der Rückrichtung ist bei zu großem I-Gain oder zu kleiner Zeit pro Linie sehr groß.
+\item Mit den Positionen und Höhen der Extremalstellen kann die Flankensteigung bestimmt werden. Bei zu großem I-Gain oder zu kleiner Zeit pro Linie ist die Steigung zu groß und bei zu kleinem I-Gain zu klein.
+\end{enumerate}
+
+Für die Bestimmung der Positionen der Extremalstellen wurde ein Schätzwert aus den Profilen abgelesen und aus einem Bereich um diesen Schätzwert der Maximalwert gesucht. Wenn zwei Punkte den gleichen (maximalen) Wert annehmen, wird zwischen diesen gemittelt.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Profil_IGain_3000_Peakbestimmung.png}
+\caption{Höhenprofil bei einem I-Gain von 3000 mit den durch senkrechte Linien markierten Extremalstellen.}
+\label{fig:Gold_IGain_Extremalstellen}
+\end{figure}
 
 \subsection{Untersuchung von HOPG}
 
