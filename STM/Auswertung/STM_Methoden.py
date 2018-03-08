@@ -49,7 +49,7 @@ def get_peak_by_approx(x, y, approx, k = 44):
     xpeak = []
     for i in range(len(approx)):
         bla = AM.getmax(x[approx[i] - k : approx[i] + k], (-1)**(i+1) * y[approx[i] - k : approx[i] + k])
-        xpeak.append(bla)
+        xpeak.append([bla[0], (-1)**(i+1) * bla[1], bla[2]])
     return xpeak
 
 def steigung_bestimmen(peaks_nach, peaks_vor):

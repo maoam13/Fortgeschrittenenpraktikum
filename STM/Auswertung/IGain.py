@@ -52,10 +52,10 @@ e = 1
 plt.figure(1)
 x = np.array([(peaks_nach[e][2][0] + peaks_vor[e][2][0])/2, (peaks_nach[e][3][0] + peaks_vor[e][3][0])/2])
 y = steigung[e] * x + (peaks_nach[e][2][1] + peaks_vor[e][2][1])/2 - steigung[e] * (peaks_nach[e][2][0] + peaks_vor[e][2][0])/2
-plt.plot(x, y, color = 'r')
-plt.figtext(0.2,0.75,
-            'a= '+ str(np.round(steigung[e],5)) + '\n'
-            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
+#plt.plot(x, y, color = 'r')
+#plt.figtext(0.2,0.75,
+#            'a= '+ str(np.round(steigung[e],5)) + '\n'
+#            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
 plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'b')
 plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
 for i in range(2, len(peaks_nach[e])):
@@ -64,6 +64,6 @@ for i in range(2, len(peaks_vor[e])):
     plt.axvline(peaks_vor[e][i][0], color = 'g')
 plt.xlabel('X [nm]')
 plt.ylabel('Z [nm]')
-plt.title('Hoehenprofil bei IGain {0:5.0f}'.format(data_index[e] * 1000))
+plt.title('Hoehenprofil bei I-Gain {0:5.0f}'.format(data_index[e] * 1000))
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
