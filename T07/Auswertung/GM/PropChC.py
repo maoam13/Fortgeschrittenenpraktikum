@@ -56,8 +56,8 @@ if 1:
                 +'$\chi ^2 / ndof$= ' + str(np.round(chi/len(xplateau), 2)))
     plt.errorbar(x[23:],logy[23:],yerr = slogy[23:],fmt='.')
     plt.plot(x[23:],a*x[23:]+b,color = 'r')
-    plt.vlines(x[plateau],1,10,linestyle='--',color = 'g')
-    plt.vlines(x[plateauend-1],1,10,linestyle='--',color = 'g')
+    plt.vlines(x[plateau],0,10,linestyle='--',color = 'g')
+    plt.vlines(x[plateauend-1],0,10,linestyle='--',color = 'g')
     #plt.vlines(1600,0,1300,linestyle='--',color = 'r')
     #plt.vlines(1910,0,1300,linestyle='--',color = 'r')
     ax2=plt.subplot(212,sharex=ax1)
@@ -77,8 +77,8 @@ if 1:#logplot
     ax.grid(linestyle='--')
     plt.plot(x,logy)
     plt.plot(x[plateau-5:plateauend+2],a*x[plateau-5:plateauend+2]+b)
-    plt.vlines(x[plateau],1,10,linestyle='--',color = 'g')
-    plt.vlines(x[plateauend-1],1,10,linestyle='--',color = 'g')
+    plt.vlines(x[plateau],0,10,linestyle='--',color = 'g')
+    plt.vlines(x[plateauend-1],0,10,linestyle='--',color = 'g')
     
 
 if 1:#plot
@@ -90,6 +90,6 @@ if 1:#plot
     ax.grid(linestyle='--')
     ax.axis([250,2000,0,8000])
     plt.plot(x,y)
-    plt.plot(x[plateau-5:plateauend+2],a*x[plateau-5:plateauend+2]+b)
+    #plt.plot(x[plateau-5:plateauend+2],a*x[plateau-5:plateauend+2]+b)
     
 

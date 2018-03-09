@@ -130,11 +130,11 @@ Die abgelesenen Ergebnisse sind in Tabelle \ref{teb:Stever} aufgelistet. Die Feh
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
-Zeitskala & Totzeit & Erholungszeit\\
+Zeitskala$[\mu s]$ & Totzeit$[\mu s]$ & Erholungszeit$[\mu s]$\\
 \hline 
 250 & $220\pm 20$ & $520\pm 50$ \\
 \hline 
-250 & $220\pm 10$ & $450\pm 30$ \\
+100 & $220\pm 10$ & $450\pm 30$ \\
 \hline
 \end{tabular}
 \label{teb:Stever}
@@ -190,7 +190,7 @@ $n_{2ms}(Sekunde)$ & $138.1\pm 1.5$ & $137.6 \pm 1.5$ & $138.5\pm 1.5$ \\
 $\tau [\mu s]$ & $324\pm 97 $ & $255 \pm 97$ & $375\pm 97$ \\
 \hline
 \end{tabular}
-\caption{Ergebnisse der Messung mithilfe der Totzeitstufe. Angegeben sind jeweils für beide Totzeiten die gemessenen Zählraten über die ganze Messzeit, die auf eine Sekunde normierten Zählraten und die daraus bestimmte Totzeit.}
+\caption{Ergebnisse der Messung mithilfe der Totzeitstufe. Angegeben sind jeweils für beide Totzeiten die gemessenen Zählraten über die ganze Messzeit, die auf eine Sekunde normierten Zählraten und die daraus bestimmte Auslösezeit.}
 \label{tab:Totzeitstufe}
 \end{table}
 
@@ -242,7 +242,7 @@ Der relativ große Fehler auf die Totzeit ist dabei von systematischer Natur, er
 \end{figure}
 
 Anhand der logarythmisierten Daten wird nun die Geiger-Spannung $U_G$ bestimmt. Dazu  wurde als erstes abgeschätzt, dass das Plateau spätestens bei $\SI{360}{V}$ erreicht wird und ein Geradenfit an die Daten überhalb dieser Spannung angepasst. Dieser ist in Abbildung \ref{fig:GMGeradenfit} zu sehen.\\
-Um nun den Anfang des Plateaus bestimmen zu können, wird außerdem noch ein Fit der Form
+Um nun den Anfang des Plateaus nicht nur über eine visuelle Abschätzung bestimmen zu können, wird außerdem noch ein Fit der Form
 \begin{equation*}
 y = \dfrac{a}{x+d} + b\cdot x + c
 \end{equation*}
@@ -253,14 +253,14 @@ Mit dieser Methode ergibt sich:
 \begin{equation*}
 \boxed{U_G = (346_{-5}^{+7})\si{V}}
 \end{equation*}
-\paragraph{Bestimmung der Einsatz-Spannung}
+\paragraph{Bestimmung der Einsatz-Spannung:}
 Im Gegensatz zu $U_G$ lässt sich die Einsatz-Spannung $U_E$ direkt aus den Daten ablesen, da diese Spannung sich genau an der Stelle befindet, an der zum ersten mal ein Puls gemessen wird. Dies war der Fall bei
 \begin{equation*}
-\boxed{U_G = \SI{316\pm 1}{V}}
+\boxed{U_G = \SI{316.0\pm 0.3}{V}}
 \end{equation*}
-Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
-
-\subsubsection{Zusammenfassung}
+Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.\\
+\\
+In Abbildung \ref{fig:GMCharakteristik} sind beide Spannungen eingezeichnet.
 
 \begin{figure}
 \centering
@@ -268,6 +268,33 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 \caption{Darstellung der Messdaten mitsamt bestimmter Einsatz- und Geigerspannung. Es wurden außerdem die Anpassungen und der Fehlerbereich der Geigerspannung angegeben.}
 \label{fig:GMCharakteristik}
 \end{figure}
+
+\subsubsection{Zusammenfassung}
+
+\begin{table}
+\begin{tabular}{|c||c|c|}
+\hline 
+Methode & Wert &  \\ 
+\hline 
+Stever & Totzeit$[\mu s]$ & $220\pm 9$ \\ 
+\hline 
+Stever & Erholungszeit$[\mu s]$ & $469\pm 31$ \\ 
+\hline 
+Totzeitstufe & Auslösezeit$[\mu s]$ & $318\pm 56$ \\ 
+\hline 
+Charakteristik & Geigerspannung$[V]$ & $346_{-5}^{+7}$ \\ 
+\hline 
+Charakteristik & Einsatzspannung$[V]$ & $316.0\pm 0.3$\\ 
+\hline 
+\end{tabular} 
+\caption{Übersicht aller Messergebnisse zum Geiger-Müller-Zählrohr. Es ist zusätzlich die Methode angegeben, mit welcher der entsprechende Wert bestimmt wurde.}
+\label{GMzusammenfassung}
+\end{table}
+
+In Tabelle \ref{GMzusammenfassung} sind nochmal alle Ergebnisse aufgelistet, die mit dem Geiger-Müller-Zählrohr ermittelt wurden.\\
+Wie erwartet liegt die Auslösezeit zwischen der Totzeit und der Erholungszeit. Alle 3 Zeiten liegen in der Größenordnung von$100\mu s$, was wegen der Funktionsweise eines solchen Zährohrs erwartet wurde\footnote{Quelle: https://de.wikipedia.org/wiki/Zählrohr}. Die relativen Fehler sind mit 4-18\% wegen den verwendeten Methoden relativ groß, dies hat aber nur einen geringen Einfluss auf weitere Auswertungen, weswegen diese Fehler akzeptabel sind.\\
+\\
+Die Charakteristik des Zählrohres konnte außerdem auf 2\% genau bestimmt werden. Der optimale Bereich der Einsatzspannung bildet dabei ein Plateau, das eine Steigung von weniger als 2\% in der logarythmischen Darstellung hat. 
 
 
 \subsection{Proportionalzähler}
@@ -278,14 +305,14 @@ Der Fehler ergibt sich durch die Einstellgenauigkeit der Hochspannung.
 \centering
 \includegraphics[scale=0.8]{Bilder/Prop/Am_lin.PNG}
 \includegraphics[scale=0.8]{Bilder/Prop/Am_log.PNG}
-\caption{AM}
+\caption{Ergebnisse der Zählratenmessung mithilfe von Americium. Aufgetragen ist die gesamte Zählrate gegen die Spannung. \textbf{Oben}: Darstellung der Rohdaten. \textbf{Unten}: Logarythmisierte Daten mit der Anpassung an das Plateau.}
 \label{fig:amlin}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Prop/C_lin.PNG}
 \includegraphics[scale=0.8]{Bilder/Prop/C_log.PNG}
-\caption{CH}
+\caption{Ergebnisse der Zählratenmessung mithilfe von Kohlenstoff. Aufgetragen ist die gesamte Zählrate gegen die Spannung. \textbf{Oben}: Darstellung der Rohdaten. \textbf{Unten}: Logarythmisierte Daten mit der Anpassung an das Plateau}
 \label{fig:clin}
 \end{figure}
 

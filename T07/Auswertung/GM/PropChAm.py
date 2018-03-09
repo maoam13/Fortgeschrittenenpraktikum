@@ -45,12 +45,14 @@ if 1:
     ax1=plt.subplot(211)
     ax1.axis([300,1300,9.4,9.8])
     ax1.set_ylabel("log(n)")
-    plt.figtext(0.6,0.65,'Modell: y = a*x+b'+
+    plt.figtext(0.6,0.6,'Modell: y = a*x+b'+
                 '\n a= '+str(np.round(a,6))+' +/- '+str(np.round(sa,6))+'\n'
                 +' b= '+str(np.round(b,3))+' +/- '+str(np.round(sb,3))+' \n'
                 +'$\chi ^2 / ndof$= ' + str(np.round(chi/len(xplateau), 2)))
     plt.errorbar(x[11:],logy[11:],yerr = slogy[11:],fmt='.')
     plt.plot(x,a*x+b,color = 'r')
+    plt.vlines(x[plateau],1,10,linestyle='--',color = 'g')
+    plt.vlines(x[plateauend-1],1,10,linestyle='--',color = 'g')
     ax2=plt.subplot(212,sharex=ax1)
     ax2.set_xlabel("U[V}")
     ax2.set_ylabel("Residuen")
@@ -80,4 +82,4 @@ if 1:#plot
     ax.grid(linestyle='--')
     ax.axis([250,2000,0,120000])
     plt.plot(x,y)
-    plt.plot(x,a*x+b)
+    #plt.plot(x,a*x+b)
