@@ -22,7 +22,7 @@
 			II. Physikalisches Institut A\\[5.5cm]
 			\Large\textbf{\textsl{Gasdetektoren und Statistik (T07)}}\\[5.5cm]
 			\normalsize\textit{vorgelegt\\von}\\[0.4cm]
-			\large{Moritz Berger (355244)\\Gerald Kolter (355005)}\\[2cm]
+			\large{Moritz Berger (355244)\\Gerald Kolter (355005)}\\\textbf{Gruppe 30}\\[2cm]
 			\large \textbf{Wintersemester 2017/18}
 		\end{large}
 	\end{center}
@@ -48,7 +48,7 @@ Außerdem ist durch den kleineren Puls die Totzeit um ein vielfaches kleiner, so
 \\
 Beide Zählrohre besitzen eine Charakteristik, die das Verhalten der gezählten Pulsrate in Abhängigkeit von der angelegten Spannung beschreibt. In diesen gibt es Bereiche, sogenannte Plateaus, in denen die Zählrate nahezu konstant ist. Diese Bereiche eignen sich am besten für eine Messung.
 
-\section{Funktion und Aufbau}
+\section{Aufbau}
 \subsection{Geiger-Müller-Zählrohr}
 Der Aufbau des Geiger Müller Zährohres besteht aus einer Probenkammer, an die das Zählrohr befestigt ist. In diese Kammer kann man das Präparat legen. An das Zählrohr ist eine Hochspannungsquelle angeschlossen, mit der man eine Hochspannung von maximal 700V an das Zählrohr anlegt.\\
 Die gemessenen Zählpulse werden durch einen Verstärker verstärkt und sowohl an ein Oszilloskop, das den Spannungsabfalls misst, welcher proportional zur Pulshöhe ist, als auch an ein Zählgerät, das die Anzahl der in einer bestimmten Zeit ankommenden Pulse zählt, weitergeleitet.\\
@@ -57,7 +57,7 @@ Vor dieses Zählgerät kann noch eine Totzeitstufe geschaltet werden.
 Der Aufbau des Proportionalzähler ist ähnlich zum Geiger-Müller-Zählrohr. Es wird hier ein Durchflusszähler verwendet, durch den ein Argon-Methan-Gasgemisch geleitet wird. Die Probe kann durch einen Drehteller direkt in das Zählrohr gebracht werden. Auch hier wird das gemessene Signal durch einen Verstärker verstärkt und an ein Oszilloskop und ein Pulszähler weitergeleitet.
 \section{Durchführung}
 \subsection{Geiger-Müller-Zählrohr}
-Alle Messungen zum Geiger-Müller-Zählrohr werden mit dem $_{38}^{90}Sr$-Präparat durchgeführt.
+Alle Messungen zum Geiger-Müller-Zählrohr werden mit dem $_{38}^{90}Sr$-Präparat durchgeführt. Dieses sendet $\beta$-Strahlung der Energien 0.546MeV und 2.28MeV aus\footnote{Quelle: http://www.periodensystem-online.de}.
 \subsubsection{Charakteristik}
 Die Charakteristik wird gemessen, indem bei eingebrachtem Präparat die Spannung, ausgehend von der Minimaleinstellung von \SI{250}{V}, in \SI{10}{V} Schritten erhöht und jeweils über \SI{10}{s} die Anzahl der gemessenen Ereignisse erfasst wird.\\
 Um die Einsatzspannung $U_E$ und die Geiger-Schwelle $U_G$ genauer bestimmen zu können wurde im entsprechenden Bereich, in dem sich diese Werte befinden, in \SI{2}{V} Schritten statt in \SI{10}{V} Schritten gemessen.\\
@@ -88,7 +88,10 @@ Die Messung wurde zuerst mit der Probe auf der mittleren Schiene durchgeführt, 
 \subsection{Proportionalzähler}
 
 \subsubsection{Charakteristik}
-Beim Proportionalzähler wurde ebenfalls die Charakteristik vermessen, und zwar einmal Anhand der $_{95}^{241}AM$-Probe und einmal anhand der $_6^{14}C$-Probe. Dazu wurde in \SI{20}{V} oder (aus Zeitgründen) in \SI{40}{V} Schritten, wieder ausgehend von \SI{250}{V}, jeweils über \SI{10}{s} die Pulsrate aufgenommen. Bei \SI{1200}{V} musste die Hochspannungsquelle auf 2 fache Verstärkung umgestellt werden. Es kann sein, dass die in Wirklichkeit angelegte Spannung für die beiden Verstärkungsmodi nicht gleich ist, was sich auf die Messdaten auswirken kann.\\
+Beim Proportionalzähler wurde ebenfalls die Charakteristik vermessen, und zwar einmal Anhand der $_{95}^{241}Am$-Probe und einmal anhand der $_6^{14}C$-Probe. \\
+Das Am-Präparat sendet dabei $\alpha$-Strahlung von c.a 5MeV und $\beta$-Strahlung von 0.57MeV aus.\\
+Das C-Präparat sendet $\beta$-Strahlung von 0.16MeV aus\footnote{Quelle: http://www.periodensystem-online.de}.\\
+Dazu wurde in \SI{20}{V} oder (aus Zeitgründen) in \SI{40}{V} Schritten, wieder ausgehend von \SI{250}{V}, jeweils über \SI{10}{s} die Pulsrate aufgenommen. Bei \SI{1200}{V} musste die Hochspannungsquelle auf 2 fache Verstärkung umgestellt werden. Es kann sein, dass die in Wirklichkeit angelegte Spannung für die beiden Verstärkungsmodi nicht gleich ist, was sich auf die Messdaten auswirken kann.\\
 Außerdem wurde eine Untergrundmessung mit leerem Probenraum für den vollständigen untersuchten Spannungsbereich durchgeführt.
 
 \subsubsection{Pulshöhe}
@@ -378,7 +381,7 @@ Armericium ist sowohl ein $\alpha$-, als auch ein $\beta$-Strahler. Theoretisch 
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Prop/Am_plateau.PNG}
-\caption{Anpassung einer Gerade an das Plateau der Armericium-Charakteristik. Auch hier wird mit den senkrechten Linien der Anpassungsbereich gekennzeichnet}
+\caption{Anpassung einer Gerade an das Plateau der Am-Charakteristik. Auch hier wird mit den senkrechten Linien der Anpassungsbereich gekennzeichnet}
 \label{fig:AMPlateau}
 \end{figure}
 
@@ -386,7 +389,7 @@ Das Plateau befindet sich in einem Spannungsbereich von $\SI{760\pm 6}{V}$ bis $
  Das Plateauende ist mit dem Ergebnis der C-Proben Auswertung verträglich, bei dem die Zählung von $\beta$-Strahlung bei c.a 1130V einsetzt. Im Bereich bis 1180V ist die Zunahme der Zählrate durch diese Strahlung so klein, dass man sie nicht aus der Messstreuung herausfiltern kann.\\
 Direkt nach diesem Plateau gibt es einen kleines zweites Plateau zwischen 1300V und 1400V. Es handelt sich hier wahrscheinlich einfach um eine Messungenauigkeit, da kurz vor dieser Spannung die Verstärkung der Hochspannungsquelle umgeschaltet wurde.\\
 \\
-Das zweite Plateau, welches nach den Ergenissen von der C-Probe bei c.a 1570V anfangen sollte, fehlt in diesen Messdaten. Stattdessen fängt die Zählrate bei hohen Spannungen an zu sinken. \\
+Das zweite Plateau, welches nach den Ergenissen von der C-Probe bei c.a 1570V anfangen sollte, fehlt in diesen Messdaten. Die Zählrate steigt zwar wie erwartet durch die $\beta$-Strahlung um ein vielfaches von c.a 15000 auf über 115000 an, statt aber ein 2. Plateau zu bilden, fängt sie bei sehr hohen Spannungen wieder an zu fallen.\\
 Dieser Effekt ist unerwünscht und kann viele Ursachen haben.\\
 Ein Grund dafür kann sein, dass bei zu hohen Spannungen das zu viel Gasverstärkung stattfindet, wodurch das Zählrohr wie ein Geiger Müller Zählrohr blockiert und somit eine größere Totzeit besitzt.\\
 Es kann aber auch sein, dass Fremdatome, die sich in das Gas mischen, den Ionisationsprozess beeinflussen und bei hohen Spannungen das Zählrohr aus unbekannten Gründen blockieren.\\
@@ -424,7 +427,7 @@ Der Ablesefehler kann wegen der Ablesemethode nur qualitativ abgeschätzt werden
 \paragraph{C-Probe}
 Die Abhängigkeit der Pulshöhen von der angelegten Spannung für die C-Probe ist in Abbildung \ref{fig:CPulse} dargestellt.\\
 Da bei dieser Probe erst bei Spannungen von c.a 1100V eine von der Hintergrundstrahlung abweichende Zählrate gemessen wird, kann auch erst ab einer ähnlichen Spannung die Pulshöhe bestimmt werden.\\
-Bei einer gemessenen Pulshöhe von $\SI{6400}{mV}$ wird eine Maximalspannung erreicht, wodurch das exponentielle Verhalten abbricht und die Pulshöhe nicht mehr weiter ansteigt. Dies kann einerseits die Maximale Spannung sein, die vom Oszilloskop angezeigt werden kann. Andererseits kann es sein, dass bei dieser Pulshöhe eine Sättigung des Proportionalzählers auftritt, wodurch die Anzahl der erzeugten Elektronen nicht mehr weiter ansteigen kann.\\
+Bei einer gemessenen Pulshöhe von $\SI{6400}{mV}$ wird eine Maximalspannung erreicht, wodurch das exponentielle Verhalten abbricht und die Pulshöhe nicht mehr weiter ansteigt. Dies ist vermutlich eine Limitierung durch den Aufbau. Enteder ist dies die maximale Spannung, die vom Oszilloskop angezeigt werden kann, oder die maximal erreichbare Verstärkung. Andererseits kann es auch sein, dass bei dieser Pulshöhe eine Sättigung des Proportionalzählers auftritt, wodurch die Anzahl der erzeugten Elektronen nicht mehr weiter ansteigen kann.\\
 \\
 An den linearen Teil der Daten in der logarythmischen Darstellung wird nun eine Gerade angepasst, um den Zusammenhang zwischen Pulshöhe und Spannung genauer untersuchen zu können. Dieser Fit ist in Abbildung \ref{fig:CPulsfit} dargestellt.\\
 
@@ -457,7 +460,7 @@ Die Steigung beträgt hier $0.0068\pm 0.0002$, sie ist also etwas kleiner als be
 \subsubsection{Zusammenfassung}
 In der Charakteristik konnte bei dem AM-Präparat nur das $\alpha$-Plateau identifiziert werden. Dieses liegt in einem Spannungsbereich von $\SI{760\pm 6}{V}$ bis $\SI{1180\pm 6}{V}$. Beim C-Präparat konnte wie erwartet nur das 2.Plateau identifiziert werden, welches im Spannungsbereich von $\SI{1570\pm 12}{V}$ bis $\SI{1930\pm 12}{V}$ liegt. Die Steigungen dieser Plateaus liegen im Promille-Bereich.\\
 \\
-Die Einsatzspannung liegt beim C-Präparat (und damit für $\beta$ Strahlung) wesentlich höher als beim Am-Präparat, bei welchem auch $\alpha$ Strahlung gemessen wird.\\
+Die Einsatzspannung liegt beim C-Präparat (und damit für $\beta$-Strahlung) wesentlich höher als beim Am-Präparat, bei welchem auch $\alpha$-Strahlung gemessen wird.\\
 \\
 In den Pulsraten konnte bei beiden Proben ein linearer Zusammenhang in der logarythmischen Darstellung festgestellt werden. Die Steigungen sind allerdings wegen unterschiedlicher gemessener Teilchen leicht unterschiedlich. Der Proportionalbereich beginnt außerdem erst bei $(800\pm6)V$.
 \newpage
