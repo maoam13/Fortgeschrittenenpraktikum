@@ -76,3 +76,34 @@ def peak_abstaende(peaks_nach, peaks_vor):
         summe += np.abs(peaks_vor[i][1][0] - peaks_nach[i][1][0])
         rueck.append(summe)
     return rueck
+
+def alt_steigung(peak_vor_x, peak_vor_y, peak_nach_x, peak_nach_y, std = 0.1/np.sqrt(12)):
+    steigung = []
+    steigung_std = []
+    steigung_vor = []
+    steigung_vor_std = []
+    steigung_nach = []
+    steigung_nach_std = []
+    steigung_mw = []
+    steigung_mw_std = []
+    for i in range(len(peak_vor_x)):
+        st_nach = (peak_nach_y[i][1] - peak_nach_y[i][0])/(peak_nach_x[i][1] - peak_nach_x[i][0])
+        st_vor = (peak_vor_y[i][1] - peak_vor_y[i][0])/(peak_vor_x[i][1] - peak_vor_x[i][0])
+        st_nach_std = std * np.sqrt(2 * (1/(peak_nach_x[i][1] - peak_nach_x[i][0]))**2 + 2 * ((peak_nach_y[i][1] - peak_nach_y[i][0])/(peak_nach_x[i][1] - peak_nach_x[i][0])**2)**2)
+        st_vor_std = std * np.sqrt(2 * (1/(peak_vor_x[i][1] - peak_vor_x[i][0]))**2 + 2 * ((peak_vor_y[i][1] - peak_vor_y[i][0])/(peak_vor_x[i][1] - peak_vor_x[i][0])**2)**2)
+        steigung_vor.append(st_vor)
+        steigung_vor_std.append(st_vor_std)
+        steigung_nach.append(st_nach)
+        steigung_nach_std.append(st_nach_std)
+        steigung.append((st_nach + st_vor)/2)
+        steigung_std.append(0.5 * np.sqrt(st_nach_std**2 + st_vor_std**2))
+    
+    peak_d_x = (peak_vor_x[i][0] + peak_nach_x[i][0])/2
+    peak_d_y = (peak_vor_y[i][0] + peak_nach_y[i][0])/2
+    peak_u_x = (peak_vor_x[i][1] + peak_nach_x[i][1])/2
+    peak_u_y = (peak_vor_y[i][1] + peak_nach_y[i][1])/2
+    peak_std = std * 1./np.sqrt(2)
+    st_std = peak_std * np.sqrt(2 * (1/(peak_u_x - peak_d_x))**2 + 2 * ((peak_u_y - peak_d_y)/(peak_u_x - peak_d_x)**2)**2)
+    steigung_mw.append((peak_u_y - peak_d_y)/(peak_u_x - peak_d_x))
+    steigung_mw_std.append(st_std)
+    return steigung_vor, steigung_nach, steigung_vor_std, steigung_nach_std
