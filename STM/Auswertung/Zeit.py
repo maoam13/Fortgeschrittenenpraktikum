@@ -82,6 +82,6 @@ for i in range(len(peak_nach_x[e])):
     plt.plot(peak_nach_x[e], peak_nach_y[e], color = 'r')
 plt.xlabel('X [nm]')
 plt.ylabel('Z [nm]')
-plt.title('Hoehenprofil bei I-Gain {0:5.0f}'.format(data_index[e]))
+plt.title('Hoehenprofil bei {0:5.0f} ms Messzeit'.format(data_index[e]))
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
