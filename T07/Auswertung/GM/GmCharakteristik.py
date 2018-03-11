@@ -46,7 +46,7 @@ z = y
 y = y-1
 ydot =y/10
 y = y/(1.-ydot*(0.000318))
-
+logyecht = np.log(z)
 logy = np.log(y)
 plateau = 32
 xplateau = x[plateau:]
@@ -89,13 +89,14 @@ if 1:#logplot
     ax.set_ylabel("log(n)")
     ax.axis([300,650,4,8])
     ax.grid(linestyle='--')
-    l1, = plt.plot(x,logy, label = "Daten")
-    l2, = plt.plot(x,a*x+b, label = "Plateaufit")
-    l3, = plt.plot(x[x1+1:x2],f(var,x[x1+1:x2]), label = "1/x-Fit")
-    l4 = plt.vlines(UE,0,8,linestyle='--',color = 'g', label = "Einsatzspannung")
-    l5 = plt.vlines(UG,0,8,linestyle='--',color = 'r', label = "Geigerspannung")
-    l6 = plt.vlines(UGup,0,8,linestyle='--',color = 'y', label = "Fehlerbereich Geigerspannung")
-    plt.vlines(UGdown,0,8,linestyle='--',color = 'y')
+    l1, = plt.plot(x,logyecht, label = "Daten")
+    l7, = plt.plot(x,logy, label = "Korrektur")
+#    l2, = plt.plot(x,a*x+b, label = "Plateaufit")
+ #   l3, = plt.plot(x[x1+1:x2],f(var,x[x1+1:x2]), label = "1/x-Fit")
+#    l4 = plt.vlines(UE,0,8,linestyle='--',color = 'g', label = "Einsatzspannung")
+#    l5 = plt.vlines(UG,0,8,linestyle='--',color = 'r', label = "Geigerspannung")
+#    l6 = plt.vlines(UGup,0,8,linestyle='--',color = 'y', label = "Fehlerbereich Geigerspannung")
+#    plt.vlines(UGdown,0,8,linestyle='--',color = 'y')
     ax.legend()
     
 if 1:

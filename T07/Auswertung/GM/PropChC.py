@@ -49,7 +49,7 @@ if 1:
     plt.figure(3)
     ax1=plt.subplot(211)
     ax1.axis([1100,2000,1,10])
-    ax1.set_ylabel("U[V]")
+    ax1.set_ylabel("log(n)")
     plt.figtext(0.6,0.65,'Modell: y = a*x+b'+
                 '\n a= '+str(np.round(a,6))+' +/- '+str(np.round(sa,6))+'\n'
                 +' b= '+str(np.round(b,3))+' +/- '+str(np.round(sb,3))+' \n'
@@ -61,7 +61,7 @@ if 1:
     #plt.vlines(1600,0,1300,linestyle='--',color = 'r')
     #plt.vlines(1910,0,1300,linestyle='--',color = 'r')
     ax2=plt.subplot(212,sharex=ax1)
-    ax2.set_xlabel("t[s]")
+    ax2.set_xlabel("U[V]")
     ax2.set_ylabel("Residuen")
     plt.errorbar(xplateau,logyplateau-(a*xplateau+b),yerr = slogy[plateau:plateauend],fmt='.')
     x_r = np.array([1100,2000])

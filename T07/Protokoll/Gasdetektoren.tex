@@ -35,19 +35,32 @@
 \section{Versuchsziel}
 Das Ziel dieses Versuches ist in zwei Teile aufgeteilt.\\
 Als erstes sollen die Eigenschaften eines Proportionalzählers und eines Geiger-Müller-Zählrohres untersucht werden. Dazu wird zum einen die Charakteristik, also die Abhängigkeit der Zählrate von der angelegten Spannung, untersucht, um den optimalen Bereich für die Betriebsspannung zu erhalten. Es wird außerdem die Abhängigkeit der Stärke eines Pulses des Proportionalzählers von der Spannung betrachtet und die Tot- und  Erhohlungszeit des Geiger-Müller-Zählers bestimmt.\\
-Im zweiten Versuchsteil sollen Messungen durchgeführt werden, die verschiedene vorhergesagte Verteilungen bestätigen. Dabei soll eine Gaussverteilung für eine hohe Anzahl an Messungen, eine Poissonverteilung für kleine Messergebnisse und eine Exponetialverteilung für den Abstand zwischen zwei gemessenen Zerfällen untersucht werden. 
-\section{Aufbau}
+Im zweiten Versuchsteil sollen Messungen zur Statistik durchgeführt werden, die verschiedene vorhergesagte Verteilungen bestätigen. Dabei soll eine Gaussverteilung für eine hohe Anzahl an Messungen, eine Poissonverteilung für kleine Messergebnisse und eine Exponetialverteilung für den Abstand zwischen zwei gemessenen Zerfällen untersucht werden. 
+
+\section{Funktion}
+Ein Geiger Müller Zählrohr besteht aus einer mit einem Gasgemisch gefüllten Kammer. Beim Durchgang von Strahlung entstehen in dieser Kammer Elektron-Ionen Paare. Durch eine  Hochspannungsquelle wird nun zwischen der Wand der Kammer und einem sich in der Mitte befindenden Drahtes eine Hochspannung angelegt. Dadurch verhindert man die Rekombination der Ionen und erzeugt durch Gasverstärkung weitere Paare, wodurch ein messbarer Puls entsteht.\\
+Die zum Draht wandernden Elektronen schirmen allerdings das durch die Spannung erzeugte Elektrische Feld ab, wodurch für einen Zeitraum keine neuen Pulse gemessen werden können. Daduruch entsteht eine Totzeit.\\
+Die zur Außenwand wandernden Ionen bewirken ebenfalls eine Abschwächung des E-Feldes, wodurch gemessene Pulse kurz nach der Totzeit weniger verstärkt werden und deswegen kleiner sind. Die Zeit bis zum erreichen der originalen Pulshöhe nennt man Erholungszeit.\\
+Die Auslösezeit gibt an, nach welcher Zeit im Messaufbau wieder ein Puls gemessen werden kann.\\
+\\
+Ein Proportionalzählrohr funktioniert ähnlich, nur das durch eine kleinere angelegte Spannung die Gasverstärkung kontrollierter abläuft und dadurch ein Zusammenhang zwischen Energie des auslösenden Teilchens und der Pulshöhe besteht.\\
+Außerdem ist durch den kleineren Puls die Totzeit um ein vielfaches kleiner, sodass sie nicht berücksichtigt werden muss.\\
+\\
+Beide Zählrohre besitzen eine Charakteristik, die das Verhalten der gezählten Pulsrate in Abhängigkeit von der angelegten Spannung beschreibt. In diesen gibt es Bereiche, sogenannte Plateaus, in denen die Zählrate nahezu konstant ist. Diese Bereiche eignen sich am besten für eine Messung.
+
+\section{Funktion und Aufbau}
 \subsection{Geiger-Müller-Zählrohr}
-Der Aufbau des Geiger-Müller-Zählrohrs besteht aus einer Probenkammer, an der das Zählrohr befestigt ist. In diese Kammer kann man das Präparat legen. An das Zählrohr ist eine regelbare Hochspannungsquelle angeschlossen.\\
+Der Aufbau des Geiger Müller Zährohres besteht aus einer Probenkammer, an die das Zählrohr befestigt ist. In diese Kammer kann man das Präparat legen. An das Zählrohr ist eine Hochspannungsquelle angeschlossen, mit der man eine Hochspannung von maximal 700V an das Zählrohr anlegt.\\
 Die gemessenen Zählpulse werden durch einen Verstärker verstärkt und sowohl an ein Oszilloskop, das den Spannungsabfalls misst, welcher proportional zur Pulshöhe ist, als auch an ein Zählgerät, das die Anzahl der in einer bestimmten Zeit ankommenden Pulse zählt, weitergeleitet.\\
 Vor dieses Zählgerät kann noch eine Totzeitstufe geschaltet werden.
 \subsection{Proportionalzähler}
 Der Aufbau des Proportionalzähler ist ähnlich zum Geiger-Müller-Zählrohr. Es wird hier ein Durchflusszähler verwendet, durch den ein Argon-Methan-Gasgemisch geleitet wird. Die Probe kann durch einen Drehteller direkt in das Zählrohr gebracht werden. Auch hier wird das gemessene Signal durch einen Verstärker verstärkt und an ein Oszilloskop und ein Pulszähler weitergeleitet.
 \section{Durchführung}
 \subsection{Geiger-Müller-Zählrohr}
+Alle Messungen zum Geiger-Müller-Zählrohr werden mit dem $_{38}^{90}Sr$-Präparat durchgeführt.
 \subsubsection{Charakteristik}
-Die Charakteristik wird mithilfe des $_{38}^{90}Sr$-Präparates gemessen. Dabei wird bei eingebrachtem Präparat die Spannung, ausgehend von der Minimaleinstellung von \SI{250}{V}, in \SI{10}{V} Schritten erhöht und jeweils über \SI{10}{s} die Anzahl der gemessenen Ereignisse erfasst.\\
-Um die Einsatzspannung $U_E$ und die Geiger-Schwelle $U_G$ genauer bestimmen zu können, wurde im entsprechenden Bereich, in dem sich diese Werte befinden, in \SI{2}{V} Schritten statt in \SI{10}{V} Schritten gemessen.\\
+Die Charakteristik wird gemessen, indem bei eingebrachtem Präparat die Spannung, ausgehend von der Minimaleinstellung von \SI{250}{V}, in \SI{10}{V} Schritten erhöht und jeweils über \SI{10}{s} die Anzahl der gemessenen Ereignisse erfasst wird.\\
+Um die Einsatzspannung $U_E$ und die Geiger-Schwelle $U_G$ genauer bestimmen zu können wurde im entsprechenden Bereich, in dem sich diese Werte befinden, in \SI{2}{V} Schritten statt in \SI{10}{V} Schritten gemessen.\\
 \\Eine Schnellauswertung ergab $U_G = \SI{350}{V}$. Um sicher zu gehen, dass das Zählrohr für die folgenden Messungen im richtigen Spannungsbereich arbeitetet, wird die Spannung auf $U = U_G + 100V = \SI{450}{V}$ eingestellt.
 
 \subsubsection{Untergrundrauschen}
@@ -56,7 +69,7 @@ Um eine mögliche Störung durch Untergrundrauschen zu beseitigen, wurde mit ein
 \subsubsection{Totzeit}
 Zur Totzeit des Geiger-Müller-Zählrohres sollen zwei verschiedene Messungen gemacht werden.
 \paragraph{Stever-Diagramm}
-Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erholungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s} sollte die Einhüllender der Erholungszeit sichtbar werden. Hier wurde einmal eine Zeitskala von \SI{100}{\mu s} und eine von \SI{250}{\mu s} ausgewählt. Anhand der Einhüllenden wird nun händisch die Tot- und Erholungszeit abgelesen. Dabei befindet sich die Totzeit beim Nulldurchgang der Einhüllenden und die Erholungszeit beim Erreichen der Ausgangspulsgröße. 
+Als erstes wird ein Stever-Diagramm erstellt, an dem man die Tod- und Erholungszeit ablesen kann. Dazu wird auf dem Oszilloskop ein unendliches Nachleuchten eingestellt. Der Trigger sollte dabei niedrig genug eingestellt sein, um möglichst alle Pulse zu erkennen. Er wurde bei einer maximal gemessenen Spannung von c.a 300mV auf 10mV gestellt. Durch die richtige Wahl der Zeitskala in der Größenordnung von einigen \SI{100}{\mu s} sollte die Einhüllender der Erholungszeit sichtbar werden. Hier wurde einmal eine Zeitskala von \SI{100}{\mu s} und eine von \SI{250}{\mu s} ausgewählt. Anhand der Einhüllenden wird nun händisch die Tot- und Erholungszeit abgelesen. Dabei befindet sich die Totzeit beim Nulldurchgang der Einhüllenden und die Erholungszeit beim Erreichen der Ausgangspulsgröße. 
 
 \paragraph{Totzeitkorrektur}
 Als zweites wird die Auflösungszeit mithilfe einer Totzeitstufe bestimmt. Mithilfe dieser kann man eine Totzeitkorrektur der gemessenen Zählraten durchführen. Dabei ist die wirkliche Zählrate N in Abhängigkeit von der gemessenen Rate n und der Auflösungszeit $\tau$ gegeben durch 
@@ -64,7 +77,7 @@ Als zweites wird die Auflösungszeit mithilfe einer Totzeitstufe bestimmt. Mithi
 \label{Totzeitkorrektur}
 N = \dfrac{n}{1-n\tau}
 \end{equation}
-Nun werden für zwei verschiedene künstlich angelegte Totzeiten $\tau_{2ms}$ und $\tau_{1\mu s}$ die Zählrate bestimmt. Dazu werden zuerst die Frequenzen der Totzeitstufe überprüft, um sicher zu stellen, dass diese richtig kalibriert ist. Dafür wurde über 1s die Anzahl der durchgelassenen Pulse gemessen.\\
+Nun werden für zwei verschiedene künstlich angelegte Totzeiten $\tau_{2ms}$ und $\tau_{1\mu s}$ die Zählrate bestimmt.\\Dazu werden zuerst die Frequenzen der Totzeitstufe überprüft, um sicher zu stellen, dass diese richtig kalibriert ist. Dafür wird mithilfe eines Frequenzgenerators eine 1MHz Frequenz an die Totzeitstufe angelegt und über 1s die Anzahl der durchgelassenen Pulse gemessen.\\
 Danach werden die beiden Zählraten bestimmt. Dazu wird für beide Zeiten 1 Minute lang die Zählrate gemessen. Da N für beide Totzeiten gleich sein sollte und $\tau_{1\mu s} << \tau$ gilt, kann man durch Gleichsetzten von Gleichung \ref{Totzeitkorrektur} für beide Zeiten die Auflösungszeit bestimmen:
 \begin{equation}
 \tau_{1\mu s} \approx \tau = \dfrac{1}{n_{1\mu s}} - \dfrac{1}{n_{2ms}} + \tau_{2ms}
@@ -79,10 +92,10 @@ Beim Proportionalzähler wurde ebenfalls die Charakteristik vermessen, und zwar 
 Außerdem wurde eine Untergrundmessung mit leerem Probenraum für den vollständigen untersuchten Spannungsbereich durchgeführt.
 
 \subsubsection{Pulshöhe}
-Da beim Proportionalzähler die Pulsstärke abhängig von der Energie der Teilchen ist, wurde zusätzlich noch die Pulshöhe mithilfe des Oszilloskopes für alle Spannungswerte bestimmt. Dazu wurde im Oszilloskop ein Nachleuchten von 1s eingestellt. Dadurch wurden mehrere Peaks übereinander abgebildet und es wurde versucht, deren mittlere Höhe abzulesen.
+Da beim Proportionalzähler die Pulsstärke abhängig von der Energie der Teilchen ist, wurde zusätzlich noch die Pulshöhe mithilfe des Oszilloskopes für alle Spannungswerte bestimmt.  Dies geschieht, indem auf dem Oszilloskop die ungefähre Mittlere Höhe der ankommenden Pulse abgelesen wird.
 
 \subsection{Statistikmessung}
-Die Statistikmessungen wurden alle mit dem Geiger-Müller-Zählrohr aufgenommen.
+Die Statistikmessungen wurden alle mit dem Geiger-Müller-Zählrohr, und damit auch mit dem Sr-Präparat, aufgenommen.
 \subsubsection{Poissonverteilung}
 Die Zerfälle sind poissonverteilt. Um eine Poissonverteilung auch in den Messdaten beobachten zu können, muss die Messzeit klein gehalten werden (T = 0.3s), da die Verteilung ansonsten in eine Gaußverteilung übergeht. Die Poissonverteilung ist nur für diskrete Werte definiert und hat die Form:
 \begin{equation}
@@ -98,7 +111,7 @@ Die Abstände zwischen zwei Zerfällen sind exponentialverteilt. Zur Messung wer
 \begin{equation}
 P(\Delta t) = A \cdot e^{- A \Delta t}
 \end{equation}
-
+\newpage
 \section{Ergebnisse}
 \subsection{Geiger-Müller-Zählrohr}
 
@@ -121,7 +134,7 @@ P(\Delta t) = A \cdot e^{- A \Delta t}
 \end{figure}
 
 
-In Abbildung \ref{fig:Stever} und \ref{fig:Stever2} sind die Oszilloskopbilder für zwei unterschiedliche Zeitskalen mit jeweils ersten Abschätzungen für die Tot- und Erholungszeiten dargestellt. An der größeren Zeizskala kann man die Totzeit nicht so genau ablesen wie bei der kleineren, allerdings ist die Einhüllende besser zu erkennen, wodurch die Bestimmung der Erholungszeit einfacherer ist. Deswegen wurden beide Messreihen für die Auswertung benutzt.
+In Abbildung \ref{fig:Stever} und \ref{fig:Stever2} sind die Oszilloskopbilder für zwei unterschiedliche Zeitskalen mit jeweils den ersten Abschätzungen für die Tot- und Erholungszeiten dargestellt. An der größeren Zeitskala kann man die Totzeit nicht so genau ablesen wie bei der kleineren, allerdings ist die Einhüllende besser zu erkennen, wodurch die Bestimmung der Erholungszeit einfacherer ist. Deswegen wurden beide Messreihen für die Auswertung benutzt.
 Leider konnten die Daten nicht aus dem Oszilloskop extrahiert werden, da das Nachleuchten nicht mit abgespeichert wurde, weswegen die Auswertung vollständig visuell gemacht werden muss.\\
 \\
 Die Totzeit wird anhand der linken Grenze der Einhüllenden bestimmt. Da durch die eingestellte Schwelle des Verstärkers zu kleine Pulse nicht registriert werden, ist die echte Totzeit etwas kleiner als die abgelesene Grenze.\\
@@ -129,7 +142,7 @@ Die Erholungszeit wird bestimmt, indem der Punkt abgelesen wird, ab dem die Peak
 Sie kann man nicht so genau bestimmt werden, da durch die große statistische Schwankung der Peaks nicht genau erkennbar ist, an welchem Punkt diese Bedingung erreicht ist.\\
 Die abgelesenen Ergebnisse sind in Tabelle \ref{teb:Stever} aufgelistet. Die Fehler wurden durch die Ableseungenauigkeit abgeschätzt.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
@@ -140,6 +153,7 @@ Zeitskala$[\mu s]$ & Totzeit$[\mu s]$ & Erholungszeit$[\mu s]$\\
 100 & $220\pm 10$ & $450\pm 30$ \\
 \hline
 \end{tabular}
+\caption{Ergebnisse der Totzeitbestimmung an beiden Zeitskalen. }
 \label{teb:Stever}
 \end{table}
 
@@ -159,7 +173,7 @@ Eine gewichtete Mittelung ergibt (mit äußerem Fehler):
 \paragraph{Kalibration}
 Vor der eigentlichen Messung mit der Totzeitstufe wurde eine Kalibration durchgeführt. Die Ergebnisse sind in Tabelle \ref{tab:Totzeitkalibration} aufgelistet. Die Messung wurde mehrfach wiederholt, um sicher zu stellen, dass das Ergebnis exakt ist. Es ergab sich mehrfach derselbe Wert, weswegen das Ergebnis auf $1\mu s$ exakt angenommen werden kann. Relevant für die weitere Auswertung ist nur die $2ms$ Stufe, die auf $1.908ms$ kalibriert wurde.
 
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c||c|}
 \hline
@@ -176,7 +190,33 @@ Auslösezeit & $1\mu s$ & $1.908ms$ \\
 
 \paragraph{Bestimmung von der Auslösezeit $\tau$}
 
-\begin{table}
+
+
+In Tabelle \ref{tab:Totzeitstufe} sind die Ergebnisse der Messungen zur Totzeitstufe aufgelistet. Der Fehler wurde mit $\sqrt{N}$ angenommen.\\
+Daraus wurde mithilfe von Gleichung \ref{Totzeitkorrektur} die Auflösezeit bestimmt, welche ebenfalls in der Tabelle aufgelistet ist. Der Fehler wurde folgendermaßen errechnet:
+
+\begin{equation}
+\sigma_{\tau} = \sqrt{\left(\dfrac{\sigma_{n_{1\mu s}}}{n_{1\mu s}^{2}}\right)^2 + \left(\dfrac{\sigma_{n_{2ms}}}{n_{2ms}^{2}}\right)^2}
+\end{equation}
+
+Diese Methode ist extrem anfällig auf Änderungen in der Zählrate, da durch die Addition von $T_{2ms}$ das Ergebnis um eine ganze Größenordung (im Betrag) kleiner wird, als wenn man dies weglassen würde. Da der Fehler sich dabei aber nicht ändert, reicht bereits eine Änderung in den Zählraten von $1\%$, um das Ergebnis signifikant zu verschieben.\\
+\\
+Durch eine gewichtete Mittelung der Ergebnisse kann der Fehler noch etwas verbessert werden.\\
+Dies führt zu einem Endergebnis von:
+\begin{equation}
+\boxed{\tau = \SI{318\pm 56}{\mu s}}
+\end{equation}
+Dieser Wert liegt zwischen der bestimmten Totzeit und der Auslösezeit.
+In Abbildung \ref{fig:Totzeit} ist die Auswirkung der Totzeitkorrektur mithilfe von Gleichung \ref{Totzeitkorrektur} dargestellt.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{Bilder/Totzeitkorrektur.png}
+\caption{Auftragung der von der Totzeit bereinigten Zählrate N gegen die gemessene Zählrate n bei einer Auslösezeit von $318\mu s$.}
+\label{fig:Totzeit}
+\end{figure}
+
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -197,32 +237,18 @@ $\tau [\mu s]$ & $324\pm 97 $ & $255 \pm 97$ & $375\pm 97$ \\
 \label{tab:Totzeitstufe}
 \end{table}
 
-In Tabelle \ref{tab:Totzeitstufe} sind die Ergebnisse der Messungen zur Totzeitstufe aufgelistet. Der Fehler wurde mit $\sqrt{N}$ angenommen.\\
-Daraus wurde mithilfe von Gleichung \ref{Totzeitkorrektur} die Auflösezeit bestimmt, welche ebenfalls in der Tabelle aufgelistet ist. Der Fehler wurde folgendermaßen errechnet:
-
-\begin{equation}
-\sigma_{\tau} = \sqrt{\left(\dfrac{\sigma_{n_{1\mu s}}}{n_{1\mu s}^{2}}\right)^2 + \left(\dfrac{\sigma_{n_{2ms}}}{n_{2ms}^{2}}\right)^2}
-\end{equation}
-
-Diese Methode ist extrem anfällig auf Änderungen in der Zählrate, da durch die Addition von $T_{2ms}$ das Ergebnis um eine ganze Größenordung (im Betrag) kleiner wird, als wenn man dies weglassen würde. Da der Fehler sich dabei aber nicht ändert, reicht bereits eine Änderung in den Zählraten von $1\%$, um das Ergebnis signifikant zu verschieben.\\
-Durch eine gewichtete Mittelung der Ergebnisse kann der Fehler noch etwas verbessert werden.\\
-Dies führt zu einem Endergebnis von:
-\begin{equation}
-\boxed{\tau = \SI{318\pm 56}{\mu s}}
-\end{equation}
-
 
 \subsubsection{Charakteristik}
 \label{GMchar}
 
-Die Ergebnisse wurden mithilfe der Rauschmessung vom Offset des Untergrundrauschens bereinigt.
+Die Ergebnisse wurden mithilfe der Rauschmessung vom Offset des Untergrundrauschens bereinigt. 
 Außerdem wurde mithlife von Gleichung \ref{Auslosungszeit} die Totzeitkorrektur durchgeführt. In Abbildung \ref{fig:GMTotzeit} ist die Auswirkung dieser Korrekturen zu sehen.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.9]{Bilder/GMTotzeit.PNG}
 \includegraphics[scale=0.9]{Bilder/GMlogroh.PNG}
-\caption{\textbf{Oberes Bild:} Auswirkungen der Offset- und Totzeitkorrektur. Die blauen Daten stellen die Orginalmessung dar, der orangene Plot die korrigierten Daten. \textbf{Unteres Bild:} Darstellung der bereits korrigierten lorarythmisierten Daten}
+\caption{\textbf{Oberes Bild:} Auswirkungen der Offset- und Totzeitkorrektur. Die blauen Daten stellen die Orginalmessung dar, der orangene Plot die korrigierten Daten. \textbf{Unteres Bild:} Darstellung der lorarythmisierten Daten}
 \label{fig:GMTotzeit}
 \end{figure}
 
@@ -271,7 +297,7 @@ In Abbildung \ref{fig:GMCharakteristik} sind beide Spannungen eingezeichnet.
 \caption{Darstellung der Messdaten mitsamt bestimmter Einsatz- und Geigerspannung. Es wurden außerdem die Anpassungen und der Fehlerbereich der Geigerspannung angegeben.}
 \label{fig:GMCharakteristik}
 \end{figure}
-
+\newpage
 \subsubsection{Zusammenfassung}
 
 \begin{table}
@@ -300,10 +326,18 @@ Wie erwartet liegt die Auslösezeit zwischen der Totzeit und der Erholungszeit. 
 \\
 Die Charakteristik des Zählrohres konnte außerdem auf 2\% genau bestimmt werden. Der optimale Bereich der Einsatzspannung bildet dabei ein Plateau, das eine Steigung von weniger als 2\% in der logarythmischen Darstellung hat. 
 
-
+\newpage
 \subsection{Proportionalzähler}
 
 \subsubsection{Charakteristik}
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Prop/leer.PNG}
+\caption{Ergebnis der Leermessung.}
+\label{fig:leer}
+\end{figure}
 
 \begin{figure}
 \centering
@@ -321,6 +355,10 @@ Die Charakteristik des Zählrohres konnte außerdem auf 2\% genau bestimmt werde
 \end{figure}
 
 Die Pulsraten für das Americium-Präparates sind in Abbildung  \ref{fig:amlin} dargestellt und die des Kohlenstoff-Präparates in Abbildung \ref{fig:clin}. Dabei wurden die Daten aus dem gleichen Grund wie beim Geiger-Müller-Zählrohr logarythmisiert (vgl. Kapitel \ref{GMchar}).\\
+\paragraph{Leermessung}
+Es wurde außerdem eine Leermessung durchgeführt. Diese ist in Abbildung \ref{fig:leer} zu sehen. Die Zählrate des Hintergrundrauschen ist scheinbar exponentiell. Sie nimmt also mit steigender Spannung immer weiter zu.\\
+Dies liegt daran, dass das Zählrohr bei steigender Spannung empfindlich auf Teilchen mit kleineren Energien wird, wodurch auch diese Teilchen einen Puls auslösen können. Außerdem werden immer mehr Selbstentladungen gemessen.
+
 \paragraph{C-Präparat}
 $_6^{14} C$ ist ein $\beta$-Strahler. Aus diesem Grund ist wie erwartet nur das Plateau in den Daten zu sehen, in das sowohl $\alpha$ als auch $\beta$ Strahlung mit einfließen.\\
 Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die logarythmisierten Werte angepasst und abgeschätzt, welche gemessenen Spannungswerte  mit dieser Anpassung übereinstimmt. Die Anpassung ist in Abbildung \ref{fig:CPlateau} dargestellt. Offensichtlich beginnt das Plateau bei $\SI{1570\pm 12}{V}$ und geht bis $\SI{1930\pm 12}{V}$. Aus dem Fit ergibt sich außerdem eine Steigung von $a = (5.7\pm0.3)\cdot 10^{-4}$. Dies entspricht einer Zunahme der logarythmischen Zählrate von 0.6\% pro 100V.
@@ -331,7 +369,8 @@ Um die Breite des Plateaus abschätzen zu können wurde ein Linearer fit an die 
 \label{fig:CPlateau}
 \end{figure}\\
 \\
-Erst ab einer Spannung von $\SI{1130\pm 12}{V}$ werden überhaupt nennenswerte Pulsraten gemessen. Anscheinend wird ab dieser Spannung also $\beta$-Strahlung gemessen, dass $\alpha$-Plateau hört also vermutlich bei dieser Spannung auf.
+Erst ab einer Spannung von $\SI{1130\pm 12}{V}$ werden überhaupt nennenswerte Pulsraten gemessen. Anscheinend wird ab dieser Spannung also $\beta$-Strahlung gemessen, dass $\alpha$-Plateau hört also vermutlich bei dieser Spannung auf.\\
+Auffällig ist, dass die Leermessung bei einer ähnlichen Spannung anfängt zu steigen. Das Zählrohr wird also ab dieser Spannung wesentlich empfindlicher, was sich auf die Zunahme der Zählrate innerhalb des Plateaus auswirkt.
 
 \paragraph{AM-Präparat}
 Armericium ist sowohl ein $\alpha$-, als auch ein $\beta$-Strahler. Theoretisch sollten also beide Plateaus in der Messung zur Pulsrate sichtbar sein. Im den Daten ist aber nur ein Plateau sichtbar. Dieses wird genau so wie das Plateau des C-Präparates abgeschätzt, was in Abbildung \ref{fig:AMPlateau} zu sehen ist.
@@ -345,16 +384,21 @@ Armericium ist sowohl ein $\alpha$-, als auch ein $\beta$-Strahler. Theoretisch 
 
 Das Plateau befindet sich in einem Spannungsbereich von $\SI{760\pm 6}{V}$ bis $\SI{1180\pm 6}{V}$ und hat eine Steigung von $a = (8.6\pm1.4)\cdot 10^{-5}$. Die Zählrate steigt also um weniger als $0.1\%$ pro 100V.\\
  Das Plateauende ist mit dem Ergebnis der C-Proben Auswertung verträglich, bei dem die Zählung von $\beta$-Strahlung bei c.a 1130V einsetzt. Im Bereich bis 1180V ist die Zunahme der Zählrate durch diese Strahlung so klein, dass man sie nicht aus der Messstreuung herausfiltern kann.\\
+Direkt nach diesem Plateau gibt es einen kleines zweites Plateau zwischen 1300V und 1400V. Es handelt sich hier wahrscheinlich einfach um eine Messungenauigkeit, da kurz vor dieser Spannung die Verstärkung der Hochspannungsquelle umgeschaltet wurde.\\
 \\
 Das zweite Plateau, welches nach den Ergenissen von der C-Probe bei c.a 1570V anfangen sollte, fehlt in diesen Messdaten. Stattdessen fängt die Zählrate bei hohen Spannungen an zu sinken. \\
 Dieser Effekt ist unerwünscht und kann viele Ursachen haben.\\
+Ein Grund dafür kann sein, dass bei zu hohen Spannungen das zu viel Gasverstärkung stattfindet, wodurch das Zählrohr wie ein Geiger Müller Zählrohr blockiert und somit eine größere Totzeit besitzt.\\
+Es kann aber auch sein, dass Fremdatome, die sich in das Gas mischen, den Ionisationsprozess beeinflussen und bei hohen Spannungen das Zählrohr aus unbekannten Gründen blockieren.\\
+Ein anderer Grund kann sein, dass bei diesen hohen Spannungen zu viele Pulse gemessen werden und der Verstärker oder das Zählgerät diese nicht mehr auflösen kann, wodurch mehrere Pulse als einer gezählt werden.\\
 \\
 Die Einsatzspannung ist hier wesentlich kleiner als bei der C-Probe und liegt außerhalb der unseres Messbereiches. Dies liegt daran, dass die durch die Americium-Zerfallsreihe entstehende $\alpha$-Strahlung eine Energie besitzt, die 
 um ungefähr ein zehnfaches größer ist als die $\beta$-Strahlung der C-Probe. Dadurch finden schon bei niedrigen Spannungen genug Inonisationsprozesse statt, um einen Messpuls auszulösen.\\
 
+
 \subsubsection{Pulshöhen}
 
-Die durch die Gasverstärkung erzeugte Anzahl an Elektron-Ion-Paaren aus einem einzelnen Paar ist exponentiell, da jedes erzeugte Paar wieder eine neues Paar erzeugen kann. Aus einem einzelnen Elektron werden also nach einem Verstärkungsschritt (im Mittel) 2, nach 2 Schritte 4, nach 3 Schritten 8 und so weiter.\\
+Die durch die Gasverstärkung erzeugte Anzahl an Elektron-Ion-Paaren aus einem einzelnen Paar ist exponentiell, da jedes erzeugte Paar wieder eine neues Paar erzeugen kann. Aus einem einzelnen Elektron werden also nach einem Verstärkungsschritt (im Mittel) 2, nach 2 Schritten 4, nach 3 Schritten 8 und so weiter.\\
 Da mit der angelegten Spannung auch die Anzahl der durchschnittlichen Verstärkungsschritte, die ein Elektron auslöst, zunimmt, wird somit erwartet, dass die gemessene Pulsstärke exponentiell mit der Spannung ansteigt.\\
 Deswegen wurden die Pulshöhen logarythmisiert, da in dieser Darstellung ein linearer Zusammenhang erwartet wird.\\
 \\
@@ -409,11 +453,13 @@ Die Steigung beträgt hier $0.0068\pm 0.0002$, sie ist also etwas kleiner als be
 \caption{Geradenfit an den linearen Bereich des Am-Präparates.}
 \label{fig:AMPulsfit}
 \end{figure}
-
+\newpage
 \subsubsection{Zusammenfassung}
 In der Charakteristik konnte bei dem AM-Präparat nur das $\alpha$-Plateau identifiziert werden. Dieses liegt in einem Spannungsbereich von $\SI{760\pm 6}{V}$ bis $\SI{1180\pm 6}{V}$. Beim C-Präparat konnte wie erwartet nur das 2.Plateau identifiziert werden, welches im Spannungsbereich von $\SI{1570\pm 12}{V}$ bis $\SI{1930\pm 12}{V}$ liegt. Die Steigungen dieser Plateaus liegen im Promille-Bereich.\\
 \\
-In den Pulsraten konnte bei beiden Proben ein linearer Zusammenhang in der logarythmischen Darstellung festgestellt werden. Die Steigungen sind allerdings wegen unterschiedlicher gemessener Teilchen leicht unterschiedlich.
+Die Einsatzspannung liegt beim C-Präparat (und damit für $\beta$ Strahlung) wesentlich höher als beim Am-Präparat, bei welchem auch $\alpha$ Strahlung gemessen wird.\\
+\\
+In den Pulsraten konnte bei beiden Proben ein linearer Zusammenhang in der logarythmischen Darstellung festgestellt werden. Die Steigungen sind allerdings wegen unterschiedlicher gemessener Teilchen leicht unterschiedlich. Der Proportionalbereich beginnt außerdem erst bei $(800\pm6)V$.
 \newpage
 
 
@@ -516,6 +562,20 @@ Für die Auswertung der Exponentialverteilung werden die gemessenen Zeitabständ
 Tabelle \ref{tab:Exponential} zeigt die Ergebnisse für den Exponentialparameter und das $\chi ^2$ pro Freiheitsgrad für die verschiedenen Bestimmungsmethoden. Auffällig ist, dass die Exponentialparameter aus den Bestimmungen von Mittelwert und Standardabweichung nah beieinander liegen, der Wert aus der $\chi ^2$ Anpassung jedoch deutlich von diesen abweicht. Das $\chi ^2$ ist bei der Anpassung deutlich besser, als bei den Bestimmungen von Mittelwert und Standardabweichung, sodass davon ausgegangen werden kann, dass der Wert aus der Anpassung näher am echten Wert liegt.
 
 \section{Zusammenfassung}
+
+In der Charakteristik des Geiger Müller Zählrohres konnte das Plateau ab einer Spannung von $(346_{-5}^{+7})\si{V}$ identifiziert werden. Der Einsatzbereich dieses Zählrohrs liegt also zwischen dieser Spannung und der maximal gemessenen Spannung von 650V. Die Einsatzspannung wurde mit $(316.0\pm 0.3) \si{V}$ bestimmt.\\
+Der Verlauf der Charakteristik stimmt also mit der Erwartung überein.
+\\
+Die Totzeit des Zählrohres liegt bei $(220\pm 9) \mu s$, die Auslösezeit bei $(318\pm 56)\mu s$ und die Erholungszeit bei $(469\pm 31)\mu s$. Auch diese Werte stimmen mit einer erwarteten Größenordnung von mehreren $100\mu s$ überein, und die Erwartung, dass die Auslösezeit zwischen Tot- und Erholungszeit liegt, wurde bestätigt.\\
+\\
+Im Charakteristikverlauf des Proportionalzählers konnten zwar beide Plateaus aus den Messungen mit beiden Proben identifiziert werden, allerdings gab es einen unbekannten Effekt bei der Messung mit dem AM-Präparat, der dazu führte, dass die Zählrate bei hohen Spannungen wieder abgefallen ist und das 2. Plateau deswegen nicht sichtbar ist.\\
+Die minimale Spannung, bei der eine Pulsrate gemessen wurde, lag bei der C-Probe mit $(1130\pm 12)V$ deutlich höher als bei der Am-Probe, bei der für alle Spannungen Pulsraten gemessen wurden. Damit wurde bestätigt, dass $\beta$ Strahlung wesentlich schlechter ionisiert und deswegen höhere Betriebspannungen benötigt.\\
+\\
+In der logarythmisierten Pulshöhe konnte außerdem für beide Präparate ein linearer Zusammenhang festgestellt werden, wobei die Steigung wegen unterschiedlicher wechselwirkenden Teilchen leicht unterschiedlich ist.\\
+Mithilfe des AM-Präparates wurde außerdem herausgefunden, dass dieser Proportionalbereich erst bei $(800\pm 6) V$ anfängt.\\
+Ab einer gemessenen Spannung von c.a $6.4 mV$ erreicht der Verstärker seine maximale Verstärkung und die Pulshöhe steigt nicht weiter an.
+
+
 
 
 
