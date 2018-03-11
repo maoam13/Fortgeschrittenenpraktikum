@@ -64,6 +64,9 @@ peak_nach_x = [[27.5, 44.7], [32.7, 44.7], [28.0, 44.0], [30.8, 41.4]]
 peak_nach_y = [[0.0, 2.9], [0.0, 2.6], [0.1, 3.5], [0.0, 9.4]]
 st_vor, st_nach, st_vor_std, st_nach_std = STMM.alt_steigung(peak_vor_x, peak_vor_y , peak_nach_x, peak_nach_y)
 
+#Abweichung zwischen Steigung aus Vorwaerts- und Rueckwaertsrichtung
+abw = (np.array(st_vor) - np.array(st_nach))/np.sqrt(np.array(st_vor_std)**2 + np.array(st_nach_std)**2)
+
 
 #Plotte Datensatz e mit automatischer Peakbestimmung
 e = 1
