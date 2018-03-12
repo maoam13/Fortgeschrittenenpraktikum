@@ -114,7 +114,8 @@ def lineare_regression_xy(x,y,ex,ey):
     odr    = scipy.odr.ODR(data, model, beta0=[a_ini, b_ini])
     output = odr.run()
     ndof = len(x)-2
-    chiq = output.res_var*ndof
+    #chiq = output.res_var*ndof
+    chiq = output.res_var
     corr = output.cov_beta[0,1]/np.sqrt(output.cov_beta[0,0]*output.cov_beta[1,1])
 
     return output.beta[0],output.sd_beta[0],output.beta[1],output.sd_beta[1],chiq,corr

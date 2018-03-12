@@ -1,0 +1,238 @@
+WSxM file copyright UAM
+Profile curve file
+Image header size: 4220
+
+[Axis Texts]
+
+    X title orientation: 0
+    X title position: (0.418317, 0.903465, 0.581683, 1.00248)
+    Y title orientation: 90
+    Y title position: (0, 0.433168, 0.0990099, 0.566832)
+
+[Curve Settings]
+
+    Average color: rgb(0, 0, 255)
+    Average line style: 0
+    Average pen style: 0
+    Average pen width: 1
+    Axis color: rgb(0, 0, 0)
+    Background color: rgb(255, 255, 255)
+    Bottom scale, Increment for user scale mode: 0
+    Bottom scale, Log step for user scale mode: 1
+    Bottom scale, Maximum for user scale mode: 0
+    Bottom scale, Minimum for user scale mode: 0
+    Bottom scale, Notation: 3
+    Bottom scale, Number of minor ticks: 4
+    Bottom scale, Scale mode: 2
+    Bottom scale, Scale type: Linear
+    Bottom scale, Show axis: Yes
+    Bottom scale, Show magnitude: Yes
+    Bottom scale, Show ticks: Yes
+    Bottom scale, Show values: Yes
+    Bottom scale, Show zero marker: Yes
+    Bottom scale, Size of characters: 4
+    Bottom scale, Size of margin: 15
+    Bottom scale, Text orientation: 0
+    Bottom scale, Ticks placement: 1
+    Bottom scale, Values presicion: -1
+    Frame color: rgb(0, 0, 0)
+    Grid color: rgb(0, 0, 0)
+    Left scale, Increment for user scale mode: 0
+    Left scale, Log step for user scale mode: 1
+    Left scale, Maximum for user scale mode: 0
+    Left scale, Minimum for user scale mode: 0
+    Left scale, Notation: 3
+    Left scale, Number of minor ticks: 4
+    Left scale, Scale mode: 2
+    Left scale, Scale type: Linear
+    Left scale, Show axis: Yes
+    Left scale, Show magnitude: Yes
+    Left scale, Show ticks: Yes
+    Left scale, Show values: Yes
+    Left scale, Show zero marker: Yes
+    Left scale, Size of characters: 4
+    Left scale, Size of margin: 20
+    Left scale, Text orientation: 0
+    Left scale, Ticks placement: 1
+    Left scale, Values presicion: -1
+    Line 0, Line color: rgb(0, 128, 0)
+    Line 0, Line style: 0
+    Line 0, Pen style: 0
+    Line 0, Pen width: 1
+    Line 0, Show line: Yes
+    Numbers color: rgb(0, 0, 0)
+    Right scale, Increment for user scale mode: 0
+    Right scale, Log step for user scale mode: 1
+    Right scale, Maximum for user scale mode: 0
+    Right scale, Minimum for user scale mode: 0
+    Right scale, Notation: 3
+    Right scale, Number of minor ticks: 4
+    Right scale, Scale mode: 2
+    Right scale, Scale type: Linear
+    Right scale, Show axis: No
+    Right scale, Show magnitude: Yes
+    Right scale, Show ticks: No
+    Right scale, Show values: No
+    Right scale, Show zero marker: Yes
+    Right scale, Size of characters: 4
+    Right scale, Size of margin: 10
+    Right scale, Text orientation: 0
+    Right scale, Ticks placement: 1
+    Right scale, Values presicion: -1
+    Scales color: rgb(0, 0, 0)
+    Top scale, Increment for user scale mode: 0
+    Top scale, Log step for user scale mode: 1
+    Top scale, Maximum for user scale mode: 0
+    Top scale, Minimum for user scale mode: 0
+    Top scale, Notation: 3
+    Top scale, Number of minor ticks: 4
+    Top scale, Scale mode: 2
+    Top scale, Scale type: Linear
+    Top scale, Show axis: No
+    Top scale, Show magnitude: Yes
+    Top scale, Show ticks: No
+    Top scale, Show values: No
+    Top scale, Show zero marker: Yes
+    Top scale, Size of characters: 4
+    Top scale, Size of margin: 15
+    Top scale, Text orientation: 0
+    Top scale, Ticks placement: 1
+    Top scale, Values presicion: -1
+
+[General Info]
+
+    Number of lines: 1
+    Number of points: 111
+    X axis text: X[#x]
+    X axis unit: nm
+    Y axis text: Z[#y]
+    Y axis unit: Å
+
+[Miscellaneous]
+
+    Comments: Profile from neu8000_1269 Image 4.nid (126.9nm x 126.9nm) :converted :plane :plane :equalize :equalize\nneu8000_1269 Image 4.nid (126.9nm x 126.9nm) :converted :plane :plane :equalize :equalize was a m image
+    First Forward: Yes
+    Saved with version: 5.0 Develop 9.1
+    Version: 3.0 (July 2004)
+
+[Number of Points]
+
+    Number of Points 0000: 111
+
+[Points List]
+
+    Point 0: (33.3403 nm, 45.7806 nm)
+    Point 1: (88.078 nm, 18.9094 nm)
+
+[Header end]
+0 2.38100727648579 
+0.552177520017463 2.15532467415275 
+1.10435504003493 2.42687099650668 
+1.65653256005239 2.37505284634144 
+2.20871008006985 2.53710201429525 
+2.76088760008731 2.3540273780241 
+3.31306512010478 2.50707593247539 
+3.86524264012224 2.30248384260039 
+4.4174201601397 2.29012361052623 
+4.96959768015716 2.57646635631152 
+5.52177520017463 2.53019716078581 
+6.07395272019209 2.4299777232235 
+6.62613024020955 2.4006590619639 
+7.17830776022702 2.4428572708981 
+7.73048528024448 2.34911552654015 
+8.28266280026194 2.29975953415517 
+8.8348403202794 2.37895350340019 
+9.38701784029687 2.41097902329894 
+9.93919536031433 2.32401907163132 
+10.4913728803318 2.4306443111234 
+11.0435504003493 2.48610200595236 
+11.5957279203667 2.37231898300942 
+12.1479054403842 2.49220370839627 
+12.7000829604016 2.42928413063067 
+13.2522604804191 2.51525989256592 
+13.8044380004366 2.45912210749061 
+14.356615520454 2.50779800962924 
+14.9087930404715 2.60425056008593 
+15.460970560489 2.54780867552473 
+16.0131480805064 2.62730674425556 
+16.5653256005239 2.6386827865975 
+17.1175031205413 2.687662788222 
+17.6696806405588 2.63461180000598 
+18.2218581605763 2.7581915212239 
+18.7740356805937 2.70514053300781 
+19.3262132006112 2.7710750163581 
+19.8783907206287 2.65020610123895 
+20.4305682406461 2.74665865169565 
+20.9827457606636 2.68682587078928 
+21.534923280681 2.61712450033331 
+22.0871008006985 2.75056886364116 
+22.639278320716 2.46385012709534 
+23.1914558407334 2.5396531999952 
+23.7436333607509 2.86521970338512 
+24.2958108807684 2.76277226852901 
+24.8479884007858 2.39704517910439 
+25.4001659208033 1.95874085924291 
+25.9523434408208 1.47166812357091 
+26.5045209608382 1.01849136662656 
+27.0566984808557 0.853844898506238 
+27.6088760008731 0.604121922271201 
+28.1610535208906 0.459820832221892 
+28.7132310409081 0.603441832024846 
+29.2654085609255 0.672767211720304 
+29.817586080943 0.511207540459223 
+30.3697636009605 0.563578438428894 
+30.9219411209779 0.602385751017927 
+31.4741186409954 0.593416415288926 
+32.0262961610128 0.537278630213638 
+32.5784736810303 0.579172739661888 
+33.1306512010478 0.617980052250944 
+33.6828287210652 0.375038868706201 
+34.2350062410827 0.546091138756296 
+34.7871837611002 0.313322644247061 
+35.3393612811176 0.13511259074614 
+35.8915388011351 0.170224907504105 
+36.4437163211525 0.134432500499747 
+36.99589384117 0 
+37.5480713611875 0.0557617943148278 
+38.1002488812049 0.060352096506733 
+38.6524264012224 0.156804646963421 
+39.2046039212399 0.0494993172248972 
+39.7567814412573 0.128997385955814 
+40.3089589612748 0.147155220988028 
+40.8611364812922 0.121535503019084 
+41.4133140013097 0.295674569928447 
+41.9654915213272 0.181891546985526 
+42.5176690413446 0.220394760088678 
+43.0698465613621 0.201556834810064 
+43.6220240813796 0.290923493090527 
+44.174201601397 0.29243094588285 
+44.7263791214145 0.219034579595864 
+45.2785566414319 0.271405477565535 
+45.8307341614494 0.140363873410989 
+46.3829116814669 0.308025247115852 
+46.9350892014843 0.312619496767459 
+47.4872667215018 0.266654400727621 
+48.0394442415193 0.247512375963155 
+48.5916217615367 0.306665066623119 
+49.1437992815542 0.365513657797238 
+49.6959768015717 0.485702482669934 
+50.2481543215891 0.334315500444392 
+50.8003318416066 0.454504325317138 
+51.352509361624 0.269208379640058 
+51.9046868816415 0.436869753344995 
+52.456864401659 0.292264563809731 
+53.0090419216764 0.344635461779395 
+53.5612194416939 0.362789349351973 
+54.1133969617114 0.347342320418538 
+54.6655744817288 0.650335448443747 
+55.2177520017463 0.80782413311319 
+55.7699295217637 0.785291212003529 
+56.3221070417812 0.739326115963692 
+56.8742845617987 0.645584371605775 
+57.4264620818161 0.603010171911102 
+57.9786396018336 0.685595037501228 
+58.5308171218511 0.887165374657689 
+59.0829946418685 0.749341977812821 
+59.635172161886 0.85257632095981 
+60.1873496819034 0.674062167973081 
+60.7395272019209 0.729823962287843 

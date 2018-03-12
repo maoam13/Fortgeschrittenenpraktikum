@@ -7,6 +7,7 @@ Created on Fri Mar 02 16:34:19 2018
 
 import numpy as np
 import auswertung_nur_Methoden as AM
+import Praktikum as p
 
 def addiere_abstaende(data):
     summe = 0
@@ -37,6 +38,18 @@ def lese_Profillinie_ein_Zeit(Zeit, vor = 1, alt = 0):
             return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_vor.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
         else:
             return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_nach.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+
+def lese_Profillinie_ein_Kante(Kante, vor = 1, alt = 0):
+    if vor == 1:
+        if Kante / 1000 == 0:
+            return np.genfromtxt("Profillinien/Kante/neu8000/0{0:1.0f}_vor.prf.cur".format(Kante), delimiter = ' ', skip_header = 127)
+        else:
+            return np.genfromtxt("Profillinien/Kante/neu8000/{0:1.0f}_vor.prf.cur".format(Kante), delimiter = ' ', skip_header = 127)
+    else:
+        if Kante / 1000 == 0:
+            return np.genfromtxt("Profillinien/Kante/neu8000/0{0:1.0f}_nach.prf.cur".format(Kante), delimiter = ' ', skip_header = 127)
+        else:
+            return np.genfromtxt("Profillinien/Kante/neu8000/{0:1.0f}_nach.prf.cur".format(Kante), delimiter = ' ', skip_header = 127)
 
 #def get_peak_by_approx(x, y, approx, k = 6):
 #    xpeak = []
@@ -107,3 +120,30 @@ def alt_steigung(peak_vor_x, peak_vor_y, peak_nach_x, peak_nach_y, std = 0.1/np.
     steigung_mw.append((peak_u_y - peak_d_y)/(peak_u_x - peak_d_x))
     steigung_mw_std.append(st_std)
     return steigung_vor, steigung_nach, steigung_vor_std, steigung_nach_std
+
+def multi_lin_reg(data_nach, data_vor, vor_kante_vor, nach_kante_vor, vor_kante_nach, nach_kante_nach, sig_x, sig_y):
+    vor_sol_vor = []
+    nach_sol_vor = []
+    vor_sol_nach = []
+    nach_sol_nach = []
+    for i in range(len(data_vor)):
+        #Daten für linreg bei vorwaertsrichtung
+        vor_data_nachkante = data_vor[nach_kante_vor[i]:-1]
+        vor_data_vorkante = data_vor[0:vor_kante_vor[i]]
+        vor_std_x_nach = np.full(len(vor_data_nachkante), sig_x)
+        vor_std_y_nach = np.full(len(vor_data_nachkante), sig_y)
+        vor_std_x_vor = np.full(vor_kante_vor[i], sig_x)
+        vor_std_y_vor = np.full(vor_kante_vor[i], sig_y)
+        #Daten für linreg bei rueckwaertsrichtung
+        nach_data_nachkante = data_vor[nach_kante_nach[i]:-1]
+        nach_data_vorkante = data_vor[0:vor_kante_nach[i]]
+        nach_std_x_nach = np.full(len(nach_data_nachkante), sig_x)
+        nach_std_y_nach = np.full(len(nach_data_nachkante), sig_y)
+        nach_std_x_vor = np.full(vor_kante_nach[i], sig_x)
+        nach_std_y_vor = np.full(vor_kante_nach[i], sig_y)
+        print vor_data_vorkante
+        vor_sol_vor.append(p.lineare_regression_xy(vor_data_vorkante[:,0], vor_data_vorkante[:,1], vor_std_x_vor, vor_std_y_vor))
+        nach_sol_vor.append(p.lineare_regression_xy(vor_data_nachkante[:,0], vor_data_nachkante[:,1], vor_std_x_nach, vor_std_y_nach))
+        vor_sol_nach.append(p.lineare_regression_xy(nach_data_vorkante[:,0], nach_data_vorkante[:,1], nach_std_x_vor, nach_std_y_vor))
+        nach_sol_nach.append(p.lineare_regression_xy(nach_data_nachkante[:,0], nach_data_nachkante[:,1], nach_std_x_nach, nach_std_y_nach))
+    return np.array(vor_sol_vor), np.array(nach_sol_vor), np.array(vor_sol_nach), np.array(nach_sol_nach)

@@ -1,0 +1,224 @@
+WSxM file copyright UAM
+Profile curve file
+Image header size: 4195
+
+[Axis Texts]
+
+    X title orientation: 0
+    X title position: (0.418317, 0.903465, 0.581683, 1.00248)
+    Y title orientation: 90
+    Y title position: (0, 0.433168, 0.0990099, 0.566832)
+
+[Curve Settings]
+
+    Average color: rgb(0, 0, 255)
+    Average line style: 0
+    Average pen style: 0
+    Average pen width: 1
+    Axis color: rgb(0, 0, 0)
+    Background color: rgb(255, 255, 255)
+    Bottom scale, Increment for user scale mode: 0
+    Bottom scale, Log step for user scale mode: 1
+    Bottom scale, Maximum for user scale mode: 0
+    Bottom scale, Minimum for user scale mode: 0
+    Bottom scale, Notation: 3
+    Bottom scale, Number of minor ticks: 4
+    Bottom scale, Scale mode: 2
+    Bottom scale, Scale type: Linear
+    Bottom scale, Show axis: Yes
+    Bottom scale, Show magnitude: Yes
+    Bottom scale, Show ticks: Yes
+    Bottom scale, Show values: Yes
+    Bottom scale, Show zero marker: Yes
+    Bottom scale, Size of characters: 4
+    Bottom scale, Size of margin: 15
+    Bottom scale, Text orientation: 0
+    Bottom scale, Ticks placement: 1
+    Bottom scale, Values presicion: -1
+    Frame color: rgb(0, 0, 0)
+    Grid color: rgb(0, 0, 0)
+    Left scale, Increment for user scale mode: 0
+    Left scale, Log step for user scale mode: 1
+    Left scale, Maximum for user scale mode: 0
+    Left scale, Minimum for user scale mode: 0
+    Left scale, Notation: 3
+    Left scale, Number of minor ticks: 4
+    Left scale, Scale mode: 2
+    Left scale, Scale type: Linear
+    Left scale, Show axis: Yes
+    Left scale, Show magnitude: Yes
+    Left scale, Show ticks: Yes
+    Left scale, Show values: Yes
+    Left scale, Show zero marker: Yes
+    Left scale, Size of characters: 4
+    Left scale, Size of margin: 20
+    Left scale, Text orientation: 0
+    Left scale, Ticks placement: 1
+    Left scale, Values presicion: -1
+    Line 0, Line color: rgb(0, 128, 0)
+    Line 0, Line style: 0
+    Line 0, Pen style: 0
+    Line 0, Pen width: 1
+    Line 0, Show line: Yes
+    Numbers color: rgb(0, 0, 0)
+    Right scale, Increment for user scale mode: 0
+    Right scale, Log step for user scale mode: 1
+    Right scale, Maximum for user scale mode: 0
+    Right scale, Minimum for user scale mode: 0
+    Right scale, Notation: 3
+    Right scale, Number of minor ticks: 4
+    Right scale, Scale mode: 2
+    Right scale, Scale type: Linear
+    Right scale, Show axis: No
+    Right scale, Show magnitude: Yes
+    Right scale, Show ticks: No
+    Right scale, Show values: No
+    Right scale, Show zero marker: Yes
+    Right scale, Size of characters: 4
+    Right scale, Size of margin: 10
+    Right scale, Text orientation: 0
+    Right scale, Ticks placement: 1
+    Right scale, Values presicion: -1
+    Scales color: rgb(0, 0, 0)
+    Top scale, Increment for user scale mode: 0
+    Top scale, Log step for user scale mode: 1
+    Top scale, Maximum for user scale mode: 0
+    Top scale, Minimum for user scale mode: 0
+    Top scale, Notation: 3
+    Top scale, Number of minor ticks: 4
+    Top scale, Scale mode: 2
+    Top scale, Scale type: Linear
+    Top scale, Show axis: No
+    Top scale, Show magnitude: Yes
+    Top scale, Show ticks: No
+    Top scale, Show values: No
+    Top scale, Show zero marker: Yes
+    Top scale, Size of characters: 4
+    Top scale, Size of margin: 15
+    Top scale, Text orientation: 0
+    Top scale, Ticks placement: 1
+    Top scale, Values presicion: -1
+
+[General Info]
+
+    Number of lines: 1
+    Number of points: 97
+    X axis text: X[#x]
+    X axis unit: nm
+    Y axis text: Z[#y]
+    Y axis unit: Å
+
+[Miscellaneous]
+
+    Comments: Profile from neu8000_0297 Image 4.nid (29.7nm x 29.7nm) :converted :plane :plane :equalize\nneu8000_0297 Image 4.nid (29.7nm x 29.7nm) :converted :plane :plane :equalize was a m image
+    First Forward: Yes
+    Saved with version: 5.0 Develop 9.1
+    Version: 3.0 (July 2004)
+
+[Number of Points]
+
+    Number of Points 0000: 97
+
+[Points List]
+
+    Point 0: (11.6477 nm, 19.4516 nm)
+    Point 1: (22.8295 nm, 12.9289 nm)
+
+[Header end]
+0 0.784617676928819 
+0.134318949999037 0.92984882587533 
+0.268637899998074 0.833951389109624 
+0.402956849997112 0.782671690464476 
+0.537275799996149 0.941252508465761 
+0.671594749995186 1.00171126975102 
+0.805913699994223 0.924436906235859 
+0.94023264999326 0.8748795073788 
+1.0745515999923 0.592857822511767 
+1.20887054999133 0.710747894435567 
+1.34318949999037 0.503325910710563 
+1.47750844998941 0.529661803960001 
+1.61182739998845 0.848733343037616 
+1.74614634998748 0.742133505204899 
+1.88046529998652 0.865105953580144 
+2.01478424998556 0.696683234987656 
+2.1491031999846 0.824745993430742 
+2.28342214998363 0.858077590664349 
+2.41774109998267 0.728432290616745 
+2.55206004998171 0.626128067591918 
+2.68637899998074 0.706932201915957 
+2.82069794997978 0.750222572697707 
+2.95501689997882 1.01134187034524 
+3.08933584997786 0.886901211746243 
+3.22365479997689 0.890155666459053 
+3.35797374997593 1.00540728689316 
+3.49229269997497 0.682480942977479 
+3.626611649974 1.03204511481019 
+3.76093059997304 0.786230075044353 
+3.89524954997208 1.18916928248185 
+4.02956849997112 0.828943087995107 
+4.16388744997015 1.10497082819377 
+4.29820639996919 0.87526090942351 
+4.43252534996823 1.08147193184033 
+4.56684429996726 1.23743552488339 
+4.7011632499663 0.860719538009763 
+4.83548219996534 1.08615006906386 
+4.96980114996438 0.987236741545606 
+5.10412009996341 0.996618157262774 
+5.23843904996245 1.17575826127399 
+5.37275799996149 1.08680370730391 
+5.50707694996053 1.15404425960208 
+5.64139589995956 1.06245760338942 
+5.7757148499586 0.767479630289563 
+5.91003379995764 1.0639349899699 
+6.04435274995667 0.622327303328168 
+6.17867169995571 0.838767257910406 
+6.31299064995475 0.861712255653403 
+6.44730959995379 1.19022117056131 
+6.58162854995282 1.06932186719413 
+6.71594749995186 1.14234351136172 
+6.8502664499509 1.29482113646675 
+6.98458539994993 0.74988898434931 
+7.11890434994897 0.396658493846645 
+7.25322329994801 0.277185880318296 
+7.38754224994705 0.229135985396928 
+7.52186119994608 0.0963137028140331 
+7.65618014994512 0.0921315365053149 
+7.79049909994416 0 
+7.92481804994319 0.155189922494844 
+8.05913699994223 0.12070360959929 
+8.19345594994127 0.164207893352079 
+8.32777489994031 0.149853040524047 
+8.46209384993934 0.20692090630284 
+8.59641279993838 0.134920829865026 
+8.73073174993742 0.303888247356826 
+8.86505069993645 0.201370111360878 
+8.99936964993549 0.248265290620292 
+9.13368859993453 0.230733455257042 
+9.26800754993357 0.260460244012883 
+9.4023264999326 0.249710199662441 
+9.53664544993164 0.293000570444147 
+9.67096439993068 0.400931868819827 
+9.80528334992971 0.332536600859588 
+9.93960229992875 0.308009061512168 
+10.0739212499278 0.395594986849096 
+10.2082401999268 0.371067447501602 
+10.3425591499259 0.261981433463975 
+10.4768780999249 0.291708222219889 
+10.6111970499239 0.41320310262125 
+10.745515999923 0.348198730167606 
+10.879834949922 0.198208057081249 
+11.0141538999211 0.289184877924499 
+11.1484728499201 0.139194204838179 
+11.2827917999191 0.301379831317083 
+11.4171107499182 0.24315724987635 
+11.5514296999172 0.245756874580579 
+11.6857486499162 0.224834143710742 
+11.8200675999153 0.15283406727292 
+11.9543865499143 0.352319544322949 
+12.0887054999133 0.175201707184928 
+12.2230244499124 0.286523901066865 
+12.3573433999114 0.214737737600281 
+12.4916623499105 0.258028108382039 
+12.6259812999095 0.321877765173743 
+12.7603002499085 0.253268584242384 
+12.8946191999076 0.452754061292376 

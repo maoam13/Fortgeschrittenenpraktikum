@@ -89,19 +89,20 @@ plt.title('Hoehenprofil bei I-Gain {0:5.0f}'.format(data_index[e] * 1000))
 
 #Plotte Datensatz e mit abgelesenen Peaks
 plt.figure(2)
-plt.figtext(0.2,0.75,
+plt.figtext(0.15,0.65,
             '$a_{vor}$= '+ str(np.round(st_vor[e],5)) + '$\pm$' + str(np.round(st_vor_std[e],5)) + '\n'
-            +'$a_{rueck}$= '+ str(np.round(st_nach[e],5)) + '$\pm$' + str(np.round(st_nach_std[e],5)) + '\n'
-            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
-plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'b')
-plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
+            +'$a_{rueck}$= '+ str(np.round(st_nach[e],5)) + '$\pm$' + str(np.round(st_nach_std[e],5)) + '\n')
+#            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
+plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'b', label = 'Messung in Vorwaertsrichtung')
+plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g', label = 'Messung in Rueckwaertsrichtung')
 for i in range(len(peak_nach_x[e])):
-    plt.axvline(peak_nach_x[e][i], color = 'b')
-    plt.axvline(peak_vor_x[e][i], color = 'g')
+#    plt.axvline(peak_nach_x[e][i], color = 'b')
+#    plt.axvline(peak_vor_x[e][i], color = 'g')
     plt.plot(peak_vor_x[e], peak_vor_y[e], color = 'r')
     plt.plot(peak_nach_x[e], peak_nach_y[e], color = 'r')
 plt.xlabel('X [nm]')
 plt.ylabel('Z [nm]')
+plt.legend()
 plt.title('Hoehenprofil bei I-Gain {0:5.0f}'.format(data_index[e] * 1000))
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
