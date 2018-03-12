@@ -32,20 +32,74 @@ sig_x = 0.4/np.sqrt(12)
 sig_y = 0.4/np.sqrt(12)
 vor_sol_vor, nach_sol_vor, vor_sol_nach, nach_sol_nach = STMM.multi_lin_reg(data_nach, data_vor, vor_kante_vor, nach_kante_vor, vor_kante_nach, nach_kante_nach, sig_x, sig_y)
 
-#Plotte Datensatz e
-e = 0
-plt.figure(1)
-x_vor = np.array([data_vor[e][0][0], data_vor[e][vor_kante_vor[e]][0]])
-x_nach = np.array([data_vor[e][nach_kante_vor[e]][0], data_vor[e][-1][0]])
-plt.plot(x_vor, vor_sol_vor[e][0] * x_vor + vor_sol_vor[e][2], color = 'r')
-plt.plot(x_nach, nach_sol_vor[e][0] * x_nach + nach_sol_vor[e][2], color = 'r')
-#plt.figtext(0.2,0.75,
-#            'a= '+ str(np.round(steigung[e],5)) + '\n'
-#            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
-plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
-#plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'b')
-plt.xlabel('X [nm]')
-plt.ylabel('Z [nm]')
-plt.title('Hoehenprofil der Kante bei ({0:5.1f} x {0:5.1f}) nm$^2$ Aufloesung'.format(data_index[e] /10))
+#Plotte Datensatz e für vor = 1 in Vorwaerts- und für vor = 0 in Rueckwaertsrichtung
+e = 3
+vor = 0
+if vor:
+    plt.figure(1)
+    ax1=plt.subplot(211)
+    x_vor = np.array([data_vor[e][0][0], data_vor[e][vor_kante_vor[e]][0]])
+    x_nach = np.array([data_vor[e][nach_kante_vor[e]][0], data_vor[e][-1][0]])
+    plt.plot(x_vor, vor_sol_vor[e][0] * x_vor + vor_sol_vor[e][2], color = 'r')
+    plt.plot(x_nach, nach_sol_vor[e][0] * x_nach + nach_sol_vor[e][2], color = 'r')
+    #plt.figtext(0.2,0.75,
+    #            'a= '+ str(np.round(steigung[e],5)) + '\n'
+    #            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
+    plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
+    plt.xlabel('X [nm]')
+    plt.ylabel('Z [nm]')
+    plt.title('Hoehenprofil der Kante bei ({0:5.1f} x {0:5.1f}) nm$^2$ Aufloesung'.format(float(data_index[e]) / 10))
+
+    ax2=plt.subplot(212,sharex=ax1)
+    plt.ylabel('Residuen [nm]')
+    x_r = np.array([0, data_vor[e][-1][0]])
+    y_r = np.array([0, 0])
+    H_vor = np.full(vor_kante_vor[e], 0.5)
+    H_vor_err = np.full(vor_kante_vor[e], 0.5)
+    H_nach = np.full(len(data_vor[e][:,0]) - nach_kante_vor[e] - 1, 0.5)
+    H_nach_err = np.full(len(data_vor[e][:,0]) - nach_kante_vor[e] - 1, 0.5)
+    for i in range(vor_kante_vor[e]):
+        H_vor[i] = data_vor[e][i][1] - vor_sol_vor[e][0] * data_vor[e][i][0] - vor_sol_vor[e][2]
+        H_vor_err[i] = np.sqrt(sig_y**2 + (vor_sol_vor[e][0] * sig_x)**2)
+    for i in range(len(data_vor[e][:,0]) - nach_kante_vor[e] - 1):
+        H_nach[i] = data_vor[e][i + nach_kante_vor[e] + 1][1] - nach_sol_vor[e][0] * data_vor[e][i + nach_kante_vor[e] + 1][0] - nach_sol_vor[e][2]
+        H_nach_err[i] = np.sqrt(sig_y**2 + (nach_sol_vor[e][0] * sig_x)**2)
+    plt.plot(x_r, y_r, color='r')
+    plt.errorbar(data_vor[e][:,0][0:vor_kante_vor[e]], H_vor, yerr=H_vor_err, fmt='.', color='b')
+    plt.errorbar(data_vor[e][:,0][nach_kante_vor[e]:-1], H_nach, yerr=H_nach_err, fmt='.', color='b')
+    plt.show()
+else:
+    plt.figure(1)
+    ax1=plt.subplot(211)
+    x_vor = np.array([data_nach[e][0][0], data_nach[e][vor_kante_nach[e]][0]])
+    x_nach = np.array([data_nach[e][nach_kante_nach[e]][0], data_nach[e][-1][0]])
+    plt.plot(x_vor, vor_sol_nach[e][0] * x_vor + vor_sol_nach[e][2], color = 'r')
+    plt.plot(x_nach, nach_sol_nach[e][0] * x_nach + nach_sol_nach[e][2], color = 'r')
+    #plt.figtext(0.2,0.75,
+    #            'a= '+ str(np.round(steigung[e],5)) + '\n'
+    #            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
+    plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'g')
+    plt.xlabel('X [nm]')
+    plt.ylabel('Z [nm]')
+    plt.title('Hoehenprofil der Kante bei ({0:5.1f} x {0:5.1f}) nm$^2$ Aufloesung'.format(float(data_index[e]) / 10))
+
+    ax2=plt.subplot(212,sharex=ax1)
+    plt.ylabel('Residuen [nm]')
+    x_r = np.array([0, data_nach[e][-1][0]])
+    y_r = np.array([0, 0])
+    H_vor = np.full(vor_kante_nach[e], 0.5)
+    H_vor_err = np.full(vor_kante_nach[e], 0.5)
+    H_nach = np.full(len(data_nach[e][:,0]) - nach_kante_nach[e] - 1, 0.5)
+    H_nach_err = np.full(len(data_nach[e][:,0]) - nach_kante_nach[e] - 1, 0.5)
+    for i in range(vor_kante_nach[e]):
+        H_vor[i] = data_nach[e][i][1] - vor_sol_nach[e][0] * data_nach[e][i][0] - vor_sol_nach[e][2]
+        H_vor_err[i] = np.sqrt(sig_y**2 + (vor_sol_nach[e][0] * sig_x)**2)
+    for i in range(len(data_nach[e][:,0]) - nach_kante_nach[e] - 1):
+        H_nach[i] = data_nach[e][i + nach_kante_nach[e] + 1][1] - nach_sol_nach[e][0] * data_nach[e][i + nach_kante_nach[e] + 1][0] - nach_sol_nach[e][2]
+        H_nach_err[i] = np.sqrt(sig_y**2 + (nach_sol_nach[e][0] * sig_x)**2)
+    plt.plot(x_r, y_r, color='r')
+    plt.errorbar(data_nach[e][:,0][0:vor_kante_nach[e]], H_vor, yerr=H_vor_err, fmt='.', color='b')
+    plt.errorbar(data_nach[e][:,0][nach_kante_nach[e]:-1], H_nach, yerr=H_nach_err, fmt='.', color='b')
+    plt.show()
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))

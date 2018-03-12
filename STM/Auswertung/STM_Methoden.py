@@ -128,20 +128,19 @@ def multi_lin_reg(data_nach, data_vor, vor_kante_vor, nach_kante_vor, vor_kante_
     nach_sol_nach = []
     for i in range(len(data_vor)):
         #Daten für linreg bei vorwaertsrichtung
-        vor_data_nachkante = data_vor[nach_kante_vor[i]:-1]
-        vor_data_vorkante = data_vor[0:vor_kante_vor[i]]
+        vor_data_nachkante = data_vor[i][nach_kante_vor[i]:-1]
+        vor_data_vorkante = data_vor[i][0:vor_kante_vor[i]]
         vor_std_x_nach = np.full(len(vor_data_nachkante), sig_x)
         vor_std_y_nach = np.full(len(vor_data_nachkante), sig_y)
         vor_std_x_vor = np.full(vor_kante_vor[i], sig_x)
         vor_std_y_vor = np.full(vor_kante_vor[i], sig_y)
         #Daten für linreg bei rueckwaertsrichtung
-        nach_data_nachkante = data_vor[nach_kante_nach[i]:-1]
-        nach_data_vorkante = data_vor[0:vor_kante_nach[i]]
+        nach_data_nachkante = data_nach[i][nach_kante_nach[i]:-1]
+        nach_data_vorkante = data_nach[i][0:vor_kante_nach[i]]
         nach_std_x_nach = np.full(len(nach_data_nachkante), sig_x)
         nach_std_y_nach = np.full(len(nach_data_nachkante), sig_y)
         nach_std_x_vor = np.full(vor_kante_nach[i], sig_x)
         nach_std_y_vor = np.full(vor_kante_nach[i], sig_y)
-        print vor_data_vorkante
         vor_sol_vor.append(p.lineare_regression_xy(vor_data_vorkante[:,0], vor_data_vorkante[:,1], vor_std_x_vor, vor_std_y_vor))
         nach_sol_vor.append(p.lineare_regression_xy(vor_data_nachkante[:,0], vor_data_nachkante[:,1], vor_std_x_nach, vor_std_y_nach))
         vor_sol_nach.append(p.lineare_regression_xy(nach_data_vorkante[:,0], nach_data_vorkante[:,1], nach_std_x_vor, nach_std_y_vor))
