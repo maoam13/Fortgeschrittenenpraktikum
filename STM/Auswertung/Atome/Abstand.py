@@ -22,8 +22,8 @@ y = np.array([11,4])
 x = np.array([7,7]) #1
 y = np.array([11,4])
 
-x = np.array([7,7]) #1
-y = np.array([10,3])
+x = np.array([28,9]) #1
+y = np.array([19,19])
 
 
 
