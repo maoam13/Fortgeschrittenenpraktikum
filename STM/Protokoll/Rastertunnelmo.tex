@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Gerald}
+
+\begin{document}
+\sisetup{separate-uncertainty = true}
+	\setlength{\parindent}{0pt} 
+	\begin{center}
+		{\LARGE Versuchsprotokoll}\\
+		\begin{large}
+			zum Fortgeschrittenenpraktikum im Bachelorstudiengang Physik\\[0.4cm]
+			an der RWTH Aachen\\
+			II. Physikalisches Institut A\\[5.5cm]
+			\Large\textbf{\textsl{Rastertunnelmikroskopie (STM)}}\\[5.5cm]
+			\normalsize\textit{vorgelegt\\von}\\[0.4cm]
+			\large{Moritz Berger (355244)\\Gerald Kolter (355005)}\\Gruppe 30\\[2cm]
+			\large \textbf{Wintersemester 2017/18}
+		\end{large}
+	\end{center}
+	\newpage
+	
+	\tableofcontents
+	\newpage
+
+\section{Versuchsziel}
+Das Ziel des Versuchs besteht darin, mit einem Rastertunnelmikroskop bei der Vermessung einer Goldprobe die Auswirkung der Einstellungen auf das Messergebnis zu untersuchen. Mit einer Probe eines hochorientierten pyrolytischen Graphit (HOPG) wird der Abstand der Gitterebenen bestimmt und eine Kalibration in x- und y-Richtung durchgeführt.
+
+\section{Aufbau}
+Das verwendete Rastertunnelmikroskop besteht aus einem Halter für die Platin-Iridium-Spitze, der mit piezoelektrischen Kristallen in allen drei Raumrichtungen bewegt werden kann, und einem Probenhalter, der auf einem sogenannten Schrittmotorantrieb liegt. Dieser funktioniert ebenfalls mit einem piezoelektrischen Kristall und dient lediglich der Grobannäherung. Spitze und Probe sind über eine Spannungsquelle verbunden, wobei gleichzeitig der in diesem Kreis fließende Strom gemessen wird. Dieser Strom kommt bei kleinen Abständen zwischen Spitze und Probe durch den Tunneleffekt zustande. Die Abhängigkeit zwischen Strom und Abstand ist exponentiell und damit sehr stark.\\
+Die Spitze wird mit den piezoelektrischen Kristallen über die Probe gerastert, wobei jede Linie in x-Richtung vorwärts und rückwärts abgefahren wird.\\
+Eine Regelungselektronik steuert die z-Richtung der Spitze in Abhängigkeit des Tunnelstroms. Dabei gibt der sogenannte I-Gain an, wie schnell die Regelung auf kurze Pulse reagiert.
+
+\section{Durchführung}
+\subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
+\subsection{Untersuchung von HOPG}
+
+\subsubsection{Kalibration der Achsen}
+Die Acheskalibration findet anhand der atomaren Abstände des Graphit-Gitters statt.\\
+Dafür muss die Bereichgröße so eingestellt werden, dass die Atome sichtbar werden.
+
+\section{Ergebnisse}
+\subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
+
+\subsection{Untersuchung von HOPG}
+\subsubsection{Kalibration der Achsen}
+Um die Längenskalen in x- und y-Richtung möglichst unkorreliert kalibrieren zu können, kann nicht direkt der Atomabstand benutzt werden. Stattdessen wird der Abstand zwischen 2 Atomen bestimmt, die möglichst auf einer der beiden Achsen liegen. Dann wird über ein Dreieck entlang der Symmetrieachsen des Atomgitters die echte Länge dieses Abstandes bestimmt.\\
+Dies ist möglich, da man aus der Gitterstruktur den Winkel zwischen den Symmetrieachsen($60^{\circ}$) und die Atomabstände (\SI{2.46}{\angstrom}) und damit die Längen entlang der Achsen kennt.
+
+\begin{table}
+\begin{tabular}{|c|c||c|c||c|}
+\hline 
+Bild & Abstand & Atome($60^{\circ}$) & Atome($120^{\circ}$) & berechnete Länge \\ 
+\hline 
+10 & $8.81\pm 0.04$ & 6/4 & 2/4 & 13.02\\ 
+\hline 
+20 & $21.50\pm 0.04$ & 15/10 & 10/5 & 32.54\\ 
+\hline 
+50 & $18.4\pm 0.07$ & 6/4  & 2/4 & 28.38\\ 
+\hline 
+\end{tabular} 
+\caption{Abstand Höhe horizontal}
+\label{test}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|c|c||c|c||c|}
+\hline 
+Bild & Abstand & Atome($60^{\circ}$) & Atome($120^{\circ}$) & berechnete Länge \\ 
+\hline 
+10 & $6.07\pm 0.03$ & 6/4 & 2/4 & 8.87\\ 
+\hline 
+20 & $16.7\pm 0.23$ & 11/7  & 7/4 & 23.72\\ 
+\hline 
+50 & $14.6\pm 0.09$ & 10/7  & 7/3 & 21.86\\ 
+\hline 
+\end{tabular} 
+\caption{Abstand Strom horizontal}
+\label{test}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|c|c||c|c||c|}
+\hline 
+Bild & Abstand & Atome($60^{\circ}$) & Atome($120^{\circ}$) & berechnete Länge \\ 
+\hline 
+10 & $8.55\pm 0.04$ & - & 3/4 & 14.96\\ 
+\hline 
+20 & $ $ & 10/17  & 10/7 & 36.40\\ 
+\hline 
+50 & $ $ & 10/7  & 7/3 & 21.86\\ 
+\hline 
+\end{tabular} 
+\caption{Abstand Höhe vertikal}
+\label{test}
+\end{table}
+
+\section{Fazit}
+
+\section{Anhang}
+
+
+\end{document}
