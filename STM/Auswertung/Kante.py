@@ -27,14 +27,58 @@ nach_kante_vor = [111, 61, 92, 67]
 vor_kante_nach = [93, 50, 74, 42]
 nach_kante_nach = [104, 60, 85, 68]
 
+kante_vor = [103, 57, 87, 62]
+kante_nach = [99, 52, 80, 47]
+
 #lineare Regressionen an Bereich vor und hinter Kante, betrachte Datensatz k
-sig_x = 0.4/np.sqrt(12)
-sig_y = 0.4/np.sqrt(12)
+sig_x = 0.1/np.sqrt(12)
+sig_y = 0.2/np.sqrt(12)
 vor_sol_vor, nach_sol_vor, vor_sol_nach, nach_sol_nach = STMM.multi_lin_reg(data_nach, data_vor, vor_kante_vor, nach_kante_vor, vor_kante_nach, nach_kante_nach, sig_x, sig_y)
+
+#berechne Höhe der Kante mit Gerade, die senkrecht auf der Geraden hinter der Kante steht und durch 
+#die abgelesenen Kantenmittelpunkte geht
+a_k_nach = -1./nach_sol_nach[:,0]
+a_k_vor = -1./nach_sol_vor[:,0]
+sig_a_k_nach = a_k_nach * nach_sol_nach[:,1]/nach_sol_nach[:,0]
+sig_a_k_vor = a_k_vor * nach_sol_vor[:,1]/nach_sol_vor[:,0]
+b_k_nach = []
+b_k_vor = []
+sig_b_k_nach = []
+sig_b_k_vor = []
+for i in range(len(a_k_nach)):
+    b_k_nach.append(data_nach[i][kante_nach[i]][1] - a_k_nach[i] * data_nach[i][kante_nach[i]][0])
+    b_k_vor.append(data_vor[i][kante_vor[i]][1] - a_k_vor[i] * data_vor[i][kante_vor[i]][0])
+    sig_b_k_nach.append(np.sqrt(sig_y**2 + (a_k_nach[i] * sig_x)**2 + (data_nach[i][kante_nach[i]][0] * sig_a_k_nach[i])**2))
+    sig_b_k_vor.append(np.sqrt(sig_y**2 + (a_k_vor[i] * sig_x)**2 + (data_vor[i][kante_vor[i]][0] * sig_a_k_vor[i])**2))
+b_k_nach = np.array(b_k_nach)
+b_k_vor = np.array(b_k_vor)
+sig_b_k_nach = np.array(sig_b_k_nach)
+sig_b_k_vor = np.array(sig_b_k_vor)
+x1_nach = (b_k_nach - nach_sol_nach[:,2])/(nach_sol_nach[:,0] - a_k_nach)
+x2_nach = (b_k_nach - vor_sol_nach[:,2])/(vor_sol_nach[:,0] - a_k_nach)
+y1_nach = a_k_nach * x1_nach + b_k_nach
+y2_nach = a_k_nach * x2_nach + b_k_nach
+h_nach = np.sqrt((x1_nach - x2_nach)**2 + (y1_nach - y2_nach)**2)
+sig_x1_nach = np.sqrt((x1_nach * (np.sqrt(sig_b_k_nach**2 + nach_sol_nach[:,3]**2))/(b_k_nach - nach_sol_nach[:,2]))**2 + (np.sqrt(nach_sol_nach[:,1]**2 + sig_a_k_nach**2)/(nach_sol_nach[:,0] - a_k_nach))**2)
+sig_x2_nach = np.sqrt((x2_nach * (np.sqrt(sig_b_k_nach**2 + vor_sol_nach[:,3]**2))/(b_k_nach - vor_sol_nach[:,2]))**2 + (np.sqrt(vor_sol_nach[:,1]**2 + sig_a_k_nach**2)/(vor_sol_nach[:,0] - a_k_nach))**2)
+sig_y1_nach = np.sqrt(sig_b_k_nach**2 + (a_k_nach * sig_x1_nach)**2 + (sig_a_k_nach * x1_nach)**2)
+sig_y2_nach = np.sqrt(sig_b_k_nach**2 + (a_k_nach * sig_x2_nach)**2 + (sig_a_k_nach * x2_nach)**2)
+sig_h_nach = 1./h_nach * np.sqrt((sig_x1_nach * (x1_nach - x2_nach))**2 + (sig_x2_nach * (x1_nach - x2_nach))**2 + (sig_y1_nach * (y1_nach - y2_nach))**2 + (sig_y2_nach * (y1_nach - y2_nach))**2)
+
+x1_vor = (b_k_vor - nach_sol_vor[:,2])/(nach_sol_vor[:,0] - a_k_vor)
+x2_vor = (b_k_vor - vor_sol_vor[:,2])/(vor_sol_vor[:,0] - a_k_vor)
+y1_vor = a_k_vor * x1_vor + b_k_vor
+y2_vor = a_k_vor * x2_vor + b_k_vor
+h_vor = np.sqrt((x1_vor - x2_vor)**2 + (y1_vor - y2_vor)**2)
+sig_x1_vor = np.sqrt((x1_vor * (np.sqrt(sig_b_k_vor**2 + nach_sol_vor[:,3]**2))/(b_k_vor - nach_sol_vor[:,2]))**2 + (np.sqrt(nach_sol_vor[:,1]**2 + sig_a_k_vor**2)/(nach_sol_vor[:,0] - a_k_vor))**2)
+sig_x2_vor = np.sqrt((x2_vor * (np.sqrt(sig_b_k_vor**2 + vor_sol_vor[:,3]**2))/(b_k_vor - vor_sol_vor[:,2]))**2 + (np.sqrt(vor_sol_vor[:,1]**2 + sig_a_k_vor**2)/(vor_sol_vor[:,0] - a_k_vor))**2)
+sig_y1_vor = np.sqrt(sig_b_k_vor**2 + (a_k_vor * sig_x1_vor)**2 + (sig_a_k_vor * x1_vor)**2)
+sig_y2_vor = np.sqrt(sig_b_k_vor**2 + (a_k_vor * sig_x2_vor)**2 + (sig_a_k_vor * x2_vor)**2)
+sig_h_vor = 1./h_vor * np.sqrt((sig_x1_vor * (x1_vor - x2_vor))**2 + (sig_x2_vor * (x1_vor - x2_vor))**2 + (sig_y1_vor * (y1_vor - y2_vor))**2 + (sig_y2_vor * (y1_vor - y2_vor))**2)
 
 #Plotte Datensatz e für vor = 1 in Vorwaerts- und für vor = 0 in Rueckwaertsrichtung
 e = 3
-vor = 0
+vor = 1
 if vor:
     plt.figure(1)
     ax1=plt.subplot(211)
@@ -45,6 +89,9 @@ if vor:
     #plt.figtext(0.2,0.75,
     #            'a= '+ str(np.round(steigung[e],5)) + '\n'
     #            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
+    halbe_kantenbreite = [0.17, 0.017, 0.008, 0.025]
+    x_h = np.array([data_vor[e][kante_vor[e]][0] - halbe_kantenbreite[e], data_vor[e][kante_vor[e]][0] + halbe_kantenbreite[e]])
+    plt.plot(x_h, a_k_vor[e] * x_h + b_k_vor[e], color = 'b')
     plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
     plt.xlabel('X [nm]')
     plt.ylabel('Z [nm]')
@@ -78,6 +125,9 @@ else:
     #plt.figtext(0.2,0.75,
     #            'a= '+ str(np.round(steigung[e],5)) + '\n'
     #            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
+    halbe_kantenbreite = [0.15, 0.007, 0.0018, 0.05]
+    x_h = np.array([data_nach[e][kante_nach[e]][0] - halbe_kantenbreite[e], data_nach[e][kante_nach[e]][0] + halbe_kantenbreite[e]])
+    plt.plot(x_h, a_k_nach[e] * x_h + b_k_nach[e], color = 'b')
     plt.plot(data_nach[e][:,0], data_nach[e][:,1], color = 'g')
     plt.xlabel('X [nm]')
     plt.ylabel('Z [nm]')
