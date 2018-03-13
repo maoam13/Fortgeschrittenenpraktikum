@@ -65,20 +65,28 @@ Für die Untersuchung der Empfindlichkeit der Einstellparameter wird auf der Gol
 In einer zweiten Messreihe wird erneut ein Bereich mit markanter Struktur vermessen, wobei anstelle des I-Gain die Messzeit pro Zeile verändert wird. Für den I-Gain wurde hierbei der Wert, der sich in der ersten Messreihe als beste Annäherung des Idealwertes herausgestellt hat, verwendet (I-Gain = 3000). Alle anderen Parameter blieben unverändert.
 
 \subsection{Untersuchung von HOPG}
+\subsubsection{Vermessung einer Kante}
+Auf der HOPG-Probe wird eine Kante in mehreren Auflösungen aufgenommen.
+
+\subsubsection{Kalibration der Achsen}
+Die Acheskalibration findet anhand der atomaren Abstände des Graphit-Gitters statt.\\
+Dafür muss die Bereichgröße so eingestellt werden, dass die Atome sichtbar werden.
 
 \section{Ergebnisse}
 \subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{Bilder/3000_IGain_vor.jpg}
+\includegraphics[scale=0.8]{Bilder/Anhang/IGain/3000_IGain_vor.jpg}
+\includegraphics[scale=0.8]{Bilder/Anhang/IGain/3000_IGain_vor_Skala.jpg}
 \caption{Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 3000 in der Vorwärtsrichtung. Der Balken quer im Bild verbildlicht die Stelle, aus der das Höhenprofil entnommen wurde.}
 \label{fig:Gold_IGain_Beispiel}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{Bilder/0_1_Zeit_vor.jpg}
+\includegraphics[scale=0.8]{Bilder/Anhang/Zeit/0_1_Zeit_vor.jpg}
+\includegraphics[scale=0.8]{Bilder/Anhang/Zeit/0_1_Zeit_vor_Skala.jpg}
 \caption{Bild der z-Komponente bei Vermessung der Goldprobe bei einer Messzeit von 0,1s pro Linie in der Vorwärtsrichtung. Der Balken quer im Bild verbildlicht die Stelle, aus der das Höhenprofil entnommen wurde.}
 \label{fig:Gold_Zeit_Beispiel}
 \end{figure}
@@ -131,7 +139,7 @@ IGain & Peakpositionen in Vorwärtsrichtung [nm] & Peakpositionen in Rückwärts
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{Bilder/Profil_IGain_3000_Peakbestimmung.png}
+\includegraphics[scale=0.8]{Bilder/Anhang/IGain/Profil_IGain_3000.png}
 \caption{Höhenprofil bei einem I-Gain von 3000. Die roten Linien markieren die abgelesenen Flanken.}
 \label{fig:Gold_IGain_Flankensteigung}
 \end{figure}
@@ -227,10 +235,268 @@ Mit steigendem I-Gain werden die gemessenen Flankensteigungen größer. Dabei li
 Bei der zweiten Messreihe mit Variation der Messzeit pro Zeile hat sich herausgestellt, dass bei einem I-Gain von 3000 und einer Messzeit von \SI{600}{ms} die Flankensteigungen aus der Vorwärts- und der Rückwärtsrichtung innerhalb einer Standardabweichung übereinstimmen.
 
 \subsection{Untersuchung von HOPG}
+\subsubsection{Vermessung einer Kante}
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0132_Kante_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0132_Kante_vor_Skala.jpg}
+\caption{Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung. Der breite Balken markiert die Stelle, an dem das Höhenprofil entnommen wurde.}
+\label{fig:Kante_Beispiel}
+\end{figure}
+
+Auch bei der Vermessung der Kante wird ein Höhenprofil entnommen. Dabei muss darauf geachtet werden, dass das Höhenprofil möglichst senkrecht auf der Kante steht. Abbildung \ref{fig:Kante_Beispiel} zeigt dies beispielhaft für die Messung mit einem Messbereich von (\SI{13,2}{nm})$^2$.\\
+Zur Bestimmung der Kantenhöhe wird an den Bereich vor und hinter der Kante jeweils eine Gerade angepasst und deren Abstand bestimmt. Dieser Abstand wird bestimmt, indem eine Gerade konstruiert wird, die senkrecht auf der tiefer liegenden Gerade steht und durch den abgelesenen Mittelpunkt der Kante geht. Damit bestimmt sich die Geradengleichung dieser Gerade zu:
+\begin{equation*}
+y = \dfrac{-1}{a_{hinter}} \cdot x + y_k + \dfrac{x_k}{a_{hinter}}
+\end{equation*}
+Wobei $(x_k, y_k)$ die Koordinaten des abgelesenen Kantenmittelpunktes und $a_{hinter}$ die Steigung der angepassten Gerade hinter der Kante sind. Dann werden die Schnittpunkte dieser Geraden mit denen vor bzw. hinter der Kante bestimmt. Mit diesen Schnittpunkten ergibt sich die Höhe der Kante zu:
+\begin{equation*}
+h = \sqrt{(\Delta x)^2 + (\Delta y)^2}
+\end{equation*}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0132_vor.png}
+\caption{Entnommenes Höhenprofil (grün), angepasste Geraden (rot) und Kantengerade (blau) bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung.}
+\label{fig:Kante_Hoehenprofil_Beispiel}
+\end{figure}
+
+Abbildung \ref{fig:Kante_Hoehenprofil_Beispiel} zeigt das Höhenprofil, die angepassten Geraden inclusive Residuen und die Kantengerade für die in Abbildung \ref{fig:Kante_Beispiel} gezeigte Messung.
+
+\subsubsection{Kalibration der Achsen}
+Um die Längenskalen in x- und y-Richtung möglichst unkorreliert kalibrieren zu können, kann nicht direkt der Atomabstand benutzt werden. Stattdessen wird der Abstand zwischen 2 Atomen bestimmt, die möglichst auf einer der beiden Achsen liegen. Dann wird über ein Dreieck entlang der Symmetrieachsen des Atomgitters die echte Länge dieses Abstandes bestimmt.\\
+Dies ist möglich, da man aus der Gitterstruktur den Winkel zwischen den Symmetrieachsen($60^{\circ}$) und die Atomabstände (\SI{2.46}{\angstrom}) und damit die Längen entlang der Achsen kennt.
+
+\begin{table}
+\begin{tabular}{|c|c||c|c||c|c|}
+\hline 
+Bild & Abstand & Atome($60^{\circ}$) & Atome($120^{\circ}$) & berechnete Länge & relative Länge\\ 
+\hline 
+\hline 
+Höhen 10 & $8.81\pm 0.04$ & 6/4 & 2/4 & 13.02& 1.478 \\ 
+\hline 
+Höhen 20 & $21.50\pm 0.04$ & 15/10 & 10/5 & 32.54& 1.513\\ 
+\hline 
+Höhen 50 & $18.4\pm 0.07$ & 4/6  & 4/2 & 28.38& 1.542\\ 
+\hline 
+\hline
+Strom 10 & $6.07\pm 0.03$ & 4/6 & 4/2 & 8.87& 1.461\\ 
+\hline 
+Strom 20 & $16.74\pm 0.14$ & 7/11  & 7/4 & 23.72& 1.417\\ 
+\hline 
+Strom 50 & $40.00\pm 0.09$ & 19/28  & 19/9 & 60.91& 1.523\\ 
+\hline 
+\end{tabular} 
+\caption{Abstand Höhe horizontal}
+\label{tab:Atome_horizontal}
+\end{table}
+
+\begin{table}
+\begin{tabular}{|c|c||c|c||c|c|}
+\hline 
+Bild & Abstand & Atome($60^{\circ}$) & Atome($120^{\circ}$) & berechnete Länge & relative Länge\\ 
+\hline 
+\hline 
+Höhen 10 & $8.55\pm 0.04$ & 5/4 & 5/9 & 19.21& 2.247\\ 
+\hline 
+Höhen 20 & $20.81\pm 0.06$ & 10/17  & 10/7 & 36.40& 1.749\\ 
+\hline 
+Höhen 50 & $22.88\pm 0.17$ & 10/17  & 10/7 & 36.40& 1.591\\ 
+\hline 
+\hline 
+Strom 10 & $6.18\pm 0.06$ & 3/2 & 3/5 & 10.72& 1.735\\ 
+\hline 
+Strom 20 & $18.00\pm 0.07$ & 8/14  & 8/6 & 29.93& 1.663\\ 
+\hline 
+Strom 50 & $32.22\pm 0.15$ & 15/23  & 15/8 & 49.75& 1.544\\ 
+\hline 
+\end{tabular} 
+\caption{Abstand Höhe vertikal}
+\label{tab:Atome_vertikal}
+\end{table}
+
 
 \section{Fazit}
 
+\newpage
 \section{Anhang}
+\subsection{Goldproben}
+\subsubsection{I-Gain}
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_1000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 1000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_3000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 3000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_8000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 8000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_11000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 11000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\subsubsection{Zeit}
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_52.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{52}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_80.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{80}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_100.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{100}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_200.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{200}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_400.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{400}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_600.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{600}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_2000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{2}{s} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\end{figure}
+
+\subsection{HOPG}
+\subsubsection{Kante}
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0132_Kante_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0132_Kante_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0132_vor.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0132_Kante_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0132_Kante_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0132_rueck.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Rückwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0297_Kante_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0297_Kante_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0297_vor.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{29,7}{nm})$^2$ in der Vorwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0297_Kante_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0297_Kante_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0297_rueck.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{29,7}{nm})$^2$ in der Rückwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0644_Kante_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0644_Kante_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0644_vor.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{64,4}{nm})$^2$ in der Vorwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0644_Kante_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/0644_Kante_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0644_rueck.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{64,4}{nm})$^2$ in der Rückwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/1269_Kante_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/1269_Kante_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_1269_vor.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{126,9}{nm})$^2$ in der Vorwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/1269_Kante_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/1269_Kante_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_1269_rueck.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{126,9}{nm})$^2$ in der Rückwärtsrichtung. \textbf{Unten}: Entnommenes Höhenprofil, angepasste Geraden und ausgerechnete Kante.}
+\end{figure}
 
 \end{document}
