@@ -32,12 +32,12 @@
 	\newpage
 
 \section{Versuchsziel}
-Das Ziel des Versuchs besteht darin, mit einem Rastertunnelmikroskop bei der Vermessung einer Goldprobe die Auswirkung der Einstellungen auf das Messergebnis zu untersuchen. Mit einer Probe eines hochorientierten pyrolytischen Graphit (HOPG) wird der Abstand der Gitterebenen bestimmt und eine Kalibration in x- und y-Richtung durchgeführt.
+Das Ziel des Versuchs besteht darin, mit einem Rastertunnelmikroskop bei der Vermessung einer Goldprobe die Auswirkung der Einstellungen auf das Messergebnis zu untersuchen. Mit einer Probe eines hochorientierten pyrolytischen Graphit (HOPG) wird eine Gitterkante untersucht und eine Kalibration in x- und y-Richtung durchgeführt.
 
-\section{Aufbau}
-Das verwendete Rastertunnelmikroskop besteht aus einem Halter für die Platin-Iridium-Spitze, der mit piezoelektrischen Kristallen in allen drei Raumrichtungen bewegt werden kann, und einem Probenhalter, der auf einem sogenannten Schrittmotorantrieb liegt. Dieser funktioniert ebenfalls mit einem piezoelektrischen Kristall und dient lediglich der Grobannäherung. Spitze und Probe sind über eine Spannungsquelle verbunden, wobei gleichzeitig der in diesem Kreis fließende Strom gemessen wird. Dieser Strom kommt bei kleinen Abständen zwischen Spitze und Probe durch den Tunneleffekt zustande. Die Abhängigkeit zwischen Strom und Abstand ist exponentiell und damit sehr stark.\\
-Die Spitze wird mit den piezoelektrischen Kristallen über die Probe gerastert, wobei jede Linie in x-Richtung vorwärts und rückwärts abgefahren wird.\\
-Eine Regelungselektronik steuert die z-Richtung der Spitze in Abhängigkeit des Tunnelstroms. Dabei gibt der sogenannte I-Gain an, wie schnell die Regelung auf kurze Pulse reagiert.
+\section{Aufbau und Funktion}
+Das verwendete Rastertunnelmikroskop besteht aus einem Halter für die Platin-Iridium-Spitze, der mit piezoelektrischen Kristallen in allen drei Raumrichtungen bewegt werden kann, und einem Probenhalter, der auf einem sogenannten Schrittmotorantrieb liegt. Dieser dient der Grobannäherung. Spitze und Probe sind über eine Spannungsquelle verbunden, wobei gleichzeitig der in diesem Kreis fließende Strom gemessen wird. Dieser Strom kommt bei kleinen Abständen zwischen Spitze und Probe durch den Tunneleffekt zustande. Die Abhängigkeit zwischen Strom und Abstand ist exponentiell und damit sehr stark.\\
+Die Spitze wird mit den piezoelektrischen Kristallen über die Probe gerastert, wobei jede Linie in x-Richtung vorwärts und rückwärts abgefahren wird. Dabei wird die Probe Zeilenweise (also horizontal) von unten nach oben durchfahren.
+Eine Regelungselektronik steuert die z-Richtung der Spitze in Abhängigkeit des Tunnelstroms. Dabei gibt der sogenannte I-Gain an, wie schnell die Regelung auf kurze Pulse reagiert. Bei hohem I-Gain reagiert sie schneller und bei niedrigem langsamer.
 
 \section{Durchführung}
 \subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
@@ -66,7 +66,7 @@ In einer zweiten Messreihe wird erneut ein Bereich mit markanter Struktur vermes
 
 \subsection{Untersuchung von HOPG}
 \subsubsection{Vermessung einer Kante}
-Auf der HOPG-Probe wird eine Kante in mehreren Auflösungen aufgenommen.
+Auf der HOPG-Probe wird eine Kante in mehreren Auflösungen aufgenommen. Dabei wurde aus Zeitgründen eine Zeit pro Linie von 0.2s, eine Tunnelspannung von 50,4mV und ein I-Gain von 8000 verwendet. Die Rastergröße wurde zwiscehn $(13.2nm)^2$, $(29.7nm)^2$, $(64.4nm)^2$ und $(126.9nm)^2$ variiert. Alle anderen Einstellungen wurden von der Goldprobe beibehalten.
 
 \subsubsection{Korrektur der Achsen über Atomabstände}
 Die Achsenkalibration findet anhand der atomaren Abstände des Graphit-Gitters statt.\\
@@ -78,19 +78,19 @@ Es wurden insgesamt 3 Aufnahmen mit unterschiedlichen Bereichsgrößen im Konsta
 \centering
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
-Modus & Bereichsgröße[nm] & Zeilenzeit[s] & IGain & Tunnelspannung[mV]\\ 
+Modus & Rastergröße[nm] & Zeilenzeit[s] & IGain\\ 
 \hline 
-Höhen & 1 & 0.3 & 100 & 50.4\\ 
+Höhen & 1 & 0.3 & 100\\ 
 \hline 
-Höhen & 2.325 & 0.3 & 100 & 50.4\\ 
+Höhen & 2.325 & 0.3 & 100\\ 
 \hline 
-Höhen & 5 & 0.3 & 100 & 50.4\\ 
+Höhen & 5 & 0.3 & 100\\ 
 \hline 
-Strom & 0.872 & 0.2 & 8000 & 50.4\\ 
+Strom & 0.872 & 0.2 & 8000\\ 
 \hline 
-Strom & 2.325 & 0.2 & 8000 & 50.4\\ 
+Strom & 2.325 & 0.2 & 8000\\ 
 \hline 
-Strom & 5 & 0.2 & 8000 & 50.4\\ 
+Strom & 5 & 0.2 & 8000\\ 
 \hline 
 \end{tabular} 
 \caption{Messeinstellungen aller Aufnahmen zu den Atomabständen.}
@@ -98,6 +98,8 @@ Strom & 5 & 0.2 & 8000 & 50.4\\
 \end{table}
 
 \section{Ergebnisse}
+Alle Bilder wurden mithilfe des Programms WSxM ausgewertet\footnote{http://www.wsxm.es/}.
+
 \subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
 
 \begin{figure}
@@ -116,10 +118,10 @@ Strom & 5 & 0.2 & 8000 & 50.4\\
 \label{fig:Gold_Zeit_Beispiel}
 \end{figure}
 
-Abbildung \ref{fig:Gold_IGain_Beispiel} zeigt beispielhaft das Bild der z-Komponente nach Bearbeitung für eine Messung aus der Messreihe mit verändertem I-Gain. Der Balken quer im Bild zeigt, wo das im Folgenden untersuchte Höhenprofil entnommen wurde. In den Bildern aus den Ergebnissen der Messreihe wurde das Höhenprofil exakt gleich entnommen (Profillinie kopiert), sodass die Vergleichbarkeit der Profile gegeben ist.\\
+Abbildung \ref{fig:Gold_IGain_Beispiel} zeigt beispielhaft das Bild der z-Komponente nach Bearbeitung für eine Messung aus der Messreihe mit verändertem I-Gain. Der Balken quer im Bild zeigt, wo das im folgenden untersuchte Höhenprofil entnommen wurde. In den Bildern aus den Ergebnissen der Messreihe wurde das Höhenprofil exakt gleich entnommen (Profillinie kopiert), sodass die Vergleichbarkeit der Profile gegeben ist.\\
 Bei der Aufnahme der Messreihe mit veränderter Zeit wurde ein anderer Bereich verwendet. Daher ist die Profillinie aus einem anderen Bildbereich entnommen, wie in Abbildung \ref{fig:Gold_Zeit_Beispiel} dargestellt ist.\\
 Bei der Entnahme des Höhenprofils wird für jeden Wert der Mittelwert mehrerer Punkte bestimmt.
-
+\newpage
 \subsubsection{Bestimmung der Flankensteigung}
 Zur Bestimmung der Flankensteigung werden die Punkte, die diese Flanke begrenzen, abgelesen.
 Die Flankensteigung berechnet sich dann zu:
@@ -158,7 +160,7 @@ IGain & Peakpositionen in Vorwärtsrichtung [nm] & Peakpositionen in Rückwärts
 11000 & (30.8, 0.0), (48.6, 8.3) & (30.8, 0.0), (41.4, 9.4) \\
 \hline 
 \end{tabular} 
-\caption{Abgelesene Werte für die Begrenzungen der Flanken in der Messreihe zur Variation des I-Gain.}
+\caption{Abgelesene Punkte für die Begrenzungen der Flanken in der Messreihe zur Variation des I-Gain. Sie sind angegeben in der Form $(x_{Anfang},y_{Anfang}),(x_{Ende},y_{Ende})$.}
 \label{tab:Peaks_IGain}
 \end{table}
 
@@ -175,7 +177,7 @@ Tabelle \ref{tab:Peaks_IGain} zeigt alle abgelesenen Werte für diese Punkte in 
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline 
-IGain & $a_{vor}$ & $a_{rueck}$ & $\dfrac{|a_{vor} - a_{rueck}|}{\sqrt{\sigma _{a_{vor}}^2 + \sigma _{a_{rueck}}^2}}$ \\ 
+IGain & $a_{vor}$ & $a_{rueck}$ & Abweichungen \\ 
 \hline 
 1000 & 0,1273 $\pm$ 0,0015 & 0,1686 $\pm$ 0,0024 & 14,44 \\
 \hline 
@@ -186,11 +188,17 @@ IGain & $a_{vor}$ & $a_{rueck}$ & $\dfrac{|a_{vor} - a_{rueck}|}{\sqrt{\sigma _{
 11000 & 0,4663 $\pm$ 0,0025 & 0,8868 $\pm$ 0,0051 & 73,31 \\
 \hline 
 \end{tabular} 
-\caption{Berechnete Flankensteigungen und die Abweichung zwischen der Steigung aus der Messung in Vorwärts- und der in Rückwärtsrichtung für die Messreihe mit variiertem I-Gain.}
+\caption{Berechnete Flankensteigungen und die Abweichung in Standardabweichungen zwischen der Steigung aus der Messung in Vorwärts- und der in Rückwärtsrichtung für die Messreihe mit variiertem I-Gain.}
 \label{tab:Steigungen_IGain}
 \end{table}
 
-Tabelle \ref{tab:Steigungen_IGain} zeigt die Ergebnisse für die Flankensteigungen. Die Abweichungen zwischen den Steigungen aus der Messung in Vorwärts- und der in Rückwärtsrichtung zeigen, dass bei einer Messzeit von \SI{200}{ms} ein I-Gain von 3000 die besten Ergebnisse liefert.
+Tabelle \ref{tab:Steigungen_IGain} zeigt die Ergebnisse für die Flankensteigungen. Dort ist neben den Steigungen auch angegeben, wie viele Standardabweichungen die Steigungen auseinander liegen. Dies wurde folgendermaßen berechnet:
+\begin{equation}
+\label{eq:stds}
+Abweichungen = \dfrac{|a_{vor} - a_{rueck}|}{\sqrt{\sigma _{a_{vor}}^2 + \sigma _{a_{rueck}}^2}}
+\end{equation}
+
+Die Abweichungen zwischen den Steigungen aus der Messung in Vorwärts- und der in Rückwärtsrichtung zeigen, dass bei einer Messzeit von \SI{200}{ms} ein I-Gain von 3000 die besten Ergebnisse liefert.
 
 \subsubsection{Untersuchung der Auswirkungen der Zeit}
 
@@ -215,7 +223,7 @@ Zeit [ms] & Peakpositionen in Vorwärtsrichtung [nm] & Peakpositionen in Rückw�
 2000 & (43.6, 0.0), (62.8, 3.1) & (38.8, 0.0), (57.0, 2.7) \\
 \hline 
 \end{tabular} 
-\caption{Abgelesene Werte für die Begrenzungen der Flanken in der Messreihe zur Variation der Zeit.}
+\caption{Abgelesene Punkte für die Begrenzungen der Flanken in der Messreihe zur Variation der Zeit. Sie sind angegeben in der Form $(x_{Anfang},y_{Anfang}),(x_{Ende},y_{Ende})$.}
 \label{tab:Peaks_Zeit}
 \end{table}
 
@@ -232,7 +240,7 @@ Tabelle \ref{tab:Peaks_Zeit} zeigt alle abgelesenen Werte für diese Punkte in d
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline 
-Zeit [ms] & $a_{vor}$ & $a_{rueck}$ & $\dfrac{|a_{vor} - a_{rueck}|}{\sqrt{\sigma _{a_{vor}}^2 + \sigma _{a_{rueck}}^2}}$ \\ 
+Zeit [ms] & $a_{vor}$ & $a_{rueck}$ & Abweichungen \\ 
 \hline 
 52 & 0,1934 $\pm$ 0,0023 & 0,2024 $\pm$ 0,0025 & 2,67 \\
 \hline 
@@ -249,12 +257,12 @@ Zeit [ms] & $a_{vor}$ & $a_{rueck}$ & $\dfrac{|a_{vor} - a_{rueck}|}{\sqrt{\sigm
 2000 & 0,1615 $\pm$ 0,0022 & 0,1484 $\pm$ 0,0023 & 4,19 \\
 \hline 
 \end{tabular} 
-\caption{Berechnete Flankensteigungen und die Abweichung zwischen der Steigung aus der Messung in Vorwärts- und der in Rückwärtsrichtung für die Messreihe mit variierter Zeit pro Zeile.}
+\caption{Berechnete Flankensteigungen und die Abweichung zwischen der Steigung aus der Messung in Vorwärts- und der in Rückwärtsrichtung für die Messreihe mit variierter Zeit pro Zeile, die wieder mithilfe von Gleichung \ref{eq:stds} berechnet wurden.}
 \label{tab:Steigungen_Zeit}
 \end{table}
 
 Tabelle \ref{tab:Steigungen_Zeit} zeigt die Ergebnisse für die Flankensteigungen. Die Abweichungen zwischen den Steigungen aus der Messung in Vorwärts- und der in Rückwärtsrichtung zeigen, dass bei einem I-Gain von 3000 eine Messzeit pro Zeile von \SI{600}{ms} die besten Ergebnisse liefert.
-
+\newpage
 \subsubsection{Stromprofil}
 
 \begin{table}
@@ -301,29 +309,42 @@ Zeit [ms] & $\mu_{vor}$ [pA] & $\mu_{rueck}$ [pA] & $\sigma_{vor}$ [pA] & $\sigm
 \label{tab:Strom_Zeit}
 \end{table}
 
-An der gleichen Stelle, an der aus dem Bild der z-Komponente das Höhenprofil entnommen wurde, kann aus dem Strombild ein Stromprofil entnommen werden. Anhand dieses Stromprofils kann durch Berechnen der Standardabweichung ebenfalls eine Aussage über die Güte des Bildes gemacht werden. Die Werte sind in den Tabellen \ref{tab:Strom_IGain} und \ref{tab:Strom_Zeit} dargestellt. \\
+An der gleichen Stelle, an der aus dem Bild der z-Komponente das Höhenprofil entnommen wurde, kann aus dem Strombild ein Stromprofil entnommen werden. Anhand dieses Stromprofils kann durch Berechnen der Standardabweichung ebenfalls eine Aussage über die Güte des Bildes gemacht werden. Die Werte sind in den Tabellen \ref{tab:Strom_IGain} und \ref{tab:Strom_Zeit} dargestellt. Außerdem ist dies beispielhaft für einen I-Gain von 3000 und einen von 8000 in Abbildung \ref{fig:Strom} dargestellt.\\
 In der Messreihe mit dem variiertem I-Gain lässt sich leicht erkennen, dass die Standardabweichung bei einem I-Gain von 3000 einen minimalen Wert annimmt, daher kann hiermit das Ergebnis aus dem Vergleich der Flankensteigung bestätigt werden.\\
 In der Messreihe mit der variierten Zeit sinkt die Standardabweichung mit der Messzeit pro Zeile. Dies liegt daran, dass bei konstantem I-Gain und steigender Messzeit pro Zeile der räumliche Bereich, der für die Regelung relevant ist, kleiner wird. Dadurch reagiert die Regelung örtlich gesehen schneller auf Veränderungen der Oberfläche, sodass der Probe-Spitze-Abstand weniger schwingt, was durch den hohen I-Gain und die große Zeit unterstützt wird.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/3000_IGain_Strom_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/3000_IGain_Strom_nach_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/8000_IGain_Strom_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/8000_IGain_Strom_vor_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Strom/figure_1.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Strom/figure_2.png}
+\caption{Beispiel des Strombildes bei verändertem I-Gain. \textbf{Links:} I-Gain von 3000. \textbf{Rrechts:} I-Gain von 8000.}
+\label{fig:Strom}
+\end{figure}
 
 \subsubsection{Zusammenfassung}
 Mit steigendem I-Gain werden die gemessenen Flankensteigungen größer. Dabei liegt der ideale I-Gain in einem mittleren Bereich, wo die gemessenen Flankensteigungen aus der Vorwärts- und der Rückwärtsrichtung nahe zusammenrücken. \\
 Bei der zweiten Messreihe mit Variation der Messzeit pro Zeile hat sich herausgestellt, dass bei einem I-Gain von 3000 und einer Messzeit von \SI{600}{ms} die Flankensteigungen aus der Vorwärts- und der Rückwärtsrichtung innerhalb einer Standardabweichung übereinstimmen.
-
+\newpage
 \subsection{Untersuchung von HOPG}
 Bei den Untersuchungen zum HOPG im Konstantstrommodus wurde ein IGain von 8000 verwendet, obwohl im Versuch mit Gold ein IGain von 3000 als optimal gefunden wurde. Dies liegt einerseits daran, dass hier feinere Strukturen aufgelöst werden müssen. Allerdings hat ein weiterer Effekt die Bilder mit einem niedrigerem IGain schlechter gemacht:\\
 Beim IGain von 4000 ist die Anzahl an Fehllinien, die sich vom Untergrund abheben, wesentlich größer als bei einem IGain von 8000. Außerdem wird das Bild wesentlich unschärfer. Diese Effekte werden immer stärker, je kleiner der Rasterbereich gewählt wird.\\
 Da beim annähern an das HOPG die Spitze gecrashed ist, vermuten wir, dass dieser Effekt durch eine schlechte Spitze entstehen kann. Die genaue Ursache ist aber unklar.\\
-\\
+Dieses Phänomen ist in Abbildung \ref{fig:Igain} dargestellt.
+
 
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.36]{Bilder/Igain4000.jpg}
-\includegraphics[scale=0.36]{Bilder/Igain8000.jpg}
-\includegraphics[scale=0.36]{Bilder/Igain4000_Strom.jpg}
-\includegraphics[scale=0.36]{Bilder/Igain8000_Strom.jpg}
+\includegraphics[scale=0.3]{Bilder/Igain4000.jpg}
+\includegraphics[scale=0.3]{Bilder/Igain8000.jpg}
+\includegraphics[scale=0.3]{Bilder/Igain4000_Strom.jpg}
+\includegraphics[scale=0.3]{Bilder/Igain8000_Strom.jpg}
 \caption{Veranschaulichung der Effekte eines niedrigen IGains im Höhenbild der Breite 13.2nm. \textbf{Links:} IGain von 4000.  \textbf{Rechts:} IGain von 8000. Darunter befinden sich die dazugehörigen Strombilder. Es ist deutlich zu sehen, dass das Bild unschärfer wird und die Anzahl an Fehllinien zunimmt.}
-\label{fig:hoch2_h}
+\label{fig:Igain}
 \end{figure}
 
 \subsubsection{Vermessung einer Kante}
@@ -417,7 +438,8 @@ $(\SI{126,9}{nm})^2$ & Rückwärts & 25,95 & 1,47 \\
 \end{table}
 
 Auch bei der Vermessung der Kante wird ein Höhenprofil entnommen. Dabei muss darauf geachtet werden, dass das Höhenprofil möglichst senkrecht auf der Kante steht. Abbildung \ref{fig:Kante_Beispiel} zeigt dies beispielhaft für die Messung mit einem Messbereich von (\SI{13,2}{nm})$^2$.\\
-Zur Bestimmung der Kantenhöhe wird an den Bereich vor und hinter der Kante jeweils eine Gerade angepasst und deren Abstand bestimmt. Dieser Abstand wird bestimmt, indem eine Gerade konstruiert wird, die senkrecht auf der tiefer liegenden Gerade steht und durch den abgelesenen Mittelpunkt der Kante geht. Der Mittelpunkt der Kante hat nur eine sehr kleine Auswirkung auf die Höhe, daher wird der Fehler auf diesen vernachlässigt. Um die Auswertung zu vereinfachen wurde hierfür ein realer Datenpunkt verwendet. Damit bestimmt sich die Geradengleichung dieser Gerade zu:
+Zur Bestimmung der Kantenhöhe wird an den Bereich vor und hinter der Kante jeweils eine Gerade angepasst und deren Abstand bestimmt. Dieser Abstand wird bestimmt, indem eine Gerade konstruiert wird, die senkrecht auf der tiefer liegenden Gerade steht und durch den abgelesenen Mittelpunkt der Kante geht.
+Der Mittelpunkt der Kante hat nur eine sehr kleine Auswirkung auf die Höhe, daher wird der Fehler auf diesen vernachlässigt. Um die Auswertung zu vereinfachen wurde hierfür ein realer Datenpunkt verwendet. Damit bestimmt sich die Geradengleichung dieser Gerade zu:
 \begin{equation*}
 y = \dfrac{-1}{a_{hinter}} \cdot x + y_k + \dfrac{x_k}{a_{hinter}}
 \end{equation*}
@@ -425,41 +447,42 @@ Wobei $(x_k, y_k)$ die Koordinaten des abgelesenen Kantenmittelpunktes und $a_{h
 \begin{equation*}
 h = \sqrt{(\Delta x)^2 + (\Delta y)^2}
 \end{equation*}
-
+\textbf{Anmerkung:} Oft sieht es wegen der Achsenskalierung so aus, als ob die Gerade nicht sekrecht auf dem tieferen Niveau steht. Dies ist aber nur ein Zerrungseffekt. Würde man die Achsenskalierung gleichgroß machen, dann wäre die Seknrechte Gerade auch wirklich senkrecht. Da bei einer solchen Skalierung aber die Daten nicht mehr gut zu sehen sind wurde darauf verzichtet.\\
+\\
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0132_vor.png}
-\caption{Entnommenes Höhenprofil (grün), angepasste Geraden (rot) und Kantengerade (orange) bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung. In gelb sind die Verschiebungen der angepassten Geraden eingezeichnet, die die maximale Höhe ergeben haben, und in blau die, die die minimale Höhe ergeben haben. Die Residuen beziehen sich auf die vor bzw. hinter der Kante angepassten Geraden.}
+\caption{Entnommenes Höhenprofil (grün), angepasste Geraden (rot) und Kantengerade (orange) bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung. In gelb sind die Verschiebungen der angepassten Geraden eingezeichnet, die die maximale Höhe ergeben haben, und in blau die, die die minimale Höhe ergeben haben. Die Residuen beziehen sich auf die vor bzw. hinter der Kante angepassten Geraden. Wegen einer Bildverzerrung sieht es so aus, als ob die senkrechte Gerade nicht senkrecht auf dem unteren Niveau steht.}
 \label{fig:Kante_Hoehenprofil_Beispiel}
 \end{figure}
 
 Für die Fehlerabschätzung werden Steigung und Achsenabschnitt der angepassten Geraden  um ihre Fehler variiert und mit jeder Variation die Kantenhöhe erneut ausgerechnet. Damit ergibt sich ein Bereich um den berechneten Wert, der den Fehler begrenzt. Die Werte für die Kantenhöhe mit ihren Fehlern sind in Tabelle \ref{tab:Kantenhöhe_Ergebnisse} dargestellt.\\
-Abbildung \ref{fig:Kante_Hoehenprofil_Beispiel} zeigt das Höhenprofil, die angepassten und verschobenen Geraden und die Kantengerade für die in Abbildung \ref{fig:Kante_Beispiel} gezeigte Messung.
+Abbildung \ref{fig:Kante_Hoehenprofil_Beispiel} zeigt das Höhenprofil, die angepassten und verschobenen Geraden und die Kantengerade für die in Abbildung \ref{fig:Kante_Beispiel} gezeigte Messung.\\
 
 \begin{table}
 \centering
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|c|c|c|c|}
 \hline 
-Auflösung & Messrichtung & Höhe [nm]\\ 
+Auflösung & Messrichtung & Steigungsdifferenz & Höhe [nm]\\ 
 \hline 
-$(\SI{13,2}{nm})^2$ & Vorwärts & $1,35 \pm 0,20$\\
+$(\SI{13,2}{nm})^2$ & Vorwärts & $0.106\pm0.013$ & $1,35 \pm 0,20$\\
 \hline 
-$(\SI{13,2}{nm})^2$ & Rückwärts & $1,49 \pm 0,19$\\
+$(\SI{13,2}{nm})^2$ & Rückwärts & $0.012\pm0.013$ & $1,49 \pm 0,19$\\
 \hline 
-$(\SI{29,7}{nm})^2$ & Vorwärts & $0,92 \pm 0,34$\\
+$(\SI{29,7}{nm})^2$ & Vorwärts & $0.016\pm0.016$ & $0,92 \pm 0,34$\\
 \hline 
-$(\SI{29,7}{nm})^2$ & Rückwärts & $0,83 \pm 0,29$\\
+$(\SI{29,7}{nm})^2$ & Rückwärts & $0.032\pm0.015$ & $0,83 \pm 0,29$\\
 \hline 
-$(\SI{64,4}{nm})^2$ & Vorwärts & $2,36 \pm 0,31$\\
+$(\SI{64,4}{nm})^2$ & Vorwärts & $0.037\pm0.005$ & $2,36 \pm 0,31$\\
 \hline 
-$(\SI{64,4}{nm})^2$ & Rückwärts & $2,02\pm 0,23$\\
+$(\SI{64,4}{nm})^2$ & Rückwärts & $0.033\pm0.034$ & $2,02\pm 0,23$\\
 \hline 
-$(\SI{126,9}{nm})^2$ & Vorwärts & $3,58 \pm 0,76$\\
+$(\SI{126,9}{nm})^2$ & Vorwärts & $0.005\pm0.008$ & $3,58 \pm 0,76$\\
 \hline 
-$(\SI{126,9}{nm})^2$ & Rückwärts & $3,08 \pm 0,27$\\
+$(\SI{126,9}{nm})^2$ & Rückwärts & $0.015\pm0.003$ & $3,08 \pm 0,27$\\
 \hline
 \end{tabular} 
-\caption{Ergebnisse für die Kantenhöhe.}
+\caption{Ergebnisse für die Kantenhöhe. Es wurde Außerdem die Steigungsdifferenz zwischen den Geraden vor und hinter der Kante angegeben.}
 \label{tab:Kantenhöhe_Ergebnisse}
 \end{table}
 
@@ -482,7 +505,8 @@ $(\SI{126,9}{nm})^2$ & $3,14 \pm 0,25$ & 9-10 \\
 \label{tab:Kantenhöhe_EndErgebnisse}
 \end{table}
 
-Die Werte für die Kantenhöhe stimmen für dasselbe Bild in Vor- und Rückrichtung jeweils innerhalb ihrer Fehler überein, daher können die Kantenhöhen der Richtungen gewichtet gemittelt werden (siehe Tabelle \ref{tab:Kantenhöhe_EndErgebnisse}). Allerdings wurde nicht auf jedem Bild die gleiche Stelle der Kante vermessen, sodass die Höhe von Bild zu Bild variiert. Mit der Literaturangabe für den Netzebenenabstand von \SI{335}{pm} lässt sich nun die Zahl der Netzebenen bestimmen, die die vermessene Kante verursachen (ebenfalls in Tabelle \ref{tab:Kantenhöhe_EndErgebnisse}). Die Fehler auf die gewichteten Mittelwerte sind dabei kleiner als ein Netzebenenabstand. Da diese Kantenhöhen nur ganzzahlige Vielfache des Netzebenenabstandes sein können, kann die Kantenhöhe auf 1 Netzebenenabstand genau bestimmt werden.
+Die Werte für die Kantenhöhe stimmen für dasselbe Bild in Vor- und Rückrichtung jeweils innerhalb ihrer Fehler überein, daher können die Kantenhöhen der Richtungen gewichtet gemittelt werden (siehe Tabelle \ref{tab:Kantenhöhe_EndErgebnisse}). Allerdings wurde nicht auf jedem Bild die gleiche Stelle der Kante vermessen, sodass die Höhe von Bild zu Bild variiert. Mit der Literaturangabe für den Netzebenenabstand von \SI{335}{pm} lässt sich nun die Zahl der Netzebenen bestimmen, die die vermessene Kante verursachen (ebenfalls in Tabelle \ref{tab:Kantenhöhe_EndErgebnisse}). Die Fehler auf die gewichteten Mittelwerte sind dabei kleiner als ein Netzebenenabstand. Da diese Kantenhöhen nur ganzzahlige Vielfache des Netzebenenabstandes sein können, kann die Kantenhöhe auf 1 Netzebenenabstand genau bestimmt werden.\\
+Es kann außerdem sein, dass das Gitter schon vor der Kante leicht abkniggt. Dies äußert sich zum Teil in den unterschiedlichen Steigungsdifferenzen. Zum Beispiel sind die Steigungsdifferenzen bei der 126.9nm Messung wesentlich kleiner als die bei der 64.4nm Messung. Dies deutet darauf hin, das das Gitter weniger abkniggt, was die größere Kantenhöhe bei der 126.9nm Messung ebenfalls erklären könnte.
 
 \subsubsection{Kalibration der Achsen}
 
@@ -522,14 +546,14 @@ Die restlichen Bilder, die zur Auswertung benutzt wurden, befinden sich im Anhan
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.6]{Bilder/Atome/strom5_v_gitter.jpg}
+\includegraphics[scale=0.5]{Bilder/Atome/strom5_v_gitter.jpg}
 \caption{Darstellung des sichtbaren Atomgitters anhand der 5nm Strommessung, um das Ablesen der Atomanzahl zu vereinfachen.}
 \label{fig:strom5_symmetire}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.54]{Bilder/Atome/hoch2_abstand.jpg}
+\includegraphics[scale=0.5]{Bilder/Atome/hoch2_abstand.jpg}
 \caption{Beispielhafte Auswahl von 6 Abständen, die den Originalabstand(blau) repräsentieren. Die Abstände wurden gemittelt, um die gemessene Länge bestimmen zu können.}
 \label{fig:strom2_abstand}
 \end{figure}
@@ -596,11 +620,13 @@ Eine gewichtete Mittelung (mit äußerem Fehler) der Korrekturfaktoren, also dem
 \boxed{\textrm{vertikale Korrektur}: 0.561\pm 0.035}
 \end{equation*}
 
-
+\newpage
 \section{Fazit}
 Bei der Untersuchung der Mikroskopeigenschaften haben sich ein I-Gain von 3000 und eine Messzeit pro Zeile von \SI{600}{ms} als ideal herausgestellt, da Flanken bei Vermessung in beiden Richtungen gleich dargestellt werden bzw. die gemessenen Flankensteigungen innerhalb ihrer Fehler übereinstimmen.\\
 Bei höherem IGain nimmt die Schwankung der Daten sowohl im z-Bild, als auch im Höhenbild deutlich zu, was mit der Erwartung des Überschwingens übereinstimmt.\\
-(Einfluss Zeit)\\
+Der Einfluss der Messzeit auf das Messergebnis spielt eine eher kleine Rolle. Wichtig ist vor allem, dass diese zum I-Gain passt, da I-Gain und Messzeit pro Zeile (quasi die Messgeschwindigkeit) festlegen, welcher räumliche Bereich zur Regelung beiträgt, was nach der zeitlichen Regelung der zweitgrößte Effekt ist, der ein Überschwingen des Probe-Spitze-Abstandes verursachen kann. \\
+\\
+Die Höhe der vermessenen Kante konnte mit kleinen Fehlern ($\sigma _h < d_{Netzebenen}$) bestimmt werden, sodass innerhalb des Fehlers um den gemessenen Wert herum maximal zwei ganzzahlige Vielfache des Netzebenenabstandes $d_{Netzebenen}$ liegen. Zudem gab es keinen Wert, der innerhalb des Fehlers nicht mit einem ganzzahligen Vielfachen übereinstimmte. Die Höhen der vermessenen Kante waren in den unterschiedlichen Zoom-Stufen jedoch unterschiedlich groß. Es handelt sich zwar um dieselbe Kante, jedoch sind die Höhenprofile nicht alle an der gleichen Stelle entnommen, sodass davon ausgegangen werden kann, dass die vermessene Kante nicht gleichmäßig hoch ist.\\
 \\
 Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen kalibriert werden. Es ergeben sich Korrekturfakturen von $0.561\pm 0.035$ in vertikaler und $0.660\pm 0.004$ in horizontaler Richtung. In vertikaler Richtung spielen dabei Nebeneffekte wie thermischer Drift und Creep bei kleineren Rasterbereichen eine immer größer werdende Rolle.
 

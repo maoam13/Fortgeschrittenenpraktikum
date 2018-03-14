@@ -32,15 +32,15 @@ for i in range(len(data_vor)):
     mean_nach.append(np.mean(data_nach[i][:,1]) * skala[i])
     std_nach.append(np.std(data_nach[i][:,1]) * skala[i])
 
-e = 0
+e = 2
 plt.figure(1)
-plt.figtext(0.2,0.75,
+plt.figtext(0.73,0.79,
             '$\mu _{vor}$= '+ str(np.round(mean_vor[e],1)) + 'pA \n'
             +'$\sigma _{vor}$= ' + str(np.round(std_vor[e], 1))+ 'pA \n'+ '\n'
             +'$\mu _{nach}$= '+ str(np.round(mean_nach[e],1)) + 'pA \n'
             +'$\sigma _{nach}$= ' + str(np.round(std_nach[e], 1)) + 'pA')
 plt.plot(data_nach[e][:,0], data_nach[e][:,1] * skala[e], color = 'b')
-plt.plot(data_vor[e][:,0], data_vor[e][:,1] * skala[e], color = 'g')
+#plt.plot(data_vor[e][:,0], data_vor[e][:,1] * skala[e], color = 'g')
 plt.xlabel('X [nm]')
 plt.ylabel('I [pA]')
 plt.title('Stromprofil bei I-Gain {0:5.0f}'.format(data_index[e] * 1000))

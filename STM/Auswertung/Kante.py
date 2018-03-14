@@ -108,6 +108,7 @@ if vor:
     x_h = np.array([data_vor[e][kante_vor[e]][0] - halbe_kantenbreite[e], data_vor[e][kante_vor[e]][0] + halbe_kantenbreite[e]])
     plt.plot(x_h, a_k_vor[e] * x_h + b_k_vor[e], color = 'orange')
     plt.plot(data_vor[e][:,0], data_vor[e][:,1], color = 'g')
+    plt.axis([0,13,-1,3.5])
     plt.ylabel('Z [nm]')
     plt.title('Hoehenprofil der Kante bei ({0:5.1f} x {0:5.1f}) nm$^2$ Aufloesung'.format(float(data_index[e]) / 10))
 
