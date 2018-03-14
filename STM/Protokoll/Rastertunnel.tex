@@ -304,21 +304,21 @@ $(\SI{126,9}{nm})^2$ & Rückwärts &  & &\\
 \hline 
 Auflösung & Messrichtung & $x_k$ [nm] & $y_k$ [nm] \\ 
 \hline 
-$(\SI{13,2}{nm})^2$ & Vorwärts &  &  \\
+$(\SI{13,2}{nm})^2$ & Vorwärts & 6,16 & 0,72 \\
 \hline 
-$(\SI{13,2}{nm})^2$ & Rückwärts &   & \\
+$(\SI{13,2}{nm})^2$ & Rückwärts & 5,91 & 0,74 \\
 \hline 
-$(\SI{29,7}{nm})^2$ & Vorwärts &  & \\
+$(\SI{29,7}{nm})^2$ & Vorwärts & 7,69 & 0,73 \\
 \hline 
-$(\SI{29,7}{nm})^2$ & Rückwärts &  & \\
+$(\SI{29,7}{nm})^2$ & Rückwärts & 6,98 & 0,75 \\
 \hline 
-$(\SI{64,4}{nm})^2$ & Vorwärts &  & \\
+$(\SI{64,4}{nm})^2$ & Vorwärts & 25,22 & 0,97 \\
 \hline 
-$(\SI{64,4}{nm})^2$ & Rückwärts &  & \\
+$(\SI{64,4}{nm})^2$ & Rückwärts & 23,19 & 0,93 \\
 \hline 
-$(\SI{126,9}{nm})^2$ & Vorwärts &  & \\
+$(\SI{126,9}{nm})^2$ & Vorwärts & 34,24 & 1,80 \\
 \hline 
-$(\SI{126,9}{nm})^2$ & Rückwärts &  & \\
+$(\SI{126,9}{nm})^2$ & Rückwärts & 25,95 & 1,47 \\
 \hline 
 \end{tabular} 
 \caption{Abgelesene Kantenmittelpunkte.}
@@ -371,6 +371,27 @@ $(\SI{126,9}{nm})^2$ & Rückwärts & $3,08 \pm 0,27$\\
 \caption{Ergebnisse für die Kantenhöhe.}
 \label{tab:Kantenhöhe_Ergebnisse}
 \end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Auflösung & Höhe [nm] & Anzahl Netzebenen\\ 
+\hline 
+$(\SI{13,2}{nm})^2$ & $1,42 \pm 0,14$ & 4 \\
+\hline 
+$(\SI{29,7}{nm})^2$ & $0,87 \pm 0,22$ & 2-3 \\
+\hline 
+$(\SI{64,4}{nm})^2$ & $2,14 \pm 0,18$ & 6 \\
+\hline 
+$(\SI{126,9}{nm})^2$ & $3,14 \pm 0,25$ & 9-10 \\
+\hline
+\end{tabular} 
+\caption{Gewichtet gemittelte Kantenhöhen und Anzahl der Netzebenen, die den Kantenhöhen entsprechen.}
+\label{tab:Kantenhöhe_EndErgebnisse}
+\end{table}
+
+Die Werte für die Kantenhöhe stimmen für dasselbe Bild in Vor- und Rückrichtung jeweils innerhalb ihrer Fehler überein, daher können die Kantenhöhen der Richtungen gewichtet gemittelt werden (siehe Tabelle \ref{tab:Kantenhöhe_EndErgebnisse}). Allerdings wurde nicht auf jedem Bild die gleiche Stelle der Kante vermessen, sodass die Höhe von Bild zu Bild variiert. Mit der Literaturangabe für den Netzebenenabstand von \SI{335}{pm} lässt sich nun die Zahl der Netzebenen bestimmen, die die vermessene Kante verursachen (ebenfalls in Tabelle \ref{tab:Kantenhöhe_EndErgebnisse}). Die Fehler auf die gewichteten Mittelwerte sind dabei kleiner als ein Netzebenenabstand. Da diese Kantenhöhen nur ganzzahlige Vielfache des Netzebenenabstandes sein können, kann die Kantenhöhe auf 1 Netzebenenabstand genau bestimmt werden.
 
 \subsubsection{Kalibration der Achsen}
 Um die Längenskalen in x- und y-Richtung möglichst unkorreliert kalibrieren zu können, kann nicht direkt der Atomabstand benutzt werden. Stattdessen wird der Abstand zwischen 2 Atomen bestimmt, die möglichst auf einer der beiden Achsen liegen. Dann wird über ein Dreieck entlang der Symmetrieachsen des Atomgitters die echte Länge dieses Abstandes bestimmt.\\
@@ -426,6 +447,8 @@ Strom 50 & $32.22\pm 0.15$ & 15/23  & 15/8 & 49.75& 1.544\\
 
 
 \section{Fazit}
+Bei der Untersuchung der Mikroskopeigenschaften haben sich ein I-Gain von 3000 und eine Messzeit pro Zeile von \SI{600}{ms} als ideal herausgestellt, da Flanken bei Vermessung in beiden Richtungen gleich dargestellt werden bzw. die gemessenen Flankensteigungen innerhalb ihrer Fehler übereinstimmen.\\
+
 
 \newpage
 \section{Anhang}
