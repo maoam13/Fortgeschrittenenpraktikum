@@ -146,3 +146,26 @@ def multi_lin_reg(data_nach, data_vor, vor_kante_vor, nach_kante_vor, vor_kante_
         vor_sol_nach.append(p.lineare_regression_xy(nach_data_vorkante[:,0], nach_data_vorkante[:,1], nach_std_x_vor, nach_std_y_vor))
         nach_sol_nach.append(p.lineare_regression_xy(nach_data_nachkante[:,0], nach_data_nachkante[:,1], nach_std_x_nach, nach_std_y_nach))
     return np.array(vor_sol_vor), np.array(nach_sol_vor), np.array(vor_sol_nach), np.array(nach_sol_nach)
+
+def verschiebemethode(nach_sol, vor_sol, data, kante):
+    h = []
+    nach_steigung_var = [1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1, 1, 1, -1, -1]
+    vor_steigung_var = [1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1]
+    nach_abschnitt_var = [1, 1, 1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, -1, -1]
+    vor_abschnitt_var = [1, 1, 1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, -1, -1]
+    for i in range(len(nach_steigung_var)):
+        a_nach = nach_sol[:,0] + nach_steigung_var[i] * nach_sol[:,1]
+        a_vor = vor_sol[:,0] + vor_steigung_var[i] * vor_sol[:,1]
+        b_nach = nach_sol[:,2] + nach_abschnitt_var[i] * nach_sol[:,3]
+        b_vor = vor_sol[:,2] + vor_abschnitt_var[i] * vor_sol[:,3]
+        a_k_nach = -1./a_nach
+        b_k = []
+        for i in range(len(a_k_nach)):
+            b_k.append(data[i][kante[i]][1] - a_k_nach[i] * data[i][kante[i]][0])
+        b_k = np.array(b_k)
+        x1_nach = (b_k - b_nach)/(a_nach - a_k_nach)
+        x2_nach = (b_k - b_vor)/(a_vor - a_k_nach)
+        y1_nach = a_k_nach * x1_nach + b_k
+        y2_nach = a_k_nach * x2_nach + b_k
+        h.append(np.sqrt((x1_nach - x2_nach)**2 + (y1_nach - y2_nach)**2))
+    return np.array(h)

@@ -269,6 +269,19 @@ def getmax(x, y):
         max_index = int(sum(mem) / len(mem))
     return max_x, max_y, max_index
 
+def getmax_1d(x):
+    #Sucht den maximalen Wert aus 1d Daten raus und gibt Wert und Index zurück
+    #bei mehreren identischen Werten werden alle zurückgegeben
+    max_x = x[0]
+    max_index = [0]
+    for i in range(len(x)):
+        if x[i] > max_x:
+            max_x = x[i]
+            max_index = [i]
+        if x[i] == max_x:
+            max_index = [i]
+    return np.array(max_index)
+
 def Schnittpunkte(x, y1, y2):
     #gibt die Indizes der Stellen zurück, NACH denen ein Schnittpunkt zwischen den Daten von y1 
     #und y2 liegt

@@ -57,12 +57,12 @@ Messpunkte pro Linie & 256 \\
 Sollwert Tunnelstrom & 1 nA \\
 \hline 
 \end{tabular} 
-\caption{Einstellungen der Messparameter bei Vermessung der Goldprobe. Bei dieser Messreihe wurde der IGain zwischen 1000 und 11000 verändert.}
+\caption{Einstellungen der Messparameter bei Vermessung der Goldprobe. Bei dieser Messreihe wurde der I-Gain zwischen 1000 und 11000 verändert.}
 \label{tab:IGain_Einstellungen}
 \end{table}
 
-Für die Untersuchung der Empfindlichkeit der Einstellparameter wird auf der Goldprobe zunächst ein Bereich mit markanter Struktur gesucht. Dieser Bereich wird für vier verschiedene Werte für den I-Gain bei ansonsten gleichbleibenden Parametern vermessen. Diese Einstellungen sind in Tabelle \ref{tab:IGain_Einstellungen} eingetragen.\\
-In einer zweiten Messreihe wird erneut ein Bereich mit markanter Struktur vermessen, wobei anstelle des I-Gain die Messzeit pro Zeile verändert wird. Für den I-Gain wurde hierbei der Wert, der sich in der ersten Messreihe als beste Annäherung des Idealwertes herausgestellt hat, verwendet (I-Gain = 3000). Alle anderen Parameter blieben unverändert.
+Für die Untersuchung der Empfindlichkeit der Einstellparameter wird auf der Goldprobe zunächst ein Bereich mit markanter Struktur gesucht. Dieser Bereich wird für vier verschiedene Werte für den I-Gain bei ansonsten gleichbleibenden Parametern vermessen. Diese Einstellungen sind in Tabelle \ref{tab:IGain_Einstellungen} eingetragen. Es wurden vier verschiedene Einstellungen für den I-Gain verwendet: $I_1 = 1000$, $I_2 = 3000$, $I_3 = 8000$ und $I_4 = 11000$.\\
+In einer zweiten Messreihe wird erneut ein Bereich mit markanter Struktur vermessen, wobei anstelle des I-Gain die Messzeit pro Zeile verändert wird. Für den I-Gain wurde hierbei der Wert, der sich in der ersten Messreihe als beste Annäherung des Idealwertes herausgestellt hat, verwendet (I-Gain = 3000). Alle anderen Parameter blieben unverändert. Es wurden sieben verschiedene Einstellungen für die Messzeit pro Zeile verwendet: $T_1 = \SI{52}{ms}$, $T_2 = \SI{80}{ms}$, $T_3 = \SI{100}{ms}$, $T_4 = \SI{200}{ms}$, $T_5 = \SI{400}{ms}$, $T_6 = \SI{600}{ms}$, $T_7 = \SI{2}{s}$.
 
 \subsection{Untersuchung von HOPG}
 \subsubsection{Vermessung einer Kante}
@@ -244,8 +244,89 @@ Bei der zweiten Messreihe mit Variation der Messzeit pro Zeile hat sich herausge
 \label{fig:Kante_Beispiel}
 \end{figure}
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Auflösung & Messrichtung & Steigung & Achsenabschnitt [nm] & $\chi ^2$/ndof \\ 
+\hline 
+$(\SI{13,2}{nm})^2$ & Vorwärts &  & & \\
+\hline 
+$(\SI{13,2}{nm})^2$ & Rückwärts &   & &\\
+\hline 
+$(\SI{29,7}{nm})^2$ & Vorwärts &  & &\\
+\hline 
+$(\SI{29,7}{nm})^2$ & Rückwärts &  & &\\
+\hline 
+$(\SI{64,4}{nm})^2$ & Vorwärts &  & &\\
+\hline 
+$(\SI{64,4}{nm})^2$ & Rückwärts &  & &\\
+\hline 
+$(\SI{126,9}{nm})^2$ & Vorwärts &  & &\\
+\hline 
+$(\SI{126,9}{nm})^2$ & Rückwärts &  & &\\
+\hline
+\end{tabular} 
+\caption{Ergebnisse der linearen Regressionen an Daten vor der Kante.}
+\label{tab:Kante_linreg_vor_Ergebnisse}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline 
+Auflösung & Messrichtung & Steigung & Achsenabschnitt [nm] & $\chi ^2$/ndof \\ 
+\hline 
+$(\SI{13,2}{nm})^2$ & Vorwärts &  & & \\
+\hline 
+$(\SI{13,2}{nm})^2$ & Rückwärts &   & &\\
+\hline 
+$(\SI{29,7}{nm})^2$ & Vorwärts &  & &\\
+\hline 
+$(\SI{29,7}{nm})^2$ & Rückwärts &  & &\\
+\hline 
+$(\SI{64,4}{nm})^2$ & Vorwärts &  & &\\
+\hline 
+$(\SI{64,4}{nm})^2$ & Rückwärts &  & &\\
+\hline 
+$(\SI{126,9}{nm})^2$ & Vorwärts &  & &\\
+\hline 
+$(\SI{126,9}{nm})^2$ & Rückwärts &  & &\\
+\hline 
+\end{tabular} 
+\caption{Ergebnisse der linearen Regressionen an Daten hinter der Kante.}
+\label{tab:Kante_linreg_nach_Ergebnisse}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Auflösung & Messrichtung & $x_k$ [nm] & $y_k$ [nm] \\ 
+\hline 
+$(\SI{13,2}{nm})^2$ & Vorwärts &  &  \\
+\hline 
+$(\SI{13,2}{nm})^2$ & Rückwärts &   & \\
+\hline 
+$(\SI{29,7}{nm})^2$ & Vorwärts &  & \\
+\hline 
+$(\SI{29,7}{nm})^2$ & Rückwärts &  & \\
+\hline 
+$(\SI{64,4}{nm})^2$ & Vorwärts &  & \\
+\hline 
+$(\SI{64,4}{nm})^2$ & Rückwärts &  & \\
+\hline 
+$(\SI{126,9}{nm})^2$ & Vorwärts &  & \\
+\hline 
+$(\SI{126,9}{nm})^2$ & Rückwärts &  & \\
+\hline 
+\end{tabular} 
+\caption{Abgelesene Kantenmittelpunkte.}
+\label{tab:Kantenmittelpunkte_Ergebnisse}
+\end{table}
+
 Auch bei der Vermessung der Kante wird ein Höhenprofil entnommen. Dabei muss darauf geachtet werden, dass das Höhenprofil möglichst senkrecht auf der Kante steht. Abbildung \ref{fig:Kante_Beispiel} zeigt dies beispielhaft für die Messung mit einem Messbereich von (\SI{13,2}{nm})$^2$.\\
-Zur Bestimmung der Kantenhöhe wird an den Bereich vor und hinter der Kante jeweils eine Gerade angepasst und deren Abstand bestimmt. Dieser Abstand wird bestimmt, indem eine Gerade konstruiert wird, die senkrecht auf der tiefer liegenden Gerade steht und durch den abgelesenen Mittelpunkt der Kante geht. Damit bestimmt sich die Geradengleichung dieser Gerade zu:
+Zur Bestimmung der Kantenhöhe wird an den Bereich vor und hinter der Kante jeweils eine Gerade angepasst und deren Abstand bestimmt. Dieser Abstand wird bestimmt, indem eine Gerade konstruiert wird, die senkrecht auf der tiefer liegenden Gerade steht und durch den abgelesenen Mittelpunkt der Kante geht. Der Mittelpunkt der Kante hat nur eine sehr kleine Auswirkung auf die Höhe, daher wird der Fehler auf diesen vernachlässigt. Um die Auswertung zu vereinfachen wurde hierfür ein realer Datenpunkt verwendet. Damit bestimmt sich die Geradengleichung dieser Gerade zu:
 \begin{equation*}
 y = \dfrac{-1}{a_{hinter}} \cdot x + y_k + \dfrac{x_k}{a_{hinter}}
 \end{equation*}
@@ -257,11 +338,39 @@ h = \sqrt{(\Delta x)^2 + (\Delta y)^2}
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{Bilder/Anhang/Kante/Profil_Kante_0132_vor.png}
-\caption{Entnommenes Höhenprofil (grün), angepasste Geraden (rot) und Kantengerade (blau) bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung.}
+\caption{Entnommenes Höhenprofil (grün), angepasste Geraden (rot) und Kantengerade (orange) bei Vermessung der HOPG-Kante in einer Auflösung von (\SI{13,2}{nm})$^2$ in der Vorwärtsrichtung. In gelb sind die Verschiebungen der angepassten Geraden eingezeichnet, die die maximale Höhe ergeben haben, und in blau die, die die minimale Höhe ergeben haben. Die Residuen beziehen sich auf die vor bzw. hinter der Kante angepassten Geraden.}
 \label{fig:Kante_Hoehenprofil_Beispiel}
 \end{figure}
 
-Abbildung \ref{fig:Kante_Hoehenprofil_Beispiel} zeigt das Höhenprofil, die angepassten Geraden inclusive Residuen und die Kantengerade für die in Abbildung \ref{fig:Kante_Beispiel} gezeigte Messung.
+Für die Fehlerabschätzung werden Steigung und Achsenabschnitt der angepassten Geraden  um ihre Fehler variiert und mit jeder Variation die Kantenhöhe erneut ausgerechnet. Damit ergibt sich ein Bereich um den berechneten Wert, der den Fehler begrenzt. Die Werte für die Kantenhöhe mit ihren Fehlern sind in Tabelle \ref{tab:Kantenhöhe_Ergebnisse} dargestellt.\\
+Abbildung \ref{fig:Kante_Hoehenprofil_Beispiel} zeigt das Höhenprofil, die angepassten und verschobenen Geraden und die Kantengerade für die in Abbildung \ref{fig:Kante_Beispiel} gezeigte Messung.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Auflösung & Messrichtung & Höhe [nm]\\ 
+\hline 
+$(\SI{13,2}{nm})^2$ & Vorwärts & $1,35 \pm 0,20$\\
+\hline 
+$(\SI{13,2}{nm})^2$ & Rückwärts & $1,49 \pm 0,19$\\
+\hline 
+$(\SI{29,7}{nm})^2$ & Vorwärts & $0,92 \pm 0,34$\\
+\hline 
+$(\SI{29,7}{nm})^2$ & Rückwärts & $0,83 \pm 0,29$\\
+\hline 
+$(\SI{64,4}{nm})^2$ & Vorwärts & $2,36 \pm 0,31$\\
+\hline 
+$(\SI{64,4}{nm})^2$ & Rückwärts & $2,02\pm 0,23$\\
+\hline 
+$(\SI{126,9}{nm})^2$ & Vorwärts & $3,58 \pm 0,76$\\
+\hline 
+$(\SI{126,9}{nm})^2$ & Rückwärts & $3,08 \pm 0,27$\\
+\hline
+\end{tabular} 
+\caption{Ergebnisse für die Kantenhöhe.}
+\label{tab:Kantenhöhe_Ergebnisse}
+\end{table}
 
 \subsubsection{Kalibration der Achsen}
 Um die Längenskalen in x- und y-Richtung möglichst unkorreliert kalibrieren zu können, kann nicht direkt der Atomabstand benutzt werden. Stattdessen wird der Abstand zwischen 2 Atomen bestimmt, die möglichst auf einer der beiden Achsen liegen. Dann wird über ein Dreieck entlang der Symmetrieachsen des Atomgitters die echte Länge dieses Abstandes bestimmt.\\
