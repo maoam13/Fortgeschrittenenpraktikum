@@ -255,6 +255,56 @@ Zeit [ms] & $a_{vor}$ & $a_{rueck}$ & $\dfrac{|a_{vor} - a_{rueck}|}{\sqrt{\sigm
 
 Tabelle \ref{tab:Steigungen_Zeit} zeigt die Ergebnisse für die Flankensteigungen. Die Abweichungen zwischen den Steigungen aus der Messung in Vorwärts- und der in Rückwärtsrichtung zeigen, dass bei einem I-Gain von 3000 eine Messzeit pro Zeile von \SI{600}{ms} die besten Ergebnisse liefert.
 
+\subsubsection{Stromprofil}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+I-Gain & $\mu_{vor}$ [pA] & $\mu_{rueck}$ [pA] & $\sigma_{vor}$ [pA] & $\sigma_{rueck}$ [pA] \\ 
+\hline 
+1000 & 374,9 & 488,6 & 207,8 & 209,4 \\
+\hline 
+3000 & 220,1 & 249,3 & 99,1 & 84,9 \\ 
+\hline 
+8000 & 831,4 & 764,3 & 510,2 & 470,1 \\
+\hline 
+11000 & 728,3 & 676,2 & 641,2 & 610,5 \\
+\hline 
+\end{tabular} 
+\caption{Mittelwert und Standardabweichung der Stromprofile in der Messreihe mit variiertem I-Gain.}
+\label{tab:Strom_IGain}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Zeit [ms] & $\mu_{vor}$ [pA] & $\mu_{rueck}$ [pA] & $\sigma_{vor}$ [pA] & $\sigma_{rueck}$ [pA] \\ 
+\hline 
+52 & 877,7 & 752,2 & 329,0 & 276,2 \\
+\hline 
+80 & 329,1 & 322,6 & 123,8 & 111,0 \\ 
+\hline 
+100 & 388,4 & 668,3 & 177,6 & 190,8 \\
+\hline 
+200 & 275,9 & 342,3 & 117,8 & 99,8 \\
+\hline 
+400 & 179,2 & 168,4 & 55,2 & 53,6 \\
+\hline 
+600 & 179,9 & 173,5 & 60,7 & 55,5 \\
+\hline 
+2000 & 98,2 & 87,9 & 29,3 & 30,2 \\
+\hline 
+\end{tabular} 
+\caption{Mittelwert und Standardabweichung der Stromprofile in der Messreihe mit variierter Messzeit pro Zeile.}
+\label{tab:Strom_Zeit}
+\end{table}
+
+An der gleichen Stelle, an der aus dem Bild der z-Komponente das Höhenprofil entnommen wurde, kann aus dem Strombild ein Stromprofil entnommen werden. Anhand dieses Stromprofils kann durch Berechnen der Standardabweichung ebenfalls eine Aussage über die Güte des Bildes gemacht werden. Die Werte sind in den Tabellen \ref{tab:Strom_IGain} und \ref{tab:Strom_Zeit} dargestellt. \\
+In der Messreihe mit dem variiertem I-Gain lässt sich leicht erkennen, dass die Standardabweichung bei einem I-Gain von 3000 einen minimalen Wert annimmt, daher kann hiermit das Ergebnis aus dem Vergleich der Flankensteigung bestätigt werden.\\
+In der Messreihe mit der variierten Zeit sinkt die Standardabweichung mit der Messzeit pro Zeile. Dies liegt daran, dass bei konstantem I-Gain und steigender Messzeit pro Zeile der räumliche Bereich, der für die Regelung relevant ist, kleiner wird. Dadurch reagiert die Regelung örtlich gesehen schneller auf Veränderungen der Oberfläche, sodass der Probe-Spitze-Abstand weniger schwingt, was durch den hohen I-Gain und die große Zeit unterstützt wird.
+
 \subsubsection{Zusammenfassung}
 Mit steigendem I-Gain werden die gemessenen Flankensteigungen größer. Dabei liegt der ideale I-Gain in einem mittleren Bereich, wo die gemessenen Flankensteigungen aus der Vorwärts- und der Rückwärtsrichtung nahe zusammenrücken. \\
 Bei der zweiten Messreihe mit Variation der Messzeit pro Zeile hat sich herausgestellt, dass bei einem I-Gain von 3000 und einer Messzeit von \SI{600}{ms} die Flankensteigungen aus der Vorwärts- und der Rückwärtsrichtung innerhalb einer Standardabweichung übereinstimmen.
@@ -291,21 +341,21 @@ Da beim annähern an das HOPG die Spitze gecrashed ist, vermuten wir, dass diese
 \hline 
 Auflösung & Messrichtung & Steigung & Achsenabschnitt [nm] & $\chi ^2$/ndof \\ 
 \hline 
-$(\SI{13,2}{nm})^2$ & Vorwärts &  & & \\
+$(\SI{13,2}{nm})^2$ & Vorwärts & 0,109 $\pm$ 0,012 & 0,833 $\pm$ 0,041 & 12,550 \\
 \hline 
-$(\SI{13,2}{nm})^2$ & Rückwärts &   & &\\
+$(\SI{13,2}{nm})^2$ & Rückwärts & 0,184 $\pm$ 0,012 & 0,414 $\pm$ 0,039 & 10,576\\
 \hline 
-$(\SI{29,7}{nm})^2$ & Vorwärts &  & &\\
+$(\SI{29,7}{nm})^2$ & Vorwärts & 0,017 $\pm$ 0,011 & 1,019 $\pm$ 0,042 & 6,735 \\
 \hline 
-$(\SI{29,7}{nm})^2$ & Rückwärts &  & &\\
+$(\SI{29,7}{nm})^2$ & Rückwärts & 0,043 $\pm$ 0,012 & 0,749 $\pm$ 0,045 & 7,726\\
 \hline 
-$(\SI{64,4}{nm})^2$ & Vorwärts &  & &\\
+$(\SI{64,4}{nm})^2$ & Vorwärts & 0,034 $\pm$ 0,003 & 1,928 $\pm$ 0,032 & 5,626 \\
 \hline 
-$(\SI{64,4}{nm})^2$ & Rückwärts &  & &\\
+$(\SI{64,4}{nm})^2$ & Rückwärts & 0,035 $\pm$ 0,001 & 1,498 $\pm$ 0,018 & 1,852\\
 \hline 
-$(\SI{126,9}{nm})^2$ & Vorwärts &  & &\\
+$(\SI{126,9}{nm})^2$ & Vorwärts & 0,037 $\pm$ 0,001 & 1,936 $\pm$ 0,017 & 1,341 \\
 \hline 
-$(\SI{126,9}{nm})^2$ & Rückwärts &  & &\\
+$(\SI{126,9}{nm})^2$ & Rückwärts & 0,017 $\pm$ 0,002 & 2,314 $\pm$ 0,030 & 2,969\\
 \hline
 \end{tabular} 
 \caption{Ergebnisse der linearen Regressionen an Daten vor der Kante.}
@@ -318,21 +368,21 @@ $(\SI{126,9}{nm})^2$ & Rückwärts &  & &\\
 \hline 
 Auflösung & Messrichtung & Steigung & Achsenabschnitt [nm] & $\chi ^2$/ndof \\ 
 \hline 
-$(\SI{13,2}{nm})^2$ & Vorwärts &  & & \\
+$(\SI{13,2}{nm})^2$ & Vorwärts & 0,215 $\pm$ 0,006 & -1,178 $\pm$ 0,055 & 3,187 \\
 \hline 
-$(\SI{13,2}{nm})^2$ & Rückwärts &   & &\\
+$(\SI{13,2}{nm})^2$ & Rückwärts & 0,172 $\pm$ 0,005 & -1,024 $\pm$ 0,050 & 3,323\\
 \hline 
-$(\SI{29,7}{nm})^2$ & Vorwärts &  & &\\
+$(\SI{29,7}{nm})^2$ & Vorwärts & 0,033 $\pm$ 0,012 & -0,022 $\pm$ 0,124 & 2,672  \\
 \hline 
-$(\SI{29,7}{nm})^2$ & Rückwärts &  & &\\
+$(\SI{29,7}{nm})^2$ & Rückwärts & 0,011 $\pm$ 0,009 & 0,147 $\pm$ 0,098 & 1,813\\
 \hline 
-$(\SI{64,4}{nm})^2$ & Vorwärts &  & &\\
+$(\SI{64,4}{nm})^2$ & Vorwärts & -0,004 $\pm$ 0,004 & 0,527 $\pm$ 0,124 & 3,124\\
 \hline 
-$(\SI{64,4}{nm})^2$ & Rückwärts &  & &\\
+$(\SI{64,4}{nm})^2$ & Rückwärts & 0,001 $\pm$ 0,003 & 0,250 $\pm$ 0,101 & 3,324\\
 \hline 
-$(\SI{126,9}{nm})^2$ & Vorwärts &  & &\\
+$(\SI{126,9}{nm})^2$ & Vorwärts & 0,033 $\pm$ 0,008 & -1,488 $\pm$ 0,435 & 6,826\\
 \hline 
-$(\SI{126,9}{nm})^2$ & Rückwärts &  & &\\
+$(\SI{126,9}{nm})^2$ & Rückwärts & 0,031 $\pm$ 0,002 & -1,157 $\pm$ 0,121 & 3,413\\
 \hline 
 \end{tabular} 
 \caption{Ergebnisse der linearen Regressionen an Daten hinter der Kante.}
@@ -565,8 +615,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/1000_IGain_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_1000.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 1000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/1000_IGain_Strom_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/1000_IGain_Strom_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/1000_IGain_Strom_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/1000_IGain_Strom_nach_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Strom/Strom_Profil_IGain_1000.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Profil_IGain_1000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 1000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -575,8 +630,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/3000_IGain_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_3000.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 3000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/3000_IGain_Strom_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/3000_IGain_Strom_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/3000_IGain_Strom_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/3000_IGain_Strom_nach_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Strom/Strom_Profil_IGain_3000.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Profil_IGain_3000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 3000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -585,8 +645,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/8000_IGain_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_8000.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 8000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/8000_IGain_Strom_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/8000_IGain_Strom_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/8000_IGain_Strom_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/8000_IGain_Strom_nach_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Strom/Strom_Profil_IGain_8000.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Profil_IGain_1000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 8000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -595,8 +660,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/IGain/11000_IGain_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Profil_IGain_11000.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 11000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/11000_IGain_Strom_vor.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/11000_IGain_Strom_vor_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/11000_IGain_Strom_nach.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/IGain/Strom/11000_IGain_Strom_nach_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Strom/Strom_Profil_IGain_11000.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/IGain/Profil_IGain_11000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 11000 in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \subsubsection{Zeit}
@@ -606,8 +676,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_052_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_52.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{52}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_052_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_052_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_052_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_052_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_0052.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_52.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{52}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -616,8 +691,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_08_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_80.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{80}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_080_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_080_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_080_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_080_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_0080.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_52.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{80}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -626,8 +706,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_1_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_100.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{100}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_1_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_1_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_1_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_1_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_0100.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_100.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{100}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -636,8 +721,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_2_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_200.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{200}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_2_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_2_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_2_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_2_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_0200.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_200.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{200}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -646,8 +736,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_4_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_400.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{400}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_4_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_4_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_4_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_4_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_0400.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_400.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{400}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -656,8 +751,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/0_6_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_600.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{600}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_6_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_6_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_6_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/0_6_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_0600.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_600.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{600}{ms} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \begin{figure}[H]
@@ -666,8 +766,13 @@ Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen k
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_vor_Skala.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_nach.jpg}
 \includegraphics[scale=0.6]{Bilder/Anhang/Zeit/2_Zeit_nach_Skala.jpg}
-\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Profil_Zeit_2000.png}
-\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{2}{s} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Unten}: Entnommenes Höhenprofil und abgelesene Flanken.}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/2_Zeit_vor_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/2_Zeit_vor_Strom_Skala.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/2_Zeit_nach_Strom.jpg}
+\includegraphics[scale=0.6]{Bilder/Anhang/Zeit/Strom/2_Zeit_nach_Strom_Skala.jpg}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Strom/Strom_Profil_Zeit_2000.png}
+\includegraphics[scale=0.5]{Bilder/Anhang/Zeit/Profil_Zeit_2000.png}
+\caption{\textbf{Oben}: Bild der z-Komponente bei Vermessung der Goldprobe mit einer Messzeit von \SI{2}{s} in der Vorwärtsrichtung (rechts) und der Rückwärtsrichtung (links). \textbf{Mitte}: Zugehörige Bilder des Stroms \textbf{Unten}: Stromprofil (links) und entnommenes Höhenprofil und abgelesene Flanken (rechts).}
 \end{figure}
 
 \subsection{HOPG}
