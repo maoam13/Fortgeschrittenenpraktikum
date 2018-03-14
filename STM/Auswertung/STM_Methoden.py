@@ -15,29 +15,53 @@ def addiere_abstaende(data):
         summe += np.abs(data[i][1] - data[i+1][1])
     return summe/(len(data[:,1]) - 1)
 
-def lese_Profillinie_ein_IGain(IGain, vor = 1, alt = 0):
-    if alt == 1:
-        if vor == 1:
-            return np.genfromtxt("Profillinien/IGain/{0:1.0f}_alt_vor.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+def lese_Profillinie_ein_IGain(IGain, vor = 1, alt = 0, Strom = 0):
+    if Strom == 0:
+        if alt == 1:
+            if vor == 1:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_alt_vor.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_alt_nach.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
         else:
-            return np.genfromtxt("Profillinien/IGain/{0:1.0f}_alt_nach.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+            if vor == 1:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_vor.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_nach.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
     else:
-        if vor == 1:
-            return np.genfromtxt("Profillinien/IGain/{0:1.0f}_vor.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+        if alt == 1:
+            if vor == 1:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_alt_vor_Strom.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_alt_nach_Strom.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
         else:
-            return np.genfromtxt("Profillinien/IGain/{0:1.0f}_nach.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+            if vor == 1:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_vor_Strom.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/IGain/{0:1.0f}_nach_Strom.prf.cur".format(IGain), delimiter = ' ', skip_header = 127)
 
-def lese_Profillinie_ein_Zeit(Zeit, vor = 1, alt = 0):
-    if alt == 1:
-        if vor == 1:
-            return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_alt_vor.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+def lese_Profillinie_ein_Zeit(Zeit, vor = 1, alt = 0, Strom = 0):
+    if Strom == 0:
+        if alt == 1:
+            if vor == 1:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_alt_vor.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_alt_nach.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
         else:
-            return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_alt_nach.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+            if vor == 1:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_vor.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_nach.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
     else:
-        if vor == 1:
-            return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_vor.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+        if alt == 1:
+            if vor == 1:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_alt_vor_Strom.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_alt_nach_Strom.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
         else:
-            return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_nach.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+            if vor == 1:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_vor_Strom.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
+            else:
+                return np.genfromtxt("Profillinien/Zeit/{0:1.0f}_nach_Strom.prf.cur".format(Zeit), delimiter = ' ', skip_header = 127)
 
 def lese_Profillinie_ein_Kante(Kante, vor = 1, alt = 0):
     if vor == 1:
