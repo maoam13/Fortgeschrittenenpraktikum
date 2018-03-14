@@ -4,7 +4,7 @@ Created on Mon Mar 12 12:24:33 2018
 
 @author: morit
 """
-
+import Praktikummo as p
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,6 +20,11 @@ l = [4,4.02,4,4,4.02,3.96]#s3
 #l = [5.96,6.06,6.3,6.34,6.16,6.23]#vs1
 #l = [1.78,1.82,1.79,1.82,1.8,1.79]#vs2
 #l = [3.24,3.26,3.2,3.22,3.16,3.25]#vs3
-l = [1.478,1.513,1.542,1.461,1.417,1.523]#mull
+l = np.array([0.445,0.572,0.629,0.576,0.601,0.684])#mull
+sl = np.array([0.002,0.002,0.005,0.006,0.002,0.003])#mull
+l = np.array([0.677,0.661,0.648,0.706,0.657,0.684])#mull
+sl = np.array([0.003,0.001,0.002,0.006,0.001,0.003])#mull
 print np.mean(l)
 print np.std(l)/np.sqrt(len(l)-1)
+
+print p.gew_mittelwert(l,sl)
