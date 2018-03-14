@@ -76,30 +76,46 @@ Strom & 5 & 0.2 & 8000 & 50.4\\
 \subsection{Untersuchung der Mikroskopeigenschaften mit einer Goldprobe}
 
 \subsection{Untersuchung von HOPG}
+Bei den Untersuchungen zum HOPG im Konstantstrommodus wurde ein IGain von 8000 verwendet, obwohl im Versuch mit Gold ein IGain von 3000 als optimal gefunden wurde. Dies liegt einerseits daran, dass hier feinere Strukturen aufgelöst werden müssen. Allerdings hat ein weiterer Effekt die Bilder mit einem niedrigerem IGain schlechter gemacht:\\
+Beim IGain von 4000 ist die Anzahl an Fehllinien, die sich vom Untergrund abheben, wesentlich größer als bei einem IGain von 8000. Außerdem wird das Bild wesentlich unschärfer. Diese Effekte werden immer stärker, je kleiner der Rasterbereich gewählt wird.\\
+Da beim annähern an das HOPG die Spitze gecrashed ist, vermuten wir, dass dieser Effekt durch eine schlechte Spitze entstehen kann. Die genaue Ursache ist aber unklar.\\
+\\
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.36]{Bilder/Igain4000.jpg}
+\includegraphics[scale=0.36]{Bilder/Igain8000.jpg}
+\includegraphics[scale=0.36]{Bilder/Igain4000_Strom.jpg}
+\includegraphics[scale=0.36]{Bilder/Igain8000_Strom.jpg}
+\caption{Veranschaulichung der Effekte eines niedrigen IGains im Höhenbild der Breite 13.2nm. \textbf{Links:} IGain von 4000.  \textbf{Rechts:} IGain von 8000. Darunter befinden sich die dazugehörigen Strombilder. Es ist deutlich zu sehen, dass das Bild unschärfer wird und die Anzahl an Fehllinien zunimmt.}
+\label{fig:hoch2_h}
+\end{figure}
+
 \subsubsection{Kalibration der Achsen}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.9]{Bilder/Atome/hoch2_h_scale.jpg}
-\caption{Methode zur Bestimmung der x-Korrektur}
+\includegraphics[scale=0.8]{Bilder/Atome/hoch2_h_scale.jpg}
+\caption{Methode zur Bestimmung der x-Korrektur gezeigt am Bild im Konstanthöhenmodus mit einer Rastergröße von 2.325nm. Die blaue Linie gibt die zu bestimmende Länge an}
 \label{fig:hoch2_h}
 \end{figure}
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.54]{Bilder/Atome/strom2_h_scale.jpg}
-\caption{Methode zur Bestimmung der x-Korrektur}
+\includegraphics[scale=0.5]{Bilder/Atome/strom2_h_scale.jpg}
+\caption{Methode zur Bestimmung der x-Korrektur gezeigt am Bild im Konstantstrommodus mit einer Rastergröße von 2.325nm. Die blaue Linie gibt die zu bestimmende Länge an}
 \label{fig:strom2_h}
 \end{figure}
 
 Um die Längenskalen in x- und y-Richtung möglichst unkorreliert kalibrieren zu können, kann nicht direkt der Atomabstand benutzt werden. Stattdessen wird der Abstand zwischen 2 Atomen bestimmt, die möglichst auf einer der beiden Achsen liegen. Dann wird über ein Dreieck entlang der Symmetrieachsen des Atomgitters die echte Länge dieses Abstandes bestimmt.\\
-Dies ist möglich, da man aus der Gitterstruktur den Winkel zwischen den Symmetrieachsen($60^{\circ}$) und die Atomabstände (\SI{2.46}{\angstrom}) und damit die Längen entlang der Achsen kennt. Man kann also die Atome entlang des Dreieckes zählen daraus über den allgemeinen Satz von Pythagoras die Länge in die Achsenrichtung bestimmen:
+Dies ist möglich, da man aus der Gitterstruktur den Winkel zwischen den Symmetrieachsen($60^{\circ}$) und die Atomabstände (\SI{2.46}{\angstrom}) und damit die Längen entlang der Achsen kennt. Man kann also die Atome entlang des Dreieckes zählen daraus über den Kosinussatz die Länge in die Achsenrichtung bestimmen:
 \begin{equation}
 c = \sqrt{(a\cdot n)^{2}+(a\cdot m)^2-2 a^{2}\cdot n\cdot m\cdot cos(\alpha)}
 \end{equation}
-Hierbei ist c die zu bestimmende Länge, a die Atomlänge, n und m die Anzahl der Atome entlang einer Dreiecksseite und $\alpha$ der Winkel zwischen diesen Seiten.\\
+Hierbei ist c die zu bestimmende Länge, a die Atomlänge, n und m die Anzahl der Atome entlang einer Dreiecksseite und $\alpha$ der Winkel zwischen diesen Seiten.\\Da kein Fehler auf den Atomabstand angenommen wird, ist dieser Wert exakt.
 In Abbildung \ref{fig:hoch2_h} und \ref{fig:strom2_h} ist diese Methode beispielhaft anhand den 2.325nm Messungen gezeigt.\\
-Vor allem bei kleineren Zoomstufen konnte oft die Anzahl der Atome nicht mit 100\% Genauigkeit bestimmt werden.
+Vor allem bei größeren Rasterbereichen konnte oft die Anzahl der Atome nicht mit 100\% Genauigkeit bestimmt werden.
 Um mögliche Zählfehler erkennen zu können wurde deswegen sowohl einmal über die  $60^{\circ}$-Symmetrie, als auch einmal über $120^{\circ}$-Symmetrie die Länge bestimmt. Diese Längen sollten identisch sein. Wenn dies nicht der Fall ist, hat man sich offensichtlich verzählt.\\
 Die Atome waren manchmal sehr schwer zu erkennen, weswegen stattdessen die Anzahl oft anhand der durchquerten Symmetrieachsen bestimmt wurde. Dies ist schematisch in Abbildung \ref{fig:strom5_symmetire} dargestellt.\\
 \\
@@ -147,7 +163,7 @@ Strom & 23.25 & $16.74\pm 0.14$ & 7/11  & 7/4 & 23.72& $0.706\pm 0.006$\\
 Strom & 50 & $40.00\pm 0.09$ & 19/28  & 19/9 & 60.91& $0.657\pm 0.001$\\ 
 \hline 
 \end{tabular} 
-\caption{Ergebnisse der \textbf{horizontalen} Längenmessung. Angegeben ist der verwendete Modus(Konstanthöhen-/Konstantstrommodus), die Bildbreite, der abgelesene Abstand, die Anzahl der Atome über einen $60^{\circ}$/$120^{\circ}$ Winkel, die daraus berechnete Länge und das Verhältnis von berechneter zur abgelesenen Länge.}
+\caption{Ergebnisse der \textbf{horizontalen} Längenmessung. Angegeben ist der verwendete Modus(Konstanthöhen-/Konstantstrommodus), die Bildbreite, der abgelesene Abstand, die Anzahl der Atome über einen $60^{\circ}$/$120^{\circ}$ Winkel, die daraus berechnete Länge und das Verhältnis von abgelesener zur berechneten Länge.}
 \label{tab:Atome_horizontal}
 \end{table}
 
@@ -171,24 +187,26 @@ Strom & 23.25 & $18.00\pm 0.07$ & 8/14  & 8/6 & 29.93& $0.601\pm 0.002$\\
 Strom & 50 & $32.22\pm 0.15$ & 13/22  & 13/9 & 47.13& $0.684\pm 0.003$\\
 \hline 
 \end{tabular} 
-\caption{Ergebnisse der \textbf{vertikalen} Längenmessung. Angegeben ist der verwendete Modus(Konstanthöhen-/Konstantstrommodus), die Bildbreite, der abgelesene Abstand, die Anzahl der Atome über einen $60^{\circ}$/$120^{\circ}$ Winkel, die daraus berechnete Länge und das Verhältnis von berechneter zur abgelesenen Länge.}
+\caption{Ergebnisse der \textbf{vertikalen} Längenmessung. Angegeben ist der verwendete Modus(Konstanthöhen-/Konstantstrommodus), die Bildbreite, der abgelesene Abstand, die Anzahl der Atome über einen $60^{\circ}$/$120^{\circ}$ Winkel, die daraus berechnete Länge und das Verhältnis von abgelesener zur berechneten Länge.}
 \label{tab:Atome_vertikal}
 \end{table}
 
 Es ist auffällig, dass die vertikalen Korrekturfaktoren mit zunehmender Bereichsgröße anwachsen, die berechnete Strecke also besser mit der gemessenen übereinstimmt. Dies kann an Drift- und Creep-Effekten liegen. Bei kleineren Bildgrößen wird der Piezokristall weniger bewegt. Dadurch haben die Nebeneffekte, deren Größe sich nicht unbedingt mit der Bewegungsweite ändert, einen größeren relativen Einfluss und verschieben die Atome mehr, wodurch die gemessene Strecke mehr von der ausgerechneten abweicht.\\
-Diese Effekte treten in horizontaler Richtung nicht auf, da dort der Kristall sehr viel schneller weiterbewegt wird.
+Diese Effekte treten in horizontaler Richtung nicht auf, da dort der Kristall sehr viel schneller weiterbewegt wird.\\
 
-Eine gewichtete Mittelung der Korrekturfaktoren ergibt das Endergebnis:
+Eine gewichtete Mittelung (mit äußerem Fehler) der Korrekturfaktoren, also dem Verhältnis von der berechneten Länge im Bild zur "echten" berechneten Länge, ergibt das Endergebnis:
 \begin{equation*}
-\boxed{\textrm{horizontale Korrektur}: 0.561\pm 0.035}
+\boxed{\textrm{horizontale Korrektur}: 0.660\pm 0.004}
 \end{equation*}
 
 \begin{equation*}
-\boxed{\textrm{vertikale Korrektur}: 0.660\pm 0.004}
+\boxed{\textrm{vertikale Korrektur}: 0.561\pm 0.035}
 \end{equation*}
 
 \section{Fazit}
 
+Anhand der Atomabstände konnten die horizontalen und vertikalen Rasterlängen kalibriert werden. Es ergeben sich Korrekturfakturen von 
+$0.561\pm 0.035$ in vertikaler und $0.660\pm 0.004$ in horizontaler Richtung. In vertikaler Richtung spielen dabei Nebeneffekte wie thermischer Drift und Creep bei kleineren Rasterbereichen eine immer größer werdende Rolle.
 \section{Anhang}
 
 \subsection{Achsenkorrektur Konstanthöhenmodus}
