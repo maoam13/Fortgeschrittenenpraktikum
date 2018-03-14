@@ -25,9 +25,10 @@ def f(a,x):
 
 var,svar,chi, corr,out= p.fitte_bel_function(x,y,sy,f,[1.5])
 a,sa,b,sb,chi2,rest = p.lineare_regression(x,y,sy)
-"""
+
 plt.figure(2)
 ax = plt.subplot(111)
+ax.set_title("y-Achsen Korrektur")
 ax.set_xlabel("berechnete Strecke [A]")
 ax.set_ylabel("gemessene Strecke [A]")
 plt.figtext(0.3,0.65,'Modell: y = a*x'+ '\n'
@@ -59,3 +60,4 @@ ax.grid(linestyle='--')
 plt.errorbar(y,x,xerr = sy,fmt='.')
 xwerte = np.arange(0,50)
 plt.plot(xwerte,1./var[0]*xwerte)
+"""
