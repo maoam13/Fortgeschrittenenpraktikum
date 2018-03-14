@@ -69,7 +69,7 @@ abw = (np.array(st_vor) - np.array(st_nach))/np.sqrt(np.array(st_vor_std)**2 + n
 
 
 #Plotte Datensatz e mit automatischer Peakbestimmung
-e = 1
+e = 3
 plt.figure(1)
 x = np.array([(peaks_nach[e][2][0] + peaks_vor[e][2][0])/2, (peaks_nach[e][3][0] + peaks_vor[e][3][0])/2])
 y = steigung[e] * x + (peaks_nach[e][2][1] + peaks_vor[e][2][1])/2 - steigung[e] * (peaks_nach[e][2][0] + peaks_vor[e][2][0])/2
@@ -89,7 +89,7 @@ plt.title('Hoehenprofil bei I-Gain {0:5.0f}'.format(data_index[e] * 1000))
 
 #Plotte Datensatz e mit abgelesenen Peaks
 plt.figure(2)
-plt.figtext(0.15,0.65,
+plt.figtext(0.15,0.75,
             '$a_{vor}$= '+ str(np.round(st_vor[e],5)) + '$\pm$' + str(np.round(st_vor_std[e],5)) + '\n'
             +'$a_{rueck}$= '+ str(np.round(st_nach[e],5)) + '$\pm$' + str(np.round(st_nach_std[e],5)) + '\n')
 #            +'$\Sigma$= ' + str(np.round(abst[e], 5)))

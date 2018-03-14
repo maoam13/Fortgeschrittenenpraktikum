@@ -49,7 +49,7 @@ abw = (np.array(st_vor) - np.array(st_nach))/np.sqrt(np.array(st_vor_std)**2 + n
 
 
 #Plotte Datensatz e
-e = 1
+e = 6
 plt.figure(1)
 x = [(peaks_nach[e][0][0] + peaks_vor[e][0][0])/2, (peaks_nach[e][1][0] + peaks_vor[e][1][0])/2]
 y = [(peaks_nach[e][0][1] + peaks_vor[e][0][1])/2, (peaks_nach[e][1][1] + peaks_vor[e][1][1])/2]
@@ -69,7 +69,7 @@ plt.title('Hoehenprofil bei {0:5.0f} ms Messzeit'.format(data_index[e]))
 
 #Plotte Datensatz e mit abgelesenen Peaks
 plt.figure(2)
-plt.figtext(0.2,0.75,
+plt.figtext(0.6,0.65,
             '$a_{vor}$= '+ str(np.round(st_vor[e],5)) + '$\pm$' + str(np.round(st_vor_std[e],5)) + '\n'
             +'$a_{rueck}$= '+ str(np.round(st_nach[e],5)) + '$\pm$' + str(np.round(st_nach_std[e],5)) + '\n')
 #            +'$\Sigma$= ' + str(np.round(abst[e], 5)))
