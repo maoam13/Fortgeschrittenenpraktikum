@@ -348,7 +348,7 @@ def fitte_bel_function(x, y, ey, func, startwerte):
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
     corr = output.cov_beta
-    return output.beta, output.sd_beta, output.res_var#,corr,output
+    return output.beta, output.sd_beta, output.res_var,corr,output
 
 def Anpassung(x,y,xerr,yerr,func,par):
     ax1=plt.subplot(211)
