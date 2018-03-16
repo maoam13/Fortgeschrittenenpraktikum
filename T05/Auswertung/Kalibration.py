@@ -15,7 +15,7 @@ start_time=timeit.default_timer()
 
 data_v0 = np.genfromtxt("../Daten/GR2830/Quellspektrum v0_echt.ws5", delimiter = ',', skip_header = 1, skip_footer = 1)
 data_vinf = np.genfromtxt("../Daten/GR2830/Quellspektrum vinf.ws5", delimiter = ',', skip_header = 1, skip_footer = 1)
-data_x = np.arange(1023)
+data_x = np.arange(len(data_v0))
 
 sig_x = np.full(len(data_x), 1./np.sqrt(12))
 sig_v0 = np.sqrt(data_v0)
