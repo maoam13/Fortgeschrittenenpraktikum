@@ -43,14 +43,32 @@ Zudem soll das Einlinienspektrum von Eisen aufgenommen und der Extinktionswirkun
 Der Aufbau zur Mößbauerspektroskopie besteht aus einer von einem Transducer in Strahlrichtung bewegten $^{57}$Co Quelle, einem Absorber und einem Detektor. Die Quelle sendet $\gamma$-Strahlung verschiedener Energie aus, wobei hauptsächlich die \SI{14,4}{keV} Linie betrachtet wird. Der Detektor zählt einzelne $\gamma$-Quanten innerhalb eines Energieintervalls, wobei 1024 Kanäle zur Verfügung stehen. Der Transducer bewegt die Quelle sinusförmig.
 
 \section{Durchführung}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Spannung am Proportionalzählrohr & \SI{2}{kV} \\ 
+\hline 
+Messmodus & Pulshöhenanalyse (PHA-Modus) \\
+\hline 
+Messbereich im PHA-Modus & \SI{4,2}{V} - \SI{6,4}{V} \\
+\hline 
+\end{tabular} 
+\caption{Allgemeine Messeinstellungen.}
+\label{tab:Mess_Einstellungen}
+\end{table}
+
+Tabelle \ref{tab:Mess_Einstellungen} zeigt die verwendeten Messeinstellungen. Um bei für jede Messung den relevanten Energiebereich vermessen zu können, wurde die Transducer-Geschwindigkeit verändert. Die aus aus der Bewegung resultierende Dopplerverschiebung  ergibt eine Energieverschiebung, mit der die zu messenden Aufspaltungen aufgenommen werden können.
+
 \subsection{Kalibration}
-Da der Detektor die gemessenen Zählraten in der Energie auf 1024 Kanäle aufteilt, muss eine Kalibration dieser Kanäle auf die Energie erfolgen. Dazu wird die Geschwindigkeit der Bewegung der Quelle mit einem Michelson-Interferometer gemessen und daraus über den Dopplereffekt die Energie der so verschobenen Linie berechnet.
+Da der Detektor die gemessenen Zählraten in der Energie auf 1024 Kanäle aufteilt, muss eine Kalibration dieser Kanäle auf die Energie erfolgen. Dazu wird die Geschwindigkeit der Bewegung der Quelle mit einem Michelson-Interferometer gemessen und daraus über den Dopplereffekt die Energie der so verschobenen Linie berechnet. Diese Messungen wurden als Einzige mit dem Multi-Chanel-Scaler-Modus (MCS-Modus) aufgenommen. Diese Messung muss für jede neu eingestellte Transducer-Geschwindigkeit wiederholt werden.
 
 \subsection{Rauschmessung}
 Um auf eine mögliche Nullrate korrigieren zu können, wird eine Messung ohne Quelle und ohne Absorber (mit leerem Absorberhalter) aufgenommen.
 
 \subsection{Quellenspektrum}
-Für die Mößbauerspektroskopie muss zunächst die Mößbauerlinie gesucht werden. Dazu wird das gesamte Spektrum einmal mit und einmal ohne Bewegung der Quelle aufgenommen.
+Für die Mößbauerspektroskopie muss zunächst die Mößbauerlinie gesucht werden. Dazu wird das gesamte Spektrum einmal mit und einmal ohne Bewegung der Quelle aufgenommen. Für die Aufnahme des gesamten Quellspektrums wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mv} - \SI{10}{V}.
 
 \subsection{Extinktionswirkungsquerschnitt}
 Zur Bestimmung des Extinktionswirkungsquerschnitts $D_{ex}$ wird das Spektrum insgesamt vier mal aufgenommen:
@@ -64,38 +82,146 @@ Der Extinktionswirkungsquerschnitt kann dann gemäß
 \begin{equation}
 D_{ex} = R(v) \cdot \dfrac{Z(v = \infty)}{Z(v)} = \dfrac{Z(v = \infty)}{Z(ohne Absorber)}
 \end{equation}
-bestimmt werden, wobei Z die gesamte Zählrate ist.
+bestimmt werden, wobei Z die gesamte Zählrate ist. Für $v = \infty$ ist in der Realität eine Geschwindigkeit von wenigen mm/s ausreichend.
+
+\subsection{Einlinienspektrum}
+Das Einlinienspektrum wurde mit einem Absorber aus Stahl aufgenommen.
+
+\subsection{Magnetische Hyperfeinstrukturaufspaltung}
+Für die Vermessung der magnetischen Hyperfeinstrukturaufspaltung wurde das Spektrum mit einem Absorber aus reinem Eisen aufgenommen.
+
+\subsection{Elektrische Quadrupolaufspaltung}
+Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cdot$ 7H$_2$O-Absorber verwendet. Hier ist im Gegensatz zu den anderen Messungen nur der Linienabstand und nicht die Linienform entscheidend.
+
+\section{Ergebnisse}
+\subsection{Kalibration}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Quellspektrum_rohdaten.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung des Quellspektrums.}
+\label{fig:KalibrationRohdaten_Beispiel}
+\end{figure}
 
 \begin{table}
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline 
-Bereichgröße & (75,23 nm)$^2$ \\ 
+Messung & Nulldurchgang 1 [ch] & Nulldurchgang 2 [ch] \\ 
 \hline 
-Zeit pro Linie & 0,2 s \\
+Quellspektrum & 255 & 767 \\
 \hline 
-Tunnelspannung & 450 mV \\ 
+Extinktionswirkungsquerschnitt & 255 & 767 \\
 \hline 
-Messpunkte pro Linie & 256 \\
+Einlinienspektrum & 256 & 766 \\
 \hline 
-Sollwert Tunnelstrom & 1 nA \\
+Hyperfeinstrukturaufspaltung & 255 & 766 \\
+\hline 
+Quadrupolaufspaltung & 255 & 767 \\
 \hline 
 \end{tabular} 
-\caption{Einstellungen der Messparameter bei Vermessung der Goldprobe. Bei dieser Messreihe wurde der I-Gain zwischen 1000 und 11000 verändert.}
-\label{tab:IGain_Einstellungen}
+\caption{Abgelesene Nulldurchgänge bei den Geschwindigkeitsmessungen.}
+\label{tab:Kalibration_Nulldurchgänge}
 \end{table}
 
-%\begin{figure}
-%\centering
-%\includegraphics[scale=0.8]{Bilder/Anhang/IGain/3000_IGain_vor.jpg}
-%\includegraphics[scale=0.8]{Bilder/Anhang/IGain/3000_IGain_vor_Skala.jpg}
-%\caption{Bild der z-Komponente bei Vermessung der Goldprobe mit einem I-Gain von 3000 in der Vorwärtsrichtung. Der Balken quer im Bild verbildlicht die Stelle, aus der das Höhenprofil entnommen wurde.}
-%\label{fig:Gold_IGain_Beispiel}
-%\end{figure}
+Abbildung \ref{fig:KalibrationRohdaten_Beispiel} zeigt beispielhaft das Messergebnis zur Geschwindigkeitsmessung. Da der Transducer die Quelle sinusförmig bewegt und die Messung der Hell-Dunkel-Übergänge nur Beträge und keine Vorzeichen misst, handelt es sich um eine Kosinus-Betragsfunktion. Für die Kalibration wird allerdings die reine Kosinusfunktion benötigt, daher werden die Daten zwischen den Nulldurchgängen mit (-1) multipliziert. Die zu diesem Zweck abgelesenen Nulldurchgänge sind in Tabelle \ref{tab:Kalibration_Nulldurchgänge} aufgelistet. \\
+An die so korrigierten Daten wird dann eine Kosinusfunktion der Form
+\begin{equation*}
+n(\textrm{ch}) = A \cdot \cos (\omega \cdot \textrm{ch})
+\end{equation*}
+angepasst. Als Fehler für die Anpassung wurde für die Kanalaufteilung eine Gleichverteilung zwischen den Kanälen angenommen. Für den Fehler auf die counts wurde ein möglichst kleiner Wert verwendet, für den der Fit immer noch stabil ist. Für die Anpassungen wurden daher folgende Fehler verwendet:
+\begin{equation*}
+\sigma _{counts} = 2
+\end{equation*}
+\begin{equation*}
+\sigma _\textrm{ch} = \dfrac{1}{\sqrt{12}}
+\end{equation*}
+Die korrigierten Daten und die Anpassung sind für dasselbe Beispiel in Abbildung \ref{fig:Kalibration_Beispiel} gezeigt. Die Ergebnisse der Anpassungen sind in Tabelle \ref{tab:Kalibration_Fitergebnisse} dargestellt. \\
+Aus der Anpassung kann die dem Kanal zugehörige Momentangeschwindigkeit und daraus mit dem Dopplereffekt die Energie bestimmt werden:
+\begin{equation*}
+v(\textrm{ch}) = \dfrac{n(\textrm{ch}) \cdot 1024}{3160.56 \cdot t \textrm{[s]}} \textrm{[mm/s]}
+\end{equation*}
+\begin{equation*}
+E(v) = E_0 \cdot \left(1 + \dfrac{v}{c}\right)
+\end{equation*}
+Wobei $E_0 = \SI{14,4}{keV}$ die Energie der verwendeten Linie ist.
 
-\section{Ergebnisse}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Messung & Amplitude A & Frequenz $\omega$ & $\chi ^2$/ndof \\ 
+\hline 
+Quellspektrum & 994,96 $\pm$ 0,29 & 0,00615257 $\pm$ 5,8 $\cdot 10^{-7}$ & 8,918 \\
+\hline 
+Extinktionswirkungsquerschnitt & 1053,28 $\pm$ 0,3 & 0,00615017 $\pm$ 5,7 $\cdot 10^{-7}$ & 9,394  \\
+\hline 
+Einlinienspektrum & 387,30 $\pm$ 0,22 & 0,00615324 $\pm$ 1,0 $\cdot 10^{-6}$ & 5,768  \\
+\hline 
+Hyperfeinstrukturaufspaltung & 790,01 $\pm$ 0,29 & 0,00615317 $\pm$ 7 $\cdot 10^{-7}$ & 9,554  \\
+\hline 
+Quadrupolaufspaltung & 471,48 $\pm$ 0,18 & 0,00615197 $\pm$ 6,8 $\cdot 10^{-7}$ & 3,835 \\
+\hline 
+\end{tabular} 
+\caption{Ergebnisse der Anpassungen an die Daten der Kalibrationsmessungen.}
+\label{tab:Kalibration_Fitergebnisse}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Quellspektrum.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung des Quellspektrums.}
+\label{fig:Kalibration_Beispiel}
+\end{figure}
+
+\subsection{Rauschmessung}
+\subsection{Quellenspektrum}
+\subsection{Extinktionswirkungsquerschnitt}
+\subsection{Einlinienspektrum}
+\subsection{Magnetische Hyperfeinstrukturaufspaltung}
+\subsection{Elektrische Quadrupolaufspaltung}
 
 \section{Fazit}
+
+
+\newpage
+\section{Anhang}
+\subsection{Kalibration}
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Quellspektrum.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung des Quellspektrums.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Extinktion.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung des Extinktionswirkungsquerschnitts.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Einlinien.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung des Einlinienspektrums.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Hyperfein.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung der magnetischen Hyperfeinstrukturaufspaltung.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Kalibration/Quadrupol.png}
+\caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung der elektrischen Quadrupolaufspaltung.}
+\end{figure}
+
+\subsection{Quellenspektrum}
+\subsection{Extinktionswirkungsquerschnitt}
+\subsection{Einlinienspektrum}
+\subsection{Magnetische Hyperfeinstrukturaufspaltung}
+\subsection{Elektrische Quadrupolaufspaltung}
 
 
 \end{document}
