@@ -64,7 +64,7 @@ Tabelle \ref{tab:Mess_Einstellungen} zeigt die verwendeten Messeinstellungen. Um
 \subsection{Kalibration}
 Da der Detektor die gemessenen Zählraten in der Energie auf 1024 Kanäle aufteilt, muss eine Kalibration dieser Kanäle auf die Energie erfolgen. Dazu wird die Geschwindigkeit der Bewegung der Quelle mit einem Michelson-Interferometer gemessen und daraus über den Dopplereffekt die Energie der so verschobenen Linie berechnet. Diese Messungen wurden als Einzige mit dem Multi-Chanel-Scaler-Modus (MCS-Modus) aufgenommen. Diese Messung muss für jede neu eingestellte Transducer-Geschwindigkeit wiederholt werden. Für diese Messungen wurde der Timer auf \SI{45}{s} gestellt.
 
-\subsection{Rauschmessung}
+\subsection{Untergrundmessung}
 Um auf eine mögliche Nullrate korrigieren zu können, wird eine Messung ohne Quelle und ohne Absorber (mit leerem Absorberhalter) aufgenommen. Für die Aufnahme des Untergrunds wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mv} - \SI{10}{V} eingestellt. Der Timer wurde auf \SI{10}{min} eingestellt.
 
 \subsection{Extinktionswirkungsquerschnitt}
@@ -139,7 +139,7 @@ angepasst. Als Fehler für die Anpassung wurde für die Kanalaufteilung eine Gle
 Die korrigierten Daten und die Anpassung sind für dasselbe Beispiel in Abbildung \ref{fig:Kalibration_Beispiel} gezeigt. Die Ergebnisse der Anpassungen sind in Tabelle \ref{tab:Kalibration_Fitergebnisse} dargestellt. \\
 Aus der Anpassung kann die dem Kanal zugehörige Momentangeschwindigkeit und daraus mit dem Dopplereffekt die Energie bestimmt werden:
 \begin{equation*}
-v(\textrm{ch}) = \dfrac{n(\textrm{ch}) \cdot 1024}{3160.56 \cdot t \textrm{[s]}} \textrm{[mm/s]}
+v(\textrm{ch}) = \dfrac{n(\textrm{ch}) \cdot 1024}{3160.56 \cdot t \textrm{[s]}} \, \textrm{[mm/s]}
 \end{equation*}
 \begin{equation*}
 E(v) = E_0 \cdot \left(1 + \dfrac{v}{c}\right)
@@ -174,11 +174,11 @@ Quadrupolaufspaltung & 471,48 $\pm$ 0,18 & 0,00615197 $\pm$ 6,8 $\cdot 10^{-7}$ 
 \label{fig:Kalibration_Beispiel}
 \end{figure}
 
-\subsection{Rauschmessung}
+\subsection{Untergrundmessung}
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Extinktion/Rauschmessung.png}
-\caption{Rauschmessung ohne Quelle und ohne Absorber zur Korrektur bei den Messungen zum Extinktionswirkungsquerschnitt.}
+\caption{Untergrundmessung ohne Quelle und ohne Absorber zur Korrektur bei den Messungen zum Extinktionswirkungsquerschnitt.}
 \label{fig:Extinktion_Rauschmessung}
 \end{figure}
 
@@ -188,7 +188,7 @@ Abbildung \ref{fig:Extinktion_Rauschmessung} zeigt das ohne Quelle und ohne Abso
 \end{equation*}
 Die Gesamtzahl der gemessenen Ereignisse ist:
 \begin{equation*}
-Z_{Rauschen} = \dfrac{2175 \pm 46,6}{\SI{10}{min}}
+Z_{Untergrund} = \dfrac{2175 \pm 47}{\SI{10}{min}}
 \end{equation*}
 
 \subsection{Extinktionswirkungsquerschnitt}
@@ -207,6 +207,7 @@ Z_{Rauschen} = \dfrac{2175 \pm 46,6}{\SI{10}{min}}
 \end{figure}
 
 Abbildung \ref{fig:Extinktion_ohneAbsorber} zeigt das gemessene Spektrum ohne Absorber und Abbildung \ref{fig:Extinktion_Stahl} beispielhaft für die Messung mit dem Stahlabsorber. \\
+Da die Messungen des Untergrunds, die Messung ohne Absorber und die Messungen mit den Absorbern alle gleich lang sind, kürzt sich die Messzeit bei der Berechnung des Extinktionswirkungsquerschnitts raus, sodass es ausreicht die Ereigniszahl zu betrachten.\\ 
 Zur Bestimmung des Extinktionswirkungsquerschnitts wird die Zählrate des gesamten Spektrums integriert bzw. wegen der Kanalauflösung aufsummiert. Auch hier wird der Fehler als 
 \begin{equation*}
 \sigma _{n} = \sqrt{n}
@@ -227,12 +228,23 @@ Tabelle \ref{tab:Extinktion_Ergebnisse} zeigt die gemessenen Zählraten und die 
 \hline 
 Absorber & Zählrate $n_A$ & Extinktionswirkungsquerschnitt $D_{ex}$ \\ 
 \hline 
-Stahl & - & -   \\
+Stahl & 5902529 & 0,32408 $\pm$ 0,00015 \\
 \hline 
+Reines Eisen & 5746105 & 0,31549 $\pm$ 0,00015 \\
+\hline
+Eisensulfat & 7385135 & 0,40552 $\pm$ 0,00018 \\
+\hline
 \end{tabular} 
 \caption{Gemessene Zählraten und daraus berechnete Extinktionswirkungsquerschnitte.}
 \label{tab:Extinktion_Ergebnisse}
 \end{table}
+
+Vergleicht man das Spektrum ohne Absorber (Abb. \ref{fig:Extinktion_ohneAbsorber}) und das Spektrum mit Absorber (bspw. Abb. \ref{fig:Extinktion_Stahl}), fallen folgende Dinge auf:
+\begin{enumerate}
+\item Der breite Peak bei ca. Chanel 500 behält mit Einfügen eines Absorber seine Form, die Höhe wird nur geringer
+\item Der scharfe Peak bei ca. Chanel 1000 bleibt mit Einfügen eines Absorber in Form und Höhe unverändert
+\item Im Spektrum ohne Absorber gibt bei ca. Chanel 200 einen scharfen Peak, der in den Spektren mit Absorber gar nicht zu sehen ist
+\end{enumerate}
 
 \subsection{Quellenspektrum}
 \subsection{Einlinienspektrum}
@@ -275,14 +287,38 @@ Stahl & - & -   \\
 \caption{Aufnahme zur Geschwindigkeits- und Energiekalibration vor der Messung der elektrischen Quadrupolaufspaltung.}
 \end{figure}
 
-\subsection{Rauschmessung}
+\subsection{Untergrundmessung}
 \begin{figure} [H]
 \centering
 \includegraphics[scale=0.8]{Bilder/Extinktion/Rauschmessung.png}
-\caption{Rauschmessung ohne Quelle und ohne Absorber zur Korrektur bei den Messungen zum Extinktionswirkungsquerschnitt.}
+\caption{Untergrundmessung ohne Quelle und ohne Absorber zur Korrektur bei den Messungen zum Extinktionswirkungsquerschnitt.}
 \end{figure}
 
 \subsection{Extinktionswirkungsquerschnitt}
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Extinktion/OhneAbsorber.png}
+\caption{Messung des Spektrums ohne Absorber zur Bestimmung des Extinktionwirkungsquerschnitts.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Extinktion/Stahl.png}
+\caption{Messung des Spektrums zur Bestimmung des Extinktionwirkungsquerschnitts von Stahl.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Extinktion/Eisen.png}
+\caption{Messung des Spektrums zur Bestimmung des Extinktionwirkungsquerschnitts von reinem Eisen.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Extinktion/Eisensulfat.png}
+\caption{Messung des Spektrums zur Bestimmung des Extinktionwirkungsquerschnitts von FeSO$_4$ $\cdot$ 7H$_2$O.}
+\end{figure}
+
 \subsection{Quellenspektrum}
 \subsection{Einlinienspektrum}
 \subsection{Magnetische Hyperfeinstrukturaufspaltung}
