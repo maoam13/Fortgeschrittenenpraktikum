@@ -141,10 +141,17 @@ Aus der Anpassung kann die dem Kanal zugehörige Momentangeschwindigkeit und dar
 \begin{equation*}
 v(\textrm{ch}) = \dfrac{n(\textrm{ch}) \cdot 1024}{3160.56 \cdot t \textrm{[s]}} \, \textrm{[mm/s]}
 \end{equation*}
+Wobei die Hell-Dunkel-Wechsel $n(\textrm{ch})$ aus der Anpassung bestimmt werden.
 \begin{equation*}
 E(v) = E_0 \cdot \left(1 + \dfrac{v}{c}\right)
 \end{equation*}
-Wobei $E_0 = \SI{14,4}{keV}$ die Energie der verwendeten Linie ist.
+Wobei $E_0 = \SI{14,4}{keV}$ die Energie der verwendeten Linie ist. Die Fehler aus den Anpassungen pflanzen sich gaußisch auf die Geschwindigkeit und die Energie fort:
+\begin{equation*}
+\sigma _v = \dfrac{1024}{3160.56 \cdot t \textrm{[s]}} \cdot \sqrt{\left( \sigma _A \cdot \cos (\omega \cdot \textrm{ch}) \right)^2 + \left( \sigma _\omega \cdot \textrm{ch} \cdot A \cdot \sin (\omega \cdot \textrm{ch}) \right)^2}
+\end{equation*}
+\begin{equation}
+\sigma _E = \sigma _v \cdot \dfrac{E_0}{c}
+\end{equation}
 
 \begin{table}
 \centering

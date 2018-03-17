@@ -34,7 +34,7 @@ def Kalibration(i):
     A, sig_A, chiq = AM.fitte_bel_function(data_x, data_y, sig_x, sig_y, cos, startwerte)
     c = 300000 * 10**6
     v = cos(A, data_x) * 1024/(45 * 3160.56)
-    sig_v = 1024./(45 * 3160.56) * np.sqrt((sig_A[0] * np.cos(A[1] * data_x))**2 + (sig_A[1] * A[0] * A[1] * np.sin(A[1] * data_x))**2)    
+    sig_v = 1024./(45 * 3160.56) * np.sqrt((sig_A[0] * np.cos(A[1] * data_x))**2 + (sig_A[1] * A[0] * data_x * np.sin(A[1] * data_x))**2)    
     E = E0 * (1 + v/c)
     sig_E = sig_v * E0/c
     return E, sig_E, v, sig_v
