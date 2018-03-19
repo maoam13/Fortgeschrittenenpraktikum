@@ -80,15 +80,11 @@ Zur Bestimmung des Extinktionswirkungsquerschnitts $D_{ex}$ wird das Spektrum in
 \item mit einem FeSO$_4$ $\cdot$ 7H$_2$O-Absorber
 \item ohne Absorber 
 \end{enumerate} 
-Um das gesamte Spektrum aufzunehmen, wurde der Messbereich auf \SI{10}{mV} - \SI{10}{V} gewählt. Jede dieser Messungen dauerte \SI{10}{min}. Die Durchlasswahrscheinlichkeit kann dann gemäß
-\begin{equation*}
+Um das gesamte Spektrum aufzunehmen, wurde der Messbereich auf \SI{10}{mV} - \SI{10}{V} gewählt. Jede dieser Messungen dauerte \SI{10}{min}. Der Extinktionswirkungsquerschnitt kann dann gemäß
+\begin{equation}
 D_{ex} = R(v) \cdot \dfrac{Z(v = \infty)}{Z(v)} = \dfrac{Z(v = \infty)}{Z(\textrm{ohne Absorber})}
-\end{equation*}
-bestimmt werden, wobei Z die gesamte Zählrate ist. Für $v = \infty$ ist in der Realität eine Geschwindigkeit von wenigen mm/s ausreichend. Der Extinktionswirkungsquerschnitt $\sigma _{ex}$ berechnet sich dann über
-\begin{equation*}
-\sigma _{ex} = \dfrac{- \ln(D_{ex})}{d \cdot n}
-\end{equation*}
-mit der Absorberdicke $d$ und der Atomdichte des Absorbers $n$.
+\end{equation}
+bestimmt werden, wobei Z die gesamte Zählrate ist. Für $v = \infty$ ist in der Realität eine Geschwindigkeit von wenigen mm/s ausreichend.
 
 \subsection{Einlinienspektrum}
 Das Einlinienspektrum wurde mit einem Absorber aus Stahl aufgenommen. Diese Messung lief \SI{1}{h}. Hier wurde eine Maximalgeschwindigkeit von c.a 3 mm/s eingestellt.
@@ -231,52 +227,21 @@ Z_{Untergrund} = \dfrac{2175 \pm 47}{\SI{10}{min}}
 \label{fig:Quellspektrum}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/Spektrum_abgelesene_Peaks.png}
-\caption{Gemessenes Quellspektrum mit abgelesenen Peaks.}
-\label{fig:Quellspektrum_abgelesenePeaks}
-\end{figure}
-
 Abbildung \ref{fig:Quellspektrum} zeigt die Messungen des Quellspektrums für Transducergeschwindigkeit $v = 0$ und $v = \infty$ übereinandergelegt (wobei für $v = \infty$ in der Praxis einige mm/s eingestellt wurde). Durch das Übereinanderlegen der beiden gemessenen Spektren ist der Mößbauerpeak deutlich zu erkennen, da dies die einzige Stelle des Spektrums ist, bei der die beiden Messergebnisse voneinander abweichen. Für die folgenden Vermessungen der Energieaufspaltungen wurde daher in diesen Peak reingezoomt.\\
-Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Außerdem entsteht ein Peak, wenn je ein $\gamma$ von beiden dieser Linien gleichzeitig gemessen werden, der theoretisch bei $E_{Summe} = E_{Moessbauer} + E_{K_{\alpha}} = \SI{21,5}{keV}$  liegt. Dieser entspricht dem Peak links im Spektrum. Die abgelesenen Peakpositionen sind in Abbildung \ref{fig:Quellspektrum_abgelesenePeaks} gezeigt, wobei für die weitere Auswertung nur die ch-Koordinate relevant ist. \\
-Die Peakpositionen und die zugehörigen Energien sind in Tabelle \ref{tab:Quellspektrum_PeakpositionenAlpha} zusammengefasst. Als Fehler auf die Peakposition wurde eine Gleichverteilung angenommen. Auf die Energie wurde der Digitalisierungsfehler angenommen. An diese Punkte kann nun eine lineare Funktion der Form
+Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Die abgelesenen Peakpositionen sind:
+\begin{equation*}
+\textrm{ch} _{K_{\alpha}} = 97 \quad \textrm{und} \quad \textrm{ch} _{Moessbauer} = 546 
+\end{equation*}
+Sodass sich unter Annahme eines linearen Zusammenhangs zwischen Energie und Kanal
 \begin{equation*}
 E = a \cdot \textrm{ch} + b
 \end{equation*}
-angepasst werden. Das Ergebnis dieser Anpassung ist in Abbildung \ref{fig:Quellspektrum_linRegAlpha} gezeigt.\\
-Wenn man für den Peak links nicht die $K_{\alpha}$-Linie, sondern die $K_{\beta}$-Linie bei $E_{K_{\beta}} = \SI{6,4}{keV}$ und entsprechend für den Peak links $E_{Summe} = E_{Moessbauer} + E_{K_{\beta}} = \SI{20,8}{keV}$ annimmt, erhält man eine wesentlich bessere Anpassung, wie in Abbildung \ref{fig:Quellspektrum_linRegBeta} zu erkennen ist. Allerdings ist dies dennoch sehr wahrscheinlich eine falsche Annahme, da die $K_{\alpha}$-Linie deutlich größer ist als die $K_{\beta}$-Linie, sodass, falls der Peak links tatsächlich die $K_{\beta}$-Linie wäre, man im Spektrum die $K_{\alpha}$-Linie als höheren Peak sehen müsste. Da dies nicht der Fall ist, ist davon auszugehen, dass es sich bei dem Peak links um die $K_{\alpha}$-Linie handelt und die schlechtere Anpassung die richtige Kalibration ist.
+die Parameter ergeben zu:
+\begin{equation*}
+a = \SI{0,0163}{keV/ch} \qquad b = \SI{5,5}{keV}
+\end{equation*}
+Der scharfe Peak rechts im Spektrum, der abgelesen ca. bei Kanal 996 liegt, liegt damit bei einer Energie von ca. \SI{21,7}{keV}. Diesen Peak konnten wir nicht zuordnen. Die Photopeaks von Cobalt liegen bei \SI{14,4}{keV}, \SI{121,9}{keV} und \SI{136,3}{keV}. Die zugehörigen Compton-Kanten bei \SI{0,8}{keV}, \SI{39,4}{keV} und \SI{47,4}{keV}, die Rückstoßpeaks entsprechend bei \SI{13,2}{keV}, \SI{82,5}{keV} und \SI{88,9}{keV}. Diese Phänomene können den Peak also nicht erklären. Fremdstrahlung, also $\gamma$-Strahlung aus einer anderen Quelle, kann es auch nicht sein, denn dann hätte man den Peak in der Untergrundmessung auch sehen müssen.  
 
-\begin{table}
-\centering
-\begin{tabular}{|c|c|}
-\hline 
-Energie [keV] & Peakposition \\ 
-\hline 
-7,1 $\pm$ 0,03 & 97 $\pm$ 4,0 \\
-\hline 
-14,4 $\pm$ 0,03 & 546 $\pm$ 9,8 \\
-\hline
-21,5 $\pm$ 0,03 & 996 $\pm$ 4,6 \\
-\hline
-\end{tabular} 
-\caption{Abgelesene Peakpositionen und zugeordnete Energien.}
-\label{tab:Quellspektrum_PeakpositionenAlpha}
-\end{table}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_alpha.png}
-\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\alpha}$-Linie von Eisen.}
-\label{fig:Quellspektrum_linRegAlpha}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_beta.png}
-\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\beta}$-Linie von Eisen.}
-\label{fig:Quellspektrum_linRegBeta}
-\end{figure}
 
 \subsection{Extinktionswirkungsquerschnitt}
 \begin{figure}
@@ -294,78 +259,77 @@ Energie [keV] & Peakposition \\
 \end{figure}
 
 Abbildung \ref{fig:Extinktion_ohneAbsorber} zeigt das gemessene Spektrum ohne Absorber und Abbildung \ref{fig:Extinktion_Stahl} beispielhaft für die Messung mit dem Stahlabsorber. \\
-Da die Messungen des Untergrunds, die Messung ohne Absorber und die Messungen mit den Absorbern alle gleich lang sind, kürzt sich die Messzeit bei der Berechnung der Durchlasswahrscheinlichkeit $D_{ex}$ raus, sodass es ausreicht die Ereigniszahl zu betrachten.\\ 
-Zur Bestimmung der Durchlasswahrscheinlichkeit wird die Zählrate des gesamten Spektrums integriert bzw. wegen der Kanalauflösung aufsummiert. Auch hier wird der Fehler als 
+Da die Messungen des Untergrunds, die Messung ohne Absorber und die Messungen mit den Absorbern alle gleich lang sind, kürzt sich die Messzeit bei der Berechnung des Extinktionswirkungsquerschnitts raus, sodass es ausreicht die Ereigniszahl zu betrachten.\\ 
+Zur Bestimmung des Extinktionswirkungsquerschnitts wird die Zählrate des gesamten Spektrums integriert bzw. wegen der Kanalauflösung aufsummiert. Auch hier wird der Fehler als 
 \begin{equation*}
 \sigma _{n} = \sqrt{n}
 \end{equation*}
-abgeschätzt. Zur Berechnung der Durchlasswahrscheinlichkeit müssen sowohl die Zählrate mit dem jeweiligen Absorber $n_A$ als auch die Zählrate ohne Absorber $n_O$ um die Untergrundmessung $n_U$ korrigiert werden, sodass sich die Durchlasswahrscheinlichkeit insgesamt bestimmt zu:
+abgeschätzt. Zur Berechnung des Extinktionswirkungsquerschnitts müssen sowohl die Zählrate mit dem jeweiligen Absorber $n_A$ als auch die Zählrate ohne Absorber $n_O$ um die Untergrundmessung $n_U$ korrigiert werden, sodass sich die Durchlasswahrscheinlichkeit insgesamt bestimmt zu:
 \begin{equation*}
 D_{ex} = \dfrac{n_A - n_U}{n_O - n_U}
 \end{equation*}
-Damit bestimmt sich der Fehler mit gaußscher Fehlerfortpflanzung und der Annahme, dass die Fehler auf die Zählraten immer die Wurzel der Zählraten sind:
-\begin{equation*}
-\sigma _{D_{ex}} = D_{ex} \cdot \sqrt{ \left( \dfrac{\sqrt{n_O + n_U}}{n_O - n_U} \right)^2 +  \left( \dfrac{\sqrt{n_A + n_U}}{n_A - n_U} \right)^2}
-\end{equation*}
-Daraus berechnet sich der Extinktionswirkungsquerschnitt über
-\begin{equation*}
-\sigma _{ex} = \dfrac{- \ln(D_{ex})}{d \cdot n}
-\end{equation*}
-und der Fehler darauf zu:
-\begin{equation*}
-\sigma _{\sigma _{ex}} = \sqrt{\left( \dfrac{\sigma _{D_{ex}}}{D_{ex} \cdot d \cdot n} \right)^2 + \left( \dfrac{\sigma _n \cdot \ln(D_{ex})}{d \cdot n^2} \right)^2 + \left( \dfrac{\sigma _d \cdot \ln(D_{ex})}{d^2 \cdot n} \right)^2}
-\end{equation*}
+Damit bestimmt sich der Fehler mit gaußscher Fehlerfortpflanzung und der Annahme, dass die Fehler auf die Zählraten immer die Wurzel der Zählraten sind.
+Tabelle \ref{tab:Extinktion_wirkungsquerschnitt} zeigt die gemessenen Zählraten und die daraus berechneten Durchlasswahrscheinlichkeiten. Mithilfe der Atomaren Dichte n und der Absorberdicke d kann man nun den Wirkungsquerschnitt pro Atom über \begin{equation}
+\sigma_{ex} = \dfrac{-ln(D_{ex})}{d\cdot n}
+\end{equation}
+berechnen. Der Fehler pflanzt sich weiterhin gaußisch fort. Die dazu benötigten Daten waren für Stahl in der Versuchsanleitung angegeben. Für die anderen beiden Stoffe berechnet sich die atomare Dichte aus dem Quotienten von Dichte und Molekül-/Atommasse\footnote{Quelle:https://de.wikipedia.org}. Alle Ergebnisse sind in Tabelle \ref{tab:Extinktion_ergebnis} aufgelistet.\\
 
 \begin{table}
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline 
-Absorber & Atomdichte $\left[ \dfrac{10^{22}}{\SI{1}{cm^3}} \right]$ \\ 
+Absorber & Zählrate $n_A$ & Durchlasswahrscheinlichkeit $D_{ex}$ \\ 
 \hline 
-Stahl & 8,4 $\pm$ $\dfrac{0,1}{\sqrt{12}}$ \\
+Stahl & 5902529 & 0,32408 $\pm$ 0,00015 \\
 \hline 
-Reines Eisen & 8,6 $\pm$ $\dfrac{0,1}{\sqrt{12}}$ \\
+Reines Eisen & 5746105 & 0,31549 $\pm$ 0,00015 \\
 \hline
-Eisensulfat & 0,6 $\pm$ $\dfrac{0,1}{\sqrt{12}}$ \\
+Eisensulfat & 7385135 & 0,40552 $\pm$ 0,00018 \\
 \hline
 \end{tabular} 
-\caption{Atomdichten der Absorber. Der Fehler entstammt dem Digitalisierungfehler.}
-\label{tab:Extinktion_Atomdichten}
+\caption{Gemessene Zählraten und daraus berechnete Extinktionswirkungsquerschnitte.}
+\label{tab:Extinktion_wirkungsquerschnitt}
 \end{table}
-Für die Dicke wurde der für Stahl angegebene Wert von $d = \$SI{25}{\mu m}$ auf alle Absorber mit Digitalisierungsfehler angewandt. Die Literaturwerte der Atomdichten sind in Tabelle \ref{tab:Extinktion_Atomdichten} aufgelistet. \\
-
-Tabelle \ref{tab:Extinktion_Ergebnisse} zeigt die gemessenen Zählraten und die daraus berechneten Durchlasswahrscheinlichkeiten und Extinktionswirkungsquerschnitte.\\
-
 
 \begin{table}
 \centering
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline 
-Absorber & Zählrate $n_A$ & $D_{ex}$ & $\sigma _{ex}$ [$10^{-22} \si{cm^2}$] \\ 
+Absorber & Dichte[g/mol] & Molekülmasse[g] & atom. Dichte$[cm^{-3}]$ & Dicke$[\mu m]$ & $\sigma_{ex}[pm^{2}]$ \\ 
 \hline 
-Stahl & 5902529 & 0,32408 $\pm$ 0,00015 & 5,365 $\pm$ 0,065 \\
+Stahl & - & - & $8.4\cdot10^{22}$ & 25 & $0.531\pm 0.002$\\
 \hline 
-Reines Eisen & 5746105 & 0,31549 $\pm$ 0,00015 & 5,365 $\pm$ 0,065 \\
+Reines Eisen & 7.874 & $9.27\cdot10^{-23}$ & $8.49\cdot10^{22}$& 25 & $0.552\pm 0.002$\\
 \hline
-Eisensulfat & 7385135 & 0,40552 $\pm$ 0,00018 & 60,2 $\pm$ 3,0 \\
+Eisensulfat & 1.89 & $4.62\cdot10^{-22}$ & $0.41\cdot10^{22}$& 25 & $8.818\pm 0.043$\\
 \hline
 \end{tabular} 
-\caption{Gemessene Zählraten und daraus berechnete Durchlasswahrscheinlichkeiten und Extinktionswirkungsquerschnitte.}
-\label{tab:Extinktion_Ergebnisse}
+\caption{Gemessene Zählraten und daraus berechnete Extinktionswirkungsquerschnitte pro Atom.}
+\label{tab:Extinktion_ergebnis}
 \end{table}
 
-Vergleicht man das Spektrum ohne Absorber (Abb. \ref{fig:Extinktion_ohneAbsorber}) und das Spektrum mit Absorber (bspw. Abb. \ref{fig:Extinktion_Stahl}), fallen folgende Dinge auf:
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Extinktion/alles.png}
+\caption{Vergleich der aufgenommenen Spektren.}
+\label{fig:Extinktion_alles}
+\end{figure}
+
+
+
+Vergleicht man das Spektrum ohne Absorber und die Spektren mit Absorber (Abbildung \ref{fig:Extinktion_alles}), fallen folgende Dinge auf:
 \begin{enumerate}
-\item Der breite Peak bei ca. Chanel 500 behält mit Einfügen eines Absorbers seine Form, die Höhe wird nur geringer
-\item Der scharfe Peak bei ca. Chanel 1000 bleibt mit Einfügen eines Absorbers in Form und Höhe unverändert
-\item Im Spektrum ohne Absorbers gibt bei ca. Chanel 200 einen scharfen Peak, der in den Spektren mit Absorber gar nicht zu sehen ist
+\item Der breite Peak bei ca. Channel 500 behält mit Einfügen eines Absorbers seine Form, die Höhe wird nur geringer
+\item Der scharfe Peak bei ca. Channel 1000 bleibt mit Einfügen eines Absorbers in Form und Höhe unverändert
+\item Im Spektrum ohne Absorbers gibt bei ca. Channel 200 einen scharfen Peak, der in den Spektren mit Absorber gar nicht zu sehen ist
 \end{enumerate}
 Diese Phänomene werden einzeln betrachtet:
 \begin{enumerate}
-\item Ein Abschwächen der Strahlung mit Einfügen eines Absorbers ist erwartet, auch dass die Form der Peaks dabei gleich bleibt
-\item Der Peak, der in Form und Höhe unverändert bleibt, taucht in der Untergrundmessung nicht auf, d.h. es handelt sich um Strahlung, die von der Quelle kommt und unverändert durch alle drei Absorber geht. Wie das genau zustande kommt, ist unklar
-\item Der Peak, der nur in dem Spektrum ohne Absorber zu sehen ist, stammt vermutlich von der Elektronen-Strahlung aus der Inneren Konversion. Ein solcher müsste knapp unter dem Mößbauerpeak liegen, da die kinetische Energie dieser Elektronen der Differenz zwischen der Energie des Mößbauerpeaks und der Bindungsenergie des Hüllenelektrons entspricht
+\item Ein Abschwächen der Strahlung mit Einfügen eines Absorbers ist erwartet, auch dass die Form der Peaks dabei gleich bleibt.
+\item Der Peak, der in Form und Höhe unverändert bleibt, taucht in der Untergrundmessung nicht auf, d.h. es handelt sich um Strahlung, die von der Quelle kommt und unverändert durch alle drei Absorber geht.
+\item Der Peak, der nur in dem Spektrum ohne Absorber zu sehen ist, stammt vermutlich von der Elektronen-Strahlung aus der Inneren Konversion. Ein solcher müsste knapp unter dem Mößbauerpeak liegen, da die kinetische Energie dieser Elektronen der Differenz zwischen der Energie des Mößbauerpeaks und der Bindungsenergie des Hüllenelektrons entspricht.
 \end{enumerate}
+
 
 \subsection{Einlinienspektrum}
 
@@ -899,7 +863,7 @@ Aus der Kalibration ergab sich, dass die verwendeten Maximalgeschwindigkeiten de
 \\
 Im Quellenspektrum konnte der Mößbauerpeak identifiziert werden. Außerdem konnte festgestellt werden, dass der untersuchte Bereich des Spektrums bis c.a \SI{21}{keV} geht. In diesem Bereich konnte außerdem noch ein Röntgenpeak von Eisen identifiziert werden.\\
 \\
-Die Durchlasswahrscheinlichkeiten von den 3 untersuchten Absorbern konnten zu $D_{Stahl} = 0,32408 \pm 0,00015$, $D_{Eisen} = 0,31549 \pm 0,00015$ und $D_{Eisensulfat} = 0,40552 \pm 0,00018$ bestimmt werden. Die dazugehörigen Extinktionsirkungsquerschnitte sind $\sigma_{Stahl} = \SI{536,5 \pm 6,5}{b}$, $\sigma_{Eisen} = \SI{536,5 \pm 6,5}{b}$ und $\sigma_{Eisensulfat} = \SI{6,02 \pm 0,30}{kb}$.\\
+Die Durchlasswahrscheinlichkeiten von den 3 untersuchten Absorbern konnten zu $D_{Stahl} = 0,32408 \pm 0,00015$, $D_{Eisen} = 0,31549 \pm 0,00015$ und $D_{Eisensulfat} = 0,40552 \pm 0,00018$ bestimmt werden. Die dazugehörigen Wirkungsquerschnitte pro Atom sind $\sigma_{Stahl} = \SI{0.531\pm 0.002}{pm^2}$, $\sigma_{Eisen} = \SI{0.552\pm 0.002}{pm^2}$ und $\sigma_{Eisensulfat} = \SI{8.818\pm 0.043}{pm^2}$.\\
 \\
 Über das mit dem Stahlabsorber gemessene Einlinienspektrum konnte die natürliche Linienbreite zu $\Gamma_{nat} = \SI{4.63\pm 0.07}{neV}$ und die Lebensdauer zu $\tau = \SI{142.22\pm2.16}{ns}$ bestimmt werden. Diese Werte stimmen sehr gut mit den Erwartungen überein.\\
 Die Isomerieverschiebung in diesem Spektrum beträgt $\delta = \SI{12.08\pm 1.17}{neV}$.\\
@@ -976,25 +940,6 @@ Die Isomerieverschiebung in diesem Spektrum beträgt $\delta = \SI{-51.27\pm 0.4
 \centering
 \includegraphics[scale=0.8]{Bilder/Extinktion/Eisensulfat.png}
 \caption{Messung des Spektrums zur Bestimmung des Extinktionwirkungsquerschnitts von FeSO$_4$ $\cdot$ 7H$_2$O.}
-\end{figure}
-
-\subsection{Quellenspektrum}
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/v0_und_vinf.png}
-\caption{Gemessenes Quellspektrum.}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_alpha.png}
-\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\alpha}$-Linie von Eisen.}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_beta.png}
-\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\beta}$-Linie von Eisen.}
 \end{figure}
 
 
