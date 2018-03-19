@@ -260,6 +260,28 @@ Diese Phänomene werden einzeln betrachtet:
 \end{enumerate}
 
 \subsection{Quellenspektrum}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/v0_und_vinf.png}
+\caption{Gemessenes Quellspektrum.}
+\label{fig:Quellspektrum}
+\end{figure}
+
+Abbildung \ref{fig:Quellspektrum} zeigt die Messungen des Quellspektrums für Transducergeschwindigkeit $v = 0$ und $v = \infty$ übereinandergelegt (wobei für $v = \infty$ in der Praxis einige mm/s eingestellt wurde). Durch das Übereinanderlegen der beiden gemessenen Spektren ist der Mößbauerpeak deutlich zu erkennen, da dies die einzige Stelle des Spektrums ist, bei der die beiden Messergebnisse voneinander abweichen. Für die folgenden Vermessungen der Energieaufspaltungen wurde daher in diesen Peak reingezoomt.\\
+Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Die abgelesenen Peakpositionen sind:
+\begin{equation*}
+\textrm{ch} _{K_{\alpha}} = 97 \quad \textrm{und} \quad \textrm{ch} _{Moessbauer} = 546 
+\end{equation*}
+Sodass sich unter Annahme eines linearen Zusammenhangs zwischen Energie und Kanal
+\begin{equation*}
+E = a \cdot \textrm{ch} + b
+\end{equation*}
+die Parameter ergeben zu:
+\begin{equation*}
+a = \SI{0,0163}{keV/ch} \qquad b = \SI{5,5}{keV}
+\end{equation*}
+Der scharfe Peak links im Spektrum, der abgelesen ca. bei Kanal 996 liegt, liegt damit bei einer Energie von ca. \SI{21,7}{keV}. Diesen Peak konnten wir nicht zuordnen. Die Photopeaks von Cobalt liegen bei \SI{14,4}{keV}, \SI{121,9}{keV} und \SI{136,3}{keV}. Die zugehörigen Compton-Kanten bei \SI{0,8}{keV}, \SI{39,4}{keV} und \SI{47,4}{keV}, die Rückstoßpeaks entsprechend bei \SI{13,2}{keV}, \SI{82,5}{keV} und \SI{88,9}{keV}. Diese Phänomene können den Peak also nicht erklären. Fremdstrahlung, also $\gamma$-Strahlung aus einer anderen Quelle, kann es auch nicht sein, denn dann hätte man den Peak in der Untergrundmessung auch sehen müssen.  
+
 \subsection{Einlinienspektrum}
 \subsection{Magnetische Hyperfeinstrukturaufspaltung}
 \subsection{Elektrische Quadrupolaufspaltung}
