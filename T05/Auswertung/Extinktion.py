@@ -33,7 +33,7 @@ print D_ex, sig_D_ex
 
 #plotte Spektrum e
 e = 4
-title = ['ohne Quelle', 'ohne Absorber', 'mit Eisenabsorber', 'mit Eisensulfatabsorber', 'mit Stahlabsorber']
+title = ['ohne Quelle', 'ohne Absorber', 'Eisenabsorber', 'Eisensulfatabsorber', 'Stahlabsorber']
 data_y = np.genfromtxt("../Daten/GR2830/Extinsion " + index[e] + ".ws5", delimiter = ',', skip_header = 1, skip_footer = 1)
 data_x = np.arange(len(data_y))
 sig_x = np.full(len(data_x), 1./np.sqrt(12))
@@ -52,5 +52,12 @@ plt.xlabel('Chanel')
 plt.ylabel('n')
 plt.legend()
 plt.title('Gesamtes Spektrum bei Messung ' + title[e])
+
+plt.figure(2)
+ax = plt.subplot(111)
+plt.plot(data_x, data_y, label = title[e])
+plt.xlabel('Channel')
+plt.ylabel('n')
+plt.legend()
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))

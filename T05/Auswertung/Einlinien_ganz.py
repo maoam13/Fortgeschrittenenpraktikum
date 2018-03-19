@@ -24,7 +24,8 @@ x = np.arange(0,1024,1)
 err = np.sqrt(y)
 mittel = np.mean(y[400:700])
 std = np.std(y[400:700])
-fehler = np.std(y[400:700])/len(y[400:700])
+fehler = np.std(y[400:700])/np.sqrt(len(y[400:700]))
+print fehler
 E = kal.Kalibration(1)[0]-14.4*10**12
 dE = kal.Kalibration(1)[1]
 v = kal.Kalibration(1)[2]
