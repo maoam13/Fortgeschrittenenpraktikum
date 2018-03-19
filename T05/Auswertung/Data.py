@@ -8,6 +8,7 @@ Created on Thu Mar 15 11:10:45 2018
 import Praktikummo as p
 import numpy as np
 import matplotlib.pyplot as plt
+import Kalibration_Methode as kal
 
 class Spektrum:
     x = "NULL"
@@ -32,16 +33,17 @@ exteisen = Spektrum("Extinsion Eisen.ws5")
 extsulfat = Spektrum("Extinsion Eisensulfat.ws5")
 extstahl = Spektrum("Extinsion Stahl.ws5")
 quell = Spektrum("Quellspektrum v0_echt.ws5")
-plt.figure(1)
-plt.plot(quell.x)
-plt.figure(2)
+#plt.figure(1)
+#plt.plot(quell.x)
+i = 4
+E = kal.Kalibration(i)[0]-14.4*10**12
+dE = kal.Kalibration(i)[1]
+v = kal.Kalibration(i)[2]
+dv = kal.Kalibration(i)[3]
+print max(v),dv[np.argmax(v)]
+print max(E),dE[np.argmax(E)]
 
-def f(a,x):
-    return a[0]*np.exp(a[1]*(x-a[3]))+a[2]
-   
-a,b,c,d,e,g = p.lineare_regression(np.array([547,240]),np.array([14.4,7]),np.array([1,1]))
-x = np.arange(0,1024)
-plt.plot(x,a*x+c)
+print "$",np.round(max(v),3),"\pm",np.round(dv[np.argmax(v)],3),"$ & $",np.round(max(E),1),"\pm",np.round(dE[np.argmax(E)],1),"$\\\\"
 
 
 

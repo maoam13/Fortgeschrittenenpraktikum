@@ -35,12 +35,14 @@
 Das Ziel des Versuchs besteht darin, mithilfe der Mößbauerlinie folgende quantenmechanische Energieaufspaltungen von Eisen zu vermessen:
 \begin{enumerate}
 \item Die magnetische Hyperfeinstruktur
-\item die elektrische Quadrupolaufspaltung
+\item Die elektrische Quadrupolaufspaltung
 \end{enumerate}
-Zudem soll das Einlinienspektrum von Eisen aufgenommen und der Extinktionswirkungsquerschnitt von Eisen, Stahl und Eisensulfat vermessen werden.
+Zudem soll die natürliche Linienbreite mithlife des Einlininespektrums von Eisen bestimmt werden und der Extinktionswirkungsquerschnitt von Eisen, Stahl und Eisensulfat vermessen werden.
 
-\section{Aufbau}
-Der Aufbau zur Mößbauerspektroskopie besteht aus einer von einem Transducer in Strahlrichtung bewegten $^{57}$Co Quelle, einem Absorber und einem Detektor. Die Quelle sendet $\gamma$-Strahlung verschiedener Energie aus, wobei hauptsächlich die \SI{14,4}{keV} Linie betrachtet wird. Der Detektor zählt einzelne $\gamma$-Quanten innerhalb eines Energieintervalls, wobei 1024 Kanäle zur Verfügung stehen. Der Transducer bewegt die Quelle sinusförmig.
+\section{Aufbau und Funktion}
+Der Aufbau zur Mößbauerspektroskopie besteht aus einer von einem Transducer in Strahlrichtung sinusförmig bewegten $^{57}$Co Quelle, einem Absorber und einem Detektor. Das Cobalt zerfällt in einen angeregten Eisenzustand, der dann $\gamma$-Strahlung von \SI{14,4}{keV},\SI{122}{keV} und \SI{136.5}{keV} aussendet, wobei hier hauptsächlich die \SI{14,4}{keV} Linie betrachtet wird. Mit einem eisenhaltigen Absorber, der zwischen Quelle und Detektor steht,können die $\gamma$-Quanten wieder absorbiert werden. Dies geschieht allerdings nur bei diskreten Energiewerten. Mithilfe des Transducers kann man die von der Quelle ausgesendete Strahlung durch den Doppler-Effekt um sehr kleine Energien verschieben. Dadurch verschiebt sich natürlich auch die Energie, die absorbiert werden muss, wodurch man sehr kleine Energieaufspaltungen untersuchen kann.\\
+Als Detektor wird ein Proportionalzählrohr verwendet, durch welches die gemessenen Pulse nach ihrer Energie auf 1024 Channels verteilt wird.\\
+Mithilfe eines Michelson-Interferometers, dass sich mit dem Transducer mitbewegt, kann über eine Kalibration aus den gemessenen Hell-Dunkel-Übergängen den Channels eine Momentangeschwindigkeit und somit eine Energieaufspaltung zugeordnet werden.
 
 \section{Durchführung}
 
@@ -59,13 +61,16 @@ Messbereich im PHA-Modus & \SI{4,2}{V} - \SI{6,4}{V} \\
 \label{tab:Mess_Einstellungen}
 \end{table}
 
-Tabelle \ref{tab:Mess_Einstellungen} zeigt die verwendeten Messeinstellungen. Um bei für jede Messung den relevanten Energiebereich vermessen zu können, wurde die Transducer-Geschwindigkeit verändert. Die aus aus der Bewegung resultierende Dopplerverschiebung  ergibt eine Energieverschiebung, mit der die zu messenden Aufspaltungen aufgenommen werden können.
+Tabelle \ref{tab:Mess_Einstellungen} zeigt die verwendeten Messeinstellungen. Um bei für jede Messung den relevanten Energiebereich vermessen zu können, wurde die Transducer-Geschwindigkeit verändert.
 
 \subsection{Kalibration}
-Da der Detektor die gemessenen Zählraten in der Energie auf 1024 Kanäle aufteilt, muss eine Kalibration dieser Kanäle auf die Energie erfolgen. Dazu wird die Geschwindigkeit der Bewegung der Quelle mit einem Michelson-Interferometer gemessen und daraus über den Dopplereffekt die Energie der so verschobenen Linie berechnet. Diese Messungen wurden als Einzige mit dem Multi-Chanel-Scaler-Modus (MCS-Modus) aufgenommen. Diese Messung muss für jede neu eingestellte Transducer-Geschwindigkeit wiederholt werden. Für diese Messungen wurde der Timer auf \SI{45}{s} gestellt.
+Da der Detektor die gemessenen Zählraten in der Energie auf 1024 Kanäle aufteilt, muss eine Kalibration dieser Kanäle auf die Energie erfolgen. Dazu wird die Geschwindigkeit der Bewegung der Quelle mit einem Michelson-Interferometer gemessen und daraus über den Dopplereffekt die Energie der so verschobenen Linie berechnet. Diese Messungen wurden als Einzige mit dem Multi-Chanel-Scaler-Modus (MCS-Modus) aufgenommen. Diese Messung muss für jede neu eingestellte Transducer-Geschwindigkeit wiederholt werden. Für diese Messungen wurde der Timer, also die Messzeit, auf \SI{45}{s} gestellt.
 
 \subsection{Untergrundmessung}
 Um auf eine mögliche Nullrate korrigieren zu können, wird eine Messung ohne Quelle und ohne Absorber (mit leerem Absorberhalter) aufgenommen. Für die Aufnahme des Untergrunds wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mv} - \SI{10}{V} eingestellt. Der Timer wurde auf \SI{10}{min} eingestellt.
+
+\subsection{Quellenspektrum}
+Für die Mößbauerspektroskopie muss zunächst die Mößbauerlinie gesucht werden. Dazu wird das gesamte Spektrum einmal mit großer und einmal ohne Bewegung der Quelle aufgenommen. Für die Aufnahme mit großer Geschwindigkeit wurde eine Bewegung von c.a 7 mm/s eingestellt. Dies wurde über eine Schnellauswertung mithilfe der Kalibration bestimmt. Für die Aufnahme des gesamten Quellspektrums wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mV} - \SI{10}{V}. Das Quellspektrum wurde über eine Zeit von \SI{2}{min}. Der Mößbauerpeak sollte bei der Messung mit $v = \SI{0}{mm/s}$ schwächer ausfallen.
 
 \subsection{Extinktionswirkungsquerschnitt}
 Zur Bestimmung des Extinktionswirkungsquerschnitts $D_{ex}$ wird das Spektrum insgesamt vier mal aufgenommen:
@@ -81,18 +86,16 @@ D_{ex} = R(v) \cdot \dfrac{Z(v = \infty)}{Z(v)} = \dfrac{Z(v = \infty)}{Z(\textr
 \end{equation}
 bestimmt werden, wobei Z die gesamte Zählrate ist. Für $v = \infty$ ist in der Realität eine Geschwindigkeit von wenigen mm/s ausreichend.
 
-\subsection{Quellenspektrum}
-Für die Mößbauerspektroskopie muss zunächst die Mößbauerlinie gesucht werden. Dazu wird das gesamte Spektrum einmal mit und einmal ohne Bewegung der Quelle aufgenommen. Für die Aufnahme des gesamten Quellspektrums wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mV} - \SI{10}{V}. Das Quellspektrum wurde über eine Zeit von \SI{2}{min}.
-
 \subsection{Einlinienspektrum}
-Das Einlinienspektrum wurde mit einem Absorber aus Stahl aufgenommen. Diese Messung lief \SI{1}{h}.
+Das Einlinienspektrum wurde mit einem Absorber aus Stahl aufgenommen. Diese Messung lief \SI{1}{h}. Hier wurde eine Maximalgeschwindigkeit von c.a 3 mm/s eingestellt.
 
 \subsection{Magnetische Hyperfeinstrukturaufspaltung}
-Für die Vermessung der magnetischen Hyperfeinstrukturaufspaltung wurde das Spektrum mit einem Absorber aus reinem Eisen aufgenommen. Diese Messung lief über Nacht mit einer Gesamtmesszeit von \SI{18}{h}.
+Für die Vermessung der magnetischen Hyperfeinstrukturaufspaltung wurde das Spektrum mit einem Absorber aus reinem Eisen aufgenommen. Diese Messung lief über Nacht mit einer Gesamtmesszeit von \SI{18}{h}. Die Maximalgeschwindigkeit wurde auf c.a 6 mm/s eingestellt.
+
 
 \subsection{Elektrische Quadrupolaufspaltung}
-Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cdot$ 7H$_2$O-Absorber verwendet. Hier ist im Gegensatz zu den anderen Messungen nur der Linienabstand und nicht die Linienform entscheidend. Diese Messung lief \SI{1}{h} \SI{45}{min}.
-
+Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cdot$ 7H$_2$O-Absorber verwendet. Hier ist im Gegensatz zu den anderen Messungen nur der Linienabstand und nicht die Linienform entscheidend. Diese Messung lief \SI{1}{h} \SI{45}{min} und mit einer Maximalbewegung von c.a 3 mm/s.
+\newpage
 \section{Ergebnisse}
 \subsection{Kalibration}
 
@@ -145,13 +148,10 @@ Wobei die Hell-Dunkel-Wechsel $n(\textrm{ch})$ aus der Anpassung bestimmt werden
 \begin{equation*}
 E(v) = E_0 \cdot \left(1 + \dfrac{v}{c}\right)
 \end{equation*}
-Wobei $E_0 = \SI{14,4}{keV}$ die Energie der verwendeten Linie ist. Die Fehler aus den Anpassungen pflanzen sich gaußisch auf die Geschwindigkeit und die Energie fort:
-\begin{equation*}
-\sigma _v = \dfrac{1024}{3160.56 \cdot t \textrm{[s]}} \cdot \sqrt{\left( \sigma _A \cdot \cos (\omega \cdot \textrm{ch}) \right)^2 + \left( \sigma _\omega \cdot \textrm{ch} \cdot A \cdot \sin (\omega \cdot \textrm{ch}) \right)^2}
-\end{equation*}
-\begin{equation}
-\sigma _E = \sigma _v \cdot \dfrac{E_0}{c}
-\end{equation}
+Wobei $E_0 = \SI{14,4}{keV}$ die Energie der verwendeten Linie ist. Die Fehler aus den Anpassungen pflanzen sich gaußisch auf die Geschwindigkeit und die Energie fort.\\
+Aus der Amplitude kann man die maximale Geschwindigkeit und Energie und somit den Messbereich bestimmen. Die Ergebnisse sind in Tebelle \ref{tab:kal} aufgelistet.
+
+
 
 \begin{table}
 \centering
@@ -172,6 +172,27 @@ Quadrupolaufspaltung & 471,48 $\pm$ 0,18 & 0,00615197 $\pm$ 6,8 $\cdot 10^{-7}$ 
 \end{tabular} 
 \caption{Ergebnisse der Anpassungen an die Daten der Kalibrationsmessungen.}
 \label{tab:Kalibration_Fitergebnisse}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Messung & Geschwindigkeitsbereich[mm/s] & Energiebereich[neV] \\ 
+\hline 
+Extinktionswirkungsquerschnitt &$\pm7.583 \pm 0.002 $ & $\pm 364.0 \pm 0.1 $\\
+\hline 
+Quellspektrum & $\pm 7.164 \pm 0.002 $ & $\pm 343.8 \pm 0.1 $\\
+\hline 
+Einlinienspektrum & $\pm 2.788 \pm 0.002 $ & $\pm 133.8 \pm 0.1 $\\
+\hline 
+Hyperfeinstrukturaufspaltung & $\pm 5.688 \pm 0.002 $ & $\pm 273.0 \pm 0.1 $\\
+\hline 
+Quadrupolaufspaltung & $\pm 3.395 \pm 0.001 $ & $\pm 162.9 \pm 0.1 $\\ 
+\hline 
+\end{tabular}
+\caption{Messbereiche, die sich aus der Kalibration ergeben. Der Energiebereich gibt die Abweichung von $E_0 = \SI{14,4}{keV}$ an.}
+\label{tab:kal}
 \end{table}
 
 \begin{figure}
@@ -197,6 +218,30 @@ Die Gesamtzahl der gemessenen Ereignisse ist:
 \begin{equation*}
 Z_{Untergrund} = \dfrac{2175 \pm 47}{\SI{10}{min}}
 \end{equation*}
+
+\subsection{Quellenspektrum}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/v0_und_vinf.png}
+\caption{Gemessenes Quellspektrum.}
+\label{fig:Quellspektrum}
+\end{figure}
+
+Abbildung \ref{fig:Quellspektrum} zeigt die Messungen des Quellspektrums für Transducergeschwindigkeit $v = 0$ und $v = \infty$ übereinandergelegt (wobei für $v = \infty$ in der Praxis einige mm/s eingestellt wurde). Durch das Übereinanderlegen der beiden gemessenen Spektren ist der Mößbauerpeak deutlich zu erkennen, da dies die einzige Stelle des Spektrums ist, bei der die beiden Messergebnisse voneinander abweichen. Für die folgenden Vermessungen der Energieaufspaltungen wurde daher in diesen Peak reingezoomt.\\
+Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Die abgelesenen Peakpositionen sind:
+\begin{equation*}
+\textrm{ch} _{K_{\alpha}} = 97 \quad \textrm{und} \quad \textrm{ch} _{Moessbauer} = 546 
+\end{equation*}
+Sodass sich unter Annahme eines linearen Zusammenhangs zwischen Energie und Kanal
+\begin{equation*}
+E = a \cdot \textrm{ch} + b
+\end{equation*}
+die Parameter ergeben zu:
+\begin{equation*}
+a = \SI{0,0163}{keV/ch} \qquad b = \SI{5,5}{keV}
+\end{equation*}
+Der scharfe Peak rechts im Spektrum, der abgelesen ca. bei Kanal 996 liegt, liegt damit bei einer Energie von ca. \SI{21,7}{keV}. Diesen Peak konnten wir nicht zuordnen. Die Photopeaks von Cobalt liegen bei \SI{14,4}{keV}, \SI{121,9}{keV} und \SI{136,3}{keV}. Die zugehörigen Compton-Kanten bei \SI{0,8}{keV}, \SI{39,4}{keV} und \SI{47,4}{keV}, die Rückstoßpeaks entsprechend bei \SI{13,2}{keV}, \SI{82,5}{keV} und \SI{88,9}{keV}. Diese Phänomene können den Peak also nicht erklären. Fremdstrahlung, also $\gamma$-Strahlung aus einer anderen Quelle, kann es auch nicht sein, denn dann hätte man den Peak in der Untergrundmessung auch sehen müssen.  
+
 
 \subsection{Extinktionswirkungsquerschnitt}
 \begin{figure}
@@ -259,28 +304,6 @@ Diese Phänomene werden einzeln betrachtet:
 \item Der Peak, der nur in dem Spektrum ohne Absorber zu sehen ist, stammt vermutlich von der Elektronen-Strahlung aus der Inneren Konversion. Ein solcher müsste knapp unter dem Mößbauerpeak liegen, da die kinetische Energie dieser Elektronen der Differenz zwischen der Energie des Mößbauerpeaks und der Bindungsenergie des Hüllenelektrons entspricht
 \end{enumerate}
 
-\subsection{Quellenspektrum}
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Bilder/Quellspektrum/v0_und_vinf.png}
-\caption{Gemessenes Quellspektrum.}
-\label{fig:Quellspektrum}
-\end{figure}
-
-Abbildung \ref{fig:Quellspektrum} zeigt die Messungen des Quellspektrums für Transducergeschwindigkeit $v = 0$ und $v = \infty$ übereinandergelegt (wobei für $v = \infty$ in der Praxis einige mm/s eingestellt wurde). Durch das Übereinanderlegen der beiden gemessenen Spektren ist der Mößbauerpeak deutlich zu erkennen, da dies die einzige Stelle des Spektrums ist, bei der die beiden Messergebnisse voneinander abweichen. Für die folgenden Vermessungen der Energieaufspaltungen wurde daher in diesen Peak reingezoomt.\\
-Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Die abgelesenen Peakpositionen sind:
-\begin{equation*}
-\textrm{ch} _{K_{\alpha}} = 97 \quad \textrm{und} \quad \textrm{ch} _{Moessbauer} = 546 
-\end{equation*}
-Sodass sich unter Annahme eines linearen Zusammenhangs zwischen Energie und Kanal
-\begin{equation*}
-E = a \cdot \textrm{ch} + b
-\end{equation*}
-die Parameter ergeben zu:
-\begin{equation*}
-a = \SI{0,0163}{keV/ch} \qquad b = \SI{5,5}{keV}
-\end{equation*}
-Der scharfe Peak links im Spektrum, der abgelesen ca. bei Kanal 996 liegt, liegt damit bei einer Energie von ca. \SI{21,7}{keV}. Diesen Peak konnten wir nicht zuordnen. Die Photopeaks von Cobalt liegen bei \SI{14,4}{keV}, \SI{121,9}{keV} und \SI{136,3}{keV}. Die zugehörigen Compton-Kanten bei \SI{0,8}{keV}, \SI{39,4}{keV} und \SI{47,4}{keV}, die Rückstoßpeaks entsprechend bei \SI{13,2}{keV}, \SI{82,5}{keV} und \SI{88,9}{keV}. Diese Phänomene können den Peak also nicht erklären. Fremdstrahlung, also $\gamma$-Strahlung aus einer anderen Quelle, kann es auch nicht sein, denn dann hätte man den Peak in der Untergrundmessung auch sehen müssen.  
 
 \subsection{Einlinienspektrum}
 
