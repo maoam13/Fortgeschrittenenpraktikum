@@ -80,13 +80,13 @@ print E*(1-1./(1+(2*E)/(m*s.c**2)))/s.e*10**-3
 D = 1.89
 M = 278/(6.022*10**23)
 DM1 = D/M
-print M
+#print M
 print D/M
 
 D = 7.874
 M = 55.845*1.66*10**-27*10**3
 DM2 = D/M
-print M
+#print M
 print D/M
 
 D = 0.32408

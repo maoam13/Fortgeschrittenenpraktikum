@@ -37,10 +37,10 @@ Das Ziel des Versuchs besteht darin, mithilfe der Mößbauerlinie folgende quant
 \item Die magnetische Hyperfeinstruktur
 \item Die elektrische Quadrupolaufspaltung
 \end{enumerate}
-Zudem soll die natürliche Linienbreite mithlife des Einlininespektrums von Eisen bestimmt werden und der Extinktionswirkungsquerschnitt von Eisen, Stahl und Eisensulfat vermessen werden.
+Zudem soll die natürliche Linienbreite mithilfe des Einlinienspektrums von Eisen bestimmt werden und der Extinktionswirkungsquerschnitt von Eisen, Stahl und Eisensulfat vermessen werden.
 
 \section{Aufbau und Funktion}
-Der Aufbau zur Mößbauerspektroskopie besteht aus einer von einem Transducer in Strahlrichtung sinusförmig bewegten $^{57}$Co Quelle, einem Absorber und einem Detektor. Das Cobalt zerfällt in einen angeregten Eisenzustand, der dann $\gamma$-Strahlung von \SI{14,4}{keV},\SI{122}{keV} und \SI{136.5}{keV} aussendet, wobei hier hauptsächlich die \SI{14,4}{keV} Linie betrachtet wird. Mit einem eisenhaltigen Absorber, der zwischen Quelle und Detektor steht,können die $\gamma$-Quanten wieder absorbiert werden. Dies geschieht allerdings nur bei diskreten Energiewerten. Mithilfe des Transducers kann man die von der Quelle ausgesendete Strahlung durch den Doppler-Effekt um sehr kleine Energien verschieben. Dadurch verschiebt sich natürlich auch die Energie, die absorbiert werden muss, wodurch man sehr kleine Energieaufspaltungen untersuchen kann.\\
+Der Aufbau zur Mößbauerspektroskopie besteht aus einer von einem Transducer in Strahlrichtung sinusförmig bewegten $^{57}$Co Quelle, einem Absorber und einem Detektor. Das Cobalt zerfällt in einen angeregten Eisenzustand, der dann $\gamma$-Strahlung von \SI{14,4}{keV}, \SI{121.9}{keV} und \SI{136.5}{keV} aussendet, wobei hier hauptsächlich die \SI{14,4}{keV} Linie betrachtet wird. Mit einem eisenhaltigen Absorber, der zwischen Quelle und Detektor steht,können die $\gamma$-Quanten wieder absorbiert werden. Dies geschieht allerdings nur bei diskreten Energiewerten. Mithilfe des Transducers kann man die von der Quelle ausgesendete Strahlung durch den Doppler-Effekt um sehr kleine Energien verschieben. Dadurch verschiebt sich natürlich auch die Energie, die absorbiert werden muss, wodurch man sehr kleine Energieaufspaltungen untersuchen kann.\\
 Als Detektor wird ein Proportionalzählrohr verwendet, durch welches die gemessenen Pulse nach ihrer Energie auf 1024 Channels verteilt wird.\\
 Mithilfe eines Michelson-Interferometers, dass sich mit dem Transducer mitbewegt, kann über eine Kalibration aus den gemessenen Hell-Dunkel-Übergängen den Channels eine Momentangeschwindigkeit und somit eine Energieaufspaltung zugeordnet werden.
 
@@ -70,31 +70,35 @@ Da der Detektor die gemessenen Zählraten in der Energie auf 1024 Kanäle auftei
 Um auf eine mögliche Nullrate korrigieren zu können, wird eine Messung ohne Quelle und ohne Absorber (mit leerem Absorberhalter) aufgenommen. Für die Aufnahme des Untergrunds wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mv} - \SI{10}{V} eingestellt. Der Timer wurde auf \SI{10}{min} eingestellt.
 
 \subsection{Quellenspektrum}
-Für die Mößbauerspektroskopie muss zunächst die Mößbauerlinie gesucht werden. Dazu wird das gesamte Spektrum einmal mit großer und einmal ohne Bewegung der Quelle aufgenommen. Für die Aufnahme mit großer Geschwindigkeit wurde eine Bewegung von c.a 7 mm/s eingestellt. Dies wurde über eine Schnellauswertung mithilfe der Kalibration bestimmt. Für die Aufnahme des gesamten Quellspektrums wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mV} - \SI{10}{V}. Das Quellspektrum wurde über eine Zeit von \SI{2}{min}. Der Mößbauerpeak sollte bei der Messung mit $v = \SI{0}{mm/s}$ schwächer ausfallen.
+Für die Mößbauerspektroskopie muss zunächst die Mößbauerlinie gesucht werden. Dazu wird das gesamte Spektrum einmal mit großer und einmal ohne Bewegung der Quelle aufgenommen. Für die Aufnahme mit großer Geschwindigkeit wurde eine Bewegung von ca. 7 mm/s eingestellt. Dies wurde über eine Schnellauswertung mithilfe der Kalibration bestimmt. Für die Aufnahme des gesamten Quellspektrums wurde der Messbereich des PHA-Modus auf den maximal einstellbaren Bereich von \SI{10}{mV} - \SI{10}{V}. Das Quellspektrum wurde über eine Zeit von \SI{2}{min} gemessen. Der Mößbauerpeak sollte bei der Messung mit $v = \SI{0}{mm/s}$ schwächer ausfallen.
 
 \subsection{Extinktionswirkungsquerschnitt}
-Zur Bestimmung des Extinktionswirkungsquerschnitts $D_{ex}$ wird das Spektrum insgesamt vier mal aufgenommen:
+Zur Bestimmung der Durchlasswahrscheinlichkeit $D_{ex}$ wird das Spektrum insgesamt vier mal aufgenommen:
 \begin{enumerate}
 \item Mit einem Stahl-Absorber
 \item mit einem reinen Eisen-Absorber
 \item mit einem FeSO$_4$ $\cdot$ 7H$_2$O-Absorber
 \item ohne Absorber 
 \end{enumerate} 
-Um das gesamte Spektrum aufzunehmen, wurde der Messbereich auf \SI{10}{mV} - \SI{10}{V} gewählt. Jede dieser Messungen dauerte \SI{10}{min}. Der Extinktionswirkungsquerschnitt kann dann gemäß
-\begin{equation}
+Um das gesamte Spektrum aufzunehmen, wurde der Messbereich auf \SI{10}{mV} - \SI{10}{V} gewählt. Jede dieser Messungen dauerte \SI{10}{min}. Die Durchlasswahrscheinlichkeit kann dann gemäß
+\begin{equation*}
 D_{ex} = R(v) \cdot \dfrac{Z(v = \infty)}{Z(v)} = \dfrac{Z(v = \infty)}{Z(\textrm{ohne Absorber})}
-\end{equation}
-bestimmt werden, wobei Z die gesamte Zählrate ist. Für $v = \infty$ ist in der Realität eine Geschwindigkeit von wenigen mm/s ausreichend.
+\end{equation*}
+bestimmt werden, wobei Z die gesamte Zählrate ist. Für $v = \infty$ ist in der Realität eine Geschwindigkeit von wenigen mm/s ausreichend. Der Extinktionswirkungsquerschnitt $\sigma _{ex}$ berechnet sich dann über
+\begin{equation*}
+\sigma _{ex} = \dfrac{- \ln(D_{ex})}{d \cdot n}
+\end{equation*}
+mit der Absorberdicke $d$ und der Atomdichte des Absorbers $n$.
 
 \subsection{Einlinienspektrum}
-Das Einlinienspektrum wurde mit einem Absorber aus Stahl aufgenommen. Diese Messung lief \SI{1}{h}. Hier wurde eine Maximalgeschwindigkeit von c.a 3 mm/s eingestellt.
+Das Einlinienspektrum wurde mit einem Absorber aus Stahl aufgenommen. Diese Messung lief \SI{1}{h}. Hier wurde eine Maximalgeschwindigkeit von ca. 3 mm/s eingestellt.
 
 \subsection{Magnetische Hyperfeinstrukturaufspaltung}
-Für die Vermessung der magnetischen Hyperfeinstrukturaufspaltung wurde das Spektrum mit einem Absorber aus reinem Eisen aufgenommen. Diese Messung lief über Nacht mit einer Gesamtmesszeit von \SI{18}{h}. Die Maximalgeschwindigkeit wurde auf c.a 6 mm/s eingestellt.
+Für die Vermessung der magnetischen Hyperfeinstrukturaufspaltung wurde das Spektrum mit einem Absorber aus reinem Eisen aufgenommen. Diese Messung lief über Nacht mit einer Gesamtmesszeit von \SI{18}{h}. Die Maximalgeschwindigkeit wurde auf ca. 6 mm/s eingestellt.
 
 
 \subsection{Elektrische Quadrupolaufspaltung}
-Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cdot$ 7H$_2$O-Absorber verwendet. Hier ist im Gegensatz zu den anderen Messungen nur der Linienabstand und nicht die Linienform entscheidend. Diese Messung lief \SI{1}{h} \SI{45}{min} und mit einer Maximalbewegung von c.a 3 mm/s.
+Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cdot$ 7H$_2$O-Absorber verwendet. Hier ist im Gegensatz zu den anderen Messungen nur der Linienabstand und nicht die Linienform entscheidend. Diese Messung lief \SI{1}{h} \SI{45}{min} und mit einer Maximalbewegung von ca. 3 mm/s.
 \newpage
 \section{Ergebnisse}
 \subsection{Kalibration}
@@ -149,7 +153,7 @@ Wobei die Hell-Dunkel-Wechsel $n(\textrm{ch})$ aus der Anpassung bestimmt werden
 E(v) = E_0 \cdot \left(1 + \dfrac{v}{c}\right)
 \end{equation*}
 Wobei $E_0 = \SI{14,4}{keV}$ die Energie der verwendeten Linie ist. Die Fehler aus den Anpassungen pflanzen sich gaußisch auf die Geschwindigkeit und die Energie fort.\\
-Aus der Amplitude kann man die maximale Geschwindigkeit und Energie und somit den Messbereich bestimmen. Die Ergebnisse sind in Tebelle \ref{tab:kal} aufgelistet.
+Aus der Amplitude kann man die maximale Geschwindigkeit und Energie und somit den Messbereich bestimmen. Die Ergebnisse sind in Tabelle \ref{tab:kal} aufgelistet.
 
 
 
@@ -227,23 +231,56 @@ Z_{Untergrund} = \dfrac{2175 \pm 47}{\SI{10}{min}}
 \label{fig:Quellspektrum}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/Spektrum_abgelesene_Peaks.png}
+\caption{Gemessenes Quellspektrum mit abgelesenen Peaks.}
+\label{fig:Quellspektrum_abgelesenePeaks}
+\end{figure}
+
 Abbildung \ref{fig:Quellspektrum} zeigt die Messungen des Quellspektrums für Transducergeschwindigkeit $v = 0$ und $v = \infty$ übereinandergelegt (wobei für $v = \infty$ in der Praxis einige mm/s eingestellt wurde). Durch das Übereinanderlegen der beiden gemessenen Spektren ist der Mößbauerpeak deutlich zu erkennen, da dies die einzige Stelle des Spektrums ist, bei der die beiden Messergebnisse voneinander abweichen. Für die folgenden Vermessungen der Energieaufspaltungen wurde daher in diesen Peak reingezoomt.\\
-Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Die abgelesenen Peakpositionen sind:
-\begin{equation*}
-\textrm{ch} _{K_{\alpha}} = 97 \quad \textrm{und} \quad \textrm{ch} _{Moessbauer} = 546 
-\end{equation*}
-Sodass sich unter Annahme eines linearen Zusammenhangs zwischen Energie und Kanal
+Für eine grobe Kanal-Energie-Kalibrierung können der Mößbauerpeak ($E_{Moessbauer} = \SI{14,4}{keV}$) und der scharfe Peak links verwendet werden, bei dem es sich um die $K_{\alpha}$-Linie von Eisen bei etwa $E_{K_{\alpha}} = \SI{7,1}{keV}$ handelt. Außerdem entsteht ein Peak ganz rechts vom Spektrum.  Die Photopeaks von Cobalt liegen bei \SI{14,4}{keV}, \SI{121,9}{keV} und \SI{136,3}{keV}. Die zugehörigen Compton-Kanten bei \SI{0,8}{keV}, \SI{39,4}{keV} und \SI{47,4}{keV}, die Rückstoßpeaks entsprechend bei \SI{13,2}{keV}, \SI{82,5}{keV} und \SI{88,9}{keV}. Diese Phänomene können den Peak also nicht erklären. Wenn aber je ein $\gamma$ von dem Mößbauer- und dem $K_{\alpha}$-Peak gleichzeitig gemessen werden addieren sich die Energien auf. Dieser Peak liegt also theoretisch bei $E_{Summe} = E_{Moessbauer} + E_{K_{\alpha}} = \SI{21,5}{keV}$, was den Peak rechts erklären könnte. Die abgelesenen Peakpositionen sind in Abbildung \ref{fig:Quellspektrum_abgelesenePeaks} gezeigt, wobei für die weitere Auswertung nur die ch-Koordinate relevant ist. \\
+Die Peakpositionen und die zugehörigen Energien sind in Tabelle \ref{tab:Quellspektrum_PeakpositionenAlpha} zusammengefasst. Als Fehler auf die Peakposition wurde eine Gleichverteilung angenommen. Auf die Energie wurde der Digitalisierungsfehler angenommen. An diese Punkte kann nun eine lineare Funktion der Form
 \begin{equation*}
 E = a \cdot \textrm{ch} + b
 \end{equation*}
-die Parameter ergeben zu:
-\begin{equation*}
-a = \SI{0,0163}{keV/ch} \qquad b = \SI{5,5}{keV}
-\end{equation*}
-Der scharfe Peak rechts im Spektrum, der abgelesen ca. bei Kanal 996 liegt, liegt damit bei einer Energie von ca. \SI{21,7}{keV}. Diesen Peak konnten wir nicht zuordnen. Die Photopeaks von Cobalt liegen bei \SI{14,4}{keV}, \SI{121,9}{keV} und \SI{136,3}{keV}. Die zugehörigen Compton-Kanten bei \SI{0,8}{keV}, \SI{39,4}{keV} und \SI{47,4}{keV}, die Rückstoßpeaks entsprechend bei \SI{13,2}{keV}, \SI{82,5}{keV} und \SI{88,9}{keV}. Diese Phänomene können den Peak also nicht erklären. Fremdstrahlung, also $\gamma$-Strahlung aus einer anderen Quelle, kann es auch nicht sein, denn dann hätte man den Peak in der Untergrundmessung auch sehen müssen.  
+angepasst werden. Das Ergebnis dieser Anpassung ist in Abbildung \ref{fig:Quellspektrum_linRegAlpha} gezeigt.\\
+Wenn man für den Peak links nicht die $K_{\alpha}$-Linie, sondern die $K_{\beta}$-Linie bei $E_{K_{\beta}} = \SI{6,4}{keV}$ und entsprechend für den Peak links $E_{Summe} = E_{Moessbauer} + E_{K_{\beta}} = \SI{20,8}{keV}$ annimmt, erhält man eine wesentlich bessere Anpassung, wie in Abbildung \ref{fig:Quellspektrum_linRegBeta} zu erkennen ist. Allerdings ist dies dennoch sehr wahrscheinlich eine falsche Annahme, da die $K_{\alpha}$-Linie deutlich größer ist als die $K_{\beta}$-Linie, sodass, falls der Peak links tatsächlich die $K_{\beta}$-Linie wäre, man im Spektrum die $K_{\alpha}$-Linie als höheren Peak sehen müsste. Da dies nicht der Fall ist, ist davon auszugehen, dass es sich bei dem Peak links um die $K_{\alpha}$-Linie handelt und die schlechtere Anpassung die richtige Kalibration ist.\\
 
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Energie [keV] & Peakposition \\ 
+\hline 
+7,1 $\pm$ 0,03 & 97 $\pm$ 4,0 \\
+\hline 
+14,4 $\pm$ 0,03 & 546 $\pm$ 9,8 \\
+\hline
+21,5 $\pm$ 0,03 & 996 $\pm$ 4,6 \\
+\hline
+\end{tabular} 
+\caption{Abgelesene Peakpositionen und zugeordnete Energien.}
+\label{tab:Quellspektrum_PeakpositionenAlpha}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_alpha.png}
+\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\alpha}$-Linie von Eisen.}
+\label{fig:Quellspektrum_linRegAlpha}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_beta.png}
+\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\beta}$-Linie von Eisen.}
+\label{fig:Quellspektrum_linRegBeta}
+\end{figure}
 
 \subsection{Extinktionswirkungsquerschnitt}
+\label{ex}
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Extinktion/OhneAbsorber.png}
@@ -264,11 +301,11 @@ Zur Bestimmung des Extinktionswirkungsquerschnitts wird die Zählrate des gesamt
 \begin{equation*}
 \sigma _{n} = \sqrt{n}
 \end{equation*}
-abgeschätzt. Zur Berechnung des Extinktionswirkungsquerschnitts müssen sowohl die Zählrate mit dem jeweiligen Absorber $n_A$ als auch die Zählrate ohne Absorber $n_O$ um die Untergrundmessung $n_U$ korrigiert werden, sodass sich die Durchlasswahrscheinlichkeit insgesamt bestimmt zu:
+abgeschätzt. Zur Berechnung des Durchlasswahrscheinlichkeit müssen sowohl die Zählrate mit dem jeweiligen Absorber $n_A$ als auch die Zählrate ohne Absorber $n_O$ um die Untergrundmessung $n_U$ korrigiert werden, sodass sich die Durchlasswahrscheinlichkeit insgesamt bestimmt zu:
 \begin{equation*}
 D_{ex} = \dfrac{n_A - n_U}{n_O - n_U}
 \end{equation*}
-Damit bestimmt sich der Fehler mit gaußscher Fehlerfortpflanzung und der Annahme, dass die Fehler auf die Zählraten immer die Wurzel der Zählraten sind.
+Der Fehler wird mit gaußscher Fehlerfortpflanzung bestimmt und der Annahme, dass die Fehler auf die Zählraten immer die Wurzel der Zählraten sind.
 Tabelle \ref{tab:Extinktion_wirkungsquerschnitt} zeigt die gemessenen Zählraten und die daraus berechneten Durchlasswahrscheinlichkeiten. Mithilfe der Atomaren Dichte n und der Absorberdicke d kann man nun den Wirkungsquerschnitt pro Atom über \begin{equation}
 \sigma_{ex} = \dfrac{-ln(D_{ex})}{d\cdot n}
 \end{equation}
@@ -287,7 +324,7 @@ Reines Eisen & 5746105 & 0,31549 $\pm$ 0,00015 \\
 Eisensulfat & 7385135 & 0,40552 $\pm$ 0,00018 \\
 \hline
 \end{tabular} 
-\caption{Gemessene Zählraten und daraus berechnete Extinktionswirkungsquerschnitte.}
+\caption{Gemessene Zählraten und daraus berechnete Durchlasswahrscheinlichkeiten.}
 \label{tab:Extinktion_wirkungsquerschnitt}
 \end{table}
 
@@ -304,7 +341,7 @@ Reines Eisen & 7.874 & $9.27\cdot10^{-23}$ & $8.49\cdot10^{22}$& 25 & $0.552\pm 
 Eisensulfat & 1.89 & $4.62\cdot10^{-22}$ & $0.41\cdot10^{22}$& 25 & $8.818\pm 0.043$\\
 \hline
 \end{tabular} 
-\caption{Gemessene Zählraten und daraus berechnete Extinktionswirkungsquerschnitte pro Atom.}
+\caption{Literaturwerte für dei Atomare Dichte und daraus bestimmter Extinktionswirkungsquerschnitte pro Atom.}
 \label{tab:Extinktion_ergebnis}
 \end{table}
 
@@ -329,7 +366,6 @@ Diese Phänomene werden einzeln betrachtet:
 \item Der Peak, der in Form und Höhe unverändert bleibt, taucht in der Untergrundmessung nicht auf, d.h. es handelt sich um Strahlung, die von der Quelle kommt und unverändert durch alle drei Absorber geht.
 \item Der Peak, der nur in dem Spektrum ohne Absorber zu sehen ist, stammt vermutlich von der Elektronen-Strahlung aus der Inneren Konversion. Ein solcher müsste knapp unter dem Mößbauerpeak liegen, da die kinetische Energie dieser Elektronen der Differenz zwischen der Energie des Mößbauerpeaks und der Bindungsenergie des Hüllenelektrons entspricht.
 \end{enumerate}
-
 
 \subsection{Einlinienspektrum}
 
@@ -371,14 +407,14 @@ Kalibriert man nun die Channels gegen Geschwindigkeit und Energie, so ergeben si
 Abbildung \ref{fig:Ein_Data} zeigt beide Spektren. Da es sich hier um radioaktive Zerfälle handelt, welche einer Poisson-Verteilung folgen, wird der Fehler auf die Counts mit $\sqrt{N}$ angenommen, wobei N die Anzahl der Counts darstellt. Aus der Kalibration erhält man außerdem einen Fehler in x-Richtung. Dieser ist aber um ein vielfaches kleiner als der Fehler auf die Counts, weswegen er nicht mit ins Gewicht fällt.\\
 \\
 Um die Eigenschaften der Peaks untersuchen zu können wird nun ein Gaussfit der Form
-\begin{equation}
+\begin{equation*}
 y = a + \dfrac{b}{\sqrt{2\pi\sigma^2}}exp\left(\dfrac{-(x-m)^2}{2\sigma^2}\right)
-\end{equation}
+\end{equation*}
 an die Daten angepasst. An diesen sollte man die Peakposition und über die Standardabweichung $\sigma$ mithilfe von 
-\begin{equation}
-\Gamma = 2\sqrt{2\log(2)}\sigma
+\begin{equation*}
+\Gamma = 2\cdot \sqrt{2\log(2)} \cdot \sigma
 \label{eq_ein_gamma}
-\end{equation}
+\end{equation*}
 die Linienbreite $\Gamma$  bestimmen können. Die Ergebnisse sind in Tabelle \ref{tab:Ein_gauss} zusammengefasst. Die Fehler werden direkt aus der Anpassung gaußisch fortgepflanzt.\\
 
 \begin{table}
@@ -397,20 +433,20 @@ hinten & $13.12\pm 0.18$ & $22.92\pm 0.06$ & $22.80\pm 0.32$ \\
 \end{table}
 
 Unter Annahme eines perfekten Gausspeaks, dessen Anpassung in Abbildung \ref{fig:Ein_gauss} gezeigt ist, zeigt sich aber, dass der Peak nach untenhin breiter als die Anpassung wird und somit das Ergebnis nicht sehr genau ist.\\
-Dies sieht man vorallem an der Systematik in den Residuen im relevanten Bereich.\\
+Dies sieht man vor allem an der Systematik in den Residuen im relevanten Bereich.\\
 \\
 Deswegen wird stattdessen die Anpassung nur an der Spitze durchgeführt. Dies ist in Abbildung \ref{fig:Ein_halbgauss} zu sehen.\\
 Diese Anpassung repräsentiert allerdings nur die Position des Peaks und Gleichung \ref{eq_ein_gamma} kann nicht benutzt werden, um die Breite zu bestimmen.\\
 Um trotzdem die Halbwertsbreite bestimmen zu können wird eine Rauschmessung an einem Ausschnitt der Daten, bei dem die Peaks keinen Einfluss haben, durchgeführt. Diese ist in Abbildung \ref{fig:Ein_Rausch} gezeigt. Es ergibt sich eine Referenzhöhe von $N_0 = 14239\pm 7$.
 Mithilfe von 
-\begin{equation}
+\begin{equation*}
 h = N_0 - \dfrac{N_0-N_P}{2} = \dfrac{N_0+N_P}{2}
-\end{equation}
+\end{equation*}
 ergibt sich schließlich die Position der halben Höhe des Peaks. Dabei ist $N_0$ der Mittelwert der Rauschmessung, also die Referenzhöhe, und $N_P$ die Höhe des Peaks.\\
-Der Fehler auf die Halbhöhe ergibt sich aus gausscher Fehlerfortpflanzung der Fehler von Mittelwert und Peakposition.\\
+Der Fehler auf die Halbhöhe ergibt sich aus gaussscher Fehlerfortpflanzung der Fehler von Mittelwert und Peakposition.\\
 Die Halbwertsbreite wird nun über die Schnittpunkte der Anpassung mit der Halbhöhe bestimmt. Der Fehler der Halbwertsbreite ergibt sich über die Verschiebemethode. Dabei wird die Anpassung um ihre Fehler (in allen Kombinationen) verschoben und eine neue Halbhöhe und neue Halbwertsbreite ausgerechnet. Aus der maximalen Abweichung vom ursprünglichen Wert erhält man dann den Fehler.\\
 \\
-Die x-Position des Peaks erhält man weiterhin direckt aus der Anpassung.\\
+Die x-Position des Peaks erhält man weiterhin direkt aus der Anpassung.\\
 Alle Ergebnisse sind in Tabelle \ref{tab:Ein_halbgauss} zusammengefasst.\\
 Eine gewichtete Mittelung der über die Höhe bestimmte Linienbreite ergibt das Endergebnis:
 \begin{equation*}
@@ -441,23 +477,23 @@ hinten & $13.19\pm 0.08$ & $20.66 \pm 0.22$ & $19.49\pm 0.34$ \\
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Einlinien/Ein_Rausch.png}
-\caption{Rauschmessung zur bestimmung der Referenzhöhe an den Channels 400-700.}
+\caption{Rauschmessung zur Bestimmung der Referenzhöhe an den Channels 400-700.}
 \label{fig:Ein_Rausch}
 \end{figure}
 
 \subsubsection{Vergleich mit Literaturwerten}
 Die berechnete Linienbreite entspricht noch nicht der natürlichen Linienbreite, sondern
-\begin{equation}
+\begin{equation*}
 \Gamma = (2+0.27\beta f' d n \sigma_0) \cdot \Gamma_{nat} = const \cdot \Gamma_{nat}
-\end{equation}
-mit $\beta = 0.022$,$f' = 0.85$,$d = 25\mu m$ und $n=8.4\cdot 10^{22}cm^{-3}$, wobei 
-\begin{equation}
+\end{equation*}
+mit $\beta = 0.022$, $f' = 0.85$, $d = \SI{25}{\mu m}$ und $n=8.4\cdot 10^{22} \si{cm^{-3}}$, wobei 
+\begin{equation*}
 \sigma_0 = 2 \pi \dfrac{c^2 \hbar^2}{E_0^2} \dfrac{1}{1+\alpha} \dfrac{2 J_a+1}{2 J_g+1} \approx 2.38\cdot 10^{-22} m^2
-\end{equation}
-mit $E_0 = 14.4keV$, $\alpha = 8.9$,$J_a = 3/2$,$J_g = 1/2$. Darasu folgt 
-\begin{equation}
+\end{equation*}
+mit $E_0 = \SI{14.4}{keV}$, $\alpha = 8.9$,$J_a = 3/2$,$J_g = 1/2$. Daraus folgt 
+\begin{equation*}
 const \approx 4.527
-\end{equation}
+\end{equation*}
 Damit folgt die berechnete Natürliche Linienbreite und über
 \begin{equation}
 \tau_{exp} = \dfrac{\hbar}{\Gamma_{nat}}
@@ -466,9 +502,9 @@ Damit folgt die berechnete Natürliche Linienbreite und über
 die berechnete Lebensdauer. Alle Fehler werden gaußisch fortgepflanzt.\\
 \\
 Die erwartete Lebensdauer berechnet sich über die Halbwertszeit:
-\begin{equation}
-\tau_{theo} = \dfrac{\hbar\cdot ln(2)}{T_{1/2}}
-\end{equation}
+\begin{equation*}
+\tau_{theo} = \dfrac{\hbar\cdot \ln(2)}{T_{1/2}}
+\end{equation*}
 woraus man über Gleichung \ref{eq:tau} die erwartete Linienbreite bekommt.\\
 Alle Ergebnisse sind in Tabelle \ref{tab:Ein_lit} zusammengefasst.
 
@@ -634,13 +670,13 @@ hinten & 6-5 & $99.45\pm 0.23$& $4.83\pm 0.01$\\
 \label{tab:Hyper_mu}
 \end{table}
 
-Das Spektrum zur Hyperfeinstrukturaufspaltung ist in Abbildung \ref{fig:Hyper_Roh} dargestellt. Auch hier gibt es die Aufspaltung in 2 gespiegelte Bereiche, welche in Abbildung \ref{fig:Hyper_Data} gegen Geschwindigkeit und Energie kalibriert sind.\\
+Das Spektrum zur Hyperfeinstrukturaufspaltung ist in Abbildung \ref{fig:Hyper_Roh} dargestellt. Auch hier gibt es die Aufspaltung in zwei gespiegelte Bereiche, welche in Abbildung \ref{fig:Hyper_Data} gegen Geschwindigkeit und Energie kalibriert sind.\\
 \\
 An die Peaks wird eine Lorentz-Kurve der Form
-\begin{equation}
+\begin{equation*}
 y = I_0 \dfrac{c}{(x-a)^2+c}+b
-\end{equation}
-angepasst. Dabei ist $I_0$ die maximale Peakhöhe, a die Position in x-Richtung, b die Position in y-Srichtung und c beschreibt die Breite der Kurve.
+\end{equation*}
+angepasst. Dabei ist $I_0$ die maximale Peakhöhe, a die Position in x-Richtung, b die Position in y-Richtung und c beschreibt die Breite der Kurve.
 Die Anpassungen sind in Abbildung \ref{fig:Hyper_fit} dargestellt und die Ergebnisse aus diesen Fits befinden sich in Tabelle \ref{tab:Hyper_fit_vor} für das vordere Spektrum und in Tabelle \ref{tab:Hyper_fit_nach} für das hintere.
 \\
 Aus den Parameter a der Anpassungen kann man die Abstände zwischen den Peaks bestimmen und so über 
@@ -648,23 +684,23 @@ Aus den Parameter a der Anpassungen kann man die Abstände zwischen den Peaks be
 \Delta E = -H\left(\dfrac{\mu_a m_a}{j_a}-\dfrac{\mu_g m_g}{j_g}\right)
 \label{eq:Hyper}
 \end{equation}
-das Magnetfeld H und das magnetische Moment $\mu_a$ des angeregten Zusatndes bestimmen. Hier gilt $\mu_g = -2.844\cdot 10^{-9}eVT^{-1}$, $j_a = 3/2$ und $j_g = 1/2$.  Mithilfe dieser Gleichung kann man den Peaks Drehimpulse zuordnen, was in Tabelle \ref{tab:Hyper_Zuordnung} geschehen ist.\\
-Die Gleichung hat zwar 2 Unbekannte, durch geschickte Wahl der Peaks, zwischen denen man den Abstand bestimmt, kann man aber $\mu_a$ eliminieren. Dafür müssen zwei Peaks mit gleichem $m_a$ ausgewählt werden. Dies ist nur für Peaks 3/5 und für Peaks 2/4 der Fall. Für diese gilt
-\begin{equation}
+das Magnetfeld H und das magnetische Moment $\mu_a$ des angeregten Zustandes bestimmen. Hier gilt $\mu_g = -2.844\cdot 10^{-9}eVT^{-1}$, $j_a = 3/2$ und $j_g = 1/2$.  Mithilfe dieser Gleichung kann man den Peaks Drehimpulse zuordnen, was in Tabelle \ref{tab:Hyper_Zuordnung} geschehen ist.\\
+Die Gleichung hat zwar zwei Unbekannte, durch geschickte Wahl der Peaks, zwischen denen man den Abstand bestimmt, kann man aber $\mu_a$ eliminieren. Dafür müssen zwei Peaks mit gleichem $m_a$ ausgewählt werden. Dies ist nur für Peaks 3/5 und für Peaks 2/4 der Fall. Für diese gilt
+\begin{equation*}
 \Delta E = H\dfrac{\mu_g}{j_g}(m_{g}^i-m_{g}^j)
-\end{equation}
-woraus man direkt H berechnen kann. Dies ist in Tabelle \ref{tab:Hyper_H} geschehen. Der Fehler folgt wieder über gaussche Fehlerfortpflanzung. Eine gewichtete Mittelung ergibt das Endergebnis:
+\end{equation*}
+woraus man direkt H berechnen kann. Dies ist in Tabelle \ref{tab:Hyper_H} geschehen. Der Fehler folgt wieder über gausssche Fehlerfortpflanzung. Eine gewichtete Mittelung ergibt das Endergebnis:
 \begin{equation*}
 \boxed{H = \SI{30.55\pm 0.03}{T}}
 \end{equation*}
 
 \subsubsection{Magentisches Moment}
 Um nun das magnetische Moment $\mu_a$ im angeregten Zustand bestimmen zu können werden zwei Peaks mit gleichem $m_g$ ausgewählt und wieder der Abstand zwischen ihnen bestimmt. Dadurch vereinfacht sich Gleichung \ref{eq:Hyper} zu
-\begin{equation}
+\begin{equation*}
 \Delta E = -H\dfrac{\mu_a}{j_a}(m_{a}^i-m_{a}^j)
-\end{equation}
+\end{equation*}
 woraus man mit bekanntem H das Magentische Moment erhält. Dabei wurden die Peaks 2/1, 3/2 und 5/4, 6/5 betrachtet. Man könnte zwar theoretisch auch Kombinationen über die Spiegelachse (z.B 6/1) betrachten, bei denen aber der hintere Term von Gleichung \ref{eq:Hyper} nicht wegfällt und so die Formel um einiges komplizierter wird.\\
-Die so bestimmten Abstände und daraus berechnteten magnetischen Momente sind in Tabelle \ref{tab:Hyper_mu} aufgelistet. Die angegebenen Fehler stammen aus gaussischer Fehlerfortpflanzung der Fehler aus den Fits.\\
+Die so bestimmten Abstände und daraus berechneten magnetischen Momente sind in Tabelle \ref{tab:Hyper_mu} aufgelistet. Die angegebenen Fehler stammen aus gaussischer Fehlerfortpflanzung der Fehler aus den Fits.\\
 Daraus kann man wieder durch gewichtete Mittelung das Endergebnis erhalten:
 \begin{equation*}
 \boxed{\mu_a = \SI{4.88\pm 0.01}{neVT^{-1}}}
@@ -680,13 +716,13 @@ bestimmt. Man kann also die relativen Intensitäten leicht über
 \begin{equation}
 \dfrac{I_1}{I_2} = \dfrac{I_0^1 \sqrt{c^1}}{I_0^2 \sqrt{c^2}}
 \end{equation}
-ausrechnen. Die Fehler folgen durch gaussche Fehlerfortpflanzung aus den Fehlern der Anpassung. Es werden nur Peaks miteinander verglichen, die aus dem selben Teilspektrum stammen, also jeweils nur die Peaks 4,5,6 und 1,2,3.\\
+ausrechnen. Die Fehler folgen durch gausssche Fehlerfortpflanzung aus den Fehlern der Anpassung. Es werden nur Peaks miteinander verglichen, die aus dem selben Teilspektrum stammen, also jeweils nur die Peaks 4,5,6 und 1,2,3.\\
 In Tabelle \ref{tab:Hyper_hohe} sind alle relativen Höhe bezogen auf den jeweiligen kleinsten Peak eines Teilspektrums angegeben.\\
 \\
-Eie gewichtete Mittelung der jeweils zusammengehörenden Peakverhältnisse ergibt ein Verhältnis in der Reihenfolge (Innen : Mitte : Außen) von
-\begin{equation}
+Eine gewichtete Mittelung der jeweils zusammengehörenden Peakverhältnisse ergibt ein Verhältnis in der Reihenfolge (Innen : Mitte : Außen) von
+\begin{equation*}
 \boxed{1:(1.69\pm0.09):(2.16\pm0.09)}
-\end{equation}
+\end{equation*}
 Das Verhältnis zwischen äußerem und mittlerem Peak beträgt demnach $1.28\pm0.08$.
 \paragraph{Vergleich mit Erwartung}
 Aus der theoretischen Vorhersage hätte man ein Peakverhältnis von 1:2:3 erwartet. Die berechneten Höhenverhältnisse liegen zwar qualitativ in der richtigen Reihenfolge, der innere Peak ist aber im Verhältnis zum mittleren um $13\%$ und zum äußeren um $39\%$ zu groß. Eine Ursache dafür kann sein, dass ein kleiner Teil der Strahlung nicht aufgespalten wird und sich deswegen die inneren Peaks mit dem Einlinienspektrum überlagern. Ein weiterer Hinweis darauf ist, dass die Werte zwischen den beiden inneren Peaks nicht ganz auf die Nullhöhe zurücklaufen, sonder leicht tiefer liegen.\\
@@ -745,7 +781,7 @@ hinten & 1 und 6 & $4.97\pm 0.21$ \\
 \label{tab:Hyper_Iso}
 \end{table}
 
-Die Isomerieverschiebung wird hier über den Mittelpunkt zwischen 2 symmetrischen Peaks bestimmt, da diese die geliche Energieaufspaltung bestitzen sollten. Aus dem gewichteten Mittel dieser Verschiebungen erhält man die Isomerieverschiebung:
+Die Isomerieverschiebung wird hier über den Mittelpunkt zwischen zwei symmetrischen Peaks bestimmt, da diese die gleiche Energieaufspaltung besitzen sollten. Aus dem gewichteten Mittel dieser Verschiebungen erhält man die Isomerieverschiebung:
 \begin{equation*}
 \boxed{\delta = \SI{5.74\pm 0.29}{neV}}
 \end{equation*}
@@ -780,9 +816,9 @@ Die Isomerieverschiebung wird hier über den Mittelpunkt zwischen 2 symmetrische
 
 Das gemessene Spektrum ist in Abbildung \ref{fig:Quad_Roh} dargestellt, die Aufspaltung in die beiden Bereiche und die Darstellung mit Geschwindigkeit- und Energieachse in Abbildung \ref{fig:Quad_Data}.\\
 Mithilfe von 2 quadratischen Anpassungen der Form
-\begin{equation}
+\begin{equation*}
 y = a(x-b)^2+c
-\end{equation}
+\end{equation*}
 wird die Peakposition bestimmt. Diese sind in Abbildung \ref{fig:Quad_fit} zu sehen. In Tabelle \ref{tab:Quad_vor} sind die Ergebnisse der Anpassungen zu finden.\\
 \\
 Aus dem Fitparameter b kann man nun die Energieposition und daraus die Energiedifferenz der beiden Peaks bestimmt werden. Mithilfe der Gleichung
@@ -837,7 +873,7 @@ hinten & $ 142.24 \pm 0.27 $ & $ 8.516 \pm 0.016 $\\
 \end{table}
 
 \subsubsection{Isomerieverschiebung}
-Über den Mittelpunkt zwischen den beiden Peaks kann man auch hier die Isomerieverscheibung bestimmen. Die Ergebnisse sind in Tabelle \ref{tab:Quad_Iso} aufgelistet, wobei die Fehler gaussisch aus den Anpassungsfehlern fortgepflanzt wurden. Der gewichtete Mittelwert ergibt
+Über den Mittelpunkt zwischen den beiden Peaks kann man auch hier die Isomerieverschiebung bestimmen. Die Ergebnisse sind in Tabelle \ref{tab:Quad_Iso} aufgelistet, wobei die Fehler gaussisch aus den Anpassungsfehlern fortgepflanzt wurden. Der gewichtete Mittelwert ergibt
 \begin{equation*}
 \boxed{\delta = \SI{-51.27\pm 0.40}{neV}}
 \end{equation*}
@@ -863,12 +899,12 @@ Aus der Kalibration ergab sich, dass die verwendeten Maximalgeschwindigkeiten de
 \\
 Im Quellenspektrum konnte der Mößbauerpeak identifiziert werden. Außerdem konnte festgestellt werden, dass der untersuchte Bereich des Spektrums bis c.a \SI{21}{keV} geht. In diesem Bereich konnte außerdem noch ein Röntgenpeak von Eisen identifiziert werden.\\
 \\
-Die Durchlasswahrscheinlichkeiten von den 3 untersuchten Absorbern konnten zu $D_{Stahl} = 0,32408 \pm 0,00015$, $D_{Eisen} = 0,31549 \pm 0,00015$ und $D_{Eisensulfat} = 0,40552 \pm 0,00018$ bestimmt werden. Die dazugehörigen Wirkungsquerschnitte pro Atom sind $\sigma_{Stahl} = \SI{0.531\pm 0.002}{pm^2}$, $\sigma_{Eisen} = \SI{0.552\pm 0.002}{pm^2}$ und $\sigma_{Eisensulfat} = \SI{8.818\pm 0.043}{pm^2}$.\\
+Die Durchlasswahrscheinlichkeiten von den 3 untersuchten Absorbern konnten zu $D_{Stahl} = 0,32408 \pm 0,00015$, $D_{Eisen} = 0,31549 \pm 0,00015$ und $D_{Eisensulfat} = 0,40552 \pm 0,00018$ bestimmt werden. Die dazugehörigen Extinktionswirkungsquerschnitte pro Atom sind $\sigma_{Stahl} = \SI{0.531\pm 0.002}{pm^2}$, $\sigma_{Eisen} = \SI{0.552\pm 0.002}{pm^2}$ und $\sigma_{Eisensulfat} = \SI{8.818\pm 0.043}{pm^2}$\\
 \\
 Über das mit dem Stahlabsorber gemessene Einlinienspektrum konnte die natürliche Linienbreite zu $\Gamma_{nat} = \SI{4.63\pm 0.07}{neV}$ und die Lebensdauer zu $\tau = \SI{142.22\pm2.16}{ns}$ bestimmt werden. Diese Werte stimmen sehr gut mit den Erwartungen überein.\\
 Die Isomerieverschiebung in diesem Spektrum beträgt $\delta = \SI{12.08\pm 1.17}{neV}$.\\
 \\
-Mithilfe des Eisenabsorbers und der dort stattfindenden Hyperfeinstrukturaufspaltung konnte das lokale Magnetfeld im Kern mit $H = \SI{30.55\pm 0.03}{T}$ bestimmt werden. Damit ergibt sich das magnetische Moment im angeregten Zustand zu $\mu_a = \SI{4.88\pm 0.01}{neVT^{-1}}$. Außerdem wurden die relativen Peakintensitäten zu $1:(1.69\pm0.09):(2.16\pm0.09)$ (relativ zum kleinsten Peak) bestimmt. Sie liegen qualitativ in der richtigen Reihenfolge, quantitativ stimmen die Peakhöhen aber nicht mit der ERwartung überein.\\
+Mithilfe des Eisenabsorbers und der dort stattfindenden Hyperfeinstrukturaufspaltung konnte das lokale Magnetfeld im Kern mit $H = \SI{30.55\pm 0.03}{T}$ bestimmt werden. Damit ergibt sich das magnetische Moment im angeregten Zustand zu $\mu_a = \SI{4.88\pm 0.01}{neVT^{-1}}$. Außerdem wurden die relativen Peakintensitäten zu $1:(1.69\pm0.09):(2.16\pm0.09)$ (relativ zum kleinsten Peak) bestimmt. Sie liegen qualitativ in der richtigen Reihenfolge, quantitativ stimmen die Peakhöhen aber nicht mit der Erwartung überein.\\
 Die Isomerieverschiebung in diesem Spektrum beträgt $\delta = \SI{5.74\pm 0.29}{neV}$.\\
 \\
 Die Aufnahme mit dem Eisensulfat und die in diesem auftretende Quadrupolaufspaltung ergab ein Quadrupolmoment von $Q = \SI{8.52\pm 0.01}{Cfm^2}$. Dieses ist deutlich kleiner als der Literaturwert, was wahrscheinlich an der Benutzung einer Tieftemperaturnäherung liegt.\\
@@ -940,6 +976,25 @@ Die Isomerieverschiebung in diesem Spektrum beträgt $\delta = \SI{-51.27\pm 0.4
 \centering
 \includegraphics[scale=0.8]{Bilder/Extinktion/Eisensulfat.png}
 \caption{Messung des Spektrums zur Bestimmung des Extinktionwirkungsquerschnitts von FeSO$_4$ $\cdot$ 7H$_2$O.}
+\end{figure}
+
+\subsection{Quellenspektrum}
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/v0_und_vinf.png}
+\caption{Gemessenes Quellspektrum.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_alpha.png}
+\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\alpha}$-Linie von Eisen.}
+\end{figure}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_beta.png}
+\caption{Lineare Regression an abgelesenen Peaks mit der $K_{\beta}$-Linie von Eisen.}
 \end{figure}
 
 
