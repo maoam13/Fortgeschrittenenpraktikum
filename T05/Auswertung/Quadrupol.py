@@ -33,7 +33,7 @@ ver = 0
 korr = 0
 k = 1
 
-if 1:
+if 0:
     y = y[:512]
     x = x[:512]
     err = err[:512]
@@ -101,33 +101,68 @@ if ver != 0:
 #dhb_oben = hb_channel(werte1[0],Ewerte,werte1,halbhohe1+dhh)
 #print halbbreite1, abs(dhb_unten-halbbreite1), abs(dhb_oben-halbbreite1)
 
-pos1 = werte1[2],fehler1[2]
-pos2 = werte2[2],fehler2[2]
-hoch1 = werte1[1]-mittel,fehler1[1]
-hoch2 = werte2[1]-mittel,fehler2[1]
-print pos1, hoch1
-print pos2, hoch2
+pos1 = werte1[2]
+dpos1 = fehler1[2]
+pos2 = werte2[2]
+dpos2 = fehler2[2]
+delE = pos2-pos1
+delEerr = np.sqrt(dpos1**2+dpos2**2)
+print delE,delEerr
+print pos1/2+pos2/2,np.sqrt(dpos1/2**2+dpos2/2**2)
 
 plt.figure(1)
 ax = plt.subplot(111)
-ax.set_title("Einlinienspektrum")
+ax.set_title("Quadrupolspektrum")
 ax.set_xlabel("Channel")
 ax.set_ylabel("Counts")
 plt.plot(x,y)
 #plt.plot(x,np.full(len(x),halbhohe1))
-plt.plot(xfit1,quad(werte1,E1))
-plt.plot(xfit2,quad(werte2,E2))
+#plt.plot(xfit1,quad(werte1,E1))
+#plt.plot(xfit2,quad(werte2,E2))
 
 plt.figure(2)
 ax = plt.subplot(111)
-ax2 = ax.twiny()
-ax2.set_xlabel("Geschwindigkeit[mm/s]")
+#ax2 = ax.twiny()
+#ax2.set_xlabel("Geschwindigkeit[mm/s]")
 ax.set_ylabel("Counts")
 ax.set_xlabel("Energie[neV]")
-ax2.errorbar([v[0],v[-1]],[y[0],y[-1]],[err[0],err[-1]],fmt = ',')
-ax.errorbar(E,y,err,dE,fmt = '.')
+#ax2.errorbar([v[0],v[-1]],[y[0],y[-1]],[err[0],err[-1]],fmt = ',')
+#ax.errorbar(E,y,err,dE,fmt = '.')
+ax.plot(E,y)
 #ax.axis([E[0],E[-1],32000,39000])
 #ax.plot(E,np.full(len(E),halbhohe1),color = 'g')
 #ax2.plot(v[start-korr:ende-korr],quad(werte1,E1))
-ax.plot(Ewerte1,quad(werte1,Ewerte1))
-ax.plot(Ewerte2,quad(werte2,Ewerte2))
+#ax.plot(Ewerte1,quad(werte1,Ewerte1))
+#ax.plot(Ewerte2,quad(werte2,Ewerte2))
+
+plt.figure(3)
+ax = plt.subplot(211)
+ax.set_ylabel("Counts")
+ax.errorbar(E+14.4*10**12,y,err,dE,fmt = ',')
+frame1 = plt.gca()
+frame1.axes.xaxis.set_ticklabels([])
+xw = plt.xlim()
+ax2 = ax.twiny()
+ax2.set_xlabel("Geschwindigkeit[mm/s]")
+#ax2.errorbar(v,y,err,dv,fmt = ',')
+ax2.errorbar([v[0],v[-1]],[y[0],y[-1]],[err[0],err[-1]],fmt = ',',color = 'b')
+ax.plot(Ewerte1+14.4*10**12,quad(werte1,Ewerte1))
+ax.plot(Ewerte2+14.4*10**12,quad(werte2,Ewerte2))
+ax3=plt.subplot(212)
+ax3.set_ylabel("Residuen")
+plt.errorbar(E1,yfit1-quad(werte1,E1),errfit1,fmt = '.')
+plt.errorbar(E1+14.4*10**12,yfit1-quad(werte1,E1),errfit1,fmt = '.')
+plt.errorbar(E2+14.4*10**12,yfit2-quad(werte2,E2),errfit2,fmt = '.')
+x_r = np.array(xw)
+y_r = np.array([0, 0])
+ax3.axis([xw[0],xw[1],plt.ylim()[0],plt.ylim()[1]])
+plt.plot(x_r, y_r, color='r')
+ax3.set_xlabel("Energie[neV]")
+
+if 0:
+    print "\\begin{tabular}{|c|c|c|c|}"
+    print "\hline"
+    print "Peak 1& $",np.round(werte1[0],2),"\pm",np.round(fehler1[0],2),"$ & $",np.round(werte1[2],2),"\pm",np.round(fehler1[2],2),"$ & $",np.round(werte1[1],2),"\pm",np.round(fehler1[1],2),"$ & $",np.round(chi1,3),"$\\\\"
+    print "\hline"
+    print "Peak 2& $",np.round(werte2[0],2),"\pm",np.round(fehler2[0],2),"$ & $",np.round(werte2[2],2),"\pm",np.round(fehler2[2],2),"$ & $",np.round(werte2[1],2),"\pm",np.round(fehler2[1],2),"$ & $",np.round(chi2,3),"$\\\\"
+    print "\hline"

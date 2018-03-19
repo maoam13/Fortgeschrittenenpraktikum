@@ -32,6 +32,16 @@ exteisen = Spektrum("Extinsion Eisen.ws5")
 extsulfat = Spektrum("Extinsion Eisensulfat.ws5")
 extstahl = Spektrum("Extinsion Stahl.ws5")
 quell = Spektrum("Quellspektrum v0_echt.ws5")
+plt.figure(1)
+plt.plot(quell.x)
+plt.figure(2)
+
+def f(a,x):
+    return a[0]*np.exp(a[1]*(x-a[3]))+a[2]
+   
+a,b,c,d,e,g = p.lineare_regression(np.array([547,240]),np.array([14.4,7]),np.array([1,1]))
+x = np.arange(0,1024)
+plt.plot(x,a*x+c)
 
 
 

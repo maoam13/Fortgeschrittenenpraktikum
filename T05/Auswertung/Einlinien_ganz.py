@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar 15 14:34:53 2018
+Created on Sat Mar 17 13:22:38 2018
 
-@author: morit
+@author: Moritz
 """
 
 import Praktikummo as p
@@ -23,6 +23,7 @@ y = ein.x
 x = np.arange(0,1024,1)
 err = np.sqrt(y)
 mittel = np.mean(y[400:700])
+std = np.std(y[400:700])
 fehler = np.std(y[400:700])/len(y[400:700])
 E = kal.Kalibration(1)[0]-14.4*10**12
 dE = kal.Kalibration(1)[1]
@@ -44,15 +45,19 @@ else:
     versetzung = 539
     korr = 512
 
-start = 241-25+versetzung#-200
-ende = 241+25+versetzung#+200
+def lorentz(a,x):
+    return a[0]*a[3]/((x-a[2])**2+a[3])+a[1]
+
+start = 241-200+versetzung#-200
+ende = 241+200+versetzung#+200
 xfit1 = np.arange(start,ende,1)
 xwerte1 = np.arange(start,ende,0.01)
 E1 = E[start-versetzung:ende-versetzung]
 Ewerte = np.arange(np.round(E1[-1],1),np.round(E1[0],1),0.01)
 yfit1 = y[start:ende]
 errfit1 = err[start:ende]
-werte1,fehler1,chi1,m1,m2 = p.fitte_bel_function(E1,yfit1,errfit1,data.gauss,[10,1,14239,10000])
+#werte1,fehler1,chi1,m1,m2 = p.fitte_bel_function(E1,yfit1,errfit1,data.gauss,[10,-1,14239,10000])
+werte1,fehler1,chi1,m1,m2 = p.fitte_bel_function(E1,yfit1,errfit1,lorentz,[-5000,14000,10,100])
 
 if versetzung!= 0:
     y = y[512:]
@@ -77,11 +82,11 @@ print hohe1
 halbhohe1 = mittel-(mittel-hohe1)/2
 dhhu = np.sqrt((fehler/2)**2+(dhu/2)**2)
 dhho = np.sqrt((fehler/2)**2+(dho/2)**2)
-halbbreite1 = hb_channel(werte1[0],Ewerte,werte1,halbhohe1)
-dhb_unten = hb_channel(werte1[0],Ewerte,werteu,halbhohe1-dhhu)
-dhb_oben = hb_channel(werte1[0],Ewerte,werteo,halbhohe1+dhho)
-print halbbreite1, abs(dhb_unten-halbbreite1), abs(dhb_oben-halbbreite1)
-print 2*np.sqrt(2*np.log(2))*werte1[1], 2*np.sqrt(2*np.log(2))*fehler1[1]
+#halbbreite1 = hb_channel(werte1[0],Ewerte,werte1,halbhohe1)
+#dhb_unten = hb_channel(werte1[0],Ewerte,werteu,halbhohe1-dhhu)
+#dhb_oben = hb_channel(werte1[0],Ewerte,werteo,halbhohe1+dhho)
+#print halbbreite1, abs(dhb_unten-halbbreite1), abs(dhb_oben-halbbreite1)
+#print 2*np.sqrt(2*np.log(2))*werte1[1], 2*np.sqrt(2*np.log(2))*fehler1[1]
 
 plt.figure(1)
 ax = plt.subplot(111)
@@ -109,11 +114,11 @@ xw = plt.xlim()
 ax2 = ax.twiny()
 ax2.set_xlabel("Geschwindigkeit[mm/s]")
 ax2.errorbar(v,y,err,dv,fmt = ',')
-ax2.plot(v[start-korr:ende-korr],data.gauss(werte1,E1))
+ax2.plot(v[start-korr:ende-korr],lorentz(werte1,E1))
 #ax.plot(E[start-korr:ende-korr],data.gauss(werte1,E1))
 ax3=plt.subplot(212)
 ax3.set_ylabel("Residuen")
-plt.errorbar(E1+14.4*10**12,yfit1-data.gauss(werte1,E1),errfit1,fmt = '.')
+plt.errorbar(E1+14.4*10**12,yfit1-lorentz(werte1,E1),errfit1,fmt = '.')
 x_r = np.array(xw)
 y_r = np.array([0, 0])
 ax3.axis([xw[0],xw[1],plt.ylim()[0],plt.ylim()[1]])
@@ -131,3 +136,12 @@ ax2.set_xlabel("Geschwindigkeit[mm/s]")
 ax.set_xlabel("Energie[neV]")
 ax2.errorbar(v,y,err,dv,fmt = ',')
 #ax2.plot(v[start-korr:ende-korr],data.gauss(werte1,E1))
+
+plt.figure(4)
+ax = plt.subplot(111)
+ax.set_ylabel("Counts")
+ax.hist(y[400:700])
+axen =[plt.xlim()[0],plt.xlim()[1],plt.ylim()[0],plt.ylim()[1]]
+plt.vlines(mittel,0,plt.ylim()[1],linestyle = '--',color = 'r')
+plt.figtext(0.2,0.55,'mean= '+str(np.round(mittel,2))+'\n'+'sig= '+str(np.round(std,2))+'\n')
+plt.axis(axen)

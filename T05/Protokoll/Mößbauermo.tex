@@ -101,6 +101,8 @@ Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cd
 \subsection{Extinktionswirkungsquerschnitt}
 
 \subsection{Einlinienspektrum}
+
+\subsubsection{Linienbreite}
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/Einlinien/Ein_Rohdaten.png}
@@ -108,11 +110,515 @@ Für die Vermessung der elektrischen Quadrupolaufspaltung wird ein FeSO$_4$ $\cd
 \label{fig:Ein_Roh}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.49]{Bilder/Einlinien/Ein_Data_vor.png}
+\includegraphics[scale=0.49]{Bilder/Einlinien/Ein_Data_nach.png}
+\caption{Counts des Einlinienspektrums aufgetragen gegen Geschwindigkeit und Energie.}
+\label{fig:Ein_Data}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_gauss_vor.png}
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_gauss_nach.png}
+\caption{Counts des Einlinienspektrums aufgetragen gegen Geschwindigkeit und Energie.}
+\label{fig:Ein_gauss}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_halbgauss_vor.png}
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_halbgauss_nach.png}
+\caption{Anpassung von Gausspeaks an die }
+\label{fig:Ein_halbgauss}
+\end{figure}
+
 In Abbildung \ref{fig:Ein_Roh} sind die Rohdaten der Vermessung des Einlinienspektrums dargestellt.\\
+Da sich der Tranducer vor und zurück bewegt wiederholt sich das Spektrum in der hinteren Hälfte der Channel. Die vordere Hälfte beschreibt eine Schwingung von maximal negativer Geschwindigkeit bis maximal positiver, während die hintere Hälfte genau andersrum verläuft.\\
+Kalibriert man nun die Channels gegen Geschwindigkeit und Energie nach Kapitel TBD, so ergeben sich aus den beiden Hälften 2 Spektren, die das selbe beschreiben. Diese werden im folgenden beide getrennt ausgewertet, um das Ergebnis am Ende zu mitteln.\\
+Abbildung \ref{fig:Ein_Data} zeigt beide Spektren. Da es sich hier um radioaktive Zerfälle handelt, welche einer Poisson-Verteilung folgen, wird der Fehler auf die Counts mit $\sqrt{N}$ angenommen, wobei N die Anzahl der Counts darstellt. Aus der Kalibration erhält man außerdem einen Fehler in x-Richtung. Dieser ist aber um ein vielfaches kleiner als der Fehler auf die Counts, weswegen er nicht mit ins Gewicht fällt.\\
+\\
+Um die Eigenschaften der Peaks untersuchen zu können wird nun ein Gaussfit an diese angepasst. An diesen sollte man die Peakposition und über die Standardabweichung $\sigma$ mithilfe von 
+\begin{equation}
+\Gamma = 2\sqrt{2\log(2)}\sigma
+\end{equation}
+die Linienbreite $\Gamma$  bestimmtn können. Die Ergebnisse sind in Tabelle \ref{tab:Ein_gauss} zusammengefasst. Die Fehler werden direkt aus der Anpassung gaussisch fortgepflanzt.\\
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Bereich & Peakposition [neV] & Linienbreite über Höhe [neV] & Linienbreite über $\sigma$ [neV]\\ 
+\hline 
+vorne & $10.69\pm 0.18$ & $23.82^{+0.05}_{-0.06}$ & $23.58\pm 0.32$ \\ 
+\hline 
+hinten & $13.12\pm 0.18$ & $22.92\pm 0.06$ & $22.80\pm 0.32$ \\ 
+\hline 
+\end{tabular}
+\caption{Ergebnisse der Gaussanpassung an den ganzen Peak.}
+\label{tab:Ein_gauss}
+\end{table}
+
+Unter Annahme eines perfekten Gausspeaks, dessen Anpassung in Abbildung \ref{fig:Ein_gauss} gezeigt ist, zeigt sich aber, dass der Peak nach untenhin breiter als die Anpassung wird und somit das Ergebnis nicht sehr genau ist.\\
+Dies sieht man vorallem an der Systematik in den Residuen im relevanten Bereich.\\
+\\
+Deswegen wird stattdessen die Anpassung nur an der Spitze durchgeführt. Dies ist in Abbildung \ref{fig:Ein_halbgauss} zu sehen.\\
+Diese Anpassung repräsentiert allerdings nur die Position des Peaks. Um trotzdem die Halbwertsbreite bestimmen zu können wird eine Rauschmessung an einem Ausschnitt der ebenen Daten durchgeführt. Diese ist in Abbildung \ref{fig:Ein_Rausch} dargestellt.\\
+Mithilfe von 
+\begin{equation}
+h = N_0 - \dfrac{N_0-N_P}{2} = \dfrac{N_0+N_P}{2}
+\end{equation}
+ergibt sich schließlich die Position der halben Höhe des Peaks. Dabei ist $N_0$ der Mittelwert der Rauschmessung, also die Referenzhöhe, und $N_P$ die Höhe des Peaks.\\
+Der Fehler auf die Halbhöhe ergibt sich aus gausscher Fehlerfortpflanzung der Fehler von Mittelwert und Peakposition.\\
+Die Halbwertsbreite wird nun über die Schnittpunkte der Anpassung mit der Halbhöhe bestimmt. Der Fehler der Halbwertsbreite ergibt sich über die Verschiebemethode. Dabei wird die Anpassung um ihre Fehler (in allen Kombinationen) verschoben und eine neue Halbhöhe und neue Halbwertsbreite ausgerechnet. Aus der maximalen Abweichung vom Ursprünglichen Wert erhält man dann den Fehler.\\
+\\
+Die x-Position des Peaks erhält man weiterhin direckt aus der Anpassung.\\
+Alle Ergebnisse sind in Tabelle \ref{tab:Ein_halbgauss} zusammengefasst.\\
+Eine gewichtete Mittelung der über die Höhe bestimmte Linienbreite ergibt das Endergebnis:
+\begin{equation*}
+\boxed{\Gamma = \SI{20.95\pm 0.32}{neV}}
+\end{equation*}
+
+\subsubsection{Isomerieverschiebung}
+Aus der Abweichung der Peaklage von der Null-Energie erhält man außerdem die Isomerieverschiebung. Auch die Peaklage wird gemittelt und man erhält:
+\begin{equation*}
+\boxed{\delta = \mu = \SI{12.08\pm 1.17}{neV}}
+\end{equation*}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Bereich & Peakposition [neV] & Linienbreite über Höhe [neV] & Linienbreite über $\sigma$ [neV]\\ 
+\hline 
+vorne & $10.77\pm 0.09$ & $21.31^{+0.23}_{-0.25}$ & $20.33\pm 0.40$ \\ 
+\hline 
+hinten & $13.19\pm 0.08$ & $20.66 \pm 0.22$ & $19.49\pm 0.34$ \\ 
+\hline 
+\end{tabular}
+\caption{Ergebnisse der Gaussanpassung an die Spitze des Peaks.}
+\label{tab:Ein_halbgauss}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.49]{Bilder/Einlinien/Ein_Rausch.png}
+\caption{Rauschmessung zur bestimmung der Höhe}
+\label{fig:Ein_Rausch}
+\end{figure}
+
+\subsubsection{Vergleich mit Literaturwerten}
+Die berechnete Linienbreite entspricht noch nicht der natürlichen Linienbreite, sondern
+\begin{equation}
+\Gamma = (2+0.27\beta f' d n \sigma_0) \cdot \Gamma_{nat} = const \cdot \Gamma_{nat}
+\end{equation}
+mit $\beta = 0.022$,$f' = 0.85$,$d = 25\mu m$ und $n=8.4\cdot 10^{22}cm^{-3}$, wobei 
+\begin{equation}
+\sigma_0 = 2 \pi \dfrac{c^2 \hbar^2}{E_0^2} \dfrac{1}{1+\alpha} \dfrac{2 J_a+1}{2 J_g+1} \approx 2.38\cdot 10^{-22} m^2
+\end{equation}
+mit $E_0 = 14.4keV$, $\alpha = 8.9$,$J_a = 3/2$,$J_g = 1/2$. Darasu folgt 
+\begin{equation}
+const \approx 4.527
+\end{equation}
+Damit folgt die berechnete Natürliche Linienbreite und über
+\begin{equation}
+\tau_{exp} = \dfrac{\hbar}{\Gamma_{nat}}
+\label{eq:tau}
+\end{equation}
+die berechnete Lebensdauer. Alle Fehler werden gaußisch fortgepflanzt.\\
+\\
+Die erwartete Lebensdauer berechnet sich über die Halbwertszeit:
+\begin{equation}
+\tau_{theo} = \dfrac{\hbar\cdot ln(2)}{T_{1/2}}
+\end{equation}
+woraus man über Gleichung \ref{eq:tau} dei erwartete Linienbreite bekommt.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ & echte Linienbreite[neV] & nat. Linienbreite[neV] & Lebensdauer[ns]\\ 
+\hline 
+Gemessen & $20.95\pm 0.32$ & $4.63\pm 0.07$ & $142.22\pm2.16$\\ 
+\hline 
+Erwartung & 21.08 & 4.66 & 141.38\\ 
+\hline 
+\end{tabular} 
+\label{tab:Ein_lit}
+\caption{Alle Ergebnisse der Messung und erwartete Werte.}
+\end{table}
 
 
 \subsection{Magnetische Hyperfeinstrukturaufspaltung}
+
+\subsubsection{Magentfeldstärke}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Hyperfein/Hyper_Roh.png}
+\caption{Hyperfeinstrukur Rohdaten}
+\label{fig:Hyper_Roh}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Hyperfein/Hyper_Data_vor.png}
+\includegraphics[scale=0.8]{Bilder/Hyperfein/Hyper_Data_nach.png}
+\caption{Hyperfeinstrukur Counts gegen Geschwindigkeit und Energie aufgetragen.}
+\label{fig:Hyper_Data}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{Bilder/Hyperfein/Hyper_fit_vor.png}
+\includegraphics[scale=0.9]{Bilder/Hyperfein/Hyper_fit_nach.png}
+\caption{Anpaasungen von quadratischen Funktionen an die Peaks}
+\label{fig:Hyper_fit}
+\end{figure}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& $I_0$ & b & a & c & $\chi / ndof$\\
+\hline
+Peak 1 & $ -51658.87 \pm 870.09 $ & $ 234553.56 \pm 103.63 $ & $ -230.17 \pm 0.1 $ & $ 34.76 \pm 1.35 $ & $ 0.462 $\\
+\hline
+Peak 2& $ -43672.07 \pm 699.54 $ & $ 234203.4 \pm 119.28 $ & $ -129.99 \pm 0.19 $ & $ 30.37 \pm 1.67 $ & $ 0.818 $\\
+\hline
+Peak 3& $ -28212.83 \pm 1116.91 $ & $ 233753.94 \pm 131.51 $ & $ -30.15 \pm 0.23 $ & $ 28.4 \pm 2.67 $ & $ 0.809 $\\
+\hline
+Peak 4& $ -26349.96 \pm 268.14 $ & $ 234020.59 \pm 81.22 $ & $ 43.9 \pm 0.15 $ & $ 26.23 \pm 1.24 $ & $ 0.313 $\\
+\hline
+Peak 5& $ -43843.81 \pm 1473.79 $ & $ 234083.03 \pm 113.84 $ & $ 143.19 \pm 0.17 $ & $ 28.88 \pm 1.94 $ & $ 0.716 $\\
+\hline
+Peak 6 & $ -51685.83 \pm 430.51 $ & $ 234639.9 \pm 108.89 $ & $ 241.3 \pm 0.09 $ & $ 34.34 \pm 1.02 $ & $ 0.37 $\\
+\hline
+\end{tabular} 
+\caption{Ergebnisse der Anpassungen an das vordere Spektrum. Peaks sind von rechts nach links durchnummeriert.}
+\label{tab:Hyper_fit_vor}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+& $I_0$ & b & a & c & $\chi / ndof$\\
+\hline
+Peak 1 & $ -51424.26 \pm 705.82 $ & $ 235692.95 \pm 109.59 $ & $ -231.11 \pm 0.1 $ & $ 35.9 \pm 1.31 $ & $ 0.46 $\\
+\hline
+Peak 2& $ -43893.01 \pm 1050.77 $ & $ 235892.75 \pm 102.2 $ & $ -131.34 \pm 0.16 $ & $ 31.56 \pm 1.69 $ & $ 0.578 $\\
+\hline
+Peak 3& $ -27559.47 \pm 778.76 $ & $ 235753.31 \pm 132.76 $ & $ -31.13 \pm 0.23 $ & $ 31.24 \pm 2.51 $ & $ 0.767 $\\
+\hline
+Peak 4& $ -27182.12 \pm 1325.83 $ & $ 235710.97 \pm 129.38 $ & $ 42.93 \pm 0.24 $ & $ 23.31 \pm 2.49 $ & $ 0.833 $\\
+\hline
+Peak 5& $ -44249.17 \pm 566.44 $ & $ 235930.07 \pm 112.18 $ & $ 142.59 \pm 0.17 $ & $ 31.59 \pm 1.52 $ & $ 0.675 $\\
+\hline
+Peak 6 & $ -51531.79 \pm 425.04 $ & $ 235901.73 \pm 101.06 $ & $ 241.04 \pm 0.08 $ & $ 37.53 \pm 1.01 $ & $ 0.308 $\\
+\hline
+\end{tabular} 
+\caption{Ergebnisse der Anpassungen an das hintere Spektrum. Peaks sind von rechts nach links durchnummeriert.}
+\label{tab:Hyper_fit_nach}
+\end{table}
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+$m_g$ & $m_a$ & Peak \\ 
+\hline 
+1/2 & 3/2 & 1 \\ 
+\hline 
+1/2 & 1/2 & 2 \\  
+\hline 
+1/2 & -1/2 & 3 \\ 
+\hline 
+-1/2 & 1/2 & 4 \\ 
+\hline 
+-1/2 & -1/2 & 5 \\ 
+\hline 
+-1/2 & -3/2 & 6 \\ 
+\hline 
+\end{tabular} 
+\caption{Zuordnung der Peaks zu den Drehimpulsen. Die Peaks werden von links (kleinste Energie) nach rechts (größste Energie) durchgezählt. Anmerkung: Es wurde angenommen, dass $\mu_a$ positiv ist. Wenn es negativ ist ändert sich die Reihenfolge.}
+\label{tab:Hyper_Zuordnung}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Spektrum & Peaks & Abstand[neV] & Meagnetfeld[T]\\ 
+\hline 
+vorne & 5-3 & $173.89\pm 0.24$ & $30.57\pm 0.04$\\ 
+\hline 
+vorne & 4-2 & $173.34\pm 0.29$& $30.47\pm 0.05$\\ 
+\hline 
+\hline 
+hinten & 5-3 & $174.27\pm 0.29$ & $30.63\pm 0.05$\\ 
+\hline 
+hinten & 4-2 & $173.71\pm 0.29$& $30.54\pm 0.05$\\ 
+\hline 
+\end{tabular} 
+\caption{Energieabstände zur Bestimmung von H.}
+\label{tab:Hyper_H}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Spektrum & Peaks & Abstand[neV] & magn. Moment[neVT]\\ 
+\hline 
+vorne & 2-1 & $100.18 	\pm 0.22$ & $4.91\pm 0.01$\\ 
+\hline 
+vorne & 3-2 & $99.85\pm 0.29$& $4.90\pm 0.02$\\ 
+\hline
+vorne & 5-4 & $99.29\pm 0.26$& $4.87\pm 0.01$\\ 
+\hline 
+vorne & 6-5 & $99.11\pm 0.18$& $4.81\pm 0.01$\\ 
+\hline 
+\hline 
+hinten & 2-1 & $99.84\pm 0.22$ & $4.90\pm 0.01$\\ 
+\hline 
+hinten & 3-2 & $100.21\pm 0.30$& $4.91\pm 0.02$\\ 
+\hline
+hinten & 5-4 & $99.66\pm 0.32$& $4.89\pm 0.02$\\ 
+\hline 
+hinten & 6-5 & $99.45\pm 0.23$& $4.83\pm 0.01$\\ 
+\hline 
+\end{tabular} 
+\caption{Energieabstände zur Bestimmung von $\mu_a$.}
+\label{tab:Hyper_mu}
+\end{table}
+
+Das Spektrum zur Hyperfeinstrukturaufspaltung ist in Abbildung \ref{fig:Hyper_Roh} dargestellt. Auch hier gibt es die Aufspaltung in 2 gespiegelte Bereiche, welche in Abbildung \ref{fig:Hyper_Data} gegen Geschwindigkeit und Energie kalibriert sind.\\
+\\
+An die Peaks wird eine Lorentz-Kurve der Form
+\begin{equation}
+y = I_0 \dfrac{c}{(x-a)^2+c}+b
+\end{equation}
+angepasst. Dabei ist $I_0$ die maximale Peakhöhe, a die Position in x-Richtung, b die Position in y-Srichtung und c beschreibt die Breite der Kurve.
+Die Anpassungen sind in Abbildung \ref{fig:Hyper_fit} dargestellt und die Ergebnisse aus diesen Fits befinden sich in Tabelle \ref{tab:Hyper_fit_vor} für das vordere Spektrum und in Tabelle \ref{tab:Hyper_fit_nach} für das hintere.
+\\
+Aus den Parameter a der Anpassungen kann man die Abstände zwischen den Peaks bestimmen und so über 
+\begin{equation}
+\Delta E = -H\left(\dfrac{\mu_a m_a}{j_a}-\dfrac{\mu_g m_g}{j_g}\right)
+\label{eq:Hyper}
+\end{equation}
+das Magnetfeld H und das magnetische Moment $\mu_a$ des angeregten Zusatndes bestimmen. Hier gilt $\mu_g = -2.844\cdot 10^{-9}eVT^{-1}$, $j_a = 3/2$ und $j_g = 1/2$.  Mithilfe dieser Gleichung kann man den Peaks Drehimpulse zuordnen, was in Tabelle \ref{tab:Hyper_Zuordnung} geschehen ist.\\
+Die Gleichung hat zwar 2 Unbekannte, durch geschickte Wahl der Peaks, zwischen denen man den Abstand bestimmt, kann man aber $\mu_a$ eliminieren. Dafür müssen zwei Peaks mit gleichem $m_a$ ausgewählt werden. Dies ist nur für Peaks 3/5 und für Peaks 2/4 der Fall. Für diese gilt
+\begin{equation}
+\Delta E = H\dfrac{\mu_g}{j_g}(m_{5/4}-m_{3/2})
+\end{equation}
+woraus man direkt H berechnen kann. Dies ist in Tabelle \ref{tab:Hyper_H} geschehen. Der Fehler folgt wieder über gaussche Fehlerfortpflanzung. Eine gewichtete Mittelung ergibt das Endergebnis:
+\begin{equation*}
+\boxed{H = \SI{30.55\pm 0.03}{T}}
+\end{equation*}
+
+\subsubsection{Magentisches Moment}
+Um nun das magnetische Moment $\mu_a$ im angeregten Zustand bestimmen zu können werden zwei Peaks mit gleichem $m_g$ ausgewählt und wieder der Abstand zwischen ihnen bestimmt. Dadurch vereinfacht sich Gleichung \ref{eq:Hyper} zu
+\begin{equation}
+\Delta E = -H\dfrac{\mu_a}{j_a}(m_{a}^i-m_{a}^j)
+\end{equation}
+woraus man mit bekanntem H das Magentische Moment erhält. Dabei wurden die Peaks 2/1, 3/2 und 5/4, 6/5 betrachtet. Man könnte zwar theoretisch auch Kombinationen über die Spiegelachse (z.B 6/1) betrachten, bei denen aber der hintere Term von Gleichung \ref{eq:Hyper} nicht wegfällt und so die Formel um einiges komplizierter wird.\\
+Die so bestimmten Abstände und daraus berechnteten magnetischen Momente sind in Tabelle \ref{tab:Hyper_mu} aufgelistet. Die angegebenen Fehler stammen aus gaussischer Fehlerfortpflanzung der Fehler aus den Fits.\\
+Daraus kann man wieder durch gewichtete Mittelung das Endergebnis erhalten:
+\begin{equation*}
+\boxed{\mu_a = \SI{4.88\pm 0.01}{neVT^{-1}}}
+\end{equation*}
+
+\subsubsection{relative Peakhöhe}
+
+Die Intensitäten der Peaks werden über die Beziehung des Anpassungsparameters $c = \gamma^2 = \dfrac{\Gamma^2}{4}$ und die maximale Peakhöhe $I_0$ mithilfe von
+\begin{equation}
+I_{ges} = \dfrac{I_0 \gamma \pi}{\hbar}
+\end{equation}
+bestimmt. Man kann also die relativen Intensitäten leicht über
+\begin{equation}
+\dfrac{I_1}{I_2} = \dfrac{I_0^1 \sqrt{c^1}}{I_0^2 \sqrt{c^2}}
+\end{equation}
+ausrechnen. Die Fehler folgen durch gaussche Fehlerfortpflanzung aus den Fehlern der Anpassung. Es werden nur Peaks miteinander verglichen, die aus dem selben Teilspektrum stammen, also jeweils nur die Peaks 4,5,6 und 1,2,3.\\
+In Tabelle \ref{tab:Hyper_hohe} sind alle relativen Höhe bezogen auf den jeweiligen kleinsten Peak eines Teilspektrums angegeben.\\
+\\
+Eie gewichtete Mittelung der jeweils zusammengehörenden Peakverhältnisse ergibt ein Verhältnis in der Reihenfolge (Innen : Mitte : Außen) von
+\begin{equation}
+\boxed{1:(1.69\pm0.09):(2.16\pm0.09)}
+\end{equation}
+Das Verhältnis zwischen äußerem und mittlerem Peak beträgt demnach $1.28\pm0.08$.
+\paragraph{Vergleich mit Erwartung}
+Aus der theoretischen Vorhersage hätte man ein Peakverhältnis von 1:2:3 erwartet. Die berechneten Höhenverhältnisse liegen zwar qualitativ in der richtigen Reihenfolge, der innere Peak ist aber im Verhältnis zum mittleren um $13\%$ und zum äußeren um $39\%$ zu groß. Eine Ursache dafür kann sein, dass ein kleiner Teil der Strahlung nicht aufgespalten wird und sich deswegen die inneren Peaks mit dem Einlinienspektrum überlagern. Ein weiterer Hinweis darauf ist, dass die Werte zwischen den beiden inneren Peaks nicht ganz auf die Nullhöhe zurücklaufen, sonder leicht tiefer liegen.\\
+Ein weiterer Grund für die Abweichung der Verhältnisse von der Erwartung ist ein nicht ganz unpolarisiertes Magnetfeld, da sich durch Ausrichtung des Feldes die relativen Höhen ändern.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Spektrum & Peaks & rel. Höhe\\ 
+\hline 
+vorne & 2/3 & $1.74\pm 0.16$\\ 
+\hline 
+vorne & 5/4 & $1.60\pm 0.19$\\ 
+\hline
+hinten & 2/3 & $1.89\pm 0.24$\\ 
+\hline
+hinten & 5/4 & $1.60\pm 0.17$\\ 
+\hline
+\hline
+vorne & 1/3 & $2.24\pm 0.13$\\ 
+\hline
+vorne & 6/4 & $2.03\pm 0.22$\\ 
+\hline 
+hinten & 1/3 & $2.41\pm 0.29$\\ 
+\hline
+hinten & 6/4 & $2.00\pm 0.19$\\ 
+\hline
+\end{tabular} 
+\caption{Relative Peakhöhen bezogen auf die kleinsten Peaks (3 und 4). Der obere Teil beschreibt die relative Höhe zwischen kleinstem und mittleren Peak und der untere Teil die Höhe zwischen kleinstem und größten Peak.}
+\label{tab:Hyper_hohe}
+\end{table}
+
+\subsubsection{Isomerieverschiebung}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Spektrum & Peaks & Mittelpunkt \\ 
+\hline 
+vorne & 3 und 4 & $6.88\pm 0.31$ \\ 
+\hline 
+vorne & 2 und 5 & $6.60\pm 0.30$ \\ 
+\hline 
+vorne & 1 und 6 & $5.56\pm 0.22$ \\ 
+\hline
+\hline
+hinten & 3 und 4 & $5.90\pm 0.34$ \\ 
+\hline 
+hinten & 2 und 5 & $5.62\pm 0.29$ \\ 
+\hline 
+hinten & 1 und 6 & $4.97\pm 0.21$ \\ 
+\hline 
+\end{tabular} 
+\caption{Mittelpunkte zwischen den jeweiligen symmetrischen Peaks zur Bestimmung der Isomerieverschieung.}
+\label{tab:Hyper_Iso}
+\end{table}
+
+Die Isomerieverschiebung wird hier über den Mittelpunkt zwischen 2 symmetrischen Peaks bestimmt, da diese die geliche Energieaufspaltung bestitzen sollten. Aus dem gewichteten Mittel dieser Verschiebungen erhält man die Isomerieverschiebung:
+\begin{equation*}
+\boxed{\delta = \SI{5.74\pm 0.29}{neV}}
+\end{equation*}
+
+
 \subsection{Elektrische Quadrupolaufspaltung}
+
+\subsubsection{Quadrupolmoment}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_Roh.png}
+\caption{Quadrupolaufspaltung Rohdaten}
+\label{fig:Quad_Roh}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_Data_vor.png}
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_Data_nach.png}
+\caption{Quadrupolaufspaltung gegen Energie und Geschwindigkeit.}
+\label{fig:Quad_Data}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_fit_vor.png}
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_fit_nach.png}
+\caption{Quadratische Anpassung an die Umgebungen der Peaks.}
+\label{fig:Quad_fit}
+\end{figure}
+
+Das gemessene Spektrum ist in Abbildung \ref{fig:Quad_Roh} dargestellt, die Aufspaltung in die beiden Bereiche und die Darstellung mit Geschwindigkeit- und Energieachse in Abbildung \ref{fig:Quad_Data}.\\
+Mithilfe von 2 quadratischen Anpassungen der Form
+\begin{equation}
+y = a(x-b)^2+c
+\end{equation}
+wird die Peakposition bestimmt. Diese sind in Abbildung \ref{fig:Quad_fit} zu sehen. In Tabelle \ref{tab:Quad_vor} sind die Ergebnisse der Anpassungen zu finden.\\
+\\
+Aus dem Fitparameter b kann man nun die Energieposition und daraus die Energiedifferenz der beiden Peaks bestimmt werden. Mithilfe der Gleichung
+\begin{equation}
+\Delta E = \dfrac{1}{4 \pi \epsilon_0}\dfrac{4}{7}(1-R)^2e^2\cdot Q \cdot \left(\dfrac{1}{r^3}\right)_{3d}
+\label{eq:Quad}
+\end{equation}
+kann das Quadrupolmoment Q bestimmt werden, wobei $R = 0.42$ und $(r^{-3})_{3d} = 35\cdot 10^{24} cm^{-3}$. Die Ergebnisse sind in Tabelle \ref{tab:Quad_ergebnis} aufgelistet.\\
+Der gewichtete Mittelwert ergibt für das Quadrupolmoment:
+\begin{equation*}
+\boxed{Q = \SI{8.52\pm 0.01}{fm^2}}
+\end{equation*}
+
+\paragraph{Vergleich mit Literaturwert}
+Der Literaturwert des Quadrupolmomentes beträgt $\SI{18}{fm^2}$. Unser gemessener Wert ist also um einen Faktor 2.1 zu klein. Dies liegt vermutlich daran, dass Gleichung \ref{eq:Quad} nur für tiefe Temperaturen gilt. Es wurde aber bei Raumtemperatur gearbeitet.
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Spektrum &  & a & b & c & $\chi / ndof$\\
+\hline
+vorne & Peak 1 & $ 96.9 \pm 24.53 $ & $ -121.93 \pm 0.21 $ & $ 33013.17 \pm 67.48 $ & $ 0.294 $\\
+\hline
+vorne & Peak 2& $ 74.5 \pm 13.76 $ & $ 20.31 \pm 0.24 $ & $ 33098.98 \pm 80.66 $ & $ 0.379 $\\
+\hline
+\hline
+hinten & Peak 1& $ 153.99 \pm 36.93 $ & $ -122.73 \pm 0.2 $ & $ 32928.74 \pm 85.57 $ & $ 0.282 $\\
+\hline
+hinten & Peak 2& $ 86.68 \pm 11.15 $ & $ 19.51 \pm 0.18 $ & $ 33066.82 \pm 59.87 $ & $ 0.198 $\\
+\hline
+\end{tabular}
+\caption{Ergebnsse der Anpassungen.}
+\label{tab:Quad_vor}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Spektrum & Abstand[neV] & Quadrupolmoment[$\si{fm^2}$]\\
+\hline
+vorne & $ 142.23 \pm 0.32 $ & $ 8.515 \pm 0.019 $\\
+\hline
+\hline
+hinten & $ 142.24 \pm 0.27 $ & $ 8.516 \pm 0.016 $\\
+\hline
+\end{tabular}
+\caption{Ergebnsse der Anpassungen.}
+\label{tab:Quad_ergebnis}
+\end{table}
+
+\subsubsection{Isomerieverschiebung}
+Über den Mittelpunkt zwischen den beiden Peaks kann man auch hier die Isomerieverscheibung bestimmen. Die Ergebnisse sind in Tabelle \ref{tab:Quad_Iso} aufgelistet, wobei die Fehler gaussisch aus den Anpassungsfehlern fortgepflanzt wurden. Der gewichtete Mittelwert ergibt
+\begin{equation*}
+\boxed{\delta = \SI{-51.27\pm 0.40}{neV}}
+\end{equation*}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Spektrum & Isomerieverschiebung[neV]\\
+\hline
+vorne & $ -50.81\pm 0.34 $\\
+\hline
+\hline
+hinten & $ -51.61 \pm 0.31 $\\
+\hline
+\end{tabular}
+\caption{Isomerieverschiebung im Spektum vom Quadrupolmoment}
+\label{tab:Quad_Iso}
+\end{table}
 
 \section{Fazit}
 

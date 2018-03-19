@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import Data as data
 import Kalibration_Methode as kal
+import scipy.constants as s
 
 def hb_channel(peakpos,xwerte,fitwerte,halbhohe):
     split = np.where(xwerte>np.round(peakpos,1))[0][0]
@@ -22,8 +23,6 @@ ein = data.Spektrum("Hyperfein messung 18h.ws5")
 y = ein.x[:1024]
 x = np.arange(0,1024,1)
 err = np.sqrt(y)
-mittel = np.mean(y[115:140])
-fehler = np.std(y[115:140])/len(y[115:140])
 E = kal.Kalibration(3)[0]-14.4*10**12
 dE = kal.Kalibration(3)[1]
 v = kal.Kalibration(3)[2]
@@ -32,8 +31,10 @@ dv = kal.Kalibration(3)[3]
 ver = 0
 korr = 0
 k = 1
+off = 0
+off2 = 0
 
-if 1:
+if 0:
     y = y[:512]
     x = x[:512]
     err = err[:512]
@@ -56,6 +57,8 @@ else:
     p4 = 748
     p5 = 685
     p6 = 601
+    off = 520
+    off2 = 10
 
 def quad(a,x):
     return a[0]*(x-a[2])**2+a[1]
@@ -72,7 +75,8 @@ else:
 yfit1 = y[start:ende]
 errfit1 = err[start:ende]
 werte1,fehler1,chi1,m1,m2 = p.fitte_bel_function(E1,yfit1,errfit1,quad,[1000,100000,242])
-
+print werte1
+print fehler1
 start = p2-5#72
 ende = p2+5#86
 xfit2 = x[start:ende]
@@ -147,19 +151,15 @@ if ver != 0:
     dE = dE[512:]
     v = v[512:]
     dv = dv[512:]
-#hohe1 = min(data.gauss(werte1,Ewerte))
-#wertef = np.array(werte1)
-#wertef[2] = werte1[2]-fehler1[2]
-#wertef[1] = werte1[1]+fehler1[1]
-#dh = min(data.gauss(wertef,Ewerte))-hohe1
-#print dh
-#print hohe1
-#halbhohe1 = mittel-(mittel-hohe1)/2
-#dhh = np.sqrt((fehler/2)**2+(dh/2)**2)
-#halbbreite1 = hb_channel(werte1[0],Ewerte,werte1,halbhohe1)
-#dhb_unten = hb_channel(werte1[0],Ewerte,werte1,halbhohe1-dhh)
-#dhb_oben = hb_channel(werte1[0],Ewerte,werte1,halbhohe1+dhh)
-#print halbbreite1, abs(dhb_unten-halbbreite1), abs(dhb_oben-halbbreite1)
+    
+my = np.concatenate((y[115+off2:140+off2],y[190+off2:210+off2]))
+my = np.concatenate((my,y[291+off2:315+off2]))
+my = np.concatenate((my,y[356+off2:380+off2]))
+mittel = np.mean(my)
+print mittel
+std = np.std(my)
+fehler = np.std(my)/len(my)
+print fehler
 
 pos1 = werte1[2],fehler1[2]
 pos2 = werte2[2],fehler2[2]
@@ -173,36 +173,145 @@ hoch3 = werte3[1]-mittel,fehler3[1]
 hoch4 = werte4[1]-mittel,fehler4[1]
 hoch5 = werte5[1]-mittel,fehler5[1]
 hoch6 = werte6[1]-mittel,fehler6[1]
-print pos1, hoch1
-print pos2, hoch2
-print pos3, hoch3
-print pos4, hoch4
-print pos5, hoch5
-print pos6, hoch6
+print hoch1
+print hoch2
+print hoch3
+print hoch4
+print hoch5
+print hoch6
+print "lablabla"
+iso1 = pos3[0]+pos4[0],np.sqrt(pos3[1]**2+pos4[1]**2)
+iso2 = pos2[0]+pos5[0],np.sqrt(pos2[1]**2+pos5[1]**2)
+iso3 = pos1[0]+pos6[0],np.sqrt(pos1[1]**2+pos6[1]**2)
+print iso1
+print iso2
+print iso3
+EH1 = pos3[0]-pos5[0],np.sqrt(pos3[1]**2+pos5[1]**2)
+H1 = EH1[0]*10**-9*(1./2)/(-0.0903*3.15*10**-8*(-1./2-1./2)),EH1[1]*10**-9*(1./2)/(-0.0903*3.15*10**-8*(-1./2-1./2))
+EH2 = pos2[0]-pos4[0],np.sqrt(pos4[1]**2+pos2[1]**2)
+H2 = EH2[0]*10**-9*(1./2)/(-0.0903*3.15*10**-8*(-1./2-1./2)),EH2[1]*10**-9*(1./2)/(-0.0903*3.15*10**-8*(-1./2-1./2))
+print EH1
+print EH2
+print H1
+print H2
+Emu2 = pos2[0]-pos3[0],np.sqrt(pos3[1]**2+pos2[1]**2)
+Emu1 = pos1[0]-pos2[0],np.sqrt(pos2[1]**2+pos1[1]**2)
+Emu5 = pos3[0]-pos4[0],np.sqrt(pos3[1]**2+pos4[1]**2)
+Emu3 = pos4[0]-pos5[0],np.sqrt(pos4[1]**2+pos5[1]**2)
+Emu4 = pos5[0]-pos6[0],np.sqrt(pos5[1]**2+pos6[1]**2)
+print " "
+print Emu1
+print Emu2
+print Emu3
+print Emu4
+H = 30.58
+dH = 0.03
+mu1 = -Emu1[0]*3./2/H/(-3./2+1./2)
+mu2 = -Emu2[0]*3./2/H/(-1./2-1./2)
+mu3 = -Emu3[0]*3./2/H/(-1./2-1./2)
+mu4 = -Emu4[0]*3./2/H/(1./2-3./2)
+print mu1,np.sqrt((mu1/Emu1[0]*Emu1[1])**2+(mu1/H*dH)**2)#6-5
+print mu2,np.sqrt((mu2/Emu2[0]*Emu2[1])**2+(mu2/H*dH)**2)#5-4
+print mu3,np.sqrt((mu3/Emu3[0]*Emu3[1])**2+(mu3/H*dH)**2)#3-2
+print mu4,np.sqrt((mu4/Emu4[0]*Emu4[1])**2+(mu4/H*dH)**2)#2-1
+
 
 plt.figure(1)
 ax = plt.subplot(111)
-ax.set_title("Einlinienspektrum")
+ax.set_title("Hyperfeinstrukturspektrum")
 ax.set_xlabel("Channel")
 ax.set_ylabel("Counts")
 plt.plot(x,y)
 #plt.plot(x,np.full(len(x),halbhohe1))
-plt.plot(xfit1,quad(werte1,E1))
-plt.plot(xfit2,quad(werte2,E2))
+#plt.plot(xfit1,quad(werte1,E1))
+#plt.plot(xfit2,quad(werte2,E2))
 
 plt.figure(2)
 ax = plt.subplot(111)
-#ax2 = ax.twiny()
-#ax2.set_xlabel("Geschwindigkeit[mm/s]")
+ax2 = ax.twiny()
+ax2.set_xlabel("Geschwindigkeit[mm/s]")
 ax.set_ylabel("Counts")
 ax.set_xlabel("Energie[neV]")
-#ax2.errorbar(v,y,err,dv,fmt = ',')
+ax2.errorbar([v[0],v[-1]],[y[0],y[-1]],[err[0],err[-1]],fmt = ',')
 ax.errorbar(E,y,err,dE,fmt = '.')
 #ax.plot(E,np.full(len(E),halbhohe1),color = 'g')
 #ax2.plot(v[start-korr:ende-korr],quad(werte1,E1))
-ax.plot(Ewerte1,quad(werte1,Ewerte1))
-ax.plot(Ewerte2,quad(werte2,Ewerte2))
-ax.plot(Ewerte3,quad(werte3,Ewerte3))
-ax.plot(Ewerte4,quad(werte4,Ewerte4))
-ax.plot(Ewerte5,quad(werte5,Ewerte5))
-ax.plot(Ewerte6,quad(werte6,Ewerte6))
+#ax.plot(Ewerte1,quad(werte1,Ewerte1))
+#ax.plot(Ewerte2,quad(werte2,Ewerte2))
+#ax.plot(Ewerte3,quad(werte3,Ewerte3))
+##ax.plot(Ewerte4,quad(werte4,Ewerte4))
+#ax.plot(Ewerte5,quad(werte5,Ewerte5))
+#ax.plot(Ewerte6,quad(werte6,Ewerte6))
+
+plt.figure(3)
+ax = plt.subplot(211)
+ax.set_ylabel("Counts")
+ax.errorbar(E+14.4*10**12,y,err,dE,fmt = ',')
+frame1 = plt.gca()
+frame1.axes.xaxis.set_ticklabels([])
+xw = plt.xlim()
+ax2 = ax.twiny()
+ax2.set_xlabel("Geschwindigkeit[mm/s]")
+ax2.errorbar(v,y,err,dv,fmt = ',')
+ax2.errorbar([v[0],v[-1]],[y[0],y[-1]],[err[0],err[-1]],fmt = ',')
+ax.plot(Ewerte1+14.4*10**12,quad(werte1,Ewerte1))
+ax.plot(Ewerte2+14.4*10**12,quad(werte2,Ewerte2))
+ax.plot(Ewerte3+14.4*10**12,quad(werte3,Ewerte3))
+ax.plot(Ewerte4+14.4*10**12,quad(werte4,Ewerte4))
+ax.plot(Ewerte5+14.4*10**12,quad(werte5,Ewerte5))
+ax.plot(Ewerte6+14.4*10**12,quad(werte6,Ewerte6))
+ax3=plt.subplot(212)
+ax3.set_ylabel("Residuen")
+plt.errorbar(E1,yfit1-quad(werte1,E1),errfit1,fmt = '.')
+plt.errorbar(E1+14.4*10**12,yfit1-quad(werte1,E1),errfit1,fmt = '.')
+plt.errorbar(E2+14.4*10**12,yfit2-quad(werte2,E2),errfit2,fmt = '.')
+plt.errorbar(E3+14.4*10**12,yfit3-quad(werte3,E3),errfit3,fmt = '.')
+plt.errorbar(E4+14.4*10**12,yfit4-quad(werte4,E4),errfit4,fmt = '.')
+plt.errorbar(E5+14.4*10**12,yfit5-quad(werte5,E5),errfit5,fmt = '.')
+plt.errorbar(E6+14.4*10**12,yfit6-quad(werte6,E6),errfit6,fmt = '.')
+x_r = np.array(xw)
+y_r = np.array([0, 0])
+ax3.axis([xw[0],xw[1],plt.ylim()[0],plt.ylim()[1]])
+plt.plot(x_r, y_r, color='r')
+ax3.set_xlabel("Energie[neV]")
+
+plt.figure(4)
+ax = plt.subplot(211)
+ax.set_title("Einlinienspektrum")
+ax.set_xlabel("Channel")
+ax.set_ylabel("Counts")
+plt.plot(x,y)
+axen =[plt.xlim()[0],plt.xlim()[1],plt.ylim()[0],plt.ylim()[1]]
+plt.axis(axen)
+plt.vlines(115+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(140+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(190+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(210+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(291+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(315+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(356+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+plt.vlines(380+off,plt.ylim()[0],plt.ylim()[1],linestyle="--",color = 'r')
+ax2 = plt.subplot(212)
+ax2.set_ylabel("#")
+ax2.set_xlabel("Counts")
+ax2.hist(my)
+axen =[plt.xlim()[0],plt.xlim()[1],plt.ylim()[0],plt.ylim()[1]]
+plt.vlines(mittel,0,plt.ylim()[1],linestyle = '--',color = 'r')
+plt.figtext(0.2,0.3,'mean= '+str(np.round(mittel,2))+'\n'+'sig= '+str(np.round(std,2))+'\n')
+plt.axis(axen)
+
+if 0:
+    print "\begin{tabular}{|c|c|c|c|}"
+    print "\hline"
+    print "& $",np.round(werte1[0],2),"\pm",np.round(fehler1[0],2),"$ & $",np.round(werte1[1],2),"\pm",np.round(fehler1[1],2),"$ & $",np.round(werte1[2],2),"\pm",np.round(fehler1[2],2),"$ & $",np.round(chi1,3),"$\\"
+    print "\hline"
+    print "& $",np.round(werte2[0],2),"\pm",np.round(fehler2[0],2),"$ & $",np.round(werte2[1],2),"\pm",np.round(fehler2[1],2),"$ & $",np.round(werte2[2],2),"\pm",np.round(fehler2[2],2),"$ & $",np.round(chi2,3),"$\\"
+    print "\hline"
+    print "& $",np.round(werte3[0],2),"\pm",np.round(fehler3[0],2),"$ & $",np.round(werte3[1],2),"\pm",np.round(fehler3[1],2),"$ & $",np.round(werte3[2],2),"\pm",np.round(fehler3[2],2),"$ & $",np.round(chi3,3),"$\\"
+    print "\hline"
+    print "& $",np.round(werte4[0],2),"\pm",np.round(fehler4[0],2),"$ & $",np.round(werte4[1],2),"\pm",np.round(fehler4[1],2),"$ & $",np.round(werte4[2],2),"\pm",np.round(fehler4[2],2),"$ & $",np.round(chi4,3),"$\\"
+    print "\hline"
+    print "& $",np.round(werte5[0],2),"\pm",np.round(fehler5[0],2),"$ & $",np.round(werte5[1],2),"\pm",np.round(fehler5[1],2),"$ & $",np.round(werte5[2],2),"\pm",np.round(fehler5[2],2),"$ & $",np.round(chi5,3),"$\\"
+    print "\hline"
+    print "& $",np.round(werte6[0],2),"\pm",np.round(fehler6[0],2),"$ & $",np.round(werte6[1],2),"\pm",np.round(fehler6[1],2),"$ & $",np.round(werte6[2],2),"\pm",np.round(fehler6[2],2),"$ & $",np.round(chi6,3),"$\\"
+    print "\hline"
