@@ -44,15 +44,45 @@ In diesem Versuch wird sowohl ein $\alpha$-Strahler, als auch eine Röntgenquell
 Ziel ist es, beide Aufbauten mithilfe von mehreren Proben bekannter Zusammensetzung zu kalibrieren, um dann eine Reihe von unbekannten Proben mithilfe ihrer Röntgenpeaks zu untersuchen.
 \section{Aufbau}
 \subsubsection{$\alpha$-Quelle}
-Der erste Aufbau besteht einem X-123 Spektrometer, welches aus einem Halbleiterdetekor der Kennung XR100CR und einem digitalen Pulsprozessor DP5 besteht, der die vom Detektor regristrierten Signale verstärkt und digitalisiert. Diese Signale werden an einen PC weitergeleitet, wo sie mit dem Programm und der Software ADMCA\footnote{http://amptek.com/products/dpp-mca-display-acquisition-software/} mithilfe eines Multi-Channel-Analyzers (MCA) nach ihrer Energie auf 496 Kanäle aufgeteilt werden.\\
+Der erste Aufbau besteht einem X-123 Spektrometer, welches aus einem Halbleiterdetekor der Kennung XR100CR und einem digitalen Pulsprozessor DP5 besteht, der die vom Detektor regristrierten Signale verstärkt und digitalisiert. Der Detektor kann maximal Energien von c.a \SI{60}{keV} aufnehmen, da Teilchen mit größerer Energie den Detektor durchfliegen.\\
+Diese Signale werden an einen PC weitergeleitet, wo sie mit dem Programm und der Software ADMCA\footnote{http://amptek.com/products/dpp-mca-display-acquisition-software/} mithilfe eines Multi-Channel-Analyzers (MCA) nach ihrer Energie auf 496 Kanäle aufgeteilt werden.\\
 Zur Kalibration dieser Channels gegen die Energie wird eine variable Röntgenstrahlquelle der Kennung 0317LA benutzt, welche aus einer $^{241}AM$-Quelle besteht, die $\alpha$-Strahlung auf ein durch eine Drehscheibe variables Target strahlt. Diese Quelle wird direkt vor den Detektor gestellt.\\
 Zur Aufnahme von unbekannten Proben wird eine $^{241}AM$-Quelle der Kennummer Z3715 benutzt, welche in eine Bleibefestigung eingelassen wird.
 \subsubsection{Röntgenquelle}
 Bei den Messungen mit der Röntgenquelle wird ein X-123 Spektrometer der gleichen Bauart wie oben beschrieben verwendet. Die Röntgenquelle hat die Kennnummer BJ8288.
-\section{Durchführung $\alpha$-Quelle}
-\subsubsection{Kalibration}
-Die zur Kalibration benutzte variable Röntgenstrahlquelle besitzt 6 Targets aus verschiedenen Materialien: Cu, Rb, Mo, Ag, Ba und Tb.
-\section{Durchführung Röntgenquelle}
+\section{Durchführung}
+\subsubsection{$\alpha$-Quelle}
+Als erstes muss über eine Kalibration den Channels eine Energie zugeordent werden.\\
+Die dafür benutzte variable Röntgenstrahlquelle besitzt 6 Targets aus verschiedenen Materialien: Cu, Rb, Mo, Ag, Ba und Tb.\\
+Bevor die Messungen gestartet werden können, muss an dem benutzten Programm der richtige Messbereich eingestellt werden. Dies geschieht an dem Tb Spektrum, da diese Probe Röntgenstrahlung mit der größten Energie aussendet, welche außerdem knapp unterhalb der maximal messbaren Energie liegt.\\
+Dazu wird in den Programmeinstellungen der Verstärkungsfaktor so eingestellt, dass die Linie mit der größten Energie möglichst weit rechts im sichtbaren Spektrum liegt.\\
+Außerdem kann über den Reiter "shaping" eine "Pile-up Rejection"(PUR) und eine "Rise Time Discrimination"(RTD) zugeschaltet werden. Bei einer Schnellauswertung haben diese Einstellungen aber keinen nennenswerten Unterschied gemacht, weswegen sie für die Messungen deaktiviert wurden.\\
+Alle Einstellung sind in Tabelle \ref{tab:alpha_Einstellungen} aufgelistet.\\
+\\
+Nun wird für jede der sechs Proben über \SI{15}{min} das Spektrum aufgenommen.\\
+Danach werden für eine Edelstahlplatte und mehrere Münzen ebenfalls über \SI{15}{min} die Spektren aufgenommen.
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Einstellung & Wert \\ 
+\hline 
+Gain(coarse) & 2.1x \\ 
+\hline 
+Gain(fine) & 0.95 \\ 
+\hline 
+RTD & aus \\ 
+\hline 
+PUR & aus \\ 
+\hline 
+Messzeit & 15 min \\ 
+\hline 
+\end{tabular} 
+\caption{Einstellungen für die Messungen mit der $\alpha$-Quelle.}
+\label{tab:alpha_Einstellungen}
+\end{table}
+\subsection{Röntgenquelle}
+
 \section{Ergebnisse $\alpha$-Quelle}
 \subsubsection{Kalibration}
 \subsubsection{Auswertung unbekannter Proben}
