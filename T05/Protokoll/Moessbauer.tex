@@ -9,7 +9,9 @@
 \usepackage{siunitx}
 \usepackage{float}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{hyperref}
 \author{Gerald}
+
 
 \begin{document}
 \sisetup{separate-uncertainty = true}
@@ -523,7 +525,7 @@ Erwartung & 21.08 & 4.66 & 141.38\\
 \label{tab:Ein_lit}
 \end{table}
 
-
+\newpage
 \subsection{Magnetische Hyperfeinstrukturaufspaltung}
 
 \subsubsection{Magentfeldstärke}
@@ -547,7 +549,7 @@ Erwartung & 21.08 & 4.66 & 141.38\\
 \centering
 \includegraphics[scale=0.9]{Bilder/Hyperfein/Hyper_fit_vor.png}
 \includegraphics[scale=0.9]{Bilder/Hyperfein/Hyper_fit_nach.png}
-\caption{Anpaasungen von quadratischen Funktionen an die Peaks}
+\caption{Anpaasungen von Lorentz-Kurven an die Peaks}
 \label{fig:Hyper_fit}
 \end{figure}
 
@@ -995,6 +997,56 @@ Die Isomerieverschiebung in diesem Spektrum beträgt $\delta = \SI{-51.27\pm 0.4
 \centering
 \includegraphics[scale=0.8]{Bilder/Quellspektrum/Kalibrierung_beta.png}
 \caption{Lineare Regression an abgelesenen Peaks mit der $K_{\beta}$-Linie von Eisen.}
+\end{figure}
+
+\subsection{Einlinienspektrum}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_Rohdaten.png}
+\caption{Messrate aufgetragen gegen den Channel des Einlinienspektrums.}
+\label{fig:Ein_Roh}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_halbgauss_vor.png}
+\includegraphics[scale=0.8]{Bilder/Einlinien/Ein_halbgauss_nach.png}
+\caption{Anpassung von Gausspeaks an die Peakspitze. \textbf{Oben:} vorderer Bereich, \textbf{unten:} hinterer Bereich.}
+\label{fig:Ein_halbgauss}
+\end{figure}
+
+\subsection{Hyperfeinstrukturaufspaltung}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Hyperfein/Hyper_Roh.png}
+\caption{Hyperfeinstrukur Rohdaten}
+\label{fig:Hyper_Roh}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.9]{Bilder/Hyperfein/Hyper_fit_vor.png}
+\includegraphics[scale=0.9]{Bilder/Hyperfein/Hyper_fit_nach.png}
+\caption{Anpaasungen von Lorentz-Kurven an die Peaks}
+\label{fig:Hyper_fit}
+\end{figure}
+
+\subsection{Quadrupolaufspaltung}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_Roh.png}
+\caption{Quadrupolaufspaltung Rohdaten}
+\label{fig:Quad_Roh}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_fit_vor.png}
+\includegraphics[scale=0.8]{Bilder/Quadrupol/Quad_fit_nach.png}
+\caption{Quadratische Anpassung an die Umgebungen der Peaks.}
+\label{fig:Quad_fit}
 \end{figure}
 
 

@@ -339,7 +339,7 @@ def fitte_bel_function_xy(x, y, ex, ey, func, startwerte):
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
     corr = output.cov_beta[0,1]/np.sqrt(output.cov_beta[0,0]*output.cov_beta[1,1])
-    return output.beta, output.sd_beta, output.res_var, corr
+    return output.beta, output.sd_beta, output.res_var
 
 def fitte_bel_function(x, y, ey, func, startwerte):
     """gibt wert,fehler,chi/ndof zurueck"""
@@ -348,15 +348,15 @@ def fitte_bel_function(x, y, ey, func, startwerte):
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
     corr = output.cov_beta
-    return output.beta, output.sd_beta, output.res_var,corr,output
+    return output.beta, output.sd_beta, output.res_var
 
-def fitte_bel_functionx(x, y, ex, func, startwerte):
+def fitte_bel_functionx(x, y, ey, func, startwerte):
     """gibt wert,fehler,chi/ndof zurueck"""
     model  = scipy.odr.Model(func)
-    data   = scipy.odr.RealData(x, y, sx=ex)
+    data   = scipy.odr.RealData(x, y, sx=ey)
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
-    return output.beta, output.sd_beta, output.res_var
+    return output.beta, output.sd_beta, output.res_var,output.eps
 
 def Anpassung(x,y,xerr,yerr,func,par):
     ax1=plt.subplot(211)
