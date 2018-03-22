@@ -62,25 +62,34 @@ y[7] = (15 * 19608.3 + 3 * 19965.2 +  8 * 19590.3)/26
 startwerte = [130, 6.5]
 sol = m.fitte_bel_functionx(x, y, ex, lin, startwerte)
 
-x_plt = np.arange(0, len(data), 0.1)
+x_pl = np.arange(0, len(data), 1)
 plt.close('all')
 plt.figure(1)
-plt.plot(data_x, m.KalibrationEinlesen(i), color = 'b')
+plt.plot(data_x, m.KalibrationEinlesen(i), color = 'b', label = 'gemessenes Spektrum')
 if i == 0:
-    plt.plot(x_plt, m.gauss(peak1_Ag[4][0][0:4], x_plt), color = 'g')
-    plt.plot(x_plt, m.gauss(peak2_Ag[4][0][0:4], x_plt), color = 'orange')
+    x_plt1 = x_pl[int(peak1_Ag[4][0][0]) - 150:int(peak1_Ag[4][0][0]) + 150]
+    x_plt2 = x_pl[int(peak2_Ag[4][0][0]) - 150:int(peak2_Ag[4][0][0]) + 150]
+    plt.plot(x_plt1, m.gauss(peak1_Ag[4][0][0:4], x_plt1), color = 'g', label = 'Peakanpassung 1')
+    plt.plot(x_plt2, m.gauss(peak2_Ag[4][0][0:4], x_plt2), color = 'orange', label = 'Peakanpassung 2')
 if i == 1:
-    plt.plot(x_plt, m.gauss(peak1_Cu[4][0][0:4], x_plt), color = 'g')
-    plt.plot(x_plt, m.gauss(peak2_Cu[4][0][0:4], x_plt), color = 'orange')
+    x_plt1 = x_pl[int(peak1_Cu[4][0][0]) - 150:int(peak1_Cu[4][0][0]) + 150]
+    x_plt2 = x_pl[int(peak2_Cu[4][0][0]) - 150:int(peak2_Cu[4][0][0]) + 150]
+    plt.plot(x_plt1, m.gauss(peak1_Cu[4][0][0:4], x_plt1), color = 'g', label = 'Peakanpassung 1')
+    plt.plot(x_plt2, m.gauss(peak2_Cu[4][0][0:4], x_plt2), color = 'orange', label = 'Peakanpassung 2')
 if i == 2:
-    plt.plot(x_plt, m.gauss(peak1_I[6][0][0:4], x_plt))
-    plt.plot(x_plt, m.gauss([peak1_I[6][0][2], peak1_I[6][0][4], peak1_I[6][0][5], peak1_I[6][0][6]], x_plt))
+    x_plt1 = x_pl[int(peak1_I[6][0][0]) - 150:int(peak1_I[6][0][0]) + 150]
+    x_plt2 = x_pl[int(peak2_I[6][0][0]) - 150:int(peak2_I[6][0][0]) + 150]
+    plt.plot(x_plt1, m.gauss(peak1_I[6][0][0:4], x_plt1), color = 'g', label = 'Peakanpassung 1')
+    plt.plot(x_plt2, m.gauss(peak2_I[6][0][0:4], x_plt2), color = 'orange', label = 'Peakanpassung 2')
 if i == 3:
-    plt.plot(x_plt, m.gauss(peak1_SS[4][0][0:4], x_plt), color = 'g')
-    plt.plot(x_plt, m.gauss(peak2_SS[4][0][0:4], x_plt), color = 'orange')
+    x_plt1 = x_pl[int(peak1_SS[4][0][0]) - 150:int(peak1_SS[4][0][0]) + 150]
+    x_plt2 = x_pl[int(peak2_SS[4][0][0]) - 150:int(peak2_SS[4][0][0]) + 150]
+    plt.plot(x_plt1, m.gauss(peak1_SS[4][0][0:4], x_plt1), color = 'g', label = 'Peakanpassung 1')
+    plt.plot(x_plt2, m.gauss(peak2_SS[4][0][0:4], x_plt2), color = 'orange', label = 'Peakanpassung 2')
 plt.xlabel('Channel')
 plt.ylabel('counts')
-#plt.legend()
+plt.xlim(2300, 3200)
+plt.legend()
 plt.title('Spektrum von '+ index[i])
 
 #plotte lin reg
