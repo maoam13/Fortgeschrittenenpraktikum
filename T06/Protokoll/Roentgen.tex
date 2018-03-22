@@ -56,7 +56,7 @@ Als erstes muss über eine Kalibration den Channels eine Energie zugeordent werd
 Die dafür benutzte variable Röntgenstrahlquelle besitzt 6 Targets aus verschiedenen Materialien: Cu, Rb, Mo, Ag, Ba und Tb.\\
 Bevor die Messungen gestartet werden können, muss an dem benutzten Programm der richtige Messbereich eingestellt werden. Dies geschieht an dem Tb Spektrum, da diese Probe Röntgenstrahlung mit der größten Energie aussendet, welche außerdem knapp unterhalb der maximal messbaren Energie liegt.\\
 Dazu wird in den Programmeinstellungen der Verstärkungsfaktor so eingestellt, dass die Linie mit der größten Energie möglichst weit rechts im sichtbaren Spektrum liegt.\\
-Außerdem kann über den Reiter "shaping" eine "Pile-up Rejection"(PUR) und eine "Rise Time Discrimination"(RTD) zugeschaltet werden. Bei einer Schnellauswertung haben diese Einstellungen aber keinen nennenswerten Unterschied gemacht, weswegen sie für die Messungen deaktiviert wurden.\\
+Außerdem kann über den Reiter shaping eine Pile-up Rejection(PUR) und eine Rise Time Discrimination(RTD) zugeschaltet werden. Bei einer Schnellauswertung haben diese Einstellungen aber keinen nennenswerten Unterschied gemacht, weswegen sie für die Messungen deaktiviert wurden.\\
 Alle Einstellung sind in Tabelle \ref{tab:alpha_Einstellungen} aufgelistet.\\
 \\
 Nun wird für jede der sechs Proben über \SI{15}{min} das Spektrum aufgenommen.\\
@@ -249,19 +249,68 @@ Zur Bestimmung der Peakpositionen werden Gaußfunktionen an die Peaks gefittet. 
 \hline 
 Probe & $K_{\alpha_1}$ & $K_{\alpha_2}$ & $K_{\beta_2}$ & $K_{\beta_{1}}$ & ($K_{\beta_{3}}$) \\ 
 \hline 
-Cu & 8,047.8 & 8,027.8 & - & 8,905.3 & 8,905.3\\ 
-\hline
 Ag & 22,162.9 & 21,990.3 & 25,456.4 & 24,942.4 & 24,911.5\\ 
 \hline 
+Cu & 8,047.8 & 8,027.8 & - & 8,905.3 & 8,905.3\\ 
+\hline
 I & 32,193.6 & 31,817.1 & 37,257 & 36,378.2 & 36,304.0\\ 
 \hline 
-Stainless Steel & 44,481.6 & 43,744.1 & 51,698 & 50,382 & 50,229\\ 
+Stainless Steel & 17,479.3 & 17,374.3 & 19,965.2 & 19,608.3 & 19,590.3\\ 
 \hline 
 \end{tabular} 
 \caption[test]{Literaturwerte\footnotemark für die Peakpositionen. Alle Angaben sind in eV, wobei nach der 1000eV stelle ein Komma steht.}
 \label{tab:röntgen_lit}
 \end{table}
 \footnotetext{Quelle: \url{http://xdb.lbl.gov/Section1/Table_1-3.pdf}}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/roentgen/Kalibration/linReg.png}
+\caption{Energiekalibration durch lineare Regression der bekannten Peaks.}
+\label{fig:röntgen_linReg}
+\end{figure}
+
+An diese acht Punkte wird nun eine lineare Regression der Form
+\begin{equation*}
+E (\textrm{ch}) = a \cdot \textrm{ch} + b
+\end{equation*}
+durchgeführt. Das Ergebnis ist in Abbildung \ref{fig:röntgen_linReg} gezeigt. Es wurde in eV gerechnet.
+
+\subsection{Einfluss der angelegten Hochspannung an die Röntgenröhre}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/roentgen/Spannung/Gesamt.png}
+\caption{Übereinandergelegte Messungen mit unterschiedlichen Spannung im gesamten Spektrum.}
+\label{fig:spannung_gesamt}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/roentgen/Spannung/Ausschnitt.png}
+\caption{Übereinandergelegte Messungen mit unterschiedlichen Spannung in einem Teil des Spektrum.}
+\label{fig:spannung_ausschnitt}
+\end{figure}
+
+Die Röntgenröhre arbeitet mit einem Heizstrom zur Erzeugung thermischer Elektronen und einer Hochspannung zur Beschleunigung dieser auf das zu untersuchende Objekt. Die Energie, die diese Elektronen haben, wenn sie auf das Target treffen ist abhängig von der angelegten Hochspannung. Von dieser Energie hingegen ist abhängig, welche Phänomene beobachtet werden können. Abbildung \ref{fig:spannung_gesamt} zeigt die Messungen mit den unterschiedlichen Spannungen übereinandergelegt. In diesem Bild ist nur ein geringfügiger Unterschied zwischen den Messungen im Untergrund zu erkennen. Betrachtet man allerdings nur einen Teil des Spektrums, in dem die Peaks besser zu sehen sind, wie in Abbildung \ref{fig:spannung_ausschnitt}, werden die Unterschiede deutlicher. Die Höhe der Peaks sind bei einer eingestellten Spannung von \SI{35}{kV} deutlich niedriger als bei \SI{50}{kV}, wohingegen sie bei \SI{20}{kV} kaum noch erkennbar sind.
+
+\subsection{Einfluss der PUR}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/roentgen/PUR/Gesamt.png}
+\caption{Übereinandergelegte Messungen mit und ohne Pile-up Rejection über das gesamte Spektrum.}
+\label{fig:PUR_gesamt}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/roentgen/PUR/Ausschnitt.png}
+\caption{Übereinandergelegte Messungen mit und ohne Pile-up Rejection über einen Ausschnitt des Spektrum.}
+\label{fig:PUR_ausschnitt}
+\end{figure}
+
+Die Pile-up Rejection (PUR) unterdrückt Pulse, die in der Totzeit des Detektors gemessen werden. Diese Pulse, die in der Totzeit gemessen werden, können keine physikalischen Messereignisse sein, daher ist die Unterdrückung dieser Pulse physikalisch sinnvoll. Da diese Unterdrückung in der Umsetzung nicht immer einfach ist, lohnt es sich, den Unterschied zwischen der Messung mit und ohne PUR näher zu betrachten. Abbildung \ref{fig:PUR_gesamt} zeigt übereinandergelegt diese Messungen für den Bleiblock. In diesem Bild ist erkennbar, dass der größte Unterschied zwischen den beiden Messungen im Bereich hinter den hohen Peaks liegt und dass der Unterschied ein kontinuierlicher Untergrund ist. Dies ist in Abbildung \ref{fig:PUR_ausschnitt}, in dem ein kleinerer Ausschnitt des Spektrums gezeigt ist, gut erkennbar.
 
 \subsection{Auswertung unbekannter Proben}
 \subsection{Energieauflösung}
