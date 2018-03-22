@@ -32,8 +32,8 @@ def leerkorrektur2(leer,data):
     pl = np.argmax(leer)
     d2 = max(data[pl-5:pl+5])
     d = data[678]
-    leer = leer*d/l
-    leer[434:532] = (leer[434:532]-leer[532])*0.8+leer[532]
+    #leer = leer*d/l
+    #leer[434:532] = (leer[434:532]-leer[532])*0.8+leer[532]
     return leer
 
 def leerkorrektur(leer,data):
@@ -56,6 +56,9 @@ def gauss2(a,x):
 def E(x):
     return 0.013904*x+0.06003
 
+def Eerr(x):
+    return np.sqrt((0.00965)**2+(x*0.000004)**2)
+
 def fitte(pos,breite,i):
     plt.figure(i)
     ax = plt.subplot(211)
@@ -72,7 +75,7 @@ def fitte(pos,breite,i):
     plt.figtext(0.14,0.8,
                 'pos= '+str(np.round(a[0],1))+' +/- '+str(np.round(da[0],1))+'\n'
                 +'$\chi ^2 / ndof$= ' + str(np.round(chi, 3)))
-    return a[0]
+    return a[0],da[0]
     
 def fittef(pos,breite,i):
     plt.figure(i)
@@ -90,7 +93,7 @@ def fittef(pos,breite,i):
     plt.figtext(0.14,0.8,
                 'pos1= '+str(np.round(a[0],1))+' +/- '+str(np.round(da[0],1))+'\n'
                 +'$\chi ^2 / ndof$= ' + str(np.round(chi, 3)))
-    return a[0]
+    return a[0],da[0]
 
 plt.close('all')
 datal = Einlesen(1).data
@@ -107,8 +110,9 @@ yecht = ein-correcht
 yechterr = np.sqrt(abs(yecht))
 yerr = np.sqrt(abs(y))
 x = np.arange(len(y))
+Es = E(x)
 rausch =0
-if 1:
+if 0:
     rausch =1
     y = corr
     yecht = datal
@@ -118,11 +122,27 @@ if 1:
 if 1:
     #print E(fitte(1250,70,1))
     #print E(fittef(1405,70,2))
-    if 0:
-        print E(fittef(390,10,3))
-        print E(fitte(390,20,3))
-        print E(fitte(390,100,3))
-        print E(fitte(390,17,3))
+    if 1:
+        f1,df1 = fitte(390,20,3)
+        f2,df2 = fitte(390,20,3)
+        f3,df3 = fittef(389,25,3)
+        test = [E(f1),E(f2),E(f3)]
+        dtest  =[abs(test[0]-test[1]),abs(test[1]-test[2]),abs(test[0]-test[2])]
+        print np.mean(test),max(dtest),Eerr(fittef(389,25,3)[0])
+        f1,df1 = fittef(1252,40,3)
+        f2,df2 = fitte(1250,20,3)
+        f3,df3 = fitte(1252,20,3)
+        test = [E(f1),E(f2),E(f3)]
+        dtest  =[abs(test[0]-test[1]),abs(test[1]-test[2]),abs(test[0]-test[2])]
+        print np.mean(test),max(dtest),Eerr(fittef(389,25,3)[0])
+        f1,df1 = fittef(1252,40,3)
+        f2,df2 = fitte(1250,20,3)
+        f3,df3 = fitte(1252,20,3)
+        test = [E(f1),E(f2),E(f3)]
+        dtest  =[abs(test[0]-test[1]),abs(test[1]-test[2]),abs(test[0]-test[2])]
+        print np.mean(test),max(dtest),Eerr(fittef(389,25,3)[0])
+        #print E(fittef(1252,40,3)),E(fitte(1250,20,3)),E(fitte(1252,20,3))#Mo Ka!
+        #print E(fittef(1401,40,3)),E(fittef(1409,10,3))#,E(fitte(1409,10,3))#Mo kb!
     if rausch: #Rauschmessung
         print E(fitte(1806,30,1)),E(fitte(1806,20,1)),E(fitte(1811,30,1))#Sn Ka!
         print E(fitte(1886,30,2)),E(fitte(1886,25,2)),E(fitte(1884,10,2))#Sb ka!
@@ -153,18 +173,62 @@ if 0:
     
 
 if 1:
-    plt.figure("leermessung")
-    plt.plot(corr)
+    plt.figure("leer_cut")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Leermessung mit Cutoff")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),leer)
     
 if 1:
-    plt.figure("Cutoff")
-    plt.plot(y)
-if 1:
-    plt.figure("Cutoffecht")
-    plt.errorbar(x,yecht,yerr = yechterr,fmt=',')
+    plt.figure("leer_roh")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Leermessung Rohdaten")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),datal)
     
-if 0:
-    plt.figure("original")
-    plt.plot(y+corr)
+if 1:
+    plt.figure("stahl_cut")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Stahl Rohdaten")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(x,data)
+if 1:
+    plt.figure("leer_fourier_2")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Frequenz")
+    ax.set_ylabel("Intensitaet")
+    ax.set_title("Fourierspektrum Leermessung")
+    plt.tight_layout()
+    plt.plot(x[6:600],fft_cutoff(datal)[1][6:600])
+    
+if 1:
+    plt.figure("stahl_roh")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Stahl Rohdaten")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),ein)
+    
+if 1:
+    plt.figure("stahl_0")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Stahl Rohdaten")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(x,y)
+    
     
     

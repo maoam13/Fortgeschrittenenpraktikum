@@ -55,6 +55,15 @@ def anpassung1(data,err,pos,abstand,hohe,breite = 50):
     a,da,chi = p.fitte_bel_function(channels,data,err,gauss,[pos,9,30,hohe])
     return channels,err,data,a,da,chi
 
+def anpassungxy(E,data,yerr,xerr,pos,abstand,hohe,breite = 50):
+    breite = breite
+    data = data[pos-breite:pos+breite]
+    yerr = yerr[pos-breite:pos+breite]
+    xerr = xerr[pos-breite:pos+breite]
+    E = E[pos-breite:pos+breite]
+    a,da,chi = p.fitte_bel_function_xy(E,data,xerr,yerr,gauss,[pos,9,30,hohe])
+    return E,xerr,yerr,data,a,da,chi
+
 def Peaks(pos,pos1):
     posalt = Peakf(pos1)
     l=0

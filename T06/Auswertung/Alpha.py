@@ -44,6 +44,7 @@ pos = [[[2295,15,3500,2,20],[2635,25,1000,2,45]],[[1586,5,10000,3,15],[1806,15,2
 pos1 = [[[2310,15,3500,2,50],[2635,25,1000,2,70]],[[1588,5,10000,3,70],[1815,10,2000,2,60]],[[575,2,2500,1,50],[639,20,2500,1,40]],[[1251,3,12000,3,60],[1415,10,1400,2,40]],[[955,3,10000,3,60],[1071,2,1200,1,50]],[[3168,24,2000,2,80],[3662,50,500,2,110]]]
 
 
+plt.close('all')
 if 0:
     plt.figure(3)
     ein = Einlesen(6)
@@ -60,7 +61,7 @@ if 0:
     plt.plot(data[0],label=ein.datei[6])
     plt.plot(ein.data,label=ein.datei[6])
     
-if 0:#alle Plots
+if 1:#alle Plots
     plt.figure(1)
     ax = plt.subplot(111)
     ax.set_title("Kalibrationspektren")
@@ -76,8 +77,7 @@ peakpos = []
 errpos= []
 peakint = []
 errint= []
-plt.close('all')
-if 1:#
+if 0:#
     for i in pos:
         k = 0
         for j in i:

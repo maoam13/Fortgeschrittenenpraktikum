@@ -84,7 +84,7 @@ Messzeit & 15 min \\
 \subsection{Röntgenquelle}
 
 \section{Ergebnisse $\alpha$-Quelle}
-\subsubsection{Kalibration}
+\subsection{Kalibration}
 
 \begin{figure}
 \centering
@@ -179,8 +179,52 @@ Tb & 44,481.6 & 43,744.1 & 51,698 & 50,382 & 50,229\\
 \label{fig:kal_linreg}
 \end{figure}
 
-\subsubsection{Auswertung unbekannter Proben}
-\subsubsection{Energieauflösung}
+\subsection{Auswertung unbekannter Proben}
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_roh.png}
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_cut.png}
+\caption{Leermessung. \textbf{Oben:} Rohdaten, \textbf{unten:} Daten nach Bearbeitung mit dem Tiefpassfilter.}
+\label{fig:a_prob_leer}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_fourier.png}
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_fourier_2.png}
+\caption{Frequenzspektrum der Leermessung und hereingezoomter Bereich. Die cutofffrequenz wurde mit 300 festgelegt.}
+\label{fig:a_prob_four}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_roh.png}
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_cut.png}
+\caption{}
+\label{fig:kal_linreg}
+\end{figure}
+
+Mit der Energiekalibration können nun die unbekannten Proben ausgewertet werden. Dazu muss zuerst eine Leermessung durchgeführt werden, um die Hintergrundstrahlung herausfiltern zu können. Diese ist in Abbildung \ref{fig:a_prob_leer} gezeigt. Um Peaks besser erkennen zu können und das Rauschen zu verringern wird ein Tiefpassfilter auf die Daten angewendet. Dazu werden die Daten fouriertransformiert, was in Abbildung \ref{fig:a_prob_four} gezeigt ist. Die Cutoff-Frequenz wurde auf 300 festgelegt, dass heißt, dass alle Frequenzen auf null gesetzt werden, die größer als 300 sind. Das übrige Fourierspektrum wird dann zurücktransformiert. Das Spektrum mit Tiefpassfilter ist jeweils unter den Rohdaten mit angegeben.\\
+\\
+An die sichtbaren Peaks der Leermessung werden wieder Gausskurven angefittet, um deren Lage zu bestimmen. 
+
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline 
+• & • & • \\ 
+\hline 
+• & • & • \\ 
+\hline 
+• & • & • \\ 
+\hline 
+• & • & • \\ 
+\hline 
+• & • & • \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+\subsection{Energieauflösung}
 \section{Ergebnisse Röntgenquelle}
 \subsubsection{Kalibration}
 \subsubsection{Auswertung unbekannter Proben}
