@@ -1,17 +1,20 @@
 \BOOKMARK [1][-]{section.1}{Hintergund}{}% 1
 \BOOKMARK [1][-]{section.2}{Aufbau}{}% 2
-\BOOKMARK [2][-]{subsubsection.2.0.1}{-Quelle}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.0.2}{R\366ntgenquelle}{subsubsection.2.0.1}% 4
+\BOOKMARK [2][-]{subsection.2.1}{-Quelle}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{R\366ntgenquelle}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Durchf\374hrung}{}% 5
-\BOOKMARK [2][-]{subsubsection.3.0.1}{-Quelle}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.1}{R\366ntgenquelle}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.1}{-Quelle}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{R\366ntgenquelle}{section.3}% 7
 \BOOKMARK [1][-]{section.4}{Ergebnisse -Quelle}{}% 8
-\BOOKMARK [2][-]{subsubsection.4.0.1}{Kalibration}{section.4}% 9
-\BOOKMARK [3][-]{subsubsection.4.0.2}{Auswertung unbekannter Proben}{subsubsection.4.0.1}% 10
-\BOOKMARK [3][-]{subsubsection.4.0.3}{Energieaufl\366sung}{subsubsection.4.0.1}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Kalibration}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Auswertung unbekannter Proben}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.3}{Energieaufl\366sung}{section.4}% 11
 \BOOKMARK [1][-]{section.5}{Ergebnisse R\366ntgenquelle}{}% 12
-\BOOKMARK [2][-]{subsubsection.5.0.1}{Kalibration}{section.5}% 13
-\BOOKMARK [3][-]{subsubsection.5.0.2}{Auswertung unbekannter Proben}{subsubsection.5.0.1}% 14
-\BOOKMARK [3][-]{subsubsection.5.0.3}{Energieaufl\366sung}{subsubsection.5.0.1}% 15
-\BOOKMARK [1][-]{section.6}{Fazit}{}% 16
-\BOOKMARK [1][-]{section.7}{Anhang}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Kalibration}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Einfluss der angelegten Hochspannung an die R\366ntgenr\366hre}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.3}{Einfluss der PUR}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.4}{Auswertung unbekannter Proben}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.5}{Energieaufl\366sung}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 18
+\BOOKMARK [1][-]{section.7}{Anhang}{}% 19
+\BOOKMARK [2][-]{subsection.7.1}{Kalibration -Quelle}{section.7}% 20

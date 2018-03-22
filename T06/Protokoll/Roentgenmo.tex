@@ -198,8 +198,8 @@ Tb & 44,481.6 & 43,744.1 & 51,698 & 50,382 & 50,229\\
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_roh.png}
-\includegraphics[scale=0.8]{Bilder/alpha_spektren/leer_cut.png}
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/stahl_roh.png}
+\includegraphics[scale=0.8]{Bilder/alpha_spektren/stahl_cut.png}
 \caption{}
 \label{fig:kal_linreg}
 \end{figure}
@@ -209,25 +209,84 @@ Mit der Energiekalibration können nun die unbekannten Proben ausgewertet werden
 An die sichtbaren Peaks der Leermessung werden wieder Gausskurven angefittet, um deren Lage zu bestimmen. 
 
 \begin{table}
-\begin{tabular}{|c|c|c|}
+\center
+\begin{tabular}{|c|c|c|c|c|}
 \hline 
-• & • & • \\ 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
 \hline 
-• & • & • \\ 
+$25.17\pm 0.01\pm 0.01$& $^{50}Sn$ & $K_{\alpha_{1/2}}$ & $25.04-25.27$ & \\ 
 \hline 
-• & • & • \\ 
+$26.29\pm 0.03\pm 0.01$ & $^{51}Sb$ & $K_{\alpha_{1/2}}$ & $26.11-26.36$ & \\ 
 \hline 
-• & • & • \\ 
+$27.37\pm 0.03\pm 0.01$ & $^{52}Te$ & $K_{\alpha_{1/2}}$ & $27.20-27.47$ & \\ 
+ & $^{49}In$ & $K_{\beta_{1/3}}$ & $27.237-27.276$ & unwahrsch.: $K_{\alpha}\approx 24.2keV$ nicht sichtbar\\ 
 \hline 
-• & • & • \\ 
+$28.42\pm 0.02\pm 0.01$ & $^{50}Sn$ & $K_{\beta_{1/3}}$ & $28.44-28.48$ &\\ 
+\hline 
+$6.456\pm 0.001\pm 0.010$ & $^{26}Fe$ & $K_{\alpha_{1/2}}$ & $6.439-6.404$ &\\ 
+& $^{63}Eu$ & $L_{\beta_{2}}$ & $6.456$ & unwahrsch.: $K_{\alpha/\beta}\approx 40keV$ nicht sichtbar\\
+& $^{25}Mn$ & $K_{\beta_{1/3}}$ & $6.490$ & unwahrsch.: $K_{\alpha}\approx 5.8keV$ nicht sichtbar\\
+\hline 
+$7.096\pm 0.001\pm 0.010$ & $^{26}Fe$ & $K_{\beta_{1/3}}$ & $7.058$ & \\ 
+& $^{64}Gd$ & $L_{\beta_{2}}$ & $7.103$ & unwahrsch.:$K_{\alpha/\beta}\approx 43keV$ nicht sichtbar\\
 \hline 
 \end{tabular} 
+\caption{Peaks in der Leermessung}
+\label{a_peaks_leer}
+\end{table}
+
+\begin{table}
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$5.477\pm 0.05\pm 0.01$& $^{24}Cr$ & $K_{\alpha_{1}}$ & $5.415$ & \\ 
+& $^{23}V$ & $K_{\beta_{1/3}}$ & $5.427$ & unwahrsch.: $K_{\alpha}\approx 4.9keV$ nicht sichtbar\\ 
+& $^{61}Pm$ & $L_{\alpha_{1}}$ & $5.432$ & unwahrsch.: $K_{\alpha}\approx 39keV$ nicht sichtbar\\ 
+& $^{59}Pr$ & $L_{\beta_{1}}$ & $5.488$ & unwahrsch.: $K_{\alpha}\approx 36keV$ nicht sichtbar\\ 
+\hline 
+$17.425\pm 0.04\pm 0.01$ & $^{42}Mo$ & $K_{\alpha_{1/2}}$ & $17.374-17.479$ & \\ 
+\hline 
+$19.57\pm 0.03\pm 0.01$ & $^{42}Mo$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+ \hline 
+\end{tabular} 
+\caption{Peaks in der Messung des Stahls}
+\label{a_peaks_leer}
 \end{table}
 
 \subsection{Energieauflösung}
 \section{Ergebnisse Röntgenquelle}
 \subsubsection{Kalibration}
 \subsubsection{Auswertung unbekannter Proben}
+\begin{table}
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$3.674 \pm 0.0 \pm 0.006$& $^{20}Ca$ & $K_{\alpha_{1/2}}$ & $3,688-3,691$ & \\ 
+& $^{23}V$ & $K_{\beta_{1/3}}$ & $5.427$ & unwahrsch.: $K_{\alpha}\approx 4.9keV$ nicht sichtbar\\ 
+\hline 
+$9.183 \pm 0.002 \pm 0.007$ & $^{82}Pb$ & $L_{1}$ & $9,184$ & \\ 
+\hline 
+$10.54 \pm 0.004 \pm 0.007$ & $^{82}Pb$ & $L_{\alpha_{1/2}}$ & $10,449-10,551$ & \\
+\hline
+$12.614 \pm 0.0 \pm 0.007$ & $^{82}Pb$ & $K_{\beta_{1/2}}$ & $12,613-12,622$ & \\
+\hline
+$14.76 \pm 0.003 \pm 0.007$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+\hline
+$15.157 \pm 0.01 \pm 0.007$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+\hline
+$26.314 \pm 0.047 \pm 0.01$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+\hline
+$29.717 \pm 0.003 \pm 0.01$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Stahls}
+\label{a_peaks_leer}
+\end{table}
+\caption{•}
 \subsubsection{Energieauflösung}
 
 \section{Fazit}
@@ -321,6 +380,66 @@ An die sichtbaren Peaks der Leermessung werden wieder Gausskurven angefittet, um
 \includegraphics[scale=0.8]{Bilder/alpha/tb_beta_2.png}
 \caption{Alle für dei Kalibration aufgenommenen Spektren.}
 \label{fig:kal_alles}
+\end{figure}
+\subsection{unbekannte Proben $\alpha$-Quelle}
+\subsubsection{Leermessung}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_1_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_1_2.png}
+\caption{Leermessung Peak1}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_2_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_2_2.png}
+\caption{Leermessung Peak2}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_3_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_3_2.png}
+\caption{Leermessung Peak3}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_4_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_4_2.png}
+\caption{Leermessung Peak4}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_5_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_5_2.png}
+\caption{Leermessung Peak5}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_6_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/leer_6_2.png}
+\caption{Leermessung Peak6}
+\end{figure}
+\subsubsection{Stahl}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/stahl_1_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/stahl_1_2.png}
+\caption{Stahl Peak6}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/stahl_2_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/stahl_2_2.png}
+\caption{Stahl Peak2}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/stahl_3_1.png}
+\includegraphics[scale=0.49]{Bilder/alpha_spektren/stahl_3_2.png}
+\caption{Stahl Peak3}
 \end{figure}
 
 \end{document}

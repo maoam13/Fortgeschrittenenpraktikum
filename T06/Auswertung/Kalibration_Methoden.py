@@ -169,3 +169,69 @@ def Peakf(pos):
             k = 1
         index = index+1
     return peakpos
+
+def Peakalles(pos,pos1):
+    posalt = Peakf(pos1)
+    l=0
+    index = 0
+    peakpos = []
+    errpos= []
+    peakint = []
+    errint= []
+    peakb = []
+    berr = []
+    for i in pos:
+        k = 0
+        for j in i:
+            ein = Einlesen(index)
+            data = ein.data
+            channels = np.arange(len(data))
+            err = np.sqrt(data)
+            pos = j[0]
+            breite = j[4]
+            abstand = j[1]
+            hohe = j[2]
+            if j[3] == 2 and k == 0:
+                x,err,y,a,da,chi = anpassung2(data,np.sqrt(data+1),pos,abstand,hohe,breite)
+            if k == 1:
+                x,err,y,a,da,chi = anpassung2_2(data,np.sqrt(data+1),pos,abstand,hohe,breite)
+            if j[3] == 3:
+                x,err,y,a,da,chi = anpassung3(data,np.sqrt(data+1),pos,abstand,hohe,breite)
+            if j[3] == 1:
+                x,err,y,a,da,chi = anpassung1(data,np.sqrt(data+1),pos,abstand,hohe,breite)
+            x = np.arange(x[0],x[-1],0.1)
+            if j[3] == 2:
+                peakpos.append(a[0])
+                peakpos.append(a[4])
+                errpos.append(max([da[0],abs(a[0]-posalt[l])])+0.1)
+                l = l+1
+                errpos.append(max([da[4],abs(a[4]-posalt[l])])+0.1)
+                l = l+1
+                peakint.append(a[3])
+                peakint.append(a[6])
+                errint.append(da[3])
+                errint.append(da[6])
+                peakb.append(a[1])
+                peakb.append(a[5])
+                berr.append(da[1])
+                berr.append(da[5])
+            if j[3] == 3:
+                peakpos.append(a[0])
+                errpos.append(max([da[0],abs(a[0]-posalt[l])]))
+                l = l+1
+                peakint.append(max(gauss3(a,channels)))
+                errint.append(da[3])
+                peakb.append(a[1])
+                berr.append(da[1])
+            if j[3] == 1:
+                peakpos.append(a[0])
+                errpos.append(max([da[0],abs(a[0]-posalt[l])]))
+                l = l+1
+                peakint.append(a[3])
+                errint.append(da[3])
+                peakb.append(a[1])
+                berr.append(da[1])
+            plt.axis([pos-100,pos+100,plt.ylim()[0],plt.ylim()[1]])
+            k = 1
+        index = index+1
+    return peakpos,errpos,peakint,errint,peakb,berr
