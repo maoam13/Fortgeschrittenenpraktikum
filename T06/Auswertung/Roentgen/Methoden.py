@@ -29,7 +29,7 @@ def gauss2(a,x):#doppelte Gaussfunktion: Position in index 0 und 4. Höhe in 3 u
 
 def peak_best(data, startwerte, p = 1, b1 = 20, b2 = 80):
     #startwerte = [position, breite, untergrund, höhe]
-    k = startwerte[0]
+    k = int(startwerte[0])
     #def gauss(a,x):#einfache Gaussfunktion: Position in index 0, Höhe in 3
     #    return a[2]+a[3]*np.exp(-(x-a[0])**2/(2*a[1]**2))
     #def gauss2(a,x):#doppelte Gaussfunktion: Position in index 0 und 4. Höhe in 3 und 6
@@ -50,6 +50,27 @@ def peak_best(data, startwerte, p = 1, b1 = 20, b2 = 80):
         peak1, sig1 = (sol1[0][0] + sol2[0][0])/2, np.abs(sol1[0][0] - sol2[0][0])
         peak2, sig2 = (sol1[0][3] + sol2[0][3])/2, np.abs(sol1[0][3] - sol2[0][3])
         return peak1, sig1, peak2, sig2, chiq1, chiq2, sol2
+    return 0
+
+def peak_breite_best(E, sE, data, startwerte, k, p = 1, b1 = 20, b2 = 80):
+    #startwerte = [position, breite, untergrund, höhe]
+    sy = np.sqrt(data)
+    if p == 1:
+        sol1 = AM.fitte_bel_function(E[k-b1:k+b1], data[k-b1:k+b1], sE[k-b1:k+b1], sy[k-b1:k+b1], gauss, startwerte)
+        sol2 = AM.fitte_bel_function(E[k-b2:k+b2], data[k-b2:k+b2], sE[k-b2:k+b2], sy[k-b2:k+b2], gauss, startwerte)
+        chiq1, chiq2 = sol1[2], sol2[2]
+        breite, e_breite = (sol1[0][1] + sol2[0][1])/2, np.abs(sol1[0][1] - sol2[0][1])
+        peak, sig = (sol1[0][0] + sol2[0][0])/2, np.abs(sol1[0][0] - sol2[0][0])
+        return peak, sig, breite, e_breite, chiq1, chiq2, sol2
+    if p == 2:
+        sol1 = AM.fitte_bel_function(E[k-b1:k+b1], data[k-b1:k+b1], sE[k-b1:k+b1], sy[k-b1:k+b1], gauss2, startwerte)
+        sol2 = AM.fitte_bel_function(E[k-b2:k+b2], data[k-b2:k+b2], sE[k-b2:k+b2], sy[k-b2:k+b2], gauss2, startwerte)
+        chiq1, chiq2 = sol1[2], sol2[2]
+        breite1, e_breite1 = (sol1[0][1] + sol2[0][1])/2, np.abs(sol1[0][1] - sol2[0][1])
+        breite2, e_breite2 = (sol1[0][5] + sol2[0][5])/2, np.abs(sol1[0][5] - sol2[0][5])
+        peak1, sig1 = (sol1[0][0] + sol2[0][0])/2, np.abs(sol1[0][0] - sol2[0][0])
+        peak2, sig2 = (sol1[0][3] + sol2[0][3])/2, np.abs(sol1[0][3] - sol2[0][3])
+        return peak1, sig1, peak2, sig2, breite1, e_breite1, breite2, e_breite2, chiq1, chiq2, sol2
     return 0
 
 def fitte_bel_functionx(x, y, ex, func, startwerte):
