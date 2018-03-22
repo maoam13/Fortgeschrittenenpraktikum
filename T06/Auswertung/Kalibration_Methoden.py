@@ -86,9 +86,9 @@ def Peaks(pos,pos1):
             if j[3] == 2:
                 peakpos.append(a[0])
                 peakpos.append(a[4])
-                errpos.append(max([da[0],abs(a[0]-posalt[l])])+0.2)
+                errpos.append(max([da[0],abs(a[0]-posalt[l])])+0.1)
                 l = l+1
-                errpos.append(max([da[4],abs(a[4]-posalt[l])])+0.2)
+                errpos.append(max([da[4],abs(a[4]-posalt[l])])+0.1)
                 l = l+1
                 peakint.append(a[3])
                 peakint.append(a[6])

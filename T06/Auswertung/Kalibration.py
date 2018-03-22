@@ -32,22 +32,23 @@ chi = sum((y-(a*x+b))**2/(a*poserr)**2)/len(x)
 
 plt.figure(2)
 ax = plt.subplot(211)
-ax.set_title("Einlinienspektrum")
+ax.set_title("Energiekalibration")
 ax.set_xlabel("Channel")
-ax.set_ylabel("Energie")
+ax.set_ylabel("Energie[keV]")
 plt.figtext(0.2,0.7,
                 'a= '+str(np.round(a,6))+' +/- '+str(np.round(da[0],6))+'\n'
                 +'b= '+str(np.round(b,5))+' +/- '+str(np.round(da[1],5))+'\n'
                 +'$\chi ^2 / ndof$= ' + str(np.round(chi, 5)))
-plt.errorbar(x,y,yerr = poserr,fmt = '.')
-plt.plot(x,a*x+b)
+plt.errorbar(x,y,xerr = poserr,fmt = '.')
+x2 = np.arange(0,4096)
+plt.plot(x2,a*x2+b)
 axen =[plt.xlim()[0],plt.xlim()[1],plt.ylim()[0],plt.ylim()[1]]
 ax2 = plt.subplot(212)
 ax2.set_ylabel("Residuen")
 plt.errorbar(x,(y-(a*x+b)),a*poserr,fmt = '.')
-x_r = np.array([plt.xlim()[0],plt.xlim()[1]])
+x_r = np.array([-100,4096])
 y_r = np.array([0, 0])
 ax2.axis([plt.xlim()[0],plt.xlim()[1],plt.ylim()[0],plt.ylim()[1]])
-plt.plot(x_r, y_r, color='r')
+plt.plot(x_r, y_r, color='r',linestyle = "dashed")
 
 
