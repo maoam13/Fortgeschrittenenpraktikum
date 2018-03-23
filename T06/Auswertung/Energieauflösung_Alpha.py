@@ -6,11 +6,10 @@ Created on Fri Mar 23 00:35:46 2018
 """
 
 import Praktikum as p
-import auswertung_nur_Methoden as AM
 import numpy as np
 import matplotlib.pyplot as plt
+import auswertung_nur_Methoden as AM
 import timeit
-import Methoden as m
 import Peak_Daten as pD
 
 start_time=timeit.default_timer()
@@ -21,6 +20,13 @@ E_pos = np.array(pos)
 e_E_pos = np.array(dpos)
 FWH = 2 * np.sqrt(2 * np.log(2)) * np.array(b)
 e_FWH = 2 * np.sqrt(2 * np.log(2)) * np.array(db)
+
+k = [4]
+for i in range(len(k)):
+    E_pos = AM.remelementfromarray(E_pos, k[i])
+    e_E_pos = AM.remelementfromarray(e_E_pos, k[i])
+    FWH = AM.remelementfromarray(FWH, k[i])
+    e_FWH = AM.remelementfromarray(e_FWH, k[i])
 
 ####lin reg
 sol = p.lineare_regression_xy(np.sqrt(E_pos),FWH,np.abs(e_E_pos /(2*np.sqrt(E_pos))),e_FWH)
