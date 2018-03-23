@@ -8,13 +8,33 @@
 \BOOKMARK [1][-]{section.4}{Ergebnisse -Quelle}{}% 8
 \BOOKMARK [2][-]{subsection.4.1}{Kalibration}{section.4}% 9
 \BOOKMARK [2][-]{subsection.4.2}{Auswertung unbekannter Proben}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.3}{Energieaufl\366sung}{section.4}% 11
-\BOOKMARK [1][-]{section.5}{Ergebnisse R\366ntgenquelle}{}% 12
-\BOOKMARK [2][-]{subsection.5.1}{Kalibration}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.2}{Einfluss der angelegten Hochspannung an die R\366ntgenr\366hre}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.3}{Einfluss der PUR}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.4}{Auswertung unbekannter Proben}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.5}{Energieaufl\366sung}{section.5}% 17
-\BOOKMARK [1][-]{section.6}{Fazit}{}% 18
-\BOOKMARK [1][-]{section.7}{Anhang}{}% 19
-\BOOKMARK [2][-]{subsection.7.1}{Kalibration -Quelle}{section.7}% 20
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Vergleich mit Erwartung}{subsection.4.2}% 11
+\BOOKMARK [2][-]{subsection.4.3}{Energieaufl\366sung}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Ergebnisse R\366ntgenquelle}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Kalibration}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Einfluss der angelegten Hochspannung an die R\366ntgenr\366hre}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.3}{Einfluss der PUR}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.4}{Auswertung unbekannter Proben}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.4.1}{rostfreier Stahl}{subsection.5.4}% 18
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Blei}{subsection.5.4}% 19
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Chip}{subsection.5.4}% 20
+\BOOKMARK [3][-]{subsubsection.5.4.4}{Magnet}{subsection.5.4}% 21
+\BOOKMARK [3][-]{subsubsection.5.4.5}{Dinar}{subsection.5.4}% 22
+\BOOKMARK [3][-]{subsubsection.5.4.6}{Pfennig}{subsection.5.4}% 23
+\BOOKMARK [3][-]{subsubsection.5.4.7}{Rubel}{subsection.5.4}% 24
+\BOOKMARK [3][-]{subsubsection.5.4.8}{Vergleich mit Erwartungen}{subsection.5.4}% 25
+\BOOKMARK [2][-]{subsection.5.5}{Energieaufl\366sung}{section.5}% 26
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 27
+\BOOKMARK [1][-]{section.7}{Anhang}{}% 28
+\BOOKMARK [2][-]{subsection.7.1}{Kalibration -Quelle}{section.7}% 29
+\BOOKMARK [2][-]{subsection.7.2}{Unbekannte Proben -Quelle}{section.7}% 30
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Leermessung}{subsection.7.2}% 31
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Stahl}{subsection.7.2}% 32
+\BOOKMARK [2][-]{subsection.7.3}{Unbekannte Proben R\366ntgenquelle}{section.7}% 33
+\BOOKMARK [3][-]{subsubsection.7.3.1}{Blei}{subsection.7.3}% 34
+\BOOKMARK [3][-]{subsubsection.7.3.2}{PC-Chip}{subsection.7.3}% 35
+\BOOKMARK [3][-]{subsubsection.7.3.3}{2-Dinar-M\374nze}{subsection.7.3}% 36
+\BOOKMARK [3][-]{subsubsection.7.3.4}{Magnet}{subsection.7.3}% 37
+\BOOKMARK [3][-]{subsubsection.7.3.5}{10-Pfennig-M\374nze}{subsection.7.3}% 38
+\BOOKMARK [3][-]{subsubsection.7.3.6}{10-Rubel-M\374nze}{subsection.7.3}% 39
+\BOOKMARK [3][-]{subsubsection.7.3.7}{Stainless Steel}{subsection.7.3}% 40

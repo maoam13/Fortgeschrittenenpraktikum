@@ -68,6 +68,7 @@ def anpassung(data,err,pos,abstand,hohe,breite = 50):
     return channels,err,data,a,da,chi
 
 def fitte(pos,breite,hohe,i):
+    i = 0
     if i != 0:
         plt.figure(i)
         ax = plt.subplot(211)
@@ -88,6 +89,7 @@ def fitte(pos,breite,hohe,i):
         ax.set_ylabel("Counts")
         ax2.set_xlabel("Energie[keV]")
         ax2.set_ylabel("Residuen")
+    print max(gauss(a,xfit))/max(yecht)
     return a[0],da[0]
     
 def fittef(pos,breite,hohe,i):
@@ -116,7 +118,8 @@ def fittef(pos,breite,hohe,i):
 plt.close('all')
 datal = Einlesen(1).data
 leer = fft_cutoff(datal)[0]
-ein = Einlesen(6).data
+g = 0
+ein = Einlesen(g).data
 data = fft_cutoff(ein)[0]
 err = np.sqrt(data)
 corr = leerkorrektur2(leer,data)
@@ -197,11 +200,11 @@ if 0:
     plt.plot(x,fft_cutoff(datal)[1])
     
 if 1:
-    plt.figure("stahl_roh")
+    plt.figure("Chip_roh")
     ax = plt.subplot(111)
     ax.set_xlabel("Energie[keV]")
     ax.set_ylabel("Counts")
-    ax.set_title("Stahl Rohdaten")
+    ax.set_title("Chip Rohdaten")
     plt.tight_layout()
     plt.grid()
     plt.plot(E(x),ein)
@@ -211,13 +214,13 @@ if 1:
     ax = plt.subplot(111)
     ax.set_xlabel("Energie[keV]")
     ax.set_ylabel("Counts")
-    ax.set_title("Rubel bereinigt")
+    ax.set_title("Chip bereinigt")
     plt.tight_layout()
     plt.grid()
     plt.plot(E(x),yecht)
     
     
-if 0:
+if 1:
     #print E(fitte(1250,70,1))
     #print E(fittef(1405,70,2))
     if 0:#blei
@@ -262,7 +265,7 @@ if 0:
         dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df2)])]
         print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
         
-    if 0:#chip
+    if g == 0:#chip
         f1,df1 = fitte(560,50,420,"chip1_1")
         f3,df3 = fitte(560,10,420,"chip1_2")
         test = [E(f1),E(f3)]
