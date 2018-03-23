@@ -52,6 +52,31 @@ def peak_best(data, startwerte, p = 1, b1 = 20, b2 = 80):
         return peak1, sig1, peak2, sig2, chiq1, chiq2, sol2
     return 0
 
+def peak_best_alt(data, startwerte, p = 1, b1 = 20, b2 = 80):
+    #startwerte = [position, breite, untergrund, höhe]
+    k = int(startwerte[0])
+    #def gauss(a,x):#einfache Gaussfunktion: Position in index 0, Höhe in 3
+    #    return a[2]+a[3]*np.exp(-(x-a[0])**2/(2*a[1]**2))
+    #def gauss2(a,x):#doppelte Gaussfunktion: Position in index 0 und 4. Höhe in 3 und 6
+    #    return a[2]+a[3]*np.exp(-(x-a[0])**2/(2*a[1]**2))+a[6]*np.exp(-(x-a[4])**2/(2*a[5]**2))
+    x = np.arange(len(data))
+    sx = np.full(len(x), 1./np.sqrt(12))
+    sy = np.sqrt(data)
+    if p == 1:
+        sol1 = AM.fitte_bel_function(x[k-b1:k+b1], data[k-b1:k+b1], sx[k-b1:k+b1], sy[k-b1:k+b1], gauss, startwerte)
+        sol2 = AM.fitte_bel_function(x[k-b2:k+b2], data[k-b2:k+b2], sx[k-b2:k+b2], sy[k-b2:k+b2], gauss, startwerte)
+        chiq1, chiq2 = sol1[2], sol2[2]
+        peak, sig = (sol1[0][0] + sol2[0][0])/2, np.abs(sol1[0][0] - sol2[0][0])
+        return sol2[0][0], sol2[1][0], sol2[0][1], sol2[1][1]
+    if p == 2:
+        sol1 = AM.fitte_bel_function(x[k-b1:k+b1], data[k-b1:k+b1], sx[k-b1:k+b1], sy[k-b1:k+b1], gauss2, startwerte)
+        sol2 = AM.fitte_bel_function(x[k-b2:k+b2], data[k-b2:k+b2], sx[k-b2:k+b2], sy[k-b2:k+b2], gauss2, startwerte)
+        chiq1, chiq2 = sol1[2], sol2[2]
+        peak1, sig1 = (sol1[0][0] + sol2[0][0])/2, np.abs(sol1[0][0] - sol2[0][0])
+        peak2, sig2 = (sol1[0][3] + sol2[0][3])/2, np.abs(sol1[0][3] - sol2[0][3])
+        return sol2[0][0], sol2[1][0], sol2[0][1], sol2[1][1]
+    return 0
+
 def peak_breite_best(E, sE, data, startwerte, k, p = 1, b1 = 20, b2 = 80):
     #startwerte = [position, breite, untergrund, höhe]
     sy = np.sqrt(data)
