@@ -211,6 +211,75 @@ Tb & 44,481.6 & 43,744.1 & 51,698 & 50,382 & 50,229\\
 \subsection{Auswertung unbekannter Proben}
 \subsection{Energieauflösung}
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Peakenergie [\si{keV}] & Full Width Half Maximum [\si{keV}] \\ 
+\hline
+8.078 $\pm$ 0.010 & 0.243 $\pm$ 0.023 \\ 
+\hline
+8.929 $\pm$ 0.010 & 0.262 $\pm$ 0.023 \\ 
+\hline
+13.356 $\pm$ 0.010 & 0.320 $\pm$ 0.023 \\ 
+\hline
+14.956 $\pm$ 0.010 & 0.372 $\pm$ 0.023 \\
+\hline
+17.395 $\pm$ 0.010 & 0.382 $\pm$ 0.023 \\ 
+\hline
+19.583 $\pm$ 0.010 & 0.327 $\pm$ 0.023 \\ 
+\hline
+19.943 $\pm$ 0.010 & 0.319 $\pm$ 0.023 \\ 
+\hline
+22.041 $\pm$ 0.010 & 0.453 $\pm$ 0.023 \\ 
+\hline
+24.914 $\pm$ 0.010 & 0.363 $\pm$ 0.023 \\
+\hline
+25.436 $\pm$ 0.010 & 0.343 $\pm$ 0.023 \\
+\hline
+31.799 $\pm$ 0.010 & 0.393 $\pm$ 0.023 \\ 
+\hline 
+32.191 $\pm$ 0.010 & 0.378 $\pm$ 0.023 \\ 
+\hline
+36.341 $\pm$ 0.010 & 0.456 $\pm$ 0.023 \\ 
+\hline
+37.249 $\pm$ 0.010 & 0.448 $\pm$ 0.023 \\  
+\hline
+43.754 $\pm$ 0.010 & 0.442 $\pm$ 0.023 \\ 
+\hline
+44.489 $\pm$ 0.010 & 0.430 $\pm$ 0.023 \\ 
+\hline
+50.333 $\pm$ 0.010 & 0.543 $\pm$ 0.023 \\ 
+\hline
+51.718 $\pm$ 0.010 & 0.520 $\pm$ 0.023 \\ 
+\hline
+\end{tabular} 
+\caption{Peakenergie und zugehörige Full Width Half Maxima.}
+\label{tab:alpha_energieaufloesung}
+\end{table}
+
+Zur Bestimmung der Energieauflösung werden die Peaks verwendet, die auch zur Kalibration verwendet werden. Dabei werden die Gaußanpassungen an die Peaks nach der Umrechnung der Kanäle auf Energie. Das Full Width Half Maximum (FWHM) bestimmt sich aus dem Breitenparameter aus der Gaußanpassung $\Delta$ gemäß:
+\begin{equation*}
+\textrm{FWHM} = 2 \cdot \sqrt{2 \cdot \ln(2)} \cdot \Delta
+\end{equation*}
+Entsprechend berechnet sich der Fehler über:
+\begin{equation*}
+\sigma _\textrm{FWHM} = 2 \cdot \sqrt{2 \cdot \ln(2)} \cdot \sigma _\Delta
+\end{equation*}
+Die Fehler auf die Breitenparameter und die Peakpositionen kommen aus der Anpassung. \\
+Wegen des erwarteten Zusammenhangs $\Delta E \propto \sqrt{E}$ wird die Energieauflösung $\Delta E$ gegen die Wurzel der Energie aufgetragen. Der Fehler bestimmt sich zu:
+\begin{equation*}
+\sigma _{\sqrt{E}} = \dfrac{\sigma _E}{2 \cdot \sqrt{E}}
+\end{equation*}
+Tabelle \ref{tab:alpha_energieaufloesung} zeigt die dadurch entstehenden Datenpunkte. An diese Punkte kann nun zur Überprüfung des Zusammenhang eine Transformation und dann eine lineare Regression durchgeführt werden. Diese ist in Abbildung \ref{fig:alpha_energieaufloesung} gezeigt. Das $\chi ^2$/ndof von 2.98 deutet auf eine verhältnismäßig gute Anpassung, sodass der Zusammenhang $\Delta E \propto \sqrt{E}$ als bestätigt betrachtet werden kann.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Energieaufloesung/alpha_gesamt.png}
+\caption{Lineare Regression an die Full Width Half Maxima und die Energien der Peaks.}
+\label{fig:alpha_energieaufloesung}
+\end{figure}
+
 \section{Ergebnisse Röntgenquelle}
 \subsection{Kalibration}
 \begin{figure}
@@ -314,6 +383,55 @@ Die Pile-up Rejection (PUR) unterdrückt Pulse, die in der Totzeit des Detektors
 
 \subsection{Auswertung unbekannter Proben}
 \subsection{Energieauflösung}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Peakenergie [\si{eV}] & Full Width Half Maximum [\si{eV}] \\ 
+\hline 
+8045.8 $\pm$ 2.7 & 136.7 $\pm$ 6.3 \\ 
+\hline
+8903.0 $\pm$ 3.2 & 146.6 $\pm$ 7.6 \\ 
+\hline
+17460.3 $\pm$ 5.1 & 226 $\pm$ 12 \\ 
+\hline
+19625.4 $\pm$ 6.5 & 212 $\pm$ 15 \\ 
+\hline
+22120.2 $\pm$ 6.5 & 293 $\pm$ 15 \\ 
+\hline
+24951.3 $\pm$ 7.9 & 231 $\pm$ 19 \\ 
+\hline
+28618.4 $\pm$ 8.3 & 265 $\pm$ 20 \\ 
+\hline
+32290.8 $\pm$ 9.3 & 285 $\pm$ 22 \\ 
+\hline
+\end{tabular} 
+\caption{Peakenergie und zugehörige Full Width Half Maxima.}
+\label{tab:roentgen_energieaufloesung}
+\end{table}
+
+Zur Bestimmung der Energieauflösung werden die Peaks verwendet, die auch zur Kalibration verwendet werden. Dabei werden die Gaußanpassungen an die Peaks nach der Umrechnung der Kanäle auf Energie. Das Full Width Half Maximum (FWHM) bestimmt sich aus dem Breitenparameter aus der Gaußanpassung $\Delta$ gemäß:
+\begin{equation*}
+\textrm{FWHM} = 2 \cdot \sqrt{2 \cdot \ln(2)} \cdot \Delta
+\end{equation*}
+Entsprechend berechnet sich der Fehler über:
+\begin{equation*}
+\sigma _\textrm{FWHM} = 2 \cdot \sqrt{2 \cdot \ln(2)} \cdot \sigma _\Delta
+\end{equation*}
+Die Fehler auf die Breitenparameter und die Peakpositionen kommen aus der Anpassung. \\
+Wegen des erwarteten Zusammenhangs $\Delta E \propto \sqrt{E}$ wird die Energieauflösung $\Delta E$ gegen die Wurzel der Energie aufgetragen. Der Fehler bestimmt sich zu:
+\begin{equation*}
+\sigma _{\sqrt{E}} = \dfrac{\sigma _E}{2 \cdot \sqrt{E}}
+\end{equation*}
+Tabelle \ref{tab:roentgen_energieaufloesung} zeigt die dadurch entstehenden Datenpunkte. An diese Punkte kann nun zur Überprüfung des Zusammenhang eine Transformation und dann eine lineare Regression durchgeführt werden. Diese ist in Abbildung \ref{fig:roentgen_energieaufloesung} gezeigt. Das $\chi ^2$/ndof von 2.71 deutet auf eine verhältnismäßig gute Anpassung, sodass der Zusammenhang $\Delta E \propto \sqrt{E}$ als bestätigt betrachtet werden kann, auch wenn hier mit insgesamt 8 Datenpunkten keine große Statistik gegeben ist.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/Energieaufloesung/roentgen_gesamt.png}
+\caption{Lineare Regression an die Full Width Half Maxima und die Energien der Peaks.}
+\label{fig:roentgen_energieaufloesung}
+\end{figure}
 
 \section{Fazit}
 \newpage 
