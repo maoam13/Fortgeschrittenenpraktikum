@@ -124,7 +124,7 @@ yerr = np.sqrt(abs(y))
 x = np.arange(len(y))
 Es = E(x)
 rausch =0
-if 0:
+if 1:
     rausch =1
     y = corr
     yecht = datal
@@ -134,7 +134,7 @@ if 0:
 if 1:
     #print E(fitte(1250,70,1))
     #print E(fittef(1405,70,2))
-    if 1:
+    if 0:
         f1,df1 = fittef(390,20,"stahl_1_1")
         f3,df3 = fittef(389,25,"stahl_1_2")
         test = [E(f1),E(f3)]
@@ -263,10 +263,8 @@ if 1:
     ax = plt.subplot(111)
     ax.set_xlabel("Energie[keV]")
     ax.set_ylabel("Counts")
-    ax.set_title("Stahl Rohdaten")
+    ax.set_title("Stahl bereinigt")
     plt.tight_layout()
     plt.grid()
     plt.plot(x,y)
-    
-    
     

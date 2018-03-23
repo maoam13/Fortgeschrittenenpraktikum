@@ -60,7 +60,9 @@ Außerdem kann über den Reiter "shaping" eine "Pile-up Rejection"(PUR) und eine
 Alle Einstellung sind in Tabelle \ref{tab:alpha_Einstellungen} aufgelistet.\\
 \\
 Nun wird für jede der sechs Proben über \SI{15}{min} das Spektrum aufgenommen.\\
-Danach werden für eine Edelstahlplatte und mehrere Münzen ebenfalls über \SI{15}{min} die Spektren aufgenommen.
+Danach werden für eine Edelstahlplatte ebenfalls über \SI{15}{min} die Spektren aufgenommen.\\
+Außerdem wird noch eine Leermessung über diesen Zeitraum aufgenommen. Dazu wird ein Stück Papier in die Probenkammer gelegt, damit der Effekt einer Probe simuliert werden kann.\\
+Für beide Messungen wird die $\alpha$-Quelle in eine massive Halterung gelegt, welche einen Raum für Proben besitzt. Die Strahlung wird dabei von der Probe zum Zahlrohr hin reflektiert.
 \begin{table}
 \centering
 \begin{tabular}{|c|c|}
@@ -107,7 +109,11 @@ Nun wird eine lineare Regression durchgeführt, die den Channels eine Energie zu
 \begin{equation}
 E = (0.013904\pm0.000004)\cdot CH + (0.060\pm0.010)
 \end{equation}
-wobei die Energie in keV angegeben wird.
+wobei die Energie in keV angegeben wird (CH steht für Channel). Der Fehler auf die Energien wird dann folgendermaßen errechnet:
+\begin{equation}
+\sigma_E = \sqrt{\sigma_b^2+(\sigma_a\cdot CH)^2}
+\end{equation}
+wobei b der Achsenabschnitt und a die Steigung ist.
 
 \begin{table}
 \centering
@@ -179,6 +185,8 @@ Tb & 44,481.6 & 43,744.1 & 51,698 & 50,382 & 50,229\\
 \label{fig:kal_linreg}
 \end{figure}
 
+
+\newpage
 \subsection{Auswertung unbekannter Proben}
 \begin{figure}
 \centering
@@ -200,13 +208,23 @@ Tb & 44,481.6 & 43,744.1 & 51,698 & 50,382 & 50,229\\
 \centering
 \includegraphics[scale=0.8]{Bilder/alpha_spektren/stahl_roh.png}
 \includegraphics[scale=0.8]{Bilder/alpha_spektren/stahl_cut.png}
-\caption{}
-\label{fig:kal_linreg}
+\caption{Spektrum des Stahls. \textbf{Oben:} Rohdaten, \textbf{unten:} Daten mit Tiefpassfilter bereinigt und Leermessung abgezogen.}
+\label{fig:a_prop_stahl}
 \end{figure}
 
 Mit der Energiekalibration können nun die unbekannten Proben ausgewertet werden. Dazu muss zuerst eine Leermessung durchgeführt werden, um die Hintergrundstrahlung herausfiltern zu können. Diese ist in Abbildung \ref{fig:a_prob_leer} gezeigt. Um Peaks besser erkennen zu können und das Rauschen zu verringern wird ein Tiefpassfilter auf die Daten angewendet. Dazu werden die Daten fouriertransformiert, was in Abbildung \ref{fig:a_prob_four} gezeigt ist. Die Cutoff-Frequenz wurde auf 300 festgelegt, dass heißt, dass alle Frequenzen auf null gesetzt werden, die größer als 300 sind. Das übrige Fourierspektrum wird dann zurücktransformiert. Das Spektrum mit Tiefpassfilter ist jeweils unter den Rohdaten mit angegeben.\\
 \\
-An die sichtbaren Peaks der Leermessung werden wieder Gausskurven angefittet, um deren Lage zu bestimmen. 
+An die sichtbaren Peaks der Leermessung ohne Tiefpassfilter werden wieder Gausskurven angefittet, um deren Lage zu bestimmen. Die Ergebnisse sind in Tabelle \ref{tab:a_peaks_leer} aufgelsitet. Alle Anpassungen befinden sich im Anhang.\\
+Der Fehler wird wieder durch verschieben der Anpassung bestimmt. Außerdem planzt sich ein systematischer Fehler aus der Kalibration fort, welcher aber nicht mit in die Anpassung einfließt.\\
+Bei machnen Peaks kann es sein, dass deren Höhe zu klein ist. Dann funktioniert der Fit nicht fernünftig. Es wird dann stattdessen ein Fit an die Daten mit Tiefpassfilter angepasst.\\
+\\
+Danach wird die gleiche Methode auf die Messung des rostfreihen Stahles angewandt. 
+Von dessen Rohdaten wird aber zuerst die Leermessung abgezogen. 
+Auch hier wird ein Tiefpassfilter auf die Daten angewendet.\\
+Das Spektrum ist in Abbildung \ref{fig:a_prop_stahl} dargestellt, die bestimmten PEaks in Tabelle \ref{tab:a_peaks_stahl}.
+
+\subsubsection{Vergleich mit Erwartung}
+Im Spektrum der Stahlplatte konnte eindeutig Molybdän identifiziert werden. Dieses wird in Stahl zur Härtung benutzt\footnote{\url{http://www.chemie.de/lexikon/Molybdän.html}}. der 5.477keV PEak konnte nicht eindeutig identifiziert werden. Da Chrom aber oft in Legierungen verwendet wird\footnote{\url{http://www.seilnacht.com/Lexikon/24Chrom.htm}}, gehört dieser Peak wahrscheinlich zu diesem Stoff.
 
 \begin{table}
 \center
@@ -232,7 +250,7 @@ $7.096\pm 0.001\pm 0.010$ & $^{26}Fe$ & $K_{\beta_{1/3}}$ & $7.058$ & \\
 \hline 
 \end{tabular} 
 \caption{Peaks in der Leermessung}
-\label{a_peaks_leer}
+\label{tab:a_peaks_leer}
 \end{table}
 
 \begin{table}
@@ -252,42 +270,298 @@ $19.57\pm 0.03\pm 0.01$ & $^{42}Mo$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
  \hline 
 \end{tabular} 
 \caption{Peaks in der Messung des Stahls}
-\label{a_peaks_leer}
+\label{tab:a_peaks_stahl}
 \end{table}
 
 \subsection{Energieauflösung}
 \section{Ergebnisse Röntgenquelle}
-\subsubsection{Kalibration}
-\subsubsection{Auswertung unbekannter Proben}
-\begin{table}
+\subsection{Kalibration}
+
+\subsection{Auswertung unbekannter Proben}
+Die Proben mit der Röntgenquelle werden genau so ausgewertet, wie die der $\alpha$-Quelle. Allerdings ist es hier nicht nötig, einen Tiefpassfilter anzuwenden, da das Ruaschen gegenüber der Peakhöhe relativ klein ist.\\
+Alle Spektren werden von der Untergrundmessung bereinigt.\\
+\\
+Die Literaturwerte stammen weiterhin von \url{http://xdb.lbl.gov/Section1/Table_1-3.pdf}.
+
+\newpage
+\subsubsection{rostfreier Stahl}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Bilder/roentgen_spektren/stahl_0.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Stahles}.}
+\label{fig:prop_stahl}
+\end{figure}
+
+\begin{table}[H]
 \center
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
 Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
 \hline 
-$3.674 \pm 0.0 \pm 0.006$& $^{20}Ca$ & $K_{\alpha_{1/2}}$ & $3,688-3,691$ & \\ 
-& $^{23}V$ & $K_{\beta_{1/3}}$ & $5.427$ & unwahrsch.: $K_{\alpha}\approx 4.9keV$ nicht sichtbar\\ 
+$5.423 \pm 0.003 \pm 0.006$& $^{20}Ca$ & $K_{\alpha_{1/2}}$ & $3,688-3,691$ & \\
+\hline 
+$5.941 \pm 0.002 \pm 0.006$ & $^{82}Pb$ & $L_{1}$ & $9,184$ & \\ 
+\hline 
+$6.409 \pm 0.001 \pm 0.006$ & $^{82}Pb$ & $L_{\alpha_{1/2}}$ & $10,449-10,551$ & \\
+\hline
+$7.045 \pm 0.002 \pm 0.006$ & $^{82}Pb$ & $L_{\beta_{1/2}}$ & $12,613-12,622$ & \\
+\hline
+$7.481 \pm 0.001 \pm 0.006$ & $^{82}Pb$ & $L_{\gamma_{1}}$ & $14,764$ & \\
+\hline
+$8.264 \pm 0.016 \pm 0.006$ & $^{37}Rb$ & $K_{\beta_{1/2}}$ & $14,961-15,185$ & \\
+\hline
+$17.462 \pm 0.004 \pm 0.008$ & $^{51}Sb$ & $K_{\alpha_{1/2}}$ & $26,110-26,359$ & \\
+\hline
+$19.622 \pm 0.005 \pm 0.008$ & $^{51}Sb$ & $K_{\beta_{1/3}}$ & $29,679-29,725$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Bleiklotz}
+\label{prob_stahl}
+\end{table}
+
+\newpage
+\subsubsection{Blei}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Bilder/roentgen_spektren/blei_0.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Bleiblockes}.}
+\label{fig:prop_blei}
+\end{figure}
+
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$3.674 \pm 0.0 \pm 0.006$& $^{20}Ca$ & $K_{\alpha_{1/2}}$ & $3,688-3,691$ & \\
 \hline 
 $9.183 \pm 0.002 \pm 0.007$ & $^{82}Pb$ & $L_{1}$ & $9,184$ & \\ 
 \hline 
 $10.54 \pm 0.004 \pm 0.007$ & $^{82}Pb$ & $L_{\alpha_{1/2}}$ & $10,449-10,551$ & \\
 \hline
-$12.614 \pm 0.0 \pm 0.007$ & $^{82}Pb$ & $K_{\beta_{1/2}}$ & $12,613-12,622$ & \\
+$12.614 \pm 0.0 \pm 0.007$ & $^{82}Pb$ & $L_{\beta_{1/2}}$ & $12,613-12,622$ & \\
 \hline
-$14.76 \pm 0.003 \pm 0.007$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+$14.760 \pm 0.003 \pm 0.007$ & $^{82}Pb$ & $L_{\gamma_{1}}$ & $14,764$ & \\
 \hline
-$15.157 \pm 0.01 \pm 0.007$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+$15.157 \pm 0.01 \pm 0.007$ & $^{37}Rb$ & $K_{\beta_{1/2}}$ & $14,961-15,185$ & \\
 \hline
-$26.314 \pm 0.047 \pm 0.01$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+$26.314 \pm 0.047 \pm 0.01$ & $^{51}Sb$ & $K_{\alpha_{1/2}}$ & $26,110-26,359$ & \\
 \hline
-$29.717 \pm 0.003 \pm 0.01$ & $^{82}Pb$ & $K_{\beta_{1/3}}$ & $19.59-19.61$ & \\
+$29.717 \pm 0.003 \pm 0.01$ & $^{51}Sb$ & $K_{\beta_{1/3}}$ & $29,679-29,725$ & \\
 \hline
 \end{tabular} 
-\caption{Peaks in der Messung des Stahls}
+\caption{Peaks in der Messung des Bleiblockes}
+\label{prop_blei}
+\end{table}
+\newpage
+\subsubsection{Chip}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Bilder/roentgen_spektren/chip_0.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Computerchips}.}
+\label{fig:prop_chip}
+\end{figure}
+
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$3.696 \pm 0.002 \pm 0.006$& $^{20}Ca$ & $K_{\alpha_{1/2}}$ & $3,688-3,691$ & \\
+\hline 
+$6.401 \pm 0.002 \pm 0.006$ & $^{26}Fe$ & $K_{\alpha_{1/2}}$ & $6,390-6,403$ & \\ 
+\hline 
+$8.409 \pm 0.006 \pm 0.006$ & $^{70}Yb$ & $L_{\alpha_{1/2}}$ & $7,367-7,415$ & \\
+\hline
+$9.688 \pm 0.002 \pm 0.007$ & $^{79}Au$ & $L_{\alpha_{1}}$ & $9,713$ & \\
+& $^{74}W$ & $L_{\beta_{1}}$ & $9,672$ & \\
+\hline
+$11.921 \pm 0.003 \pm 0.007$ & $^{80}Hg$ & $L_{\beta_{2}}$ & $11,924$ & \\
+& $^{35}Br$ & $K_{\alpha_{1/2}}$ & $11,877-11,924$ & \\
+\hline
+$12.638 \pm 0.006 \pm 0.007$ & $^{36}Kr$ & $K_{\alpha_{1/2}}$ & $12,598-12,649$ & \\
+& $^{82}Pb$ & $L_{\beta_{1/2}}$ & $12,613-12,622$ & \\
+\hline
+$13.304 \pm 0.001 \pm 0.007$ & $^{35}Br$ & $K_{\beta_{1/3}}$ & $13,284-13,291$ & \\
+\hline
+$17.464 \pm 0.004 \pm 0.008$ & $^{42}Mo$ & $K_{\alpha_{1/2}}$ & $17,374-17,479$ & \\
+\hline
+$19.629 \pm 0.011 \pm 0.008$ & $^{42}Mo$ & $K_{\beta_{1/2/3}}$ & $19,590-19,965$ & \\
+\hline
+$25.239 \pm 0.03 \pm 0.009$ & $^{50}Sn$ & $K_{\alpha_{1/2}}$ & $25,044-25,271$ & \\
+\hline
+$28.511 \pm 0.003 \pm 0.01$ & $^{50}Sn$ & $K_{\beta_{1/3}}$ & $28,444-28,486$ & \\
+& $^{53}I$ & $K_{\alpha_{1/2}}$ & $28,317-28,612$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Computerchips}
+\label{prop_chip}
+\end{table}
+
+\subsubsection{Magnet}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/magnet_0.png}
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/magnet_1.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Magnetes} und zoom in den engen Bereich bei  5-10keV.}
+\label{fig:prop_magnet}
+\end{figure}
+
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$3.7 \pm 0.002 \pm 0.006$& $^{20}Ca$ & $K_{\alpha_{1/2}}$ & $3,688-3,691$ & \\
+\hline 
+$5.236 \pm 0.001 \pm 0.006$ & $^{26}Fe$ & $K_{\alpha_{1/2}}$ & $6,390-6,403$ & \\ 
+\hline 
+$5.747 \pm 0.017 \pm 0.006$ & $^{70}Yb$ & $L_{\alpha_{1/2}}$ & $7,367-7,415$ & \\
+\hline
+$6.414 \pm 0.003 \pm 0.006$ & $^{79}Au$ & $L_{\alpha_{1}}$ & $9,713$ & \\
+& $^{74}W$ & $L_{\beta_{1}}$ & $9,672$ & \\
+\hline
+$7.068 \pm 0.005 \pm 0.006$ & $^{80}Hg$ & $L_{\beta_{2}}$ & $11,924$ & \\
+& $^{35}Br$ & $K_{\alpha_{1/2}}$ & $11,877-11,924$ & \\
+\hline
+$7.488 \pm 0.001 \pm 0.006$ & $^{36}Kr$ & $K_{\alpha_{1/2}}$ & $12,598-12,649$ & \\
+& $^{82}Pb$ & $L_{\beta_{1/2}}$ & $12,613-12,622$ & \\
+\hline
+$8.261 \pm 0.023 \pm 0.006$ & $^{35}Br$ & $K_{\beta_{1/3}}$ & $13,284-13,291$ & \\
+\hline
+$8.916 \pm 0.003 \pm 0.007$ & $^{42}Mo$ & $K_{\alpha_{1/2}}$ & $17,374-17,479$ & \\
+\hline
+$16.604 \pm 0.006 \pm 0.008$ & $^{42}Mo$ & $K_{\beta_{1/2/3}}$ & $19,590-19,965$ & \\
+\hline
+$36.056 \pm 0.001 \pm 0.012$ & $^{50}Sn$ & $K_{\alpha_{1/2}}$ & $25,044-25,271$ & \\
+\hline
+$36.886 \pm 0.007 \pm 0.012$ & $^{50}Sn$ & $K_{\beta_{1/3}}$ & $28,444-28,486$ & \\
+& $^{53}I$ & $K_{\alpha_{1/2}}$ & $28,317-28,612$ & \\
+\hline
+$37.398 \pm 0.002 \pm 0.012$ & $^{50}Sn$ & $K_{\alpha_{1/2}}$ & $25,044-25,271$ & \\
+\hline
+$40.763 \pm 0.003 \pm 0.013$ & $^{50}Sn$ & $K_{\alpha_{1/2}}$ & $25,044-25,271$ & \\
+\hline
+$42.285 \pm 0.006 \pm 0.014$ & $^{50}Sn$ & $K_{\alpha_{1/2}}$ & $25,044-25,271$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Magnetes}
+\label{prop_magnet}
+\end{table}
+\newpage
+\subsubsection{Dinar}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/dinar_0.png}
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/dinar_1.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Dinars} und zoom in den relevanten Bereich.}
+\label{fig:prop_dinar}
+\end{figure}
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$6.294 \pm 0.018 \pm 0.006$& $^{65}Tb$ & $L_{\alpha_{1/2}}$ & $6,238-6,272$ & \\
+\hline 
+$6.922 \pm 0.003 \pm 0.006$ & $^{27}Co$ & $K_{\alpha_{1/2}}$ & $6,915-6,930$ & \\ 
+\hline 
+$7.476 \pm 0.017 \pm 0.006$ & $^{28}Ni$ & $K_{\alpha_{1/2}}$ & $7,460-7,478$ & \\
+\hline
+$8.051 \pm 0.007 \pm 0.006$ & $^{29}Cu$ & $K_{\alpha_{1/2}}$ & $8,027-8,047$ & \\
+\hline
+$8.629 \pm 0.001 \pm 0.007$ & $^{30}Zn$ & $K_{\alpha_{1/2}}$ & $8,615-8,638$ & \\
+\hline
+$8.899 \pm 0.004 \pm 0.007$ & $^{29}Cu$ & $K_{\beta_{1/3}}$ & $8,905$ & \\
+\hline
+$9.570 \pm 0.001 \pm 0.007$ & $^{30}Zn$ & $K_{\beta_{1/3}}$ & $9,572$ & \\
+\hline
+$16.036 \pm 0.037 \pm 0.008$ & $^{38}Sr$ & $K_{\beta_{1/2/3}}$ & $15,824-16,084$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Dinars}
+\label{prop_dinar}
+\end{table}
+
+\newpage
+\subsubsection{Pfennig}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/pfennig_0.png}
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/pfennig_1.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Pfennigs} und zoom in den relevanten Bereich.}
+\label{fig:prop_dinar}
+\end{figure}
+
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$6.329 \pm 0.01 \pm 0.006$& $^{65}Tb$ & $L_{\alpha_{1/2}}$ & $6,238-6,272$ & \\
+\hline 
+$6.994 \pm 0.022 \pm 0.006$ & $^{27}Co$ & $K_{\alpha_{1/2}}$ & $6,915-6,930$ & \\ 
+\hline 
+$7.428 \pm 0.001 \pm 0.006$ & $^{28}Ni$ & $K_{\alpha_{1/2}}$ & $7,460-7,478$ & \\
+\hline
+$8.049 \pm 0.007 \pm 0.006$ & $^{29}Cu$ & $K_{\alpha_{1/2}}$ & $8,027-8,047$ & \\
+\hline
+$8.623 \pm 0.001 \pm 0.007$ & $^{30}Zn$ & $K_{\alpha_{1/2}}$ & $8,615-8,638$ & \\
+\hline
+$8.888 \pm 0.013 \pm 0.007$ & $^{29}Cu$ & $K_{\beta_{1/3}}$ & $8,905$ & \\
+\hline
+$9.563 \pm 0.001 \pm 0.007$ & $^{30}Zn$ & $K_{\beta_{1/3}}$ & $9,572$ & \\
+\hline
+$16.030 \pm 0.037 \pm 0.008$ & $^{38}Sr$ & $K_{\beta_{1/2/3}}$ & $15,824-16,084$ & \\
+\hline
+$16.639 \pm 0.033 \pm 0.008$ & $^{41}Nb$ & $K_{\alpha_{1/2}}$ & $16,521-16,615$ & \\
+& $^{39}Y$ & $K_{\beta_{1/2/3}}$ & $16,725-16,737$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Pfennigs}
 \label{a_peaks_leer}
 \end{table}
-\caption{•}
-\subsubsection{Energieauflösung}
+
+\newpage
+\subsubsection{Rubel}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/rub_0.png}
+\includegraphics[scale=0.49]{Bilder/roentgen_spektren/rub_1.png}
+\caption{Von der Leermessung bereinigtes Spektrum des \textbf{Rubels} und zoom in den relevanten Bereich.}
+\label{fig:prop_rubel}
+\end{figure}
+\begin{table}[H]
+\center
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+Peakpos.[keV] & Stoff & Linie & Literaturwert[keV] & Anmerkung \\
+\hline 
+$6.296 \pm 0.008 \pm 0.006$& $^{65}Tb$ & $L_{\alpha_{1/2}}$ & $6,238-6,272$ & \\
+\hline 
+$7.465 \pm 0.004 \pm 0.006$ & $^{28}Ni$ & $K_{\alpha_{1/2}}$ & $7,460-7,478$ & \\
+\hline
+$8.050 \pm 0.012 \pm 0.006$ & $^{29}Cu$ & $K_{\alpha_{1/2}}$ & $8,027-8,047$ & \\
+\hline
+$8.644 \pm 0.013 \pm 0.007$ & $^{30}Zn$ & $K_{\alpha_{1/2}}$ & $8,615-8,638$ & \\
+\hline
+$8.899 \pm 0.001 \pm 0.007$ & $^{29}Cu$ & $K_{\beta_{1/3}}$ & $8,905$ & \\
+\hline
+$15.467 \pm 0.041 \pm 0.007$ & $^{30}Zn$ & $K_{\beta_{1/3}}$ & $9,572$ & \\
+\hline
+$16.032 \pm 0.046 \pm 0.008$ & $^{38}Sr$ & $K_{\beta_{1/2/3}}$ & $15,824-16,084$ & \\
+\hline
+\end{tabular} 
+\caption{Peaks in der Messung des Rubels}
+\label{prop_rubel}
+\end{table}
+\subsection{Energieauflösung}
 
 \section{Fazit}
 \section{Anhang}

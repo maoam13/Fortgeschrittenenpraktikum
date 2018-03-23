@@ -13,7 +13,7 @@ import scipy.constants as s
 
 class Einlesen:
     data = 0
-    datei = ["Chip_2","Leer_5","Magnet_2","Pb_2"]
+    datei = ["Chip_2","Leer_5","Magnet_2","Pb_2","2Dinar_5","10Pfenning_5","10Rubel_5","Steel_5"]
     def __init__(self,index):
         self.data = np.genfromtxt("../Daten/Rontgen/Proben ohne PUR/"+self.datei[index]+"min.mca", delimiter = ',', skip_header = 12, skip_footer = 71)
         
@@ -116,7 +116,7 @@ def fittef(pos,breite,hohe,i):
 plt.close('all')
 datal = Einlesen(1).data
 leer = fft_cutoff(datal)[0]
-ein = Einlesen(0).data
+ein = Einlesen(6).data
 data = fft_cutoff(ein)[0]
 err = np.sqrt(data)
 corr = leerkorrektur2(leer,data)
@@ -136,7 +136,88 @@ if 0:
     yechterr = np.sqrt(abs(yecht))
     yerr = np.sqrt(abs(y))
 
+
+if 0:
+    plt.figure(1)
+    ax = plt.subplot(211)
+    pos = 1250
+    xfit,errfit,yfit,a,da,chi = met.anpassung1(y,yerr,pos,1,50,70)
+    plt.errorbar(x,y,yerr = yerr,fmt=',')
+    x_r = np.array([plt.xlim()[0],plt.xlim()[1]])
+    ax.axis([pos-100,pos+100,plt.ylim()[0],max(gauss(a,xfit))+50])
+    plt.plot(xfit,gauss(a,xfit))
+    ax2 = plt.subplot(212)
+    plt.errorbar(xfit,(yfit-gauss(a,xfit)),errfit,fmt = '.')
+    y_r = np.array([0, 0])
+    plt.plot(x_r, y_r, color='r',linestyle = "dashed")
+    ax2.axis([pos-100,pos+100,plt.ylim()[0],plt.ylim()[1]])
+    plt.figtext(0.14,0.8,
+                'pos1= '+str(np.round(a[0],1))+' +/- '+str(np.round(da[0],1))+'\n'
+                +'$\chi ^2 / ndof$= ' + str(np.round(chi, 3)))
+    
+    
+    
+
+if 0:
+    plt.figure("leer_cut")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Leermessung mit Cutoff")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),corr)
+    
+if 0:
+    plt.figure("leer_roh")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Leermessung Rohdaten")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),correcht)
+    
+if 0:
+    plt.figure("blei_cut")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Blei cut")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(x,data)
+if 0:
+    plt.figure("stahl_fourier_2")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Frequenz")
+    ax.set_ylabel("Intensitaet")
+    ax.set_title("Fourierspektrum Leermessung")
+    plt.tight_layout()
+    plt.plot(x,fft_cutoff(datal)[1])
+    
 if 1:
+    plt.figure("stahl_roh")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Stahl Rohdaten")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),ein)
+    
+if 1:
+    plt.figure("chip_0")
+    ax = plt.subplot(111)
+    ax.set_xlabel("Energie[keV]")
+    ax.set_ylabel("Counts")
+    ax.set_title("Rubel bereinigt")
+    plt.tight_layout()
+    plt.grid()
+    plt.plot(E(x),yecht)
+    
+    
+if 0:
     #print E(fitte(1250,70,1))
     #print E(fittef(1405,70,2))
     if 0:#blei
@@ -181,7 +262,7 @@ if 1:
         dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df2)])]
         print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
         
-    if 1:#chip
+    if 0:#chip
         f1,df1 = fitte(560,50,420,"chip1_1")
         f3,df3 = fitte(560,10,420,"chip1_2")
         test = [E(f1),E(f3)]
@@ -248,85 +329,292 @@ if 1:
         dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
         print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
 
-
-if 0:
-    plt.figure(1)
-    ax = plt.subplot(211)
-    pos = 1250
-    xfit,errfit,yfit,a,da,chi = met.anpassung1(y,yerr,pos,1,50,70)
-    plt.errorbar(x,y,yerr = yerr,fmt=',')
-    x_r = np.array([plt.xlim()[0],plt.xlim()[1]])
-    ax.axis([pos-100,pos+100,plt.ylim()[0],max(gauss(a,xfit))+50])
-    plt.plot(xfit,gauss(a,xfit))
-    ax2 = plt.subplot(212)
-    plt.errorbar(xfit,(yfit-gauss(a,xfit)),errfit,fmt = '.')
-    y_r = np.array([0, 0])
-    plt.plot(x_r, y_r, color='r',linestyle = "dashed")
-    ax2.axis([pos-100,pos+100,plt.ylim()[0],plt.ylim()[1]])
-    plt.figtext(0.14,0.8,
-                'pos1= '+str(np.round(a[0],1))+' +/- '+str(np.round(da[0],1))+'\n'
-                +'$\chi ^2 / ndof$= ' + str(np.round(chi, 3)))
-    
-    
-    
-
-if 0:
-    plt.figure("leer_cut")
-    ax = plt.subplot(111)
-    ax.set_xlabel("Energie[keV]")
-    ax.set_ylabel("Counts")
-    ax.set_title("Leermessung mit Cutoff")
-    plt.tight_layout()
-    plt.grid()
-    plt.plot(E(x),corr)
-    
-if 0:
-    plt.figure("leer_roh")
-    ax = plt.subplot(111)
-    ax.set_xlabel("Energie[keV]")
-    ax.set_ylabel("Counts")
-    ax.set_title("Leermessung Rohdaten")
-    plt.tight_layout()
-    plt.grid()
-    plt.plot(E(x),correcht)
-    
-if 0:
-    plt.figure("blei_cut")
-    ax = plt.subplot(111)
-    ax.set_xlabel("Energie[keV]")
-    ax.set_ylabel("Counts")
-    ax.set_title("Blei cut")
-    plt.tight_layout()
-    plt.grid()
-    plt.plot(x,data)
-if 0:
-    plt.figure("leer_fourier_2")
-    ax = plt.subplot(111)
-    ax.set_xlabel("Frequenz")
-    ax.set_ylabel("Intensitaet")
-    ax.set_title("Fourierspektrum Leermessung")
-    plt.tight_layout()
-    plt.plot(x,fft_cutoff(datal)[1])
-    
-if 0:
-    plt.figure("blei_roh")
-    ax = plt.subplot(111)
-    ax.set_xlabel("Energie[keV]")
-    ax.set_ylabel("Counts")
-    ax.set_title("Blei Roh")
-    plt.tight_layout()
-    plt.grid()
-    plt.plot(x,ein)
-    
-if 1:
-    plt.figure("stahl_0")
-    ax = plt.subplot(111)
-    ax.set_xlabel("Energie[keV]")
-    ax.set_ylabel("Counts")
-    ax.set_title("Blei bereinigt")
-    plt.tight_layout()
-    plt.grid()
-    plt.plot(x,yecht)
-    
-    
-    
+    if 0:#magnet
+        f1,df1 = fitte(560,50,420,"mag1_1")
+        f3,df3 = fitte(560,10,420,"mag1_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(793,50,420,"mag2_1")
+        f3,df3 = fitte(793,10,420,"mag2_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(870,50,420,"mag3_1")
+        f3,df3 = fitte(870,10,420,"mag3_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(973,50,420,"mag4_1")
+        f3,df3 = fitte(973,10,420,"mag4_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1071,50,420,"mag5_1")
+        f3,df3 = fitte(1071,10,420,"mag5_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1135,50,10000,"mag6_1")
+        f3,df3 = fitte(1135,10,10000,"mag6_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1221,20,420,"mag7_1")
+        f3,df3 = fitte(1221,10,420,"mag7_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1255,20,420,"mag8_1")
+        f3,df3 = fitte(1255,10,420,"mag8_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1350,50,420,"mag9_1")
+        f3,df3 = fitte(1350,10,420,"mag9_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2513,50,420,"mag10_1")
+        f3,df3 = fitte(2513,10,420,"mag10_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(5380,30,420,"mag11_1")
+        f3,df3 = fitte(5380,20,420,"mag11_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(5453,30,420,"mag12_1")
+        f3,df3 = fitte(5453,20,420,"mag12_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(5577,30,420,"mag13_1")
+        f3,df3 = fitte(5577,20,420,"mag13_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(5661,30,420,"mag14_1")
+        f3,df3 = fitte(5661,20,420,"mag14_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(6172,80,420,"mag15_1")
+        f3,df3 = fitte(6172,30,420,"mag15_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(6399,80,420,"mag16_1")
+        f3,df3 = fitte(6399,30,420,"mag16_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+    if 0:#Denar
+        f1,df1 = fitte(955,50,420,"den1_1")
+        f3,df3 = fitte(955,10,420,"den1_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1049,50,420,"den2_1")
+        f3,df3 = fitte(1049,10,420,"den2_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1132,50,20000,"den3_1")
+        f3,df3 = fitte(1132,15,20000,"den3_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1216,50,120000,"den4_1")
+        f3,df3 = fitte(1216,20,120000,"den4_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1307,20,20000,"den5_1")
+        f3,df3 = fitte(1307,10,20000,"den5_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1350,20,20000,"den6_1")
+        f3,df3 = fitte(1350,10,20000,"den6_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1450,40,420,"den7_1")
+        f3,df3 = fitte(1450,15,420,"den7_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2431,40,420,"den8_1")
+        f3,df3 = fitte(2431,15,420,"den8_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+    if 0:#Pfennig
+        f1,df1 = fitte(963,50,420,"pfen1_1")
+        f3,df3 = fitte(963,20,420,"pfen1_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1049,50,420,"pfen2_1")
+        f3,df3 = fitte(1049,30,420,"pfen2_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1132,50,20000,"pfen3_1")
+        f3,df3 = fitte(1132,15,20000,"pfen3_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1216,50,100000,"pfen4_1")
+        f3,df3 = fitte(1216,20,100000,"pfen4_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1307,20,60000,"pfen5_1")
+        f3,df3 = fitte(1307,10,60000,"pfen5_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1350,20,20000,"pfen6_1")
+        f3,df3 = fitte(1350,10,20000,"pfen6_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1450,40,420,"pfen7_1")
+        f3,df3 = fitte(1450,15,420,"pfen7_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2532,40,420,"pfen8_1")
+        f3,df3 = fitte(2532,15,420,"pfen8_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+    if 0:#Rubel
+        f1,df1 = fitte(963,50,420,"rub1_1")
+        f3,df3 = fitte(963,20,420,"rub1_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        
+        f1,df1 = fitte(1132,50,20000,"rub3_1")
+        f3,df3 = fitte(1132,15,20000,"rub3_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1216,50,100000,"rub4_1")
+        f3,df3 = fitte(1216,20,100000,"rub4_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1307,20,60000,"rub5_1")
+        f3,df3 = fitte(1307,10,60000,"rub5_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1350,20,20000,"rub6_1")
+        f3,df3 = fitte(1350,10,20000,"rub6_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2345,40,420,"rub7_1")
+        f3,df3 = fitte(2345,15,420,"rub7_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2428,40,420,"rub8_1")
+        f3,df3 = fitte(2428,15,420,"rub8_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+    if 0:#Stahl
+        
+        f1,df1 = fitte(822,50,20000,"rub1_1")
+        f3,df3 = fitte(822,20,20000,"rub1_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(900,50,4000,"rub2_1")
+        f3,df3 = fitte(900,20,4000,"rub2_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(963,50,60000,"rub3_1")
+        f3,df3 = fitte(963,20,60000,"rub3_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1076,50,17000,"rub4_1")
+        f3,df3 = fitte(1076,20,17000,"rub4_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        
+        f1,df1 = fitte(1135,50,20000,"rub5_1")
+        f3,df3 = fitte(1135,15,20000,"rub5_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(1255,50,10000,"rub6_1")
+        f3,df3 = fitte(1255,20,10000,"rub6_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2644,40,420,"rub7_1")
+        f3,df3 = fitte(2644,15,420,"rub7_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
+        
+        f1,df1 = fitte(2969,40,420,"rub8_1")
+        f3,df3 = fitte(2969,15,420,"rub8_2")
+        test = [E(f1),E(f3)]
+        dtest  =[abs(test[0]-test[1])]#,min([E(df1),E(df3)])]
+        print np.round(np.mean(test),3),"\pm",np.round(np.max(dtest),3),"\pm",np.round(Eerr(f1),3)
