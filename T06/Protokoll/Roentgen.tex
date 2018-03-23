@@ -343,7 +343,7 @@ An diese acht Punkte wird nun eine lineare Regression der Form
 \begin{equation*}
 E (\textrm{ch}) = a \cdot \textrm{ch} + b
 \end{equation*}
-durchgeführt. Das Ergebnis ist in Abbildung \ref{fig:röntgen_linReg} gezeigt. Es wurde in eV gerechnet.
+durchgeführt. Das Ergebnis ist in Abbildung \ref{fig:röntgen_linReg} gezeigt. Es wurde in eV gerechnet. Das $\chi ^2$/ndof von 15.15 deutet darauf hin, dass die Fehler unterschätzt sind.
 
 \subsection{Einfluss der angelegten Hochspannung an die Röntgenröhre}
 
@@ -434,6 +434,11 @@ Tabelle \ref{tab:roentgen_energieaufloesung} zeigt die dadurch entstehenden Date
 \end{figure}
 
 \section{Fazit}
+Die Untersuchung des Einflusses der Spannung hat den erwarteten Zusammenhang ergeben, dass die Peaks bei \SI{20}{kV} nicht, bei \SI{35}{kV} kaum und bei \SI{50}{kV} gut erkennbar sind. \\
+Die Untersuchung des Einflusses der Pile-up Rejection hat ergeben, dass sich die Peaks in Position, Höhe und Breite gar nicht oder nur minimal verändern, wenn die PUR eingeschaltet ist. Daher kann davon ausgegangen werden, dass die Messungen mit und ohne PUR in der Auswertung gleiche Ergebnisse liefern. \\
+Bei der Bestimmung der Energieauflösung konnte mittels einer linearen Regression bei geeigneter Auftragung der Zusammenhang $\Delta E \propto \sqrt{E}$ verifiziert werden. Die linearen Anpassungen haben dabei mit $\chi ^2$/ndof von 2.98 und 2.71 gut funktioniert.
+
+
 \newpage 
 \section{Anhang}
 \subsection{Kalibration $\alpha$-Quelle}
