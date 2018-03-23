@@ -66,11 +66,20 @@ FWH = 2 * np.sqrt(2 * np.log(2)) * np.array([peak1_Ag[2], peak2_Ag[2], peak1_Cu[
 e_FWH = np.abs(2 * np.sqrt(2 * np.log(2)) * np.array([peak1_Ag[3], peak2_Ag[3], peak1_Cu[3], peak2_Cu[3], peak1_I[3], peak2_I[3], peak1_SS[3], peak2_SS[3]]))
 E_pos = np.array([peak1_Ag[0], peak2_Ag[0], peak1_Cu[0], peak2_Cu[0], peak1_I[0], peak2_I[0], peak1_SS[0], peak2_SS[0]])
 e_E_pos = np.abs(np.array([peak1_Ag[1], peak2_Ag[1], peak1_Cu[1], peak2_Cu[1], peak1_I[1], peak2_I[1], peak1_SS[1], peak2_SS[1]]))
-
+'''
 FWH = 2 * np.sqrt(2 * np.log(2)) * np.array([peak1_Ag[2], peak2_Ag[2], peak1_Cu[2], peak2_Cu[2], peak1_SS[2]])
 e_FWH = np.abs(2 * np.sqrt(2 * np.log(2)) * np.array([peak1_Ag[3], peak2_Ag[3], peak1_Cu[3], peak2_Cu[3], peak1_SS[3]]))
 E_pos = np.array([peak1_Ag[0], peak2_Ag[0], peak1_Cu[0], peak2_Cu[0], peak1_SS[0]])
 e_E_pos = np.abs(np.array([peak1_Ag[1], peak2_Ag[1], peak1_Cu[1], peak2_Cu[1], peak1_SS[1]]))
+'''
+
+#k = [4, 5, 7]
+k = []
+for i in range(len(k)):
+    E_pos = AM.remelementfromarray(E_pos, k[i] - i)
+    e_E_pos = AM.remelementfromarray(e_E_pos, k[i] - i)
+    FWH = AM.remelementfromarray(FWH, k[i] - i)
+    e_FWH = AM.remelementfromarray(e_FWH, k[i] - i)
 
 ####lin reg
 sol = p.lineare_regression_xy(np.sqrt(E_pos),FWH,np.abs(e_E_pos /(2*np.sqrt(E_pos))),e_FWH)
