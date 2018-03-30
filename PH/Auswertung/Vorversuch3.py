@@ -13,13 +13,25 @@ class Einlesen:
     data = 0
     def __init__(self,index):
         self.data = np.genfromtxt("../Daten/Vorversuch 3/ALL000"+str(index)+"/F000"+str(index)+"CH3.CSV", delimiter = ',', skip_header = 1)
+        
+def find_nearest(array,value):
+    idx = (np.abs(array-value)).argmin()
+    return idx
+
 plt.close("all")
-index = 5
+index = 3
 data = Einlesen(index).data
 
 x = data[:,3]
 y = data[:,4]
 f,amp = p.fourier_fft(x,y)
+pos200 = find_nearest(f,200)
+pos4000 = find_nearest(f,4000)
+print max(amp[pos200-2:pos200+2])
+print max(amp[pos4000-2:pos4000+2])
+
+
+
 
 plt.figure("Vor3_"+str(index))
 ax = plt.subplot(111)
