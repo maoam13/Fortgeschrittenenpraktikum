@@ -13,15 +13,17 @@ import scipy.constants as s
 class Einlesen:
     data = 0
     def __init__(self,index):
-        datei = ["Abkuhlung_supraX1_kalibriert","Phasenkalibration",]
+        datei = ["SupraX2","SupraX1_kalibriert"]
         self.data = np.genfromtxt("../Daten/Hauptversuch/"+datei[index]+".dat", delimiter = '\t',dtype = np.float)
 def find_nearest(array,value):
     idx = (np.abs(array-value)).argmin()
     return idx
 
 plt.close("all")
-index = 1
+index = 0
 data = Einlesen(index).data
                
 x = data[:,0]
 y = data[:,1]
+
+plt.plot(x,y)
