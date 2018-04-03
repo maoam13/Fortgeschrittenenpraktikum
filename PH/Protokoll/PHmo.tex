@@ -119,7 +119,40 @@ Bei der Vermessung der GdAg$_{1-x}$Zn$_x$-Probe wird nur der Imaginärteil gemes
 \subsubsection{Signalfiltern mit Tiefpass und Hochpass}
 \subsubsection{Zeitkonstante und Empfindlichkeit}
 \subsection{Hauptversuch}
-\subsubsection{Messung des Supraleiters}
+\subsection{Messung des Supraleiters}
+\subsubsection{Phasenkalibration}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Haupt_Supra/Kalialt.png}
+\includegraphics[scale=0.5]{Bilder/Haupt_Supra/Kalialt_2.png}
+\caption{Ursprüngliche Phasenkalibration, bei der die Spannung mithilfe der Phase auf 0 kalibriert wurde. Im rechten Bild wurde der Verlauf von $\chi'$ in grün und der von $\chi''$ in rot gekennzeichnet.}
+\label{fig:Supra_Kalialt}
+\end{figure}
+
+
+Um Real- und Imaginärteil möglichst unabhängig voneinander betrachten zu können muss die Phase möglichst genau auf $90^\circ$ bzw. auf $0^\circ$ kalibriert werden. Ursprünglich sollte dies mithilfe der Tatsache geschehen, dass für den Supraleiter
+\begin{equation}
+\chi_C = -1-i\cdot 0
+\end{equation}
+gilt, der Imaginärteil also 0 ist.\\
+Man verucht also auf $90^\circ$ so zu kalibrieren, dass der Offset \SI{0}{V} beträgt. Eine Messreihe mit einer solchen Kalibration ist in Abbildung \ref{fig:Supra_Kalialt} dargestellt.\\
+Das Problem dabei ist, dass die Position des Dewar-Gefäßes das Magnetfeld der Spulen beeinflusst. Da diese Postition mehrfach während des Versuches geändert werden muss, entsteht ein Offset, der nicht durch das Potentiometer ausgeglichen wurde. Den Einfluss kann man zum Beispiel durch eine Änderung in der Spannung ganz am Anfang der Messung beobachten, wo das Spulensystem leicht aus dem Dewar angehoben wird, um den Erwärmungsvorgang zu starten.\\
+Bei der 0-Kalibration kalibriert man somit nicht auf $90^\circ$, sondern auf irgendeinen anderen Wert. Dies zeigt sich in Abbildung \ref{fig:Supra_Kalialt} durch das gleichzeitige Auftreten der $\chi'$-Kurve (Änderung von $\chi' = -1$ zu $\chi' << 1$ an der kritischen Temperatur) und des $\chi''$-Peaks.\\
+\\
+Um die Phase besser kalibriern zu können wurde ein alternatives Vervahren verwendet. Es wurde zuerst für eine Phase von $90^\circ$ ein Kurvenverlauf aufgezeichnet und dann geschaut, wie sich dieser Verlauf ändert, wenn man die Phase leicht verringert. Dies wird solange wiederholt, bis der Unterschied vor und hinter der Sprungtemperatur, der durch die $\chi'$-Kurve entsteht, verschwindet. Dieses Verfahren ist in Abbildung \ref{fig:Supra_Kali} anhand von 4 Schritten dargestellt.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Haupt_Supra/Kal_2.png}
+\includegraphics[scale=0.5]{Bilder/Haupt_Supra/Kal_0.png}
+\includegraphics[scale=0.5]{Bilder/Haupt_Supra/Kal_1.png}
+\includegraphics[scale=0.5]{Bilder/Haupt_Supra/Kal_3.png}
+\caption{Alternative Phasenkalibration. \textbf{Oben links:} Aufwärmvorgang mit Phaseneinstellung von $90^\circ$. Der Verlauf der $\chi'$-Kurve ist sichtbar. \textbf{Oben rechts:} Aufwärmvorgang mit etwas besserer Phase von $86^\circ$. $\chi'$-Kurve ist schwächer ausgeprägt. \textbf{Unten links:} Abkühlvorgang mit zu kleiner Phase von $82^\circ$. $\chi'$-Kurve ist wieder stärker ausgeprägt. \textbf{Unten rechts:} Abkühlvorgang mit entgültiger  Phase von $82^\circ$. Die Spannung hat vor und hinter dem Peak den gleichen Wert.}
+\label{fig:Supra_Kali}
+\end{figure}
+
+\subsubsection{Bestimmung der Kalibrationskonstante}
+
 \subsubsection{Messung der Probe}
 
 \section{Fazit}
