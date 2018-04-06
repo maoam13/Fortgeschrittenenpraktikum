@@ -317,6 +317,13 @@ def fitte_bel_function(x, y, ex, ey, func, startwerte):
     output = odr.run()
     return output.beta, output.sd_beta, output.res_var
 
+def fitte_bel_functiony(x, y, ey, func, startwerte):
+    model  = scipy.odr.Model(func)
+    data   = scipy.odr.RealData(x, y, sy=ey)
+    odr    = scipy.odr.ODR(data, model, beta0=startwerte)
+    output = odr.run()
+    return output.beta, output.sd_beta, output.res_var
+
 def chiq(x, y, ex, ey, func, abl, A):
     chi = 0
     for i in range(len(x)):

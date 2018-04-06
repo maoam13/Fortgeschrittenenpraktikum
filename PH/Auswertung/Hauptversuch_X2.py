@@ -27,7 +27,12 @@ def diff(x,y,leerx,leery):
     return y1
         
 def func(a,x):
-    return a[0]*np.log(x-[1])
+    return a[0]/(x-a[1])+a[2]
+def xrate(x):
+    rate = []
+    for i in range(len(x)-5):
+        rate.append(x[i+5]-x[i])
+    return rate
 
 plt.close("all")
 index = 1
@@ -41,13 +46,27 @@ data = Einlesen(index).data
 leerx = data[:,0]
 leery = data[:,1]
 err = np.full(len(leerx),0.0001)
+sol = p.fitte_bel_function(leerx[100:],leery[100:],err[100:],func,[-1,70,0.1,-1])
 yoff = diff(x,y,leerx,leery)
+
+plt.figure("Untergrund")
+ax = plt.subplot(111)
+plt.plot(leerx,leery)
+#plt.plot(leerx,func(sol[0],leerx))
+#plt.plot(leerx,func(a,leerx))
+#plt.axis([0,10000,plt.ylim()[0],plt.ylim()[1]])
+ax.set_xlabel("Temperatur[K]")
+ax.set_ylabel("Amplitude[V]")
+plt.tight_layout()
+plt.grid()
+plt.savefig("../Protokoll/Bilder/Haupt_Supra/Untergrund")
  
 plt.figure("Vor3_"+str(index))
 ax = plt.subplot(111)
 plt.plot(leerx,leery)
 plt.plot(x,yoff)
 plt.plot(x,y)
+plt.plot(x[:-5],xrate(x))
 #plt.plot(leerx,func(a,leerx))
 #plt.axis([0,10000,plt.ylim()[0],plt.ylim()[1]])
 ax.set_xlabel("Temperatur[K]")

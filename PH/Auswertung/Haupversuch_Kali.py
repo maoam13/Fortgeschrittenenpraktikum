@@ -13,7 +13,11 @@ class Einlesen:
 def find_nearest(array,value):
     idx = (np.abs(array-value)).argmin()
     return idx
-
+def xrate(x):
+    rate = []
+    for i in range(len(x)-5):
+        rate.append(x[i+5]-x[i])
+    return rate
 plt.close("all")
 index = 1
 data = Einlesen(index).data
@@ -44,6 +48,7 @@ y4 = y[cut3:]
 plt.figure("Kali3_0")
 ax = plt.subplot(111)
 plt.plot(xall,yall)
+plt.plot(xall[:-5],xrate(xall))
 #plt.axis([0,10000,plt.ylim()[0],plt.ylim()[1]])
 ax.set_xlabel("Temperatur[K]")
 ax.set_ylabel("Amplitude[V]")
