@@ -14,6 +14,7 @@ import timeit
 
 start_time=timeit.default_timer()
 
+speichern = 0
 dt = 0.2
 
 data = np.genfromtxt("../../Daten/Haupversuch/ProbeX1.dat", delimiter = '\t', dtype = np.float)
@@ -46,6 +47,8 @@ plt.title('Verlauf der Temperatur ueber gesamte Messung')
 plt.xlabel('Zeit [s]')
 plt.ylabel('T [K]')
 plt.legend()
+if speichern == 1:
+    plt.savefig("../../Protokoll/Bilder/Haupt_Probe/Temperatur_Verlauf")
 
 #Plotte Temperaturgradienten
 plt.figure(2)
@@ -62,5 +65,7 @@ plt.title('Verlauf des Temperaturgradienten ueber gesamte Messung')
 plt.xlabel('Zeit [s]')
 plt.ylabel('Temperaturgradient [K/s]')
 plt.legend()
+if speichern == 1:
+    plt.savefig("../../Protokoll/Bilder/Haupt_Probe/Temperaturgradient_Verlauf")
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
