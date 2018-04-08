@@ -82,8 +82,8 @@ Der Lockin-Verstärker integriert das Signal über einen einstellbaren Zeitraum,
 Die Empfindlichkeit $s$ des Lockin-Verstärkers wird angegeben in der Spannung, die auf \SI{10}{V} verstärkt wird, sodass sich der Verstärkungsfaktor zu $v = \frac{\SI{10}{V}}{s}$ berechnet. \\
 Das Referenzsignal wird auf den Eingang des Lockin-Verstärkers gelegt. Die Frequenz des Referenzsignals wird durchgefahren, um ein geeignetes Verhältnis zwischen Referenzfrequenz und Integrationszeit zu finden. Tabelle \ref{tab:Zeitkonst_Einstellungen} zeigt die verwendeten Einstellungen.
 
-\subsection{Hauptversuch}
-\subsubsection{Messung des Supraleiters}
+
+\subsection{Messung des Supraleiters}
 
 \begin{table}
 \centering
@@ -101,6 +101,8 @@ Filterfrequenz & \SI{380}{Hz} \\
 \hline 
 Phasenschieber & $\varphi$ = 84.5$^{\circ}$ \\ 
 \hline 
+Messintervall & \SI{200}{ms} \\ 
+\hline 
 \end{tabular} 
 \caption{Einstellungen für die Messung des Supraleiters.}
 \label{tab:Supra_Einstellungen}
@@ -110,7 +112,7 @@ Tabelle \ref{tab:Zeitkonst_Einstellungen} zeigt die Einstellungen, die für die 
 Der Messstab mit dem Supraleiter wird zunächst mit einer Pumpe evakuiert und anschließend mit Helium als Kontaktgas befüllt. Das Ende des Stabes, an dem die Messeinrichtung sitzt, wird zum Kühlen in einen mit flüssigem Stickstoff gefüllten Dewar getaucht und auf ca. \SI{80}{K} gekühlt. Für die Messung wird anschließend der Messstab aus dem Stickstoff herausgezogen, allerdings nur so weit, dass die Erwärmungsrate $\frac{\Delta T}{\Delta t}$ unter \SI{0,1}{K/s} bleibt. Dies ist wichtig, um sicherzustellen, dass zu jedem Zeitpunkt eine möglichst homogene Temperaturverteilung gegeben ist. Während der Erwärmung von \SI{80}{K} auf ca. \SI{120}{K} wird die Temperatur und die Differenzspannung zwischen den beiden Empfängerspulen des Hartshorn-Spulensystems gemessen. \\
 Diese Messung wird einmal ohne Probe als Untergrundmessung zur Korrektur und zweimal mit dem Supraleiter durchgeführt: Einmal mit einer Phasenverschiebung zwischen Eingangssignal und Referenzsignal des Lockin-Verstärkers von $\varphi = 0$ und einmal mit einer Phasenverschiebung von $\varphi = \frac{\pi}{2}$, sodass der Realteil ($\varphi = 0$) und der Imaginärteil ($\varphi = \frac{\pi}{2}$) der Suszeptibilität gemessen werden.
 
-\subsubsection{Messung der Probe}
+\subsection{Messung der Probe}
 Bei der Vermessung der GdAg$_{1-x}$Zn$_x$-Probe wird nur der Imaginärteil gemessen. Die Messung wurde ebenfalls bei ca. \SI{80}{K} gestartet, jedoch bis ca. \SI{190}{K} aufgenommen. Aufgrund eines betragsgroßen Offset war der Betrag der an den Lockin-Verstärker angelegten Spannung zu groß, sodass hier die Sensitivität auf \SI{1}{mV} erhöht werden musste.
 
 \section{Ergebnisse}
@@ -119,9 +121,8 @@ Bei der Vermessung der GdAg$_{1-x}$Zn$_x$-Probe wird nur der Imaginärteil gemes
 \subsubsection{Untersuchung der Filter des Lockin-Verstärkers}
 \subsubsection{Signalfiltern mit Tiefpass und Hochpass}
 \subsubsection{Zeitkonstante und Empfindlichkeit}
-\subsection{Hauptversuch}
-\subsubsection{Messung des Supraleiters}
-\subsubsection{Messung der Probe}
+\subsection{Messung des Supraleiters}
+\subsection{Messung der Probe}
 
 \begin{figure}
 \centering
@@ -151,13 +152,15 @@ der Entmagnetisierungsfaktor und
 \begin{equation*}
 v = \dfrac{\SI{10}{V}}{s}
 \end{equation*}
-der Verstärkungsfaktor, wobei $s$ die Sensitivität ist, die in diesem Versuch auf \SI{1}{mV} gestellt werden musste, da der Lockin-Verstärker ansonsten in einen Overload gelaufen wäre. Abbildung \ref{fig:Suszeptibilitaet_Verlauf} zeigt den Verlauf der Suszeptibilität der Probe über die gesamte Messung. \\
+der Verstärkungsfaktor, wobei $s$ die Sensitivität ist, die in diesem Versuch auf \SI{1}{mV} gestellt werden musste, da der Lockin-Verstärker ansonsten in einen Overload gelaufen wäre. Abbildung \ref{fig:Suszeptibilitaet_Verlauf} zeigt den Verlauf der Suszeptibilität der Probe über die gesamte Messung. 
+
+\subsubsection{Curie-Weiss-Gesetz}
 Für einen Temperaturbereich deutlich oberhalb der Grenztemperatur $T_C$ gilt der Zusammenhang:
 \begin{equation*}
 \chi ^{-1} = \dfrac{T - T_C}{C_{Curie}}
 \end{equation*}
 Dabei ist $C_{Curie}$ die materialabhängige Curie-Konstante. Daher ergibt sich bei Auftragung von $\chi ^{-1}$ gegen T ein linearer Zusammenhang. In Abbildung \ref{fig:Suszeptibilitaet_Verlauf} ist zu erkennen, dass die Grenztemperatur bei ca. \SI{160}{K} liegt, sodass der Bereich für diese Anpassung gewählt wird zu \SI{180}{K} - \SI{190}{K}. \\
-Mit dieser Anpassung wird der Offset gewählt. Dazu wird die Anpassung für verschiedene Offsets in einem Bereich von \SI{0}{V} bis \SI{1,8}{V} in 10000 äquidistanten Schritten durchgeführt und derjenige Offset verwendet, der in der Anpassung das niedrigste $\chi ^2$/ndof ergeben hat.
+Mit dieser Anpassung wird der Offset gewählt. Dazu wird die Anpassung für verschiedene Offsets in einem Bereich von \SI{0}{V} bis \SI{1,8}{V} in 10000 äquidistanten Schritten durchgeführt und derjenige Offset verwendet, der in der Anpassung das niedrigste $\chi ^2$/ndof ergeben hat. Dieses liegt mit 0.34 zu niedrig, es wurden also vermutlich die Fehler überschätzt.
 
 \begin{figure}
 \centering
@@ -167,21 +170,88 @@ Mit dieser Anpassung wird der Offset gewählt. Dazu wird die Anpassung für vers
 \end{figure}
 
 Abbildung \ref{fig:CurieWeiss} zeigt die lineare Anpassung bei dem bestimmten Offset. Die Grenztemperatur berechnet sich aus den Anpassungsparametern zu:
-\begin{equation*}
+\begin{equation}
 T_C = -\dfrac{b}{a}
-\end{equation*}
-Die Fehler auf die Parameter pflanzt sich fort zu:
-\begin{equation*}
+\label{eq:ProbeGrenztemperatur}
+\end{equation}
+Die Fehler auf die Parameter pflanzen sich fort zu:
+\begin{equation}
 \dfrac{\sigma _{T_C}}{T_C} = \sqrt{\left( \dfrac{\sigma _a}{a} \right)^2 + \left( \dfrac{\sigma _b}{b} \right)^2}
-\end{equation*}
+\label{eq:ProbeGrenztemperaturFehler}
+\end{equation}
 Der Wert für die Grenztemperatur ergibt sich zu (systematische Fehler werden später betrachtet):
 \begin{equation*}
-T_C = \SI{162,800 \pm 0,057}{K}
-\end{equation*}\\
+T_C^{(1)} = \SI{162,800 \pm 0,057}{K}
+\end{equation*}
+
+\subsubsection{Temperaturen nahe der Grenztemperatur}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Haupt_Probe/CurieWeiss_gamma.png}
+\caption[test]{Lineare Anpassung bei Auftragung von $\chi ^{\frac{-1}{\gamma}}$ gegen T in einem Bereich von \SI{170}{K} - \SI{180}{K}.}
+\label{fig:CurieWeiss_gamma}
+\end{figure}
+
 In einem Bereich nah an der Grenztemperatur wird der Zusammenhang besser beschrieben durch:
 \begin{equation*}
 \chi ^{-1} \propto (T - T_C)^\gamma
 \end{equation*}
+Wobei für den kritischen Exponenten des Phasenübergangs $\gamma \approx \dfrac{4}{3}$ gilt. \\
+Es wird der Offset verwendet, der sich bei der ersten Anpassung als der beste herausgestellt hat. \\
+Bei Auftragung von $\chi ^{\frac{-1}{\gamma}}$ gegen T ergibt sich erneut ein linearer Zusammenhang, an den ebenfalls eine Anpassung durchgeführt wird. Der Bereich für diese Anpassung wurde gewählt zu \SI{170}{K} - \SI{180}{K}. Diese Anpassung ist in Abbildung \ref{fig:CurieWeiss_gamma} dargestellt. Die Anpassung kann bei einem $\chi ^2$/ndof von 2.84 als gelungen betrachtet werden. Die Grenztemperatur und der Fehler bestimmen sich gemäß Gl. \ref{eq:ProbeGrenztemperatur} und Gl. \ref{eq:ProbeGrenztemperaturFehler} zu:
+\begin{equation*}
+T_C^{(2)} = \SI{156,862 \pm 0,061}{K}
+\end{equation*}
+
+\subsubsection{Temperaturgradient}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Haupt_Probe/Temperatur_Verlauf.png}
+\caption[test]{Temperaturverlauf bei der Messung der Probe.}
+\label{fig:TemperaturverlaufProbe}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Haupt_Probe/Temperaturgradient_Verlauf.png}
+\caption[test]{Verlauf des Temperaturgradienten bei der Messung der Probe.}
+\label{fig:TemperaturgradientverlaufProbe}
+\end{figure}
+
+Bei der Messung wird in Intervallen \SI{200}{ms} u.a. die Temperatur gemessen. Damit ergibt sich der in Abbildung \ref{fig:TemperaturverlaufProbe} gezeigte Temperaturverlauf. \\
+Den Temperaturgradienten erhält man nun aus der Ableitung des Temperaturverlaufs. Da die Datenpunkte deutlich schwanken, wird diese Ableitung bestimmt, indem immer an 20 Punkte eine lineare Regression durchgeführt wird. Der Mittelwert der Zeiten der 20 Temperaturpunkte und die Steigung ergeben dann Punktepaare des Temperaturgradienten. Der Verlauf des Temperaturgradienten ist in Abbildung \ref{fig:TemperaturgradientverlaufProbe} dargestellt. Daran ist deutlich zu sehen, dass der Temperaturgradient bei der Messung der Probe bis zu einer Temperatur von ca. \SI{180}{K} oberhalb der ursprünglich gesetzten Grenze von \SI{0,1}{K/s} liegt.
+
+\subsubsection{Systematischer Fehler}
+Die statistischen Fehler auf die aus den beiden Methoden bestimmten Grenztemperaturen sind sehr klein gegen die Differenz der beiden. Daher ist eine Betrachtung der Systematiken sehr wichtig. \\
+Fehlerquelle, die als systematisch betrachtet werden kann, sind die Fehler auf die Werte, die zur Umrechnung von der Spannung auf die Suszeptibilität verwendet werden. Die Fehler pflanzen sich fort durch: 
+\begin{equation*}
+\dfrac{\sigma _{\chi}}{\chi} = \sqrt{\left( \dfrac{\sigma _C}{C} \right)^2 + \left( \dfrac{\sigma _v}{v} \right)^2 + \left( \dfrac{\sigma _V}{V} \right)^2 + \left( \dfrac{\sigma _{n_M}}{1 - n_M} \right)^2}
+\end{equation*}
+Dabei entstammt der Fehler auf die Kalibrationskonstante der Bestimmung derselben. Der Fehler auf das Probenvolumen bestimmt sich durch gaußsche Fehlerfortpflanzung aus den Ablesefehlern auf die mit einer Schieblehre gemessenen Dimensionen der Probe. Auf den Entmagnetisierungfaktor wird der Digitalisierungsfehler angenommen und auf den Verstärkungsfaktor ein Fehler von 5\% angenommen. Nun wird die Suszeptibilität um diesen Fehler in beide Richtungen verschoben und die Anpassungen erneut durchgeführt. Aus der Veränderung des Ergebnisses für die Grenztemperatur ergibt sich der systematische Fehler aus den Fehlern auf Kalibrationskonstante, Probenvolumen, Verstärkungsfaktor und Entmagnetisierungsfaktor, sodass sich insgesamt für die Grenztemperaturen die folgenden Werte ergeben:
+\begin{equation*}
+T_C^{(1)} = (162,800 \pm 0,057 \; (stat.) \; \; ^{+0,0000090}_{-0,0000086} \; (sys.)) \, \si{K}
+\end{equation*}
+\begin{equation*}
+T_C^{(2)} = (156,8623 \pm 0,0615 \; (stat.) \; \; ^{+5,9370}_{-0,0030} \; (sys.)) \, \si{K}
+\end{equation*}
+Drei der vier Fehler (vier Fehler durch die Asymmetrie) sind eine Größenordnung oder mehr kleiner als die statistischen Fehler. Der vierte Fehler ist zwei Größenordnungen größer als der statistische Fehler und sorgt dafür, dass die beiden Werte für die Grenztemperatur innerhalb ihrer Fehler übereinstimmen. Woher der große Unterschied der systematischen Fehler kommt, ist unklar. \\
+Dazu kommt noch ein Fehler durch den zu hohen Temperaturgradienten während der Messung. Den Betrag dieses Fehlers abzuschätzen ist schwierig. Da sich allerdings die Si-Diode, die zur Messung der Temperatur verwendet wird, unter dem Hartshorn-Spulensystem befindet, ist die gemessene Temperatur bei zu großem Temperaturgradient kleiner als die Temperatur der Probe. Dies liegt daran, dass der Probenstab nicht vollständig aus dem Dewar gezogen wird, sodass die Kühlung, die das Aufwärmen verlangsamt, die Diode und das Spulensystem von unten kühlt. Da der Temperaturgradient in dem Bereich, in dem die Anpassung für $T_C^{(1)}$ durchgeführt wurde, kleiner ist, als der Bereich, in dem die Anpassung für $T_C^{(2)}$ durchgeführt wurde, ist davon auszugehen, dass dieser Effekt die beiden Werte ''zusammenschieben''  würde.
+
+\subsubsection{Zusammenfassung}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Haupt_Probe/Anteilbestimmung.png}
+\caption[test]{Zusammensetzung der Probe in Abhängigkeit der Grenztemperatur\footnotemark.}
+\label{fig:AnteilbestimmungProbe}
+\end{figure}
+\footnotetext{Quelle: Versuchsanleitung Seite 32.}
+
+Die beiden Anpassungsbereiche haben Grenztemperaturen von $T_C^{(1)} = \SI{162,800 \pm 0,057}{K}$ und $T_C^{(2)} = \SI{156,862 \pm 0,061}{K}$ (mit statistischen Fehlern) ergeben. Die systematischen Fehler aus den Fehlern auf die Kalibrationskonstante, auf das Probenvolumen, auf den Verstärkungsfaktor und auf den Entmagnetisierungsfaktor wurden mit der Verschiebemethode bestimmt und sind asymmetrisch. Drei der vier systematischen Fehler sind deutlich kleiner als die statistischen, aber der vierte ist deutlich größer und sorgt alleine dafür, dass die Werte innerhalb ihrer Fehler übereinstimmen. Der Fehler durch einen zu großen Temperaturgradienten konnte nur qualitativ betrachtet werden, würde die Differenz der beiden Werte aber nochmal verringern. \\
+Mit der Grenztemperatur kann nun anhand Abbildung \ref{fig:AnteilbestimmungProbe} die Zusammensetzung der Probe durch Ablesen bestimmt werden. Bei einer Grenztemperatur um \SI{160}{K} ergibt sich so ein Zn-Anteil von $x = 0.75$. Damit handelt es sich um eine GdAg$_{0.25}$Zn$_{0.75}$-Probe.
+
 
 \section{Fazit}
 
