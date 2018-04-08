@@ -123,6 +123,66 @@ Bei der Vermessung der GdAg$_{1-x}$Zn$_x$-Probe wird nur der Imaginärteil gemes
 \subsubsection{Messung des Supraleiters}
 \subsubsection{Messung der Probe}
 
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Haupt_Probe/Suszeptibilitaet_Verlauf.png}
+\caption[test]{Verlauf der Suszeptibilität über die gesamte Messung.}
+\label{fig:Suszeptibilitaet_Verlauf}
+\end{figure}
+
+Für die Messung der Probe wurde eine Phase von \SI{180}{\degree} verwendet, daher sind die Daten an der X-Achse gespiegelt. Zudem ist ein sehr großer Offset in den Daten, der noch zu bestimmen ist. \\
+Für die Umrechnung der in der Messung aufgenommenen Spannung nach Korrektur des Offset in Suszeptibilität gilt folgender Zusammenhang:
+\begin{equation*}
+\chi = \dfrac{U}{C \cdot v \cdot V_{Probe} \cdot (1-n_M)}
+\end{equation*}
+Dabei sind
+\begin{equation*}
+C = 8034,7 \, \pm \, 34,7
+\end{equation*}
+die mit dem Supraleiter bestimmte Kalibrationskonstante, 
+\begin{equation*}
+V_{Probe} = \SI{22,90 \pm 0,05}{mm^3}
+\end{equation*}
+das Probenvolumen,
+\begin{equation*}
+n_M = 0,27
+\end{equation*}
+der Entmagnetisierungsfaktor und 
+\begin{equation*}
+v = \dfrac{\SI{10}{V}}{s}
+\end{equation*}
+der Verstärkungsfaktor, wobei $s$ die Sensitivität ist, die in diesem Versuch auf \SI{1}{mV} gestellt werden musste, da der Lockin-Verstärker ansonsten in einen Overload gelaufen wäre. Abbildung \ref{fig:Suszeptibilitaet_Verlauf} zeigt den Verlauf der Suszeptibilität der Probe über die gesamte Messung. \\
+Für einen Temperaturbereich deutlich oberhalb der Grenztemperatur $T_C$ gilt der Zusammenhang:
+\begin{equation*}
+\chi ^{-1} = \dfrac{T - T_C}{C_{Curie}}
+\end{equation*}
+Dabei ist $C_{Curie}$ die materialabhängige Curie-Konstante. Daher ergibt sich bei Auftragung von $\chi ^{-1}$ gegen T ein linearer Zusammenhang. In Abbildung \ref{fig:Suszeptibilitaet_Verlauf} ist zu erkennen, dass die Grenztemperatur bei ca. \SI{160}{K} liegt, sodass der Bereich für diese Anpassung gewählt wird zu \SI{180}{K} - \SI{190}{K}. \\
+Mit dieser Anpassung wird der Offset gewählt. Dazu wird die Anpassung für verschiedene Offsets in einem Bereich von \SI{0}{V} bis \SI{1,8}{V} in 10000 äquidistanten Schritten durchgeführt und derjenige Offset verwendet, der in der Anpassung das niedrigste $\chi ^2$/ndof ergeben hat.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Haupt_Probe/CurieWeiss.png}
+\caption[test]{Lineare Anpassung bei Auftragung von $\chi ^{-1}$ gegen T in einem Bereich von \SI{180}{K} - \SI{190}{K}.}
+\label{fig:CurieWeiss}
+\end{figure}
+
+Abbildung \ref{fig:CurieWeiss} zeigt die lineare Anpassung bei dem bestimmten Offset. Die Grenztemperatur berechnet sich aus den Anpassungsparametern zu:
+\begin{equation*}
+T_C = -\dfrac{b}{a}
+\end{equation*}
+Die Fehler auf die Parameter pflanzt sich fort zu:
+\begin{equation*}
+\dfrac{\sigma _{T_C}}{T_C} = \sqrt{\left( \dfrac{\sigma _a}{a} \right)^2 + \left( \dfrac{\sigma _b}{b} \right)^2}
+\end{equation*}
+Der Wert für die Grenztemperatur ergibt sich zu (systematische Fehler werden später betrachtet):
+\begin{equation*}
+T_C = \SI{162,800 \pm 0,057}{K}
+\end{equation*}\\
+In einem Bereich nah an der Grenztemperatur wird der Zusammenhang besser beschrieben durch:
+\begin{equation*}
+\chi ^{-1} \propto (T - T_C)^\gamma
+\end{equation*}
+
 \section{Fazit}
 
 \end{document}

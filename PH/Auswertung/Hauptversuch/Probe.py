@@ -58,17 +58,17 @@ T_C2_CW = -sol2_CW[2] / sol2_CW[0]
 #############Curie-Weiss-Gesetz Anpassung für Annäherung an T_C#################
 g = 4./3
 T_1_g, T_2_g = 170, 180
-T_g, chi_g, sT_g, schi_g = AM.untermenge_daten(T, 1./(chi)**g, sT, g*schi/chi**(1+g), T_1_g, T_2_g)
+T_g, chi_g, sT_g, schi_g = AM.untermenge_daten(T, 1./(chi)**(1/g), sT, 1/g*schi/chi**((1+g)/g), T_1_g, T_2_g)
 sol_g = p.lineare_regression_xy(T_g, chi_g, sT_g, schi_g)
 T_C_g = -sol_g[2] / sol_g[0]
 sT_C_g = T_C_g * np.sqrt((sol_g[1] / sol_g[0])**2 + (sol_g[3] / sol_g[2])**2)
 ################################################################################
 
 ###Curie-Weiss-Gesetz Anpassung für Annäherung an T_C - systematische Fehler###
-T1_g, chi1_g, sT1_g, schi1_g = AM.untermenge_daten(T, 1./(chi + schi_sys)**g, sT, g*schi/(chi + schi_sys)**(1+g), T_1_g, T_2_g)
+T1_g, chi1_g, sT1_g, schi1_g = AM.untermenge_daten(T, 1./(chi + schi_sys)**(1/g), sT, g*schi/(chi + schi_sys)**((1+g)/g), T_1_g, T_2_g)
 sol1_g = p.lineare_regression_xy(T1_g, chi1_g, sT1_g, schi1_g)
 T_C1_g = -sol1_CW[2] / sol1_CW[0]
-T2_g, chi2_g, sT2_g, schi2_g = AM.untermenge_daten(T, 1./(chi - schi_sys)**g, sT, g*schi/(chi - schi_sys)**(1+g), T_1_g, T_2_g)
+T2_g, chi2_g, sT2_g, schi2_g = AM.untermenge_daten(T, 1./(chi - schi_sys)**(1/g), sT, g*schi/(chi - schi_sys)**((1+g)/g), T_1_g, T_2_g)
 sol2_g = p.lineare_regression_xy(T2_g, chi2_g, sT2_g, schi2_g)
 T_C2_g = -sol2_g[2] / sol2_g[0]
 ################################################################################
