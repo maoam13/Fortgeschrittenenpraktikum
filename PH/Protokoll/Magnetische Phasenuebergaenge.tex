@@ -118,7 +118,186 @@ Bei der Vermessung der GdAg$_{1-x}$Zn$_x$-Probe wird nur der Imaginärteil gemes
 \section{Ergebnisse}
 \subsection{Vorversuche}
 \subsubsection{Untersuchung eines Tiefpasses}
-\subsubsection{Untersuchung der Filter des Lockin-Verstärkers}
+Die Messung des Tiefpasses wurde sowohl mit dem Multimeter als auch mit dem Oszilloskop aufgenommen. Dabei wurde mit dem Oszilloskop bei jeder Einstellung der Frequenz ein Bild gemacht, sodass die Auswertung der Oszilloskopdaten auch durch eine Anpassung an Eingangs- und Ausgangssignal geschehen kann. 
+
+\paragraph{Multimeter}
+Mit dem Multimeter wird die Effektivspannung von Eingangs- und Ausgangssignal gemessen. Als Fehler auf diese Messungen wird 
+\begin{equation*}
+\sigma _U = \dfrac{\SI{0,001}{V}}{\sqrt{12}}
+\end{equation*}
+angenommen. Damit werden der Quotient $\frac{U_a}{U_e}$ und der Fehler durch gaußsche Fehlerfortpflanzung bestimmt. Die zugehörige Frequenz ist die eingestellte Frequenz, auf die der Digitalisierungsfehler
+\begin{equation*}
+\sigma _f = \dfrac{\SI{1}{Hz}}{\sqrt{12}}
+\end{equation*}
+angenommen wird. An diese Daten wird eine Anpassung der Form 
+\begin{equation}
+\dfrac{U_a}{U_e} = \dfrac{1}{\sqrt{1 + \left( \frac{f}{f_G} \right)^2}}
+\label{eq:TiefpassFunktion}
+\end{equation}
+durchgeführt. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch1/TiefpassMulti.png}
+\caption[test]{Anpassung der Tiefpassfunktion an die mit dem Multimeter aufgenommenen Daten des selbstgebauten Tiefpasses.}
+\label{fig:Tiefpass_Multi}
+\end{figure}
+
+Die Anpassung ist in Abbildung \ref{fig:Tiefpass_Multi} gezeigt. Der Verlauf der Daten zeigt, dass das Model durchaus richtig ist. Dennoch zeigen die Residuen gerade bei kleineren Frequenzen eine unbekannte Systematik.
+
+\paragraph{Oszilloskop}
+Die Oszilloskopdaten werden mittels Anpassung einer Cosinus-Funktion der Form
+\begin{equation*}
+U = U_0 \cdot \cos \left( 2 \pi \cdot f  + \varphi _0 \right)
+\end{equation*}
+ausgewertet. Für diese Anpassungen wird der Fehler auf die gemessene Spannung aus der Differenz der ersten beiden Spannungswerte geteilt durch $\sqrt{12}$ verwendet. Für den Fehler auf die Zeit wird der Abstand zweier Punkte geteilt durch $\sqrt{12}$ verwendet. Die Ergebnisse der Anpassungsparameter und die Fehler darauf sind nur sehr gering abhängig abhängig von den Fehlern, mit denen in diese Anpassung gegangen wird. Da nur die Ergebnisse dieser Parameter und deren Fehler weiter verwendet werden, reicht es, die Fehler für die Cosinus-Anpassung so grob abzuschätzen. \\
+Mit den Ergebnissen für die Amplitude und die Frequenzen mit den Fehlern wird erneut eine Tiefpassfunktion (Gl. \ref{eq:TiefpassFunktion}) angepasst.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch1/TiefpassOszi.png}
+\caption[test]{Anpassung der Tiefpassfunktion an die mit dem Oszilloskop aufgenommenen Daten des selbstgebauten Tiefpasses.}
+\label{fig:Tiefpass_Oszi}
+\end{figure}
+
+Die Anpassung ist in Abbildung \ref{fig:Tiefpass_Oszi} gezeigt. Der Verlauf der Daten zeigt, dass das Model durchaus richtig ist. Dennoch zeigen die Residuen gerade bei kleineren Frequenzen eine unbekannte Systematik. Die Ähnlichkeit zu der Anpassung an die Messung mit dem Multimeter (Abbildung \ref{fig:Tiefpass_Multi}) ist sehr auffällig.
+
+\paragraph{Zusammenfassung}
+Betrachtet man die Anpassungen an die mit dem Multimeter (Abbildung \ref{fig:Tiefpass_Multi}) und die mit dem Oszilloskop (Abbildung \ref{fig:Tiefpass_Oszi}) aufgenommenen Daten, fallen zwei Dinge auf:
+\begin{enumerate}
+\item Die beiden Anpassungen zeigen bei kleineren Frequenzen sehr ähnliche, starke Systematiken, die große $\chi ^2$/ndof bewirken
+\item Die Grenzfrequenzen der beiden Anpassungen stimmen innerhalb ihrer Fehler überein
+\end{enumerate}
+Woher die Systematiken genau kommen ist nicht klar. Da diese aber in beiden Auswertungsmethoden zu sehen sind, ist davon auszugehen, dass sie dem Aufbau entstammen und nicht der Auswertungsmethode. \\
+Dass die Grenzfrequenzen innerhalb ihrer Fehler übereinstimmen ermöglicht eine gewichtete Mittelung zu:
+\begin{equation*}
+f_G = \SI{1101,2 \pm 2,0}{Hz}
+\end{equation*}
+Die Bauteile des Tiefpasses sind vom Hersteller mit
+\begin{equation*}
+C = \SI{100 \pm 10}{nF}
+\end{equation*}
+\begin{equation*}
+R = \SI{1500 \pm 15}{\Omega}
+\end{equation*}
+angegeben. Damit ergibt sich die Grenzfrequenz gemäß
+\begin{equation*}
+f_G^{Literatur} = \dfrac{1}{2 \pi RC}
+\end{equation*}
+und der Fehler gemäß
+\begin{equation*}
+\sigma _{f_G^{Literatur}} = f_G^{Literatur} \cdot \sqrt{\left( \dfrac{\sigma _R}{R} \right) ^2 + \left( \dfrac{\sigma _C}{C} \right) ^2}
+\end{equation*}
+zu:
+\begin{equation*}
+f_G^{Literatur} = \SI{1061 \pm 106}{Hz}
+\end{equation*}
+Der Fehler wird hauptsächlich durch den großen Fehler auf die Kapazität des Kondensators begründet. Damit stimmen Literaturwert und Messergebnis innerhalb ihrer Fehler überein.
+
+\subsubsection{Untersuchung des Tiefpasses des Lockin-Verstärkers}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch2/KennlinieTiefpass.png}
+\caption[test]{Verlauf der Ausgangsspannung bei der Vermessung des Tiefpasses des Lockin-Verstärkers in Abhängigkeit von der Frequenz. In grün und rot sind die Anpassungen der Kennlinien von Tiefpässen 1. und 2. Ordnung.}
+\label{fig:LockinTiefpass_Verlauf}
+\end{figure}
+
+Bei der Untersuchung der internen Filter wurde nur die Ausgangsspannung gemessen, nicht jedoch die Eingangsspannung. Diese wurde zwar konstant gehalten, um dies jedoch als mögliche Fehlerquelle auszuschließen, wird nur die Ausgangsspannung betrachtet. \\
+Den Verlauf der Ausgangsspannung in Abhängigkeit von der Frequenz zeigt Abbildung \ref{fig:LockinTiefpass_Verlauf}. Die Anpassungen der Kennlinien von Tiefpässen 1. bzw. 2. Ordnung sind mit $\chi ^2$/ndof von 2000 bzw. 500 und relativen Fehlern auf die Anpassungsparameter von bis zu $10^4$ nicht gelungen sind. Dennoch zeigen diese, wie in Abbildung \ref{fig:LockinTiefpass_Verlauf} gut erkennbar ist, dass es sich bei dem vermessenen internen Filter des Lockin-Verstärkers um einen Tiefpass 2. Ordnung handelt. \\
+Wie bei einem Tiefpass erwartet, werden kleine Frequenzen durchgelassen und hohe Frequenzen unterdrückt. Dazwischen gibt es einen Übergangsbereich von ca. \SI{500}{Hz} bis ca. \SI{1500}{Hz}, in dem das Signal geschwächt durchgelassen wird bzw. teilweise auch mit $(-1)$ multipliziert wird.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch2/AblesenTiefpass.png}
+\caption[test]{Verlauf der Ausgangsspannung bei der Vermessung des Tiefpasses des Lockin-Verstärkers in Abhängigkeit von der Frequenz in der Nähe der Grenzfrequenz. In rot ist die horizontale Linie eingezeichnet, bei deren Schnittpunkt mit den Daten die Grenzfrequenz liegt.}
+\label{fig:LockinTiefpass_Ablesen}
+\end{figure}
+
+Da die Grenzfrequenz nicht aus den Anpassungen bestimmt werden kann, muss diese abgelesen werden. Dazu wird Abbildung \ref{fig:LockinTiefpass_Ablesen} betrachtet, in der die Frequenz zur Vereinfachung des Ablesens nicht logarithmiert und der Frequenzbereich eingeschränkt wurde. Die Grenzfrequenz wird dann abgelesen zu:
+\begin{equation*}
+f_G^{Tief} = \SI{830 \pm 14}{Hz}
+\end{equation*}
+Der Fehler wird dabei aus der Annahme einer Gleichverteilung zwischen den beiden Messpunkten um den Schnittpunkt abgeschätzt.
+
+\subsubsection{Untersuchung des Hochpasses des Lockin-Verstärkers}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch2/KennlinieHochpass.png}
+\caption[test]{Verlauf der Ausgangsspannung bei der Vermessung des Hochpasses des Lockin-Verstärkers in Abhängigkeit von der Frequenz. In grün und rot sind die Anpassungen der Kennlinien von Hochpässen 1. und 2. Ordnung.}
+\label{fig:LockinHochpass_Verlauf}
+\end{figure}
+
+Auch beim Hochpass wurde die Eingangsspannung nicht aufgenommen und deshalb nur die Ausgangsspannung betrachtet. \\
+Auch hier sind die Anpassungen nicht gelungen. Dennoch zeigt Abbildung \ref{fig:LockinHochpass_Verlauf}, dass es sich bei dem vermessenen Hochpass des Lockin-Verstärkers um einen Hochpass 1. Ordnung handelt, da diese Anpassung die Daten deutlich besser beschreibt als die eines Hochpasses 2. Ordnung. \\
+Wie bei einem Hochpass erwartet, werden kleine Frequenzen unterdrückt und hohe Frequenzen durchgelassen. Dazwischen gibt es wieder einen Übergangsbereich, wobei dieser bereits bei kleineren Frequenzen beginnt, nämlich bei ca. \SI{150}{Hz} und auch etwas weiter geht, bis ca. \SI{2}{kHz}. Abgesehen davon sieht der Übergangsbereich qualitativ dem Übergangsbereich des Tiefpasses ähnlich nur umgedreht.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch2/AblesenHochpass.png}
+\caption[test]{Verlauf der Ausgangsspannung bei der Vermessung des Hochpasses des Lockin-Verstärkers in Abhängigkeit von der Frequenz in der Nähe der Grenzfrequenz. In rot ist die horizontale Linie eingezeichnet, bei deren Schnittpunkt mit den Daten die Grenzfrequenz liegt.}
+\label{fig:LockinHochpass_Ablesen}
+\end{figure}
+
+Auch hier wird die Grenzfrequenz durch Ablesen bestimmt. Dazu ist in Abbildung \ref{fig:LockinHochpass_Ablesen} der Bereich um die Grenzfrequenz in nicht-logarithmischer Auftragung gezeigt. Die Grenzfrequenz wird dann abgelesen zu:
+\begin{equation*}
+f_G^{Hoch} = \SI{1200 \pm 29}{Hz}
+\end{equation*}
+Der Fehler wird dabei wieder aus der Annahme einer Gleichverteilung zwischen den beiden Messpunkten um den Schnittpunkt abgeschätzt.
+
+\subsubsection{Untersuchung des Bandpasses des Lockin-Verstärkers}
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch2/KennlinieBandpass.png}
+\caption[test]{Verlauf der Ausgangsspannung bei der Vermessung des Bandpasses des Lockin-Verstärkers in Abhängigkeit von der Frequenz.}
+\label{fig:LockinBandpass_Verlauf}
+\end{figure}
+
+Auch beim Bandpass wurde die Eingangsspannung nicht aufgenommen und deshalb nur die Ausgangsspannung betrachtet. \\
+Hier wurden Anpassungen durchgeführt, da der Bandpass sehr wahrscheinlich durch Kombination der bereits vermessenen Tief- und Hochpass zusammengesetzt ist. \\
+Abbildung \ref{fig:LockinBandpass_Verlauf} zeigt den gemessenen Verlauf der Ausgangsspannung in Abhängigkeit von der Frequenz. Wie bei einem Bandpass erwartet werden sowohl hohe als auch niedrige Frequenzen unterdrückt. In einem Bereich von ca. \SI{300}{Hz} bis ca. \SI{5}{kHz} werden die Frequenzen durchgelassen, wobei die Durchlassfunktion eine Gaußglockform hat.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{Bilder/Vorversuch2/AblesenBandpass.png}
+\caption[test]{Verlauf der Ausgangsspannung bei der Vermessung des Bandpasses des Lockin-Verstärkers in Abhängigkeit von der Frequenz in der Nähe der Grenzfrequenz. In rot ist die horizontale Linie eingezeichnet, bei deren Schnittpunkten die beiden den Peak begrenzenden Frequenzen liegen.}
+\label{fig:LockinBandpass_Ablesen}
+\end{figure}
+
+Für die Bestimmung der Güte des Bandpasses werden die beiden den Peak begrenzenden Frequenzen $f_H$ und $f_L$ abgelesen. Mit diesen kann gemäß
+\begin{equation*}
+f_G = \sqrt{f_H \cdot f_L}
+\end{equation*}
+die Grenzfrequenz und mit
+\begin{equation*}
+Q = \dfrac{f_G}{f_H - f_L}
+\end{equation*}
+die Güte bestimmt werden. Die Fehler bestimmen sich nach gaußscher Fehlerfortpflanzung durch:
+\begin{equation*}
+\sigma _{f_G} = \sqrt{\left( \dfrac{\sigma _{f_H} \cdot f_H}{2 \cdot f_G} \right)^2 + \left( \dfrac{\sigma _{f_L} \cdot f_L}{2 \cdot f_G} \right)^2}
+\end{equation*}
+Die begrenzenden Frequenzen werden abgelesen zu:
+\begin{equation*}
+f_L = \SI{600 \pm 14}{Hz}
+\end{equation*}
+\begin{equation*}
+f_H = \SI{1650 \pm 14}{Hz}
+\end{equation*}
+Der Fehler wird dabei wieder aus der Annahme einer Gleichverteilung zwischen den beiden Messpunkten um den Schnittpunkt abgeschätzt. \\
+Damit bestimmen sich die Grenzfrequenz und die Güte zu:
+\begin{equation*}
+f_G = \SI{994 \pm 12}{Hz}
+\end{equation*}
+\begin{equation*}
+Q = 0,948 \pm 0,021
+\end{equation*}
+
+\subsubsection{Zusammenfassung interne Filter des Lockin-Verstärkers}
+Die Filter hatten alle qualitativ den erwarteten Verlauf in ihrer Übertragungsfunktion. Die Ergebnisse für die Grenzfrequenzen von Hoch- und Tiefpass liegen allerdings deutlich neben der eingestellten Frequenz von \SI{1000}{Hz}. Die Ursache davon ist unbekannt. \\
+Dennoch stimmt die Grenzfrequenz des Bandpasses innerhalb ihres Fehlers mit der Erwartung von erneut \SI{1000}{Hz} überein. Der Messwert für die Güte liegt ca. 2,45$\sigma$ neben dem eingestellten Wert von 1. Da in den weiteren Messungen der Bandpass verwendet wurde, kann davon ausgegangen werden, dass der Lockin-Verstärker wie erwünscht funktioniert.
+
 \subsubsection{Signalfiltern mit Tiefpass und Hochpass}
 \subsubsection{Zeitkonstante und Empfindlichkeit}
 \subsection{Messung des Supraleiters}
