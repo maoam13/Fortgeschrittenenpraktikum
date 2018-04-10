@@ -19,14 +19,14 @@ def find_nearest(array,value):
     return idx
 
 plt.close("all")
-index = 3
+index = 5
 data = Einlesen(index).data
 
 x = data[:,3]
 y = data[:,4]
 f,amp = p.fourier_fft(x,y)
-pos200 = find_nearest(f,200)
-pos4000 = find_nearest(f,4000)
+pos200 = find_nearest(f,100)
+pos4000 = find_nearest(f,8000)
 print max(amp[pos200-2:pos200+2])
 print max(amp[pos4000-2:pos4000+2])
 

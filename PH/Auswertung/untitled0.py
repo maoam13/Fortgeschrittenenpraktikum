@@ -19,13 +19,15 @@ mu = s.mu_0
 I0 = 10**-3
 Vprobe = 22.9*10**-9
 Vsupra = 14.7*10**-9
-f = 0.380*10**3#/(2*np.pi)
+f = 0.380*10**3
 Xi = 5
+v = 10./(0.5*10**-3)
 C =  2*np.pi*f*mu*I0*Nsek*Nprim/lsek/lprim
 s =  C*Xi*Vprobe*(1-0.27)
+print C
 print s
 
-v = 10./(0.5*10**-3)
+
 Uint = 2.37
 #Uint = 1.44
 
