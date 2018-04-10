@@ -400,31 +400,31 @@ In allen Bildern ist an CH1 (orange) die kleine Frequenz (100Hz), CH2 (blau) die
 \hline
 Filter & Frequenz & Höhe & rel. Höhe\\
 \hline
-kein & 100 & 66.4 & 1\\
+kein & 100 & $66.4\pm 0.1$ & 1\\
 \cline{2-4}
-& 200 & 99.6 & 1\\
+& 200 & $99.6\pm 0.1$ & 1\\
 \cline{2-4}
-& 4000 & 34.6 & 1\\
+& 4000 & $34.6\pm 0.1$ & 1\\
 \cline{2-4}
-& 8000 & 33.3 & 1\\
+& 8000 & $33.3\pm 0.1$ & 1\\
 \hline
 \hline
-Tiefpass & 100 & 67.1 & $1.01\pm 0.01$\\
+Tiefpass & 100 & $67.1\pm 0.1$ & $1.01\pm 0.01$\\
 \cline{2-4}
-& 200 & 100.1 & $1.01\pm 0.01$\\
+& 200 & $100.1\pm 0.1$ & $1.01\pm 0.01$\\
 \cline{2-4}
-& 4000 & 2.1 & $0.06\pm 0.01$\\
+& 4000 & $2.1\pm 0.1$ & $0.06\pm 0.01$\\
 \cline{2-4}
-& 8000 & 0.7 & $0.02\pm 0.01$\\
+& 8000 & $0.7\pm 0.1$ & $0.02\pm 0.01$\\
 \hline
 \hline
-Hochpass & 100 & 5.7 & $0.08\pm 0.01$\\
+Hochpass & 100 & $5.7\pm 0.1$ & $0.08\pm 0.01$\\
 \cline{2-4}
-& 200 & 4.1 & $0.04\pm 0.01$\\
+& 200 & $4.1\pm 0.1$ & $0.04\pm 0.01$\\
 \cline{2-4}
-& 4000 & 34.3 & $0.99\pm 0.01$\\
+& 4000 & $34.3\pm 0.1$ & $0.99\pm 0.01$\\
 \cline{2-4}
-& 8000 & 34.3 & $1.03\pm 0.01$\\
+& 8000 & $34.3\pm 0.1$ & $1.03\pm 0.01$\\
 \hline
 \end{tabular} 
 \caption{Ergebnisse der Peakhöhen der FFT-Spektren. Angegeben ist jeweils der verwendete Filter, die Frequenz, die absolute Peakhöhe (der genaue Wert hat keine Aussage) und die relative Peakhöhe verglichen mit den Höhen ohne Filter.}
@@ -474,7 +474,7 @@ $38$. Die Bedingung ist also sehr gut erfüllt.
 
 \newpage
 \subsection{Messung des Supraleiters}
-Am Anfang von der $\chi'$-Messung wurden mehrere Messpunkte bei nahezu konstanter Temperatur aufgezeichnet. Aus diesen wird durch Mittelung und Bildung der Standardabweichung ein Fehler die Datenpunkte \textbf{aller} Messreihen bestimmt. Es ergab sich ein Fehler auf die Spannung von
+Am Anfang von der $\chi'$-Messung wurden mehrere Messpunkte bei nahezu konstanter Temperatur aufgezeichnet. Aus diesen wird durch Mittelung und Bildung der Standardabweichung ein Fehler auf die Datenpunkte \textbf{aller} Messreihen bestimmt. Es ergab sich ein Fehler auf die Spannung von
 \begin{equation*}
 \sigma_U = 0.002V
 \end{equation*}
@@ -535,13 +535,13 @@ Es gilt:
 \begin{equation}
 \Delta U = C \cdot v \cdot V_{Supra} \cdot \Delta\chi
 \end{equation}
-mit der Spannungsdifferenz U, der Kalibrationskonstante C, dem Verstärkungsfaktor $v=20000$ und des Volumens des Supraleiters $V_{Supra} =\SI{ 14.7\pm 0.3}{mm^3}$. Auf das Volumen wurde ein Gleichverteilungsfehler von $0.1/\sqrt{12}mm^3$ angenommen. Unter der Annnahme, dass $\Delta\chi \approx 1$ gilt, kann man daraus die Kalibrationskonstante berechnen:
+mit der Spannungsdifferenz U, der Kalibrationskonstante C, dem Verstärkungsfaktor $v=20000$ und des Volumens des Supraleiters $V_{Supra} =\SI{ 14.7\pm 0.03}{mm^3}$. Auf das Volumen wurde ein Gleichverteilungsfehler von $0.1/\sqrt{12}mm^3$ angenommen. Dieser fließt als systematischer Fehler auf C mit ein. Unter der Annnahme, dass $\Delta\chi \approx 1$ gilt, kann man daraus die Kalibrationskonstante berechnen:
 \begin{equation}
 C = \dfrac{\Delta U}{v\cdot V_{Supra}}
 \end{equation}
 Alle Fehler werden dabei gaußisch fortgepflanzt. Daraus erhält man das Endergebnis von
 \begin{equation*}
-C = \SI{8034.2\pm 34.7}{Vm^{-3}}
+C = (8034.2\pm 34.7(stat.)\pm 16.4(syst.))\si{Vm^{-3}}
 \end{equation*}
 
 \begin{table}
@@ -568,7 +568,7 @@ Die Spungtemperatur befindet sich gerade an der Stelle, an der die Suszeptiblit�
 \ref{fig:Supra_X1anpass} sind die Anpassungen zur steilsten Stelle und jeweils 2 Nachbarpunkten visualisiert.\\
 Für den Anpassungsbereich wurden jeweils die nächsten 10 Nachbarpunkte in beide Richtungen gewählt, da sich die Stelle maximaler Steigung ab dieser Anpassungsgröße nicht mehr verändert. In Abbildung \ref{fig:Supra_X1anpassgross} ist die Auswrikung eines größeren Anpassungsbereiches mit 20 Nachbarpunkten gezeigt.\\
 \\
-Innerhalb der Fehler der Anpassungen liegen die beiden nächsten Nachabrpunkte im Bereich der maximalen Spannung. Deswegen wurden sie bei der Fehlerabschätzung berücksichtigt, indem gesagt wird, dass diese Werte den Fahler bestimmen. Dadurch ergibt sich ein Endergebnis von
+Innerhalb der Fehler der Anpassungen liegen die beiden nächsten Nachabrpunkte im Bereich der maximalen Spannung. Deswegen wurden sie bei der Fehlerabschätzung berücksichtigt, indem gesagt wird, dass diese Werte den Fehler bestimmen. Dadurch ergibt sich ein Endergebnis von
 \begin{equation*}
 T_C = (99.38^{+0.04}_{-0.06}) K
 \end{equation*}
@@ -683,7 +683,7 @@ Mithilfe der in der Versuchsanleitung gegebenen Daten für die Parameter des Auf
 \begin{equation}
 C = \dfrac{2\pi f_R \mu_0 I_0 N_{sek} N_{prim}}{l_{sek} l_{prim}}
 \end{equation}
-mit $f_R = \SI{380}{Hz}$,$I_0 = \SI{1}{mA}$,$N_{sek} = 700$,$N_{prim} = 2046$,$l_{sek} = \SI{20}{mm}$,$l_{prim} = \SI{50}{mm}$. Das Ergebnis ist in Tabelle \ref{tab:supra_ergebnis} zu finden.\\
+mit $f_R = \SI{380\pm 7.6}{Hz}$, $I_0 = \SI{1 \pm 0.03}{mA}$, $N_{sek} = 700$, $N_{prim} = 2046$, $l_{sek} = \SI{20\pm 0.3}{mm}$, $l_{prim} = \SI{50 \pm 0.3}{mm}$. Das Ergebnis ist in Tabelle \ref{tab:supra_ergebnis} zu finden.\\
 Das Messergebnis weicht sehr stark vom Erwartungswert ab. Dies kann mehrere Gründe haben:
 \begin{enumerate}
 \item Fehler in der Methode zur Messwertbestimmung:\\
@@ -704,7 +704,7 @@ Da die Versuchanleitung schon etwas älter ist, kann auch nicht ausgeschlossen w
 \hline 
 Messwert & Messergebnis & Erwartungswert \\
 \hline 
-Kalibrationskonstante C & $8034.2\pm 34.7$ & $4297$ \\ 
+Kalibrationskonstante C$[\si{Vm^{-3}}]$& $8034.2\pm 34.7\pm 16.4$ & $4297\pm 170$ \\ 
 \hline 
 Sprungtemperatur $\chi'$ & \SI{99.12\pm 0.02}{K} & \SI{92}{K} \\ 
 \hline 
@@ -716,7 +716,16 @@ Sprungtemperatur $\chi''$ & $(99.38^{+0.04}_{-0.06}) K$ & \SI{92}{K} \\
 \end{table}
 
 \paragraph{Sprungtemperatur}
-Der Literaturwert der Sprungtemperatur des verwendeten YBaCuO-Supratleiters beträgt 92K \footnote{https://de.wikipedia.org/wiki/Yttrium-Barium-Kupferoxid}. Die beiden Messwerte zur Sprungtemperatur weichen also um c.a 7K von der Erwartung ab. Dies ist vor allem dem Offset verschuldet, der dadurch entsteht, dass sich das Thermometer schneller erwärmt als die Probe. Der große Temperaturgradient führ zu diesem relativ großen Offset. Durch die leicht unterschiedlichen Temperaturgradienten bei den beiden Messungen kann ebenfalls erklärkt werden, dass das Ergebnis für die $\chi'$ Messung etwas größer ist.
+Es wurden die folgenden beiden Messergebnisse für die Sprungtemperatur bestimmt:
+\begin{equation*}
+T_{\chi'} = (99.38^{+0.04}_{-0.06}) K
+\end{equation*}
+\begin{equation*}
+T_{\chi''} = \SI{99.12\pm 0.02}{K}
+\end{equation*}
+Der Literaturwert der Sprungtemperatur des verwendeten YBaCuO-Supraleiters beträgt 92K \footnote{https://de.wikipedia.org/wiki/Yttrium-Barium-Kupferoxid}. Die beiden Messwerte zur Sprungtemperatur weichen also um c.a 7K von der Erwartung ab. Dies ist vor allem dem Offset verschuldet, der dadurch entsteht, dass sich das Thermometer schneller erwärmt als die Probe. Der große Temperaturgradient führ zu diesem relativ großen Offset. Durch die leicht unterschiedlichen Temperaturgradienten bei den beiden Messungen kann ebenfalls erklärkt werden, dass das Ergebnis für die $\chi'$ Messung etwas größer ist. Außerdem ist es noch möglich, dass sich unbekannte Systematiken im Verlauf der Suszeptiblität befinden, die dafür sorgen, dass die Sprungtemperatur nicht an der steilsten Stelle ist. Dies könnte die Temperatur nochmal um c.a 0.5K verschieben.
+
+\newpage
 \subsection{Messung der Probe}
 
 \begin{figure}
@@ -845,9 +854,38 @@ Dazu kommt noch ein Fehler durch den zu hohen Temperaturgradienten während der 
 \footnotetext{Quelle: Versuchsanleitung Seite 32.}
 
 Die beiden Anpassungsbereiche haben Grenztemperaturen von $T_C^{(1)} = \SI{162,800 \pm 0,057}{K}$ und $T_C^{(2)} = \SI{156,862 \pm 0,061}{K}$ (mit statistischen Fehlern) ergeben. Die systematischen Fehler aus den Fehlern auf die Kalibrationskonstante, auf das Probenvolumen, auf den Verstärkungsfaktor und auf den Entmagnetisierungsfaktor wurden mit der Verschiebemethode bestimmt und sind asymmetrisch. Drei der vier systematischen Fehler sind deutlich kleiner als die statistischen, aber der vierte ist deutlich größer und sorgt alleine dafür, dass die Werte innerhalb ihrer Fehler übereinstimmen. Der Fehler durch einen zu großen Temperaturgradienten konnte nur qualitativ betrachtet werden, würde die Differenz der beiden Werte aber nochmal verringern. \\
-Mit der Grenztemperatur kann nun anhand Abbildung \ref{fig:AnteilbestimmungProbe} die Zusammensetzung der Probe durch Ablesen bestimmt werden. Bei einer Grenztemperatur um \SI{160}{K} ergibt sich so ein Zn-Anteil von $x = 0.75 \pm 0.02$ mit Ablesefehler. Damit handelt es sich um eine GdAg$_{0.25}$Zn$_{0.75}$-Probe.
+Mit der Grenztemperatur kann nun anhand Abbildung \ref{fig:AnteilbestimmungProbe} die Zusammensetzung der Probe durch Ablesen bestimmt werden. Bei einer Grenztemperatur um \SI{160}{K} ergibt sich so ein Zn-Anteil von $x = 0.75$. Damit handelt es sich um eine GdAg$_{0.25}$Zn$_{0.75}$-Probe.
 
 
 \section{Fazit}
+\paragraph{Vorversuche}
+Die Grenzfrequenz des selbstgebauten Tiefpasses liegt bei $f_G = \SI{1101,2 \pm 2,0}{Hz}$. Dies stimmt innerhalb der Unsicherheiten mit der theoretisch erwarteten Frequenz überein.\\
+\\
+TBD\\
+\\
+Das optimale Verhältnis zeischen Periodendauer (also Referenzfrequenz) und der Integrationszeit wurde zu
+\begin{equation*}
+T_I \cdot f = 16.1\pm 0.2
+\end{equation*}
+bestimmt.
+\paragraph{Messung des Supraleiters}
+Mithilfe der $\chi'$-Messung konnte die Kalibrationskonstante zu $C = (8034.2\pm 34.7\pm 16.4)\si{Vm^{-3}}$ bestimmt werden. Diese weicht stark von dem erwarteten Ergebnis von $(4297\pm 170)\si{Vm^{-3}}$ ab. Es wird vermutet, dass der Erwartungswert falsch ausgerechnet wurde.\\
+\\
+Die Sprungtemperatur ergab für beide Messungen folgende Ergebnisse:
+\begin{equation*}
+T_{\chi'} = (99.38^{+0.04}_{-0.06}) K
+\end{equation*}
+\begin{equation*}
+T_{\chi''} = \SI{99.12\pm 0.02}{K}
+\end{equation*}
+Die Abweichung zwischen den Werten kann über unterschiedliche Temperaturgradienten erklärt werden. Der hohe Temperaturgradient sorgt ebenfalls dafür, dass beide Werte um c.a 7K oberhalb des Literaturwertes von 92K liegen.
+\paragraph{Messung der Probe}
+Mithilfe der linearen Anpassunge wurde die Curie-Temperatur zu \begin{equation*}
+T_C^{(1)} = (162,800 \pm 0,057 \; (stat.) \; \; ^{+0,0000090}_{-0,0000086} \; (sys.)) \, \si{K}
+\end{equation*}
+bestimmt. Die $T^{1/\gamma}$-Anpassung ergab einen Wert von \begin{equation*}
+T_C^{(2)} = (156,8623 \pm 0,0615 \; (stat.) \; \; ^{+5,9370}_{-0,0030} \; (sys.)) \, \si{K}
+\end{equation*}
+Diese Werte stimmen innerhalb ihrer Fehler überein. Es ergibt sich ein Zn-Anteil von $x=0.75$. Wenn man annimt, dass die Abweichung durch den Temperaturgradienten genau so groß ist, wie bei dem Supraleiter, erhält man stattdessen einen Zn-Anteil von $x=0.73$.
 
 \end{document}
