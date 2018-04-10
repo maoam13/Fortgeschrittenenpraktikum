@@ -13,6 +13,8 @@ import timeit
 
 start_time=timeit.default_timer()
 
+speichern = 0
+
 data = np.genfromtxt("../../Daten/Vorversuch 2/lockin Hochpass.csv", delimiter = ';', skip_header = 1)
 def kenn(A, x):#A = [f_G, Amplitude, Nullphase]
     return A[1]*(x/A[0])/np.sqrt(1 + (x/A[0])**A[4]) * np.sin(np.arctan((x-A[3])*A[2]))
@@ -39,12 +41,12 @@ plt.grid()
 plt.setp(ax1.get_xticklabels(), visible=False)
 ax2 = plt.subplot(212,sharex = ax1)
 ax2.set_xlabel("Frequenz[Hz]")
-ax2.set_ylabel("Residuen[mV]")
+ax2.set_ylabel("Residuen[V]")
 ax2.set_xscale("log", nonposx = 'clip')
 plt.errorbar(f,A-kenn(sol[0],f),sA*2,fmt = ".")
 plt.plot(f, np.zeros(len(f)), color='r')
 plt.tight_layout()
-plt.figtext(0.2,0.7,
+plt.figtext(0.65,0.58,
                 'a= '+str(np.round(sol[0][0],1))+' +/- '+str(np.round(sol[1][0],1))+'\n'
                 +'b= '+str(np.round(sol[0][1],2))+' +/- '+str(np.round(sol[1][1],2))+'\n'
                 +'c= '+str(np.round(sol[0][2],4))+' +/- '+str(np.round(sol[1][2],4))+'\n'
@@ -52,5 +54,8 @@ plt.figtext(0.2,0.7,
                 +'e= '+str(np.round(sol[0][4],2))+' +/- '+str(np.round(sol[1][4],2))+'\n'
                 +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 2)))
 plt.grid()
+
+if speichern == 1:
+    plt.savefig("../../Protokoll/Bilder/Vorversuch2/KennlinieHochpass")
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))

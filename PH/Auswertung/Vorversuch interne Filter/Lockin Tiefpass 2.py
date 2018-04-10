@@ -14,6 +14,8 @@ import scipy as sy
 
 start_time=timeit.default_timer()
 
+speichern = 0
+
 data = np.genfromtxt("../../Daten/Vorversuch 2/lockin Tiefpass.csv", delimiter = ';', skip_header = 1)
 
 f, A, B = AM.sortieren([data[:,0], data[:,1], data[:,2]], 0)
@@ -69,7 +71,7 @@ plt.grid()
 plt.setp(ax1.get_xticklabels(), visible=False)
 ax2 = plt.subplot(212,sharex = ax1)
 ax2.set_xlabel("Frequenz[Hz]")
-ax2.set_ylabel("Residuen[mV]")
+ax2.set_ylabel("Residuen[V]")
 ax2.set_xscale("log", nonposx = 'clip')
 plt.errorbar(f,A-kenn(sol[0],f),sA*2,fmt = ".")
 plt.plot(f, np.zeros(len(f)), color='r')
@@ -82,5 +84,7 @@ plt.figtext(0.2,0.6,
                 +'e= '+str(np.round(sol[0][4],2))+' +/- '+str(np.round(sol[1][4],2))+'\n'
                 +'$\chi ^2 / ndof$= ' + str(np.round(sol[2], 2)))
 plt.grid()
+if speichern == 1:
+    plt.savefig("../../Protokoll/Bilder/Vorversuch2/KennlinieTiefpass")
 
 print("Laufzeit: {0:9.2f} Sekunden".format(timeit.default_timer()-start_time))
