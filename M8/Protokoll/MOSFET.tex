@@ -40,6 +40,7 @@ pra,
 %floatfix,
 ]{revtex4-1}
 
+\usepackage{siunitx}
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
@@ -81,6 +82,29 @@ bla
 In the following the fabrication of a Pseudo-MOSFET ("metallic-oxide-semiconductor-field-effect-transistor") will be described. The next step is a more detailed description of optical lithographie and reactive ion etching. Afterwards an analysis and a discussion of the characterization of the fabricated Pseudo-MOSFET will be given.
 
 \section{Fabrication}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+Fabrication technology & "UNIBOND" \\ 
+\hline 
+top Si thickness & \SI{85}{nm} \\ 
+\hline 
+buried oxide thickness & \SI{145}{nm} \\ 
+\hline 
+doping type & p-type (Boron) \\ 
+\hline 
+doping concentration & $1 \times 10^{15}$ \si{\per\cubic\centi\meter} \\ 
+\hline 
+crystal orientation & (100) \\ 
+\hline 
+\end{tabular} 
+\caption{Specification of the SOI wafer.}
+\label{tab:Spec_SOI}
+\end{table}
+
+The basis for the MOSFET are SOI (Semiconductor On Insulator) samples, the specifications are listed in table \ref{tab:Spec_SOI}. Si is used as semiconductor and SiO$_2$ as insulator. In a first step an mask for the following etching was defined lithographically. The mesa structuring is done by reactive ion etching with a gas mixture of SF$_6$/O$_2$. For removing the resist an oxygen plasma is used. At next the samples are RCA-cleaned ending with a dip in hydroflourid acid to get a bare silicon surface. The aluminum is deposited in a vacuum. The aluminum layer is structured with optical lithographie and an aluminum etching as which phosphoric acid, nitric acid, acetic acid and water in a volume ratio of 16:1:1:2 is used. 
 
 \section{Theory}
 \subsection{Optical Lithographie}
