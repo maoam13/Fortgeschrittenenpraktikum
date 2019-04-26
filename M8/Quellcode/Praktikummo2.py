@@ -120,6 +120,21 @@ def lineare_regression_xy(x,y,ex,ey):
 
     return output.beta[0],output.sd_beta[0],output.beta[1],output.sd_beta[1],chiq,corr
 
+def linreg(x,y,ey):
+    a_ini,ea_ini,b_ini,eb_ini,chiq_ini,corr_ini = lineare_regression(x,y,ey)
+
+    def f(B, x):
+        return B[0]*x + B[1]
+
+    model  = scipy.odr.Model(f)
+    data   = scipy.odr.RealData(x, y, sy=ey)
+    odr    = scipy.odr.ODR(data, model, beta0=[a_ini, b_ini])
+    output = odr.run()
+    ndof = len(x)-2
+    chiq = output.res_var*ndof
+    corr = output.cov_beta[0,1]/np.sqrt(output.cov_beta[0,0]*output.cov_beta[1,1])
+
+    return output.beta[0],output.sd_beta[0],output.beta[1],output.sd_beta[1],chiq,corr
 
 def fourier(t,y):
     '''
