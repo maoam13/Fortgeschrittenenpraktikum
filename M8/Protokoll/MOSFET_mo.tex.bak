@@ -119,7 +119,7 @@ For the extraction of the effective carrier charge density $\mu_{eff}$ the $\dfr
 \\
 In a first step the measured drain-current $I_d$ is plotted against the gate-voltage $V_g$ for three different drain-voltages $V_d$ = \SI{0.03}{V}, \SI{0.05}{V} and \SI{0.07}{V} , as seen in figure \ref{fig:linreg1}. Then the point with the highest slope is determined numerically and a linear regression is fitted at a \SI{1}{\volt} area around this point. The resulting straights are also shown in figure \ref{fig:linreg1}.\\
 \\
-The threshold-voltage $V_{th}$, as well as its error, can be directly extracted from this fit. This is done for all three curves and a final value for $V_{th}$ for this device is calculated by taking the weighted average of all three values.
+The threshold-voltage $V_{th}$, as well as its error, can directly be extracted from this fit. This is done for all three curves and a final value for $V_{th}$ for this device is calculated by taking the weighted average of all three values.
 
 \begin{figure}
 \centering
