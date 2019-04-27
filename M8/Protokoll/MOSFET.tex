@@ -40,6 +40,7 @@ pra,
 %floatfix,
 ]{revtex4-1}
 
+\usepackage{tabularx}
 \usepackage{siunitx}
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
@@ -73,13 +74,15 @@ pra,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-bla
+abstract
 \end{abstract}
 
 \maketitle
 
+
 \section{Introduction}
 In the following the fabrication of a Pseudo-MOSFET ("metallic-oxide-semiconductor-field-effect-transistor") will be described. The next step is a more detailed description of optical lithographie and reactive ion etching. Afterwards an analysis and a discussion of the characterization of the fabricated Pseudo-MOSFET will be given.
+
 
 \section{Fabrication}
 
@@ -104,12 +107,58 @@ crystal orientation & (100) \\
 \label{tab:Spec_SOI}
 \end{table}
 
-The basis for the MOSFET are SOI (Semiconductor On Insulator) samples, the specifications are listed in table \ref{tab:Spec_SOI}. Si is used as semiconductor and SiO$_2$ as insulator. In a first step an mask for the following etching was defined lithographically. The mesa structuring is done by reactive ion etching with a gas mixture of SF$_6$/O$_2$. For removing the resist an oxygen plasma is used. At next the samples are RCA-cleaned ending with a dip in hydroflourid acid to get a bare silicon surface. The aluminum is deposited in a vacuum. The aluminum layer is structured with optical lithographie and an aluminum etching as which phosphoric acid, nitric acid, acetic acid and water in a volume ratio of 16:1:1:2 is used. 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline 
+etchant & phosphoric acid, nitric acid, acetic acid and \\ 
+ & water in a volume ratio of 16:1:1:2 \\ 
+\hline 
+resist & AZ701MiR \\ 
+\hline 
+developer & AZ 726 MIF \\ 
+\hline 
+energy deposition & \SI{113.1}{mJ \per\centi\meter\square} @\SI{405}{nm} \\ 
+\hline 
+\end{tabular} 
+\caption{Specification of the lithographie used for structuring the aluminum layer.}
+\label{tab:Spec_Fab_Al}
+\end{table}
+
+The basis for the MOSFET are SOI (Semiconductor On Insulator) samples, the specifications are listed in table \ref{tab:Spec_SOI}. Si is used as semiconductor and SiO$_2$ as insulator. \\
+In a first step a mask for the following etching was defined lithographically. The mesa structuring is done by reactive ion etching with a gas mixture of SF$_6$/O$_2$. For removing the resist an oxygen plasma is used. At next the samples are RCA-cleaned ending with a dip in hydroflourid acid to get a bare silicon surface. \SI{100}{nm} aluminum is deposited in a vacuum. The aluminum layer is structured with optical lithographie and an aluminum etching. The used resist, developer, etchant and the energy deposition are listed in table \ref{tab:Spec_Fab_Al}.
+
 
 \section{Theory}
+
 \subsection{Optical Lithographie}
 
+\begin{figure}
+\centering
+\includegraphics[scale=1.0]{Bilder/Lithographie.PNG}
+\caption{Operating principle of Optical Lithographie with the different steps. Taken from \cite{Volklein00}}
+\label{fig:Lithographie}
+\end{figure}
+
+The goal of optical lithographie is to deposite small structures of thin layers. In general one distinguish between two types of optical lithographie: Positiv (on the left in fig. \ref{fig:Lithographie}) and negativ (on the right in fig. \ref{fig:Lithographie}). \\
+For both types the first step is to place a resist on the sample. Typically the lacquer has to be baked afterwards. The next step is the exposure of the resist with a mask which defines the structure to be build. To remove the resist only at the relevant parts the sample is developed. At this step the difference between positiv and negativ lithographie can be seen the first time: In positiv lithographie the resist at the exposed parts is removed and in negativ lithographie the resist at the non-exposed parts is removed. \\
+Afterwards the etching is applied and the resist prevents the layer underneath at those parts where the resist was not removed. As last step the remaining resist has to be removed.
+
+
 \subsection{Reactive Ion Etching}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Reactive_Ion_Etching.PNG}
+\caption{Setup for Reactive Ion Etching. Taken from \cite{Cheung}}
+\label{fig:Reactive_Ion_Etching}
+\end{figure}
+
+The general setup for reactive ion etching is shown in fig. \ref{fig:Reactive_Ion_Etching}: In a vacuum chamber a capacitor with an oszillating electric field is placed. The wafer gets placed on one electrode. The frequency used is $f = \SI{13.56}{MHz}$. The reason is to not get interference with frequencies used for radio outside the laboratory. \\
+After the vacuum has established the etching gas is released in the chamber. The fast oszillating strong electric field establishes a plasma separating the electrons and ions of the etching gas. \\
+With switching from the oszillating to a static electric field the ions get accalerated towards the electrode on which the wafer is. The ions react with the material to be etched and this way the material is removed. \\
+After the reactive ion etching an O$_2$ plasma is used to remove the resist.
+
 
 \section{Data Analysis}
 
@@ -120,15 +169,3 @@ The basis for the MOSFET are SOI (Semiconductor On Insulator) samples, the speci
 \bibliography{MOSFET}% Produces the bibliography via BibTeX.
 
 \end{document}
-
-\begin{thebibliography}{x}
-   \bibitem[Esselborn-Krumbiegel, H., 2008]{bmbf} Von der Idee zum Text. Eine Anleitung zum wissenschaftlichen Schreiben. Paderborn: Verlag Ferdinand Schöningh GmbH \& Co. KG.
-
-   \bibitem[Franck, N., 2004]{bmbf} Handbuch Wissenschafliches Arbeiten. Frankfurt am Main: Fischer Taschenbuch Verlag.
-Karmasin, M., \& Ribing, R. (2011). Die Gestaltung wissenschaftlicher Arbeiten. Wien: Facultas Verlags- und Buchhandels AG.
-
-   \bibitem[Lengauer, H., \& Wimmer, A., 2006]{bmbf} http://www.uni-klu.ac.at. Abgerufen am 30. 9. 2013 von Definition Plagiat: http://www.uni-klu.ac.at/main/inhalt/3054.htm
-
-   \bibitem[Preißner, A., 2012]{bmbf} Wissenschaftliches Arbeiten: Internet nutzen, Text erstellen, Überblick behalten. München: Oldenbourg.
-
-\end{thebibliography}

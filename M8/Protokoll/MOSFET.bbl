@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{0}%
+\begin{thebibliography}{2}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,4 +50,17 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {V\"olklein}(2000)}]{Volklein00}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
+  {V\"olklein}, \bibfnamefont {Friedemann;~Zetterer}},\ }\href@noop {} {\emph
+  {\bibinfo {title} {Einf\"uhrung in die Mikrosystemtechnik}}}\ (\bibinfo
+  {publisher} {Vieweg Verlag},\ \bibinfo {address} {Braunschweig/Wiesbaden},\
+  \bibinfo {year} {2000})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cheung}()}]{Cheung}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Cheung}},\ }\href@noop {} {\emph {\bibinfo {title} {Reactive Ion Etching}}}\
+  (\bibinfo  {publisher} {U.C. Berkeley},\ \bibinfo {address}
+  {Berkeley})\BibitemShut {NoStop}%
 \end{thebibliography}%
