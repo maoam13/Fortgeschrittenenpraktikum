@@ -103,6 +103,17 @@ for i in range(1,4):
     plt.plot(x_r, y_r, color='r')
     plt.axis([x[begin],x[end],min(res[a:b]),max(res[a:b])])
     plt.savefig("../Bilder/"+name+"_linreg.jpg")
+    
+    plt.figure('mu')
+    plt.plot(x2*np.sqrt(U),y/np.sqrt(lin[0]),label="$U_d = $"+str(U)+" V")
+    plt.plot(x[begin:]*np.sqrt(U),lin2[0]*x[begin:]+lin2[2],color = 'r',linestyle='dashed')
+    plt.axis([-2.,1,0,max(y2)*1.3])
+    plt.ylabel("$I_d/\sqrt{g}[\sqrt{V/A}]$")
+    plt.xlabel("$U_g \cdot \sqrt{U_d}[V^{3/2}]$")
+    plt.legend()
+    plt.savefig("../Bilder/"+name+"_mu.jpg")
+    
+    print str(np.round(U,2))+" & $" + str(np.round(V_th,2)) + "\pm " + str(np.round(dV_th,2)) +"$ & $" + str(np.round(g*10**9,2)) + "\pm " + str(np.round(dg*10**9,2)) +"$ & $" + str(np.round(mu_eff*10**4,2)) + "\pm " + str(np.round(dmu_eff*10**4,2)) + "$\\\\"
 
 V_th,dV1,dV2 = p.gew_mittelwert(np.array(V_th_array),np.array(dV_th_array))
 g,dg1,dg2 = p.gew_mittelwert(np.array(g_array),np.array(dg_array))
@@ -152,6 +163,3 @@ plt.plot(x_r, y_r, color='r')
 #plt.axis([x[a],x[b],min(res[a:b]),max(res[a:b])])
 plt.savefig("../Bilder/"+name+"_log.jpg")
 
-plt.figure('mu')
-plt.plot(x2[a:b],y[a:b]/np.sqrt(lin[0]))
-plt.savefig("../Bilder/"+name+"_mu.jpg")

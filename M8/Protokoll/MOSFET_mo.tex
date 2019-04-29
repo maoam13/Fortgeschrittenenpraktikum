@@ -113,19 +113,60 @@ The basis for the MOSFET are SOI (Semiconductor On Insulator) samples, the speci
 \section{Measurement}
 \section{Data Analysis}
 \section{Results and Discussion}
-In the following chapter the characteristic values of the MOSFETs are extracted out of the measurement data. The methods that are used to do this are shown with the help of one  exemplary data set.
+In the following chapter the characteristic values of the MOSFETs are extracted out of the measurement data. The methods that are used to do this are shown with the help of the data set of device A5 of the lower right quadrant (4-A5). This device has a tunnel length of \SI{200}{\mu m} with an inner radius of \SI{25}{\mu m} and an outer radius of \SI{225}{\mu m}.
+\subsection{output characteristics}
 \subsection{effective carrier charge density}
 For the extraction of the effective carrier charge density $\mu_{eff}$ the $\dfrac{I_d}{\sqrt{g_m}}$-method is used.\\
 \\
 In a first step the measured drain-current $I_d$ is plotted against the gate-voltage $V_g$ for three different drain-voltages $V_d$ = \SI{0.03}{V}, \SI{0.05}{V} and \SI{0.07}{V} , as seen in figure \ref{fig:linreg1}. Then the point with the highest slope is determined numerically and a linear regression is fitted at a \SI{1}{\volt} area around this point. The resulting straights are also shown in figure \ref{fig:linreg1}.\\
 \\
-The threshold-voltage $V_{th}$, as well as its error, can directly be extracted from this fit. This is done for all three curves and a final value for $V_{th}$ for this device is calculated by taking the weighted average of all three values.
-
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{Bilder/linreg.png}
 \caption{drain-current $I_d$ plotted against the gate-voltage $V_g$ for different drain Voltages.}
 \label{fig:linreg1}
+\end{figure}
+
+The threshold-voltage $V_{th}$, as well as its error, can directly be extracted from this fit. This is done for all three curves and a final value for $V_{th}$ for this device is calculated by taking the weighted average of all three values.\\
+\\
+The slope of this fit is also used to determine $\mu_{eff}$ with the help of the following equation:
+\begin{equation}
+\sqrt{\mu_{eff} f C_{ox} V_d} \cdot (V_g-V_{th}) = \dfrac{I_d}{\sqrt{g}}
+\end{equation}
+
+where $f = 2\pi / ln(R_2/R_1)$ is a structural factor, $C_{ox} = \epsilon_0 \epsilon_{ox} / d_{ox}$ is the capacity of the oxide-layer and g is the slope. $\epsilon_{ox} = 3.9$ is used.\\
+In order to get $\mu_{eff}$ out of this $I_d/\sqrt{g}$ is plotted against $V_g$, as seen in figure \ref{fig:linreg2}. A second linear regression is then fitted to this data. From the slope $a$ of this fit one can get $\mu_{eff}$ through:
+\begin{equation}
+\mu_{eff} = \dfrac{a^2}{f C V_d}
+\end{equation}
+
+This is also done for all three drain-voltages. A final value for $\mu_{eff}$ is again calculated by taking the weighted average.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+$U_d$ & $V_{th}[\si{V}]$ & $g[\si{nA/V}]$ & $mu_{eff}[\si{cm^2/Vs}]$\\
+\hline
+0.03 & $-1.51\pm 0.02$ & $6.48\pm 0.07$ & $0.59\pm 0.01$\\
+\hline
+0.05 & $-1.6\pm 0.02$ & $9.72\pm 0.09$ & $0.53\pm 0.0$\\
+\hline
+0.07 & $-1.69\pm 0.02$ & $12.12\pm 0.1$ & $0.47\pm 0.0$\\
+\hline
+average & $-1.61\pm 0.05$ & $8.64\pm 1.6$ &$0.51\pm 0.03$\\
+\hline
+\end{tabular}
+\label{tab: exaple_data}
+\end{table}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/mu.png}
+\caption{$I_d/\sqrt{g}$ plotted against $V_g \cdot \sqrt{V_d}$ for different drain Voltages.}
+\label{fig:linreg2}
 \end{figure}
 
 
