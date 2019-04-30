@@ -81,6 +81,7 @@ abstract
 
 
 \section{Introduction}
+The Pseudo-MOSFET structure is a simple test structure to determine properties of Si film/oxide \citep{Park}. \\
 In the following the fabrication of a Pseudo-MOSFET ("metallic-oxide-semiconductor-field-effect-transistor") will be described. The next step is a more detailed description of optical lithographie and reactive ion etching. Afterwards an analysis and a discussion of the characterization of the fabricated Pseudo-MOSFET will be given.
 
 
@@ -126,7 +127,7 @@ energy deposition & \SI{113.1}{mJ \per\centi\meter\square} @\SI{405}{nm} \\
 \end{table}
 
 The basis for the MOSFET are SOI (Semiconductor On Insulator) samples, the specifications are listed in table \ref{tab:Spec_SOI}. Si is used as semiconductor and SiO$_2$ as insulator. \\
-In a first step a mask for the following etching was defined lithographically. The mesa structuring is done by reactive ion etching with a gas mixture of SF$_6$/O$_2$. For removing the resist an oxygen plasma is used. At next the samples are RCA-cleaned ending with a dip in hydroflourid acid to get a bare silicon surface. \SI{100}{nm} aluminum is deposited in a vacuum. The aluminum layer is structured with optical lithographie and an aluminum etching. The used resist, developer, etchant and the energy deposition are listed in table \ref{tab:Spec_Fab_Al}.
+In a first step a mask for the mesa structuring was defined lithographically. The etching is done by reactive ion etching with a gas mixture of SF$_6$/O$_2$. For removing the resist an oxygen plasma is used. At next the samples are RCA-cleaned ending with a dip in hydroflourid acid to get a bare silicon surface. \SI{100}{nm} aluminum is deposited in a vacuum chamber. The aluminum layer is structured with optical lithographie and an aluminum etching. The used resist, developer, etchant and the energy deposition are listed in table \ref{tab:Spec_Fab_Al}.
 
 
 \section{Theory}
@@ -141,7 +142,7 @@ In a first step a mask for the following etching was defined lithographically. T
 \end{figure}
 
 The goal of optical lithographie is to deposite small structures of thin layers. In general one distinguish between two types of optical lithographie: Positiv (on the left in fig. \ref{fig:Lithographie}) and negativ (on the right in fig. \ref{fig:Lithographie}). \\
-For both types the first step is to place a resist on the sample. Typically the lacquer has to be baked afterwards. The next step is the exposure of the resist with a mask which defines the structure to be build. To remove the resist only at the relevant parts the sample is developed. At this step the difference between positiv and negativ lithographie can be seen the first time: In positiv lithographie the resist at the exposed parts is removed and in negativ lithographie the resist at the non-exposed parts is removed. \\
+For both types the first step is to place a resist on the sample. To get a thin layer of the resist the wafer is rotated with a spin-on. Typically the lacquer has to be baked afterwards. The next step is the exposure of the resist with a mask which defines the structure to be build. To remove the resist only at the relevant parts the sample is developed. At this step the difference between positiv and negativ lithographie can be seen the first time: In positiv lithographie the resist at the exposed parts is removed and in negativ lithographie the resist at the non-exposed parts is removed. \\
 Afterwards the etching is applied and the resist prevents the layer underneath at those parts where the resist was not removed. As last step the remaining resist has to be removed.
 
 
@@ -161,6 +162,31 @@ After the reactive ion etching an O$_2$ plasma is used to remove the resist.
 
 
 \section{Data Analysis}
+
+\subsection{Measurement}
+On the wafer are multiple devices with different sizes. For one of these the output characteristic is measured via measuring the drain source current for different gate voltages at constant drain source voltage. \\
+Afterwards for multiple devices the transfer characteristic is measured. This is done by measuring the drain source current for different drain source voltages at constant gate voltage.
+
+
+\subsection{Data}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/output_4c3.PNG}
+\caption{Output characteristic}
+\label{fig:output_4c3}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/transfer_1d2.PNG}
+\caption{Transfer charateristic}
+\label{fig:transfer_1d2}
+\end{figure}
+
+Fig. \ref{fig:output_4c3} shows the measured output characteristic for one of the devices. As expected at low drain source voltages the drain source current raises linearly until it saturates. \\
+Fig \ref{fig:transfer_1d2} shows the measured transfer characteristic for one of the devices. In principle this plot shows a similar behaviour of the transfer characteristic as the output characteristic. At very negativ gate voltages one can see, that the drain source current is rising again. This effekt is called ambipolarity.
+
 
 \section{Results and Discussion}
 

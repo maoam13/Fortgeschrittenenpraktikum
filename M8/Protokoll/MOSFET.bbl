@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{2}%
+\begin{thebibliography}{3}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,6 +50,15 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {K.~Park}(2009)}]{Park}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.~S.}\ \bibnamefont
+  {K.~Park}, \bibfnamefont {P.~Nayak}},\ }\href@noop {} {\emph {\bibinfo
+  {title} {Role of the substrate during pseudo-MOSFET drain current
+  transients}}}\ (\bibinfo  {publisher} {Dept. of Electrical Engineering and
+  Center for Solid State Electronics, Arizona State University, Tempe, AZ
+  85287-5706, USA},\ \bibinfo {address} {Arizona State, USA},\ \bibinfo {year}
+  {2009})\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {V\"olklein}(2000)}]{Volklein00}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.}~\bibnamefont
