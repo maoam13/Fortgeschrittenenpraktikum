@@ -20,3 +20,5 @@ for i in range(1,6):
     plt.xlabel("$U_d[V]$")
     plt.legend()
     plt.axis([0,x[-1],0,max(y)*1.1])
+    plt.vlines(0.08, -1,1)
+    plt.vlines(0.5, -1,1)

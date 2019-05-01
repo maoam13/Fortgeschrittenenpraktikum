@@ -22,9 +22,11 @@ def derivative(f0,h):
         f1[i] = np.mean(f1[i-4:i+4])
     return f1
 
-name = "4a5"
-R1 = float(100)
-R2 = float(150)
+name = "4c3_full"
+subx2 = -4.5
+subx1 = -8
+R1 = float(75)
+R2 = float(175)
 data = np.genfromtxt("../Daten/transfer_"+name+".csv",delimiter = ',', skip_header = 1)
 plotnumber = 311
 V_th_array = []
@@ -33,6 +35,8 @@ g_array = []
 dg_array =[]
 mu_eff_array = []
 dmu_eff_array = []
+subthresh = []
+dsubthresh = []
 for i in range(1,4):
     dataset = i
 
@@ -48,10 +52,7 @@ for i in range(1,4):
 
 
 
-    b2 = a
-    a2 = int(2./h)
-    ylog = np.log(y)
-    linlog = p.linreg(x[a2:b2],np.log(y[a2:b2]),ey[a2:b2])
+    
     
     
     V_th = -lin[2]/lin[0]
@@ -79,6 +80,15 @@ for i in range(1,4):
     mu_eff_array.append(mu_eff)
     dmu_eff = np.sqrt((mu_eff/steigung * dsteigung)**2 + (mu_eff/f*df)**2)
     dmu_eff_array.append(dmu_eff)
+    
+    b2 = find_nearest(x,subx2)
+    a2 = find_nearest(x,subx1)
+    ylog = np.log(y)
+    linlog = p.linreg(x[a2:b2],np.log(y[a2:b2]),ey[a2:b2]/y[a2:b2])
+    print linlog[0],linlog[1]*10
+    subthresh.append(linlog[0])
+    dsubthresh.append(linlog[1]*10)
+    print np.log(10)/linlog[0], np.log(10)/linlog[0]**2 * linlog[1]*10
     
     begin = 0
     end = len(x)-1
@@ -113,6 +123,22 @@ for i in range(1,4):
     plt.legend()
     plt.savefig("../Bilder/"+name+"_mu.jpg")
     
+    plt.figure("log")
+    ax1.set_ylabel("U[V]")
+    plt.plot(x,y,label="$U_d = $"+str(U)+" V")
+    plt.plot(x[a2:b2],np.exp(linlog[0]*x[a2:b2]+linlog[2]),color = 'r',linestyle='dashed')
+    plt.yscale('log')
+    plt.ylabel("$log(I_d)[log(A)]$")
+    plt.xlabel("$U_g[V]$")
+    plt.legend()
+    
+    plt.figure("amipol")
+    ax1=plt.subplot(111)
+    ax1.set_ylabel("$I_d$[A]")
+    ax1.set_xlabel("$U_g$[V]")
+    plt.plot(x,y,label="$U_d = $"+str(U)+" V" )
+    plt.legend()
+    
     print str(np.round(U,2))+" & $" + str(np.round(V_th,2)) + "\pm " + str(np.round(dV_th,2)) +"$ & $" + str(np.round(g*10**9,2)) + "\pm " + str(np.round(dg*10**9,2)) +"$ & $" + str(np.round(mu_eff*10**4,2)) + "\pm " + str(np.round(dmu_eff*10**4,2)) + "$\\\\"
 
 V_th,dV1,dV2 = p.gew_mittelwert(np.array(V_th_array),np.array(dV_th_array))
@@ -120,6 +146,10 @@ g,dg1,dg2 = p.gew_mittelwert(np.array(g_array),np.array(dg_array))
 mu,dmu1,dmu2 = p.gew_mittelwert(np.array(mu_eff_array),np.array(dmu_eff_array))
 print name + " & " +str(int(R2-R1)) + " & " + str(int(R1)) + " & " + str(int(R2)) + " & $" + str(np.round(V_th,2)) + "\pm " + str(np.round(max(dV1,dV2),2)) + "$ & $" + str(np.round(mu*100**2,2)) + "\pm " + str(np.round(max(dmu1,dmu2)*100**2,2)) + "$\\\\"
 print mu_eff_array
+
+sub,dsub1,dsub2 = p.gew_mittelwert(np.array(subthresh),np.array(dsubthresh))
+print name + " & $" + str(np.round(np.log(10)/sub,2)) + "\pm " + str(np.round(np.log(10)/sub**2 * np.sqrt(dsub1**2 + dsub2**2),2)) + "$\\\\"
+print "\\hline"
                        
 begin = 0
 end = len(x)-1
@@ -144,7 +174,7 @@ y_r = np.array([0, 0])
 plt.plot(x_r, y_r, color='r')
 plt.axis([x[begin],x[end],min(res[a:b]),max(res[a:b])])
 plt.savefig("../Bilder/"+name+"_linreg.jpg")
-'''
+
 plt.figure("log")
 ax1=plt.subplot(211)
 ax1.set_ylabel("U[V]")
@@ -162,4 +192,4 @@ y_r = np.array([0, 0])
 plt.plot(x_r, y_r, color='r')
 #plt.axis([x[a],x[b],min(res[a:b]),max(res[a:b])])
 plt.savefig("../Bilder/"+name+"_log.jpg")
-
+'''
