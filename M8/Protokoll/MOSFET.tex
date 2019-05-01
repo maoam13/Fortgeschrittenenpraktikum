@@ -74,7 +74,7 @@ pra,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-abstract
+Pseudo-MOSFET structures have become more and more important in nanoelectronics as they provide the probability to build smaller and smaller devices. Additionally they can be used to determine relatively easily the free charge carrier density $\mu _{eff}$ of different materials such as Si even in different configurations. In this paper a deeper look in two important technologies used for producing Pseudo-MOSFETs, namely Optical Lithographie and Reactive Ion Etching is given. Aferwards a bench of devices are analysed and the effective charge carrier density and the subthreshold slope are determined. The data also show an application which corresponds to ambipolarity.
 \end{abstract}
 
 \maketitle
@@ -175,11 +175,11 @@ In the following chapter the characteristic values of the MOSFETs are extracted 
 \label{fig:output}
 \end{figure}
 
-The output characteristics of one device was measured to determine an appropriate gate voltage. As predicted by theoretical calculations the curves show a linear behavior for small drain-voltages. For the measured device and gate-voltages this goes up to approximately $U_d \approx \SI{0.08}{V}$. They enter saturation at around $U_d \approx \SI{0.5}{V}$. As a result of this three drain-voltages in the linear regime ($U_d = \SI{0.3}{V},\SI{0.5}{V} $ and \SI{0.7}{V}) were chosen and the transfer-characteristic was measured for each of these values.
+The output characteristics of one device was measured to determine an appropriate gate voltage. As predicted by theoretical calculations the curves show a linear behavior for small drain-voltages. For the measured device and gate-voltages this goes up to approximately $U_d \approx \SI{0.08}{V}$. They enter saturation at around $U_d \approx \SI{0.5}{V}$. As a result of this three drain-voltages in the linear regime ($U_d = \SI{0.03}{V},\SI{0.05}{V} $ and \SI{0.07}{V}) were chosen and the transfer-characteristic was measured for each of these values.
 
 \subsection{Transfer Characteristic}
 \subsubsection{Effective Carrier Charge Density}
-For the extraction of the effective carrier charge density $\mu_{eff}$ the $\dfrac{I_d}{\sqrt{g_m}}$-method is used.\\
+For the extraction of the effective charge carrier density $\mu_{eff}$ the $\frac{I_d}{\sqrt{g_m}}$-method is used.\\
 \\
 In a first step the measured drain-current $I_d$ is plotted against the gate-voltage $V_g$ for three different drain-voltages $V_d$ = \SI{0.03}{V}, \SI{0.05}{V} and \SI{0.07}{V} , as seen in figure \ref{fig:linreg1}. Then the point with the highest slope is determined numerically and a linear regression is fitted at a \SI{1}{\volt} area around this point. The resulting straights are also shown in figure \ref{fig:linreg1}.
 \begin{figure}
@@ -196,8 +196,8 @@ The slope of this fit is also used to determine $\mu_{eff}$ with the help of the
 \sqrt{\mu_{eff} f C_{ox} V_d} \cdot (V_g-V_{th}) = \dfrac{I_d}{\sqrt{g}}
 \end{equation}
 
-where $f = 2\pi / ln(R_2/R_1)$ is a structural factor, $C_{ox} = \epsilon_0 \epsilon_{ox} / d_{ox}$ is the capacity of the oxide-layer and g is the slope. $\epsilon_{ox} = 3.9$ is used. A constant error of \SI{0.1}{\mu m} is assumed for the radii $R_1$ and $R_2$ to account for uncertainties in the fabrication process.\\
-In order to determine  $\mu_{eff}$ the right side of this equation $I_d/\sqrt{g}$ is plotted against $V_g$, as seen in figure \ref{fig:linreg2}. This figure displays $I_d/\sqrt{g}$ plotted against $V_g \cdot \sqrt{V_d}$ in order to compare the tree slopes without the differing influence of $V_d$. A second linear regression is then fitted to the data. From the slope $a$ of this fit one can get $\mu_{eff}$ through the following equation:
+where $f = \frac{2\pi}{ln(R_2/R_1)}$ is a structural factor, $C_{ox} = \epsilon_0 \epsilon_{ox} / d_{ox}$ is the capacity of the oxide-layer and g is the slope. $\epsilon_{ox} = 3.9$ is used. A constant error of \SI{0.1}{\mu m} is assumed for the radii $R_1$ and $R_2$ to account for uncertainties in the fabrication process.\\
+In order to determine  $\mu_{eff}$ the right side of this equation $I_d/\sqrt{g}$ is plotted against $V_g$, as seen in figure \ref{fig:linreg2}. This figure displays $I_d/\sqrt{g}$ plotted against $V_g \cdot \sqrt{V_d}$ in order to compare the three slopes without the differing influence of $V_d$. A second linear regression is then fitted to the data. From the slope $a$ of this fit one can get $\mu_{eff}$ through the following equation:
 \begin{equation}
 \mu_{eff} = \dfrac{a^2}{f C V_d}
 \end{equation}
@@ -236,13 +236,13 @@ average & $-1.61\pm 0.05$ & $8.64\pm 1.6$ &$0.51\pm 0.03$\\
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{Bilder/log.png}
-\caption{$log(I_d)$ plotted against $V_g$ for different drain Voltages to analyze the subthreshold slope.}
+\caption{$\log(I_d)$ plotted against $V_g$ for different drain Voltages to analyze the subthreshold slope.}
 \label{fig:log}
 \end{figure}
 
-The subthreshold slope is an important characteristic of a Mosfet because it gives an indication for how fast it can change its behavior. A steeper slope means that a smaller voltage difference is required for it to be turned on, which can be achieved quicker. A perfect Mosfet would have a step-fuction slope.\\
+The subthreshold slope is an important characteristic of a MOSFET because it gives an indication for how fast it can change its behavior. A steeper slope means that a smaller voltage difference is required for it to be turned on, which can be achieved quicker. A perfect MOSFET would have an infinite slope which corresponds to a step-function characteristic.\\
 \\
-In order to analyze the subthreshold slope the drain-current is plotted logarithmicly against the gate-voltage as shown in figure \ref{fig:log}. A voltage area is then manually  selected, in which the curves appear to be linear. In this area a linear fit is fitted against the curves in order to obtain the slope. Because the subthreshold slope is usually given by the unit $\si{V/dec}$ the final value is obtained by
+In order to analyze the subthreshold slope the drain-current is plotted logarithmic against the gate-voltage as shown in figure \ref{fig:log}. A voltage area is then manually  selected, in which the curves appear to be linear. In this area a linear fit is fitted against the curves in order to obtain the slope. Because the subthreshold slope is usually given by the unit $\si{V/dec}$ the final value is obtained by
 \begin{equation}
 \Delta U = \dfrac{log(10)}{a}
 \end{equation}
@@ -269,7 +269,7 @@ average & $0.73\pm 0.02$ & $3.16\pm 0.09$\\
 \end{table}
 
 \subsubsection{Ambipolarity}
-The curve that was analyzed until now shows a current flow for increasing gate-voltages. This corresponds to electrons moving through the device. However for certain devices there also exists a current flow for decreasing gate-voltages, as shown in figure \ref{fig:ambipol} for device 4-C3. This can be explained by the fact that (positively charged) electron-holes can move through the device for negative gate-voltages. This phenomenon is called Ambipolarity
+The curve that was analyzed until now shows a current flow for increasing gate-voltages. This corresponds to electrons moving through the device. However for certain devices there also exists a current flow for decreasing gate-voltages, as shown in figure \ref{fig:ambipol} for device 4-C3. This can be explained by the fact that (positively charged) electron-holes can move through the device for negative gate-voltages. This phenomenon is called ambipolarity.
 
 \begin{figure}
 \centering
