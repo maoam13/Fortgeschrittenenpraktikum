@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{3}%
+\begin{thebibliography}{6}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -72,4 +72,28 @@
   {Cheung}},\ }\href@noop {} {\emph {\bibinfo {title} {Reactive Ion Etching}}}\
   (\bibinfo  {publisher} {U.C. Berkeley},\ \bibinfo {address}
   {Berkeley})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bin~Sun}(2017)}]{Anleitung}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~G.}\ \bibnamefont
+  {Bin~Sun}, \bibfnamefont {Jan~Klos}},\ }\href@noop {} {\emph {\bibinfo
+  {title} {Fabrication and Characterization of Pseudo-MOSFETs as part of the
+  lab course Solid State Physics}}}\ (\bibinfo  {publisher} {RWTH Aachen},\
+  \bibinfo {address} {Aachen},\ \bibinfo {year} {2017})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cristoloveanu}\ and\ \citenamefont
+  {Williams}(1992)}]{Loss98}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Cristoloveanu}}\ and\ \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Williams}},\ }\href {https://ieeexplore.ieee.org/abstract/document/144972}
+  {\emph {\bibinfo {title} {Point-contact pseudo-MOSFET for in-situ
+  characterization of as-grown silicon-on-insulator wafers}}},\ Vol.~\bibinfo
+  {volume} {13}\ (\bibinfo  {publisher} {IEEE},\ \bibinfo {year}
+  {1992})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Cristoloveanu}(2009)}]{mos}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Cristoloveanu}},\ }\href@noop {} {\emph {\bibinfo {title} {The Corbino
+  Pseudo-MOSFET on SOI: Measurements, Model, and Applications}}}\ (\bibinfo
+  {publisher} {IEEE TRANSACTIONS ON ELECTRON DEVICES, VOL. 56, NO. 3},\
+  \bibinfo {year} {2009})\BibitemShut {NoStop}%
 \end{thebibliography}%

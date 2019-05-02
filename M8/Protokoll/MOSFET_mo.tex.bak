@@ -226,8 +226,20 @@ The curve that was analyzed until now shows a current flow for increasing gate-v
 
 
 \section{Results and Discussion}
-The Analysis described in the previous chapter is done for all measured devices
+\section{Results and Discussion}
+The analysis described in the previous chapter is done for all measured devices. The results are listed in table \ref{tab:transfer_results}.\\
+\\
+In order to have a better overview over the data $\mu_{eff}$ is plotted against the channel-length, as seen in figure \ref{fig:plot}. It turns out that a lot of devices have a rather small mobility, while other have one that up to 2 orders larger. This even occurs for devices with the same channel length and does not seem to be related to the size of the device at all. This makes an analysis of the channel-length dependence impossible.\\
+However this phenomenon seems to have a correlation with the threshold- voltage. For small $\mu_{eff}$ the threshold-voltage also seems to be small (larger negative values). This indicates that the devices are influenced by something that is not wanted, most likely fabrication related. It could be that the contact between aluminum and silicon is not perfect, because the SOI was not perfectly cleaned. As a result the Schottky-barriers would be imperfect and have a different current flow behavior. The fact that the aluminum layer was also not perfectly removed further indicates that there was a problem with the fabrication.\\
+\\
+Literature values for Pseudo-Mosfets are usually in the order of \SI{100}{cm^2/Vs}, for example in 
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{Bilder/figure_1.png}
+\caption{charge carrier mobility plotted against the channel length.}
+\label{fig:plot}
+\end{figure}
 
 \begin{table}
 \centering
