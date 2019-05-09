@@ -157,13 +157,19 @@ Afterwards the etching is applied and the resist prevents the layer underneath. 
 \end{figure}
 
 The general setup for reactive ion etching is shown in fig. \ref{fig:Reactive_Ion_Etching}: In a vacuum chamber a capacitor with an oszillating electric field is placed. The sample gets placed on one electrode. The frequency used is $f = \SI{13.56}{MHz}$. The reason is to not get interference with frequencies used for radio outside the laboratory. \\
-After the vacuum has established the etching gas is injected in the chamber. The fast oszillating strong electric field establishes a plasma separating the electrons and ions of the etching gas. \\
-With switching from the oszillating to a static electric field the ions get accalerated towards the electrode on which the wafer is. The ions react with the material to be etched and this way the material is removed. \\
+After the vacuum has established the etching gas is injected in the chamber. The fast oszillating strong electric field establishes a plasma separating the electrons and ions of the etching gas. In this plasma there are amoung others radicals (F*, O*) and positive (SF$_5^+$) and negative ions (F$^-$). These ions react with the silicon to be etched \cite{Jansen_1996}:
+\begin{equation*}
+\text{Si} + x \text{F*} \rightarrow \text{SiF}_x \qquad \text{with} \qquad x \leq 4
+\end{equation*}
+Siliconflourid is a gas and will be taken out of the vacuum chamber after the process. The radicals can react with the silicon, too \cite{Jansen_1996}: 
+\begin{equation*}
+\text{Si} + x \text{F*} + y \text{O*} \rightarrow \text{SiF}_x \text{O}_y
+\end{equation*}
 After the reactive ion etching an O$_2$ plasma is used to remove the resist.
 
 
 \section{Measurement}
-On the sample are multiple devices with different sizes. For one of these the output characteristic is measured via measuring the drain source current for different gate voltages depending on drain source voltage. \\
+On the sample are multiple devices with different sizes. For one of these the output characteristic is measured via measuring the drain source current for different gate voltages depending on constant drain source voltage. \\
 Afterwards the transfer characteristic is measured for multiple devices. This is done by measuring the drain source current for different gate voltages at constant drain voltage.\\
 In figure \ref{fig:bezeichnung} an overview of the mesa structure is given. The quadrants are numbered from top left to bottom right.\\
 During the measurement a lot of devices showed a drain-current that was significantly higher than expected (by a factor $10^5$). This indicates that these devices are short-circuited and unusable for measurement.
