@@ -22,11 +22,11 @@ def derivative(f0,h):
         f1[i] = np.mean(f1[i-4:i+4])
     return f1
 
-name = "4c3_full"
+name = "4a5"
 subx2 = -4.5
 subx1 = -8
-R1 = float(75)
-R2 = float(175)
+R1 = float(25)
+R2 = float(225)
 data = np.genfromtxt("../Daten/transfer_"+name+".csv",delimiter = ',', skip_header = 1)
 plotnumber = 311
 V_th_array = []
@@ -63,6 +63,9 @@ for i in range(1,4):
     g_array.append(g)
     dg = lin[1]
     dg_array.append(dg)
+    
+    
+    U = 0.02*dataset+0.01
     y2 = y/np.sqrt(lin[0])
     dy2 = np.sqrt((y2/y * ey)**2+(y2/g * dg)**2)
     x2 = x
@@ -71,7 +74,7 @@ for i in range(1,4):
     steigung = lin2[0]
     dsteigung = lin2[1]
     
-    U = 0.02*dataset+0.01
+    
     f = 2*np.pi/np.log(R2/R1)
     C = s.epsilon_0*3.9/(145*10**-9)
     dR = 1*10**-7
@@ -95,8 +98,8 @@ for i in range(1,4):
     plt.figure("linreg")
     ax1=plt.subplot(111)
     ax1.set_ylabel("$I_d$[A]")
-    ax1.set_xlabel("$U_g$[V]")
-    plt.plot(x,y,label="$U_d = $"+str(U)+" V" )
+    ax1.set_xlabel("$V_g$[V]")
+    plt.plot(x,y,label="$V_d = $"+str(U)+" V" )
     
     #plt.errorbar(x,y,yerr = ey,fmt='.')
     plt.plot(x[begin:],lin[0]*x[begin:]+lin[2],color = 'r',linestyle='dashed')
@@ -104,7 +107,7 @@ for i in range(1,4):
     plt.figure("res")
     ax2=plt.subplot(plotnumber)
     plotnumber+=1
-    ax2.set_xlabel("$U_g$[V]")
+    ax2.set_xlabel("$V_g$[V]")
     ax2.set_ylabel("residuals[A]")
     res = y-(lin[0]*x+lin[2])
     plt.errorbar(x,res,yerr = ey,fmt='.')
@@ -115,31 +118,31 @@ for i in range(1,4):
     plt.savefig("../Bilder/"+name+"_linreg.jpg")
     
     plt.figure('mu')
-    plt.plot(x2*np.sqrt(U),y/np.sqrt(lin[0]),label="$U_d = $"+str(U)+" V")
+    plt.plot(x2*np.sqrt(U),y/np.sqrt(lin[0]),label="$V_d = $"+str(U)+" V")
     plt.plot(x[begin:]*np.sqrt(U),lin2[0]*x[begin:]+lin2[2],color = 'r',linestyle='dashed')
     plt.axis([-2.,1,0,max(y2)*1.3])
     plt.ylabel("$I_d/\sqrt{g}[\sqrt{V/A}]$")
-    plt.xlabel("$U_g \cdot \sqrt{U_d}[V^{3/2}]$")
+    plt.xlabel("$V_g \cdot \sqrt{V_d}[V^{3/2}]$")
     plt.legend()
     plt.savefig("../Bilder/"+name+"_mu.jpg")
     
     plt.figure("log")
-    ax1.set_ylabel("U[V]")
-    plt.plot(x,y,label="$U_d = $"+str(U)+" V")
+    ax1.set_ylabel("V[V]")
+    plt.plot(x,y,label="$V_d = $"+str(U)+" V")
     plt.plot(x[a2:b2],np.exp(linlog[0]*x[a2:b2]+linlog[2]),color = 'r',linestyle='dashed')
     plt.yscale('log')
     plt.ylabel("$log(I_d)[log(A)]$")
-    plt.xlabel("$U_g[V]$")
+    plt.xlabel("$V_g[V]$")
     plt.legend()
     
     plt.figure("amipol")
     ax1=plt.subplot(111)
     ax1.set_ylabel("$I_d$[A]")
-    ax1.set_xlabel("$U_g$[V]")
-    plt.plot(x,y,label="$U_d = $"+str(U)+" V" )
+    ax1.set_xlabel("$V_g$[V]")
+    plt.plot(x,y,label="$V_d = $"+str(U)+" V" )
     plt.legend()
     
-    print str(np.round(U,2))+" & $" + str(np.round(V_th,2)) + "\pm " + str(np.round(dV_th,2)) +"$ & $" + str(np.round(g*10**9,2)) + "\pm " + str(np.round(dg*10**9,2)) +"$ & $" + str(np.round(mu_eff*10**4,2)) + "\pm " + str(np.round(dmu_eff*10**4,2)) + "$\\\\"
+    print str(np.round(U,2))+" & $" + str(np.round(V_th,2)) + "\pm " + str(np.round(dV_th,2)) +"$ & $" + str(np.round(g*10**9*np.sqrt(U),2)) + "\pm " + str(np.round(dg*10**9,2)) +"$ & $" + str(np.round(mu_eff*10**4,2)) + "\pm " + str(np.round(dmu_eff*10**4,2)) + "$\\\\"
 
 V_th,dV1,dV2 = p.gew_mittelwert(np.array(V_th_array),np.array(dV_th_array))
 g,dg1,dg2 = p.gew_mittelwert(np.array(g_array),np.array(dg_array))

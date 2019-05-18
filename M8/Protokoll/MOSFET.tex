@@ -75,7 +75,7 @@ pra,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-Pseudo-MOSFET structures have been investigated in recent years as they provide multiple applications. Additionally they can be used to determine relatively easily the charge carrier mobility $\mu _{eff}$ of different materials such as Si even in different configurations. In this paper a deeper look is given into important technologies used for fabricating Pseudo-MOSFETs, namely Optical Lithography and Reactive Ion Etching. Afterwards a set of devices is analyzed to characterize the output and transfer of the device, which give an indication of the quality of the device.
+Pseudo-MOSFET structures have been investigated in recent years as they provide multiple applications. Additionally they can be used to determine relatively easily the charge carrier mobility $\mu _{eff}$ of different materials such as Si even in different configurations. In this paper a deeper look is given into important technologies used for fabricating Pseudo-MOSFETs, namely Optical Lithography and Reactive Ion Etching. Afterwards a set of devices is analyzed to characterize the output and transfer qualities. It turns out that the devices have a mobility in the order of \SI{1}{cm^2/Vs}, which is smaller by a factor 100 compared to other similar devices.
 \end{abstract}
 
 \maketitle
@@ -177,26 +177,26 @@ During the measurement a lot of devices showed a drain-current that was signific
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{Bilder/Screenshot_1.png}
-\caption{Output curves for different gate-voltages.\cite{Anleitung}}
+\caption{Structure of the Mesa, as well as identification labels and parameters of the Pseudo-MOSFETs.\cite{Anleitung}}
 \label{fig:bezeichnung}
 \end{figure}
 
 \section{Data Analysis}
-In the following chapter the characteristic values of the MOSFETs are extracted out of the measurement data. The methods that are used to do this are shown with the help of the data set of device A5 of the lower right quadrant (4-A5). This device has a tunnel length of \SI{200}{\mu m} with an inner radius of \SI{25}{\mu m} and an outer radius of \SI{225}{\mu m}.
+In the following chapter the characteristic values of the MOSFETs are extracted out of the measurement data. The methods that are used to do this are shown with the help of the data set of device A5 of the lower right quadrant (4-A5). This device has a length of \SI{200}{\mu m} with an inner radius of \SI{25}{\mu m} and an outer radius of \SI{225}{\mu m}.
 \subsection{Output Characteristics}
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.55]{Bilder/output.png}
 \caption{Output curves for different gate-voltages. The first vertical line approximately indicates the end of the linear regime and the second the start of the saturation.}
 \label{fig:output}
 \end{figure}
 
-In a first step the output characteristics of the device was measured to determine an appropriate gate voltage. For this the drain-voltage  $V_d$ was plotted against the drain-current $I_d$. As predicted by theoretical calculations the curves show a linear behavior for small drain-voltages. For the measured device and gate-voltages this goes up to approximately $V_d \approx \SI{0.08}{V}$. They enter saturation at around $V_d \approx \SI{0.5}{V}$. As a result of this three drain-voltages in the linear regime ($V_d = \SI{0.03}{V},\SI{0.05}{V} $ and \SI{0.07}{V}) were chosen and the transfer-characteristic was measured for each of these values.
+In a first step the output characteristics of the device was measured to determine an appropriate gate voltage. For this the drain-voltage  $V_d$ is plotted against the drain-current $I_d$. As predicted by theoretical calculations the curves show a linear behavior for small drain-voltages. For the measured device and gate-voltages this goes up to approximately $V_d \approx \SI{0.08}{V}$. They reach saturation at around $V_d \approx \SI{0.5}{V}$. As a result of this three drain-voltages in the linear regime ($V_d = \SI{0.03}{V},\SI{0.05}{V} $ and \SI{0.07}{V}) were chosen and the transfer-characteristic was measured for each of these values.
 
 \subsection{Transfer Characteristic}
 \subsubsection{Effective Charge Carrier Mobility}
 For the extraction of the effective charge carrier mobility $\mu_{eff}$ the $\frac{I_d}{\sqrt{g_m}}$-method is used.\\
-First the measured drain-current $I_d$ is plotted against the gate-voltage $V_g$ for three different drain-voltages $V_d$ = \SI{0.03}{V}, \SI{0.05}{V} and \SI{0.07}{V} , as seen in figure \ref{fig:linreg1}. Then the point with the highest slope is determined numerically and a linear regression is fitted at a \SI{1}{\volt} area around this point. The resulting straights are also shown in figure \ref{fig:linreg1}.
+First the measured drain-current $I_d$ is plotted against the gate-voltage $V_g$ for three different drain-voltages $V_d$ = \SI{0.03}{V}, \SI{0.05}{V} and \SI{0.07}{V} , as shown in figure \ref{fig:linreg1}. Then the point with the highest slope is determined numerically and a linear regression is fitted at a \SI{1}{\volt} area around this point. The resulting straights are also shown in figure \ref{fig:linreg1}.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.55]{Bilder/linreg.png}
@@ -212,30 +212,32 @@ The slope of this fit is also used to determine $\mu_{eff}$ with the help of the
 \end{equation}
 
 where $f = \frac{2\pi}{ln(R_2/R_1)}$ is a structural factor, $C_{ox} = \epsilon_0 \epsilon_{ox} / d_{ox}$ is the capacity of the oxide-layer and g is the slope. $\epsilon_{ox} = 3.9$ is used. A constant error of \SI{0.1}{\mu m} is assumed for the radii $R_1$ and $R_2$ to account for uncertainties in the fabrication process.\\
-In order to determine  $\mu_{eff}$ the right side of this equation $I_d/\sqrt{g}$ is plotted against $V_g$, as seen in figure \ref{fig:linreg2}. This figure displays $I_d/\sqrt{g}$ plotted against $V_g \cdot \sqrt{V_d}$ in order to compare the three slopes without the differing influence of $V_d$. A second linear regression is then fitted to the data. From the slope $a$ of this fit one can get $\mu_{eff}$ through the following equation:
+In order to determine  $\mu_{eff}$ the right side of this equation $I_d/\sqrt{g}$ is plotted against $V_g \cdot \sqrt{V_d}$, as seen in figure \ref{fig:linreg2}. A second linear regression is then fitted to the data. From the slope $a$ of this fit one can get $\mu_{eff}$ through the following equation:
 \begin{equation}
-\mu_{eff} = \dfrac{a^2}{f C V_d}
+\mu_{eff} = \dfrac{a^2}{f C_{ox}}
 \end{equation}
-This is also done for all three drain-voltages. A final value for $\mu_{eff}$ is again calculated by taking the weighted average. The results are listed in table \ref{tab:exaple_data}.
+This equation is independent of $V_d$, because the value is already included through the rescaling of the x-Axis with $\sqrt{V_d}$.\\
+This regression is also done for all three drain-voltages. A final value for $\mu_{eff}$ is again calculated by taking the weighted average. The results are listed in table \ref{tab:exaple_data}.
 \begin{figure}
 \centering
 \includegraphics[scale=0.55]{Bilder/mu.png}
 \caption{$I_d/\sqrt{g}$ plotted against $V_g \cdot \sqrt{V_d}$ for different drain voltages, including the second linear fit to determine $\mu_{eff}$.}
 \label{fig:linreg2}
 \end{figure}
-\begin{table}
+
+\begin{table}[b]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
-$U_d$ & $V_{th}[\si{V}]$ & $g[\si{nA/V}]$ & $mu_{eff}[\si{cm^2/Vs}]$\\
+$U_d$ & $V_{th}[\si{V}]$ & $g[\si{nA/V}]$ & $\mu_{eff}[\si{cm^2/Vs}]$\\
 \hline
-0.03 & $-1.51\pm 0.02$ & $6.48\pm 0.07$ & $0.59\pm 0.02$\\
+0.03 & $-1.51\pm 0.02$ & $6.48\pm 0.07$ & $3.17\pm 0.03$\\
 \hline
-0.05 & $-1.6\pm 0.02$ & $9.72\pm 0.09$ & $0.53\pm 0.01$\\
+0.05 & $-1.6\pm 0.02$ & $9.72\pm 0.09$ & $2.86\pm 0.03$\\
 \hline
-0.07 & $-1.69\pm 0.02$ & $12.12\pm 0.1$ & $0.47\pm 0.01$\\
+0.07 & $-1.69\pm 0.02$ & $12.12\pm 0.1$ & $2.54\pm 0.02$\\
 \hline
-average & $-1.61\pm 0.05$ & $8.64\pm 1.6$ &$0.51\pm 0.03$\\
+average & $-1.61\pm 0.05$ & &  $2.77\pm 0.17$\\
 \hline
 \end{tabular}
 \caption{Results for device 4-A5.}
@@ -250,9 +252,9 @@ average & $-1.61\pm 0.05$ & $8.64\pm 1.6$ &$0.51\pm 0.03$\\
 
 The subthreshold slope is an important characteristic of a MOSFET because it gives an indication for how fast it can change its behavior. A steeper slope means that a smaller voltage difference is required for it to be turned on, which can be achieved quicker. A perfect MOSFET would have an infinite slope which corresponds to a step-function characteristic.\\
 \\
-In order to analyze the subthreshold slope the drain-current is plotted logarithmicly against the gate-voltage as shown in figure \ref{fig:log}. A voltage area is then manually  selected, in which the curves appear to be linear. In this area a linear fit is fitted against the curves in order to obtain the slope. Because the subthreshold slope is usually given by the unit $\si{V/dec}$ the final value is obtained by
+In order to analyze the subthreshold slope the drain-current is plotted logarithmicly against the gate-voltage as shown in figure \ref{fig:log}. A voltage area is then manually  selected, in which the curves appear to be linear. In this area a linear fit is fitted to the curves in order to obtain the slope. Because the subthreshold slope is usually given by the unit $\si{V/dec}$ the final value is obtained by
 \begin{equation}
-\Delta V = \dfrac{log(10)}{a}
+\Delta V = \dfrac{\si{log}(10)}{a}
 \end{equation}
 where $a$ denotes the initial slope.\\
 For the example device the voltage for the fit ranges from \SI{-8}{V} to \SI{-4.5}{V}. The results of this are shown in table \ref{tab:subthreshold_example}.
@@ -261,7 +263,7 @@ For the example device the voltage for the fit ranges from \SI{-8}{V} to \SI{-4.
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
-$U_d$[\si{V}] & a [log(A)/V] & subthreshold-slope [V/dec] \\
+$V_d$[\si{V}] & a [log(A)/V] & subthreshold-slope [V/dec] \\
 \hline
 0.03 & $0.71\pm 0.02$ & $3.26\pm 0.10$\\
 \hline
@@ -288,7 +290,7 @@ average & $0.73\pm 0.02$ & $3.16\pm 0.09$\\
 \subsubsection{Ambipolarity}
 The curve that was analyzed until now shows a current flow for increasing gate-voltages. This corresponds to electrons moving through the device. However for certain devices there also exists a current flow for decreasing gate-voltages, as shown in figure \ref{fig:ambipol} for device 4-C3. This can be explained by the fact that (positively charged) electron-holes can move through the device for negative gate-voltages. This phenomenon is called ambipolarity.
 
-\begin{figure}
+\begin{figure}[b]
 \centering
 \includegraphics[scale=0.6]{Bilder/amipol.png}
 \caption{transfer characteristic of device 4-C3 for the full negative range of $V_g$. A second current flow can be observed for large negative voltages.}
@@ -300,18 +302,13 @@ The curve that was analyzed until now shows a current flow for increasing gate-v
 The analysis described in the previous chapter is done for all measured devices. The results are listed in table \ref{tab:transfer_results}.\\
 In order to have a better overview over the data $\mu_{eff}$ is plotted against the channel-length, as seen in figure \ref{fig:plot}. It turns out that a lot of devices have a rather small mobility, while other have one that up to 2 orders larger. This even occurs for devices with the same channel length and does not seem to be related to the size of the device at all. This makes an analysis of the channel-length dependence impossible.\\
 However this phenomenon seems to have a correlation with the threshold- voltage. For small $\mu_{eff}$ the threshold-voltage also seems to be small (larger negative values). This indicates that the devices are influenced by something that is not wanted, most likely fabrication related. It could be that the contact between aluminum and silicon is not perfect, because the SOI was not perfectly cleaned. As a result the Schottky-barriers would be imperfect and have a different current flow behavior. The fact that the aluminum layer was also not perfectly removed further indicates that there was a problem with the fabrication.
-\begin{figure}
+\begin{figure}[b]
 \centering
 \includegraphics[scale=0.55]{Bilder/figure_1.png}
 \caption{Charge carrier mobility plotted against the channel length.}
 \label{fig:plot}
 \end{figure}
-Literature values for Pseudo-Mosfets are usually of the order of \SI{100}{cm^2/Vs}, for example in \cite{Loss98} the carrier mobility is 250-\SI{360}{cm^2/Vs}. This means that even the mobility of the correctly functioning devices are smaller by a factor 100 when compared to literature values. One of the reasons for this can be in the use of different materials or structure. The measurements of the SOI might not be optimized to deliver a high mobility. The materials can also influence the height of the Schottky barriers and therefore the mobility.\\
-\\
-The subthreshold-slope values are also listed in table \ref{tab:transfer_results}. Please note that for the devices 4-E2, 4-E3 and 4-E4 the slope was mostly nonlinear, which resulted in a higher value. The other slopes vary between 2-\SI{4}{V/dec}. This is also higher and therefore worse than comparable literature values, which are usually smaller than \SI{1}{V/dec} (\cite{Loss98}, \cite{mos}). This has similar reasons to the ones listed above.
-\newpage
-
-
+Literature values for Pseudo-Mosfets are usually of the order of \SI{100}{cm^2/Vs}, for example in \cite{Loss98} the carrier mobility is 250-\SI{360}{cm^2/Vs}. This means that even the mobility of the correctly functioning devices are smaller by a factor 100 compared to literature values. One of the reasons for this can be in the use of different materials or structure. The measurements of the SOI might not be optimized to deliver a high mobility.\\
 
 \begin{table}
 \centering
@@ -363,6 +360,8 @@ Position & length & $R_1$ & $R_2$ & $V_{th}$ [\si{\volt}]  & $\mu_{eff}$  [\si{c
 \caption{Results of transfer characterization. The Position of the corresponding device is denoted by [quadrant-gridposition]. $\Delta V$ denotes the subthreshold-slope.}
 \label{tab:transfer_results}
 \end{table}
+
+The subthreshold-slope values are also listed in table \ref{tab:transfer_results}. Please note that for the devices 4-E2, 4-E3 and 4-E4 the slope was mostly nonlinear, which resulted in a higher value. The other slopes vary between 2-\SI{4}{V/dec}. This is also higher and therefore worse than comparable literature values, which are usually smaller than \SI{1}{V/dec} (\cite{Loss98}, \cite{mos}). This has similar reasons to the ones listed above.
 \section{Conclusion}
 The fabricated and measured devices qualitatively behave like it was expected. The measurement of the output characteristic resulted in a linear behavior up to \SI{0.08}{V} and the reach of saturation at \SI{0.5}{V}.\\
 \\
