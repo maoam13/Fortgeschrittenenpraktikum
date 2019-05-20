@@ -1,0 +1,189 @@
+WSxM file copyright UAM
+Profile curve file
+Image header size: 4186
+
+[Axis Texts]
+
+    X title orientation: 0
+    X title position: (0.425101, 0.912955, 0.574899, 1.00202)
+    Y title orientation: 90
+    Y title position: (0, 0.427126, 0.0890688, 0.572874)
+
+[Curve Settings]
+
+    Average color: rgb(0, 0, 255)
+    Average line style: 0
+    Average pen style: 0
+    Average pen width: 1
+    Axis color: rgb(0, 0, 0)
+    Background color: rgb(255, 255, 255)
+    Bottom scale, Increment for user scale mode: 0
+    Bottom scale, Log step for user scale mode: 1
+    Bottom scale, Maximum for user scale mode: 0
+    Bottom scale, Minimum for user scale mode: 0
+    Bottom scale, Notation: 3
+    Bottom scale, Number of minor ticks: 4
+    Bottom scale, Scale mode: 2
+    Bottom scale, Scale type: Linear
+    Bottom scale, Show axis: Yes
+    Bottom scale, Show magnitude: Yes
+    Bottom scale, Show ticks: Yes
+    Bottom scale, Show values: Yes
+    Bottom scale, Show zero marker: Yes
+    Bottom scale, Size of characters: 4
+    Bottom scale, Size of margin: 15
+    Bottom scale, Text orientation: 0
+    Bottom scale, Ticks placement: 1
+    Bottom scale, Values presicion: -1
+    Frame color: rgb(0, 0, 0)
+    Grid color: rgb(0, 0, 0)
+    Left scale, Increment for user scale mode: 0
+    Left scale, Log step for user scale mode: 1
+    Left scale, Maximum for user scale mode: 0
+    Left scale, Minimum for user scale mode: 0
+    Left scale, Notation: 3
+    Left scale, Number of minor ticks: 4
+    Left scale, Scale mode: 2
+    Left scale, Scale type: Linear
+    Left scale, Show axis: Yes
+    Left scale, Show magnitude: Yes
+    Left scale, Show ticks: Yes
+    Left scale, Show values: Yes
+    Left scale, Show zero marker: Yes
+    Left scale, Size of characters: 4
+    Left scale, Size of margin: 20
+    Left scale, Text orientation: 0
+    Left scale, Ticks placement: 1
+    Left scale, Values presicion: -1
+    Line 0, Line color: rgb(0, 128, 0)
+    Line 0, Line style: 0
+    Line 0, Pen style: 0
+    Line 0, Pen width: 1
+    Line 0, Show line: Yes
+    Numbers color: rgb(0, 0, 0)
+    Right scale, Increment for user scale mode: 0
+    Right scale, Log step for user scale mode: 1
+    Right scale, Maximum for user scale mode: 0
+    Right scale, Minimum for user scale mode: 0
+    Right scale, Notation: 3
+    Right scale, Number of minor ticks: 4
+    Right scale, Scale mode: 2
+    Right scale, Scale type: Linear
+    Right scale, Show axis: No
+    Right scale, Show magnitude: Yes
+    Right scale, Show ticks: No
+    Right scale, Show values: No
+    Right scale, Show zero marker: Yes
+    Right scale, Size of characters: 4
+    Right scale, Size of margin: 10
+    Right scale, Text orientation: 0
+    Right scale, Ticks placement: 1
+    Right scale, Values presicion: -1
+    Scales color: rgb(0, 0, 0)
+    Top scale, Increment for user scale mode: 0
+    Top scale, Log step for user scale mode: 1
+    Top scale, Maximum for user scale mode: 0
+    Top scale, Minimum for user scale mode: 0
+    Top scale, Notation: 3
+    Top scale, Number of minor ticks: 4
+    Top scale, Scale mode: 2
+    Top scale, Scale type: Linear
+    Top scale, Show axis: No
+    Top scale, Show magnitude: Yes
+    Top scale, Show ticks: No
+    Top scale, Show values: No
+    Top scale, Show zero marker: Yes
+    Top scale, Size of characters: 4
+    Top scale, Size of margin: 15
+    Top scale, Text orientation: 0
+    Top scale, Ticks placement: 1
+    Top scale, Values presicion: -1
+
+[General Info]
+
+    Number of lines: 1
+    Number of points: 62
+    X axis text: X[#x]
+    X axis unit: µm
+    Y axis text: Z[#y]
+    Y axis unit: nm
+
+[Miscellaneous]
+
+    Comments: Profile from scan00 Image 2.txt (5.0µm x 5.0µm) :converted :plane :equalize :plane\nscan00 Image 2.txt (5.0µm x 5.0µm) :converted :plane :equalize :plane was a TopoBwd image
+    First Forward: Yes
+    Saved with version: 5.0 Develop 9.1
+    Version: 3.0 (July 2004)
+
+[Number of Points]
+
+    Number of Points 0000: 62
+
+[Points List]
+
+    Point 0: (3.60784 µm, 1.88235 µm)
+    Point 1: (3.60784 µm, 3.07843 µm)
+
+[Header end]
+0 23.6287266886462 
+0.01953125 23.285822681843 
+0.0390625 23.0144338204752 
+0.05859375 22.7646654790782 
+0.078125 22.0663084121533 
+0.09765625 22.2849678145786 
+0.1171875 20.647057239173 
+0.13671875 0.781491308667853 
+0.15625 11.6562093144822 
+0.17578125 18.9936269622665 
+0.1953125 21.7145893370388 
+0.21484375 21.507855642268 
+0.234375 10.4463496459515 
+0.25390625 2.38273671691615 
+0.2734375 0.186659717581165 
+0.29296875 0.411313176836074 
+0.3125 0.473579044581555 
+0.33203125 1.22571222516763 
+0.3515625 0.315700767895549 
+0.37109375 0.771302212690671 
+0.390625 0.563847356480665 
+0.41015625 0.693780202474557 
+0.4296875 1.10976272872631 
+0.44921875 0.460968842171013 
+0.46875 0.701956754818241 
+0.48828125 1.38779497080498 
+0.5078125 0.54504436525076 
+0.52734375 0.878534589784863 
+0.546875 1.01572256515789 
+0.56640625 0.424412148245466 
+0.5859375 0.375844664335318 
+0.60546875 0.289045612114506 
+0.625 0.881640597993197 
+0.64453125 0.0204108157027179 
+0.6640625 0 
+0.68359375 0.424664519427552 
+0.703125 0.609510243309046 
+0.72265625 0.453529541123231 
+0.7421875 0.860713698903027 
+0.76171875 0.686148450477134 
+0.78125 0.526266866550003 
+0.80078125 1.24514061718918 
+0.8203125 0.797737433850159 
+0.83984375 1.38869259192413 
+0.859375 1.88719919646601 
+0.87890625 3.7031582542254 
+0.8984375 7.24924945680121 
+0.91796875 10.5589595289926 
+0.9375 14.7753588302584 
+0.95703125 22.2503242379208 
+0.9765625 28.2849643161944 
+0.99609375 28.1025424541383 
+1.015625 26.6614620970081 
+1.03515625 26.6623502436669 
+1.0546875 26.3583341544741 
+1.07421875 26.7099951693232 
+1.09375 26.6576234221859 
+1.11328125 27.1053736875474 
+1.1328125 27.1580663117304 
+1.15234375 27.1315473964991 
+1.171875 26.6897102063803 
+1.19140625 26.9214804826394 

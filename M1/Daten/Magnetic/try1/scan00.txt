@@ -1,0 +1,87 @@
+
+;ANFATEC Parameterfile
+
+Version : 1.12
+Date : 15.05.2019
+Time : 15:38:30
+UserName : supervisor
+
+SetPoint         :    69.285
+SetPointPhysUnit : V
+FeedBackModus    : ncAFM R
+Bias             :    10.000
+BiasPhysUnit     : mV
+Ki               :    600
+Kp               :   1800
+
+XScanRange :    20.000
+YScanRange :    20.000
+XPhysUnit  : µm
+YPhysUnit  : µm
+Speed      :  1.600 ; lines/sec
+LineRate   :  0.800 ; lines/sec
+Angle      :  35.000
+xPixel     :    128
+yPixel     :    128
+yCenter    :     0.000
+xCenter    :     0.000
+dzdx       : dz/dx=-1,941°
+dzdy       : dz/dy=-1,306°
+overscan[%]:  5.000
+
+LockInFreq         :  76018.26
+LockInFreqPhysUnit : Hz
+LockInAmpl         :     1.000
+LockInAmplPhysUnit : V
+
+FlyOn              : 1
+FlyHeight          : -25,000
+
+FileDescBegin
+FileName : scan00TopoFwd.int
+Caption  : TopoFwd
+Scale    : -2.05800000000000E-0006
+PhysUnit : nm
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00TopoBwd.int
+Caption  : TopoBwd
+Scale    : -2.05800000000000E-0006
+PhysUnit : nm
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00AmplitudeFwd.int
+Caption  : AmplitudeFwd
+Scale    :  4.97340153778636E-0009
+PhysUnit : V
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00AmplitudeBwd.int
+Caption  : AmplitudeBwd
+Scale    :  4.97340153778636E-0009
+PhysUnit : V
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00Amplitudefly.int
+Caption  : Amplitudefly
+Scale    :  4.97340153778636E-0009
+PhysUnit : V
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00Phasefly.int
+Caption  : Phasefly
+Scale    :  1.00000000000000E-0003
+PhysUnit : °
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+

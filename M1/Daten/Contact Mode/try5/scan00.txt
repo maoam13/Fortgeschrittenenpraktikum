@@ -1,0 +1,95 @@
+
+;ANFATEC Parameterfile
+
+Version : 1.12
+Date : 15.05.2019
+Time : 17:11:20
+UserName : Admin
+
+SetPoint         :    40.000
+SetPointPhysUnit : mV
+FeedBackModus    : cmAFM
+Bias             :     0.000
+BiasPhysUnit     : mV
+Ki               :  30000
+Kp               :  90000
+
+XScanRange :     5.000
+YScanRange :     5.000
+XPhysUnit  : µm
+YPhysUnit  : µm
+Speed      :  4.000 ; lines/sec
+LineRate   :  2.000 ; lines/sec
+Angle      :  -0.000
+xPixel     :    512
+yPixel     :    512
+yCenter    :     0.000
+xCenter    :     0.000
+dzdx       : dz/dx=0,000°
+dzdy       : dz/dy=0,000°
+overscan[%]:  5.000
+
+FileDescBegin
+FileName : scan00TopoFwd.int
+Caption  : TopoFwd
+Scale    : -2.19520000000000E-0006
+PhysUnit : nm
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00TopoBwd.int
+Caption  : TopoBwd
+Scale    : -2.19520000000000E-0006
+PhysUnit : nm
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00PhaseFwd.int
+Caption  : PhaseFwd
+Scale    :  1.01000000000000E-0003
+PhysUnit : °
+Offset   : -1.00000100000000E+0001
+FileDescEnd
+
+FileDescBegin
+FileName : scan00PhaseBwd.int
+Caption  : PhaseBwd
+Scale    :  1.01000000000000E-0003
+PhysUnit : °
+Offset   : -1.00000100000000E+0001
+FileDescEnd
+
+FileDescBegin
+FileName : scan00T-BFwd.int
+Caption  : T-BFwd
+Scale    : -1.00000000000000E-0005
+PhysUnit : mV
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00T-BBwd.int
+Caption  : T-BBwd
+Scale    : -1.00000000000000E-0005
+PhysUnit : mV
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00L-RFwd.int
+Caption  : L-RFwd
+Scale    :  1.00000000000000E-0005
+PhysUnit : mV
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
+FileDescBegin
+FileName : scan00L-RBwd.int
+Caption  : L-RBwd
+Scale    :  1.00000000000000E-0005
+PhysUnit : mV
+Offset   :  0.00000000000000E+0000
+FileDescEnd
+
