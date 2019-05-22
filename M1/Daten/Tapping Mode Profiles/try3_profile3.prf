@@ -1,0 +1,182 @@
+WSxM file copyright UAM
+Profile curve file
+Image header size: 4172
+
+[Axis Texts]
+
+    X title orientation: 0
+    X title position: (0.425101, 0.912955, 0.574899, 1.00202)
+    Y title orientation: 90
+    Y title position: (0, 0.427126, 0.0890688, 0.572874)
+
+[Curve Settings]
+
+    Average color: rgb(0, 0, 255)
+    Average line style: 0
+    Average pen style: 0
+    Average pen width: 1
+    Axis color: rgb(0, 0, 0)
+    Background color: rgb(255, 255, 255)
+    Bottom scale, Increment for user scale mode: 0
+    Bottom scale, Log step for user scale mode: 1
+    Bottom scale, Maximum for user scale mode: 0
+    Bottom scale, Minimum for user scale mode: 0
+    Bottom scale, Notation: 3
+    Bottom scale, Number of minor ticks: 4
+    Bottom scale, Scale mode: 2
+    Bottom scale, Scale type: Linear
+    Bottom scale, Show axis: Yes
+    Bottom scale, Show magnitude: Yes
+    Bottom scale, Show ticks: Yes
+    Bottom scale, Show values: Yes
+    Bottom scale, Show zero marker: Yes
+    Bottom scale, Size of characters: 4
+    Bottom scale, Size of margin: 15
+    Bottom scale, Text orientation: 0
+    Bottom scale, Ticks placement: 1
+    Bottom scale, Values presicion: -1
+    Frame color: rgb(0, 0, 0)
+    Grid color: rgb(0, 0, 0)
+    Left scale, Increment for user scale mode: 0
+    Left scale, Log step for user scale mode: 1
+    Left scale, Maximum for user scale mode: 0
+    Left scale, Minimum for user scale mode: 0
+    Left scale, Notation: 3
+    Left scale, Number of minor ticks: 4
+    Left scale, Scale mode: 2
+    Left scale, Scale type: Linear
+    Left scale, Show axis: Yes
+    Left scale, Show magnitude: Yes
+    Left scale, Show ticks: Yes
+    Left scale, Show values: Yes
+    Left scale, Show zero marker: Yes
+    Left scale, Size of characters: 4
+    Left scale, Size of margin: 20
+    Left scale, Text orientation: 0
+    Left scale, Ticks placement: 1
+    Left scale, Values presicion: -1
+    Line 0, Line color: rgb(0, 128, 0)
+    Line 0, Line style: 0
+    Line 0, Pen style: 0
+    Line 0, Pen width: 1
+    Line 0, Show line: Yes
+    Numbers color: rgb(0, 0, 0)
+    Right scale, Increment for user scale mode: 0
+    Right scale, Log step for user scale mode: 1
+    Right scale, Maximum for user scale mode: 0
+    Right scale, Minimum for user scale mode: 0
+    Right scale, Notation: 3
+    Right scale, Number of minor ticks: 4
+    Right scale, Scale mode: 2
+    Right scale, Scale type: Linear
+    Right scale, Show axis: No
+    Right scale, Show magnitude: Yes
+    Right scale, Show ticks: No
+    Right scale, Show values: No
+    Right scale, Show zero marker: Yes
+    Right scale, Size of characters: 4
+    Right scale, Size of margin: 10
+    Right scale, Text orientation: 0
+    Right scale, Ticks placement: 1
+    Right scale, Values presicion: -1
+    Scales color: rgb(0, 0, 0)
+    Top scale, Increment for user scale mode: 0
+    Top scale, Log step for user scale mode: 1
+    Top scale, Maximum for user scale mode: 0
+    Top scale, Minimum for user scale mode: 0
+    Top scale, Notation: 3
+    Top scale, Number of minor ticks: 4
+    Top scale, Scale mode: 2
+    Top scale, Scale type: Linear
+    Top scale, Show axis: No
+    Top scale, Show magnitude: Yes
+    Top scale, Show ticks: No
+    Top scale, Show values: No
+    Top scale, Show zero marker: Yes
+    Top scale, Size of characters: 4
+    Top scale, Size of margin: 15
+    Top scale, Text orientation: 0
+    Top scale, Ticks placement: 1
+    Top scale, Values presicion: -1
+
+[General Info]
+
+    Number of lines: 1
+    Number of points: 55
+    X axis text: X[#x]
+    X axis unit: µm
+    Y axis text: Z[#y]
+    Y axis unit: nm
+
+[Miscellaneous]
+
+    Comments: Profile from scan00 Image 1.txt (7.0µm x 7.0µm) :converted :plane :equalize\nscan00 Image 1.txt (7.0µm x 7.0µm) :converted :plane :equalize was a TopoFwd image
+    First Forward: Yes
+    Saved with version: 5.0 Develop 9.1
+    Version: 3.0 (July 2004)
+
+[Number of Points]
+
+    Number of Points 0000: 55
+
+[Points List]
+
+    Point 0: (3.19685 µm, 3.85827 µm)
+    Point 1: (6.17323 µm, 4.07874 µm)
+
+[Header end]
+0 1.01836214055243 
+0.0548373290478971 1.32757639139754 
+0.109674658095794 0 
+0.164511987143691 0.935012716193114 
+0.219349316191588 0.91600305222164 
+0.274186645239485 0.703708337683111 
+0.329023974287383 1.33127249958079 
+0.38386130333528 1.14311794785908 
+0.438698632383177 3.23781462506918 
+0.493535961431074 7.32579123783398 
+0.548373290478971 26.2067992101922 
+0.603210619526868 30.7036798756913 
+0.658047948574765 29.9201637259496 
+0.712885277622662 30.1645405879142 
+0.767722606670559 30.0977919377565 
+0.822559935718456 30.1047558648343 
+0.877397264766353 30.3685953584966 
+0.932234593814251 29.641170926004 
+0.987071922862148 29.5015724117013 
+1.04190925191004 29.0270941401154 
+1.09674658095794 29.1860755773496 
+1.15158391000584 30.2403982400979 
+1.20642123905374 30.5908514937705 
+1.26125856810163 30.4530069432315 
+1.31609589714953 29.8569497866997 
+1.37093322619743 29.8071568513212 
+1.42577055524532 30.114472255289 
+1.48060788429322 30.5534293350552 
+1.53544521334112 31.4152870544833 
+1.59028254238902 29.0421133738425 
+1.64511987143691 29.8013499443207 
+1.69995720048481 29.9317257472608 
+1.75479452953271 30.9819798097456 
+1.8096318585806 30.9253861487864 
+1.8644691876285 30.9623887375947 
+1.9193065166764 31.2068995066804 
+1.9741438457243 31.137108311121 
+2.02898117477219 31.5564886088573 
+2.08381850382009 31.5546058851635 
+2.13865583286799 31.6360704658107 
+2.19349316191588 31.6437214900825 
+2.24833049096378 31.2546101056439 
+2.30316782001168 32.5053955696128 
+2.35800514905957 34.2274506814572 
+2.41284247810747 35.2970751772937 
+2.46767980715537 32.1324269948209 
+2.52251713620327 15.2843369793777 
+2.57735446525116 4.56832819102306 
+2.63219179429906 5.84691979964191 
+2.68702912334696 5.33723712646224 
+2.74186645239485 6.79702087331111 
+2.79670378144275 6.11213500127792 
+2.85154111049065 5.73383716564877 
+2.90637843953855 5.60643298013929 
+2.96121576858644 5.36531750183417 

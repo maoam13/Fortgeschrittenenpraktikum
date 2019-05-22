@@ -1,0 +1,199 @@
+WSxM file copyright UAM
+Profile curve file
+Image header size: 4172
+
+[Axis Texts]
+
+    X title orientation: 0
+    X title position: (0.425101, 0.912955, 0.574899, 1.00202)
+    Y title orientation: 90
+    Y title position: (0, 0.427126, 0.0890688, 0.572874)
+
+[Curve Settings]
+
+    Average color: rgb(0, 0, 255)
+    Average line style: 0
+    Average pen style: 0
+    Average pen width: 1
+    Axis color: rgb(0, 0, 0)
+    Background color: rgb(255, 255, 255)
+    Bottom scale, Increment for user scale mode: 0
+    Bottom scale, Log step for user scale mode: 1
+    Bottom scale, Maximum for user scale mode: 0
+    Bottom scale, Minimum for user scale mode: 0
+    Bottom scale, Notation: 3
+    Bottom scale, Number of minor ticks: 4
+    Bottom scale, Scale mode: 2
+    Bottom scale, Scale type: Linear
+    Bottom scale, Show axis: Yes
+    Bottom scale, Show magnitude: Yes
+    Bottom scale, Show ticks: Yes
+    Bottom scale, Show values: Yes
+    Bottom scale, Show zero marker: Yes
+    Bottom scale, Size of characters: 4
+    Bottom scale, Size of margin: 15
+    Bottom scale, Text orientation: 0
+    Bottom scale, Ticks placement: 1
+    Bottom scale, Values presicion: -1
+    Frame color: rgb(0, 0, 0)
+    Grid color: rgb(0, 0, 0)
+    Left scale, Increment for user scale mode: 0
+    Left scale, Log step for user scale mode: 1
+    Left scale, Maximum for user scale mode: 0
+    Left scale, Minimum for user scale mode: 0
+    Left scale, Notation: 3
+    Left scale, Number of minor ticks: 4
+    Left scale, Scale mode: 2
+    Left scale, Scale type: Linear
+    Left scale, Show axis: Yes
+    Left scale, Show magnitude: Yes
+    Left scale, Show ticks: Yes
+    Left scale, Show values: Yes
+    Left scale, Show zero marker: Yes
+    Left scale, Size of characters: 4
+    Left scale, Size of margin: 20
+    Left scale, Text orientation: 0
+    Left scale, Ticks placement: 1
+    Left scale, Values presicion: -1
+    Line 0, Line color: rgb(0, 128, 0)
+    Line 0, Line style: 0
+    Line 0, Pen style: 0
+    Line 0, Pen width: 1
+    Line 0, Show line: Yes
+    Numbers color: rgb(0, 0, 0)
+    Right scale, Increment for user scale mode: 0
+    Right scale, Log step for user scale mode: 1
+    Right scale, Maximum for user scale mode: 0
+    Right scale, Minimum for user scale mode: 0
+    Right scale, Notation: 3
+    Right scale, Number of minor ticks: 4
+    Right scale, Scale mode: 2
+    Right scale, Scale type: Linear
+    Right scale, Show axis: No
+    Right scale, Show magnitude: Yes
+    Right scale, Show ticks: No
+    Right scale, Show values: No
+    Right scale, Show zero marker: Yes
+    Right scale, Size of characters: 4
+    Right scale, Size of margin: 10
+    Right scale, Text orientation: 0
+    Right scale, Ticks placement: 1
+    Right scale, Values presicion: -1
+    Scales color: rgb(0, 0, 0)
+    Top scale, Increment for user scale mode: 0
+    Top scale, Log step for user scale mode: 1
+    Top scale, Maximum for user scale mode: 0
+    Top scale, Minimum for user scale mode: 0
+    Top scale, Notation: 3
+    Top scale, Number of minor ticks: 4
+    Top scale, Scale mode: 2
+    Top scale, Scale type: Linear
+    Top scale, Show axis: No
+    Top scale, Show magnitude: Yes
+    Top scale, Show ticks: No
+    Top scale, Show values: No
+    Top scale, Show zero marker: Yes
+    Top scale, Size of characters: 4
+    Top scale, Size of margin: 15
+    Top scale, Text orientation: 0
+    Top scale, Ticks placement: 1
+    Top scale, Values presicion: -1
+
+[General Info]
+
+    Number of lines: 1
+    Number of points: 72
+    X axis text: X[#x]
+    X axis unit: µm
+    Y axis text: Z[#y]
+    Y axis unit: nm
+
+[Miscellaneous]
+
+    Comments: Profile from scan00 Image 1.txt (7.0µm x 7.0µm) :converted :plane :equalize\nscan00 Image 1.txt (7.0µm x 7.0µm) :converted :plane :equalize was a TopoFwd image
+    First Forward: Yes
+    Saved with version: 5.0 Develop 9.1
+    Version: 3.0 (July 2004)
+
+[Number of Points]
+
+    Number of Points 0000: 72
+
+[Points List]
+
+    Point 0: (2.64567 µm, 6.61417 µm)
+    Point 1: (6.55906 µm, 6.83465 µm)
+
+[Header end]
+0 0.0600124787263212 
+0.0547742195787532 0.794230369590878 
+0.109548439157506 0.8850399111152 
+0.164322658736259 2.77438672568883 
+0.219096878315013 1.20823613929065 
+0.273871097893766 1.4511641701115 
+0.328645317472519 2.45027010282502 
+0.383419537051272 1.41561005031122 
+0.438193756630025 2.24246313122785 
+0.492967976208778 1.30656902142596 
+0.547742195787532 2.52833834894363 
+0.602516415366285 0.327206781024415 
+0.657290634945038 0 
+0.712064854523791 2.13140478991522 
+0.766839074102544 3.15988467646844 
+0.821613293681297 4.46780238187148 
+0.87638751326005 5.3195358448836 
+0.931161732838804 28.1490982132127 
+0.985935952417557 31.3799638829373 
+1.04071017199631 30.6631071369991 
+1.09548439157506 31.1703305060194 
+1.15025861115382 31.0854341481875 
+1.20503283073257 31.2410854689895 
+1.25980705031132 31.6498739329857 
+1.31458126989008 31.7279359556437 
+1.36935548946883 31.1525487900958 
+1.42412970904758 30.8898501181463 
+1.47890392862634 30.7173868467512 
+1.53367814820509 30.9923801450213 
+1.58845236778384 31.3218165663152 
+1.64322658736259 30.987600515833 
+1.69800080694135 30.872616764583 
+1.7527750265201 31.5463876639722 
+1.80754924609885 31.8312725275964 
+1.86232346567761 33.59216070449 
+1.91709768525636 33.5712214608589 
+1.97187190483511 32.1976490710454 
+2.02664612441387 31.7234627608868 
+2.08142034399262 31.40661512254 
+2.13619456357137 31.3795205417466 
+2.19096878315013 31.520207192993 
+2.24574300272888 31.7320358437939 
+2.30051722230763 31.5854083032455 
+2.35529144188639 32.2698676251177 
+2.41006566146514 31.9663602092867 
+2.46483988104389 32.4194758833689 
+2.51961410062265 32.489823977786 
+2.5743883202014 32.4513955860912 
+2.62916253978015 32.4570994691137 
+2.6839367593589 32.2234696183843 
+2.73871097893766 32.1522910572451 
+2.79348519851641 32.3755676692801 
+2.84825941809516 32.5569862324537 
+2.90303363767392 14.75823468606 
+2.95780785725267 8.3242375622001 
+3.01258207683142 6.76232590449649 
+3.06735629641018 5.56028195090789 
+3.12213051598893 5.29933943792071 
+3.17690473556768 6.08241367111054 
+3.23167895514644 5.91881285419367 
+3.28645317472519 5.77370878154488 
+3.34122739430394 6.25655666417128 
+3.3960016138827 6.16111896216921 
+3.45077583346145 6.57970988544048 
+3.5055500530402 6.70853368289818 
+3.56032427261896 7.09802195990073 
+3.61509849219771 7.21403018733236 
+3.66987271177646 7.60473460441631 
+3.72464693135521 7.23121791156132 
+3.77942115093397 7.03570549110418 
+3.83419537051272 7.44861434306517 
+3.88896959009147 7.3837140502153 
