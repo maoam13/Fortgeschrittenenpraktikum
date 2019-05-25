@@ -64,9 +64,18 @@ def radius_y():
 
 if __name__ == '__main__':
     #hoehe in nm, breite in \mu m
-    x = radius_x()
-    y = radius_y()
-    print(x)
-    print(y)
-    print((x[0] - y[0])/(np.sqrt(x[1]**2 + y[1]**2)))
+    h1_mean, h1_sig, x_mean, x_sig = radius_x()
+    h2_mean, h2_sig, y_mean, y_sig = radius_y()
+
+    h_real, h_real_sig, x_real, x_real_sig, y_real, y_real_sig = 19, 2, 4, 1./np.sqrt(12), 4, 1./np.sqrt(12)
+
+    k_h, k_h_sig = np.abs(h_real/h1_mean), np.abs(h_real/h1_mean) * np.sqrt((h1_sig/h1_mean)**2 + (h_real_sig/h_real)**2)
+    k_x, k_x_sig = np.abs(x_real/x_mean), np.abs(x_real/x_mean) * np.sqrt((x_sig/x_mean)**2 + (x_real_sig/x_real)**2)
+    k_y, k_y_sig = np.abs(y_real/y_mean), np.abs(y_real/y_mean) * np.sqrt((y_sig/y_mean)**2 + (y_real_sig/y_real)**2)
+
+    print('Kalibrationskonstanten:')
+    print('k_h = ' + str(k_h) + ' +/- ' + str(k_h_sig))
+    print('k_x = ' + str(k_x) + ' +/- ' + str(k_x_sig))
+    print('k_y = ' + str(k_y) + ' +/- ' + str(k_y_sig))
+
 

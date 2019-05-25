@@ -211,7 +211,8 @@ def multi_lin_reg_one_plot(x, y, sig_x, sig_y, start_index, end_index, labels, s
     plt.grid()
     plt.ylabel(labels[1])
     plt.title(labels[3])
-    plt.errorbar(x, y, xerr = sig_x, yerr=sig_y, fmt='.', color = 'b')
+    plt.errorbar(x, y, xerr = sig_x, yerr=sig_y, fmt=',', color = 'b')
+    #plt.errorbar(x, y, xerr = sig_x, yerr=sig_y, fmt='.', color = 'b')
     for i in range(len(start_index)):
         plt.plot(x[start_index[i]:end_index[i]], lin(x[start_index[i]:end_index[i]], out[i][0], out[i][2]), color = color[i])
 
@@ -227,6 +228,7 @@ def multi_lin_reg_one_plot(x, y, sig_x, sig_y, start_index, end_index, labels, s
     plt.grid()
     plt.xlabel(labels[0])
     plt.ylabel(labels[2])
+    plt.tight_layout()
     plt.savefig(save_path)
     plt.close(fig)
     return out
