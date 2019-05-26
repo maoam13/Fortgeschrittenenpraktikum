@@ -20,7 +20,7 @@ def width():
                 end_index.append([int(line[1]), int(line[2]), int(line[3]), int(line[4]), int(line[5])])
         start_index, end_index = np.array(start_index), np.array(end_index)
         labels = ['X [$\mu$m]', 'Z [nm]', 'Residuals [nm]', '']
-        save_path = '../Protokoll/Bilder/Tapping Mode/fit_' + 'try3_profile{0:1.0f}.png'.format(profile)
+        save_path = '../Protokoll/Bilder/Tapping_Mode/fit_' + 'try3_profile{0:1.0f}.png'.format(profile)
         out = STMM.multi_lin_reg_one_plot(x, y, sig_x, sig_y, start_index[profile-1], end_index[profile-1], labels, save_path)
         schnitt_x, schnitt_y = np.zeros(len(out)-1), np.zeros(len(out)-1)
         for i in range(len(out) - 1):
@@ -30,6 +30,7 @@ def width():
         breite = (schnitt_x[3] - schnitt_x[0] + schnitt_x[2] - schnitt_x[1])/2
         h.append(hoehe), b.append(breite)
     h_mean, h_sig = np.mean(np.array(h)), np.std(np.array(h), ddof = 1)
+    print(h)
     b_mean, b_sig = np.mean(np.array(b)), np.std(np.array(b), ddof = 1)
     return h_mean, h_sig, b_mean, b_sig
 
