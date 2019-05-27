@@ -76,7 +76,7 @@ pra,
              %  but any date may be explicitly specified
 
 \begin{abstract}
-abstract
+The force calibration constants where determined for different setups used in contact, tapping and magnetic mode. The force calibration constant for the contact mode is several orders of magnitude smaller than the one for the tapping mode. The systematical error is dominating over the statistical.
 \end{abstract}
 
 \maketitle
@@ -97,7 +97,7 @@ abstract
 \hline 
  & Contact Mode & Tapping Mode & MFM \\ 
 \hline 
-$k_{real}$ & 0.18 $_{+0.06} ^{-0.03}$ \si{N \per m} & 40 $_{+12} ^{-6}$ \si{N \per m} & ??  \\ 
+$k_{real}$ & (0.18 $_{+0.06} ^{-0.03}$) \si{N \per m} & (40 $_{+12} ^{-6}$) \si{N \per m} & ??  \\ 
 \hline 
 \end{tabular} 
 \caption{Force constants of the cantilever as given by the producer.}
@@ -119,7 +119,7 @@ k_F = \dfrac{k_{real} \cdot k_z}{\alpha}
 In this $k_{real}$ denotes the known force constant of the cantilever (the force constants for the cantilever used in the different modes are listed in tab. \ref{tab:force_constants}), $k_z$ the calibration constant as given above and $\alpha$ is the averaged slope of the two fits mentioned above. \\
 
 
-\section{Results and Discussion}
+\section{Results}
 \subsection{Contact Mode}
 \begin{table}[h]
 \centering
@@ -160,7 +160,7 @@ Fig. \ref{fig:Contact_snap_in} shows the snap-in curve measured with the setup u
 \end{equation*}
 With this one calculates the force-calibration constant as:
 \begin{equation*}
-k_F^{contact} = (2.16 \pm 0.25 (stat.) _{+ 0.77} ^{- 0.42} (sys.)) \times 10^{-10} \si{N \per nm}
+k_F^{contact} = (2.16 \pm 0.25 \, (stat.) \, _{+ 0.77} ^{- 0.42} \, (sys.)) \times 10^{-10} \si{N \per mV}
 \end{equation*}
 
 
@@ -200,48 +200,27 @@ k_z^{tapping} = 0.695 \pm 0.074
 
 Fig. \ref{fig:Tapping_snap_in} shows the measured amplitude plotted against the sample-tip distance with the setup used in the tapping mode. The linear fit yields the averaged slope for the linear regime:
 \begin{equation*} 
-|\alpha| = \SI{1.6330 \pm 0.0057}{mV \per \mu m}
+|\alpha| = \SI{1.6330 \pm 0.0057}{V \per \mu m}
 \end{equation*}
 With this one calculates the force-calibration constant as:
 \begin{equation*}
-k_F^{tapping} = (1.70 \pm 0.18 (stat.) _{+ 0.49} ^{- 0.25} (sys.)) \times 10^{-5} \si{N \per mV}
-\end{equation*}
+k_F^{tapping} = (1.70 \pm 0.18 \, (stat.) \, _{+ 0.49} ^{- 0.25} \, (sys.)) \times 10^{-5} \si{N \per mV}
+\end{equation*} \\
 
 \subsection{Magnetic Microscopy}
 
 
 
+\section{Discussion}
+$k_F^{contact}$ is several magnitudes of order smaller than $k_F^{tapping}$. As the voltage can be measured with the same certainty this means that in contact mode the resolution with which the the force on the cantilever can be measured is much higher than in tapping mode. This makes sense as the forces to be measured in cantact mode are smaller than those in tapping mode. \\
+The statistical error on the force calibration constants is about 10\%. The systematical error only due to the error on the known force constant of the cantilever is with up to 35\% much higher. 
 
 
 
 
-%\begin{table}[h]
-%\centering
-%\begin{tabular}{|c|c|}
-%\hline 
-%Fabrication technology & "UNIBOND" \\ 
-%\hline 
-%top Si thickness & \SI{85}{nm} \\ 
-%\hline 
-%buried oxide thickness & \SI{145}{nm} \\ 
-%\hline 
-%doping type & p-type (Boron) \\ 
-%\hline 
-%doping concentration & $1 \times 10^{15}$ \si{\per\cubic\centi\meter} \\ 
-%\hline 
-%crystal orientation & (100) \\ 
-%\hline 
-%\end{tabular} 
-%\caption{Specification of the SOI wafer.}
-%\label{tab:Spec_SOI}
-%\end{table}
 
-%\begin{figure}
-%\centering
-%\includegraphics[scale=1.0]{Bilder/Lithographie.PNG}
-%\caption{Operating principle of Optical Lithographie with the different steps. Taken from \cite{Volklein00}}
-%\label{fig:Lithographie}
-%\end{figure}
+
+
 
 \bibliography{AFM}% Produces the bibliography via BibTeX.
 

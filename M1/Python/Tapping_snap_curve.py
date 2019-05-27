@@ -11,10 +11,11 @@ z, amp = data[:,1] * 10**(-7), data[:,3] * 10**(-7)
 sig_z, sig_amp = np.full(len(z), (z[1] - z[0])/np.sqrt(12)), np.full(len(z), np.std(amp[200:300]))
 
 fig = plt.figure()
-plt.errorbar(z, amp, xerr = sig_z, yerr = sig_amp, fmt = '.')
+plt.errorbar(z, amp * 10**3, xerr = sig_z * 10**3, yerr = sig_amp, fmt = '.')
 plt.grid()
 plt.xlabel('Z [nm]')
 plt.ylabel('Amplitude [mV]')
+plt.tight_layout()
 plt.savefig('../Protokoll/Bilder/Tapping_Mode/Snap_in_curve.png')
 plt.close(fig)
 
