@@ -263,7 +263,7 @@ For the example device the voltage for the fit ranges from \SI{-8}{V} to \SI{-4.
 \centering
 \begin{tabular}{|c|c|c|}
 \hline
-$U_d$[\si{V}] & a [log(A)/V] & subthreshold-slope [V/dec] \\
+$V_d$[\si{V}] & a [log(A)/V] & subthreshold-slope [V/dec] \\
 \hline
 0.03 & $0.71\pm 0.02$ & $3.26\pm 0.10$\\
 \hline
