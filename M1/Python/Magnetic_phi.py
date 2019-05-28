@@ -33,3 +33,6 @@ plt.grid()
 plt.ylabel("Amplitude [mV]")
 plt.xlabel("V [mV]")
 print fit[1],dfit[1]
+
+V,dV,dV2 = p.gew_mittelwert(np.array([151.7,174.8]),np.array([0.3,1.6]))
+print V*1.6*10**-19/1000,dV*1.6*10**-19/1000

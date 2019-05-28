@@ -208,7 +208,7 @@ k_F^{tapping} = (1.70 \pm 0.18 (stat.) _{+ 0.49} ^{- 0.25} (sys.)) \times 10^{-5
 \end{equation*}
 \\
 \subsection{Magnetic Microscopy}
-
+\subsubsection{Contact Potential Difference}
 The contact potential difference is determined by varying the Bias voltage and recording the amplitude and phase. The Force experienced by the tip is proportional to
 \begin{equation}
 F \backsim \left(U-\dfrac{\Delta\Phi}{e}\right)^2
@@ -216,18 +216,36 @@ F \backsim \left(U-\dfrac{\Delta\Phi}{e}\right)^2
 where $U$ denotes the Bias-voltage and $\Delta\Phi$ the contact potential difference. As a consequence of this force both the amplitude and phase should experience a extremum at $\Delta\Phi / e$, which means one can simply extract $\Delta\Phi$ through:
 \begin{equation}
 \Delta\Phi = U_{extr} \cdot e
+\label{eq:phi}
 \end{equation}
-For this a parabolic function is fitted against the data between \SI{-1}{V} and \SI{1}{V}, as seen in figure \ref{fig:bias}.
 
 \begin{figure}
 \centering
 \includegraphics[scale=0.5]{Bilder/Magnetic/amplitude.PNG}
 \includegraphics[scale=0.5]{Bilder/Magnetic/phase.PNG}
-\caption{Amplitude (top) and Phase (bottom) plotted against the Bias-voltage.A parabolic function is fitted against the extemum in order to extract its offset from 0.}
+\caption{Amplitude (top) and Phase (bottom) plotted against the Bias-voltage. A parabolic function is fitted against the extemum in order to extract its offset from 0.}
 \label{fig:bias}
 \end{figure}
 
+For this a parabolic function is fitted against the data between \SI{-1}{V} and \SI{1}{V}, as seen in figure \ref{fig:bias}. The extremum and its error are directly extracted from this fit. It results in a position of
+\begin{equation*}
+U_{extr}^{amplitude} = \SI{151.7 \pm 0.3}{mV}
+\end{equation*}
+\begin{equation*}
+U_{extr}^{phase} = \SI{174.8 \pm 1.6}{mV}
+\end{equation*}
+The weighted mean of the 2 values is
+\begin{equation*}
+U_{extr}^{mean} = \SI{152.5 \pm 4.2}{mV}
+\end{equation*}
+which is used to determine the final value of the contact potential difference with the help of equation \ref{eq:phi}:
+\begin{equation*}
+\Delta\Phi = \SI{152.5 \pm 4.2}{meV}
+\end{equation*}
 
+
+\subsubsection{Domain structure}
+as a second part
 
 %\begin{table}[h]
 %\centering
