@@ -181,6 +181,23 @@ With this one calculates the force-calibration constant as:
 k_F^{contact} = (2.16 \pm 0.25 \, (stat.) \, _{+ 0.77} ^{- 0.42} \, (sys.)) \times 10^{-10} \si{N \per mV}
 \end{equation*}
 
+By determing the difference $\Delta _{adhesion}$ between the T-B Signal at the constant part and at the lowest point in the snap-in curve (fig. \ref{fig:Contact_snap_in}) one can calculate the adhesion force as:
+\begin{equation*}
+F_{adhesion} = \Delta _{adhesion} \cdot k_F^{contact}
+\end{equation*}
+The result is:
+\begin{equation*}
+F_{adhesion} = (1.43140 \pm 0.00023 \, (stat.) \, _{+ 0.50783} ^{- 0.28057} \, (sys.)) \times 10^{-8} \si{N}
+\end{equation*}
+The load force, meaning the force with which the tip is pressed onto the sample, can be calculated with the difference $\Delta _{load}$ between the T-B signal at the two points with $Z=0$ in the snap-in curve (fig. \ref{fig:Contact_snap_in}) as:
+\begin{equation*}
+F_{load} = \Delta _{load} \cdot k_F^{contact}
+\end{equation*}
+The result is:
+\begin{equation*}
+F_{load} = (5.68 \pm 0.19 \, (stat.) \, _{+ 2.01} ^{- 1.11} \, (sys.)) \times 10^{-9} \si{N}
+\end{equation*}
+
 
 \subsection{Tapping Mode}
 
