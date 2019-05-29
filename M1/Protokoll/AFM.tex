@@ -83,6 +83,10 @@ The force calibration constants where determined for different setups used in co
 
 
 \section{Introduction}
+The Atomic Force Microscopy (AFM) gives an insight to the forces in a solid at atomic level. \\
+An AFM consists of a sample holder, which is moved in x and y direction with a piezo crystal, and a tip mounted on a cantilever, which is moved in z direction (meaning the distance between tip and sample) with another piezo crystal. The bending of the cantilever with certain force constant is measured with a laser beam reflected on the flip side of the cantilever. \\
+The AFM is used in three modes: Contact, Tapping and Magnetic Force. In contact mode the tip and sample are in contact. In tapping mode the tip is oszillating in a certain distance to the sample and tapping it which changes the amplitude of the oscilation and this gives the height of the sample at that point. Magnetic Force Microscopy (MFM) is similar to tapping mode, but the tip does not touch the sample but gets deflected from a magnetic force. \\
+The goal of the measurement is to determine the force constants of the cantilever in contact and tapping mode. With the MFM the goal is to analyse the magnetic structure of the sample. With that one can determine the possible storage density.
 
 
 \section{Measurement}
@@ -121,6 +125,15 @@ In this $k_{real}$ denotes the known force constant of the cantilever (the force
 
 \section{Results}
 \subsection{Contact Mode}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{Bilder/Contact_Mode/Rohdaten/try1_scalebar.PNG}
+\includegraphics[scale=0.5]{Bilder/Contact_Mode/Rohdaten/try1.JPG}
+\caption{Image from the sample recorded in contact mode.}
+\label{fig:Contact_raw_data}
+\end{figure}
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|}
@@ -138,6 +151,7 @@ h$_5$ & h$_6$ & h$_7$ & h$_8$ \\
 \label{tab:Contact_height}
 \end{table}
 
+Fig. \ref{fig:Contact_raw_data} shows the measured image from the sample in contact mode. The height profiles are extracted from a straight line approximately through the center of the circles. \\
 The measurement for the heights are listed in Tab. \ref{tab:Contact_height}. The height measurement therefor yield the following result:
 \begin{equation*}
 h_{measured}^{contact} = \SI{25.23 \pm 1.08}{nm}
@@ -165,6 +179,15 @@ k_F^{contact} = (2.16 \pm 0.25 \, (stat.) \, _{+ 0.77} ^{- 0.42} \, (sys.)) \tim
 
 
 \subsection{Tapping Mode}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.7]{Bilder/Tapping_Mode/Rohdaten/try3_scalebar.PNG}
+\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Rohdaten/try3.JPG}
+\caption{Image from the sample recorded in tapping mode.}
+\label{fig:Tapping_raw_data}
+\end{figure}
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|}
@@ -182,6 +205,7 @@ h$_5$ & h$_6$ & h$_7$ & \\
 \label{tab:Tapping_height}
 \end{table}
 
+Fig. \ref{fig:Tapping_raw_data} shows the mesured image from the sample in tapping mode. This looks different as in contact mode, because its an other area from an identical sample. The height profiles are extracted as straight lines perpendicular to the lines on the sample. \\
 The measurement for the heights are listed in Tab. \ref{tab:Contact_height}. The height measurement therefor yield the following result:
 \begin{equation*}
 h_{measured}^{tapping} = \SI{27.35 \pm 0.42}{nm}
