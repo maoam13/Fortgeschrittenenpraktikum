@@ -245,35 +245,45 @@ which is used to determine the final value of the contact potential difference w
 
 
 \subsubsection{Domain structure}
-as a second part the domain structure of the sample is analyzed. 
+As a second part the domain structure of the sample is analyzed, as seen in figure \ref{fig:magnetic_domain}. There are three different areas with magnetic domains visible. Between these areas there is a small zone where no domains are visible.\\
+In order to analyze the density of the domains the width of the areas is visually estimated. This is done by extracting 3 distances for each area alongside the visual structure from the beginning of one area to the beginning of the next, as shown in figure \ref{fig:magnetic_width}. 
+This is done for the \SI{20}{\mu m^2} scan as well as for the \SI{30}{\mu m^2} scan to increase accuracy. The resulting average width is
+\begin{equation}
+L = \SI{10.24 \pm 0.43}{\mu m}
+\end{equation}
 
-%\begin{table}[h]
-%\centering
-%\begin{tabular}{|c|c|}
-%\hline 
-%Fabrication technology & "UNIBOND" \\ 
-%\hline 
-%top Si thickness & \SI{85}{nm} \\ 
-%\hline 
-%buried oxide thickness & \SI{145}{nm} \\ 
-%\hline 
-%doping type & p-type (Boron) \\ 
-%\hline 
-%doping concentration & $1 \times 10^{15}$ \si{\per\cubic\centi\meter} \\ 
-%\hline 
-%crystal orientation & (100) \\ 
-%\hline 
-%\end{tabular} 
-%\caption{Specification of the SOI wafer.}
-%\label{tab:Spec_SOI}
-%\end{table}
+Next a height profile of every area is extracted and the distance between the leftmost and rightmost peak measured. For this both the peak position and its error are visually estimated.
 
-%\begin{figure}
-%\centering
-%\includegraphics[scale=1.0]{Bilder/Lithographie.PNG}
-%\caption{Operating principle of Optical Lithographie with the different steps. Taken from \cite{Volklein00}}
-%\label{fig:Lithographie}
-%\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Snap_in_curve.PNG}
+\caption{Measured amplitude plotted against the sample-tip distance.}
+\label{fig:magnetic_domain}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Snap_in_curve.PNG}
+\caption{Measured amplitude plotted against the sample-tip distance.}
+\label{fig:magnetic_width}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+area & left peak[nm] & right peak[nm] & distance[nm] & \#peaks \\ 
+\hline 
+top & $0.29 \pm 0.15$ & $18.64 \pm 0.05$ & $18.35 \pm 0.16$ & 6\\ 
+\hline
+middle & $1.86 \pm 0.08$ & $16.91 \pm 0.28$ & $15.05 \pm 0.29$ & 3\\ 
+\hline
+bottom & $1.65 \pm 0.16$ & $19.67 \pm 0.04$ & $18.02 \pm 0.16$ & 7\\ 
+\hline
+\end{tabular} 
+\caption{Peak positions and distance between them extracted from the height profiles.}
+\label{tab:magnetic_peaks}
+\end{table}
 
 \bibliography{AFM}% Produces the bibliography via BibTeX.
 

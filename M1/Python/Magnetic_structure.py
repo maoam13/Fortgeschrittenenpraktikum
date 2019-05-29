@@ -43,4 +43,6 @@ plt.plot(x,y)
 plt.grid()
 #plt.ylabel("Phase [$^o$]")
 plt.ylabel("Amplitude [mV]")
-plt.xlabel("x [$\mu m$]")
+plt.xlabel("x [$\mu m$]")#
+
+print np.mean([10.3,9.75,9.42,10.9,10.6,10.3,10,10.6,10.3]), np.std([10.3,9.75,9.42,10.9,10.6,10.3,10,10.6,10.3])
