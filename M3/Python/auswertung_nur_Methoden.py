@@ -344,3 +344,11 @@ def genfromcsv(csv_file, skipheader = 0):
                 data.append(data_line)
             i+=1
     return data
+
+def max_diff_index(arr):
+    #returns the index array of the maximal difference between two neighbouring values in arr  
+    diff = np.zeros(len(arr) - 1)
+    for i in range(len(arr) - 1):
+        diff[i] = arr[i] - arr[i+1]
+    return np.where(diff == np.max(diff))[0]
+
