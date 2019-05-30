@@ -233,22 +233,7 @@ With this one calculates the force-calibration constant as:
 k_F^{contact} = (2.16 \pm 0.25 \, (stat.) \, _{+ 0.77} ^{- 0.42} \, (sys.)) \times 10^{-10} \si{N \per mV}
 \end{equation*}
 
-By determing the difference $\Delta _{adhesion}$ between the T-B Signal at the constant part and at the lowest point in the snap-in curve (fig. \ref{fig:Contact_snap_in}) one can calculate the adhesion force as:
-\begin{equation*}
-F_{adhesion} = \Delta _{adhesion} \cdot k_F^{contact}
-\end{equation*}
-The result is:
-\begin{equation*}
-F_{adhesion} = (1.43140 \pm 0.00023 \, (stat.) \, _{+ 0.50783} ^{- 0.28057} \, (sys.)) \times 10^{-8} \si{N}
-\end{equation*}
-The load force, meaning the force with which the tip is pressed onto the sample, can be calculated with the difference $\Delta _{load}$ between the T-B signal at the two points with $Z=0$ in the snap-in curve (fig. \ref{fig:Contact_snap_in}) as:
-\begin{equation*}
-F_{load} = \Delta _{load} \cdot k_F^{contact}
-\end{equation*}
-The result is:
-\begin{equation*}
-F_{load} = (5.68 \pm 0.19 \, (stat.) \, _{+ 2.01} ^{- 1.11} \, (sys.)) \times 10^{-9} \si{N}
-\end{equation*}
+
 \subsection{Tapping Mode}
 
 \begin{figure}
@@ -309,15 +294,6 @@ k_F^{tapping} = (1.70 \pm 0.18 \, (stat.) \, _{+ 0.49} ^{- 0.25} \, (sys.)) \tim
 \subsection{Magnetic Microscopy}
 
 \subsubsection{Contact Potential Difference}
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{Bilder/Magnetic/amplitude.PNG}
-\includegraphics[scale=0.5]{Bilder/Magnetic/phase.PNG}
-\caption{Amplitude (top) and Phase (bottom) plotted against the Bias-voltage. A parabolic function is fitted against the extemum in order to extract its offset from 0.}
-\label{fig:bias}
-\end{figure}
-
 The contact potential difference is determined by varying the Bias voltage and recording the amplitude and phase. The Force experienced by the tip is proportional to
 \begin{equation}
 F \backsim \left(U-\dfrac{\Delta\Phi}{e}\right)^2
@@ -327,6 +303,14 @@ where $U$ denotes the Bias-voltage and $\Delta\Phi$ the contact potential differ
 \Delta\Phi = U_{extr} \cdot e
 \label{eq:phi}
 \end{equation}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Magnetic/amplitude.PNG}
+\includegraphics[scale=0.5]{Bilder/Magnetic/phase.PNG}
+\caption{Amplitude (top) and Phase (bottom) plotted against the Bias-voltage. A parabolic function is fitted against the extemum in order to extract its offset from 0.}
+\label{fig:bias}
+\end{figure}
 
 For this a parabolic function is fitted against the data between \SI{-1}{V} and \SI{1}{V}, as seen in figure \ref{fig:bias}. The extremum and its error are directly extracted from this fit. It results in a position of
 \begin{equation*}
@@ -344,6 +328,7 @@ which is used to determine the final value of the contact potential difference w
 \Delta\Phi = \SI{152.5 \pm 4.2}{meV}
 \end{equation*}
 
+
 \subsubsection{Domain structure}
 As a second part the domain structure of the sample is analyzed, as seen in figure \ref{fig:magnetic_domain}. There are three different areas with magnetic domains visible. Between these areas there is a small zone where no domains are visible.\\
 In order to analyze the density of the domains the width of the areas is visually estimated. This is done by extracting 3 distances for each area alongside the visual structure from the beginning of one area to the beginning of the next, as shown in figure \ref{fig:magnetic_width}. 
@@ -356,16 +341,16 @@ which is used for the density calculation.
 \begin{figure}
 \centering
 \includegraphics[scale=0.7]{Bilder/Magnetic/try2_scale.jpg}
-\includegraphics[scale=0.45]{Bilder/Magnetic/try2_lines.jpg}
+\includegraphics[scale=0.5]{Bilder/Magnetic/try2_lines.jpg}
 \includegraphics[scale=0.7]{Bilder/Magnetic/try4_scale.jpg}
-\includegraphics[scale=0.45]{Bilder/Magnetic/try4_lines.jpg}
+\includegraphics[scale=0.5]{Bilder/Magnetic/try4_lines.jpg}
 \caption{Images of the phase in order to analyze the domain structure. The extracted distances for the width are marked by blue lines. The extracted height profiles are marked by green lines.}
 \label{fig:magnetic_domain}
 \end{figure}
 
 Next a height profile of every area in the \SI{20}{\mu m^2} scan is extracted and the distance between the leftmost and rightmost peak measured. For this both the peak position and its error are visually estimated. The profile of the \SI{30}{\mu m^2} scan is not analyzed because there are a lot of points where the tip lost contact or crashed into the surface, which makes an analysis hard. The profiles can be found in figure \ref{fig:magnetic_profile}. The resulting peak distances are listed in table \ref{tab:magnetic_peaks}.
 
-\begin{figure}[t]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{Bilder/Magnetic/top.png}
 \includegraphics[scale=0.4]{Bilder/Magnetic/mid.png}
@@ -408,7 +393,7 @@ bottom & $1.65 \pm 0.16$ & $19.67 \pm 0.04$ & $18.02 \pm 0.16$ & $0.038 \pm 0.00
 
 \section{Conclusion}
 $k_F^{contact}$ is several magnitudes of order smaller than $k_F^{tapping}$. As the voltage can be measured with the same certainty this means that in contact mode the resolution with which the the force on the cantilever can be measured is much higher than in tapping mode. This makes sense as the forces to be measured in cantact mode are smaller than those in tapping mode. \\
-The statistical error on the force calibration constants is about 10\%. The systematical error only due to the error on the known force constant of the cantilever is with up to 35\% much higher. 
+The statistical error on the force calibration constants is about 10\%. The systematical error only due to the error on the known force constant of the cantilever is with up to 35\% much higher.\\
 \\
 The storage density of the analyzed hard drive is \SI{19.3\pm 4.5}{MBit/in^2}. However the density varies nearly by a factor 2 depending on which area of the image is analyzed. This makes it possible that there is a big systematical error in this result, and a bigger area with more Bits is needed to give an accurate estimation of the storage density.\\
 Modern hard drives can reach a storage density of \SI{5}{GBit/in^2} - \SI{20}{GBit/in^2} \cite{Loss98}, which is a factor 1000 bigger than the result of this analysis.
