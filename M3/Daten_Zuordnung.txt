@@ -1,0 +1,42 @@
+Temp.-Kalibration:
+	293.65K (RT)	107.9k Ohm
+	77K		20.3k Ohm
+
+ALL0009		U(I) at Roomtemperature
+ALL0010		100 k Ohm
+ALL0011		95 k Ohm
+ALL0012		90 k Ohm
+ALL0013		85 k Ohm
+ALL0014		78 k Ohm
+ALL0015		75 k Ohm
+ALL0016		70 k Ohm
+ALL0017		65 k Ohm
+ALL0018		60 k Ohm
+ALL0019		55 k Ohm
+ALL0020		50 k Ohm
+ALL0021		43 k Ohm
+ALL0022		36 k Ohm
+ALL0023		30 k Ohm
+ALL0024		26 k Ohm
+ALL0025		25 k Ohm
+ALL0026		24 k Ohm
+ALL0027		23 k Ohm
+ALL0028		22 k Ohm
+ALL0029		21 k Ohm
+ALL0030		20.3 k Ohm
+ALL0031		23.5 k Ohm
+ALL0032		29 k Ohm
+ALL0033		31 k Ohm
+ALL0034		32 k Ohm
+ALL0035		33 k Ohm
+ALL0036		31 k Ohm
+ALL0037		24.3 k Ohm
+ALL0038		24.7 k Ohm
+ALL0039		26.5 k Ohm
+ALL0041		U(I) characteristic at superconducting
+ALL0042		U(I) characteristic at superconducting different osc Einstellungen
+ALL0043		U(I) characteristic at superconducting optimized
+ALL0044		U(phi) characteristic at superconducting
+ALL0045		U(I) characteristic at superconducting different settings
+ALL0046		U(I) characteristic at superconducting reingezoomt (zeit)
+ALL0047		U(I) characteristic at superconducting rausgezoomt (zeit)
