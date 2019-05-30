@@ -208,6 +208,7 @@ def multi_lin_reg_one_plot(x, y, sig_x, sig_y, start_index, end_index, labels, s
 
     fig = plt.figure()
     ax1=plt.subplot(211)
+    ax1.tick_params(axis='x', which='both', bottom=False, top=False, labelbottom=False) 
     plt.grid()
     plt.ylabel(labels[1])
     plt.title(labels[3])
@@ -237,3 +238,14 @@ def geraden_schnittpunkte(a1, b1, a2, b2):
     x = (b1-b2)/(a2-a1)
     y = a1*x+b1
     return x, y
+
+def geraden_schnittpunkte_fehler(gerade1, gerade2):
+    [a1, sig_a1, b1, sig_b1] = gerade1[:4]
+    [a2, sig_a2, b2, sig_b2] = gerade2[:4]
+    x = (b1-b2)/(a2-a1)
+    y = a1*x+b1
+    N, sig_N = (b1-b2), np.sqrt(sig_b1**2 + sig_b2**2)
+    Z, sig_Z = (a2-a1), np.sqrt(sig_a1**2 + sig_a2**2)
+    sig_x = np.abs(x * np.sqrt((sig_N / N)**2 + (sig_Z / Z)**2))
+    sig_y = np.sqrt((a1*sig_x)**2 + (sig_a1 * x)**2 + (sig_b1)**2)
+    return x, sig_x, y, sig_y
