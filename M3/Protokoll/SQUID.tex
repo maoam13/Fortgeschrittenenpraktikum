@@ -15,7 +15,7 @@
 \sisetup{separate-uncertainty = true}
 	\setlength{\parindent}{0pt} 
 	\begin{center}
-		{\LARGE Experiment protocoll}\\
+		{\LARGE Experiment protocol}\\
 		\begin{large}
 			for the solid state lab course\\[0.4cm]
 			at RWTH Aachen\\
@@ -32,8 +32,29 @@
 	\newpage
 
 \section{Introduction}
+Superconducting Quantum Information Devices ("SQUIDS") are very sensitive sensors for magnetic flux. A SQUID consists of a ring shaped superconductor with two contacts and each one Josephson junction on each path between the contacts. A Josephson junction is a small insulator between two superconductors. Electrons can tunnel through the insulator as Cooper pairs. \\
+The resolution of the measured magnetic flux is in the order of the so called fluxonium or flux quantum:
+\begin{equation*}
+\Phi _0 = \dfrac{h}{2e} = 2 \times 10^{-15}\si{Wb}
+\end{equation*}
+
+
 \section{Goal of the Experiment}
+The goal of the experiment is to first determine the critical temperature of the superconducting material $T_C$. \\
+With the SQUID cooled down to the superconducting regime one measures the voltage-current characteristic. From this one can determine the critical current $I_C$, the resistance in the normal conducting state $R_N$ and the characteristic voltage $V_C$. \\
+Next one measures the voltage-magnetic flux characteristic. From this one determines the SQUID parameter $b_L$ given by:
+\begin{equation}
+b_L = 2 \cdot I_C \cdot \dfrac{L}{\Phi _0}
+\end{equation}
+And with that the magnetic flux quantum $\Phi _0$. \\
+With bringing different metallic objects in the vicinity of the SQUID one can demonstrate the sensitivity of the SQUID to external magnetic fields. This is done with and without the metallic shielding of the SQUID.
+
+
 \section{Setup}
+The setup consits of a SQUID in a metallic tube, which shields external magnetic fields. This setup is called "Mr. SQUID" and selled by the company "Conductus". The SQUID is sinked in a dewar filled with liquid nitrogen to cool it down to the necessary temperatures. \\
+The SQUID itself is build out of Yba$_2$Cu$_3$O$_{7-x}$ with $x \approx 0-0.2$. The temperature is measured with a Pt-100 resistor.
+
+
 \section{Measurement}
 \section{Data}
 \section{Results and Discussion}
@@ -84,7 +105,6 @@
 %\caption{Messwerte der Höhen des $\pi /2$-Pulses und des FID s beim Durchfahren von $\tau$ zur Bestimmung von T1.}
 %\label{tab:T1_Daten}
 %\end{table}
-
 
 
 
