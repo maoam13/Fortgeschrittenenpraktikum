@@ -147,10 +147,38 @@ Fig. \ref{fig:U-I-characteristic} shows the U-I characteristic of the SQUID in t
 \label{fig:U-I-characteristic_fit}
 \end{figure}
 
-
+The critical current of the SQUID is equal to half of the width of the plateau. To determine this width one fits three linear regimes: One on the plateau and one each before and after it. Fig. \ref{fig:U-I-characteristic_fit} shows the U-I characteristic and the three fits. \\
+The width of the plateau is the distance in x direction between the two cross sections between the fit at the plateau and each of the other one. This yields the result:
+\begin{equation*}
+I_C^{SQUID} = \SI{27.79 \pm 0.21}{\mu A}
+\end{equation*}
+The error is determined by propagating the errors coming from the fits. \\
+\\
+From the two linear fits in before and after the plateau one get the SQUID resistance in the normal conductive regime $R_N$ which is equal to the slope. The result is the averaged mean between these two:
+\begin{equation*}
+R_N^{SQUID} = \SI{16458 \pm 54}{\Omega}
+\end{equation*}\\
+\\
+With the critical current and the resistance in the normal conductive regime one can calculate the characteristic voltage:
+\begin{equation*}
+V_C^{SQUID} = \SI{0.4574 \pm 0.0037}{V}
+\end{equation*}\\
+\\
+As the SQUID consists of two identical Josephson junctions one can easily calculate the corresponding values for one Josephson junction:
+\begin{equation*}
+I_C^{JJ} = \SI{13.89 \pm 0.10}{\mu A} \qquad R_N^{JJ} = \SI{32916 \pm 108}{\Omega}
+\end{equation*}
 
 
 \section{Conclusion}
+The measured temperature dependence of the SQUID resistance yielded the expected drop at the critical temperature, which could be determined with an accuracy of less than \SI{1}{K}. \\
+The measurement of the U-I characteristic led to the expected behaviour with a plateau around zero and linear regimes before and after the plateau. With that it was possible to determine the values for the critical current, the resistance in the normal conductive regime and the characteristic voltage with an error of less than 1\%.
+
+
+
+
+
+
 
 
 
