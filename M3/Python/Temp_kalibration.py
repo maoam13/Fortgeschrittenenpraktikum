@@ -31,6 +31,8 @@ if __name__ == '__main__':
     print(a, sig_a)
     print(b, sig_b)
 
+    print(temp_kalibration(85))
+
     lin = lambda x, a, b: a * x + b
 
     fig = plt.figure()
