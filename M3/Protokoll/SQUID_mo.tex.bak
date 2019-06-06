@@ -32,15 +32,18 @@
 	\newpage
 
 \section{Introduction}
-Superconducting Quantum Information Devices ("SQUIDS") are very sensitive sensors for magnetic flux. A SQUID consists of a ring shaped superconductor with two contacts and each one Josephson junction on each path between the contacts. A Josephson junction is a small insulator between two superconductors. Electrons can tunnel through the insulator as Cooper pairs. \\
+Superconducting Quantum Information Devices ("SQUIDS") are very sensitive sensors for measuring changes in the magnetic field. A SQUID consists of a ring shaped superconductor with two contacts and one Josephson junction on each path between the contacts. A Josephson junction is a small insulator disrupting the  superconductor. Electrons can tunnel through the insulator as Cooper pairs. \\
 The resolution of the measured magnetic flux is in the order of the so called fluxonium or flux quantum:
 \begin{equation*}
-\Phi _0 = \dfrac{h}{2e} = 2 \times 10^{-15}\si{Wb}
+\Phi _0 = \dfrac{h}{2e} = \SI{2.07e-15}{Wb}
 \end{equation*}
+Only a complete flux quantum can penetrate the ring. If the surrounding field is not exactly a multiple of the flux quantum a current gets induced into the superconductor, that increases/decreases the field strength to a full quantum. This current can be measured.
 
 
 \section{Goal of the Experiment}
-The goal of the experiment is to first determine the critical temperature of the superconducting material $T_C$. \\
+
+The goal of the experiment is to determine the value of the flux quantum.
+To achieve this the critical temperature of the superconducting material $T_C$ is determined in a first step.. \\
 With the SQUID cooled down to the superconducting regime one measures the voltage-current characteristic. From this one can determine the critical current $I_C$, the resistance in the normal conducting state $R_N$ and the characteristic voltage $V_C$. \\
 Next one measures the voltage-magnetic flux characteristic. From this one determines the SQUID parameter $b_L$ given by:
 \begin{equation}
@@ -51,7 +54,7 @@ With bringing different metallic objects in the vicinity of the SQUID one can de
 
 
 \section{Setup}
-The setup consits of a SQUID in a metallic tube, which shields external magnetic fields. This setup is called "Mr. SQUID" and selled by the company "Conductus". The SQUID is sinked in a dewar filled with liquid nitrogen to cool it down to the necessary temperatures. \\
+The setup consits of a SQUID in a metallic tube, which shields external magnetic fields. The setup is called "Mr. SQUID" and selled by the company "Conductus". The SQUID is sinked in a dewar filled with liquid nitrogen to cool it down to the necessary temperatures. \\
 The SQUID itself is build out of Yba$_2$Cu$_3$O$_{7-x}$ with $x \approx 0-0.2$. The temperature is measured with a Pt-100 resistor.
 
 
@@ -89,7 +92,7 @@ For a measured resistance from the Pt-100 resistor $R_{measured}$ one can calcul
 \begin{equation*}
 T = \dfrac{T_{room} - T_{LN_2}}{R_{RT} - R_{LN_2}} \cdot R_{measured} + T_{room} - \dfrac{T_{room} - T_{LN_2}}{R_{RT} - R_{LN_2}} \cdot R_{RT}
 \end{equation*}
-With $R_{RT}$ being the resistance measured at room temperature, $R_{LN_2}$ the resistance at the temperature of liquid nitrogen, $T_{room}$ the room temperature and $T_{LN_2}$ the temperature of liquid nitrogen. With assuming the same error on all resistance measurements $\sigma _R = \frac{\SI{1}{k \Omega}}{\sqrt{12}}$ and the same error on all temperature measurements $\sigma _T = \frac{\SI{1}{K}}{\sqrt{12}}$ the error propagation is straight forward.
+With $R_{RT}$ being the resistance measured at room temperature, $R_{LN_2}$ the resistance at the temperature of liquid nitrogen, $T_{room}$ the room temperature and $T_{LN_2}$ the temperature of liquid nitrogen. We assume the same error on all resistance measurements $\sigma _R = \frac{\SI{1}{k \Omega}}{\sqrt{12}}$ and the same error on all temperature measurements $\sigma _T = \frac{\SI{1}{K}}{\sqrt{12}}$.
 
 
 \section{Temperature Dependence of the Resistance}

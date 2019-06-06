@@ -31,7 +31,7 @@ out = STMM.multi_lin_reg_one_plot(I * 10**6, U * 10**6, sig_I * 10**6, sig_U * 1
 #R_N
 R_N = (out[0][0] + out[2][0])/2
 sig_R_N = np.abs(out[0][0] - out[2][0])/np.sqrt(12)
-print('R_N = (' + str(R_N) + ' +/- ' + str(sig_R_N) + ') Ohm')
+print('R_N = (' + str(2*R_N) + ' +/- ' + str(2*sig_R_N) + ') Ohm')
 
 #I_C
 x1, sig_x1, y1, sig_y1 = STMM.geraden_schnittpunkte_fehler(out[0], out[1])
