@@ -1,0 +1,8 @@
+Lock-In Einstellungen		72.8Hz, Output Level 2.0V, 0.1V Range, 0.1s Timeconstant
+
+Temperatur:
+Messreihe	Temperatur
+3.6K		3.658K (5.4T); 3.520K (4T); 3.427K (3T); 3.362K (2T); 3.302K (1T); 3.250K (0T); 
+		3.205K (-1T); 3.135K (-3T); 3.111K (-4T); 3.097K (-5T)
+2.2K		2.495K (-5.4T); 2.403K (-4.8T); 2.249K (-4T); 2.211K (-3T); 2.195K (-2T); 2.184K (-1T); 
+		2.171K (0T); 2.168K (1T); 2.164K (2T); 2.161K (3T); 2.163K (5T)
