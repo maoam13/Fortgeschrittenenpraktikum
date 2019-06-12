@@ -93,10 +93,55 @@ Fig. \ref{fig:raw_data} shows the measured raw data for the resistivities $R_{xx
 
 
 
-\section{Electron effective g-faktor}
+\section{Electrons effective g-factor}
 \subsection{Data analysis}
+The resistivity of the minima of the Shubnikov-de Haas oscillation follows an Arrhenius law:
+\begin{equation*}
+\sigma _{xx} = \sigma _0 \cdot e^{- \frac{\Delta _{xx}}{2 k_B T}} \qquad \Leftrightarrow \qquad R _{xx} = R _0 \cdot e^{\frac{\Delta _{xx}}{2 k_B T}}
+\end{equation*}
+One can reformulate that to:
+\begin{equation*}
+\ln (R _{xx}) = \dfrac{\Delta _{xx}}{2 k_B T} + \ln (R _{0})
+\end{equation*}
+If the filling factor of the Hall probe is odd, the activation energy $\frac{\Delta _{xx}}{2}$ equals the Zeeman energy $g^* \mu _B B$ and so one gets:
+\begin{equation*}
+\ln (R _{xx}) = g^* \cdot \dfrac{\mu _B B}{k_B T} + \ln (R _{0})
+\end{equation*}
+Obviously one can determine the electrons effective g-factor as slope if one plots $\ln (R _{xx})$ on the y-axis and $\frac{\mu _B B}{k_B T}$ on the x-axis. \\
+To extract the minima one determines the minima with a peak determination algorithm. With this one determines the B-field and the resistivity of the minimum as mean value of all datapoints which differ less than \SI{15}{\Omega} from the peak. The error is determined as the standard deviation of these datapoints. \\
+This analysis is done with each measurement once with the part with positive magnetic field and once with the part with negative magnetic field.
+
 
 \subsection{Results}
+
+\begin{figure} [H]
+\centering
+\includegraphics[scale=0.8]{Bilder/Elektron_g/4_2/lin_fit_Arrhenius_law_1.PNG}
+\caption{Linear fit of the data to the Arrhenius law exemplary for the measurement at \SI{4.2}{K} and the part with positive sign.}
+\label{fig:g-factor_lin_fit}
+\end{figure}
+
+Fig. \ref{fig:g-factor_lin_fit} shows exemplary the linear fit of the data to the Arrhenius law for the part with positive magnetic field of the measurement at \SI{4.2}{K}.
+
+\begin{table} [H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+ & positive sign & negative sign \\ 
+\hline 
+measurement at \SI{4.2}{K} & 3.44 $\pm$ 0.23 & 5.14 $\pm$ 0.37 \\ 
+\hline 
+measurement at \SI{3.5}{K} & 3.83 $\pm$ 0.28 & 4.91 $\pm$ 0.17 \\ 
+\hline 
+\end{tabular} 
+\caption{Measured values for the effective electrons g-factor.}
+\label{tab:electron_g_factor}
+\end{table}
+
+Tab. \ref{tab:electron_g_factor} lists all determined values for the effective electrons g-factor. As one averages these one gets as result:
+\begin{equation*}
+g^* = 5555 \pm 5555
+\end{equation*}
 
 
 
@@ -106,25 +151,7 @@ Fig. \ref{fig:raw_data} shows the measured raw data for the resistivities $R_{xx
 
 
 
-%\begin{table} [H]
-%\centering
-%\begin{tabular}{|c|c|c|c|}
-%\hline 
-%$T_{room}$ [K] & $T_{LN_2}$ [K] & $R_{RT}$ [k$\Omega$] & $R_{LN_2}$ [k$\Omega$] \\ 
-%\hline 
-%294.65 $\pm$ $\frac{1}{\sqrt{12}}$ & 77 $\pm$ $\frac{1}{\sqrt{12}}$ & 107.9 $\pm$ $\frac{1}{\sqrt{12}}$ & 20.3 $\pm$ $\frac{1}{\sqrt{12}}$ \\ 
-%\hline 
-%\end{tabular} 
-%\caption{Measured values for the resistance at room temperature and the temperature of liquid nitrogen.}
-%\label{tab:Temp_Calib_data}
-%\end{table}
 
-%\begin{figure} [H]
-%\centering
-%\includegraphics[scale=0.8]{Bilder/Temp_kalibration.PNG}
-%\caption{Temperature calibration for the Pt-100 resistor.}
-%\label{fig:Temp_kalibration}
-%\end{figure}
 
 
 
