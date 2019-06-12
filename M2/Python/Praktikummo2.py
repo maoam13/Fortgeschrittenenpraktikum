@@ -190,7 +190,8 @@ def fourier_fft(t,y):
     return (freq,amp)
 
 
-def exp_einhuellende(t,y,ey,Sens=0.1):
+
+def exp_einhuellende(t,y,ey,f,Sens=0.1):
     '''
     Exponentielle Einhuellende.
 
@@ -248,12 +249,14 @@ def exp_einhuellende(t,y,ey,Sens=0.1):
     PeaksLogarithmiert = log(np.array(GutePeaks))
     FortgepflanzteFehler = np.array(GutePeakFehler) / np.array(GutePeaks)
     LR = lineare_regression(np.array(GutePeakZeiten),PeaksLogarithmiert,FortgepflanzteFehler)
+    #LR = fitte_bel_function(np.array(GutePeakZeiten),GutePeaks,GutePeakFehler,f,[100,2,0,8])
 
     A0=exp(LR[2])
     sigmaA0=LR[3]*exp(LR[2])
     delta=-LR[0]
     sigmaDelta=LR[1]
-    return(A0,sigmaA0,delta,sigmaDelta)
+    return(A0,sigmaA0,delta,sigmaDelta,GutePeakZeiten)
+    #return LR,GutePeakZeiten
 
 def untermenge_daten(x,y,x0,x1):
     '''

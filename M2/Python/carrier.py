@@ -9,6 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import Praktikummo2 as p
 from scipy.interpolate import interp1d
+import scipy.constants as c
 
 data = np.genfromtxt("../Daten/4_2K.txt", delimiter = '',skip_header = 4)
 
@@ -30,15 +31,21 @@ Rxx = np.delete(Rxx, zeros)
 f = interp1d(1./B, Rxx)
 x = np.linspace(min(1./B),max(1./B),1e7)
 freq,amp = p.fourier_fft(x,f(x))
-print freq[p.find_nearest(freq,8)+np.argmax(amp[p.find_nearest(freq,8):p.find_nearest(freq,10)])]
+pos = p.find_nearest(freq,8)+np.argmax(amp[p.find_nearest(freq,8):p.find_nearest(freq,10)])
+print freq[pos]
+print 2*c.e/c.h/freq[pos]
+print 1./(144.7*c.e)
 #f = interp1d(1./B, Rxx)
 #x = np.linspace(min(B),max(B),1e5)
 #x = 1./x
 #freq,amp = p.fourier_fft(x,f(x))
 plt.figure(1)
-plt.plot(freq[:len(freq)/2],amp[:len(freq)/2])
+plt.plot(freq[:len(freq)/2],amp[:len(freq)/2]/100000)
 plt.xlim([0,40])
-plt.ylim([0,100000])
+plt.ylim([0,1])
+plt.grid()
 
 plt.figure(2)
 plt.plot(B,Rxx)
+plt.plot(B1,Rxy)
+plt.grid()
