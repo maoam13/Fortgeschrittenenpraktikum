@@ -3,7 +3,6 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
-\usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -35,7 +34,7 @@
 \section{Introduction}
 At the interfaces between different materials the fermi levels align. Therefor the conduction and valence band bend. One can use this effect to create a two dimensional electron gas ("2DEG"). This is done by building a sample of thin layers of different materials. If done correctly, the conduction band bends underneath the Fermi level in one of the layer and is above it in every other layer. \\
 With this structure one builds a hall probe, meaning a rectangular sample through which a current flows from side to side. The resistivity of the sample is measured parallel and perpendicular to this current. A variable magnetic field is applied perpendicular to the 2DEG. \\
-At low temperatures the density of states in the 2DEG at zero magnetic field is a simple step function. With applying a magnetic field Landau levels are formed meaning the density of states becomes a function with single peaks, whose height, width and distance to each other depend on the magnetic field. As the Fermi energy stays the same, the density of states at the Fermi energy oscillates with the magnetic field. And as the resistivity depends mainly on the density of states at the Fermi energy the resistivity parallel to the magnetic field oscillates as well. These oscillations are called "Shubnikov-de Haas oscillations", which are referred to as SdH-oscillations in this report. \\
+At low temperatures the density of states in the 2DEG at zero magnetic field is a simple step function. With applying a magnetic field Landau levels are formed meaning the density of states becomes a function with single peaks, whose height, width and distance to each other depend on the magnetic field. As the Fermi energy stays the same, the density of states at the Fermi energy oscillates with the magnetic field. And as the resistivity depends mainly on the density of states at the Fermi energy the resistivity parallel to the magnetic field oscillates as well. These oscillations are called "Shubnikov-de Haas oscillations". \\
 The resistivity perpendicular to the magnetic field depends linearly on the magnetic field and builds Hall plateaus.
 
 
@@ -49,7 +48,7 @@ With this setup one can cool down the sample to \SI{4.2}{K}. To reach lower temp
 
 
 \section{Measurement}
-The magnetic field is sweeped from \SI{-5.4}{T} to \SI{5.4}{T}. Meanwhile the resistivity parallel and perpendicular to the current is measured. This is done at without pumping, meaning at about \SI{4.2}{K}, with a fractional pumping power, meaning at about \SI{3.6}{K}, and with maximal pumping power, meaning at about \SI{2.2}{K}. During these measurements the temperature is written down multiple times.
+The magnetic field is sweeped from \SI{-5.4}{T} to \SI{5.4}{T}. Meanwhile the resistivity parallel and perpendicular to the current is measured. This is done at without pumping, meaning at about \SI{4.2}{K}, with a fractional pumping power, meaning at about \SI{3.5}{K}, and with maximal pumping power, meaning at about \SI{2.2}{K}.
 
 \subsection{Data}
 
@@ -60,7 +59,9 @@ The magnetic field is sweeped from \SI{-5.4}{T} to \SI{5.4}{T}. Meanwhile the re
 \label{fig:raw_data}
 \end{figure}
 
-Fig. \ref{fig:raw_data} shows the measured raw data for the resistivities $R_{xx}$ and $R_{xy}$ in dependence of the magnetic field exemplary at \SI{4.2}{K}. The measurements at \SI{3.6}{K} and \SI{2.2}{K} yield similar results (see appendix). The SdH-oscialltaion and plateaus are clearly visible. The average temperature during the measurements is \SI{4.20(1)}{K}, \SI{3.38(17)}{K} and \SI{1.33(9)}{K} respectively. The \SI{3.6}{K} and \SI{2.2}{K} measurements have a temperature gradient, which induces an additional systematic error, which was not analyzed.
+Fig. \ref{fig:raw_data} shows the measured raw data for the resistivities $R_{xx}$ and $R_{xy}$ in dependence of the magnetic field exemplary at \SI{4.2}{K}. The measurements at \SI{3.5}{K} and \SI{2.2}{K} yield similar results.
+
+
 
 \section{Charge carrier concentration}
 \subsection{Data analysis}
@@ -77,7 +78,19 @@ From this $n_s$ can be calculated:
 \begin{equation}
 n_s = g_s g_v \dfrac{e}{h} \dfrac{1}{f} = \SI{5.40(7)E9}{cm^{-2}}
 \end{equation}
-
+The carrier concentration can also be extracted from the Hall measurement Rxy by
+\begin{equation}
+R_{xy} = - \dfrac{B}{n_s e}
+\end{equation}
+For this the slope of the $R_{xy}$ curve is extracted by a linear fit to the data between $\SI{0.1}{T}$ and $\SI{1}{T}$. This area is chosen to minimize the impact of the Hall-plateaus, which are smaller for small fields. For the positive part of the \SI{4.2}{K} measurement this is shown in figure \ref{fig:n_xy} and results in a slope of
+\begin{equation}
+a = \SI{144.31(13)}{\Omega/T}
+\end{equation}
+from which $n_s^{Hall}$ can be extracted:
+\begin{equation}
+n_s^{Hall} = \dfrac{1}{a e} = \SI{4.325(4)E12}{cm^{-2}}
+\end{equation}
+The error comes directly from the fit.
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/inverseB.png}
@@ -99,45 +112,18 @@ n_s = g_s g_v \dfrac{e}{h} \dfrac{1}{f} = \SI{5.40(7)E9}{cm^{-2}}
 \label{fig:n_xy}
 \end{figure}
 
-The carrier concentration can also be extracted from the Hall measurement $R_{xy}$ by
-\begin{equation}
-R_{xy} = - \dfrac{B}{n_s e}
-\end{equation}
-For this the slope of the $R_{xy}$ curve is extracted by a linear fit to the data between $\SI{0.1}{T}$ and $\SI{1}{T}$. This area is chosen to minimize the impact of the Hall-plateaus, which are smaller for small fields. For the positive part of the \SI{4.2}{K} measurement this is shown in figure \ref{fig:n_xy}. All resulting slopes are listed in table \ref{tab:slope}.
-
-\begin{table} [H]
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline 
-measurement at & positive sign [$\Omega/T$] & negative sign [$\Omega/T$] & average [$\Omega/T$]\\ 
-\hline 
-$\SI{4.2 \pm 0.01}{K}$ & $144.31\pm 0.13$ & $-147.21\pm 0.19$ & $145.76\pm 0.23$\\ 
-\hline 
-$\SI{3.38 \pm 0.17}{K}$ & $142.12\pm 0.25$ & $-143.61\pm 0.28$ & $142.86\pm 0.37$\\ 
-\hline 
-$\SI{2.33 \pm 0.09}{K}$ & $140.69\pm 0.46$ & $-141.07\pm 0.47$ & $140.88\pm 0.66$\\ 
-\hline 
-\end{tabular} 
-\caption{slope of the linear fit against $R_{xy}$ for different temperatures. The average is calculated with equation \ref{eq:a}.}
-\label{tab:slope}
-\end{table}
-
-In order to eliminate a potential influence of $R_{xx}$ if the contacts are not perfectly aligned the positive and negative slope are subtracted from each other and divided by 2:
-\begin{equation}
-a_{real} = \dfrac{a^+ - a^-}{2}
-\label{eq:a}
-\end{equation}
-
-This eliminates the $R_{xx}$ because it is a constant offset.
-
-$n_s^{Hall}$ can now be extracted over be extracted:
-\begin{equation}
-n_s^{Hall} = \dfrac{1}{a_{real} e}
-\end{equation}
-
-
 
 \subsection{Results}
+
+The results for the carrier concentration extracted from the SdH-oscillations for all three measurements are listed in table \ref{tab:n}. The weighted mean of these values results in a final value of
+\begin{equation*}
+n_s^{SdH} = \SI{5.35(7)e9}{cm^{-2}}
+\end{equation*}
+The concentrations extracted from the Hall measurements are listed in table \ref{tab:n_hall} with a weighted mean of
+\begin{equation*}
+n_s^{Hall} = \SI{4.36(7)e12}{cm^{-2}}
+\end{equation*}
+
 \begin{table} [H]
 \centering
 \begin{tabular}{|c|c|c|}
@@ -148,7 +134,7 @@ $\SI{4.2 \pm 0.01}{K}$ & $5.40\pm 7$ & $5.38\pm 7$ \\
 \hline 
 $\SI{3.38 \pm 0.17}{K}$ & $5.38\pm 7$ & $5.29\pm 7$ \\ 
 \hline 
-$\SI{2.33 \pm 0.09}{K}$ & $5.23\pm 7$ & $5.43\pm 7$ \\ 
+$\SI{2.329 \pm 0.087}{K}$ & $5.23\pm 7$ & $5.43\pm 7$ \\ 
 \hline 
 \end{tabular} 
 \caption{Measured values for the charge carrier concentration $n_s$ extracted from the oscillations}
@@ -157,48 +143,23 @@ $\SI{2.33 \pm 0.09}{K}$ & $5.23\pm 7$ & $5.43\pm 7$ \\
 
 \begin{table} [H]
 \centering
-\begin{tabular}{|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline 
-measurement at & positive sign [\SI{e12}{cm^{-2}}] \\ 
+measurement at & positive sign [\SI{e12}{cm^{-2}}] & negative sign [\SI{e12}{cm^{-2}}] \\ 
 \hline 
-$\SI{4.2 \pm 0.01}{K}$ & $4.282\pm 0.007$\\ 
+$\SI{4.2 \pm 0.01}{K}$ & $4.325\pm 0.004$ & $4.240\pm 0.006$ \\ 
 \hline 
-$\SI{3.38 \pm 0.17}{K}$ & $4.369\pm 0.011$\\ 
+$\SI{3.38 \pm 0.17}{K}$ & $4.392\pm 0.008$ & $4.346\pm 0.009$ \\ 
 \hline 
-$\SI{2.33 \pm 0.09}{K}$ & $4.430\pm 0.021$\\ 
+$\SI{2.329 \pm 0.087}{K}$ & $4.436\pm 0.015$ & $4.424\pm 0.015$ \\ 
 \hline 
 \end{tabular} 
 \caption{Measured values for the charge carrier concentration from the Hall measurement.}
 \label{tab:n_hall}
 \end{table}
-The results for the carrier concentration extracted from the SdH-oscillations for all three measurements are listed in table \ref{tab:n}. The weighted mean of these values results in a final value of
-\begin{equation*}
-n_s^{SdH} = \SI{5.35(7)e9}{cm^{-2}}
-\end{equation*}
-The concentrations extracted from the Hall measurements are listed in table \ref{tab:n_hall} with a weighted mean of
-\begin{equation*}
-n_s^{Hall} = \SI{4.36(7)e12}{cm^{-2}}
-\end{equation*}
-
-The carrier concentration of the SdH oscillations is 3 orders larger than the one extracted from the Hall measurements. The reason for this is not clear because in theory they should be the same.
-
 
 \section{Effective electron mass}
 \subsection{Data analysis and Results}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Bilder/peaks.png}
-\caption{Extracted maxima and minima and the exponential fit.}
-\label{fig:m_fit}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.8]{Bilder/m.png}
-\caption{left and right part of equation \ref{eq:mass} plotted with an optimized mass-parameter.}
-\label{fig:m}
-\end{figure}
 The effective mass can be extracted with the help of the following formula:
 \begin{equation}
 \dfrac{\Delta R_{xx}^{\pm}(B,T_1)}{\Delta R_{xx}^{\pm}(B,T_2)} = \dfrac{T_1 sinh(X(T_2))}{T_2 sinh(X(T_1))}
@@ -213,7 +174,6 @@ In order to determine the effective mass a function similar to the right part of
 \begin{equation*}
 m^* = \SI{0.059 \pm 0.006}{m_e}
 \end{equation*}
-The theoretical value of the effective mass of GaAs is $\SI{0.067}{m_e}$\footnote{{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.720.4180\& rep=rep1\& type=pdf}}. The calculated value deviates from this by less than 2 standard deviations. This deviation is most likely due to the temperature gradient during the \SI{2.2}{K} measurement.
 
 \begin{table}
 \centering
@@ -231,20 +191,32 @@ $\SI{3.38 \pm 0.17}{K}$ & $A_0$ & $135.64\pm 12.21$ & $-12.07\pm 1.12$ \\
 $\SI{3.38 \pm 0.17}{K}$ & $b$ & $3.66\pm 0.09$ & $1.12\pm 0.12$ \\ 
 \hline 
 \hline 
-$\SI{2.33 \pm 0.09}{K}$ & $A_0$ & $128.05\pm 8.43$ & $-9.92\pm 0.73$ \\ 
+$\SI{2.329 \pm 0.087}{K}$ & $A_0$ & $128.05\pm 8.43$ & $-9.92\pm 0.73$ \\ 
 \hline 
-$\SI{2.33 \pm 0.09}{K}$ & $b$ & $3.02\pm 0.09$ & $0.51\pm 0.08$ \\ 
+$\SI{2.329 \pm 0.087}{K}$ & $b$ & $3.02\pm 0.09$ & $0.51\pm 0.08$ \\ 
 \hline 
 \end{tabular} 
 \caption{parameter describing the envelope of the form $y = A_0 e^{-b/B}$}
 \label{tab:exp}
 \end{table}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/peaks.png}
+\caption{Extracted maxima and minima and the exponential fit.}
+\label{fig:m_fit}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.8]{Bilder/m.png}
+\caption{left and right part of equation \ref{eq:mass} plotted with an optimized mass-parameter.}
+\label{fig:m}
+\end{figure}
 
 
 
-
-\section{Relaxation time}
+\section{relaxation time}
 \subsection{Data analysis}
 By having calculated a value for the effective mass the quantum relaxation time can be extracted over the following equation
 \begin{equation}
@@ -263,45 +235,11 @@ $R_{xx}$ is extracted by determining the value for $B = \SI{0}{T}$ from the data
 \begin{figure}
 \centering
 \includegraphics[scale=0.8]{Bilder/tau.png}
-\caption{$\Delta R_{xx}^{\pm}(B,T)$ plotted logarithmic against 1/B. A linear fit is fitted against the linear regime between 0 and 1.}
+\caption{}
 \label{fig:tau}
 \end{figure}
 
 \subsection{Results}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline 
-measurement at & a & $\tau_q$ [ps]\\ 
-\hline 
-$\SI{4.2 \pm 0.01}{K}$ & $-3.493 \pm 0.003$ & $0.30\pm 0.03$ \\ 
-\hline
-$\SI{3.38 \pm 0.17}{K}$ & $-3.020 \pm 0.005$ & $0.35\pm 0.04$ \\ 
-\hline
-$\SI{2.33 \pm 0.09}{K}$ & $-2.455 \pm 0.004$ & $0.43\pm 0.04$ \\ 
-\hline
-\end{tabular} 
-\caption{Results for the extracted slope and the quantum relaxation time for different temperatures.}
-\label{tab:tau_q}
-\end{table}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{|c|c|c|}
-\hline 
-measurement at & $R_{xx}[\Omega]$ & $\tau_{tr}$ [ps]\\ 
-\hline 
-$\SI{4.2 \pm 0.01}{K}$ & $7.98 \pm 0.25$ & $2.40\pm 0.25$ \\ 
-\hline
-$\SI{3.38 \pm 0.17}{K}$ & $7.64 \pm 0.20$ & $2.51\pm 0.27$ \\ 
-\hline
-$\SI{2.33 \pm 0.09}{K}$ & $7.27 \pm 0.74$ & $2.63\pm 0.38$ \\ 
-\hline
-\end{tabular} 
-\caption{Results for the transport relaxation time at different temperatures.}
-\label{tab:tau_tr}
-\end{table}
 
 The extracted quantum relaxation times are listed in table \ref{tab:tau_q}. The weighted mean leads to a final result of
 \begin{equation*}
@@ -313,10 +251,39 @@ The results for the transport relaxation time are listed in table \ref{tab:tau_t
 \end{equation*}
 As expected $\tau_{tr}$ is larger than $\tau_{q}$.
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+measurement at & a & $\tau_q$ [ps]\\ 
+\hline 
+$\SI{4.2 \pm 0.01}{K}$ & $-3.493 \pm 0.003$ & $0.30\pm 0.03$ \\ 
+\hline
+$\SI{3.38 \pm 0.17}{K}$ & $-3.020 \pm 0.005$ & $0.35\pm 0.04$ \\ 
+\hline
+$\SI{2.329 \pm 0.087}{K}$ & $-2.455 \pm 0.004$ & $0.43\pm 0.04$ \\ 
+\hline
+\end{tabular} 
+\caption{Results for the extracted slope and the quantum relaxation time for different temperatures.}
+\label{tab:tau_q}
+\end{table}
 
-
-
-
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+measurement at & $R_{xx}[\Omega]$ & $\tau_tr$ [ps]\\ 
+\hline 
+$\SI{4.2 \pm 0.01}{K}$ & $7.98 \pm 0.25$ & $2.40\pm 0.25$ \\ 
+\hline
+$\SI{3.38 \pm 0.17}{K}$ & $7.64 \pm 0.20$ & $2.51\pm 0.27$ \\ 
+\hline
+$\SI{2.329 \pm 0.087}{K}$ & $7.27 \pm 0.74$ & $2.63\pm 0.38$ \\ 
+\hline
+\end{tabular} 
+\caption{Results for the transport relaxation time at different temperatures.}
+\label{tab:tau_tr}
+\end{table}
 
 
 \section{Electrons effective g-factor}
@@ -353,13 +320,11 @@ Fig. \ref{fig:g-factor_lin_fit} shows exemplary the linear fit of the data to th
 \centering
 \begin{tabular}{|c|c|c|}
 \hline 
-measurement at & positive sign & negative sign \\ 
+ & positive sign & negative sign \\ 
 \hline 
-\SI{4.2 \pm 0.01}{K} & 3.44 $\pm$ 0.23 & 5.14 $\pm$ 0.37 \\ 
+measurement at \SI{4.2}{K} & 3.44 $\pm$ 0.23 & 5.14 $\pm$ 0.37 \\ 
 \hline 
-\SI{3.38 \pm 0.17}{K} & 3.19 $\pm$ 0.24 & 4.09 $\pm$ 0.14 \\ 
-\hline 
-\SI{2.33 \pm 0.09}{K} & 3.74 $\pm$ 0.22 & 3.87 $\pm$ 0.27 \\ 
+measurement at \SI{3.5}{K} & 3.83 $\pm$ 0.28 & 4.91 $\pm$ 0.17 \\ 
 \hline 
 \end{tabular} 
 \caption{Measured values for the effective electrons g-factor.}
@@ -368,131 +333,15 @@ measurement at & positive sign & negative sign \\
 
 Tab. \ref{tab:electron_g_factor} lists all determined values for the effective electrons g-factor. As one averages these one gets as result:
 \begin{equation*}
-g^*_{measured} = 3.85 \pm 0.20
-\end{equation*}\\
-\\
-The theoretical value for the electrons g factor is $g_{theo} \approx 2.002$, which means the measured value for the effective g-factor differs by approximately $9.25 \, \sigma$ from the literature value. Interestingly the measured value is about twice the value from the literature. 
+g^* = 5555 \pm 5555
+\end{equation*}
 
 
-\newpage
+
 \section{Conclusion}
-For all three measured temperatures the SdH-oscillation and plateaus are clearly visible. The charge carrier concentration was extracted with a value of $n_s^{SdH} = \SI{5.35(7)e9}{cm^{-2}}$. However this value is not in agreement with the concentration calculated from the Hall resistance , which is 3 magnitudes larger.\\
-The calculated effective mass was $m^* = \SI{0.059 \pm 0.006}{m_e}$ which can be in agreement with the theoretical value of $\SI{0.067}{m_e}$, if one considers the the additional systematic error induced by the temperature gradient during the measurement.\\
-The quantum relaxation time was determined as $\tau_q = \SI{0.36(5)}{ps}$ and the transport relaxation time as $\tau_{tr} = \SI{2.48(17)}{ps}$. This is in agreement with the fact that $\tau_{tr}\geq\tau_q$ should always be fulfilled.\\
-Finally the electron g-factor was determined by $g^* = 3.85 \pm 0.20$ which also is not in agreement with the literature value of 2.002.
 
 
 
-\newpage
-\section*{A. Appendix}
-\subsection*{Raw data}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.8]{Bilder/Elektron_g/2_2/Rohdaten.PNG}
-\caption{Measured resistivities $R_{xx}$ and $R_{xy}$ in dependence of the magnetic field at \SI{2.2}{K}.}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.8]{Bilder/Elektron_g/3_6/Rohdaten.PNG}
-\caption{Measured resistivities $R_{xx}$ and $R_{xy}$ in dependence of the magnetic field at \SI{3.4}{K}.}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.8]{Bilder/Elektron_g/4_2/Rohdaten.PNG}
-\caption{Measured resistivities $R_{xx}$ and $R_{xy}$ in dependence of the magnetic field at \SI{4.2}{K}.}
-\end{figure}
-
-\newpage
-\subsection*{Charge carrier concentration}
-\subsubsection*{FFT-analysis}
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/FFT/FFT2_2minus.png}
-\includegraphics[scale=0.5]{Bilder/Anhang/FFT/FFT2_2plus.png}
-\caption{FFT of the \SI{2.2}{K} measurement for the negative (left) and positive (right) part}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/FFT/FFT3_6minus.png}
-\includegraphics[scale=0.5]{Bilder/Anhang/FFT/FFT3_6plus.png}
-\caption{FFT of the \SI{3.6}{K} measurement for the negative (left) and positive (right) part}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/FFT/FFT4_2minus.png}
-\includegraphics[scale=0.5]{Bilder/Anhang/FFT/FFT4_2plus.png}
-\caption{FFT of the \SI{4.2}{K} measurement for the negative (left) and positive (right) part}
-\end{figure}
-
-\subsubsection*{Linear fit to Rxy}
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/Hall/2_2minus.png}
-\includegraphics[scale=0.5]{Bilder/Anhang/Hall/2_2plus.png}
-\caption{linear fit to Rxx of the \SI{2.2}{K} measurement for the negative (left) and positive (right) part}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/Hall/3_6minus.png}
-\includegraphics[scale=0.5]{Bilder/Anhang/Hall/3_6plus.png}
-\caption{linear fit to Rxx of the \SI{3.6}{K} measurement for the negative (left) and positive (right) part}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/Hall/4_2minus.png}
-\includegraphics[scale=0.5]{Bilder/Anhang/Hall/4_2plus.png}
-\caption{linear fit to Rxx of the \SI{4.2}{K} measurement for the negative (left) and positive (right) part}
-\end{figure}
-\newpage
-\subsection*{Effective electron mass}
-\subsubsection*{exponential fit}
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/exp/2_2.png}
-\caption{extrema an exponential fit for the \SI{2.2}{K} measurement}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/exp/3_6.png}
-\caption{extrema an exponential fit for the \SI{3.6}{K} measurement}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Anhang/exp/4_2.png}
-\caption{extrema an exponential fit for the \SI{4.2}{K} measurement}
-\end{figure}
-
-\subsection*{Electrons effective f-factor}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Elektron_g/4_2/lin_fit_Arrhenius_law_1.PNG}
-\includegraphics[scale=0.5]{Bilder/Elektron_g/4_2/lin_fit_Arrhenius_law_2.PNG}
-\caption{Linear fit of the data to the Arrhenius law for the measurement at \SI{2.2}{K}.}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Elektron_g/3_6/lin_fit_Arrhenius_law_1.PNG}
-\includegraphics[scale=0.5]{Bilder/Elektron_g/3_6/lin_fit_Arrhenius_law_2.PNG}
-\caption{Linear fit of the data to the Arrhenius law for the measurement at \SI{3.4}{K}.}
-\end{figure}
-
-\begin{figure} [H]
-\centering
-\includegraphics[scale=0.5]{Bilder/Elektron_g/4_2/lin_fit_Arrhenius_law_1.PNG}
-\includegraphics[scale=0.5]{Bilder/Elektron_g/4_2/lin_fit_Arrhenius_law_2.PNG}
-\caption{Linear fit of the data to the Arrhenius law for the measurement at \SI{4.2}{K}.}
-\end{figure}
 
 
 
