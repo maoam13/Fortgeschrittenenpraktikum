@@ -87,10 +87,12 @@ The force calibration constants were determined for different setups used in con
 The Atomic Force Microscopy (AFM) gives an insight to the forces in a solid at atomic level. \\
 An AFM consists of a sample holder, which is moved in x and y direction with a piezo crystal, and a tip mounted on a cantilever, which is moved in z direction (meaning the distance between tip and sample) with another piezo crystal. The bending of the cantilever with certain force constant is measured with a laser beam reflected on the flip side of the cantilever. \\
 The AFM is used in three modes: Contact, Tapping and Magnetic Force. In contact mode the tip and sample are in contact. In tapping mode the tip is oscillating in a certain distance to the sample and tapping it which changes the amplitude of the oscillation and this gives the height of the sample at that point. Magnetic Force Microscopy (MFM) uses both the tapping mode and the fly mode, where the tip is kept at a constant distance away from the sample in order to measure long range forces. \\
-The goal of the measurement is to determine the force constants of the cantilever in contact and tapping mode. With the MFM the goal is to analyze the magnetic structure of the sample. With that one can determine the possible storage density.
+The goal of the measurement is to determine the force constants of the cantilever in contact and tapping mode. With the MFM the goal is to analyze the magnetic structure of the sample. With that one can determine the possible storage density. \\
+In section \ref{sec:Measurement} the measurement technique for all three modes is explained. The analysis of the data is explained in section \ref{sec:Data_Analysis} and the results are presented in section \ref{sec:Results}. In section \ref{sec:Conclusion} a conclusion for all analysis is made.
 
 
 \section{Measurement}
+\label{sec:Measurement}
 \subsection{Contact Mode}
 In contact mode the topology of a given sample is measured. In order to determine the optimal scan configuration an area is scanned for multiple different configurations. The optimal settings are listed in table \ref{tab:contact_settings}. With these settings the L-R, T-B and topology data of the sample is measured.\\
 In a second part the force vs. distance curve (also referred to as snap-in curve) is measured. This is done by measuring the T-B data dependent on the distance. The cantilever starts in contact with the sample, is then moved \SI{800}{nm} away from the sample and then moved back to the original position.
@@ -145,6 +147,7 @@ $K_i$ & $K_p$ & area & lines/s & Frequency & Bias & Scan height\\
 \end{table}
 
 \section{Data Analysis}
+\label{sec:Data_Analysis}
 
 \subsection{Contact and Tapping Mode}
 
@@ -176,6 +179,7 @@ k_F = \dfrac{k_{real} \cdot k_z}{\alpha}
 In this $k_{real}$ denotes the known force constant of the cantilever (the force constants for the cantilever used in the different modes are listed in tab. \ref{tab:force_constants}), $k_z$ the calibration constant as given above and $\alpha$ is the averaged slope of the two fits mentioned above. \\
 
 \section{Results}
+\label{sec:Results}
 \subsection{Contact Mode}
 
 \begin{figure}
@@ -422,6 +426,7 @@ bottom & $1.65 \pm 0.16$ & $19.67 \pm 0.04$ & $18.02 \pm 0.16$ & $0.038 \pm 0.00
 
 
 \section{Conclusion}
+\label{sec:Conclusion}
 $k_F^{contact}$ is several magnitudes of order smaller than $k_F^{tapping}$. As the voltage can be measured with the same certainty this means that in contact mode the resolution with which the the force on the cantilever can be measured is much higher than in tapping mode. This makes sense as the forces to be measured in cantact mode are smaller than those in tapping mode. \\
 The statistical error on the force calibration constants is about 10\%. The systematical error only due to the error on the known force constant of the cantilever is with up to 35\% much higher. 
 \\
