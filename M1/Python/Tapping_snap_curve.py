@@ -7,11 +7,11 @@ import csv
 
 path = '../Daten/Tapping mode/amplitude_nah.csv'
 data = np.genfromtxt(path, delimiter = ';', skip_header = 1)
-z, amp = data[:,1] * 10**(-7), data[:,3] * 10**(-7)
-sig_z, sig_amp = np.full(len(z), (z[1] - z[0])/np.sqrt(12)), np.full(len(z), np.std(amp[200:300]))
+z, amp = data[:,1] * 10**(-7), data[:,3] * 10**(-4)
+sig_z, sig_amp = np.full(len(z), (z[1] - z[0])/np.sqrt(12)), np.full(len(z), np.std(amp[200:300])) #* 10**(-3)
 
 fig = plt.figure()
-plt.errorbar(z, amp * 10**3, xerr = sig_z * 10**3, yerr = sig_amp, fmt = '.')
+plt.errorbar(z, amp, xerr = sig_z * 10**3, yerr = sig_amp, fmt = '.')
 plt.grid()
 plt.xlabel('Z [nm]')
 plt.ylabel('Amplitude [mV]')
@@ -41,3 +41,21 @@ sig_alpha_m = alpha * np.sqrt((sig_k_fit / k_fit)**2 + (sig_k_real_m/k_real)**2)
 print('Umrechenfaktor:')
 print('alpha = (' + str(alpha) + ' + ' + str(sig_alpha_p) + ' - ' + str(sig_alpha_m) + ' (stat.) +/- ' + str(alpha * sig_k_z/k_z) + ' (sys.)) N/mV')
 
+
+#free oszillation amplitude (plateau)
+start_index, end_index = [280, 480], [460, 740]
+labels = ['Z [nm]', 'Amplitude [mV]', 'Residuals [mV]', '']
+save_path = '../Protokoll/Bilder/Tapping_Mode/Free_Oszillation_Amplitude.png'
+out = STMM.multi_lin_reg_one_plot(z, amp, sig_z, sig_amp, start_index, end_index, labels, save_path)
+
+print('a_1 = (' + str(out[0][0]) + ' +/- ' + str(out[0][1]) + ') mV/nm') #mV/nm
+print('a_2 = (' + str(out[1][0]) + ' +/- ' + str(out[1][1]) + ') mV/nm')
+
+b_fit, sig_b_fit = AM.gew_mittelwert(np.array([out[0][2], out[1][2]]), np.array([out[0][3], out[1][3]]))[0], np.max(AM.gew_mittelwert(np.array([out[0][2], out[1][2]]), np.array([out[0][3], out[1][3]]))[1:])
+foa = b_fit / k_fit
+sig_foa = foa * np.sqrt((sig_b_fit/b_fit)**2 + (sig_k_fit/k_fit)**2)
+
+print('b = (' + str(b_fit) + ' +/- ' + str(sig_b_fit) + ') mV')
+
+print('Free oszillation amplitude:')
+print('amplitude = (' + str(foa) + ' +/- ' + str(sig_foa) + ') nm')

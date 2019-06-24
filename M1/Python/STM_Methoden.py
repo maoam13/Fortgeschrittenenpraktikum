@@ -201,16 +201,21 @@ def multi_lin_reg_one_plot(x, y, sig_x, sig_y, start_index, end_index, labels, s
     color = ['r', 'y', 'g', 'm', 'c', 'k']
     lin = lambda x, a, b: a*x+b
 
+    font = {'family' : 'normal',
+            'weight' : 'bold',
+            'size'   : 10}
+
     out = []
     for i in range(len(start_index)):
         #out.append(p.lineare_regression_xy(x[start_index[i]:end_index[i]], y[start_index[i]:end_index[i]], sig_x[start_index[i]:end_index[i]], sig_y[start_index[i]:end_index[i]]))
         out.append(p.lineare_regression(x[start_index[i]:end_index[i]], y[start_index[i]:end_index[i]], sig_y[start_index[i]:end_index[i]]))
 
     fig = plt.figure()
+    plt.rc('font', **font)
     ax1=plt.subplot(211)
     plt.grid()
-    plt.ylabel(labels[1])
-    plt.title(labels[3])
+    plt.ylabel(labels[1], **font)
+    plt.title(labels[3], **font)
     plt.errorbar(x, y, xerr = sig_x, yerr=sig_y, fmt=',', color = 'b')
     #plt.errorbar(x, y, xerr = sig_x, yerr=sig_y, fmt='.', color = 'b')
     for i in range(len(start_index)):
@@ -226,8 +231,8 @@ def multi_lin_reg_one_plot(x, y, sig_x, sig_y, start_index, end_index, labels, s
         plt.errorbar(x[start_index[i]:end_index[i]], H, yerr=H_err, fmt='.', color = color[i])
     plt.axhline(0, color = 'b')
     plt.grid()
-    plt.xlabel(labels[0])
-    plt.ylabel(labels[2])
+    plt.xlabel(labels[0], **font)
+    plt.ylabel(labels[2], **font)
     plt.tight_layout()
     plt.savefig(save_path)
     plt.close(fig)

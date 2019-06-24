@@ -10,10 +10,15 @@ data = np.array(AM.genfromcsv(path, skipheader=1)) * 10**(-6)
 
 dz, T_B = data[:,1], data[:,3]
 
+font = {'family' : 'normal',
+            'weight' : 'bold',
+            'size'   : 10}
+
 fig = plt.figure()
+plt.rc('font', **font)
 plt.plot(dz, T_B)
-plt.xlabel('dz [nm]')
-plt.ylabel('T-B [mV]')
+plt.xlabel('dz [nm]', **font)
+plt.ylabel('T-B [mV]', **font)
 #plt.title('Snap-In Curve')
 plt.grid()
 plt.tight_layout()
@@ -44,3 +49,23 @@ sig_alpha_m = alpha * np.sqrt((sig_k_fit / k_fit)**2 + (sig_k_real_m/k_real)**2)
 print('Umrechenfaktor:')
 print('alpha = (' + str(alpha) + ' + ' + str(sig_alpha_p) + ' - ' + str(sig_alpha_m) + ' (stat.) +/- ' + str(alpha * sig_k_z/k_z) + ' (sys.)) N/mV')
 
+#adhesion
+save_path = '../Protokoll/Bilder/Contact_Mode/adhesion_and_load_force_fit.png' #'test.png'
+out = STMM.multi_lin_reg_one_plot(dz, T_B, sig_x, sig_y, [300], [550], labels, save_path)
+
+adhesion = (out[0][2] - min(T_B)) * alpha
+sig_theta, theta = np.sqrt(out[0][3]**2 + 0.01**2), out[0][2] - min(T_B)
+sig_adhesion = adhesion * np.abs(sig_theta/theta)
+sig_adhesion_m = adhesion * np.abs(sig_alpha_m/alpha)
+sig_adhesion_p = adhesion * np.abs(sig_alpha_p/alpha)
+print('Adhesion force:')
+print('F_a = (' + str(adhesion) + ' +/- ' + str(sig_adhesion) + ' (stat.) + ' + str(sig_adhesion_p) + ' - ' + str(sig_adhesion_m) + ' (sys.)) N')
+
+#load force
+index = np.where(dz <= 1.0)[0]
+load = alpha * np.abs(T_B[index[0]] - T_B[index[1]])
+sig_load = alpha * np.sqrt((T_B[index[0]+1] - T_B[index[0]])**2 /12 + (T_B[index[1]-1] - T_B[index[1]])**2 /12)
+sig_load_m = load * np.abs(sig_alpha_m/alpha)
+sig_load_p = load * np.abs(sig_alpha_p/alpha)
+print('Load force:')
+print('F_l = (' + str(load) + ' +/- ' + str(sig_load) + ' (stat.) + ' + str(sig_load_p) + ' - ' + str(sig_load_m) + ' (sys.)) N')
