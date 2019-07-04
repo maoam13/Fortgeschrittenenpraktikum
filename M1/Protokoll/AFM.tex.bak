@@ -71,7 +71,7 @@ pra,
  \altaffiliation[]{RWTH Aachen University, Germany}%Lines break automatically or can be forced with \\
  \email{gerald.kolter@rwth-aachen.de}
 
-\date{May 29, 2019}
+\date{July 4, 2019}
 %\date{\yesterday} It is always \today, today,
              %  but any date may be explicitly specified
 
@@ -87,12 +87,14 @@ The force calibration constants were determined for different setups used in con
 The Atomic Force Microscopy (AFM) gives an insight to the forces in a solid at atomic level. \\
 An AFM consists of a sample holder, which is moved in x and y direction with a piezo crystal, and a tip mounted on a cantilever, which is moved in z direction (meaning the distance between tip and sample) with another piezo crystal. The bending of the cantilever with certain force constant is measured with a laser beam reflected on the flip side of the cantilever. \\
 The AFM is used in three modes: Contact, Tapping and Magnetic Force. In contact mode the tip and sample are in contact. In tapping mode the tip is oscillating in a certain distance to the sample and tapping it which changes the amplitude of the oscillation and this gives the height of the sample at that point. Magnetic Force Microscopy (MFM) uses both the tapping mode and the fly mode, where the tip is kept at a constant distance away from the sample in order to measure long range forces. \\
-The goal of the measurement is to determine the force constants of the cantilever in contact and tapping mode. With the MFM the goal is to analyze the magnetic structure of the sample. With that one can determine the possible storage density.
+The goal of the measurement is to determine the force constants of the cantilever in contact and tapping mode. With the MFM the goal is to analyze the magnetic structure of the sample. With that one can determine the possible storage density. \\
+In section \ref{sec:Measurement} the measurement technique for all three modes is explained. The analysis of the data is explained in section \ref{sec:Data_Analysis} and the results are presented in section \ref{sec:Results}. In section \ref{sec:Conclusion} a conclusion for all analysis is made.
 
 
 \section{Measurement}
+\label{sec:Measurement}
 \subsection{Contact Mode}
-In contact Mode the topology of a given sample is measured. In order to determine the optimal scan configuration an area is scanned for multiple different configurations. The optimal settings are listed in table \ref{tab:contact_settings}. With these settings the L-R, T-B and topology data of the sample is measured.\\
+In contact mode the topology of a given sample is measured. In order to determine the optimal scan configuration an area is scanned for multiple different configurations. The optimal settings are listed in table \ref{tab:contact_settings}. With these settings the L-R, T-B and topology data of the sample is measured.\\
 In a second part the force vs. distance curve (also referred to as snap-in curve) is measured. This is done by measuring the T-B data dependent on the distance. The cantilever starts in contact with the sample, is then moved \SI{800}{nm} away from the sample and then moved back to the original position.
 \begin{table}[h]
 \centering
@@ -108,7 +110,7 @@ $K_i$ & $K_p$ & area & speed[lines/s] & setpoint\\
 \end{table}
 
 \subsection{Tapping Mode}
-In a first step the resonance frequency of the cantilever is determined by sweeping the frequency and measuring the amplitude, because knowledge of this frequency is necessary for the other measurements. The resonance frequency turns out to be \SI{263.6 \pm 0.1}{kHz}. In order to avoid full resonance a frequency of \SI{263.8}{kHz} is used for the following measurements.\\
+In a first step the resonance frequency of the cantilever is determined by sweeping the frequency and measuring the amplitude, because knowledge of this frequency is necessary for the other measurements. The resonance frequency turns out to be \SI{263.8(1)}{kHz}, as seen in figure \ref{fig:res_tap}. In order to avoid full resonance a frequency of \SI{263.8}{kHz}, which is slightly off the resonance frequency, is used for the following measurements.\\
 Next the amplitude, phase and topology of a different sample is measured in a similar process as the topology measurement in the contact mode. The optimal setting are given in table \ref{tab:tapping_settings}.\\
 As a final measurement in this mode the cantilever amplitude is measured dependent on the distance between sample and tip in a similar procedure as the force-distance measurement in the contact mode. 
 \begin{table}[h]
@@ -124,8 +126,15 @@ $K_i$ & $K_p$ & area & speed[lines/s] & Frequency\\
 \label{tab:tapping_settings}
 \end{table}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{Bilder/res_tapping}
+\caption{Resonance spectrum of the tip used in tapping mode, zoomed into the largest peak. The red line indicates the frequency of \SI{263.8}{kHz} used for the measurements.}
+\label{fig:res_tap}
+\end{figure}
+
 \subsection{Magnetic force microscopy}
-Because the tapping mode is also used for parts of the magnetic measurement, the first step is again to determine the resonance frequency with the same method described for the tapping mode. Here the resonance frequency is \SI{76.09 \pm 0.06}{kHz} and a frequency of \SI{76.02}{kHz} is applied for the following measurements.\\
+Because the tapping mode is also used for parts of the magnetic measurement, the first step is again to determine the resonance frequency with the same method described for the tapping mode. Here the resonance frequency is \SI{76.09 \pm 0.06}{kHz} (as seen in figure \ref{fig:res_moag}) and a frequency of \SI{76.02}{kHz} is applied for the following measurements.\\
 The second part is to determine the necessary Bias-Offset in order to be able to correct it. For this the Bias voltage is swept from \SI{-4}{V} to \SI{4}{V} and the amplitude and phase are measured.\\
 Finally the magnetic domains of a hard drive are imaged. This is done by first scanning the amplitude and topology in tapping mode and then measuring the phase in fly mode. The settings used for this measurement are listed in table \ref{tab:magnetic_settings}. The measurement is done for 2 different area sizes in order to make the analysis of the domain dimensions easier.
 
@@ -144,7 +153,15 @@ $K_i$ & $K_p$ & area & lines/s & Frequency & Bias & Scan height\\
 \label{tab:magnetic_settings}
 \end{table}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{Bilder/res_magnetic}
+\caption{Resonance spectrum of the tip used in the magnetic mode, zoomed into the largest peak. The red line indicates the frequency of \SI{76.02}{kHz} used for the measurements.}
+\label{fig:res_moag}
+\end{figure}
+
 \section{Data Analysis}
+\label{sec:Data_Analysis}
 
 \subsection{Contact and Tapping Mode}
 
@@ -176,9 +193,10 @@ k_F = \dfrac{k_{real} \cdot k_z}{\alpha}
 In this $k_{real}$ denotes the known force constant of the cantilever (the force constants for the cantilever used in the different modes are listed in tab. \ref{tab:force_constants}), $k_z$ the calibration constant as given above and $\alpha$ is the averaged slope of the two fits mentioned above. \\
 
 \section{Results}
+\label{sec:Results}
 \subsection{Contact Mode}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{Bilder/Contact_Mode/Rohdaten/try1_scalebar.PNG}
 \includegraphics[scale=0.5]{Bilder/Contact_Mode/Rohdaten/try1.JPG}
@@ -186,7 +204,7 @@ In this $k_{real}$ denotes the known force constant of the cantilever (the force
 \label{fig:Contact_raw_data}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -219,8 +237,9 @@ k_z^{contact} = 0.75297 \pm 0.08560
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{Bilder/Contact_Mode/Snap_in_curve.PNG}
-\caption{Snap-in curve measured in contact mode.}
+\includegraphics[scale=0.5]{Bilder/Contact_Mode/Snap_in_curve_marked.PNG}
+\includegraphics[scale=0.5]{Bilder/Contact_Mode/Snap_in_curve_fit.PNG}
+\caption{Snap-in curve measured in contact mode. The upper plot shows the measurement with marked snap-in and snap-off and the lower shows the fits to the linear regimes.}
 \label{fig:Contact_snap_in}
 \end{figure}
 
@@ -249,9 +268,10 @@ The result is:
 \begin{equation*}
 F_{load} = (5.68 \pm 0.19 \, (stat.) \, _{+ 2.01} ^{- 1.11} \, (sys.)) \times 10^{-9} \si{N}
 \end{equation*}
+
 \subsection{Tapping Mode}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{Bilder/Tapping_Mode/Rohdaten/try3_scalebar.PNG}
 \includegraphics[scale=0.5]{Bilder/Tapping_Mode/Rohdaten/try3.JPG}
@@ -259,7 +279,7 @@ F_{load} = (5.68 \pm 0.19 \, (stat.) \, _{+ 2.01} ^{- 1.11} \, (sys.)) \times 10
 \label{fig:Tapping_raw_data}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -292,19 +312,48 @@ k_z^{tapping} = 0.695 \pm 0.074
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Snap_in_curve.PNG}
+%\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Snap_in_curve.PNG}
+\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Snap_in_curve_fit.PNG}
 \caption{Measured amplitude plotted against the sample-tip distance.}
 \label{fig:Tapping_snap_in}
 \end{figure}
 
-Fig. \ref{fig:Tapping_snap_in} shows the measured amplitude plotted against the sample-tip distance with the setup used in the tapping mode. The linear fit yields the averaged slope for the linear regime:
+Fig. \ref{fig:Tapping_snap_in} shows the measured amplitude plotted against the sample-tip distance with the setup used in the tapping mode. In the linear regime the oszillation amplitude decreases as the tip approaches the sample. This is due to the tip hitting the sample at its lower turning point. \\
+The linear fit yields the averaged slope for the linear regime:
 \begin{equation*} 
 |\alpha| = \SI{1.6330 \pm 0.0057}{V \per \mu m}
 \end{equation*}
 With this one calculates the force-calibration constant as:
 \begin{equation*}
 k_F^{tapping} = (1.70 \pm 0.18 \, (stat.) \, _{+ 0.49} ^{- 0.25} \, (sys.)) \times 10^{-5} \si{N \per mV}
+\end{equation*} 
+
+The free oszillation amplitude is given by the plateau in fig. \ref{fig:Tapping_snap_in}. To determine the amplitude value of this plateau a linear fit to it is performed. As the slope of this fit matches with zero in a range of $2 \sigma$, one can use the y axis section as value for the plateau:
+\begin{equation*}
+b = \SI{4.686 \pm 0.019}{mV}
+\end{equation*}
+Given this value the free oszillation amplitude is determined by:
+\begin{equation*}
+\begin{aligned}
+A_{free} = \dfrac{b}{\alpha}\\
+A_{free} = \SI{2.87 \pm 0.10}{nm}
+\end{aligned}
 \end{equation*} \\
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/Tapping_Mode/Roughness_histogram.PNG}
+\caption{Histogram of distances to the mean value of the plateau.}
+\label{fig:Roughness_histogram}
+\end{figure}
+
+Fig. \ref{fig:Roughness_histogram} shows the histogram of the distance between measured points and the mean value of these. As expected the highest counts are around zero. The histogram shows a gaussian-shape. The diameter of a silicon atom is given by:
+\begin{equation*}
+d_{\text{silicon atom}} \approx \SI{111}{pm}
+\end{equation*}
+Given this value one can say that the roughness of the sample is in the order of a few atoms. \\
+On the images made from the sample no clear contaminations can be found.
+
 
 \subsection{Magnetic Microscopy}
 
@@ -346,7 +395,7 @@ which is used to determine the final value of the contact potential difference w
 
 \subsubsection{Domain structure}
 As a second part the domain structure of the sample is analyzed, as seen in figure \ref{fig:magnetic_domain}. There are three different areas with magnetic domains visible. Between these areas there is a small zone where no domains are visible.\\
-In order to analyze the density of the domains the width of the areas is visually estimated. This is done by extracting 3 distances for each area alongside the visual structure from the beginning of one area to the beginning of the next, as shown in figure \ref{fig:magnetic_width}. 
+In order to analyze the density of the domains the width of the areas is visually estimated. This is done by extracting 3 distances for each area alongside the visual structure from the beginning of one area to the beginning of the next, as shown in figure \ref{fig:magnetic_domain}. 
 This is done for the \SI{20}{\mu m^2} scan as well as for the \SI{30}{\mu m^2} scan to increase accuracy and in order to verify that the measured areas have similar widths. The resulting average width of all 9 extracted values is
 \begin{equation}
 L = \SI{10.24 \pm 0.43}{\mu m}
@@ -365,28 +414,6 @@ which is used for the density calculation.
 
 Next a height profile of every area in the \SI{20}{\mu m^2} scan is extracted and the distance between the leftmost and rightmost peak measured. For this both the peak position and its error are visually estimated. The profile of the \SI{30}{\mu m^2} scan is not analyzed because there are a lot of points where the tip lost contact or crashed into the surface, which makes an analysis hard. The profiles can be found in figure \ref{fig:magnetic_profile}. The resulting peak distances are listed in table \ref{tab:magnetic_peaks}.
 
-\begin{figure}[t]
-\centering
-\includegraphics[scale=0.4]{Bilder/Magnetic/top.png}
-\includegraphics[scale=0.4]{Bilder/Magnetic/mid.png}
-\includegraphics[scale=0.4]{Bilder/Magnetic/bot.png}
-\caption{Extracted height profiles of the top, middle and bottom areas of the \SI{20}{\mu m^2} scan.}
-\label{fig:magnetic_profile}
-\end{figure}
-
-In order to get an average density the results of the weighted average of the 3 areas is calculated:
-\begin{equation*}
-\#peaks/\mu m^2_{average} = 0.030 \pm 0.007
-\end{equation*}
-One peak equivalates to one domain, which saves exactly 1 Bit. This means that the storage density of the hard drive is
-\begin{equation*}
-\SI{19.3\pm 4.5}{MBit/in^2}
-\end{equation*}
-
-
-
-
-
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
@@ -404,9 +431,26 @@ bottom & $1.65 \pm 0.16$ & $19.67 \pm 0.04$ & $18.02 \pm 0.16$ & $0.038 \pm 0.00
 \label{tab:magnetic_peaks}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{Bilder/Magnetic/top.png}
+\includegraphics[scale=0.4]{Bilder/Magnetic/mid.png}
+\includegraphics[scale=0.4]{Bilder/Magnetic/bot.png}
+\caption{Extracted height profiles of the top, middle and bottom areas of the \SI{20}{\mu m^2} scan.}
+\label{fig:magnetic_profile}
+\end{figure}
 
+In order to get an average density the results of the weighted average of the 3 areas is calculated:
+\begin{equation*}
+\#peaks/\mu m^2_{average} = 0.030 \pm 0.007
+\end{equation*}
+One peak equivalates to one domain, which saves exactly 1 Bit. This means that the storage density of the hard drive is
+\begin{equation*}
+\SI{19.3\pm 4.5}{MBit/in^2}
+\end{equation*}
 
 \section{Conclusion}
+\label{sec:Conclusion}
 $k_F^{contact}$ is several magnitudes of order smaller than $k_F^{tapping}$. As the voltage can be measured with the same certainty this means that in contact mode the resolution with which the the force on the cantilever can be measured is much higher than in tapping mode. This makes sense as the forces to be measured in cantact mode are smaller than those in tapping mode. \\
 The statistical error on the force calibration constants is about 10\%. The systematical error only due to the error on the known force constant of the cantilever is with up to 35\% much higher. 
 \\

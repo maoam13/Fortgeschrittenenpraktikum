@@ -71,7 +71,7 @@ pra,
  \altaffiliation[]{RWTH Aachen University, Germany}%Lines break automatically or can be forced with \\
  \email{gerald.kolter@rwth-aachen.de}
 
-\date{May 29, 2019}
+\date{July 4, 2019}
 %\date{\yesterday} It is always \today, today,
              %  but any date may be explicitly specified
 
@@ -110,7 +110,7 @@ $K_i$ & $K_p$ & area & speed[lines/s] & setpoint\\
 \end{table}
 
 \subsection{Tapping Mode}
-In a first step the resonance frequency of the cantilever is determined by sweeping the frequency and measuring the amplitude, because knowledge of this frequency is necessary for the other measurements. In order to avoid full resonance a frequency of \SI{263.8}{kHz}, which is slightly off the resonance frequency, is used for the following measurements.\\
+In a first step the resonance frequency of the cantilever is determined by sweeping the frequency and measuring the amplitude, because knowledge of this frequency is necessary for the other measurements. The resonance frequency turns out to be \SI{263.8(1)}{kHz}, as seen in figure \ref{fig:res_tap}. In order to avoid full resonance a frequency of \SI{263.8}{kHz}, which is slightly off the resonance frequency, is used for the following measurements.\\
 Next the amplitude, phase and topology of a different sample is measured in a similar process as the topology measurement in the contact mode. The optimal setting are given in table \ref{tab:tapping_settings}.\\
 As a final measurement in this mode the cantilever amplitude is measured dependent on the distance between sample and tip in a similar procedure as the force-distance measurement in the contact mode. 
 \begin{table}[h]
@@ -126,8 +126,15 @@ $K_i$ & $K_p$ & area & speed[lines/s] & Frequency\\
 \label{tab:tapping_settings}
 \end{table}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{Bilder/res_tapping}
+\caption{Resonance spectrum of the tip used in tapping mode, zoomed into the largest peak. The red line indicates the frequency of \SI{263.8}{kHz} used for the measurements.}
+\label{fig:res_tap}
+\end{figure}
+
 \subsection{Magnetic force microscopy}
-Because the tapping mode is also used for parts of the magnetic measurement, the first step is again to determine the resonance frequency with the same method described for the tapping mode. Here the resonance frequency is \SI{76.09 \pm 0.06}{kHz} and a frequency of \SI{76.02}{kHz} is applied for the following measurements.\\
+Because the tapping mode is also used for parts of the magnetic measurement, the first step is again to determine the resonance frequency with the same method described for the tapping mode. Here the resonance frequency is \SI{76.09 \pm 0.06}{kHz} (as seen in figure \ref{fig:res_moag}) and a frequency of \SI{76.02}{kHz} is applied for the following measurements.\\
 The second part is to determine the necessary Bias-Offset in order to be able to correct it. For this the Bias voltage is swept from \SI{-4}{V} to \SI{4}{V} and the amplitude and phase are measured.\\
 Finally the magnetic domains of a hard drive are imaged. This is done by first scanning the amplitude and topology in tapping mode and then measuring the phase in fly mode. The settings used for this measurement are listed in table \ref{tab:magnetic_settings}. The measurement is done for 2 different area sizes in order to make the analysis of the domain dimensions easier.
 
@@ -145,6 +152,13 @@ $K_i$ & $K_p$ & area & lines/s & Frequency & Bias & Scan height\\
 \caption{Settings used for the two measurements for the magnetic force microscopy.}
 \label{tab:magnetic_settings}
 \end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{Bilder/res_magnetic}
+\caption{Resonance spectrum of the tip used in the magnetic mode, zoomed into the largest peak. The red line indicates the frequency of \SI{76.02}{kHz} used for the measurements.}
+\label{fig:res_moag}
+\end{figure}
 
 \section{Data Analysis}
 \label{sec:Data_Analysis}
@@ -182,7 +196,7 @@ In this $k_{real}$ denotes the known force constant of the cantilever (the force
 \label{sec:Results}
 \subsection{Contact Mode}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{Bilder/Contact_Mode/Rohdaten/try1_scalebar.PNG}
 \includegraphics[scale=0.5]{Bilder/Contact_Mode/Rohdaten/try1.JPG}
@@ -190,7 +204,7 @@ In this $k_{real}$ denotes the known force constant of the cantilever (the force
 \label{fig:Contact_raw_data}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -254,9 +268,10 @@ The result is:
 \begin{equation*}
 F_{load} = (5.68 \pm 0.19 \, (stat.) \, _{+ 2.01} ^{- 1.11} \, (sys.)) \times 10^{-9} \si{N}
 \end{equation*}
+
 \subsection{Tapping Mode}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.7]{Bilder/Tapping_Mode/Rohdaten/try3_scalebar.PNG}
 \includegraphics[scale=0.5]{Bilder/Tapping_Mode/Rohdaten/try3.JPG}
@@ -264,7 +279,7 @@ F_{load} = (5.68 \pm 0.19 \, (stat.) \, _{+ 2.01} ^{- 1.11} \, (sys.)) \times 10
 \label{fig:Tapping_raw_data}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[b]
 \centering
 \begin{tabular}{|c|c|c|}
 \hline 
@@ -380,7 +395,7 @@ which is used to determine the final value of the contact potential difference w
 
 \subsubsection{Domain structure}
 As a second part the domain structure of the sample is analyzed, as seen in figure \ref{fig:magnetic_domain}. There are three different areas with magnetic domains visible. Between these areas there is a small zone where no domains are visible.\\
-In order to analyze the density of the domains the width of the areas is visually estimated. This is done by extracting 3 distances for each area alongside the visual structure from the beginning of one area to the beginning of the next, as shown in figure \ref{fig:magnetic_width}. 
+In order to analyze the density of the domains the width of the areas is visually estimated. This is done by extracting 3 distances for each area alongside the visual structure from the beginning of one area to the beginning of the next, as shown in figure \ref{fig:magnetic_domain}. 
 This is done for the \SI{20}{\mu m^2} scan as well as for the \SI{30}{\mu m^2} scan to increase accuracy and in order to verify that the measured areas have similar widths. The resulting average width of all 9 extracted values is
 \begin{equation}
 L = \SI{10.24 \pm 0.43}{\mu m}
@@ -399,28 +414,6 @@ which is used for the density calculation.
 
 Next a height profile of every area in the \SI{20}{\mu m^2} scan is extracted and the distance between the leftmost and rightmost peak measured. For this both the peak position and its error are visually estimated. The profile of the \SI{30}{\mu m^2} scan is not analyzed because there are a lot of points where the tip lost contact or crashed into the surface, which makes an analysis hard. The profiles can be found in figure \ref{fig:magnetic_profile}. The resulting peak distances are listed in table \ref{tab:magnetic_peaks}.
 
-\begin{figure}[t]
-\centering
-\includegraphics[scale=0.4]{Bilder/Magnetic/top.png}
-\includegraphics[scale=0.4]{Bilder/Magnetic/mid.png}
-\includegraphics[scale=0.4]{Bilder/Magnetic/bot.png}
-\caption{Extracted height profiles of the top, middle and bottom areas of the \SI{20}{\mu m^2} scan.}
-\label{fig:magnetic_profile}
-\end{figure}
-
-In order to get an average density the results of the weighted average of the 3 areas is calculated:
-\begin{equation*}
-\#peaks/\mu m^2_{average} = 0.030 \pm 0.007
-\end{equation*}
-One peak equivalates to one domain, which saves exactly 1 Bit. This means that the storage density of the hard drive is
-\begin{equation*}
-\SI{19.3\pm 4.5}{MBit/in^2}
-\end{equation*}
-
-
-
-
-
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|c|}
@@ -438,7 +431,23 @@ bottom & $1.65 \pm 0.16$ & $19.67 \pm 0.04$ & $18.02 \pm 0.16$ & $0.038 \pm 0.00
 \label{tab:magnetic_peaks}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{Bilder/Magnetic/top.png}
+\includegraphics[scale=0.4]{Bilder/Magnetic/mid.png}
+\includegraphics[scale=0.4]{Bilder/Magnetic/bot.png}
+\caption{Extracted height profiles of the top, middle and bottom areas of the \SI{20}{\mu m^2} scan.}
+\label{fig:magnetic_profile}
+\end{figure}
 
+In order to get an average density the results of the weighted average of the 3 areas is calculated:
+\begin{equation*}
+\#peaks/\mu m^2_{average} = 0.030 \pm 0.007
+\end{equation*}
+One peak equivalates to one domain, which saves exactly 1 Bit. This means that the storage density of the hard drive is
+\begin{equation*}
+\SI{19.3\pm 4.5}{MBit/in^2}
+\end{equation*}
 
 \section{Conclusion}
 \label{sec:Conclusion}
