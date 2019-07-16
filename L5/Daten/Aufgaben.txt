@@ -1,0 +1,22 @@
+use references and images from literature when it helps explain what you’re trying to show. 
+Snipping tool is fine to get the literature image. Also use tables to help with organizing the single spectrum data. 
+
+1-3) Discuss about what we did, exfoliation, what we saw with our samples, how many layers, and describe the 
+wrinkle that sticking up. What else do we see in the spectra?
+
+4) Describe what you see in the 2D map provided. Extract gamma and omega G and 2D values for the different single 
+spectra. 
+
+1-5) It should be possible to make a map of Omega 2D vs G using the extracted values from the single spectra. 
+Compare points for encapsulated Gr, Gr on thick hBN, Gr on thin hBN, Gr on PMMA, Gr on SiO2. It should also be 
+possible to plot Gamma 2D vs G. You can also calculate the Strain and doping for these points. 
+
+5) Discuss the maps from the encapsulated graphene using the blue and green laser. Use the histograms to help with 
+describing the difference. Extract the omegaG/2D position for pristine Graphene with the blue laser to use in later 
+calculations
+
+6) Discuss the polycrystalline Cu sample and CVD graphene. Discuss whether the same analysis works on the Cu 
+substrates as for SiO2. Calculate the strain shift on the different grains. You can use the easy equation for and 
+using the difference from the pristine spectra taken with the blue laser and the encapsulated sample. 
+
+7) For the continuous graphene, calculate the Defect density. 
