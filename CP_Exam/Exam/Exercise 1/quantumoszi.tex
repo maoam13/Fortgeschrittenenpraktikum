@@ -1,0 +1,41 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{siunitx}
+\usepackage{placeins}
+\author{Tim}
+\usepackage{gensymb}
+\usepackage{mathtools}
+\usepackage{physics}
+\begin{document}
+
+\section{Introduction}
+
+In this exercise the behavior of a quantum harmonic oscillator is analyzed. It is described by a wave function in a quadratic potential
+$$
+V = \dfrac{\Omega^2}{2} x^2
+$$
+where $\Omega$ denotes the frequency of the oscillator. The equation of motion of this system is given by the one dimensional Schrödinger equation:
+\begin{equation}
+i \dfrac{\partial}{\partial t} \Phi(x,t) = \left(-\dfrac{1}{2}\dfrac{\partial^2}{\partial x^2} + \dfrac{\Omega^2}{2} x^2\right) \Phi(x,t) = H \Phi(x,t)
+\end{equation}
+with all variables being dimensionless ($\hbar = m = 1$).\\
+The goal is to simulate the time evolution of the wave function for different starting functions and to compute the average and variance of this function over time.
+\section{Simulation Model and Method}
+
+The simulated area is a one dimensional grid ranging from $-15\leq x\leq 15$ that is split into $L=1001$ equally spaced points, which results in a step width of $\Delta = 0.03$. The initial wave function is described by a Gaussian function:
+\begin{equation}
+\Phi_0(x,t=0) = \dfrac{1}{\pi \sigma^2} e^{-(x-x_0)^2/2\sigma^2}
+\end{equation}
+6 different combinations of the oscillator frequency $\Omega$, $\sigma$ and $x_0$ are simulated. 
+
+The Schrödinger equation is solved by using a second order product formula approach.
+
+\end{document}
