@@ -4,25 +4,43 @@ import auswertung_nur_Methoden as AM
 import matplotlib.pyplot as plt
 import csv
 
-name = '2 mono bi tri flake/3.txt'
-data = np.genfromtxt('../Daten/' + name, delimiter = '')
-
-#print(np.shape(data))
-
-
 font = {'family' : 'normal',
             'weight' : 'bold',
             'size'   : 10}
 
+labels = ['2', '4', '5', '3', '6', '1']
+
+for i in range(1, 7):
+    name = '2 mono bi tri flake/' + str(i) + '.txt'
+    data = np.genfromtxt('../Daten/' + name, delimiter = '')
+
+    fig = plt.figure()
+    plt.rc('font', **font)
+    plt.plot(data[:,0], data[:,1])
+    plt.xlabel('Raman shift [cm$^{-1}$]', **font)
+    plt.ylabel('Intensity [a.u.]', **font)
+    #plt.title('Snap-In Curve')
+    plt.grid()
+    plt.tight_layout()
+    #plt.savefig('test.png')
+    #plt.savefig('../Protokoll/Bilder/Exfoliation/' + name.split('/')[0] + '_' + name.split('/')[1].split('.')[0] + '.png')
+    plt.savefig('../Protokoll/Bilder/Exfoliation/' + name.replace(' ', '_').split('/')[0] + '_' + labels[i-1] + '.png')
+    plt.close(fig)
+
 fig = plt.figure()
 plt.rc('font', **font)
-plt.plot(data[:,0], data[:,1])
+for i in range(1, 7):
+    name = '2 mono bi tri flake/' + str(i) + '.txt'
+    data = np.genfromtxt('../Daten/' + name, delimiter = '')
+    plt.plot(data[:,0], data[:,1], label = labels[i-1])
 plt.xlabel('Raman shift [cm$^{-1}$]', **font)
 plt.ylabel('Intensity [a.u.]', **font)
+plt.legend()
 #plt.title('Snap-In Curve')
 plt.grid()
 plt.tight_layout()
 #plt.savefig('test.png')
-plt.savefig('../Protokoll/Bilder/Exfoliation/' + name.split('/')[0] + '_' + name.split('/')[1].split('.')[0] + '.png')
+plt.savefig('../Protokoll/Bilder/Exfoliation/' + name.replace(' ', '_').split('/')[0] + '_all.png')
 plt.close(fig)
+    
 
