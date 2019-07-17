@@ -18,7 +18,7 @@ def lorentz(A,x):
     
 #def peaks(name):
     
-name = "2 mono bi tri flake/3.txt"
+name = "2 mono bi tri flake/1.txt"
 #name = "7 Cu continuous oxidized/cont2.txt"
 data = np.genfromtxt("../Daten/"+name, delimiter = '')
 x = data[:,0]
@@ -49,7 +49,7 @@ plt.plot(draw,lorentz(fit[0],draw)-fit[0][0]-fit[0][4]*draw)
 plt.plot([h1,h2],[halfmax,halfmax])
 
 w = 2680
-d = 100
+d = 120
 a = near(x,w-d)
 b = near(x,w+d)
 w1 = x[np.argmax(y[a:b])+a]
