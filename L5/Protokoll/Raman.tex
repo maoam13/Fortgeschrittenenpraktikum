@@ -1,66 +1,111 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{graphicx}
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose,
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+amsmath,amssymb,
+%aps,
+pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+
+\usepackage{tabularx}
 \usepackage{siunitx}
-\usepackage{float}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
-\author{Gerald}
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{hyperref}% add hypertext capabilities
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+%\usepackage[showframe,%Uncomment any one of the following lines to test
+%%scale=0.7, marginratio={1:1, 2:3}, ignoreall,% default settings
+%%text={7in,10in},centering,
+%%margin=1.5in,
+%%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
+%%height=10in,a5paper,hmargin={3cm,0.8in},
+%]{geometry}
 
 \begin{document}
-\sisetup{separate-uncertainty = true}
-	\setlength{\parindent}{0pt} 
-	\begin{center}
-		{\LARGE Experiment protocol}\\
-		\begin{large}
-			for the solid state lab course\\[0.4cm]
-			at RWTH Aachen\\
-			II. Physikalisches Institut A\\[5.5cm]
-			\Large\textbf{\textsl{Raman characterization of CVD grown graphene and 2D material based heterostructures}}\\[5.5cm]
-			\normalsize\textit{authored\\by}\\[0.4cm]
-			\large{Moritz Berger (355244)\\Gerald Kolter (355005)}\\[2cm]
-			\large \textbf{Summer term 2019}
-		\end{large}
-	\end{center}
-	\newpage
-	
-	\tableofcontents
-	\newpage
+
+\preprint{APS/123-QED}
+
+\title{Raman characterization of CVD grown graphene \\and 2D material based heterostructures}% Force line breaks with \\
+
+\author{Moritz Berger}
+ \altaffiliation[]{RWTH Aachen University, Germany}%Lines break automatically or can be forced with \\
+ \email{moritz.berger@rwth-aachen.de}
+ \author{Gerald Kolter}
+ \altaffiliation[]{RWTH Aachen University, Germany}%Lines break automatically or can be forced with \\
+ \email{gerald.kolter@rwth-aachen.de}
+
+%\date{May 1, 2019}
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+%\begin{abstract}
+%Pseudo-MOSFET structures have been investigated in recent years as they provide multiple applications. Additionally they can be used to determine relatively easily the charge carrier mobility $\mu _{eff}$ of different materials such as Si even in different configurations. In this paper a deeper look is given into important technologies used for fabricating Pseudo-MOSFETs, namely Optical Lithography and Reactive Ion Etching. Afterwards a set of devices is analyzed to characterize the output and transfer of the device, which give an indication of the quality of the device.
+%\end{abstract}
+
+\maketitle
 
 \section{Introduction}
+Novoselov et al. were the first to intentionally isolate a mono-layer of carbon atoms from a graphit block, called graphene.\citep{Novoselov2004} Since then it attracted an overwhelming interest in fundamental and applied research in a variety of fields, such as solid state physics, electronics, mechanics, and optics.\citep{NeumannStampfer} \\
+Confocal Raman Spectroscopy provides the ability to obtain important material characteristics locally and noninvasively.\citep{NeumannStampfer}
+
+
+\section{Exfoliation}
+Exfoliation is the simplest technique to extract graphene from a graphit block.
+
+\subsection{Method}
+In order to isolate a mono-layer of carbon atoms with exfoliation one uses a sticky tape and a graphit block. The first step is to place the graphit onto the sticky tape and pull it off again. After this one can see a film of graphit on the sticky tape. The second step is to press a sticky tape on the graphit film and pull it off again. This second step is repeated until one gets a mono-layer of carbon atoms.
+
+\subsection{Results}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{Bilder/Exfoliation/mono_bi_tri_etc_001.JPG}
+\caption{Image from one flake of graphene isolated by Exfoliation made with an optical microscope.}
+\label{fig:Exfoliation_Microscope}
+\end{figure}
+
+Figure \ref{fig:Exfoliation_Microscope} shows one of the flakes obtained by Exfoliation made with an optical microscope. This flake shows different numbers of layer in different areas. The higher the contrast the higher the number of layer.
 
 
 
 
 
-
-
-
-%\begin{figure} [H]
-%\centering
-%\includegraphics[scale=0.8]{Bilder/U_I_characteristic/fit_43.PNG}
-%\caption{U-I characteristic of the SQUID in the superconducting state.}
-%\label{fig:U-I-characteristic_fit}
-%\end{figure}
-
-%\begin{table} [H]
-%\centering
-%\begin{tabular}{|c|c|c|c|}
-%\hline 
-%$T_{room}$ [K] & $T_{LN_2}$ [K] & $R_{RT}$ [k$\Omega$] & $R_{LN_2}$ [k$\Omega$] \\ 
-%\hline 
-%294.65 $\pm$ $\frac{1}{\sqrt{12}}$ & 77 $\pm$ $\frac{1}{\sqrt{12}}$ & 107.9 $\pm$ $\frac{1}{\sqrt{12}}$ & 20.3 $\pm$ $\frac{1}{\sqrt{12}}$ \\ 
-%\hline 
-%\end{tabular} 
-%\caption{Measured values for the resistance at room temperature and the temperature of liquid nitrogen.}
-%\label{tab:Temp_Calib_data}
-%\end{table}
-
-
-
+\bibliography{Raman}% Produces the bibliography via BibTeX.
 
 \end{document}
