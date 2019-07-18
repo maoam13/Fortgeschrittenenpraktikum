@@ -311,12 +311,32 @@ def get_werte_ab_schwelle(array, schwelle):
             index.append(i)
     return np.array(index)
 
+'''
 def fitte_bel_function(x, y, ex, ey, func, startwerte):
     model  = scipy.odr.Model(func)
     data   = scipy.odr.RealData(x, y, sx=ex, sy=ey)
     odr    = scipy.odr.ODR(data, model, beta0=startwerte)
     output = odr.run()
     return output.beta, output.sd_beta#, output.res_var
+'''
+
+def fitte_bel_function_xy(x, y, ex, ey, func, startwerte):
+    """gibt wert,fehler,chi/ndof zurueck"""
+    model  = scipy.odr.Model(func)
+    data   = scipy.odr.RealData(x, y, sx=ex, sy=ey)
+    odr    = scipy.odr.ODR(data, model, beta0=startwerte)
+    output = odr.run()
+    corr = output.cov_beta[0,1]/np.sqrt(output.cov_beta[0,0]*output.cov_beta[1,1])
+    return [output.beta, output.sd_beta, output.res_var]
+
+def fitte_bel_function(x, y, ey, func, startwerte):
+    """gibt wert,fehler,chi/ndof zurueck"""
+    model  = scipy.odr.Model(func)
+    data   = scipy.odr.RealData(x, y, sy=ey)
+    odr    = scipy.odr.ODR(data, model, beta0=startwerte)
+    output = odr.run()
+    corr = output.cov_beta
+    return output.beta, output.sd_beta, output.res_var
 
 def chiq(x, y, ex, ey, func, abl, A):
     chi = 0
