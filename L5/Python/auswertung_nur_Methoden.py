@@ -364,3 +364,9 @@ def genfromcsv(csv_file, skipheader = 0):
                 data.append(data_line)
             i+=1
     return data
+
+def geraden_schnittpunkte(a1, b1, a2, b2):
+    x = (b1-b2)/(a2-a1)
+    y = a1*x+b1
+    return x, y
+
