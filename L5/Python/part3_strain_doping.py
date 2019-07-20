@@ -24,7 +24,10 @@ def doping_strain_official(omega_G, omega_D, m_1 = 2.2, m_2 = 0.7):
     return doping, strain
 
 
-def doping_strain(x_test, y_test, x = 1582, y = 2677, m_1 = 2.2, m_2 = 0.7):
+def doping_strain(x_test, y_test, x = 1582, y = 2677, m_1 = 2.2, m_2 = 0.7): 
+    h_bar, v_F = 6.582 * 10**(-16), 1.15 * 10**6
+    strain_fac = -23.5
+
     b_1 = y - m_1 * x
     b_2 = y - m_2 * x
     
