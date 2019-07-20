@@ -10,7 +10,7 @@ def doping_strain_official(omega_G, omega_D, m_1 = 2.2, m_2 = 0.7):
     omega_GP, omega_DP = 1581.6, 2676.9
     h_bar, v_F = 6.582 * 10**(-16), 1.15 * 10**6
 
-    strain_fac = -23.5
+    strain_fac = -23.5 #69.1
 
     x, y = omega_G - omega_GP, omega_D - omega_DP
     alpha, beta = np.arctan(m_2), np.arctan(m_1)
@@ -43,6 +43,26 @@ def doping_strain(x_test, y_test, x = 1582, y = 2677, m_1 = 2.2, m_2 = 0.7):
     strain = omega_G_strain / strain_fac
     
     return doping, strain
+
+
+def print_table(data, transpose = False, printout = True):
+    if transpose:
+        ausgabe = ''
+        for i in range(np.shape(data)[1]):
+            ausgabe += str(data[0][i])
+            for j in range(1, np.shape(data)[0]):
+                ausgabe += ' & ' + str(data[j][i])
+            ausgabe += '\n'
+    else:
+        ausgabe = ''
+        for i in range(np.shape(data)[0]):
+            ausgabe += str(data[i][0])
+            for j in range(1, np.shape(data)[1]):
+                ausgabe += ' & ' + str(data[i][j])
+            ausgabe += '\n'
+    if printout:
+        print(ausgabe)
+    return ausgabe
 
 
 if __name__ == '__main__':
