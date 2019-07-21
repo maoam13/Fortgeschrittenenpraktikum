@@ -128,22 +128,58 @@ A graphene flake is placed on a hexagonal boron nitride (hBN) film, which is app
 \label{fig:Part2_map_microscope}
 \end{figure}
 
+%\begin{table}[h]
+%\centering
+%\begin{tabular}{|c|c|c|c|c|}
+%\hline 
+%Measurement & $\omega _G$ & $\Gamma _G$ & $\omega _{2D}$ & $\Gamma _{2D}$ \\ 
+%point &  &  &  &  \\ 
+%\hline 
+%1 & \SI{1584.25 \pm 0.15}{\per cm} & \SI{12.57 \pm 0.25}{\per cm} & \SI{2680.89 \pm 0.16}{\per cm} & \SI{17.19 \pm 0.52}{\per cm} \\ 
+%\hline 
+%2 & \SI{1582.95 \pm 0.16}{\per cm} & \SI{11.59 \pm 0.13}{\per cm} & \SI{2695.50 \pm 0.35}{\per cm} & \SI{50.37 \pm 0.49}{\per cm} \\ 
+%\hline 
+%3 & \SI{1582.44 \pm 0.17}{\per cm} & \SI{13.68 \pm 0.11}{\per cm} & \SI{2694.61 \pm 0.27}{\per cm} & \SI{52.02 \pm 0.36}{\per cm} \\ 
+%\hline 
+%4 & \SI{1583.30 \pm 0.55}{\per cm} & \SI{16.26 \pm 0.10}{\per cm} & \SI{2693.79 \pm 0.29}{\per cm} & \SI{35.06 \pm 0.43}{\per cm} \\ 
+%\hline 
+%5 & \SI{1583.32 \pm 0.21}{\per cm} & \SI{12.31 \pm 0.25}{\per cm} & \SI{2692.23 \pm 0.16}{\per cm} & \SI{13.09 \pm 0.23}{\per cm} \\ 
+%\hline 
+%\end{tabular} 
+%\caption{Results for the positions and width of G and 2D peak from the spectra at the measurement points as marked in Fig. \ref{fig:Part2_map_microscope}.}
+%\label{tab:Sandwich_Results}
+%\end{table}
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|c|c|}
+\begin{tabular}{|c|c|c|}
 \hline 
-Measurement & $\omega _G$ & $\Gamma _G$ & $\omega _{2D}$ & $\Gamma _{2D}$ \\ 
-point &  &  &  &  \\ 
+Measurement & $\omega _G$ & $\Gamma _G$ \\ 
+point &  & \\ 
 \hline 
-1 & \SI{1584.25 \pm 0.15}{\per cm} & \SI{12.57 \pm 0.25}{\per cm} & \SI{2680.89 \pm 0.16}{\per cm} & \SI{17.19 \pm 0.52}{\per cm} \\ 
+1 & \SI{1584.25 \pm 0.15}{\per cm} & \SI{12.57 \pm 0.25}{\per cm} \\ 
 \hline 
-2 & \SI{1582.95 \pm 0.16}{\per cm} & \SI{11.59 \pm 0.13}{\per cm} & \SI{2695.50 \pm 0.35}{\per cm} & \SI{50.37 \pm 0.49}{\per cm} \\ 
+2 & \SI{1582.95 \pm 0.16}{\per cm} & \SI{11.59 \pm 0.13}{\per cm} \\ 
 \hline 
-3 & \SI{1582.44 \pm 0.17}{\per cm} & \SI{13.68 \pm 0.11}{\per cm} & \SI{2694.61 \pm 0.27}{\per cm} & \SI{52.02 \pm 0.36}{\per cm} \\ 
+3 & \SI{1582.44 \pm 0.17}{\per cm} & \SI{13.68 \pm 0.11}{\per cm} \\ 
 \hline 
-4 & \SI{1583.30 \pm 0.55}{\per cm} & \SI{16.26 \pm 0.10}{\per cm} & \SI{2693.79 \pm 0.29}{\per cm} & \SI{35.06 \pm 0.43}{\per cm} \\ 
+4 & \SI{1583.30 \pm 0.55}{\per cm} & \SI{16.26 \pm 0.10}{\per cm} \\ 
 \hline 
-5 & \SI{1583.32 \pm 0.21}{\per cm} & \SI{12.31 \pm 0.25}{\per cm} & \SI{2692.23 \pm 0.16}{\per cm} & \SI{13.09 \pm 0.23}{\per cm} \\ 
+5 & \SI{1583.32 \pm 0.21}{\per cm} & \SI{12.31 \pm 0.25}{\per cm} \\ 
+\hline 
+\hline
+Measurement & $\omega _{2D}$ & $\Gamma _{2D}$ \\ 
+point &  &  \\ 
+\hline 
+1 & \SI{2680.89 \pm 0.16}{\per cm} & \SI{17.19 \pm 0.52}{\per cm} \\ 
+\hline 
+2 & \SI{2695.50 \pm 0.35}{\per cm} & \SI{50.37 \pm 0.49}{\per cm} \\ 
+\hline 
+3 & \SI{2694.61 \pm 0.27}{\per cm} & \SI{52.02 \pm 0.36}{\per cm} \\ 
+\hline 
+4 & \SI{2693.79 \pm 0.29}{\per cm} & \SI{35.06 \pm 0.43}{\per cm} \\ 
+\hline 
+5 & \SI{2692.23 \pm 0.16}{\per cm} & \SI{13.09 \pm 0.23}{\per cm} \\ 
 \hline 
 \end{tabular} 
 \caption{Results for the positions and width of G and 2D peak from the spectra at the measurement points as marked in Fig. \ref{fig:Part2_map_microscope}.}
@@ -170,8 +206,111 @@ On the map one can see a superposition of the structure of the graphene flake an
 
 
 
+\section{Combining Analysis}
+From the analyzed spectra one gets each $\omega _G$, $\omega _{2D}$, $\Gamma _G$ and $\Gamma _{2D}$. With all these values one can plot $\omega _G$ vs. $\omega _{2D}$ and $\Gamma _G$ vs. $\Gamma _{2D}$. These provide the possibility for further analysis.
 
 
+\subsection{$\omega _G$ vs. $\omega _{2D}$}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Measurement & strain [\%] & doping [\SI{E12}{\per c \cubic m}] \\ 
+point &  & \\ 
+\hline 
+1 & 0.20349697435505926 & 4.950292817898646 \\
+\hline 
+2 & 0.6375554541106578 & 0.028138295425109015 \\
+\hline 
+3 & 0.701716558673067 & 0.6367773535688344 \\
+\hline 
+4 & 0.8451985467004255 & 3.017297900516737 \\
+\hline 
+5 & 1.2182255982762766 & 6.02007073194072 \\
+\hline 
+6 & 1.327920440021132 & 7.804281787131022 \\
+\hline 
+\end{tabular} 
+\caption{Strain and doping of the stair flake as shown in Fig. \ref{fig:Exfoliation_Microscope} calculated with vector decomposition.}
+\label{tab:step_strain_doping}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Measurement & strain [\%] & doping [\SI{E12}{\per c \cubic m}] \\ 
+point &  & \\ 
+\hline 
+1 & 0.2119677047704595 & 4.314170085917352 \\
+\hline
+2 & 0.28448178300059057 & 4.440002995332038 \\
+\hline
+3 & 0.3388938963934303 & 4.278641755750479 \\
+\hline 
+\end{tabular} 
+\caption{Strain and doping of the mono layer flake calculated with vector decomposition.}
+\label{tab:wrinkle_strain_doping}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline 
+Measurement & strain [\%] & doping [\SI{E12}{\per c \cubic m}] \\ 
+point &  & \\ 
+\hline 
+1 & 0.19153034348752995 & 0.15685383721382226 \\
+\hline
+2 & 0.6753016638860072 & 1.0302048526464962 \\
+\hline
+3 & 0.6341917558857008 & 1.1681600501154894 \\
+\hline
+4 & 0.6225797091120335 & 0.6386440449659626 \\
+\hline
+5 & 0.5684436126705688 & 0.4586489307042077 \\
+\hline 
+\end{tabular} 
+\caption{Strain and doping of the half sandwich on PMMA as shown in Fig. \ref{fig:Part2_map_microscope} calculated with vector decomposition.}
+\label{tab:PMMA_strain_doping}
+\end{table}
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{Bilder/Part_3/omega_2D_vs_G.PNG}
+\caption{$\omega _G$ vs. $\omega _{2D}$ for the measurements of the stair flake as shown in Fig. \ref{fig:Exfoliation_Microscope}, a monolayer flake, the half sandwich on PMMA as shown in Fig. \ref{fig:Part2_map_microscope} and a graphene flake on SiO$_2$ as analyzed later.}
+\label{fig:Part3_omega_G_vs_2D}
+\end{figure}
+
+Fig. \ref{fig:Part3_omega_G_vs_2D} shows all measured values for $\omega _G$ and $\omega _{2D}$ plotted. \\
+As one can see, apart from a few measured points for the graphene on SiO$_2$ the points are pretty close to each other. Especially if one takes into account, that the measurements for the graphene on SiO$_2$ which come from a map measurement of the same sample are widely spread. \\
+The spreading in this plot originates from the strain and doping. Strain induces a relative shift along a straight line with slope 2.2, while doping a shift along a straight line with slope 0.7 induces \citep{NeumannStampfer}. The intersection of these two lines is at $\omega _{\text{G, prestine}}$ and $\omega _{\text{2D, prestine}}$ which are the values for prestine graphene and are given as: 
+\begin{equation*}
+\omega _{\text{G, prestine}} = \SI{1581.6}{\per cm} \quad \text{and} \quad \omega _{\text{2D, prestine}} = \SI{2676.9}{\per cm}
+\end{equation*} \\
+
+Tables \ref{tab:step_strain_doping}, \ref{tab:wrinkle_strain_doping} and \ref{tab:PMMA_strain_doping} show the results for the calculated strain and doping of the measurement points as plotted in Fig. \ref{fig:Part3_omega_G_vs_2D}.  For the graphene there are too many points to display all calculated strain and doping. So at this point just the average strain and doping are stated:
+\begin{equation*}
+\bar{\epsilon} _{SiO_2} = 0.23777892999289138 \, \% \qquad \bar{n} _{SiO_2} = \SI{2.6101175834325807}{\per c \cubic m}
+\end{equation*}
+
+
+\subsection{$\Gamma _G$ vs. $\Gamma _{2D}$}
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{Bilder/Part_3/gamma_2D_vs_G.PNG}
+\caption{$\Gamma _G$ vs. $\Gamma _{2D}$ for the measurements of the stair flake as shown in Fig. \ref{fig:Exfoliation_Microscope}, a monolayer flake, the half sandwich on PMMA as shown in Fig. \ref{fig:Part2_map_microscope} and a graphene flake on SiO$_2$ as analyzed later.}
+\label{fig:Part3_gamma_G_vs_2D}
+\end{figure}
+
+Fig. \ref{fig:Part3_gamma_G_vs_2D} shows all measured values for $\Gamma _G$ and $\Gamma _{2D}$ plotted. \\ 
+As expected the graphene flake consisting of only one layer has a low $\Gamma _G \approx \SI{5}{\per cm}$ and a low $\Gamma _{2D} \approx \SI{23}{\per cm}$. \\
+As one can see the graphene on SiO$_2$ has a low $\Gamma _{2D}$ and $\Gamma _G$ with a few points which has either a higher $\Gamma _{2D}$ or $\Gamma _G$. Actually no measurement resulted in a $\Gamma _{2D} > \SI{30}{\per cm}$ and $\Gamma _G > \SI{30}{\per cm}$. Interestingly the measurements for the stair flake and the sandwich on PMMA only have $\Gamma _{2D} > \SI{30}{\per cm}$, but still a $\Gamma _G < \SI{15}{\per cm}$.
 
 
 
