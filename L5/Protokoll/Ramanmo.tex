@@ -35,9 +35,25 @@
 \section{Introduction}
 Novoselov et al. were the first to intentionally isolate a mono-layer of carbon atoms from a graphit block, called graphene.\cite{Novoselov2004} Since then it attracted an overwhelming interest in fundamental and applied research in a variety of fields, such as solid state physics, electronics, mechanics, and optics.\cite{NeumannStampfer} \\
 Confocal Raman Spectroscopy provides the ability to obtain important material characteristics locally and noninvasively.\cite{NeumannStampfer} \\
-Figure \ref{fig:Exfoliation_Spectra} shows Raman spectra analyzed later. One can mainly see three peaks. The high peak at about \SI{1600}{\per cm} is called the "G" peak, the lower peak at about \SI{2700}{\per cm} is called "2D" peak and the lowest peak at about \SI{2400}{\per cm} is called "D+D''" peak. The positions of the peak are denoted by $\omega _G$, $\omega _{2D}$ and $\omega _{D+D''}$ and the Full Width at Half Maximum (FWHM) are denoted by $\Gamma _G$, $\Gamma _{2D}$ and $\Gamma _{D+D''}$ respectively. \\
+Figure \ref{fig:Exfoliation_Spectra} shows a Raman spectra analyzed later. One can mainly see three peaks. The high peak at about \SI{1600}{\per cm} is called the "G" peak, the lower peak at about \SI{2700}{\per cm} is called "2D" peak and the lowest peak at about \SI{2400}{\per cm} is called "D+D''" peak. The positions of the peak are denoted by $\omega _G$, $\omega _{2D}$ and $\omega _{D+D''}$ and the Full Width at Half Maximum (FWHM) are denoted by $\Gamma _G$, $\Gamma _{2D}$ and $\Gamma _{D+D''}$ respectively. \\
 The G peak originates from the highest optical phonons at the $\Gamma$ point in the lattice. The 2D peak originates from the breathing mode of the TO branch around the K point in the lattice. The D+D'' originates from defects.\cite{NeumannStampfer}
 
+
+\section{Analysis of the single spectra}
+Over the course of this report single Raman spectra have to be analyzed. This chapter explains the method used to extract the relevant values of the Raman peaks.\\
+An example of a spectrum is shown in figure \ref{fig:example_spectrum}. There are two peaks visible in this spectrum. A Lorentz-curve of the form
+\begin{equation}
+f(\omega) = a + b \cdot x + \dfrac{c \gamma}{(\omega^2-\omega_0^2)^2 + \gamma^2}
+\label{eq:fit}
+\end{equation}
+is fitted to a small area that fully includes the peak. $\omega_0$ denotes the peak position. Its error follows directly from the fit. The linear part in equation \ref{eq:fit} is necessary, because some of the spectra show a strong background noise, which makes it hard to extract the peak intensity, which is necessary for the calculation of the FWHM. The background noise is assumed to be a linear function in the fitting area.\\
+In order to extract the FWHM this linear part is subtracted from the fit and the two points of the fit which are at half of the peak maximum are determined. The distance of these points give us the FWHM. The error of this value is determined by propagating the error of the fit.
+\begin{figure}
+\centering
+\includegraphics[scale=0.5]{Bilder/part6/1.png}
+\caption{Example of the measured Raman spectrum of graphene. The Lorentz-curve fits against the two visible peaks are also shown.}
+\label{fig:example_spectrum}
+\end{figure}
 
 \section{Exfoliation}
 Exfoliation is the simplest technique to isolate graphene from a graphit block.

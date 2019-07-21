@@ -23,8 +23,8 @@ def lorentz(A,x):
 #def peaks(name):
     
 #name = "5 full sandwich on sio2/Green laser/Pristine1.csv"
-name = "7 Cu continuous oxidized/cont2.txt"
-#name = "6 Cu polycrystalline/poly6.txt"
+#name = "7 Cu continuous oxidized/cont2.txt"
+name = "6 Cu polycrystalline/poly1.txt"
 data = np.genfromtxt("../Daten/"+name, delimiter = '',skip_header = 1)
 x = data[:,0]
 y = data[:,1]
@@ -57,8 +57,8 @@ plt.plot(x,y-fit[0][0]-fit[0][4]*x)
 plt.plot(draw,lorentz(fit[0],draw)-fit[0][0]-fit[0][4]*draw)
 plt.plot([h1,h2],[halfmax,halfmax])
 
-w = 1360
-d = 50
+w = 2680
+d = 100
 a = near(x,w-d)
 b = near(x,w+d)
 w1 = x[np.argmax(y[a:b])+a]
