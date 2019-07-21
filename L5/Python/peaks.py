@@ -23,8 +23,8 @@ def lorentz(A,x):
 #def peaks(name):
     
 #name = "5 full sandwich on sio2/Green laser/Pristine1.csv"
-#name = "7 Cu continuous oxidized/cont2.txt"
-name = "6 Cu polycrystalline/poly6.txt"
+name = "7 Cu continuous oxidized/cont2.txt"
+#name = "6 Cu polycrystalline/poly6.txt"
 data = np.genfromtxt("../Daten/"+name, delimiter = '',skip_header = 1)
 x = data[:,0]
 y = data[:,1]
@@ -51,11 +51,13 @@ halfmax = max(yfit)/2-max(dy)
 dh1 = draw[near(yfit[:np.argmax(yfit)],halfmax)]
 dh2 = draw[near(yfit[np.argmax(yfit):],halfmax)+np.argmax(yfit)]
 print h2-h1, 10*np.abs((dh2-dh1)-(h2-h1))
+print max(yfit),max(dy)
+I1 = max(yfit)
 plt.plot(x,y-fit[0][0]-fit[0][4]*x)
 plt.plot(draw,lorentz(fit[0],draw)-fit[0][0]-fit[0][4]*draw)
 plt.plot([h1,h2],[halfmax,halfmax])
 
-w = 2720
+w = 1360
 d = 50
 a = near(x,w-d)
 b = near(x,w+d)
@@ -73,6 +75,9 @@ halfmax = max(yfit)/2-max(dy)
 dh1 = draw[near(yfit[:np.argmax(yfit)],halfmax)]
 dh2 = draw[near(yfit[np.argmax(yfit):],halfmax)+np.argmax(yfit)]
 print h2-h1, 2*np.abs((dh2-dh1)-(h2-h1))
+print max(yfit),max(dy)
+I2 = max(yfit)
+dI = max(dy)
 plt.figure(2)
 plt.plot(x,y-fit[0][0]-fit[0][4]*x)
 plt.plot([h1,h2],[halfmax,halfmax])
@@ -88,5 +93,5 @@ plt.tight_layout()
 plt.plot(draw2,lorentz(fit2[0],draw2))
 plt.plot(draw,lorentz(fit[0],draw))
 
-
+print I2/I1,np.sqrt((dI/I1)**2 + (dI/I1**2 * I2)**2)
 #peaks("2 mono bi tri flake/1.txt")
