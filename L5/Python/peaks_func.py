@@ -5,6 +5,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+def Intensity_G(name):
+    data = np.genfromtxt('../Daten/' + name, delimiter = '')
+    G, D = peaks(name)
+    start = G[0] - G[2]/2
+    stop = G[0] + G[2]/2
+    start_idx = near(data[:,0], start)
+    stop_idx = near(data[:,0], stop)
+    G_intensity = np.max(data[:,1][start_idx:stop_idx])
+    return G_intensity
+
 def near(array,value):
     idx = (np.abs(array-value)).argmin()
     return idx
