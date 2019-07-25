@@ -6,8 +6,23 @@ import csv
 import peaks_func as pf
 
 
+
+#############################printing peak of line scan spectra###################################
+G, D = [], []
+for i in range(1, 8):
+    name = '3 mono with wrinkle/line scan across wrinkle top to bottom ' + str(i) + '.txt'
+    _G, _D = pf.peaks(name)
+    print(_G)
+    print(_D)
+    G.append(_G)
+    D.append(_D)
+#print(G)
+#print(D)
+
+
+#############################printing peak of single spectra######################################
 name = '3 mono with wrinkle/mono 1.txt'
-data = np.genfromtxt('../Daten/' + name, delimiter = '')
+#data = np.genfromtxt('../Daten/' + name, delimiter = '')
 G, D = pf.peaks(name)
 print(G)
 print(D)
