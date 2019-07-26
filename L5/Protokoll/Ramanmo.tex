@@ -36,10 +36,18 @@
 Novoselov et al. were the first to intentionally isolate a mono-layer of carbon atoms from a graphit block, called graphene.\cite{Novoselov2004} Since then it attracted an overwhelming interest in fundamental and applied research in a variety of fields, such as solid state physics, electronics, mechanics, and optics.\cite{NeumannStampfer} \\
 Confocal Raman Spectroscopy provides the ability to obtain important material characteristics locally and noninvasively.\cite{NeumannStampfer} \\
 Figure \ref{fig:Exfoliation_Spectra} shows a Raman spectra analyzed later. One can mainly see three peaks. The high peak at about \SI{1600}{\per cm} is called the "G" peak, the lower peak at about \SI{2700}{\per cm} is called "2D" peak and the lowest peak at about \SI{2400}{\per cm} is called "D+D''" peak. The positions of the peak are denoted by $\omega _G$, $\omega _{2D}$ and $\omega _{D+D''}$ and the Full Width at Half Maximum (FWHM) are denoted by $\Gamma _G$, $\Gamma _{2D}$ and $\Gamma _{D+D''}$ respectively. \\
-The G peak originates from the highest optical phonons at the $\Gamma$ point in the lattice. The 2D peak originates from the breathing mode of the TO branch around the K point in the lattice. The D+D'' originates from defects.\cite{NeumannStampfer}
+The G peak originates from the highest optical phonons at the $\Gamma$ point in the lattice. The 2D peak originates from the breathing mode of the TO branch around the K point in the lattice. The D+D'' originates from defects\cite{NeumannStampfer}.
+
+In this report we analyze the material properties of various samples of graphene. The general method used for this analysis is described in chapter \ref{sec:analysis}. First we analyze two samples which are produced by exfoliating graphite. In chapter \ref{sec:3} we determine the amount of layers of graphene for different measurement points. In chapter \ref{sec:4} a second sample is analyzed, which contains a wrinkle.
+After that multiple CVD-grown samples on different substrates are analyzed. The CVD-process is explained by Stampfer et al. \cite{Banszeruse}. In chapter \ref{sec:5} the properties of the Raman lines of a graphene flake on hBN, which is half sandwiched by PMMA, are analyzed.\\
+Chapter \ref{sec:7} deals with the impact of the laser used for the Raman spectroscopy by analyzing a sample of graphene sandwiched by SiO$_2$ with two different lasers.
+All previous samples are also analyzed for strain and doping characteristics in chapter \ref{sec:6}.
+
+In chapter \ref{sec:8} we analyze a flake grown on polycrystalline copper to determine the impact of the lattice orientation and oxidization on strain and doping of the sample. Finally the defect density of continuous grown graphene is analyzed in chapter \ref{sec:9}.
 
 
 \section{Analysis of the single spectra}
+\label{sec:analysis}
 Over the course of this report single Raman spectra have to be analyzed. This chapter explains the method used to extract the relevant values of the Raman peaks.\\
 An example of a spectrum is shown in figure \ref{fig:example_spectrum}. There are two peaks visible in this spectrum. A Lorentz-curve of the form
 \begin{equation}
@@ -56,6 +64,7 @@ In order to extract the FWHM this linear part is subtracted from the fit and the
 \end{figure}
 
 \section{Exfoliation}
+\label{sec:3}
 Exfoliation is the simplest technique to isolate graphene from a graphit block.
 
 \subsection{Method}
@@ -63,7 +72,7 @@ In order to isolate a mono-layer of carbon atoms with exfoliation one uses a sti
 
 \subsection{Results}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.35]{Bilder/Exfoliation/mono_bi_tri_flake.PNG}
 \caption{Image from one flake of graphene isolated by Exfoliation made with an optical microscope. The crosses mark the points where the Raman spectra are extracted.}
@@ -93,17 +102,17 @@ Figure \ref{fig:Exfoliation_Microscope} shows one of the flakes obtained by Exfo
 \hline 
 Measurement point & I(G) [a.u.] & suggested number of layers \\ 
 \hline 
-1 & 1159.0 $\pm$ 1.1 & 1 \\ 
+1(red) & 1159.0 $\pm$ 1.1 & 1 \\ 
 \hline 
-2 & 1407.7 $\pm$ 1.5 & 2-3 \\ 
+2(blue) & 1407.7 $\pm$ 1.5 & 2-3 \\ 
 \hline 
-3 & 1551.0 $\pm$ 1.4 & 3-4 \\ 
+3(green) & 1551.0 $\pm$ 1.4 & 3-4 \\ 
 \hline 
-4 & 1347.0 $\pm$ 1.8 & 2 \\ 
+4(black) & 1347.0 $\pm$ 1.8 & 2 \\ 
 \hline 
-5 & 1985.3 $\pm$ 1.0 & >5 \\
+5(cyan) & 1985.3 $\pm$ 1.0 & >5 \\
 \hline 
-6 & 1120.3 $\pm$ 1.9 & -  \\ 
+6(purple) & 1120.3 $\pm$ 1.9 & -  \\ 
 \hline 
 \end{tabular} 
 \caption{Results for the positions and width of G and 2D peak from the spectra at the measurement points as marked in Fig. \ref{fig:Part2_map_microscope}.}
@@ -118,17 +127,16 @@ At the measurement point 6 the G-peak intensity is dropped even below the intens
 
 
 \section{Gr flake with wrinkle}
+\label{sec:4}
+One of the Gr flakes produced by Exfoliation showed an interesting feature. A small part of the flake has a higher contrast in the microscope image than the rest (Fig. \ref{fig:wrinkle_microscope}).
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{Bilder/Wrinkle/mono_single_spectra.PNG}
 \includegraphics[scale=0.22]{Bilder/Wrinkle/mono_line_scan.PNG}
 \caption{Microscope image from one graphene flake that showed an interesting wrinkling feature. \textbf{Left}: The crosses mark the points where the single Raman spectra are extracted. \textbf{Right}: Also a line scan were performed.}
 \label{fig:wrinkle_microscope}
 \end{figure}
-
-One of the Gr flakes produced by Exfoliation showed an interesting feature. A small part of the flake has a higher contrast in the microscope image than the rest (Fig. \ref{fig:wrinkle_microscope}).
-
 
 \subsection{Single spectra}
 
@@ -179,19 +187,19 @@ However the measured values (see table \ref{tab:wrinkle_single_results}) suggest
 \hline 
 Measurement & $\omega _G$ & $\Gamma _G$ & $\omega _{2D}$ & $\Gamma _{2D}$ \\ 
 \hline 
-1 & \SI{1591.48 \pm 0.27}{\per cm} & \SI{5.65 \pm 0.20}{\per cm} & \SI{2680.94 \pm 0.22}{\per cm} & \SI{22.44 \pm 0.23}{\per cm} \\ 
+1(red) & \SI{1591.48 \pm 0.27}{\per cm} & \SI{5.65 \pm 0.20}{\per cm} & \SI{2680.94 \pm 0.22}{\per cm} & \SI{22.44 \pm 0.23}{\per cm} \\ 
 \hline 
-2 & \SI{1588.82 \pm 0.24}{\per cm} & \SI{6.68 \pm 0.21}{\per cm} & \SI{2686.74 \pm 0.24}{\per cm} & \SI{26.66 \pm 0.18}{\per cm} \\ 
+2(blue) & \SI{1588.82 \pm 0.24}{\per cm} & \SI{6.68 \pm 0.21}{\per cm} & \SI{2686.74 \pm 0.24}{\per cm} & \SI{26.66 \pm 0.18}{\per cm} \\ 
 \hline 
-3 & \SI{1586.01 \pm 0.23}{\per cm} & \SI{5.56 \pm 0.90}{\per cm} & \SI{2691.97 \pm 0.19}{\per cm} & \SI{18.21 \pm 0.44}{\per cm} \\ 
+3(green) & \SI{1586.01 \pm 0.23}{\per cm} & \SI{5.56 \pm 0.90}{\per cm} & \SI{2691.97 \pm 0.19}{\per cm} & \SI{18.21 \pm 0.44}{\per cm} \\ 
 \hline 
-4 & \SI{1585.72 \pm 0.23}{\per cm} & \SI{4.96 \pm 0.65}{\per cm} & \SI{2692.96 \pm 0.19}{\per cm} & \SI{16.85 \pm 0.31}{\per cm} \\ 
+4(black) & \SI{1585.72 \pm 0.23}{\per cm} & \SI{4.96 \pm 0.65}{\per cm} & \SI{2692.96 \pm 0.19}{\per cm} & \SI{16.85 \pm 0.31}{\per cm} \\ 
 \hline 
-5 & \SI{1587.21 \pm 0.20}{\per cm} & \SI{7.15 \pm 0.17}{\per cm} & \SI{2691.50 \pm 0.20}{\per cm} & \SI{19.23 \pm 0.59}{\per cm} \\ 
+5(cyan) & \SI{1587.21 \pm 0.20}{\per cm} & \SI{7.15 \pm 0.17}{\per cm} & \SI{2691.50 \pm 0.20}{\per cm} & \SI{19.23 \pm 0.59}{\per cm} \\ 
 \hline 
-6 & \SI{1590.30 \pm 0.22}{\per cm} & \SI{7.32 \pm 0.31}{\per cm} & \SI{2684.22 \pm 0.24}{\per cm} & \SI{27.66 \pm 0.27}{\per cm} \\ 
+6(orange) & \SI{1590.30 \pm 0.22}{\per cm} & \SI{7.32 \pm 0.31}{\per cm} & \SI{2684.22 \pm 0.24}{\per cm} & \SI{27.66 \pm 0.27}{\per cm} \\ 
 \hline 
-7 & \SI{1591.02 \pm 0.27}{\per cm} & \SI{6.12 \pm 0.23}{\per cm} & \SI{2678.22 \pm 0.17}{\per cm} & \SI{23.14 \pm 0.79}{\per cm} \\ 
+7(purple) & \SI{1591.02 \pm 0.27}{\per cm} & \SI{6.12 \pm 0.23}{\per cm} & \SI{2678.22 \pm 0.17}{\per cm} & \SI{23.14 \pm 0.79}{\per cm} \\ 
 \hline 
 \end{tabular} 
 \caption{Results for the positions and width of G and 2D peak from the spectra obtained from the line measurement as marked in Fig. \ref{fig:wrinkle_microscope}.}
@@ -205,16 +213,18 @@ Table \ref{tab:Wrinkle_Results} shows the results for G and 2D peak positions an
 
 
 \section{Half Sandwich on PMMA}
+\label{sec:5}
 A graphene flake is placed on a hexagonal boron nitride (hBN) film, which is applied on a Polymethylmethacrylat (PMMA) sample. 
 
-\subsection{Single Spectra}
-
-\begin{figure}
+\begin{figure}[h]
 \centering
-\includegraphics[scale=0.25]{Bilder/Part_2/4_Half_sandwich_on_PMMA.PNG}
+\includegraphics[scale=0.4]{Bilder/Part_2/4_Half_sandwich_on_PMMA.PNG}
 \caption{Image from one graphene hBn sandwich made with an optical microscope. The crosses mark the points where the Raman spectra are extracted.}
 \label{fig:Part2_map_microscope}
 \end{figure}
+
+\subsection{Single Spectra}
+
 
 \begin{table}[h]
 \centering
@@ -223,15 +233,15 @@ A graphene flake is placed on a hexagonal boron nitride (hBN) film, which is app
 Measurement & $\omega _G$ & $\Gamma _G$ & $\omega _{2D}$ & $\Gamma _{2D}$ \\ 
 point &  &  &  &  \\ 
 \hline 
-1 & \SI{1584.25 \pm 0.15}{\per cm} & \SI{12.57 \pm 0.25}{\per cm} & \SI{2680.89 \pm 0.16}{\per cm} & \SI{17.19 \pm 0.52}{\per cm} \\ 
+1(red) & \SI{1584.25 \pm 0.15}{\per cm} & \SI{12.57 \pm 0.25}{\per cm} & \SI{2680.89 \pm 0.16}{\per cm} & \SI{17.19 \pm 0.52}{\per cm} \\ 
 \hline 
-2 & \SI{1582.95 \pm 0.16}{\per cm} & \SI{11.59 \pm 0.13}{\per cm} & \SI{2695.50 \pm 0.35}{\per cm} & \SI{50.37 \pm 0.49}{\per cm} \\ 
+2(blue) & \SI{1582.95 \pm 0.16}{\per cm} & \SI{11.59 \pm 0.13}{\per cm} & \SI{2695.50 \pm 0.35}{\per cm} & \SI{50.37 \pm 0.49}{\per cm} \\ 
 \hline 
-3 & \SI{1582.44 \pm 0.17}{\per cm} & \SI{13.68 \pm 0.11}{\per cm} & \SI{2694.61 \pm 0.27}{\per cm} & \SI{52.02 \pm 0.36}{\per cm} \\ 
+3(green) & \SI{1582.44 \pm 0.17}{\per cm} & \SI{13.68 \pm 0.11}{\per cm} & \SI{2694.61 \pm 0.27}{\per cm} & \SI{52.02 \pm 0.36}{\per cm} \\ 
 \hline 
-4 & \SI{1583.30 \pm 0.55}{\per cm} & \SI{16.26 \pm 0.10}{\per cm} & \SI{2693.79 \pm 0.29}{\per cm} & \SI{35.06 \pm 0.43}{\per cm} \\ 
+4(black) & \SI{1583.30 \pm 0.55}{\per cm} & \SI{16.26 \pm 0.10}{\per cm} & \SI{2693.79 \pm 0.29}{\per cm} & \SI{35.06 \pm 0.43}{\per cm} \\ 
 \hline 
-5 & \SI{1583.32 \pm 0.21}{\per cm} & \SI{12.31 \pm 0.25}{\per cm} & \SI{2692.23 \pm 0.16}{\per cm} & \SI{13.09 \pm 0.23}{\per cm} \\ 
+5(cyan) & \SI{1583.32 \pm 0.21}{\per cm} & \SI{12.31 \pm 0.25}{\per cm} & \SI{2692.23 \pm 0.16}{\per cm} & \SI{13.09 \pm 0.23}{\per cm} \\ 
 \hline 
 \end{tabular} 
 \caption{Results for the positions and width of G and 2D peak from the spectra at the measurement points as marked in Fig. \ref{fig:Part2_map_microscope}.}
@@ -256,9 +266,54 @@ The magnitude of the variation of the 2D peak position is similar to the one fro
 Figure \ref{fig:Part2_map} shows a $\Gamma _{2D}$ map of the same flake as analyzed with the five single spectra before. \\
 On the map one can see a superposition of the structure of the graphene flake and the structure of the hBn. Those areas on which graphene and hBn are present are colored red which corresponds to a $\Gamma _{2D}$ of around \SI{20}{\per cm}. Where neither of those are present the color is black which corresponds to a $\Gamma _{2D}$ of around \SI{15}{\per cm}. The edges of the graphene flake are colored yellow which corresponds to a $\Gamma _{2D}$ of around \SI{25}{\per cm}.
 
+\section{Graphene sandwiched between SIO$_2$}
+\label{sec:7}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.2]{Bilder/Part_3/SandwichMapOutline.png}
+\includegraphics[scale=0.208]{Bilder/Part_3/SandwichBlueMap.png}
+\caption{Sample of graphene sandwiched between layers of SIO$_2$. The area analyzed with the green laser is marked on the left. The area analyzed with the blue laser is marked on the right.}
+\label{fig:Part3_sio2}
+\end{figure}
+
+The encapsulated graphene is used to analyze the impact of the Laser wavelength on the Raman spectrum. Figure \ref{fig:Part3_sio2} shows the sample, as well as the areas which were analyzed with two different lasers, a "green" laser of wavelength \SI{532}{nm} and a "blue" laser. The $\omega_g$ vs. $\omega_{2D}$ map and $\Gamma_g$ vs. $\Gamma_{2D}$ map are shown in figure \ref{fig:Laser_omega} for both Lasers. The distribution of the individual positions are also shown in figure \ref{fig:Laser_omega_hist}.\\
+The $\omega_g$ position is not shifted at all. However the $\omega_{2D}$ position shifted from an average position of \SI{2719(3)}{cm^{-1}} for the blue laser to \SI{2683(3)}{cm^{-1}} for the green laser. The reason for this is that only a single electron/hole site participates in the Raman process that leads to the G-line. By changing the Laser frequency only the excitation energy changes. The Raman shift stays the same. The 2D-line requires two lattice sites and the phonon modes connect them. Changing the excitation energy also changes the phonon modes and with that the Raman shift.\\
+The higher energy of the blue laser also shifts the average FWHM, as seen in figure \ref{fig:Laser_gamma_hist}. $\Gamma_g$ is larger on average for the blue laser, while $\Gamma_{2D}$ is smaller compared to the green laser. In general the measurement taken with the blue laser seems to be broadly distributed. However this is most likely a consequence of different measurement settings.\\
+\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Bilder/Laser/omega.png}
+\includegraphics[scale=0.5]{Bilder/Laser/gamma.png}
+\caption{line data of the G-line plotted against the 2D-line for both Lasers. Left: $\omega$, right: $\Gamma$. The Data point of the green laser are plotted in green and the blue laser in blue.}
+\label{fig:Laser_omega}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Bilder/Laser/omegag_hist.png}
+\includegraphics[scale=0.5]{Bilder/Laser/omega2d_hist.png}
+\caption{Distribution of the line positions for the blue(top) and green(bottom) Laser. Right: $\omega_{g}$, left: $\omega_{2D}$.}
+\label{fig:Laser_omega_hist}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Bilder/Laser/gammag_hist.png}
+\includegraphics[scale=0.5]{Bilder/Laser/gamma2d_hist.png}
+\caption{Distribution of the FWHD for the blue(top) and green(bottom) Laser. Right: $\Gamma_{g}$, left: $\Gamma_{2D}$.}
+\label{fig:Laser_gamma_hist}
+\end{figure}
 
 
 \section{Strain and doping}
+\label{sec:6}
+
+
+
+In this chapter we analyze the strain and doping characteristics of all previously used samples.
+
 From the analyzed spectra one gets each $\omega _G$, $\omega _{2D}$, $\Gamma _G$ and $\Gamma _{2D}$. With all these values one can plot $\omega _G$ vs. $\omega _{2D}$ and $\Gamma _G$ vs. $\Gamma _{2D}$. These provide the possibility for further analysis.
 
 
@@ -272,17 +327,17 @@ From the analyzed spectra one gets each $\omega _G$, $\omega _{2D}$, $\Gamma _G$
 Measurement & strain [\%] & doping [\SI{E12}{\per c \cubic m}] \\ 
 point &  & \\ 
 \hline 
-1 & 0.203 $\pm$ 0.012 & 4.950 $\pm$ 0.031 \\
+1(red) & 0.203 $\pm$ 0.012 & 4.950 $\pm$ 0.031 \\
 \hline 
-2 & 0.638 $\pm$ 0.010 & 0.028 $\pm$ 0.011 \\
+2(blue) & 0.638 $\pm$ 0.010 & 0.028 $\pm$ 0.011 \\
 \hline 
-3 & 0.701 $\pm$ 0.016 & 0.637 $\pm$ 0.028 \\
+3(green) & 0.701 $\pm$ 0.016 & 0.637 $\pm$ 0.028 \\
 \hline 
-4 & 0.845 $\pm$ 0.013 & 3.017 $\pm$ 0.024 \\
+4(black) & 0.845 $\pm$ 0.013 & 3.017 $\pm$ 0.024 \\
 \hline 
-5 & 1.218 $\pm$ 0.017 & 6.020 $\pm$ 0.029 \\
+5(cyan) & 1.218 $\pm$ 0.017 & 6.020 $\pm$ 0.029 \\
 \hline 
-6 & 1.328 $\pm$ 0.015 & 7.804 $\pm$ 0.032 \\
+6(orange) & 1.328 $\pm$ 0.015 & 7.804 $\pm$ 0.032 \\
 \hline 
 \end{tabular} 
 \caption{Strain and doping of the stair flake as shown in Fig. \ref{fig:Exfoliation_Microscope} calculated with vector decomposition.}
@@ -296,11 +351,11 @@ point &  & \\
 Measurement & strain [\%] & doping [\SI{E12}{\per c \cubic m}] \\ 
 point &  & \\ 
 \hline 
-1 & 0.212 $\pm$ 0.011 & 4.314 $\pm$ 0.026 \\
+1(red) & 0.212 $\pm$ 0.011 & 4.314 $\pm$ 0.026 \\
 \hline
-2 & 0.284 $\pm$ 0.010 & 4.440 $\pm$ 0.027 \\
+2(blue) & 0.284 $\pm$ 0.010 & 4.440 $\pm$ 0.027 \\
 \hline
-3 & 0.339 $\pm$ 0.013 & 4.279 $\pm$ 0.030 \\
+3(green) & 0.339 $\pm$ 0.013 & 4.279 $\pm$ 0.030 \\
 \hline 
 \end{tabular} 
 \caption{Strain and doping of the mono layer flake calculated with vector decomposition.}
@@ -314,15 +369,15 @@ point &  & \\
 Measurement & strain [\%] & doping [\SI{E12}{\per c \cubic m}] \\ 
 point &  & \\ 
 \hline 
-1 & 0.192 $\pm$ 0.010 & 0.157 $\pm$ 0.023 \\
+1(red) & 0.192 $\pm$ 0.010 & 0.157 $\pm$ 0.023 \\
 \hline
-2 & 0.675 $\pm$ 0.014 & 1.030 $\pm$ 0.025 \\
+2(blue) & 0.675 $\pm$ 0.014 & 1.030 $\pm$ 0.025 \\
 \hline
-3 & 0.634 $\pm$ 0.018 & 1.168 $\pm$ 0.027 \\
+3(green) & 0.634 $\pm$ 0.018 & 1.168 $\pm$ 0.027 \\
 \hline
-4 & 0.623 $\pm$ 0.017 & 0.639 $\pm$ 0.025 \\
+4(black) & 0.623 $\pm$ 0.017 & 0.639 $\pm$ 0.025 \\
 \hline
-5 & 0.568 $\pm$ 0.016 & 0.459 $\pm$ 0.022 \\
+5(cyan) & 0.568 $\pm$ 0.016 & 0.459 $\pm$ 0.022 \\
 \hline 
 \end{tabular} 
 \caption{Strain and doping of the half sandwich on PMMA as shown in Fig. \ref{fig:Part2_map_microscope} calculated with vector decomposition.}
@@ -344,6 +399,21 @@ The spreading in this plot originates from the strain and doping. Strain induces
 \omega _{\text{G, prestine}} = \SI{1581.6 \pm 0.1}{\per cm} \quad \text{and} \quad \omega _{\text{2D, prestine}} = \SI{2676.9 \pm 0.1}{\per cm}
 \end{equation*} \\
 
+One can seperate the strain and doping effects by vector decomposition. This is done by taking the vector $\vec{X}$ describing the difference between the measured peak positions and the pristine ones in the $\omega _G$ vs. $\omega _{2D}$ map and decomposing it into two vectors following the two slopes. In other words of has to find a and b for the following equation:
+\begin{equation}
+\vec{X} = a \vec{S} + b \vec{D}
+\end{equation}
+where $\vec{S}$ denotes a unit vector following the line with slope 2.2 and $\vec{S}$ one following the line with slope 0.7. The error is calculated by error propagation.
+
+The doping is then calculated from the G-peak shift:
+\begin{equation}
+  doping_{G} = \dfrac{1}{\pi}\left(\dfrac{\Delta\omega_{G,doping}}{4200\hbar v_F }\right)^2
+\end{equation}
+and the (uniaxial) strain over the following relation:
+\begin{equation}
+  strain_{G} = \dfrac{\Delta\omega_{G,strain}}{-23.5}
+\end{equation}
+
 Tables \ref{tab:step_strain_doping}, \ref{tab:wrinkle_strain_doping} and \ref{tab:PMMA_strain_doping} show the results for the calculated strain and doping of the measurement points as plotted in Fig. \ref{fig:Part3_omega_G_vs_2D}.  For the graphene on SiO$_2$ there are too many points to display all calculated strain and doping. So at this point just the average strain and doping are stated:
 \begin{equation*}
 \bar{\epsilon} _{SiO_2} = (0.238 \pm 0.011) \, \% \qquad \bar{n} _{SiO_2} = \SI{2.610 \pm 0.013}{\per c \cubic m}
@@ -364,49 +434,10 @@ Fig. \ref{fig:Part3_gamma_G_vs_2D} shows all measured values for $\Gamma _G$ and
 As expected the graphene flake consisting of only one layer has a low $\Gamma _G \approx \SI{5}{\per cm}$ and a low $\Gamma _{2D} \approx \SI{23}{\per cm}$. \\
 As one can see the graphene on SiO$_2$ has a low $\Gamma _{2D}$ and $\Gamma _G$ with a few points which has either a higher $\Gamma _{2D}$ or $\Gamma _G$. Actually no measurement resulted in a $\Gamma _{2D} > \SI{30}{\per cm}$ and $\Gamma _G > \SI{30}{\per cm}$. Interestingly the measurements for the stair flake and the sandwich on PMMA only have $\Gamma _{2D} > \SI{30}{\per cm}$, but still a $\Gamma _G < \SI{15}{\per cm}$.
 
-\section{Impact of the Laser wavelength}
-The encapsulated graphene is used to analyze the impact of the Laser wavelength on the Raman spectrum. The $\omega_g$ vs. $\omega_{2D}$ map and $\Gamma_g$ vs. $\Gamma_{2D}$map are shown in figure \ref{fig:Laser_omega} for both Lasers. The distribution of the individual positions are also shown in figure \ref{fig:Laser_omega_hist}.\\
-The $\omega_g$ position is not shifted at all. However the $\omega_{2D}$ position shifted from an average position of \SI{2719(3)}{cm^{-1}} for the blue laser to \SI{2683(3)}{cm^{-1}} for the green laser. The reason for this is that only a single electron/hole site participates in the Raman process that leads to the G-line. By changing the Laser frequency only the excitation energy changes. The Raman shift stays the same. The 2D-line requires two lattice sites and the phonon modes connect them. Changing the excitation energy also changes the phonon modes and with that the Raman shift.\\
-The higher energy of the blue laser also shifts the average FWHM, as seen in figure \ref{fig:Laser_gamma_hist}. $\Gamma_g$ is larger on average for the blue laser, while $\Gamma_{2D}$ is smaller compared to the green laser. In general the measurement taken with the blue laser seems to be broadly distributed. However this is most likely a consequence of different measurement settings.\\
-\\
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{Bilder/Laser/omega.png}
-\includegraphics[scale=0.5]{Bilder/Laser/gamma.png}
-\caption{line data of the G-line plotted against the 2D-line for both Lasers. Left: $\omega$, right: $\Gamma$. The Data point of the green laser are plotted in green and the blue laser in blue.}
-\label{fig:Laser_omega}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{Bilder/Laser/omegag_hist.png}
-\includegraphics[scale=0.5]{Bilder/Laser/omega2d_hist.png}
-\caption{Distribution of the line positions for the blue(top) and green(bottom) Laser. Right: $\omega_{g}$, left: $\omega_{2D}$.}
-\label{fig:Laser_omega_hist}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{Bilder/Laser/gammag_hist.png}
-\includegraphics[scale=0.5]{Bilder/Laser/gamma2d_hist.png}
-\caption{Distribution of the FWHD for the blue(top) and green(bottom) Laser. Right: $\Gamma_{g}$, left: $\Gamma_{2D}$.}
-\label{fig:Laser_gamma_hist}
-\end{figure}
 
 \section{Polycrytalline Cu sample}
+\label{sec:8}
 This sample is used to analyze the strain of CVD graphene on on a Cu-substrate for different lattice orientations. The Raman-measurement is done with the blue laser.\\ In a first step the $\omega_{g/2D}$ positions for pristine graphene when using this laser are determined and used as reference for the strain calculation. The spectrum of pristine graphene is shown in figure \ref{fig:pristine}. Both lines have a very low intensity, which indicates that there was no graphene at the point where the spectrum was taken. The 2D-line can be analyzed, which results in  $\omega_{2D} = \SI{2721.1(4)}{cm^{-1}}$. However the G-line intensity is too small to be analyzed. Based on the previous chapter we can assume that the G-line does not shift when changing the laser. This means the Raman of this line should be the same as in the spectrum of pristine graphene taken with the green laser, which is shown in figure \ref{fig:pristine_green}. The G-line frequency is $\omega_{G} = \SI{1582.4(3)}{cm^{-1}}$.\\
-\\
-The polycrystalline sample and the measurement points are shown in figure  \ref{fig:poly_sample} and the extracted line positions in table \ref{tab:part5_pos}. The point were taken on three different lattice orientations. \\
-\\
-erklärung analysis.........
-\\
-\\
-The results are shown in table \ref{tab:part5_results}. The Measurement point 1, 3 and 6 were taken in an area where the visible oxidization was low. This is reflected in the low doping concentration at these point. Points 2 and 7 were expected to have a high oxidization, which is also reflected in the data.\\
-Points 4 and 5 do not reflect the expectation. However it is possible that the sample was moved during measurement so that point 4 was measured at low oxidization and point 5 at high oxidization.\\
-It should also be noted that the position of points 1 and 6 in the map in figure \ref{fig:poly_sample} is left of the strain-line. This technically results in negative doping and is most likely a consequence of an inaccurate measurement resulting in a systematical error, which is not analyzed.\\
-\\
-The strain is directly impacted by the oxidization. Areas with low doping also show low strain, whereas areas with high doping show high strain. In comparison to this the lattice orientation has a very small impact. Because of the potential systematical error it is impossible to determine the lattice orientation which gives the best result.
 
 \begin{figure}
 \centering
@@ -422,6 +453,22 @@ The strain is directly impacted by the oxidization. Areas with low doping also s
 \caption{Spectrum of pristine graphene measured with the green laser in order to determine the position of the G-line. The G-line is highlighted and determined with $\omega_{G} = \SI{1582.4(3)}{cm^{-1}}$.}
 \label{fig:pristine_green}
 \end{figure}
+
+The polycrystalline sample and the measurement points are shown in figure  \ref{fig:poly_sample} and the extracted line positions in table \ref{tab:part5_pos}. The point were taken on three different lattice orientations. Strain and doping are separated as described in the previous chapter. However the strain is here calculated over the 2D peak:
+\begin{equation*}
+  strain_{2D} = \begin{cases}
+        \SI{-70}{cm^{-1}/\%} &\text{uniaxial} \\
+        \SI{-40}{cm^{-1}/\%} &\text{biaxial} \\
+        \end{cases}
+\end{equation*}
+
+The results are shown in table \ref{tab:part5_results}. The Measurement point 1, 3 and 6 were taken in an area where the visible oxidization was low. This is reflected in the low doping concentration at these point. Points 2 and 7 were expected to have a high oxidization, which is also reflected in the data.\\
+Points 4 and 5 do not reflect the expectation. However it is possible that the sample was moved during measurement so that point 4 was measured at low oxidization and point 5 at high oxidization.\\
+It should also be noted that the position of points 1 and 6 in the map in figure \ref{fig:poly_sample} is left of the strain-line. This technically results in negative doping and is most likely a consequence of an inaccurate measurement resulting in a systematical error, which is not analyzed.\\
+\\
+The strain is directly impacted by the oxidization. Areas with low doping also show low strain, whereas areas with high doping show high strain. In comparison to this the lattice orientation has a very small impact. Because of the potential systematical error it is impossible to determine the lattice orientation which gives the best result.
+
+
 
 \begin{figure}
 \centering
@@ -483,11 +530,21 @@ point & & [$10^{-12} \si{cm^{-1}}$] & [\%] & [\%]\\
 7 & (0.03,0.14,0.99) &$5.488 \pm 0.009$ & $0.3677 \pm 0.0003$ & $0.6435 \pm 0.0006$ \\ 
 \hline 
 \end{tabular} 
-\caption{Results for the positions of G and 2D peak from the polycristalline sample at the measurement points as marked in Fig. \ref{fig:poly_sample}.}
+\caption{Doping and strain at the measurement points.}
 \label{tab:part5_results}
 \end{table}
 
+\newpage
 \section{Continuous Graphene}
+\label{sec:9}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.3]{Bilder/part7/Continuousoptical.png}
+\caption{Sample of continuous graphene. The measurement points are marked. Point 1 corresponds to red and point 2 to blue.}
+\label{fig:part7_sample}
+\end{figure}
+
 The sample of continuous graphene on oxidized copper and the measured points are shown in figure \ref{fig:part7_sample}. In this chapter we want to analyze the defect density of the sample. Defects lead to the formation of different peaks, because the Raman process can involve defect scattering. In order to be able to analyze this the Intensity of the G-line and the D-line, which involves defect scattering, are determined. Both lines are analyzed with the same method used in previous chapters. The spectrums and fits can be seen in figure \ref{fig:part7_spectrum}. The extracted positions and Intensities are listed in table \ref{tab:part7_results}. With the help of the Model from  Cancado et al.\cite{cancado} the average distance between defects $L_D$ can be determined:
 \begin{equation}
 \dfrac{I_D}{I_G} = C_A \dfrac{(r_A^2 - r_s^2)}{(r_A^2 - 2 r_s^2)} (e^{-\pi r_s^2/L_D^2} -e^{-\pi (r_A^2 - r_s^2)/L_D^2})
@@ -495,22 +552,7 @@ The sample of continuous graphene on oxidized copper and the measured points are
 $C_A = 160 * E_L^{-4}$ with the laser energy $E_L = \SI{2.33}{eV}$, $r_s = \SI{1}{nm}$, $r_A = \SI{3.1}{nm}$ are used.\\
 This function and the Intensity ratios of the measurement points are shown in figure \ref{fig:part7_fit}. $L_D$ and its error are visually estimated. This results in a average distance of $L_D = \SI{24(1)}{nm}$ for point 1 and $L_D = \SI{70(1)}{nm}$ for point 2.
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.3]{Bilder/part7/Continuousoptical.png}
-\caption{Left: Polycristalline sample. Measurement points in order of red, blue, green, black, cyan, orange, purple. Right: Map of the difference between the extracted line-positions and the pristine position.}
-\label{fig:part7_sample}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale=0.5]{Bilder/part7/1.png}
-\includegraphics[scale=0.5]{Bilder/part7/2.png}
-\caption{Extracted spectrums from the continuous graphene. Left: red point, right: blue point.}
-\label{fig:part7_spectrum}
-\end{figure}
-
-\begin{table}
+\begin{table}[h]
 \centering
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline 
@@ -522,18 +564,40 @@ point &  &  & & & &\\
 2(blue) & $1585.0 \pm 0.2$ & $1369.9 \pm 0.9$ & $468 \pm 2$ & $26 \pm 2$ & $0.06 \pm 0.01$ & $70\pm 1$\\ 
 \hline
 \end{tabular} 
-\caption{Results for the positions of G and 2D peak from the polycrystalline sample at the measurement points as marked in Fig. \ref{fig:poly_sample}.}
+\caption{Results for the positions of G and 2D peak from the continuous sample and calculated peak intensities and mean distance between defects.}
 \label{tab:part7_results}
 \end{table}
 
-\begin{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.5]{Bilder/part7/1.png}
+\includegraphics[scale=0.5]{Bilder/part7/2.png}
+\caption{Extracted spectrums from the continuous graphene. Left: red point, right: blue point.}
+\label{fig:part7_spectrum}
+\end{figure}
+
+
+
+\begin{figure}[!htb]
 \centering
 \includegraphics[scale=0.7]{Bilder/part7/fit.png}
-\caption{Extracted spectrums from the continuous graphene. Left: red point, right: blue point.}
+\caption{Model for the doping concentration. The ratios extracted from the measurement points are marked. The doping concentration is extracted by analyzing the crossing point of these line with the model.}
 \label{fig:part7_fit}
 \end{figure}
 
 
+\newpage
+\section{Conclusion}
+We were successfully able to produce graphene flakes with a low number of layers by using exfoliation. From the form of the 2D-line one could estimate the number of layers of the analyzed sample. Additionally a second sample with a wrinkle was analyzed and it was confirmed, that the wrinkle is an overlap of multiple layers.\\
+\\
+By analyzing a sample with two different lasers we found out that the laser wavelength only impacts the 2D-line, which shifts to a higher energy, when decreasing the laser wavelength.\\
+\\
+Furthermore the strain and doping of different samples were determined. The strain lies between 0.1 and 1\% and varies depending on the measurement position. The doping of the exfoliated graphene lies between 0 and \SI{7e12}{cm^{-3}}, the doping of the graphene on PMMA between 0-\SI{1e12}{cm^{-3}}. We also tried to analyze the impact of the substrate lattice orientation with the help of a sample on polycrystalline copper, however large unknown measurement uncertainties made it impossible to determine the optimal orientation.\\
+\\
+Finally we were able to determine the defect density of continuous graphene at different positions. 
+
+\newpage
 \section{Appendix}
 \begin{figure}
 \centering
@@ -544,12 +608,12 @@ point &  &  & & & &\\
 \includegraphics[scale=0.5]{Bilder/part6/5.png}
 \includegraphics[scale=0.5]{Bilder/part6/6.png}
 \includegraphics[scale=0.5]{Bilder/part6/7.png}
-\caption{Spectra of the sample on polycristalline Cu. Top left is Measurement point 1 and bottom right point 7. The fits to the G and 2D-line are included.}
+\caption{Spectra of the sample on polycrystalline Cu. Top left is Measurement point 1 and bottom right point 7. The fits to the G and 2D-line are included.}
 \label{fig:appendix_6}
 \end{figure}
 
 
-
+\newpage
 \bibliography{Ramanmo}
 
 \end{document}
